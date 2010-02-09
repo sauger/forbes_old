@@ -25,11 +25,12 @@
 				$_SESSION["nick_name"] = $record[0]->nick_name;
 				$_SESSION["role_name"] = $record[0]->role_name;
 				$_SESSION['role_level'] = $record[0]->role_level;
+				//var_dump($_SESSION);
 				if($last_url == '/index.php' && ($_SESSION['role_level'] == 1 || $_SESSION['role_level'])){
 					$last_url = '/admin/admin.php';
 				}
-				//alert($last_url);
-				redirect($last_url);
+		 	//alert($last_url);
+			redirect($last_url);
 			}else{
 				
 				alert("用户名或密码不对，请重新输入！");
