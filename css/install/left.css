@@ -1,0 +1,5 @@
+﻿#l_body{width:298px; float:left; display:inline;}
+#l_body #top{width:298px; height:394px; background:url('../../images/install/left_bg.jpg') no-repeat; float:left; display:inline;}
+#l_body #top #content{width:92px; height:24px; margin-top:70px; margin-left:100px; line-height:22px; color:#41A81C; font-size:20px; font-weight:bold; float:left; display:inline;}
+#l_body #top .context{width:92px; height:24px; margin-top:55px; margin-left:100px; line-height:22px; color:#CCCCCC; font-size:20px; font-weight:bold; float:left; display:inline;}
+#l_body #bottom{width:298px; height:96px; background:url('../../images/install/left_bottom.jpg') no-repeat; float:left; display:inline;}

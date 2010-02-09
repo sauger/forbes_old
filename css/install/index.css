@@ -1,0 +1,18 @@
+body {margin:0px; font-family:宋体; background:url('../../images/install/bg.jpg') repeat-x; font-size:12px; color:#000000;}
+#ibody{width:900px; height:550px; background:url('../../images/install/bg_index.jpg') no-repeat; margin:0 auto; margin-top:76px;}
+#left{width:298px; height:490px; float:left; display:inline;}
+#right{width:570px; height:374px; margin-top:42px; background:url('../../images/install/right_bg.jpg') no-repeat; float:left; display:inline;}
+#right #title{width:570px; height:28px; margin-top:10px; line-height:18px; font-size:14px; font-weight:bold; text-align:center; float:left; display:inline;}
+#right #content{width:550px; height:336px; margin-left:10px; line-height:15px; overflow:hidden; float:left; display:inline;}
+#right #content .c{width:550px; height:30px; float:left; display:inline;}
+#right #content .c input{width:250px;}
+#right #content .c .c_l{width:120px; height:30px; margin-top:10px; line-height:23px; font-size:14px; font-weight:bold; margin-left:5px;  float:left; display:inline;}
+#right #content .c .c_c{width:250px; height:30px; margin-top:5px; float:left; display:inline;}
+#right #content .c .c_r{width:164px; height:30px; margin-top:10px;  color:#FF0000; overflow:hidden; float:right; display:inline;}
+.c_c1{height:30px;display:inline;margin-top:12px;float:left;}
+#ibody #right #r_b{width:570px; height:20px; margin-top:30px; text-align:center; color:#FF0000; font-weight:bold; float:left; display:inline;}
+.check_title{font-size:14px;margin-bottom:10px;}
+.check_item{margin-left:20px;margin-bottom:10px;}
+.loaded{color:#41A81C;}
+.unload{color:#FF0000}
+#split{border-bottom:dashed #FF0000 1px;height:5px;width:100%;float:left;}

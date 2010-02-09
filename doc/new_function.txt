@@ -1,0 +1,7 @@
+frame:
+redirect_login($type='js',$referer=true);
+role_include($file, $role='member')
+
+dbclass:
+insert($table,$f,$v=null)
+update($table,$f,$v=null,$c=null)
