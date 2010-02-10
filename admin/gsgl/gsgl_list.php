@@ -51,7 +51,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub','category_class');
+		js_include_tag('admin_pub','category_class','admin/gsgl/gsgl_list.js');
 	?>
 	<script src="gsgl_search.js" type="text/javascript"></script>
 </head>
@@ -61,7 +61,7 @@
 		<tr class="tr1">
 			<td colspan="8">
 				　<a href="gsgl_edit.php">添加公司</a>　　　搜索　
-				<input id=title type="text" value="<? echo $_REQUEST['title']?>"><select id="type" style="width:90px" class="">
+				<input id="title" type="text" value="<? echo $_REQUEST['title']?>"><select id="type" style="width:90px" class="">
 					<option value="0" <? if($_REQUEST['type']=="0"){?>selected="selected"<? }?> >名称</option>
 					<option value="1" <? if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >省份</option>
 					<option value="2" <? if($_REQUEST['type']=="2"){?>selected="selected"<? }?> >城市</option>
