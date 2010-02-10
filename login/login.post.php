@@ -28,7 +28,7 @@
 				if($last_url == '/index.php' && ($_SESSION['role_level'] == 1 || $_SESSION['role_level'])){
 					$last_url = '/admin/admin.php';
 				}
-			redirect($last_url);
+				redirect($last_url);
 			}else{
 				
 				alert("用户名或密码不对，请重新输入！");

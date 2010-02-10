@@ -1,5 +1,4 @@
 <?php
-  //var_dump($_SESSION);
 	require_once('../frame.php');
 	$lasturl = isset($_REQUEST['last_url']) ? $_REQUEST['last_url'] : '';
 ?>
