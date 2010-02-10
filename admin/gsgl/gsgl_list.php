@@ -2,10 +2,44 @@
 	require_once('../../frame.php');
 	judge_role();
 	
+	$title = $_REQUEST['title'];
+	$type = $_REQUEST['type'];
 	$db = get_db();
-	$c = array();
 	$sql = "select * from fb_gs";
-	$record = $db->paginate($sql,5);
+	$record = $db->query($sql);
+	if($title!= '')
+	{
+		if($type == '0')
+		{
+			$sql = "select * from fb_gs where mc like '%".trim($title)."%'";
+			$record = $db->query($sql);
+		}
+		else if ($type == '1')
+		{
+			$sql = "select * from fb_gs where sf like '%".trim($title)."%'";
+			$record = $db->query($sql);
+		}
+		else if ($type == '2')
+		{
+			$sql = "select * from fb_gs where cs like '%".trim($title)."%'";
+			$record = $db->query($sql);
+		}
+		else if ($type == '3')
+		{
+			$sql = "select * from fb_gs where dz like '%".trim($title)."%'";
+			$record = $db->query($sql);
+		}
+		else if ($type == '4')
+		{
+			$sql = "select * from fb_gs where wz like '%".trim($title)."%'";
+			$record = $db->query($sql);
+		}
+		else if ($type == '5')
+		{
+			$sql = "select * from fb_gs where ssdm like '%".trim($title)."%'";
+			$record = $db->query($sql);
+		}
+	}
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -18,9 +52,8 @@
 		css_include_tag('admin');
 		use_jquery();
 		js_include_tag('admin_pub','category_class');
-		$category = new category_class('news');
-		$category->echo_jsdata();		
 	?>
+	<script src="gsgl_search.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -28,14 +61,15 @@
 		<tr class="tr1">
 			<td colspan="8">
 				　<a href="gsgl_edit.php">添加公司</a>　　　搜索　
-				<input id=title type="text" value="<? echo $_REQUEST['title']?>"><span id="span_category"></span><select id=adopt style="width:90px" class="select_new">
-					<option value="">姓名</option>
-					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>性别</option>
-					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>生日</option>
+				<input id=title type="text" value="<? echo $_REQUEST['title']?>"><select id="type" style="width:90px" class="">
+					<option value="0" <? if($_REQUEST['type']=="0"){?>selected="selected"<? }?> >名称</option>
+					<option value="1" <? if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >省份</option>
+					<option value="2" <? if($_REQUEST['type']=="2"){?>selected="selected"<? }?> >城市</option>
+					<option value="3" <? if($_REQUEST['type']=="3"){?>selected="selected"<? }?> >地址</option>
+					<option value="4" <? if($_REQUEST['type']=="4"){?>selected="selected"<? }?> >网址</option>
+					<option value="5" <? if($_REQUEST['type']=="5"){?>selected="selected"<? }?> >上市公司代码</option>
 				</select>
-				<span id="span_category"></span>
-				<input type="button" value="搜索" id="search_new" style="border:1px solid #0000ff; height:21px">
-				<input type="hidden" value="<?php echo $category_id;?>" id="category">
+				<input type="button" value="搜索" id="search_gs" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
 		<tr class="tr2">

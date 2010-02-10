@@ -2,10 +2,34 @@
 	require_once('../../frame.php');
 	judge_role();
 	
+	$title = $_REQUEST['title'];
+	$type = $_REQUEST['type'];
 	$db = get_db();
-	$c = array();
 	$sql = "select * from fb_fh";
-	$record = $db->paginate($sql,5);
+	$record = $db->query($sql);
+	if($title!= '')
+	{
+		if($type == '1')
+		{
+			$sql = "select * from fb_fh where xm like '%".trim($title)."%'";
+			$record = $db->query($sql);
+		}
+		else if ($type == '0')
+		{
+			if ($title == '男')
+			{
+				$sql = "select * from fb_fh where xb = '1'";
+				$record = $db->query($sql);
+			}
+			else if ($title == '女')
+			{
+				$sql = "select * from fb_fh where xb = '0'";
+				$record = $db->query($sql);
+			}
+		}
+	}
+	//var_dump($c)
+	//var_dump($sql)
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -18,9 +42,8 @@
 		css_include_tag('admin');
 		use_jquery();
 		js_include_tag('admin_pub','category_class');
-		$category = new category_class('news');
-		$category->echo_jsdata();		
 	?>
+	<script src="fhgl_search.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -28,14 +51,11 @@
 		<tr class="tr1">
 			<td colspan="5">
 				　<a href="fhgl_edit.php">添加富豪</a>　　　搜索　
-				<input id=title type="text" value="<? echo $_REQUEST['title']?>"><span id="span_category"></span><select id=adopt style="width:90px" class="select_new">
-					<option value="">姓名</option>
-					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>性别</option>
-					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>生日</option>
+				<input id=title type="text" value="<? echo $_REQUEST['title']?>"><select id="type" style="width:90px" class="">
+					<option value="1" <? if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >姓名</option>
+					<option value="0" <? if($_REQUEST['type']=="0"){?>selected="selected"<? }?> >性别</option>
 				</select>
-				<span id="span_category"></span>
-				<input type="button" value="搜索" id="search_new" style="border:1px solid #0000ff; height:21px">
-				<input type="hidden" value="<?php echo $category_id;?>" id="category">
+				<input type="button" value="搜索" id="search_fh" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
 		<tr class="tr2">

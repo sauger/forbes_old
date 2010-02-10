@@ -11,6 +11,10 @@
 	$record->xb = $_POST['fh_xb'];
 	$record->sr = $_POST['fh_sr'];
 	$record->grjl = $_POST['fh_grjl'];
+	if ($_POST['fh_sr'] == '')
+	{
+		$record->sr = '0000-00-00';
+	}
 	$record->save();
 	redirect('fhgl_list.php');
 ?>
