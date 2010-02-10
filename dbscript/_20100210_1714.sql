@@ -38,7 +38,7 @@ CREATE TABLE  `forbes`.`fb_admin_menu` (
   `role_level` int(10) unsigned DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `Index_2` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED;
 
 --
 -- Dumping data for table `forbes`.`fb_admin_menu`
@@ -59,6 +59,7 @@ INSERT INTO `forbes`.`fb_admin_menu` VALUES  (1,'系统管理','#',0,'系统管�
  (11,'用户管理','/admin/user/user_list.php',1,'用户管理',2,'admin_iframe',0,2),
  (12,'数据库管理','/admin/dbadmin/',1,'数据库管理',2,'admin_iframe',0,2),
  (13,'榜单管理','#',0,'榜单管理',100,'admin_iframe',1,2);
+INSERT INTO `forbes`.`fb_admin_menu` VALUES  (14,'公司管理','/admin/gsgl/gsgl_list.php',0,'',100,'admin_iframe',0,1);
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `fb_admin_menu` ENABLE KEYS */;
 
@@ -181,7 +182,7 @@ CREATE TABLE  `forbes`.`fb_gs` (
   `js` text COMMENT '介绍',
   `ssdm` varchar(30) DEFAULT NULL COMMENT '上市公司代码',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `forbes`.`fb_gs`
@@ -189,6 +190,8 @@ CREATE TABLE  `forbes`.`fb_gs` (
 
 /*!40000 ALTER TABLE `fb_gs` DISABLE KEYS */;
 LOCK TABLES `fb_gs` WRITE;
+INSERT INTO `forbes`.`fb_gs` VALUES  (1,'上海迅傲信息科技','上海','上海','中山北路','http://xun-ao.com','<p>sdfas</p>',''),
+ (2,'1','1','1','1','1','<p>1</p>','');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `fb_gs` ENABLE KEYS */;
 
@@ -324,7 +327,7 @@ CREATE TABLE  `forbes`.`fb_video` (
   KEY `Index_2` (`priority`),
   KEY `Index_4` (`is_adopt`),
   KEY `Index_5` (`title`),
-  KEY `Index_6` (`category_id`)
+  KEY `Index_6` (`category_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 --
