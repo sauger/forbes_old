@@ -2,7 +2,7 @@
 	require_once('../../frame.php');
 	
 	$db = get_db();
-	$sql = "select * from fb_fh";
+	$sql = "select * from fb_mr";
 	$record = $db->query($sql);
 	$count = count($record);
 ?>

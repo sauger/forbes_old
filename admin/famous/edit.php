@@ -3,7 +3,7 @@
 	$db = get_db();
 	$id = $_REQUEST['id'];
 	if($id!=''){
-		$famous = new table_class('fh_mr');
+		$famous = new table_class('fb_mr');
 		$famous->find($id);
 	}
 ?>
@@ -48,7 +48,8 @@
 		<tr class=tr4>
 			<td width="130">上传照片</td>
 			<td align="left">
-				<input type="file" name="photo" id="photo"><?php if($id!=''){?><a target="_blank" href="<?php echo $famous->mr_zp?>">点击查看照片</a><?php }?>
+				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
+				<input type="file" name="photo" id="photo">（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $famous->mr_zp?>">点击查看照片</a><?php }?>
 			</td>
 		</tr>
 		<tr class="tr4">
