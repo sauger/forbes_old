@@ -20,6 +20,9 @@
 		$record = new table_class('fb_gs');
 		$record->find($id);
 	}
+	$db = get_db();
+	$sql = "select * from fb_hbgl";
+	$hbzl = $db->query($sql);
 ?>
 
 <body style="background:#E1F0F7">
@@ -57,18 +60,32 @@
 		</tr>
 		<tr class="tr4">
 			<td>上市公司代码</td>
+			<td width="695" align="left"><input id="gs_ssdm" type="text" name="gs[ssdm]" value="<?php echo $record->ssdm;?>">
+		</tr>
+		<tr class="tr4">
+			<td>交易所</td>
 			<td width="695" align="left">
-				<select id="gs_ssdm" name="gs[ssdm]" value="<?php echo $record->ssdm;?>" style="width:90px" class="">
+				<select id="gs_jys" name="gs[jys]" value="<?php echo $record->jys;?>" style="width:90px" class="">
 					<option value="">交易所</option>
-					<option value="SS" <? if($_REQUEST['type']=="SS"){?>selected="selected"<? }?> >上海</option>
-					<option value="SZ" <? if($_REQUEST['type']=="SZ"){?>selected="selected"<? }?> >深圳</option>
-					<option value="HK" <? if($_REQUEST['type']=="HK"){?>selected="selected"<? }?> >香港</option>
-					<option value="SI" <? if($_REQUEST['type']=="SI"){?>selected="selected"<? }?> >新加坡</option>
-					<option value="KS" <? if($_REQUEST['type']=="KS"){?>selected="selected"<? }?> >韩国</option>
-					<option value="PA" <? if($_REQUEST['type']=="PA"){?>selected="selected"<? }?> >法国</option>
-					<option value="L" <? if($_REQUEST['type']=="L"){?>selected="selected"<? }?> >英国</option>
-					<option value="DE" <? if($_REQUEST['type']=="DE"){?>selected="selected"<? }?> >德国</option>
-					<option value="日本" <? if($_REQUEST['type']=="JP"){?>selected="selected"<? }?> >日本</option>
+					<option value="SS" <? if($record->jys=="SS"){?>selected="selected"<? }?> >上海</option>
+					<option value="SZ" <? if($record->jys=="SZ"){?>selected="selected"<? }?> >深圳</option>
+					<option value="HK" <? if($record->jys=="HK"){?>selected="selected"<? }?> >香港</option>
+					<option value="SI" <? if($record->jys=="SI"){?>selected="selected"<? }?> >新加坡</option>
+					<option value="KS" <? if($record->jys=="KS"){?>selected="selected"<? }?> >韩国</option>
+					<option value="PA" <? if($record->jys=="PA"){?>selected="selected"<? }?> >法国</option>
+					<option value="L" <? if($record->jys=="L"){?>selected="selected"<? }?> >英国</option>
+					<option value="DE" <? if($record->jys=="DE"){?>selected="selected"<? }?> >德国</option>
+					<option value="JP" <? if($record->jys=="JP"){?>selected="selected"<? }?> >日本</option>
+				</select>
+		</tr>
+		<tr class="tr4">
+			<td>货币种类</td>
+			<td width="695" align="left">
+				<select id="gs_hbid" name="gs[hbid]" value="<?php echo $record->hbid;?>" style="width:90px" class="">
+					<option value="">货币种类</option>
+					<?php $len = count($hbzl); for ($i=0;$i< $len;$i++) { ?>
+					<option value="<?php echo $hbzl[$i]->id; ?>" <? if($record->hbid==$hbzl[$i]->id){?>selected="selected"<? }?>><?php echo $hbzl[$i]->hb_nc; ?></option>
+					<?php } ?>
 				</select>
 		</tr>
 		<tr class="tr3">

@@ -1,8 +1,9 @@
 $(function(){
 	
-	function post(){
-										window.location.href="?content="+encodeURI($("#content").attr('value'))+"&type="+$("#type").attr('value');
-								 }
+	function post()
+	{
+		window.location.href="?content="+encodeURI($("#content").attr('value'))+"&type="+$("#type").attr('value');
+	}
 						
 	$("#search").click(function(){
 			post();
