@@ -11,21 +11,15 @@
 		use_jquery();
 		js_include_tag('category_class.js');
 	?>
-<!--	<script src="fh_gs.js" type="text/javascript"></script> -->
 </head>
 
 <?php
 	$db = get_db();
 	$id = $_REQUEST['id'];
+	$record = new table_class('fb_fh');
 	if($id!=''){
-		$record = new table_class('fb_fh');
 		$record->find($id);
 	}
-	//$xm = $record->xm;
-	//$sql = "select * from fb_fh_gs where fh_xm = '".$xm."'";
-	//$fh_gs = $db->query($sql);
-	//$sql_gs = "select * from fb_gs";
-	//$fh_gs_mc = $db->query($sql_gs);
 ?>
 
 <body style="background:#E1F0F7">
@@ -45,30 +39,40 @@
 			</td>
 		</tr>
 		<tr class=tr4>
+			<td>年龄</td>
+			<td align="left">
+				<input type="text" size="20" name="fh[nl]"  id="fh_nl"  value="<?php echo $record->nl;?>">
+		</tr>
+		<tr class=tr4>
+			<td>国籍</td>
+			<td align="left">
+				<input type="text" size="20" name="fh[gj]"  id="fh_gj"  value="<?php echo $record->gj;?>">
+		</tr>
+		<tr class=tr4>
 			<td>生日</td>
 			<td align="left">
 				<input type="text" size="20" name="fh[sr]"  id="fh_sr"  value="<?php echo $record->sr;?>">(YYYY-MM-DD)
 		</tr>
-<!--
-		$len = count($fh_gs);
-		<?php for ($i=0;$i< $len;$i++) { ?>
-		<tr class=tr4>	
-			<td width="130">公司</td><td width="200" align="left"><?php echo $fh_gs[$i]->gs_mc; ?><input type="button" class="del" id="gs_del" value="删除" name="<?php echo $fh_gs[$i]->id;?> "></td>
-		</tr>
-		<input type="hidden" id="db_table" value="fb_fh_gs">
-		<?php } ?>
 		<tr class=tr4>
-			<td width="130">公司</td>
+			<td>年度排名</td>
 			<td align="left">
-				<select id="gsmc" style="width:90px" class="">
-					<option value="">请选择</option>
-					<?php for ($i=0;$i<count($fh_gs_mc);$i++) { ?>
-					<option value="<?php echo $fh_gs_mc[$i]->mc; ?>"><?php echo $fh_gs_mc[$i]->mc; ?></option>
-					<?php } ?>
-				</select><input type="button" id="gs_add" value="添加">
-			</td>
+				<input type="text" size="20" name="fh[ndpm]"  id="fh_ndpm"  value="<?php echo $record->ndpm;?>">
 		</tr>
--->
+		<tr class=tr4>
+			<td>今日排名</td>
+			<td align="left">
+				<input type="text" size="20" name="fh[jrpm]"  id="fh_jrpm"  value="<?php echo $record->jrpm;?>">
+		</tr>
+		<tr class=tr4>
+			<td>个人财富</td>
+			<td align="left">
+				<input type="text" size="20" name="zc"  id="zc"  value="
+				<?php
+						$sql = "select * from fb_fh_grcf where fh_id = '".$record->id."' order by jzrq desc";
+  					$record1 = $db->query($sql);
+						echo strip_tags($record1[0]->zc);
+				?>">
+		</tr>
 		<tr id=newsshow1 class="normal_news tr4">
 			<td height=265>个人经历</td><td><?php show_fckeditor('fh[grjl]','Admin',true,"265",$record->grjl);?></td>
 		</tr>

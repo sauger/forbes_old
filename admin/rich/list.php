@@ -40,12 +40,13 @@
 		$sql = "select * from fb_fh";
 	}
   $record = $db->paginate($sql,15);
+
 ?>
 
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="5">
+			<td colspan="10">
 				　<a href="edit.php">添加富豪</a>　　　搜索　
 				<input id="content" type="text" value="<? echo $_REQUEST['content']?>"><select id="type" style="width:90px" class="">
 					<option value="1" <?php if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >姓名</option>
@@ -55,7 +56,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">姓名</td><td width="110">性别</td><td width="130">生日</td><td width="230">个人经历</td><td width="210">操作</td>
+			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">生日</td><td width="130">年度排名</td><td width="130">今日排名</td><td width="130">个人财富</td><td width="230">个人经历</td><td width="210">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -68,7 +69,26 @@
 						<?php if($record[$i]->xb==0) {echo 女;} else if($record[$i]->xb==1) {echo 男;} else {echo 未知;} ?>
 					</td>
 					<td>
+						<?php echo strip_tags($record[$i]->nl);?>
+					</td>
+					<td>
+						<?php echo strip_tags($record[$i]->gj);?>
+					</td>
+					<td>
 						<?php echo strip_tags($record[$i]->sr);?>
+					</td>
+					<td>
+						<?php echo strip_tags($record[$i]->ndpm);?>
+					</td>
+					<td>
+						<?php echo strip_tags($record[$i]->jrpm);?>
+					</td>
+					<td>
+						<?php
+								  $sql1 = "select * from fb_fh_grcf where fh_id = '".$record[$i]->id."' order by jzrq desc";
+  								$record1 = $db->query($sql1);
+									echo strip_tags($record1[0]->zc);
+						?>
 					</td>
 					<td>
 						<?php echo strip_tags($record[$i]->grjl);?>
