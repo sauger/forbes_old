@@ -29,9 +29,9 @@
 ?>
 
 <body>
-	<table width="795" border="0" id="list">
+	<table width=800" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="8">
+			<td colspan="11">
 				　<a href="edit.php">添加公司</a>　　　搜索　
 				<input id="content" type="text" value="<? echo $_REQUEST['content']?>"><select id="type" style="width:90px" class="">
 					<option value="mc" <? if($_REQUEST['type']=="mc"){?>selected="selected"<? }?> >名称</option>
@@ -45,7 +45,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="100">名称</td><td width="40">省份</td><td width="40">城市</td><td width="100">地址</td><td width="80">网址</td><td width="80">介绍</td><td width="100">上市公司代码</td><td width="50">操作</td>
+			<td width="100">名称</td><td width="40">国家</td><td width="40">省份</td><td width="40">城市</td><td width="100">地址</td><td width="80">网址</td><td width="80">介绍</td><td width="100">上市公司代码</td><td width="50">交易所</td><td width="60">货币种类</td><td width="70">操作</td>
 		</tr>
 		<?php
 			$len = count($record);
@@ -53,6 +53,9 @@
 		?>
 				<tr class="tr3" id=<?php echo $record[$i]->id;?> >
 					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->mc);?></a></td>
+					<td>
+						<?php echo strip_tags($record[$i]->gj);?>
+					</td>
 					<td>
 						<?php echo strip_tags($record[$i]->sf);?>
 					</td>
@@ -70,6 +73,52 @@
 					</td>
 					<td>
 						<?php echo strip_tags($record[$i]->ssdm);?>
+					</td>
+					<td>
+						<?php
+								switch ($record[$i]->jys)
+									{
+										case SS:
+  										echo "上海";
+  										break;  
+										case SZ:
+  										echo "深圳";
+  										break;  
+										case HK:
+  										echo "香港";
+  										break;  
+										case SI:
+  										echo "新加坡";
+  										break;
+  									case KS:
+  										echo "韩国";
+  										break;  
+  									case PA:
+  										echo "法国";
+  										break;
+  									case L:
+  										echo "英国";
+  										break;   
+  									case DE:
+  										echo "德国";
+  										break;   
+  									case JP:
+  										echo "日本";
+  										break;
+  									default:
+											echo "";
+									}
+						?>
+					</td>
+					<td>
+						<?php
+							$hbzl = new table_class('fb_hbgl');
+							if ($record[$i]->hbid != '')
+							{
+								$hbzl->find($record[$i]->hbid);
+								echo $hbzl->hb_nc;
+							}	
+						?>
 					</td>
 					<td>
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
