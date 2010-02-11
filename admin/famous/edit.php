@@ -17,7 +17,7 @@
 	<?php 
 		css_include_tag('admin');
 		use_jquery();
-		validate_form("news_edit");
+		validate_form("famous_edit");
 	?>
 </head>
 <body style="background:#E1F0F7">
@@ -29,27 +29,27 @@
 		<tr class=tr4>
 			<td width="130">姓名</td>
 			<td width="695" align="left">
-				<input type="text" name="mr[name]" value="<?php echo $famous->name;?>">
+				<input type="text" name="mr[name]" value="<?php echo $famous->name;?>" class="required">
 			</td>
 		</tr>
 		<tr class=tr4>
 			<td>性别</td>
 			<td align="left">
-				<input type="radio" name="mr[xb]" value="0" <?php if($famous->xb=='女'){ ?>checked="checked"<?php } ?>>女
-				<input type="radio" name="mr[xb]" value="1" <?php if($famous->xb=='男'){ ?>checked="checked"<?php } ?>>男
+				<input type="radio" name="mr[xb]" value="女" <?php if($famous->xb=='女'){ ?>checked="checked"<?php } ?> class="required">女
+				<input type="radio" name="mr[xb]" value="男" <?php if($famous->xb=='男'){ ?>checked="checked"<?php } ?> class="required">男
 			</td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">职业</td>
 			<td align="left">
-				<input type="text" name="mr[zy]" value="<?php echo $famous->zy;?>">
+				<input type="text" name="mr[zy]" value="<?php echo $famous->zy;?>" class="required">
 			</td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">上传照片</td>
 			<td align="left">
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
-				<input type="file" name="photo" id="photo">（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $famous->mr_zp?>">点击查看照片</a><?php }?>
+				<input type="file" name="photo" id="photo" <?php if($id=='')echo 'class="required"';?>>（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $famous->mr_zp?>">点击查看照片</a><?php }?>
 			</td>
 		</tr>
 		<tr class="tr4">

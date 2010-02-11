@@ -1,13 +1,16 @@
 <?php
 	require_once('../../frame.php');
+	
 	$search = $_REQUEST['search'];
-	
+	$year = $_REQUEST['year'];
 	$db = get_db();
-	$sql = "select name,zy,xb,id from fb_mr where 1=1";
+	$sql = "select t1.id,t1.pm,t1.sr,t1.bgl,t1.year,t2.name from fb_mrbd t1 join fb_mr t2 on t1.mr_id=t2.id";
 	if($search!=''){
-		$sql .= " and (name like '%{$search}%' or zy like '%{$search}%' or mr_jj like '%{$search}%')";
+		$sql .= " and (name like '%{$search}%' or sbly like '%{$search}%')";
 	}
-	
+	if($year!=''){
+		$sql .=" and year=".$year;
+	}
 	$record = $db->paginate($sql,15);
 	$count = count($record);
 ?>
@@ -21,41 +24,48 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub','admin/famous/famous');
+		js_include_tag('admin_pub','admin/famous/famous_list');
 	?>
 </head>
 
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="5">
-				　<a href="edit.php">添加名人</a>　　　搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
+			<td colspan="6">
+				　搜索　
+				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">　
+				 年份<select id="year">
+				 	<option value=""></option>
+					<?php for($i=2005;$i<=date("Y");$i++){?>
+					<option <?php if($year==$i)echo 'selected="selected"';?> value="<?php echo $i?>"><?php echo $i?></option>
+					<?php }?>
+				</select>　
 				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="215">姓名</td><td width="210">职业</td><td width="130">性别</td><td width="210">操作</td>
+			<td width="115">姓名</td><td width="100">年份</td><td width="110">排名</td><td width="130">收入</td><td width="100">曝光率</td><td width="210">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
 					<td><?php echo $record[$i]->name;?></td>
-					<td><?php echo $record[$i]->zy;?></td>
-					<td><?php echo $record[$i]->xb;?></td>
+					<td><?php echo $record[$i]->year;?></td>
+					<td><?php echo $record[$i]->pm;?></td>
+					<td><?php echo $record[$i]->sr;?></td>
+					<td><?php echo $record[$i]->bgl;?></td>
 					<td>
-						<a href="/admin/famous_list/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">加入榜单</a>
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_mr">
+				<input type="hidden" id="db_table" value="fb_mrbd">
 		<?php
 			}
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate();?></td>
+			<td colspan=6><?php paginate();?></td>
 		</tr>
 	</table>
 </body>
