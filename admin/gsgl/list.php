@@ -45,7 +45,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="100">名称</td><td width="40">省份</td><td width="40">城市</td><td width="100">地址</td><td width="80">网址</td><td width="80">介绍</td><td width="100">上市公司代码</td><td width="50">操作</td>
+			<td width="100">名称</td><td width="40">国家</td><td width="40">省份</td><td width="40">城市</td><td width="100">地址</td><td width="80">网址</td><td width="80">介绍</td><td width="100">上市公司代码</td><td width="50">操作</td>
 		</tr>
 		<?php
 			$len = count($record);
@@ -53,6 +53,9 @@
 		?>
 				<tr class="tr3" id=<?php echo $record[$i]->id;?> >
 					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->mc);?></a></td>
+					<td>
+						<?php echo strip_tags($record[$i]->gj);?>
+					</td>
 					<td>
 						<?php echo strip_tags($record[$i]->sf);?>
 					</td>
