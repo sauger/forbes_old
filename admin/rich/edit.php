@@ -9,7 +9,7 @@
 		judge_role();
 		css_include_tag('admin','thickbox');
 		use_jquery();
-		js_include_tag('category_class.js');
+		js_include_tag('category_class.js','admin_pub');
 	?>
 </head>
 
@@ -20,6 +20,10 @@
 	if($id!=''){
 		$record->find($id);
 	}
+	$sql_fh_gs = "select * from fb_fh a,fb_gs b,fb_fh_gs c where c.fh_id = a.id and c.gs_id = b.id and c.fh_id ='".$id."'";
+	$record2 = $db-> query($sql_fh_gs);
+	$sql_gs = "select * from fb_gs";
+	$gs_id = $db->query($sql_gs);
 ?>
 
 <body style="background:#E1F0F7">
@@ -63,6 +67,26 @@
 			<td align="left">
 				<input type="text" size="20" name="fh[jrpm]"  id="fh_jrpm"  value="<?php echo $record->jrpm;?>">
 		</tr>
+		
+
+		<?php $len = count($record2); for ($i=0;$i< $len;$i++) { ?>
+		<tr class=tr4 id=<?php echo $record2[$i]->id;?>>	
+			<td width="130">公司</td><td width="200" align="left"><?php echo $record2[$i]->mc; ?><input type="button" value= "删除" class="del" name="<?php echo $record2[$i]->id;?>"></td> 
+		</tr>
+		<input type="hidden" id="db_table" value="fb_fh_gs">
+		<?php } ?>
+		<tr class=tr4>
+			<td width="130">公司</td>
+			<td align="left">
+				<select id="gsid" name="gsid" style="width:90px" class="">
+					<option value="">请选择</option>
+					<?php $len1 = count($gs_id); for ($i=0;$i< $len1;$i++) { ?>
+					<option value="<?php echo $gs_id[$i]->id; ?>"><?php echo $gs_id[$i]->mc; ?></option>
+					<?php } ?>
+				</select><input type="submit" value="添加">
+			</td>
+		</tr>
+		
 		<tr class=tr4>
 			<td>个人财富</td>
 			<td align="left">

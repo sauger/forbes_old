@@ -10,4 +10,4 @@ CREATE TABLE  `forbes`.`fb_fh` (
   `jrpm` varchar(100) default NULL COMMENT '今日排名',
   `gj` varchar(100) default NULL COMMENT '国籍',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;

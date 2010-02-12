@@ -29,7 +29,7 @@
 ?>
 
 <body>
-	<table width=800" border="0" id="list">
+	<table width="800" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="11">
 				　<a href="edit.php">添加公司</a>　　　搜索　

@@ -40,13 +40,12 @@
 		$sql = "select * from fb_fh";
 	}
   $record = $db->paginate($sql,15);
-
 ?>
 
 <body>
-	<table width="795" border="0" id="list">
+	<table width="800" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="10">
+			<td colspan="11">
 				　<a href="edit.php">添加富豪</a>　　　搜索　
 				<input id="content" type="text" value="<? echo $_REQUEST['content']?>"><select id="type" style="width:90px" class="">
 					<option value="1" <?php if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >姓名</option>
@@ -56,7 +55,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">生日</td><td width="130">年度排名</td><td width="130">今日排名</td><td width="130">个人财富</td><td width="230">个人经历</td><td width="210">操作</td>
+			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">生日</td><td width="130">年度排名</td><td width="130">今日排名</td><td width="130">个人财富</td><td width="130">拥有公司</td><td width="230">个人经历</td><td width="210">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -88,6 +87,18 @@
 								  $sql1 = "select * from fb_fh_grcf where fh_id = '".$record[$i]->id."' order by jzrq desc";
   								$record1 = $db->query($sql1);
 									echo strip_tags($record1[0]->zc);
+						?>
+					</td>
+					<td>
+						<?php 
+									$sql2 = "select * from fb_fh_gs a,fb_gs b where a.gs_id= b.id and a.fh_id = '".$record[$i]->id."'";
+									$record2 = $db->query($sql2);
+									$len1 = count($record2);
+									echo strip_tags($record2[0]->mc);
+									for ($k=1;$k< $len1;$k++)
+									{
+										echo ",".strip_tags($record2[$k]->mc);
+									}
 						?>
 					</td>
 					<td>
