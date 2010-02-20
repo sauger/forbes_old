@@ -5,8 +5,12 @@
 	$title = $_REQUEST['title'];
 	$category_id = $_REQUEST['category'] ? $_REQUEST['category'] : -1;
 	$is_adopt = $_REQUEST['adopt'];
+	$language_tag = $_REQUEST['language_tag'];
 	$db = get_db();
 	$c = array();
+	if($language_tag != ''){
+		array_push($c, "language_tag=$language_tag");
+	}		
 	if($title!= ''){
 		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'");
 	}
@@ -29,7 +33,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub','category_class');
+		js_include_tag('admin_pub','category_class','admin/pub/search','admin/news/news_list');
 		$category = new category_class('news');
 		$category->echo_jsdata();		
 	?>
@@ -39,15 +43,21 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">
-				　<a href="news_edit.php">发布新闻</a>　　　搜索　
-				<input id=title type="text" value="<? echo $_REQUEST['title']?>"><span id="span_category"></span><select id=adopt style="width:90px" class="select_new">
+				　<a href="news_edit.php" id="add_news">发布新闻</a>　　　搜索　
+				<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
+				<span id="span_category"></span>
+				<select id=adopt name="adopt" style="width:90px" class="sau_search">
 					<option value="">发布状况</option>
 					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已发布</option>
 					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未发布</option>
 				</select>
-				<span id="span_category"></span>
-				<input type="button" value="搜索" id="search_new" style="border:1px solid #0000ff; height:21px">
-				<input type="hidden" value="<?php echo $category_id;?>" id="category">
+				<select id="language_tag" name="language_tag" class="sau_search">
+					<option value="">发布语言</option>
+					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
+					<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
+				</select>
+				<input class="sau_search" id="search_category" name ="category_id" type="hidden"></input>
+				<input type="button" value="搜索" id="search_button" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
 		<tr class="tr2">
@@ -96,12 +106,8 @@
 		category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){
 			$('#category').val(id);
 			category_id = $('.category_select:last').val();
-			if (id == -1) {
-				window.location.href = "?title=" + $("#title").attr('value') +  "&category=&adopt=" + $("#adopt").attr('value');
-			}
-			if (category_id != -1) {
-				window.location.href = "?title=" + $("#title").attr('value') +  "&category=" + $("#category").attr('value') + "&adopt=" + $("#adopt").attr('value');
-			}
+			$('#search_category').val(id);
+			search_news();
 		});
-	})
+	});
 </script>

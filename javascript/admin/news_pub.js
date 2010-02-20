@@ -7,6 +7,7 @@ $(function(){
 	$('#td_newstype input').click(function(){
 		toggle_news_type();
 	});
+	toggle_news_type();
 });
 
 
