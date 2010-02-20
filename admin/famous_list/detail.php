@@ -33,7 +33,7 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="6">
-				 <?php if ($year != ''){ ?><a href="edit.php?year=<?php echo $year; ?>">添加名人</a> <?php } ?>  搜索　
+				 <?php if ($year != ''){ echo $year; ?>名人榜单   <a href="edit.php?year=<?php echo $year; ?>">添加名人</a> <?php } ?>  搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
 				 年份<select id="searchyear">
 				 	<option value=""></option>

@@ -14,7 +14,6 @@
 		$famous = new table_class('fb_mr');
 		$famous->find($f_id);
 	}
-	
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -43,7 +42,7 @@
 				<?php } else { ?>
 				<select name="bd[mr_id]">
 					<?php 
-						$sql = "select * from fb_mr";
+						$sql = "select * from fb_mr where id not in (select mr_id from fb_mrbd where year = '{$year}')";
 						$record = $db->query($sql);
 						$count = count($record);
 						for($i=0;$i< $count;$i++){ 
@@ -60,7 +59,7 @@
 				<?php if ($year == '') { ?>
 				<select name="bd[year]" id="bd[year]">
 					<?php 
-						$sql = "select * from fb_mrb order by year asc";
+						$sql = "select * from fb_mrb where year not in (select year from fb_mrbd where mr_id = '{$f_id}') order by year asc";
 						$record = $db->query($sql);
 						$count = count($record);
 						for($i=0;$i< $count;$i++){
