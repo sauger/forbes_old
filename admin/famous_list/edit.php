@@ -3,6 +3,7 @@
 	$db = get_db();
 	$id = $_REQUEST['id'];
 	$f_id = $_REQUEST['f_id'];
+	$year = $_REQUEST['year'];
 	if($id!=''){
 		$f_bd = new table_class('fb_mrbd');
 		$f_bd->find($id);
@@ -13,9 +14,6 @@
 		$famous = new table_class('fb_mr');
 		$famous->find($f_id);
 	}
-	$sql = "select * from fb_mrb order by year asc";
-	$record = $db->query($sql);
-	$count = count($record);
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -39,17 +37,40 @@
 		<tr class=tr4>
 			<td width="130">姓名</td>
 			<td width="695" align="left">
-				<?php echo $famous->name;?><input type="hidden" name="bd[mr_id]" value="<?php echo $famous->id;?>">
+				<?php if ($year == ''){ echo $famous->name; ?>
+				<input type="hidden" name="bd[mr_id]" value="<?php echo $famous->id;?>">
+				<?php } else { ?>
+				<select name="bd[mr_id]">
+					<?php 
+						$sql = "select * from fb_mr where id not in (select mr_id from fb_mrbd where year = '{$year}')";
+						$record = $db->query($sql);
+						$count = count($record);
+						for($i=0;$i< $count;$i++){ 
+					?>
+					<option value="<?php echo $record[$i]->id?>"><?php echo $record[$i]->name; ?></option>
+					<?php }?>
+				</select>
+				<?php }?>
 			</td>
 		</tr>
 		<tr class=tr4>
 			<td>年份</td>
 			<td align="left">
+				<?php if ($year == '') { ?>
 				<select name="bd[year]" id="bd[year]">
-					<?php for($i=0;$i< $count;$i++){?>
+					<?php 
+						$sql = "select * from fb_mrb where year not in (select year from fb_mrbd where mr_id = '{$f_id}') order by year asc";
+						$record = $db->query($sql);
+						$count = count($record);
+						for($i=0;$i< $count;$i++){
+					?>
 					<option <?php if($f_bd->year==$record[$i]->year)echo 'selected="selected"';?> value="<?php echo $record[$i]->year?>"><?php echo $record[$i]->year?></option>
 					<?php }?>
 				</select>
+				<?php } else { ?>
+					<?php echo $year;?><input type="hidden" name="bd[year]" value="<?php echo $year;?>"> 
+				<?php }?>
+				
 			</td>
 		</tr>
 		<tr class=tr4>
