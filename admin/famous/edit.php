@@ -17,7 +17,7 @@
 	<?php 
 		css_include_tag('admin');
 		use_jquery();
-		validate_form("famous_edit");
+		//validate_form("famous_edit");
 	?>
 </head>
 <body style="background:#E1F0F7">

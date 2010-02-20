@@ -2,7 +2,6 @@
  * @author sauger
  */
 $(function(){
-	
 	$('#news_edit').submit(function(){		
 		var video_array = new Array('flv','wmv','wav','mp3','mp4','avi','rm');
 		var pic_array = new Array('jpg','png','bmp','gif','icon');
@@ -51,7 +50,7 @@ $(function(){
 			alert('请选择分类!');
 			return false;
 		}
-		$('#category_id').attr('value',category_id);
+		$('#category_id').val(category_id);
 		news_type=  $('#td_newstype').find('input:checked').attr('value');
 		if(news_type == 3){
 			if($('#target_url input').attr('value')== ''){
@@ -64,7 +63,21 @@ $(function(){
 		}
 				
 		return true;
-	});
+	});	
 	
+	$('#delete_english_news').click(function(e){
+		e.preventDefault();
+		if(!window.confirm("确定要删除吗"))
+		{
+			return false;
+		}
+		else
+		{
+			$.post("/admin/news/delete_english_news.post.php",{'del_id':$(this).attr('href'),'ch_id':$('#hidden_news_id').val()},function(data){
+				//$("#"+data).remove();
+				window.location.reload();
+			});
+		}
+	});
 
 });

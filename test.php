@@ -6,15 +6,15 @@
 		<title>测试</title>
 		<?php
 		
-		#include "frame.php";
-		#use_jquery();
-		#js_include_tag('jquery-ui-1.7.2.custom.min.js','jquery.scrollTo.js');
+		include "frame.php";
+		use_jquery();
+		js_include_tag('jquery-ui-1.7.2.custom.min.js');
 		?>
 	</head>
 	<body>
 	dfads
 		<?php 
-			phpinfo();
+			#phpinfo();
 		?>
 
 	<div id="msg"></div>

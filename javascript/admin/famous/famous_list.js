@@ -14,5 +14,5 @@ $(function(){
 })
 
 function search(){
-	window.location.href="?search="+encodeURI($("#search").attr('value'))+"&year="+$("#year").val();
+	window.location.href="?search="+encodeURI($("#search").attr('value'))+"&searchyear="+$("#searchyear").val();
 }
