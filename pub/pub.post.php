@@ -8,7 +8,6 @@
 			echo $_POST['del_id'];
 		
 	}
-	
 	elseif("edit"==$_POST['post_type'])
 	{
 		if($_POST['id']!='')$post -> find($_POST['id']);

@@ -73,7 +73,6 @@
 		<tr class=tr4 id=<?php echo $record2[$i]->id;?>>	
 			<td width="130">公司</td><td width="200" align="left"><?php echo $record2[$i]->mc; ?><input type="button" value= "删除" class="del" name="<?php echo $record2[$i]->id;?>"></td> 
 		</tr>
-		<input type="hidden" id="db_table" value="fb_fh_gs">
 		<?php } ?>
 		<tr class=tr4>
 			<td width="130">公司</td>
