@@ -13,7 +13,9 @@
 		$famous = new table_class('fb_mr');
 		$famous->find($f_id);
 	}
-	
+	$sql = "select * from fb_mrb order by year asc";
+	$record = $db->query($sql);
+	$count = count($record);
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -25,7 +27,7 @@
 	<?php 
 		css_include_tag('admin');
 		use_jquery();
-		validate_form("fbd_edit");
+		//validate_form("fbd_edit");
 	?>
 </head>
 <body style="background:#E1F0F7">
@@ -43,9 +45,9 @@
 		<tr class=tr4>
 			<td>年份</td>
 			<td align="left">
-				<select name="bd[year]">
-					<?php for($i=2005;$i<=date("Y");$i++){?>
-					<option <?php if($f_bd->year==$i)echo 'selected="selected"';?> value="<?php echo $i?>"><?php echo $i?></option>
+				<select name="bd[year]" id="bd[year]">
+					<?php for($i=0;$i< $count;$i++){?>
+					<option <?php if($f_bd->year==$record[$i]->year)echo 'selected="selected"';?> value="<?php echo $record[$i]->year?>"><?php echo $record[$i]->year?></option>
 					<?php }?>
 				</select>
 			</td>

@@ -5,12 +5,11 @@
 	$title = $_REQUEST['title'];
 	$category_id = $_REQUEST['category'] ? $_REQUEST['category'] : -1;
 	$is_adopt = $_REQUEST['adopt'];
-	$language_tag = $_REQUEST['language_tag'];
+	$language_tag = $_REQUEST['language_tag'] ? $_REQUEST['language_tag'] : 0;
+	
 	$db = get_db();
 	$c = array();
-	if($language_tag != ''){
-		array_push($c, "language_tag=$language_tag");
-	}		
+	array_push($c, "language_tag=$language_tag");
 	if($title!= ''){
 		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'");
 	}
@@ -51,8 +50,7 @@
 					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已发布</option>
 					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未发布</option>
 				</select>
-				<select id="language_tag" name="language_tag" class="sau_search">
-					<option value="">发布语言</option>
+				<select id="language_tag" name="language_tag" class="sau_search">					
 					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
 					<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
 				</select>

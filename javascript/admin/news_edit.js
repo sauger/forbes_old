@@ -65,12 +65,19 @@ $(function(){
 		return true;
 	});	
 	
-	$('#add_english_news').colorbox(
-			{
-				href:$(this).attr('href'),
-				initialWidth:"100%",
-				initialHeight:"100%"
-			}	
-	);
+	$('#delete_english_news').click(function(e){
+		e.preventDefault();
+		if(!window.confirm("确定要删除吗"))
+		{
+			return false;
+		}
+		else
+		{
+			$.post("/admin/news/delete_english_news.post.php",{'del_id':$(this).attr('href'),'ch_id':$('#hidden_news_id').val()},function(data){
+				//$("#"+data).remove();
+				window.location.reload();
+			});
+		}
+	});
 
 });

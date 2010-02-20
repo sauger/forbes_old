@@ -1,7 +1,6 @@
 <?php 
 	require "../../frame.php";
 	$id = $_POST['id'];
-	
 	$f_bd = new table_class('fb_mrbd');
 	if($id!=''){
 		$f_bd->find($id);
@@ -19,5 +18,6 @@
 		$f_bd->zp = "/upload/famous_images/{$img}";
 	}
 	$f_bd->save();
-	redirect('index.php');
+	$year = $f_bd->year;
+	redirect("detail.php?year=".$year);
 ?>
