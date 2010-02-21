@@ -35,7 +35,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="215">名称</td><td width="110">代码</td><td width="150">汇率（RMB）</td><td width="160">操作</td>
+			<td width="215">名称</td><td width="110">代码</td><td width="150">汇率（1:RMB）</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -44,9 +44,6 @@
 					<td><input style="border:none;" type="text" value="<?php echo $record[$i]->name;?>"></input></td>
 					<td><?php echo $record[$i]->code;?></td>
 					<td><?php echo $record[$i]->rate;?></td>
-					<td>
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-					</td>
 				</tr>
 				<input type="hidden" id="db_table" value="fb_hbgl">
 		<?php
