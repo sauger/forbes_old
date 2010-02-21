@@ -32,7 +32,10 @@
 	<form id="fbd_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑富豪榜单";}else{echo "添加富豪榜单";}?></td>
+			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑富豪榜单";}else{echo "添加富豪榜单";}?>
+			<?php if ($f_id != ''){?><a href="/admin/rich/list.php" style="cursor:pointer">返回列表</a>	<?php }?>
+			<?php if ($year != ''){?><a href="/admin/rich_list/detail.php?year=<?php echo $year; ?>" style="cursor:pointer">返回列表</a>	<?php }?>	
+			</td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">姓名</td>
@@ -96,7 +99,7 @@
 			<td align="left">
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
 				<span id="use_fh" style="cursor:pointer;">使用名人照片</span>
-				<input type="file" name="photo" id="photo"  >（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $f_bd->zp?>">点击查看照片</a><?php }?>
+				<input type="file" name="photo" id="photo"  >（请上传小于2M的照片）<?php if( $id != '') { ?><a target="_blank" href="<?php echo $f_bd->zp; ?>" >点击查看照片</a><?php }?>
 				<input type="hidden" value="<?php echo $f_bd->zp;?>" id="bd_zp" name="fh[zp]">
 			</td>
 		</tr>
