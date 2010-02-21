@@ -3,9 +3,9 @@
 	$search = $_REQUEST['search'];
 	
 	$db = get_db();
-	$sql = "select * from fb_hbgl where 1=1";
+	$sql = "select * from fb_currency where 1=1";
 	if($search!=''){
-		$sql .= " and (hb_nc like '%{$search}%' or hb_dv like '%{$search}%' or hb_gj like '%{$search}%')";
+		$sql .= " and (name like '%{$search}%' or code like '%{$search}%')";
 	}
 	
 	$record = $db->paginate($sql,15);
@@ -21,7 +21,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub','admin/famous/famous');
+		js_include_tag('admin_pub','admin/currency/index');
 	?>
 </head>
 
@@ -29,26 +29,21 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">
-				　<a href="edit.php">添加货币</a>　　　搜索　
+				　　　　搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
 				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="215">名称</td><td width="110">单位</td><td width="130">国家</td><td width="150">比率</td><td width="160">操作</td>
+			<td width="215">名称</td><td width="110">代码</td><td width="150">汇率（1:RMB）</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
-					<td><?php echo $record[$i]->hb_nc;?></td>
-					<td><?php echo $record[$i]->hb_dv;?></td>
-					<td><?php echo $record[$i]->hb_gj;?></td>
-					<td><?php echo $record[$i]->hb_hl;?></td>
-					<td>
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
-					</td>
+					<td><input style="border:none;" type="text" value="<?php echo $record[$i]->name;?>"></input></td>
+					<td><?php echo $record[$i]->code;?></td>
+					<td><?php echo $record[$i]->rate;?></td>
 				</tr>
 				<input type="hidden" id="db_table" value="fb_hbgl">
 		<?php
