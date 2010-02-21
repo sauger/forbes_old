@@ -10,6 +10,7 @@
 		css_include_tag('admin','thickbox');
 		use_jquery();
 		js_include_tag('category_class.js','admin_pub');
+		validate_form("fhgl_edit");
 	?>
 </head>
 
@@ -33,7 +34,7 @@
 			<td colspan="2" width="795">　　编辑富豪</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">姓名</td><td width="695" align="left"><input id="fh_xm" type="text" name="fh[xm]" value="<?php echo $record->xm;?>">
+			<td width="130">姓名</td><td width="695" align="left"><input id="fh_name" type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
 		</tr>
 		<tr class=tr4>
 			<td>性别</td>
@@ -55,12 +56,7 @@
 		<tr class=tr4>
 			<td>生日</td>
 			<td align="left">
-				<input type="text" size="20" name="fh[sr]"  id="fh_sr"  value="<?php echo $record->sr;?>">(YYYY-MM-DD)
-		</tr>
-		<tr class=tr4>
-			<td>年度排名</td>
-			<td align="left">
-				<input type="text" size="20" name="fh[ndpm]"  id="fh_ndpm"  value="<?php echo $record->ndpm;?>">
+				<input type="text" size="20" name="fh[birthday]"  id="fh_birthday"  value="<?php echo $record->birthday;?>">(YYYY-MM-DD)
 		</tr>
 		<tr class=tr4>
 			<td>今日排名</td>
@@ -95,6 +91,13 @@
   					$record1 = $db->query($sql);
 						echo strip_tags($record1[0]->zc);
 				?>">
+		</tr>
+		<tr class=tr4>
+			<td width="130">上传照片</td>
+			<td align="left">
+				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
+				<input type="file" name="photo" id="photo" >（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $record->fh_zp?>">点击查看照片</a><?php }?>
+			</td>
 		</tr>
 		<tr id=newsshow1 class="normal_news tr4">
 			<td height=265>个人经历</td><td><?php show_fckeditor('fh[grjl]','Admin',true,"265",$record->grjl);?></td>
