@@ -9,14 +9,13 @@
 		judge_role();
 		css_include_tag('admin','thickbox');
 		use_jquery();
-		js_include_tag('category_class.js','admin_pub');
 	?>
 </head>
 
 <?php
 	$db = get_db();
 	$id = $_REQUEST['id'];
-	$record = new table_class('fb_mrb');
+	$record = new table_class('fb_fhb');
 	if ($id != '')
 	{
 		$record->find($id);
@@ -30,7 +29,7 @@
 			<td colspan="2" width="795">　　编辑榜单</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">年份</td><td width="695" align="left"><input id="mrb_year" type="text" name="mrb[year]" value="<?php echo $record->year;?>">
+			<td width="130">年份</td><td width="695" align="left"><input id="fhb_year" type="text" name="fhb[year]" value="<?php echo $record->year;?>">
 		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>

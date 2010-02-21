@@ -21,7 +21,7 @@
 	{
 		if($type == '1')
 		{
-			$sql = "select * from fb_fh where xm like '%".trim($content)."%'";
+			$sql = "select * from fb_fh where name like '%".trim($content)."%'";
 		}
 		else if ($type == '0')
 		{
@@ -45,7 +45,7 @@
 <body>
 	<table width="800" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="11">
+			<td colspan="10">
 				　<a href="edit.php">添加富豪</a>　　　搜索　
 				<input id="content" type="text" value="<? echo $_REQUEST['content']?>"><select id="type" style="width:90px" class="">
 					<option value="1" <?php if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >姓名</option>
@@ -55,7 +55,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">生日</td><td width="130">年度排名</td><td width="130">今日排名</td><td width="130">个人财富</td><td width="130">拥有公司</td><td width="230">个人经历</td><td width="210">操作</td>
+			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">生日</td><td width="130">今日排名</td><td width="100">个人财富</td><td width="100">拥有公司</td><td width="230">个人经历</td><td width="210">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -63,7 +63,7 @@
 			for($i=0;$i< $len ;$i++){
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
-					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->xm);?></a></td>
+					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->name);?></a></td>
 					<td>
 						<?php if($record[$i]->xb==0) {echo 女;} else if($record[$i]->xb==1) {echo 男;} else {echo 未知;} ?>
 					</td>
@@ -74,10 +74,7 @@
 						<?php echo strip_tags($record[$i]->gj);?>
 					</td>
 					<td>
-						<?php echo strip_tags($record[$i]->sr);?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->ndpm);?>
+						<?php echo strip_tags($record[$i]->birthday);?>
 					</td>
 					<td>
 						<?php echo strip_tags($record[$i]->jrpm);?>
@@ -105,6 +102,7 @@
 						<?php echo strip_tags($record[$i]->grjl);?>
 					</td>
 					<td>
+						<a href="/admin/rich_list/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">加入榜单</a>
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>

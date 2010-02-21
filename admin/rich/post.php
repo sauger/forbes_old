@@ -12,9 +12,20 @@
 		$record->find($fh_id);
 	}
 	$record->update_attributes($_POST['fh'],false);
-	if ($_POST['fh[sr]'] == '')
+	if ($_POST['fh[birthday]'] == '')
 	{
-		$record->sr = '0000-00-00';
+		$record->birthday = '0000-00-00';
+	}
+	if($_FILES['photo']['name']!=null){
+		$upload = new upload_file_class();
+		$upload->save_dir = "/upload/rich_images/";
+		$img = $upload->handle('photo','filter_pic');
+		
+		if($img === false){
+			alert('上传文件失败 !');
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+		$record->fh_zp = "/upload/rich_images/{$img}";
 	}
 	$record->save();
 	if ($fh_id == 0)
