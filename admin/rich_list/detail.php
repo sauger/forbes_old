@@ -5,9 +5,9 @@
 	$year = $_REQUEST['year'];
 	$searchyear = $_REQUEST['searchyear'];
 	$db = get_db();
-	$sql = "select a.id,name,year,pm,sr,bgl from fb_mrbd a,fb_mr b where b.id=a.mr_id and year ='".$year."' order by pm asc";
+	$sql = "select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b where b.id=a.fh_id and year ='".$year."' order by pm asc";
 	if($search!=''){
-		$sql ="select a.id,name,year,pm,sr,bgl from fb_mrbd a,fb_mr b where a.mr_id=b.id and name like '%{$search}%' ";
+		$sql ="select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b where a.fh_id=b.id and name like '%{$search}%' ";
 	}
 	if($searchyear!=''){
 		$sql .=" and year=".$searchyear;
@@ -33,12 +33,12 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="6">
-				 <?php if ($year != ''){ echo $year; ?>名人榜单   <a href="edit.php?year=<?php echo $year; ?>">添加名人</a> <?php } ?>  搜索　
+				 <?php if ($year != ''){ echo $year; ?>富豪榜单   <a href="edit.php?year=<?php echo $year; ?>">添加富豪</a> <?php } ?>  搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
 				 年份<select id="searchyear">
 				 	<option value=""></option>
 					<?php 
-						$sql1 = "select * from fb_mrb order by year asc";
+						$sql1 = "select * from fb_fhb order by year asc";
 						$record1 = $db->paginate($sql1,15);
 						$count1 = count($record1);
 						for($k=0;$k< $count1;$k++){
@@ -67,7 +67,7 @@
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_mrbd">
+				<input type="hidden" id="db_table" value="fb_fhbd">
 		<?php
 			}
 		?>
