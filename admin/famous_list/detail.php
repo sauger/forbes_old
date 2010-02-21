@@ -47,6 +47,7 @@
 					<?php }?>
 				</select>　
 				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
+				 <a href="index.php" style="cursor:pointer">返回榜单列表</a>
 			</td>
 		</tr>
 		<tr class="tr2">

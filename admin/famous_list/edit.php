@@ -25,7 +25,7 @@
 	<?php 
 		css_include_tag('admin');
 		use_jquery();
-		//validate_form("fbd_edit");
+		validate_form("fbd_edit");
 	?>
 </head>
 <body style="background:#E1F0F7">
@@ -96,7 +96,7 @@
 			<td align="left">
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
 				<span id="use_mr" style="cursor:pointer;">使用名人照片</span>
-				<input type="file" name="photo" id="photo" <?php if($id=='')echo 'class="required"';?> >（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $f_bd->zp?>">点击查看照片</a><?php }?>
+				<input type="file" name="photo" id="photo"  >（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $f_bd->zp?>">点击查看照片</a><?php }?>
 				<input type="hidden" value="<?php echo $f_bd->zp;?>" id="bd_zp" name="bd[zp]">
 			</td>
 		</tr>
