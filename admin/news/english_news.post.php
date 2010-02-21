@@ -1,11 +1,18 @@
 <?php 
 	require "../../frame.php";
 	$news_id = $_POST['id'] ? $_POST['id'] : 0;
-	//var_dump($_POST);
-	//exit;
+	$ch_id = $_POST['chinese_id'];
+	if(!$ch_id){
+		alert('invalid post!');
+		die();
+	}
+	#var_dump($_POST);
+	#exit;
 	$news = new table_class($tb_news);
 	if($news_id!=0){
 		$news->find($news_id);
+	}else{
+		$news->language_tag = 1;
 	}
 	
 	$news->update_attributes($_POST['news'],false);
@@ -67,21 +74,14 @@
 		//update news
 		$news->last_edited_at = date("Y-m-d H:i:s");
 		$news->save();
-		//if it has english new, should update the english news's category_id, news_type and so on.
-		$db = get_db();
-		$db->query("select english_news_id from fb_news_relationship where chinese_news_id={$news->id}");
-		
-		if($db->move_first()){
-			$e_id = $db->field_by_index(0);
-			$english_news = new table_class($tb_news);
-			$english_news->find($e_id);
-			$english_news->category_id = $news->category_id;
-			$english_news->news_type = $news->news_type;
-			$english_news->save();
-		}
 	}
 	
-	redirect('news_list.php?category='.$_POST['news']['category_id']);
+	if(empty($news_id)){
+		$db = get_db();
+		$db->execute("insert into fb_news_relationship (chinese_news_id,english_news_id) values ('$ch_id','{$news->id}')");
+	}
+	
+	redirect('news_edit.php?id='.$news->id);
 	#var_dump($news);
 	
 ?>

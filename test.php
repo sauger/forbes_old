@@ -6,15 +6,22 @@
 		<title>测试</title>
 		<?php
 		
-		#include "frame.php";
-		#use_jquery();
-		#js_include_tag('jquery-ui-1.7.2.custom.min.js','jquery.scrollTo.js');
+		include "frame.php";
+		use_jquery();
+		js_include_tag('jquery-ui-1.7.2.custom.min.js');
 		?>
 	</head>
 	<body>
 	dfads
 		<?php 
-			phpinfo();
+			 function reset_password(){
+  	$client = new SoapClient("http://xurrency.com/api.wsdl?WSDL");
+  	$ChangePasswordRequest = array("ApplicationId" => "2018", "TimeStamp" => "288701749051598","ChangeType" => $type,"UserId" => $userid, "OldPassword" => $oldpwd,"NewPassword" => $newpwd,"OperatorId" => $operatorid);
+  	$result = $client->getValuesInverse('cny');
+		var_dump($result);
+	#	echo $result->getForexRmbRateResult->any;
+  }
+  reset_password();
 		?>
 
 	<div id="msg"></div>

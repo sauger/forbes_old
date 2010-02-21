@@ -3,12 +3,24 @@
 	$post = new table_class($_POST['db_table']);
 	if("del"==$_POST['post_type'])
 	{
-
+			if($_POST['db_table'] == $tb_news){
+				$db = get_db();
+				$post->find($_POST['del_id']);
+				if($post->language_tag==1){
+					$db->execute("delete from fb_news_relationship where english_news_id={$_POST['del_id']}");
+				}else{
+					$db->query("select english_news_id from fb_news_relationship where chinese_news_id={$_POST['del_id']}");
+					if($db->move_first()){
+						$e_id = $db->field_by_index(0);
+						$db->execute("delete from fb_news_relationship where english_news_id={$e_id}");
+						$post->delete($e_id);
+					}
+				}
+			}
 			$post -> delete($_POST['del_id']);
 			echo $_POST['del_id'];
 		
 	}
-	
 	elseif("edit"==$_POST['post_type'])
 	{
 		if($_POST['id']!='')$post -> find($_POST['id']);
