@@ -32,7 +32,10 @@
 	<form id="fbd_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人榜单";}else{echo "添加名人榜单";}?></td>
+			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人榜单";}else{echo "添加名人榜单";}?>
+			<?php if ($f_id != ''){?><a href="/admin/famous/index.php" style="cursor:pointer">返回列表</a>	<?php }?>
+			<?php if ($year != ''){?><a href="/admin/famous_list/detail.php?year=<?php echo $year; ?>" style="cursor:pointer">返回列表</a>	<?php }?>		
+			</td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">姓名</td>
@@ -42,7 +45,7 @@
 				<?php } else { ?>
 				<select name="bd[mr_id]">
 					<?php 
-						$sql = "select * from fb_mr where id not in (select mr_id from fb_mrbd where year = '{$year}')";
+						$sql = "select * from fb_mr where id not in (select mr_id from fb_mrbd a,fb_mrb b where a.bd_id = b.id and year = '{$year}')";
 						$record = $db->query($sql);
 						$count = count($record);
 						for($i=0;$i< $count;$i++){ 
@@ -57,18 +60,18 @@
 			<td>年份</td>
 			<td align="left">
 				<?php if ($year == '') { ?>
-				<select name="bd[year]" id="bd[year]">
+				<select name="bd[bd_id]" id="bd[bd_id]">
 					<?php 
-						$sql = "select * from fb_mrb where year not in (select year from fb_mrbd where mr_id = '{$f_id}') order by year asc";
+						$sql = "select * from fb_mrb where year not in (select bd_id from fb_mrbd where mr_id = '{$f_id}') order by year asc";
 						$record = $db->query($sql);
 						$count = count($record);
 						for($i=0;$i< $count;$i++){
 					?>
-					<option <?php if($f_bd->year==$record[$i]->year)echo 'selected="selected"';?> value="<?php echo $record[$i]->year?>"><?php echo $record[$i]->year?></option>
+					<option <?php if($f_bd->bd_id==$record[$i]->id)echo 'selected="selected"';?> value="<?php echo $record[$i]->id?>"><?php echo $record[$i]->year?></option>
 					<?php }?>
 				</select>
 				<?php } else { ?>
-					<?php echo $year;?><input type="hidden" name="bd[year]" value="<?php echo $year;?>"> 
+					<?php echo $year;?><input type="hidden" name="bd[bd_id]" value="<?php $sql1 = "select * from fb_mrb where year='".$year."'";$record1 = $db->query($sql1);echo $record1[0]->id;?>"> 
 				<?php }?>
 				
 			</td>

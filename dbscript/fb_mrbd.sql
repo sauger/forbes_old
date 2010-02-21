@@ -6,7 +6,7 @@ CREATE TABLE  `forbes`.`fb_mrbd` (
   `bgl` float default NULL COMMENT '曝光率',
   `sbly` text COMMENT '上榜理由',
   `zp` varchar(255) default NULL COMMENT '照片',
-  `year` int(10) unsigned default NULL COMMENT '年份',
+  `bd_id` int(10) unsigned default NULL COMMENT '榜单ID',
   `mr_id` int(10) unsigned default NULL COMMENT '名人ID',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

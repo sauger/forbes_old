@@ -45,7 +45,7 @@
 				<?php } else { ?>
 				<select name="fh[fh_id]">
 					<?php 
-						$sql = "select * from fb_fh where id not in (select fh_id from fb_fhbd where year = '{$year}')";
+						$sql = "select * from fb_fh where id not in (select fh_id from fb_fhbd a,fb_fhb b where a.bd_id = b.id and year = '{$year}')";
 						$record = $db->query($sql);
 						$count = count($record);
 						for($i=0;$i< $count;$i++){ 
@@ -60,18 +60,18 @@
 			<td>年份</td>
 			<td align="left">
 				<?php if ($year == '') { ?>
-				<select name="fh[year]" id="fh[year]">
+				<select name="fh[bd_id]" id="fh[bd_id]">
 					<?php 
-						$sql = "select * from fb_fhb where year not in (select year from fb_fhbd where fh_id = '{$f_id}') order by year asc";
+						$sql = "select * from fb_fhb where id not in (select bd_id from fb_fhbd where fh_id = '{$f_id}') order by year asc";
 						$record = $db->query($sql);
 						$count = count($record);
 						for($i=0;$i< $count;$i++){
 					?>
-					<option <?php if($f_bd->year==$record[$i]->year)echo 'selected="selected"';?> value="<?php echo $record[$i]->year?>"><?php echo $record[$i]->year?></option>
+					<option <?php if($f_bd->bd_id==$record[$i]->id)echo 'selected="selected"';?> value="<?php echo $record[$i]->id?>"><?php echo $record[$i]->year?></option>
 					<?php }?>
 				</select>
 				<?php } else { ?>
-					<?php echo $year;?><input type="hidden" name="fh[year]" value="<?php echo $year;?>"> 
+					<?php echo $year;?><input type="hidden" name="fh[bd_id]" value="<?php $sql1 = "select * from fb_fhb where year='".$year."'";$record1 = $db->query($sql1);echo $record1[0]->id;?>"> 
 				<?php }?>
 				
 			</td>
