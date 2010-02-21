@@ -9,7 +9,6 @@
 		judge_role();
 		css_include_tag('admin','thickbox');
 		use_jquery();
-		js_include_tag('category_class.js','admin_pub');
 	?>
 </head>
 

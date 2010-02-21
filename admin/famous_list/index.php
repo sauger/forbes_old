@@ -53,9 +53,10 @@
 		<?php
 			}
 		?>
-		<tr class="tr3">
-			<td colspan=6><?php paginate();?></td>
-		</tr>
-	</table>
-</body>
+			<tr class="tr3">
+				<td colspan=6><?php paginate();?></td>
+			</tr>
+		</table>	
+
+	</body>
 </html>
