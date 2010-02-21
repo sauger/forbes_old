@@ -57,7 +57,7 @@
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td>年份</td>
+			<td>榜单名称</td>
 			<td align="left">
 				<?php if ($year == '') { ?>
 				<select name="fh[bd_id]" id="fh[bd_id]">
