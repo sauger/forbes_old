@@ -1,5 +1,4 @@
-﻿DROP TABLE IF EXISTS `forbes`.`fb_mrbd`;
-CREATE TABLE  `forbes`.`fb_mrbd` (
+﻿CREATE TABLE  `forbes`.`fb_mrbd` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `pm` int(10) unsigned default NULL COMMENT '综合排名',
   `sr` float default NULL COMMENT '收入',
@@ -9,4 +8,4 @@ CREATE TABLE  `forbes`.`fb_mrbd` (
   `bd_id` int(10) unsigned default NULL COMMENT '榜单ID',
   `mr_id` int(10) unsigned default NULL COMMENT '名人ID',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
