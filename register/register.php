@@ -85,12 +85,12 @@
 		<table>
 			<tr>
 				<td class=td1 style="line-height:32px;"><span style="color:red;">*</span>注册验证码：</td>
-				<td class=td3 style="line-height:32px;"><div id=yzm_input><input style="margin-top:5px;" type="text"></div><div id=yzm><img id="pic" src="yz.php"></div></td>
+				<td class=td3 style="line-height:32px;"><div id=yzm_input><input style="margin-top:5px;" id="rvcode" type="text"></div><div id=yzm><img id="pic" src="yz.php"></div></td>
 				<td class=td2 style="line-height:32px;">
 					<a style="cursor:pointer;" id="chang_pic">看不清楚？换张图片</a>
 				</td>
 				<div id="pic_value">
-				<input type="hidden" value="<?php echo $_SESSION['register_pic'];?>">
+				<input type="hidden" id="h_p_value" value="">
 				</div>
 			</tr>
 		</table>
