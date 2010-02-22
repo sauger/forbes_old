@@ -1,4 +1,4 @@
-body {font-size:12px;  font-family:ËÎÌå; font-size:12px; color:#000;  margin:0; padding:0;}
+body {font-size:12px;  font-family:ï¿½ï¿½ï¿½ï¿½; font-size:12px; color:#000;  margin:0; padding:0;}
 
 #register{width:840px; margin:0 auto;}
 #title{width:830px; height:24px; margin-top:30px; color:#ffffff; line-height:24px; font-weight:bold; padding-left:10px; background:url(/images/register/title.jpg) no-repeat; font-size:14px; float:left; display:inline;}
@@ -21,5 +21,5 @@ tr{width:820px; height:40px; line-height:40px; float:left; display:inline;}
 .pic_content{margin-left:5px; line-height:14px; float:left; display:inline;}
 hr{width:840px; height:1px; margin-top:10px; color:#cccccc; float:left; display:inline;}
 #yzm_input{line-height:32px; float:left; display:inline;}
-#yzm{width:77px; height:32px; margin-left:10px; font-size:16px; font-weight:bold; line-height:32px; background:url('/images/register/yzm_bg.jpg') no-repeat; float:left; display:inline;}
+#yzm{width:60px; height:25px; margin-left:10px; margin-top:3px; font-size:16px; font-weight:bold; line-height:32px; background:url('/images/register/yzm_bg.jpg') no-repeat; float:left; display:inline;}
 button{width:154px; height:26px; line-height:26px; font-size:14px; border:0px; font-weight:bold; background:url('/images/register/button.jpg') no-repeat; float:left; display:inline;}
