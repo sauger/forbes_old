@@ -30,7 +30,7 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="3">
-				　<a href="bdedit.php">添加榜单</a>   搜索　
+				　富豪榜管理 <a href="bdedit.php">添加榜单</a>   搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
 				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
 			</td>
