@@ -17,7 +17,7 @@
 <body>
 	<div id=register>
 		<div id=title>请填写下列信息 <span style="color:red;">*</span>为必填项目</div>
-		<form action="register.post.php" method="post">
+		<form id="re_form" action="register.post.php" method="post">
 		<table>
 			<tr>
 				<td class=td1><span style="color:red;">*</span>用 户 名：</td>
@@ -100,7 +100,7 @@
 				<td class=td2><a href="">查看协议</a></td>
 			</tr>
 			<tr>
-				<td class=td5 ><button id="tj" type="submit">确认并注册</button></td>
+				<td class=td5 ><button id="tj" type="button">确认并注册</button></td>
 				<td class=td2></td>
 			</tr>
 		</table>
