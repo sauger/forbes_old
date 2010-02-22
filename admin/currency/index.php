@@ -47,7 +47,6 @@
 				</tr>
 				<input type="hidden" id="db_table" value="fb_hbgl">
 		<?php
-		
 			}
 		?>
 		<tr class="tr3">

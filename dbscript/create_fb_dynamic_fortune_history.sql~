@@ -1,0 +1,13 @@
+ALTER TABLE `forbes`.`fb_dynamic_fortune_list` RENAME TO `forbes`.`fb_dynamic_fortune_history`,
+ MODIFY COLUMN `id` integer  NOT NULL AUTO_INCREMENT,
+ MODIFY COLUMN `current_index` integer UNSIGNED NOT NULL COMMENT '当天排名',
+ DROP COLUMN `last_index`,
+ DROP COLUMN `name`,
+ MODIFY COLUMN `fortune` integer UNSIGNED NOT NULL COMMENT '财富数量',
+ MODIFY COLUMN `richer_id` integer  NOT NULL COMMENT '富豪id',
+ ADD COLUMN `reg_date` datetime  NOT NULL COMMENT '登记时间' AFTER `current_index`,
+ DROP PRIMARY KEY,
+ ADD PRIMARY KEY (`id`),
+ DROP INDEX `new_index`,
+ ADD INDEX `new_index`(`richer_id`)
+, COMMENT = '动态富豪历史';

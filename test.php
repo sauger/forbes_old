@@ -5,7 +5,8 @@
 		<meta http-equiv=Content-Language content=zh-CN>
 		<title>测试</title>
 		<?php
-		
+		phpinfo();
+		exit;
 		include "frame.php";
 		use_jquery();
 		js_include_tag('jquery-ui-1.7.2.custom.min.js');
