@@ -24,7 +24,7 @@
 	<form id="famous_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人资料";}else{echo "添加名人资料";}?></td>
+			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人资料";}else{echo "添加名人资料";}?> <a href="index.php" style="cursor:pointer">返回列表</a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">姓名</td>

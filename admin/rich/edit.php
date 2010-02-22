@@ -31,7 +31,7 @@
 	<form id="fhgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　编辑富豪</td>
+			<td colspan="2" width="795">　　编辑富豪 <a href="list.php" style="cursor:pointer">返回列表</a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">姓名</td><td width="695" align="left"><input id="fh_name" type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
