@@ -35,7 +35,7 @@
 			<td colspan="6">
 				 <?php if ($year != ''){ echo $year; ?>富豪榜单   <a href="edit.php?year=<?php echo $year; ?>">添加富豪</a> <?php } ?>  搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				 年份<select id="searchyear">
+				 榜单名称<select id="searchyear">
 				 	<option value=""></option>
 					<?php 
 						$sql1 = "select * from fb_fhb order by year asc";

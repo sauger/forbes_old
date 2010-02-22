@@ -7,7 +7,7 @@
 	$db = get_db();
 	$sql = "select a.id,name,year,pm,sr,bgl from fb_mrbd a,fb_mr b,fb_mrb c where b.id=a.mr_id and a.bd_id=c.id and year ='".$year."' order by pm asc";
 	if($search!=''){
-		$sql ="select a.id,name,year,pm,sr,bgl from fb_mrbd a,fb_mr b where a.mr_id=b.id and a.bd_id=c.id and name like '%{$search}%' ";
+		$sql ="select a.id,name,year,pm,sr,bgl from fb_mrbd a,fb_mr b,fb_mrb c where a.mr_id=b.id and a.bd_id=c.id and name like '%{$search}%' ";
 	}
 	if($searchyear!=''){
 		$sql .=" and year=".$searchyear;
@@ -35,7 +35,7 @@
 			<td colspan="6">
 				 <?php if ($year != ''){ echo $year; ?>名人榜单   <a href="edit.php?year=<?php echo $year; ?>">添加名人</a> <?php } ?>  搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				 年份<select id="searchyear">
+				 榜单名称<select id="searchyear">
 				 	<option value=""></option>
 					<?php 
 						$sql1 = "select * from fb_mrb order by year asc";

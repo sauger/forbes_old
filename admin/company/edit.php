@@ -29,7 +29,7 @@
 	<form id="gsgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class="tr1">
-			<td colspan="2" width="795">　　编辑公司</td>
+			<td colspan="2" width="795">　　编辑公司 <a href="list.php" style="cursor:pointer">返回列表</a></td>
 		</tr>
 		<tr class="tr4">
 			<td width="130">公司名称</td>
