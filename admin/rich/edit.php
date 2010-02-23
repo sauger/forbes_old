@@ -76,7 +76,7 @@
 		</tr>
 		<?php $len = count($record2); for ($i=0;$i< $len;$i++) { ?>
 		<tr class=tr4>	
-			<td width="130">关联公司</td><td width="200" align="left"><?php echo $record2[$i]->mc; ?>　持股数：<input class="number" type="text" value="<?php echo $record2[$i]->stock_count;?>" name="old_stock[]">单位为100股，即1代表100股<input type="button" value= "删除" class="del" name="<?php echo $record2[$i]->id;?>"><input type="hidden" name="old_company[]" value="<?php echo $record2[$i]->cid;?>"><input class="o_company"  type="hidden" value="<?php echo $record2[$i]->bid;?>"></td> 
+			<td width="130">关联公司</td><td width="200" align="left"><?php echo $record2[$i]->mc; ?>　持股数：<input class="number required" type="text" value="<?php echo $record2[$i]->stock_count;?>" name="old_stock[]">单位为100股，即1代表100股<input type="button" value= "删除" class="del" name="<?php echo $record2[$i]->id;?>"><input type="hidden" name="old_company[]" value="<?php echo $record2[$i]->cid;?>"><input class="o_company"  type="hidden" value="<?php echo $record2[$i]->bid;?>"></td> 
 		</tr>
 		<?php } ?>
 		<tr class=tr4>
