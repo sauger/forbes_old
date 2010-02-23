@@ -35,7 +35,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="215">姓名</td><td width="210">职业</td><td width="130">性别</td><td width="210">操作</td>
+			<td width="215">姓名</td><td width="210">职业</td><td width="50">性别</td><td width="290">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -45,7 +45,8 @@
 					<td><?php echo $record[$i]->zy;?></td>
 					<td><?php echo $record[$i]->xb;?></td>
 					<td>
-						<a href="/admin/famous_list/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">加入榜单</a>
+						<a href="/admin/famous_ad/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">编辑名人代言</a>
+						<a href="/admin/famous_list/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">加入榜单</a>
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
