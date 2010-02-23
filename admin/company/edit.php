@@ -35,6 +35,32 @@
 			<td width="130">公司名称</td>
 			<td width="695" align="left"><input id="gs_mc" type="text" name="gs[mc]" class="required "value="<?php echo $record->mc;?>">
 		</tr>
+		<tr class=tr4 id="a_com">
+			<td width="130">行业</td>
+			<td align="left">
+				<select id="gsid" name="gsid" style="width:90px">
+					<option value="">请选择</option>
+					<?php 
+						$records = $db->query("select * from fb_industry");
+						for ($i=0;$i<count($record);$i++) { ?>
+					<option value="<?php echo $records[$i]->id;?>"><?php echo $records[$i]->name; ?></option>
+					<?php } ?>
+				</select><input type="button" id="add_company" value="添加">
+			</td>
+		</tr>
+		<?php
+			if($id!=''){
+				$records = $db->query("select t1.name,t2.id from fb_industry t1 join fb_company_industry t2 on t1.id=t2.industry_id where t2.company_id=".$id);
+				$count = count($records); 
+				for ($i=0;$i<$count;$i++) { 
+		?>
+		<tr class=tr4>	
+			<td width="130">关联行业</td>
+			<td width="200" align="left">
+				<input type="text" value="<?php echo $records[$i]->name;?>">
+			</td> 
+		</tr>
+		<?php }}?>
 		<tr class="tr4">
 			<td>国家</td>
 			<td width="695" align="left"><input id="gs_gj" type="text" name="gs[gj]" value="<?php echo $record->gj;?>">
