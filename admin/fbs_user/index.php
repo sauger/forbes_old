@@ -3,9 +3,9 @@
 	$search = $_REQUEST['search'];
 	
 	$db = get_db();
-	$sql = "select * from fb_hbgl where 1=1";
+	$sql = "select * from fb_yh where 1=1";
 	if($search!=''){
-		$sql .= " and (hb_nc like '%{$search}%' or hb_dv like '%{$search}%' or hb_gj like '%{$search}%')";
+		$sql .= " and (name like '%{$search}%' or email like '%{$search}%')";
 	}
 	
 	$record = $db->paginate($sql,15);
@@ -29,28 +29,28 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">
-				　<a href="edit.php">添加货币</a>　　　搜索　
+				　　搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
 				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="215">名称</td><td width="110">单位</td><td width="130">国家</td><td width="150">比率</td><td width="160">操作</td>
+			<td width="215">用户名</td><td width="210">邮箱</td><td width="340">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
-					<td><?php echo $record[$i]->hb_nc;?></td>
-					<td><?php echo $record[$i]->hb_dv;?></td>
-					<td><?php echo $record[$i]->hb_gj;?></td>
-					<td><?php echo $record[$i]->hb_hl;?></td>
+					<td><?php echo $record[$i]->name;?></td>
+					<td><?php echo $record[$i]->email;?></td>
 					<td>
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
+						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>　
+						<a href="edit_order.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">查看用户订阅</a>　
+						<a href="edit_info.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑用户个人信息</a>　
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_hbgl">
+				<input type="hidden" id="db_table" value="fb_yh">
 		<?php
 			}
 		?>

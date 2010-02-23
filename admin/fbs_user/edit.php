@@ -3,8 +3,8 @@
 	$db = get_db();
 	$id = $_REQUEST['id'];
 	if($id!=''){
-		$coin = new table_class('fb_hbgl');
-		$coin->find($id);
+		$user = new table_class('fb_yh');
+		$user->find($id);
 	}
 ?>
 
@@ -13,42 +13,35 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title></title>
+	<title>富豪编辑</title>
 	<?php 
 		css_include_tag('admin');
 		use_jquery();
-		validate_form("coin_edit");
+		//validate_form("famous_edit");
 	?>
 </head>
 <body style="background:#E1F0F7">
-	<form id="coin_edit" action="edit.post.php" method="post"> 
+	<form id="famous_edit" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑货币";}else{echo "添加货币";}?></td>
+			<td colspan="2" width="795">　　编辑用户</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">名称</td>
+			<td width="130">用户名</td>
 			<td width="695" align="left">
-				<input type="text" name="coin[hb_nc]" value="<?php echo $coin->hb_nc;?>" class="required">
+				<?php echo $user->name;?>
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">单位</td>
+			<td width="130">密码</td>
 			<td width="695" align="left">
-				<input type="text" name="coin[hb_dv]" value="<?php echo $coin->hb_dv;?>" class="required">
+				<input type="password" name="user[password]" value="<?php echo $user->password;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">国家</td>
+			<td width="130">电子邮箱</td>
 			<td width="695" align="left">
-				<input type="text" name="coin[hb_gj]" value="<?php echo $coin->hb_gj;?>" class="required">
-			</td>
-		</tr>
-		<tr class=tr4>
-			<td width="130">汇率</td>
-			<td width="695" align="left">
-				<input type="text" name="coin[hb_hl]" value="<?php echo $coin->hb_hl;?>" class="number required">
-				请以人民币汇率为准
+				<?php echo $user->email;?>
 			</td>
 		</tr>
 		<tr class="tr3">

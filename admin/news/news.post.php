@@ -67,6 +67,18 @@
 		//update news
 		$news->last_edited_at = date("Y-m-d H:i:s");
 		$news->save();
+		//if it has english new, should update the english news's category_id, news_type and so on.
+		$db = get_db();
+		$db->query("select english_news_id from fb_news_relationship where chinese_news_id={$news->id}");
+		
+		if($db->move_first()){
+			$e_id = $db->field_by_index(0);
+			$english_news = new table_class($tb_news);
+			$english_news->find($e_id);
+			$english_news->category_id = $news->category_id;
+			$english_news->news_type = $news->news_type;
+			$english_news->save();
+		}
 	}
 	
 	redirect('news_list.php?category='.$_POST['news']['category_id']);

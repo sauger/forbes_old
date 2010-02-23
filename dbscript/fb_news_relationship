@@ -1,0 +1,6 @@
+CREATE TABLE  `forbes`.`fb_news_relationship` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `chinese_news_id` int(11) NOT NULL COMMENT '中文新闻ID',
+  `english_news_id` int(11) NOT NULL COMMENT '英文新闻ID',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='中英文新闻关联表'

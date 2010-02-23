@@ -112,11 +112,11 @@
 					</td>
 					<td>
 						<?php
-							$hbzl = new table_class('fb_hbgl');
+							$hbzl = new table_class('fb_currency');
 							if ($record[$i]->hbid != '')
 							{
 								$hbzl->find($record[$i]->hbid);
-								echo $hbzl->hb_nc;
+								echo $hbzl->name;
 							}	
 						?>
 					</td>

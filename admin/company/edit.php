@@ -21,7 +21,7 @@
 		$record->find($id);
 	}
 	$db = get_db();
-	$sql = "select * from fb_hbgl";
+	$sql = "select * from fb_currency";
 	$hbzl = $db->query($sql);
 ?>
 
@@ -29,7 +29,7 @@
 	<form id="gsgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class="tr1">
-			<td colspan="2" width="795">　　编辑公司</td>
+			<td colspan="2" width="795">　　编辑公司 <a href="list.php" style="cursor:pointer">返回列表</a></td>
 		</tr>
 		<tr class="tr4">
 			<td width="130">公司名称</td>
@@ -84,7 +84,7 @@
 				<select id="gs_hbid" name="gs[hbid]" value="<?php echo $record->hbid;?>" style="width:90px" class="">
 					<option value="">货币种类</option>
 					<?php $len = count($hbzl); for ($i=0;$i< $len;$i++) { ?>
-					<option value="<?php echo $hbzl[$i]->id; ?>" <? if($record->hbid==$hbzl[$i]->id){?>selected="selected"<? }?>><?php echo $hbzl[$i]->hb_nc; ?></option>
+					<option value="<?php echo $hbzl[$i]->id; ?>" <? if($record->hbid==$hbzl[$i]->id){?>selected="selected"<? }?>><?php echo $hbzl[$i]->name; ?></option>
 					<?php } ?>
 				</select>
 		</tr>

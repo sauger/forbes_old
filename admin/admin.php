@@ -10,9 +10,9 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>迅傲信息</title>
 	<?php	
-		css_include_tag('admin');
+		css_include_tag('admin','colorbox');
 		use_jquery();
-		js_include_tag('jquery.cookie.js', 'pubfun');
+		js_include_tag('jquery.cookie.js', 'pubfun','jquery.colorbox-min');
   ?>
 </head>
 <body style="background:url(/images/admin/bg.jpg) repeat-x;">

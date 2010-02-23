@@ -17,14 +17,14 @@
 	<?php 
 		css_include_tag('admin');
 		use_jquery();
-		//validate_form("famous_edit");
+		validate_form("famous_edit");
 	?>
 </head>
 <body style="background:#E1F0F7">
 	<form id="famous_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人资料";}else{echo "添加名人资料";}?></td>
+			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人资料";}else{echo "添加名人资料";}?> <a href="index.php" style="cursor:pointer">返回列表</a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">姓名</td>
@@ -49,7 +49,7 @@
 			<td width="130">上传照片</td>
 			<td align="left">
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
-				<input type="file" name="photo" id="photo" <?php if($id=='')echo 'class="required"';?>>（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $famous->mr_zp?>">点击查看照片</a><?php }?>
+				<input type="file" name="photo" id="photo" >（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $famous->mr_zp?>">点击查看照片</a><?php }?>
 			</td>
 		</tr>
 		<tr class="tr4">
