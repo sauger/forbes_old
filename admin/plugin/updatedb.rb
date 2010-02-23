@@ -18,3 +18,4 @@ my.query("select d.id,d.name,sum(a.dqgj*c.rate*b.stock_count) as fortune from fb
 	stmt.execute id,index,name,count
 end
 p "finish the update! totle count: #{index}"
+my.close

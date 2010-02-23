@@ -3,7 +3,6 @@ p "start to update the dynamic fortune list >>>>>>>"
 my = Mysql.connect('localhost','root','xunao','forbes')
 stmt = my.prepare("delete from fb_dynamic_fortune_list")
 stmt.execute
-p "deleted the last dynamic fortune list data"
 index = 0
 my.query("select d.id,d.name,sum(a.dqgj*c.rate*b.stock_count) as fortune from fb_gs a right join fb_fh_gs b on a.id = b.gs_id left join fb_currency c on a.hbid= c.id left join fb_fh d on b.fh_id = d.id group by b.fh_id order by fortune desc").each do |id, name, count| 
 	index += 1	

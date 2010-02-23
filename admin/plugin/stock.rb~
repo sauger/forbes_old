@@ -13,3 +13,4 @@ my.query('select id, ssdm,jys from fb_gs').each do |id,ssdm,jys|
 	stmt = my.prepare('update fb_gs set dqgj=? where id=?')
 	stmt.execute res[1], id	
 end
+my.close
