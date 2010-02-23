@@ -94,13 +94,17 @@
 				</div>
 			</tr>
 		</table>
-		<table>
+		<table width="100%">
 			<tr>
 				<td class=td5 style="color:#999999; font-weight:normal;"><input type="checkbox" checked=checked>我接受福布斯中文网用户注册和使用协议</td>
 				<td class=td2><a href="">查看协议</a></td>
 			</tr>
 			<tr>
+<<<<<<< HEAD:register/register.php
+				<td class=td5><button>确认并注册</button></td>
+=======
 				<td class=td5 ><button id="tj" type="button">确认并注册</button></td>
+>>>>>>> 1c6903288a6a16b74fb16db68180aabd2c1c0983:register/register.php
 				<td class=td2></td>
 			</tr>
 		</table>
