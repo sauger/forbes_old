@@ -1,18 +1,21 @@
 body {font-size:12px;  font-family:ËÎÌו; font-size:12px; color:#000;  margin:0; padding:0;}
 
 #register{width:840px; margin:0 auto;}
-#title{width:830px; height:24px; margin-top:30px; color:#ffffff; line-height:24px; font-weight:bold; padding-left:10px; background:url(/images/register/title.jpg) no-repeat; font-size:14px; float:left; display:inline;}
-table{width:820px; margin-top:10px; margin-left:10px; float:left; display:inline;}
-tr{width:820px; height:40px; line-height:40px; float:left; display:inline;}
-.td1{width:95px; color:#336666; font-size:13px; font-weight:bold; line-height:22px; float:left; display:inline;}
-.td2{color:#999999; line-height:22px; float:left; display:inline;}
+#title{width:825px; height:24px; margin-top:30px; color:#ffffff; line-height:24px; font-weight:bold; padding-left:15px; background:url(/images/register/title.jpg) no-repeat; font-size:14px; float:left; display:inline;}
+#person{width:825px; margin-top:10px; margin-left:15px; color:#999999; line-height:30px; float:left; display:inline;}
+table{margin-top:10px; margin-left:10px; float:left; display:inline;}
+tr{height:40px; line-height:40px; float:left; display:inline;}
+.td1{width:130px; color:#336666; font-size:13px; font-weight:bold; line-height:22px;  float:left; display:inline;}
+.td2{color:#999999; line-height:22px;  float:left; display:inline;}
 .td2 a{color:#0066CC; text-decoration:none;}
-.td3{width:320px; text-align:center; float:left; display:inline;}
-.td4{width:160px; text-align:center; float:left; display:inline;}
+.td3{width:250px; height:25px; text-align:center;  overflow:hidden; float:left; display:inline;}
+.td4{width:120px; line-height:22px; text-align:center;  float:left; display:inline;}
 .td5{width:420px; color:#336666; font-size:13px; font-weight:bold; float:left; display:inline;}
-.txt{width:235px; height:22px; border:1px solid #CCCCFF;}
-.sel1{width:235px; height:22px; border:1px solid #CCCCFF;}
-.sel2{width:100px; height:22px; border:1px solid #CCCCFF;}
+.txt{width:190px; height:22px; border:1px solid #CCCCFF;}
+.txt1{width:570px; height:22px; margin-left:30px; border:1px solid #CCCCFF; float:left; display:inline;}
+.txt2{width:180px; height:22px; margin-left:10px; border:1px solid #CCCCFF;}
+.sel1{width:190px; height:22px; }
+.sel2{width:90px; height:22px; border:1px solid #CCCCFF;}
 .ck{margin-left:40px;}
 .display1{float:left; display:inline;}
 .display2{color:#00CC00; float:left; display:none;}
@@ -22,4 +25,6 @@ tr{width:820px; height:40px; line-height:40px; float:left; display:inline;}
 hr{width:840px; height:1px; margin-top:10px; color:#cccccc; float:left; display:inline;}
 #yzm_input{line-height:32px; float:left; display:inline;}
 #yzm{width:77px; height:32px; margin-left:10px; font-size:16px; font-weight:bold; line-height:32px; background:url('/images/register/yzm_bg.jpg') no-repeat; float:left; display:inline;}
-button{width:154px; height:26px; line-height:26px; font-size:14px; border:0px; font-weight:bold; background:url('/images/register/button.jpg') no-repeat; float:left; display:inline;}
+button{width:154px; height:26px; line-height:26px; font-size:14px; border:0px; font-weight:bold; background:url('/images/register/button.jpg') no-repeat;}
+.file {height:22px; margin-left:30px; border:1px solid #CCCCFF; background:#fff;}
+.upload{width:94px; height:26px; margin-left:30px; line-height:26px; font-size:14px; border:0px; font-weight:bold; background:url('/images/register/upload_bg.jpg') no-repeat; float:left; display:inline;}

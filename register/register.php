@@ -99,13 +99,13 @@
 				</td>
 			</tr>
 		</table>
-		<table>
+		<table width="100%">
 			<tr>
 				<td class=td5 style="color:#999999; font-weight:normal;"><input type="checkbox" checked=checked>我接受福布斯中文网用户注册和使用协议</td>
 				<td class=td2><a href="">查看协议</a></td>
 			</tr>
 			<tr>
-				<td class=td5 ><button>确认并注册</button></td>
+				<td class=td5><button>确认并注册</button></td>
 				<td class=td2></td>
 			</tr>
 		</table>
