@@ -1,20 +1,21 @@
 <?php 
 	require "../../frame.php";
+	var_dump($_POST);
 	$db = get_db();
 	$fh_id = $_POST['id'] ? $_POST['id'] : 0;
 	$sql = "select * from fb_fh_grcf where fh_id = '".$fh_id."' order by jzrq desc";
 	$sql1 = "select * from fb_fh order by id desc";
-	$record = new table_class('fb_fh'); //富豪信息
-	$record1 = new table_class('fb_fh_grcf'); //个人财富
-  $record2 = $db->query($sql); //取出富豪个人财富的最新数据
-  $record3 = new table_class('fb_fh_gs'); //富豪公司信息
+	$record = new table_class('fb_fh'); 
+	$record1 = new table_class('fb_fh_grcf'); 
+  $record2 = $db->query($sql); 
 	if($fh_id!=0){
 		$record->find($fh_id);
 	}
 	$record->update_attributes($_POST['fh'],false);
-	if ($_POST['fh[birthday]'] == '')
+	$birthday = $_REQUEST['fh[birthday]'];
+	if ($birthday == '')
 	{
-		$record->birthday = '0000-00-00';
+		$record->birthday='0000-00-00';
 	}
 	if($_FILES['photo']['name']!=null){
 		$upload = new upload_file_class();
@@ -22,7 +23,7 @@
 		$img = $upload->handle('photo','filter_pic');
 		
 		if($img === false){
-			alert('上传文件失败 !');
+			alert('涓婁紶澶辫触!');
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 		$record->fh_zp = "/upload/rich_images/{$img}";
@@ -40,15 +41,19 @@
 		$record1->jzrq = date("Y-m-d H:i:s");
 		$record1->save();
 	}
-	if ( $_POST['gsid'] == '')
-	{
-		redirect('list.php');
-	}
-	else
-	{
-		$record3->fh_id = $fh_id;
-		$record3->gs_id = $_POST['gsid'];
+	for($i=0;$i<count($_POST['company']);$i++){
+		$record3 = new table_class('fb_fh_gs'); 
+		$record3->fh_id = $record->id;
+		$record3->gs_id = $_POST['company'][$i];
+		$record3->stock_count = $_POST['stock'][$i];
 		$record3->save();
-		redirect("edit.php?id=".$fh_id);
 	}
+	for($i=0;$i<count($_POST['old_company']);$i++){
+		$gs_fh = new table_class('fb_fh_gs');
+		$gs_fh->find($_POST['old_company'][$i]);
+		$gs_fh->stock_count = $_POST['old_stock'][$i];
+		$gs_fh->save();
+	}
+	redirect('list.php');
+		
 ?>
