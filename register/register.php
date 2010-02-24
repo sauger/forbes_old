@@ -100,11 +100,7 @@
 				<td class=td2><a href="">查看协议</a></td>
 			</tr>
 			<tr>
-<<<<<<< HEAD:register/register.php
-				<td class=td5><button>确认并注册</button></td>
-=======
 				<td class=td5 ><button id="tj" type="button">确认并注册</button></td>
->>>>>>> 1c6903288a6a16b74fb16db68180aabd2c1c0983:register/register.php
 				<td class=td2></td>
 			</tr>
 		</table>

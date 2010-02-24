@@ -5,7 +5,8 @@
 	$year = $_REQUEST['year'];
 	$searchyear = $_REQUEST['searchyear'];
 	$db = get_db();
-	$sql = "select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b,fb_fhb c where b.id=a.fh_id and a.bd_id=c.id and year ='".$year."' order by pm asc";
+	$sql = "select a.id"
+	$sql = "select a.id, b.name, c.year,a.pm,a.sr,a.bgl from fb_fhbd a,fb_fh b,fb_fhb c where b.id=a.fh_id and a.bd_id=c.id and year ='".$year."' order by pm asc";
 	if($search!=''){
 		$sql ="select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b,fb_fhb c where a.fh_id=b.id and a.bd_id=c.id and name like '%{$search}%' ";
 	}
