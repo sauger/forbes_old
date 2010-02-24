@@ -7,11 +7,30 @@
 		<?php
 		include "frame.php";
 		use_jquery();
-		js_include_tag('jquery-ui-1.7.2.custom.min.js');
+		js_include_tag('jquery-ui-1.7.2.custom.min.js','autocomplete.jquery.js');
+		css_include_tag('autocomplete');
 		?>
 	</head>
 	<body>
 		<?php 
+		class Info {
+			var $id;
+			var $value;
+			var $info;
+		}
+		$info1 = new Info();
+		$info1->id = 1;
+		$info1->value="value";
+		$info1->info = "info";
+		$info2 = new Info();
+		$info2->id = 2;
+		$info2->value="value2";
+		$info2->info = "info2";
+		$a = Array();
+		array_push($a, $info1,$info2);
+		$result = Array("result" => $a);
+		echo json_encode($result);
+		/*
 		echo 8.12 / 100;
 		die();
 			 function reset_password(){
@@ -26,17 +45,18 @@
 			echo "{$node->getname()} = $node <br/>";
 		}
 	}
-  	
-#  	/*
- # 	*/
+
+ # 	
   	#var_dump($xml);
 	#	var_dump($result);
 	#	echo $result->getForexRmbRateResult->any;
   }
   reset_password();
+  */
 		?>
 
-	<div id="msg"></div>
+	<div id="msg">
+	<input style="width: 200px" type="text" id="test_xml" />
+	<span id='json_info'></span></div>
 	</body>
 </html>
-

@@ -1,6 +1,6 @@
 <?php 
 	require "../../frame.php";
-	var_dump($_POST);
+	#var_dump($_POST);
 	$db = get_db();
 	$fh_id = $_POST['id'] ? $_POST['id'] : 0;
 	$sql = "select * from fb_fh_grcf where fh_id = '".$fh_id."' order by jzrq desc";
@@ -12,8 +12,7 @@
 		$record->find($fh_id);
 	}
 	$record->update_attributes($_POST['fh'],false);
-	$birthday = $_REQUEST['fh[birthday]'];
-	if ($birthday == '')
+	if ($record->birthday == '')
 	{
 		$record->birthday='0000-00-00';
 	}
