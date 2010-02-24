@@ -1,19 +1,17 @@
 $(function(){
 	$(".del_com").live('click',function(){
-		$(this).parent().parent().remove();
-		var j;
-		for(j=0;j<company_array.length;j++){
+		for(var j=0;j<company_array.length;j++){
 			if(company_array[j]==$(this).next().val()){
 				company_array.splice(j,1);
 			}
 		}
+		$(this).parent().parent().remove();
 	});
 	
 	$(".del").click(function(){
 		$.post('/admin/rich/del_com.php',{"id":$(this).next().val()},function(data){
 		})
-		var j;
-		for(j=0;j<company_array.length;j++){
+		for(var j=0;j<company_array.length;j++){
 			if(company_array[j]==$(this).next().next().val()){
 				company_array.splice(j,1);
 			}
