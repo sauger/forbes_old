@@ -54,9 +54,9 @@
 				<input type="text" size="20" name="fh[gj]"  id="fh_gj"  value="<?php echo $record->gj;?>">
 		</tr>
 		<tr class=tr4>
-			<td>生日</td>
+			<td>出生年份</td>
 			<td align="left">
-				<input type="text" size="20" name="fh[birthday]"  id="fh_birthday"  value="<?php echo $record->birthday;?>">(YYYY-MM-DD)
+				<input type="text" size="20" name="fh[birthday]"  id="fh_birthday"  value="<?php echo $record->birthday;?>">
 		</tr>
 		<tr class=tr4>
 			<td>今日排名</td>
