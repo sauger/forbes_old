@@ -17,3 +17,5 @@ bottom.inc.html
 tools/*
 *.swf
 config/config.php
+.*~
+discuz/*

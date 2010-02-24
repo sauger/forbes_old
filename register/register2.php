@@ -116,12 +116,7 @@
 			</tr>
 		</table>
 		<hr>
-		<table width="100%" >
-			<tr>
-				<td colspan="4" align="center"><button>提交并保存个人信息</button></td>
-			</tr>
-			<tr></tr>
-		</table>
+		<div id="submit"><button>提交并保存个人信息</button></div>
 	</div>
 </body>
 </html>

@@ -92,7 +92,7 @@
 		<tr class=tr4>
 			<td width="130">收入</td>
 			<td align="left">
-				<input type="text" name="fh[sr]" value="<?php echo $f_bd->sr;?>" class="number required">
+				<input type="text" name="fh[sr]" value="<?php echo $f_bd->sr;?>" class="number required">(亿元)
 			</td>
 		</tr>
 		<tr class=tr4>
