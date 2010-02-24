@@ -5,9 +5,9 @@
 	$year = $_REQUEST['year'];
 	$searchyear = $_REQUEST['searchyear'];
 	$db = get_db();
-	$sql = "select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b where b.id=a.fh_id and year ='".$year."' order by pm asc";
+	$sql = "select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b,fb_fhb c where b.id=a.fh_id and a.bd_id=c.id and year ='".$year."' order by pm asc";
 	if($search!=''){
-		$sql ="select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b where a.fh_id=b.id and name like '%{$search}%' ";
+		$sql ="select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b,fb_fhb c where a.fh_id=b.id and a.bd_id=c.id and name like '%{$search}%' ";
 	}
 	if($searchyear!=''){
 		$sql .=" and year=".$searchyear;
@@ -35,7 +35,7 @@
 			<td colspan="6">
 				 <?php if ($year != ''){ echo $year; ?>富豪榜单   <a href="edit.php?year=<?php echo $year; ?>">添加富豪</a> <?php } ?>  搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				 年份<select id="searchyear">
+				 榜单名称<select id="searchyear">
 				 	<option value=""></option>
 					<?php 
 						$sql1 = "select * from fb_fhb order by year asc";
@@ -47,11 +47,11 @@
 					<?php }?>
 				</select>　
 				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
-				 <a href="index.php" style="cursor:pointer">返回榜单列表</a>
+				 <a href="index.php" style="cursor:pointer">返回榜单列表</a>   共有项目：<?php echo $count; ?>
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">姓名</td><td width="100">年份</td><td width="110">排名</td><td width="130">收入</td><td width="100">曝光率</td><td width="210">操作</td>
+			<td width="115">姓名</td><td width="100">榜单名称</td><td width="110">排名</td><td width="130">收入</td><td width="100">曝光率</td><td width="210">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){

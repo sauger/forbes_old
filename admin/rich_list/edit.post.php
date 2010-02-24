@@ -24,6 +24,7 @@
 		$f_bd->zp = "/upload/rich_images/{$img}";
 	}
 	$f_bd->save();
-	$year = $f_bd->year;
-	redirect("detail.php?year=".$year);
+	$fhbd = new table_class('fb_fhb');
+	$fhbd->find($f_bd->bd_id);
+	redirect("detail.php?year=".$fhbd->year);
 ?>

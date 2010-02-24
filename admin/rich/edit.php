@@ -9,7 +9,7 @@
 		judge_role();
 		css_include_tag('admin','thickbox');
 		use_jquery();
-		js_include_tag('category_class.js','admin_pub');
+		js_include_tag('admin/rich');
 		validate_form("fhgl_edit");
 	?>
 </head>
@@ -21,7 +21,7 @@
 	if($id!=''){
 		$record->find($id);
 	}
-	$sql_fh_gs = "select * from fb_fh a,fb_gs b,fb_fh_gs c where c.fh_id = a.id and c.gs_id = b.id and c.fh_id ='".$id."'";
+	$sql_fh_gs = "select *,c.id as cid,b.id as bid from fb_fh a,fb_gs b,fb_fh_gs c where c.fh_id = a.id and c.gs_id = b.id and c.fh_id ='".$id."'";
 	$record2 = $db-> query($sql_fh_gs);
 	$sql_gs = "select * from fb_gs";
 	$gs_id = $db->query($sql_gs);
@@ -31,7 +31,7 @@
 	<form id="fhgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　编辑富豪</td>
+			<td colspan="2" width="795">　　编辑富豪 <a href="list.php" style="cursor:pointer">返回列表</a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">姓名</td><td width="695" align="left"><input id="fh_name" type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
@@ -61,36 +61,32 @@
 		<tr class=tr4>
 			<td>今日排名</td>
 			<td align="left">
-				<input type="text" size="20" name="fh[jrpm]"  id="fh_jrpm"  value="<?php echo $record->jrpm;?>">
+				<?php echo $record->jrpm;?>
 		</tr>
-		
-
+		<tr class=tr4 id="a_com">
+			<td width="130">公司</td>
+			<td align="left">
+				<select id="gsid" name="gsid" style="width:90px">
+					<option value="">请选择</option>
+					<?php $len1 = count($gs_id); for ($i=0;$i< $len1;$i++) { ?>
+					<option value="<?php echo $gs_id[$i]->id;?>"><?php echo $gs_id[$i]->mc; ?></option>
+					<?php } ?>
+				</select><input type="button" id="add_company" value="添加">
+			</td>
+		</tr>
 		<?php $len = count($record2); for ($i=0;$i< $len;$i++) { ?>
-		<tr class=tr4 id=<?php echo $record2[$i]->id;?>>	
-			<td width="130">公司</td><td width="200" align="left"><?php echo $record2[$i]->mc; ?><input type="button" value= "删除" class="del" name="<?php echo $record2[$i]->id;?>"></td> 
+		<tr class=tr4>	
+			<td width="130">关联公司</td><td width="200" align="left"><?php echo $record2[$i]->mc; ?>　持股数：<input class="number required" type="text" value="<?php echo $record2[$i]->stock_count;?>" name="old_stock[]">单位为100股，即1代表100股<input type="button" value= "删除" class="del" name="<?php echo $record2[$i]->id;?>"><input type="hidden" name="old_company[]" value="<?php echo $record2[$i]->cid;?>"><input class="o_company"  type="hidden" value="<?php echo $record2[$i]->bid;?>"></td> 
 		</tr>
 		<?php } ?>
 		<tr class=tr4>
-			<td width="130">公司</td>
-			<td align="left">
-				<select id="gsid" name="gsid" style="width:90px" class="">
-					<option value="">请选择</option>
-					<?php $len1 = count($gs_id); for ($i=0;$i< $len1;$i++) { ?>
-					<option value="<?php echo $gs_id[$i]->id; ?>"><?php echo $gs_id[$i]->mc; ?></option>
-					<?php } ?>
-				</select><input type="submit" value="添加">
-			</td>
-		</tr>
-		
-		<tr class=tr4>
 			<td>个人财富</td>
 			<td align="left">
-				<input type="text" size="20" name="zc"  id="zc"  value="
 				<?php
 						$sql = "select * from fb_fh_grcf where fh_id = '".$record->id."' order by jzrq desc";
-  					$record1 = $db->query($sql);
-						echo strip_tags($record1[0]->zc);
-				?>">
+  						$record1 = $db->query($sql);
+				?>
+				<input type="text" size="20" name="zc"  id="zc"  value="<?php echo strip_tags($record1[0]->zc);?>">
 		</tr>
 		<tr class=tr4>
 			<td width="130">上传照片</td>

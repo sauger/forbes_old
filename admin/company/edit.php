@@ -21,7 +21,7 @@
 		$record->find($id);
 	}
 	$db = get_db();
-	$sql = "select * from fb_hbgl";
+	$sql = "select * from fb_currency";
 	$hbzl = $db->query($sql);
 ?>
 
@@ -29,12 +29,38 @@
 	<form id="gsgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class="tr1">
-			<td colspan="2" width="795">　　编辑公司</td>
+			<td colspan="2" width="795">　　编辑公司 <a href="list.php" style="cursor:pointer">返回列表</a></td>
 		</tr>
 		<tr class="tr4">
 			<td width="130">公司名称</td>
 			<td width="695" align="left"><input id="gs_mc" type="text" name="gs[mc]" class="required "value="<?php echo $record->mc;?>">
 		</tr>
+		<tr class=tr4 id="a_com">
+			<td width="130">行业</td>
+			<td align="left">
+				<select id="gsid" name="gsid" style="width:90px">
+					<option value="">请选择</option>
+					<?php 
+						$records = $db->query("select * from fb_industry");
+						for ($i=0;$i<count($record);$i++) { ?>
+					<option value="<?php echo $records[$i]->id;?>"><?php echo $records[$i]->name; ?></option>
+					<?php } ?>
+				</select><input type="button" id="add_company" value="添加">
+			</td>
+		</tr>
+		<?php
+			if($id!=''){
+				$records = $db->query("select t1.name,t2.id from fb_industry t1 join fb_company_industry t2 on t1.id=t2.industry_id where t2.company_id=".$id);
+				$count = count($records); 
+				for ($i=0;$i<$count;$i++) { 
+		?>
+		<tr class=tr4>	
+			<td width="130">关联行业</td>
+			<td width="200" align="left">
+				<input type="text" value="<?php echo $records[$i]->name;?>">
+			</td> 
+		</tr>
+		<?php }}?>
 		<tr class="tr4">
 			<td>国家</td>
 			<td width="695" align="left"><input id="gs_gj" type="text" name="gs[gj]" value="<?php echo $record->gj;?>">
@@ -84,7 +110,7 @@
 				<select id="gs_hbid" name="gs[hbid]" value="<?php echo $record->hbid;?>" style="width:90px" class="">
 					<option value="">货币种类</option>
 					<?php $len = count($hbzl); for ($i=0;$i< $len;$i++) { ?>
-					<option value="<?php echo $hbzl[$i]->id; ?>" <? if($record->hbid==$hbzl[$i]->id){?>selected="selected"<? }?>><?php echo $hbzl[$i]->hb_nc; ?></option>
+					<option value="<?php echo $hbzl[$i]->id; ?>" <? if($record->hbid==$hbzl[$i]->id){?>selected="selected"<? }?>><?php echo $hbzl[$i]->name; ?></option>
 					<?php } ?>
 				</select>
 		</tr>
