@@ -1,13 +1,12 @@
 <?php
 	require_once('../../frame.php');
+	
 	$search = $_REQUEST['search'];
-	
 	$db = get_db();
-	$sql = "select name,zy,xb,id from fb_mr where 1=1";
+	$sql = "select * from fb_industry";
 	if($search!=''){
-		$sql .= " and (name like '%{$search}%' or zy like '%{$search}%' or mr_jj like '%{$search}%')";
+		$sql .= " where name like '%".$search."%'";
 	}
-	
 	$record = $db->paginate($sql,15);
 	$count = count($record);
 ?>
@@ -21,43 +20,57 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub','admin/famous/famous');
+		js_include_tag('admin_pub');
 	?>
 </head>
 
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="5">
-				　<a href="edit.php">添加名人</a>　　　搜索　
+			<td colspan="3">
+				　行业管理 <a href="edit.php">添加行业</a>   搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
 				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="215">姓名</td><td width="210">职业</td><td width="50">性别</td><td width="290">操作</td>
+			<td>行业名称</td><td>操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
-					<td><?php echo $record[$i]->name;?></td>
-					<td><?php echo $record[$i]->zy;?></td>
-					<td><?php echo $record[$i]->xb;?></td>
+					<td><?php echo $record[$i]->name;?></a></td>
 					<td>
-						<a href="/admin/famous_ad/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">编辑名人代言</a>
-						<a href="/admin/famous_list/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">加入榜单</a>
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_mr">
+				<input type="hidden" id="db_table" value="fb_industry">
 		<?php
 			}
 		?>
-		<tr class="tr3">
-			<td colspan=5><?php paginate();?></td>
-		</tr>
-	</table>
-</body>
+			<tr class="tr3">
+				<td colspan=6><?php paginate();?></td>
+			</tr>
+		</table>	
+
+	</body>
 </html>
+<script>
+$(function(){
+	$("#search").keypress(function(event){
+		if (event.keyCode == 13) {
+			search();
+		}
+	});
+	
+	$('#search_b').click(function(){
+		search();
+	})
+})
+
+function search(){
+	window.location.href="?search="+encodeURI($("#search").attr('value'));
+}
+</script>
