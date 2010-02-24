@@ -4,9 +4,12 @@
 	$search = $_REQUEST['search'];
 	$level = $_REQUEST['level'];
 	$db = get_db();
-	$sql = "select * from fb_city";
+	$sql = "select * from fb_city where 1=1";
 	if($search!=''){
-		$sql .= " where name like '%{$search}%' or province_name like '%{$search}%'";
+		$sql .= " and (name like '%{$search}%' or province_name like '%{$search}%')";
+	}
+	if($level!=''){
+		$sql .=" and level=$level";
 	}
 	$record = $db->paginate($sql,15);
 	$count = count($record);

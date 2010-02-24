@@ -28,14 +28,14 @@
 			<td colspan="2" width="795">　　<?php if($id!=''){echo '编辑城市';}else{echo '添加城市';}?></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">城市名称</td><td width="695" align="left"><input type="text" name="city[name]" value="<?php echo $city->name;?>"></td>
+			<td width="130">城市名称</td><td width="695" align="left"><input type="text" class="required" name="city[name]" value="<?php echo $city->name;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">所属省份</td><td width="695" align="left"><input type="text" name="city[province_name]" value="<?php echo $city->province_name;?>"></td>
+			<td width="130">所属省份</td><td width="695" align="left"><input type="text" class="required" name="city[province_name]" value="<?php echo $city->province_name;?>"></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">行政级别</td><td width="695" align="left">
-				<select name="city[level]">
+				<select class="required" name="city[level]">
 				 	<option value=""></option>
 					<option <?php if($city->level==1)echo 'selected="selected"';?> value="1">直辖市</option>
 					<option <?php if($city->level==2)echo 'selected="selected"';?> value="2">省会城市</option>
