@@ -14,4 +14,4 @@ my.query('select id, ssdm,jys from fb_gs').each do |id,ssdm,jys|
 	stmt.execute res[1], id	
 end
 my.close
-require updatedb.rb
+require "updatedb.rb"
