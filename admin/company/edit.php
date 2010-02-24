@@ -10,7 +10,7 @@
 		css_include_tag('admin','thickbox');
 		use_jquery();
 		validate_form("gsgl_edit");
-		js_include_tag('category_class.js');
+		js_include_tag('admin/company');
 	?>
 </head>
 
@@ -35,6 +35,35 @@
 			<td width="130">公司名称</td>
 			<td width="695" align="left"><input id="gs_mc" type="text" name="gs[mc]" class="required "value="<?php echo $record->mc;?>">
 		</tr>
+		<tr class=tr4 id="a_com">
+			<td width="130">行业</td>
+			<td align="left">
+				<select id="ind_id" style="width:90px">
+					<option value="">请选择</option>
+					<?php 
+						$records = $db->query("select * from fb_industry");
+						for ($i=0;$i<count($records);$i++) { ?>
+					<option value="<?php echo $records[$i]->id;?>"><?php echo $records[$i]->name; ?></option>
+					<?php } ?>
+				</select><input type="button" id="add_company" value="添加">
+			</td>
+		</tr>
+		<?php
+			if($id!=''){
+				$records = $db->query("select t1.name,t1.id as t1_id,t2.id as t2_id from fb_industry t1 join fb_company_industry t2 on t1.id=t2.industry_id where t2.company_id=".$id);
+				$count = count($records); 
+				for ($i=0;$i<$count;$i++) { 
+		?>
+		<tr class=tr4>	
+			<td width="130">关联行业</td>
+			<td width="200" align="left">
+				<?php echo $records[$i]->name;?>
+				<button class="del_old" type="button">删除</button>
+				<input type="hidden" value="<?php echo $records[$i]->t2_id;?>">
+				<input type="hidden" class="o_industry" value="<?php echo $records[$i]->t1_id;?>">
+			</td> 
+		</tr>
+		<?php }}?>
 		<tr class="tr4">
 			<td>国家</td>
 			<td width="695" align="left"><input id="gs_gj" type="text" name="gs[gj]" value="<?php echo $record->gj;?>">

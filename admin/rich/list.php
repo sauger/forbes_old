@@ -55,7 +55,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">生日</td><td width="130">今日排名</td><td width="100">个人财富</td><td width="100">拥有公司</td><td width="230">个人经历</td><td width="210">操作</td>
+			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">出生年份</td><td width="130">今日排名</td><td width="100">个人财富</td><td width="100">拥有公司</td><td width="230">个人经历</td><td width="210">操作</td>
 		</tr>
 		<?php
 			//--------------------
