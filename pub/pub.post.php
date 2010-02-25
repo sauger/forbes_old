@@ -16,6 +16,12 @@
 						$post->delete($e_id);
 					}
 				}
+			}elseif ($_POST['db_table'] == 'fb_industry'){
+				$db = get_db();
+				$db->execute("delete from fb_company_industry where industry_id = {$_POST['del_id']}");
+			}elseif ($_POST['db_table'] == 'fb_gs'){
+				$db = get_db();
+				$db->execute("delete from fb_company_industry where company_id = {$_POST['del_id']}");
 			}
 			$post -> delete($_POST['del_id']);
 			echo $_POST['del_id'];
