@@ -108,7 +108,7 @@
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">收入</td>
+			<td width="130">收入(万人民币)</td>
 			<td align="left">
 				<input type="text" name="bd[sr]" value="<?php echo $f_bd->sr;?>" class="number required">
 			</td>
@@ -116,7 +116,7 @@
 		<tr class=tr4>
 			<td width="130">曝光率</td>
 			<td align="left">
-				<input type="text" name="bd[bgl]" value="<?php echo $f_bd->bgl;?>" class="number required">
+				<input type="text" name="bd[bgl]" value="<?php echo $f_bd->bgl;?>" class="number">
 			</td>
 		</tr>
 		<tr class=tr4>
