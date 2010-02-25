@@ -2,6 +2,10 @@
     require "../../frame.php";
 	
 	$id = $_POST['id'];
-	$fb_gs = new table_class('fb_city_list_attribute');
-	$fb_gs->delete($id);
+	$attr = new table_class('fb_city_list_attribute');
+	$attr->delete($id);
+	
+	$db = get_db();
+	$db->execute("delete from fb_city_list_content where attribute_id=".$id);
+	close_db();
 ?>

@@ -8,7 +8,7 @@
 	$db = get_db();
 	$sql = "select t1.name ,t2.city_id from fb_city t1 join fb_city_list_content t2 on t1.id=t2.city_id where t2.list_id=$id";
 	if($search!=''){
-		$sql .=" and city_name like '%{$search}%'";
+		$sql .=" and t1.name like '%{$search}%'";
 	}
 	$sql .= " group by t2.city_id";
 	$record = $db->paginate($sql,15);
@@ -24,6 +24,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
+		js_include_tag('admin/city/content_index');
 	?>
 </head>
 
@@ -53,6 +54,7 @@
 		<?php
 			}
 		?>
+		<input type="hidden" value="<?php echo $id?>" id="h_id">
 		<tr class="tr3">
 			<td colspan=6><?php paginate();?></td>
 		</tr>
