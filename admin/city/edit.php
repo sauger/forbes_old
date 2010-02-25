@@ -102,7 +102,7 @@
 		<tr class=tr4>
 			<td width="130">城市照片</td>
 			<td width="695" align="left">
-				<input type="file" name="city_photo" <?php if($id==''){?>class="required"<?php }?>><?php if($id!=''){?><a href="<?php echo $city->photo?>" target="_blank">点击查看<?php }?>
+				<input type="file" name="city_photo" <?php if($id==''){?>class=""<?php }?>><?php if($id!=''){?><a href="<?php echo $city->photo?>" target="_blank">点击查看<?php }?>
 			</td>
 		</tr>
 		<tr class=tr4>
