@@ -45,7 +45,5 @@
 		}
 	}
 	close_db();
-	$fhbd = new table_class('fb_mrb');
-	$fhbd->find($f_bd->bd_id);
-	redirect("detail.php?year=".$fhbd->year);
+	redirect("detail.php?year=".$f_bd->bd_id);
 ?>

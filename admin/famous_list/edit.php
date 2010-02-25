@@ -9,6 +9,13 @@
 		$f_bd->find($id);
 		$famous = new table_class('fb_mr');
 		$famous->find($f_bd->mr_id);
+		$list = new table_class('fb_mrb');
+		$list->find($f_bd->bd_id);
+	}else{
+		if($year!=''){
+			$list = new table_class('fb_mrb');
+			$list->find($year);
+		}
 	}
 	if($f_id!=''){
 		$famous = new table_class('fb_mr');
@@ -23,9 +30,10 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>编辑</title>
 	<?php 
-		css_include_tag('admin');
+		css_include_tag('admin','autocomplete');
 		use_jquery();
 		validate_form("fbd_edit");
+		js_include_tag('admin/famous/edit','autocomplete.jquery');
 	?>
 </head>
 <body style="background:#E1F0F7">
@@ -34,16 +42,20 @@
 		<tr class=tr1>
 			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人榜单";}else{echo "添加名人榜单";}?>
 			<?php if ($f_id != ''){?><a href="/admin/famous/index.php" style="cursor:pointer">返回列表</a>	<?php }?>
-			<?php if ($year != ''){?><a href="detail.php?year=<?php echo $year; ?>" style="cursor:pointer">返回列表</a>	<?php }?>		
-			<?php if ($id != ''){?><a href="index.php" style="cursor:pointer">返回列表</a>	<?php }?>
+			<?php if ($year != ''){?><a href="detail.php?year=<?php echo $year; ?>" style="cursor:pointer">返回<?php echo $list->year?></a>	<?php }?>		
+			<?php if ($id != ''){?><a href="index.php" style="cursor:pointer">返回榜单列表</a>	<?php }?>
 			</td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">姓名</td>
 			<td width="695" align="left">
 				<?php if ($year == ''){ echo $famous->name; ?>
-				<input type="hidden" name="bd[mr_id]" value="<?php echo $famous->id;?>">
+				<input type="hidden" name="bd[mr_id]" id="mr_id" value="<?php echo $famous->id;?>">
 				<?php } else { ?>
+				<input value="<?php echo $famous->name;?>" id="mr_id"><span id="error"></span>
+				<input type="hidden" name="bd[mr_id]" value="<?php echo $f_bd->mr_id;?>" id="h_mr_id">
+				<input type="hidden" id="f_type" value="1">
+				<!-- 
 				<select name="bd[mr_id]">
 					<?php 
 						$sql = "select * from fb_mr where id not in (select mr_id from fb_mrbd a,fb_mrb b where a.bd_id = b.id and year = '{$year}')";
@@ -54,6 +66,7 @@
 					<option value="<?php echo $record[$i]->id?>"><?php echo $record[$i]->name; ?></option>
 					<?php }?>
 				</select>
+				-->
 				<?php }?>
 			</td>
 		</tr>
@@ -61,6 +74,7 @@
 			<td>榜单名称</td>
 			<td align="left">
 				<?php if ($year == '') { ?>
+				<!-- 
 				<select name="bd[bd_id]" id="bd[bd_id]">
 					<?php 
 						if($f_id=='')
@@ -77,8 +91,12 @@
 					<option <?php if($f_bd->bd_id==$record[$i]->id)echo 'selected="selected"';?> value="<?php echo $record[$i]->id?>"><?php echo $record[$i]->year?></option>
 					<?php }?>
 				</select>
+				-->
+				<input id="bd_id"><span id="error"></span>
+				<input type="hidden" name="bd[bd_id]" id="h_bd_id">
+				<input type="hidden" id="f_type" value="2">
 				<?php } else { ?>
-					<?php echo $year;?><input type="hidden" name="bd[bd_id]" value="<?php $sql1 = "select * from fb_mrb where year='".$year."'";$record1 = $db->query($sql1);echo $record1[0]->id;?>"> 
+					<?php echo $list->year;?><input type="hidden" id="bd_id" name="bd[bd_id]" value="<?php echo $year;?>"> 
 				<?php }?>
 				
 			</td>
@@ -105,7 +123,7 @@
 			<td width="130">上传照片</td>
 			<td align="left">
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
-				<span id="use_mr" style="cursor:pointer;">使用名人照片（默认）</span>
+				<span id="use_mr" style="cursor:pointer;">使用名人照片</span>
 				<input type="file" name="photo" id="photo"  >（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $f_bd->zp?>">点击查看照片</a><?php }?>
 				<input type="hidden" value="<?php echo $f_bd->zp;?>" id="bd_zp" name="bd[zp]">
 			</td>
@@ -114,7 +132,7 @@
 			<td height=265>上榜理由</td><td><?php show_fckeditor('bd[sbly]','Admin',true,"265",$f_bd->sbly);?></td>
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+			<td colspan="2" width="795" align="center"><input id="finish" type="button" value="完成"></td>
 		</tr>	
 	</table>
 		<input type="hidden" name="id" value="<?php echo $id;?>">
