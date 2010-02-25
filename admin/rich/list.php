@@ -55,7 +55,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">出生年份</td><td width="130">今日排名</td><td width="100">个人财富</td><td width="100">拥有公司</td><td width="230">个人经历</td><td width="210">操作</td>
+			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">出生年份</td><td width="130">今日排名</td><td width="100">个人财富</td><td width="100">拥有公司</td><td width="210">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -65,7 +65,7 @@
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->name);?></a></td>
 					<td>
-						<?php if($record[$i]->xb==0) {echo 女;} else if($record[$i]->xb==1) {echo 男;} else {echo 未知;} ?>
+						<?php if($record[$i]->xb==0) {echo '女';} else if($record[$i]->xb==1) {echo '男';} else {echo '未知';} ?>
 					</td>
 					<td>
 						<?php echo strip_tags($record[$i]->nl);?>
@@ -97,9 +97,6 @@
 										echo ",".strip_tags($record2[$k]->mc);
 									}
 						?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->grjl);?>
 					</td>
 					<td>
 						<a href="/admin/rich_list/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">加入榜单</a>

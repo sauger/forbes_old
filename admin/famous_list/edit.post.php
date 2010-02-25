@@ -10,12 +10,7 @@
 		$flag1=1;$flag2=1;
 	}
 	$f_bd->update_attributes($_POST['bd'],false);
-	if(($_POST['bd[zp]']=='')&&($f_bd->zp==''))
-	{
-		$fh = new table_class('fb_mr');
-		$fh->find($f_bd->mr_id);
-		$f_bd->zp = $fh->mr_zp;
-	}
+	
 	if($_FILES['photo']['name']!=null){
 		$upload = new upload_file_class();
 		$upload->save_dir = "/upload/famous_images/";
