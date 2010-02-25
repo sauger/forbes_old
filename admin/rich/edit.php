@@ -7,9 +7,9 @@
 	<?php 
 		require_once('../../frame.php');
 		judge_role();
-		css_include_tag('admin','thickbox');
+		css_include_tag('admin','thickbox','autocomplete');
 		use_jquery();
-		js_include_tag('admin/rich');
+		js_include_tag('admin/rich','autocomplete.jquery');
 		validate_form("fhgl_edit");
 	?>
 </head>
@@ -66,12 +66,17 @@
 		<tr class=tr4 id="a_com">
 			<td width="130">公司</td>
 			<td align="left">
+				<input id="company_input" type="text"></input>
+				<input id="gsid" type="hidden" value="0"></input>
+				<!-- 
 				<select id="gsid" name="gsid" style="width:90px">
 					<option value="">请选择</option>
 					<?php $len1 = count($gs_id); for ($i=0;$i< $len1;$i++) { ?>
 					<option value="<?php echo $gs_id[$i]->id;?>"><?php echo $gs_id[$i]->mc; ?></option>
 					<?php } ?>
-				</select><input type="button" id="add_company" value="添加">
+				</select>
+				 -->
+				<input type="button" id="add_company" value="添加">
 			</td>
 		</tr>
 		<?php $len = count($record2); for ($i=0;$i< $len;$i++) { ?>
