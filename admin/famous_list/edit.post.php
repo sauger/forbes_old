@@ -33,7 +33,7 @@
 	if($flag1==1){
 		$sql = "select id from fb_mrbd order by sr desc";
 		$record = $db->query($sql);
-		for($i=0;$i<4;$i++){
+		for($i=0;$i<count($record);$i++){
 			$db->execute("update fb_mrbd set sr_pm=".($i+1)." where id=".$record[$i]->id);
 		}
 	}

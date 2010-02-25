@@ -32,17 +32,16 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="6">
-				 <?php if ($year != ''){ echo $list->year; ?>   <a href="edit.php?year=<?php echo $year; ?>">添加名人</a> <?php } ?>  搜索　
+				 <?php if ($year != ''){ ?>   <a href="edit.php?year=<?php echo $year; ?>">添加名人</a> <?php } ?>  搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				 榜单名称<select id="searchyear">
-				 	<option value=""></option>
+				 榜单名称<select style="width:80px;" id="searchyear">
 					<?php 
 						$sql1 = "select * from fb_mrb";
 						$record1 = $db->query($sql1);
 						$count1 = count($record1);
 						for($k=0;$k< $count1;$k++){
 					?>
-					<option <?php if($_REQUEST['searchyear']==$record1[$k]->id)echo 'selected="selected"';?> value="<?php echo $record1[$k]->id;?>"><?php echo $record1[$k]->year;?></option>
+					<option <?php if($year2==$record1[$k]->id)echo 'selected="selected"';?> value="<?php echo $record1[$k]->id;?>"><?php echo $record1[$k]->year;?></option>
 					<?php }?>
 				</select>　
 				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
