@@ -24,7 +24,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub');
+		js_include_tag('admin/city/city_index');
 	?>
 </head>
 
@@ -69,6 +69,7 @@
 					<td>
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
+						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=city" style="color:#000000; text-decoration:none">查看评论</a>
 					</td>
 				</tr>
 				<input type="hidden" id="db_table" value="fb_city">
@@ -82,20 +83,3 @@
 
 	</body>
 </html>
-<script>
-$(function(){
-	$("#search").keypress(function(event){
-		if (event.keyCode == 13) {
-			search();
-		}
-	});
-	
-	$('#search_b').click(function(){
-		search();
-	})
-})
-
-function search(){
-	window.location.href="?search="+encodeURI($("#search").attr('value'))+"&level="+$("#level").val();
-}
-</script>
