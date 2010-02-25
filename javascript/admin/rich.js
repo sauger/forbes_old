@@ -7,7 +7,7 @@ var json_options = {
 		maxresults:16,
 		meth:'post',
 		noresults:"没有匹配的记录",
-		valueSep:" "
+		valueSep:null
 		};
 function validate_company(name){
 	$.post('/admin/company/validate_company.post.php',{'name':name},function(data){
@@ -28,6 +28,9 @@ function add_company(id, name){
 	}
 }
 $(function(){
+	$(document.body).keydown(function(e){
+		if(e.keyCode == 13) return false;
+	});
 	$('#company_input').autoComplete(json_options);
 	$(".del_com").live('click',function(){
 		for(var j=0;j<company_array.length;j++){
