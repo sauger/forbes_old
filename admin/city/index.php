@@ -24,7 +24,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub');
+		js_include_tag('admin/city/city_index');
 	?>
 </head>
 
@@ -82,20 +82,3 @@
 
 	</body>
 </html>
-<script>
-$(function(){
-	$("#search").keypress(function(event){
-		if (event.keyCode == 13) {
-			search();
-		}
-	});
-	
-	$('#search_b').click(function(){
-		search();
-	})
-})
-
-function search(){
-	window.location.href="?search="+encodeURI($("#search").attr('value'))+"&level="+$("#level").val();
-}
-</script>

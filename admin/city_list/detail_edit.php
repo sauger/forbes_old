@@ -51,14 +51,25 @@
 		<tr class=tr4>
 			<td width="130"><?php echo $records[$i]->name;?></td>
 			<td width="695" align="left">
-				<?php if($id!=''){
-					for($j=0;$j<$count2;$j++){
-						if($record[$j]->attribute_id==$records[$i]->id){
+				<?php 
+				if($id!=''){
+					$c_sql = "select count(id) as num from fb_city_list_content where city_id=".$id." and attribute_id=".$records[$i]->id;
+					$num = $db->query($c_sql);
+					$num = $num[0]->num;
+					if($num>0){
+						for($j=0;$j<$count2;$j++){
+							if($record[$j]->attribute_id==$records[$i]->id){
 				?>
-				<input type="text" name="attr_value[]" value="<?php echo $record[$j]->value;?>">
+				<input type="text" name="old_attr_value[]" value="<?php echo $record[$j]->value;?>">
 				<input type="hidden" name="content_id[]" value="<?php echo $record[$j]->id;?>">
 				<?php
-						};
+							};
+						}
+					}else{
+				?>
+				<input type="text" class="required" name="attr_value[]" >
+				<input type="hidden" name="attr_id[]" value="<?php echo $records[$i]->id;?>">
+				<?php
 					}
 				}else{?>
 				<input type="text" class="required" name="attr_value[]" >

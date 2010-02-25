@@ -12,6 +12,18 @@
 	if($id!=''){
 		$city->find($id);
 	}
+	if($_FILES['city_photo']['name']!=null){
+		$upload = new upload_file_class();
+		$upload->save_dir = "/upload/city/";
+		$img = $upload->handle('city_photo','filter_pic');
+		
+		if($img === false){
+			alert('上传文件失败 !');
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+		$city->photo = "/upload/city/{$img}";
+	}
+	
 	if(!$city->update_attributes($_POST['city'])){
 		alert('城市已存在或执行错误！');
 		redirect($_SERVER['HTTP_REFERER']);
