@@ -29,7 +29,10 @@
 			<td colspan="2" width="795">　　编辑榜单</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">榜单名称</td><td width="695" align="left"><input id="fhb_year" type="text" name="fhb[year]" value="<?php echo $record->year;?>">
+			<td width="130">榜单名称</td><td width="695" align="left"><input id="fhb_year" type="text" name="fhb[year]" value="<?php echo $record->year;?>"></td>
+		</tr>
+		<tr class=tr4>
+			<td width="130">财富单位</td><td width="695" align="left"><select name="fhb[unit]"><option value="亿人民币">亿人民币</option><option value="亿美元"<?php if($record->unit == '亿美元') echo " selected='selected'"?> >亿美元</option></select></td>
 		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
