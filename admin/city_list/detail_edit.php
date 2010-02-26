@@ -6,10 +6,10 @@
 	<title>富豪编辑</title>
 	<?php 
 		require_once('../../frame.php');
-		css_include_tag('admin');
+		css_include_tag('admin','autocomplete');
 		use_jquery();
 		validate_form("city_edit");
-		js_include_tag('admin/city/add')
+		js_include_tag('admin/city/add','autocomplete.jquery')
 	?>
 </head>
 
@@ -26,7 +26,7 @@
 	<form id="city_edit" action="detail_edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo '编辑榜单';}else{echo '添加榜单';}?></td>
+			<td colspan="2" width="795">　　<?php if($id!=''){echo '编辑榜单';}else{echo '添加榜单';}?>　<a href="detail.php?id=<?php echo $list_id?>">返回榜单页</a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">城市名称</td>
