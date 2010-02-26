@@ -19,6 +19,10 @@
 			$content->save();
 		}
 	}else{
+		$content = new table_class('fb_city_list_content');
+		$content->city_id = $_POST['city_id'];
+		$content->list_id = $_POST['list_id'];
+		$content->save();
 		for($i=0;$i<count($_POST['attr_value']);$i++){
 			$content = new table_class('fb_city_list_content');
 			$content->city_id = $_POST['city_id'];

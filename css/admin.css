@@ -6,11 +6,11 @@ a{text-decoration:none; color:black;}
 #main{width:100%; height:550px; float:left; display:inline;}
 #login{width:274px; height:300px; margin:0 auto; margin-top:80px;}
 #login #title{width:180px; height:50px; text-align:center; font-weight:bold; font-size:25px; color:#ffffff; margin:0 auto;}
-#login #box{width:274px; height:170px; margin-top:30px; background:url(/images/admin_login.jpg) no-repeat; border:1px solid #0066FF; float:left: display:inline;}
-#login #name{width:220px; height:25px; margin-top:50px; margin-left:20px; float:left: display:inline;}
-#login #pwd{width:220px; height:25px; margin-top:10px; margin-left:20px; float:left: display:inline;}
-#login #btn{width:220px; height:25px; margin-top:10px; margin-left:20px; text-align:center; line-height:15px; float:left: display:inline;}
-#login #btn #botton{width:75px; height:27px; border:1px solid #77A0AB; background:#C5E4EB; text-align:center; float:left: display:inline;}
+#login #box{width:274px; height:170px; margin-top:30px; background:url(/images/admin_login.jpg) no-repeat; border:1px solid #0066FF; float:left; display:inline;}
+#login #name{width:220px; height:25px; margin-top:50px; margin-left:20px; float:left; display:inline;}
+#login #pwd{width:220px; height:25px; margin-top:10px; margin-left:20px; float:left; display:inline;}
+#login #btn{width:220px; height:25px; margin-top:10px; margin-left:20px; text-align:center; line-height:15px; float:left; display:inline;}
+#login #btn #botton{width:75px; height:27px; border:1px solid #77A0AB; background:#C5E4EB; text-align:center; float:left; display:inline;}
 
 #admin_body{width:980px; height:300px; margin:0 auto;}
 #part1{width:980px; height:93px; background:url(/images/admin/nav_bg.jpg) repeat-x; float:left; display:inline;}
