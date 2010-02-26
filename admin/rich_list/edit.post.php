@@ -5,13 +5,9 @@
 	if($id!=''){
 		$f_bd->find($id);
 	}
-	$f_bd->update_attributes($_POST['fh'],false);
-	if(($_POST['fh[zp]']=='')&&($f_bd->zp==''))
-	{
-		$fh = new table_class('fb_fh');
-		$fh->find($f_bd->fh_id);
-		$f_bd->zp = $fh->fh_zp;
-	}
+	
+	$f_bd->update_attributes($_POST['bd'],false);
+	
 	if($_FILES['photo']['name']!=null){
 		$upload = new upload_file_class();
 		$upload->save_dir = "/upload/rich_images/";
@@ -24,7 +20,6 @@
 		$f_bd->zp = "/upload/rich_images/{$img}";
 	}
 	$f_bd->save();
-	$fhbd = new table_class('fb_fhb');
-	$fhbd->find($f_bd->bd_id);
-	redirect("detail.php?year=".$fhbd->year);
+	
+	redirect("detail.php?year=".$f_bd->bd_id);
 ?>

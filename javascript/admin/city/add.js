@@ -1,6 +1,20 @@
+var json_options = {
+		script:'/admin/city/_city.php?limit=6&',
+		varname:'name',
+		json:true,
+		shownoresults:true,
+		maxresults:16,
+		meth:'post',
+		noresults:"没有匹配的记录",
+		valueSep:null
+		};
+
 $(function(){
 	var city_name = $('#city_name').val();
 	
+	$('#city_name').autoComplete(json_options);
+	
+	/*
 	$("#city_name").change(function(){
 		$.post('check_name.php',{'name':$('#city_name').val(),'list_id':$("#list_id").val()},function(data){
 			if(data=='no_data'){
@@ -19,7 +33,7 @@ $(function(){
 			}
 		});
 	});
-	
+	*/
 	
 	$("#finish").click(function(){
 		if($("#city_name").val()==''){
