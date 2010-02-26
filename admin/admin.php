@@ -1,5 +1,4 @@
 <?php
-	//var_dump($_SESSION);
 	require_once('../frame.php');
 	require_role('admin');
 ?>
@@ -61,7 +60,7 @@
 		</div>
 		
 		<div id=part3>
-		  <iframe id=admin_iframe name="admin_iframe" scrolling="yes" frameborder="0" src="/admin/menu/menu_list.php" width="99%" height="700px"></iframe>
+		  <iframe id=admin_iframe name="admin_iframe" scrolling="yes" frameborder="0" src="/admin/news/news_list.php" width="99%" height="700px"></iframe>
 		</div>		
 	</div>
 </body>
