@@ -75,6 +75,21 @@
 				</select>				
 			</td>
 		</tr>	
+		<?php
+		if ($menu->parent_id == 0){ ?>
+		<tr class="tr3">
+			<td>
+				要求权限:
+			</td>
+			<td align="left">
+				<select id="sel_role_level" name="post[role_level]">
+					<option value="1" <?php if ($menu->role_level == 1) echo 'selected="selected"' ?>>管理员</option>
+					<option value="2" <?php if ($menu->role_level == 2) echo 'selected="selected"' ?>>超级管理员</option>
+				</select>				
+			</td>
+		</tr>
+		<?php	}
+		?>	
 		<tr class=tr3>
 			<td>描述：</td>
 			<td align="left"><input type="text" name="post[description]" value="<?php echo $menu->description;?>"></td>
