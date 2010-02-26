@@ -32,6 +32,9 @@
 		<tr class=tr4>
 			<td width="130">榜单名称</td><td width="695" align="left"><input id="mrb_year" type="text" name="mrb[year]" value="<?php echo $record->year;?>">
 		</tr>
+		<tr class=tr4>
+			<td width="130">榜单年份</td><td width="695" align="left"><input type="text" name="mrb[publish_year]" value="<?php echo $record->publish_year?>"></input>(四位年，如：2010)</td>
+		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
 		</tr>	
