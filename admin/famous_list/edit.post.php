@@ -26,14 +26,14 @@
 	
 	$db = get_db();
 	if($flag1==1){
-		$sql = "select id from fb_mrbd order by sr desc";
+		$sql = "select id from fb_mrbd where bd_id={$_POST['bd']['bd_id']} order by sr desc";
 		$record = $db->query($sql);
 		for($i=0;$i<count($record);$i++){
 			$db->execute("update fb_mrbd set sr_pm=".($i+1)." where id=".$record[$i]->id);
 		}
 	}
 	if($flag2==1){
-		$sql = "select id from fb_mrbd order by bgl";
+		$sql = "select id from fb_mrbd where bd_id={$_POST['bd']['bd_id']} order by bgl";
 		$record = $db->query($sql);
 		for($i=0;$i<count($record);$i++){
 			$db->execute("update fb_mrbd set bgl_pm=".($i+1)." where id=".$record[$i]->id);
