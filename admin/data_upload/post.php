@@ -92,7 +92,7 @@
 					$value = implode(",", $value);
 					$set = implode(" and ", $set);
 					if($set==''){
-						$db->execute("insert into fb_mrbd ({$name}) values ({$value})");
+						$db->execute("insert into fb_mrbd ({$name}) values ({$value}) ON DUPLICATE KEY");
 					}else{
 						$db->execute("insert into fb_mrbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
 					}
