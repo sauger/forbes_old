@@ -43,7 +43,7 @@ class database_row_item_class {
 	}
 	
 	function __get($var) {
-		$var = strtolower($var);
+		//$var = strtolower($var);
 		if(array_key_exists($var, $this->aresult)){
 			return $this->aresult[$var];
 		}else{
