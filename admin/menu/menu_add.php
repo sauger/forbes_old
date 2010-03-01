@@ -1,4 +1,4 @@
-﻿<?php
+﻿﻿<?php
 	require_once('../../frame.php');
 	judge_role();
 	$id=$_REQUEST['id'];	
@@ -130,6 +130,7 @@
 		});
 	});
 </script>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -267,3 +268,5 @@
 </script>
 >>>>>>> 4a0021a96b26bf48ee1706243817a8a530086708:admin/menu/menu_add.php
 >>>>>>> 7571baa7f0dc1478b9d4eac14f76ecf344bc1633
+=======
+>>>>>>> 20d07ec8b9492c880dcff67fbd008f8074df93ab
