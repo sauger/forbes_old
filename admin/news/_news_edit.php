@@ -12,6 +12,7 @@
 	if (!$news->news_type){
 		$news->news_type = 1;
 	}
+	$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 	
 ?>
 	<form id="news_edit" enctype="multipart/form-data" action="news.post.php" method="post"> 
@@ -25,7 +26,13 @@
 		<tr class=tr4>
 			<td>分　类</td>
 			<td align="left" class="newsselect1" >
-			<span id="span_category"></span>
+				<span id="span_category"></span>
+			</td>
+		</tr>
+		<tr class=tr4>
+			<td>作　者</td>
+			<td align="left" class="newsselect1" >
+				<input type="text" name="news[author]" value="<?php echo $news->author;?>"></input>
 			</td>
 		</tr>
 		<tr class=tr4>
@@ -40,7 +47,13 @@
 			<td>关键词/优先级</td>
 			<td align="left">
 				<input type="text" size="20" name=news[keywords]  id="news_keywords"  value="<?php echo $news->keywords;?>">(空格分隔)　　/　　
-				<input type="text" size="10" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)</td>
+				<input type="text" size="10" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)
+			</td>
+		</tr>
+		<tr class=tr4>
+			<td>关联相关新闻</td>
+			<td align="left" id="td_related_news">
+			</td>
 		</tr>
 		<?php if($id!=''){?>
 		<tr class="tr4">
@@ -100,12 +113,17 @@
 		<input type="hidden" name="news[category_id]" id="category_id" value="<?php echo $news->category_id;?>">
 		<input type="hidden" name="news[image_flag]" value="<?php echo $news->image_flag;?>" id="hidden_image_flag">
 		<input type="hidden" name="id" id="hidden_news_id" value="<?php echo $news->id; ?>">
+		<input type="hidden" name="news[related_news]" id="hidden_related_news" value="<?php echo $news->related_news;?>"></input>
 	</form>
 
 <script>
 $(function(){
 		category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){			
 		});
+		<?php foreach ($related_news as $v) {?>
+			related_news.push(<?php echo "'$v'";?>);
+		<?php } ?>
+		display_related_news();
 	});	
 
 </script>

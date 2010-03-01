@@ -1,6 +1,28 @@
 /**
  * @author sauger
  */
+	var related_news = new Array();
+	function add_related_news(id){
+		related_news.push(id);
+		$('#hidden_related_news').attr('value',related_news.join(','));
+	}
+
+	function remove_related_news(id){
+		icount = related_news.length;
+		for(i=0;i<icount;i++){
+			if(related_news[i] == id){
+				related_news.splice(i,1);
+			}
+		}
+		$('#hidden_related_news').attr('value',related_news.join(','));
+	}	
+	function display_related_news(){
+		if ($('#td_related_news')){
+			$('#td_related_news').html("已关联相关新闻 " + related_news.length + " 条 " + '<a style="color:blue;" href="#" id="a_related_news">编辑</a>');
+			$('#a_related_news').colorbox({href:'news_filter.php?show_div=1'});
+			$('hidden_related_news').val(related_news.join(','));
+		}
+	};
 $(function(){
 	$('#news_edit').submit(function(){		
 		var video_array = new Array('flv','wmv','wav','mp3','mp4','avi','rm');
@@ -74,10 +96,11 @@ $(function(){
 		else
 		{
 			$.post("/admin/news/delete_english_news.post.php",{'del_id':$(this).attr('href'),'ch_id':$('#hidden_news_id').val()},function(data){
-				//$("#"+data).remove();
 				window.location.reload();
 			});
 		}
 	});
-
+	
+	
+	$('#a_related_news').colorbox({href:'news_filter.php?show_div=1'});
 });
