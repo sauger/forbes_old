@@ -23,6 +23,6 @@
 	else
 	{
 		alert("用户名或密码错误");
-		redirect('comlogin.php');
+		redirect('index.php');
 	}
 ?>

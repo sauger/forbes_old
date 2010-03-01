@@ -13,5 +13,6 @@ $(function(){
 			search_news();
 		}
 	});
+	
 });
 	
