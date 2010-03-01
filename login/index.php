@@ -48,7 +48,7 @@
 	  		<div>
 	  		 <div id=left-font3>期　限：</div>
 	  		 <select type="text" class="font2" name="time">
-	  		 <option></option>
+	  		 <option value="0">不保存</option>
 	  		 <option value="1">一天</option>
 	  		 <option value="7">一周</option>
 	  		 <option value="30">一月</option>

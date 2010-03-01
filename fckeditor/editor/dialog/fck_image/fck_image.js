@@ -499,7 +499,6 @@ function CheckUpload()
 		alert( 'Please select a file to upload' ) ;
 		return false ;
 	}
-
 	if ( ( FCKConfig.ImageUploadAllowedExtensions.length > 0 && !oUploadAllowedExtRegex.test( sFile ) ) ||
 		( FCKConfig.ImageUploadDeniedExtensions.length > 0 && oUploadDeniedExtRegex.test( sFile ) ) )
 	{
@@ -510,6 +509,5 @@ function CheckUpload()
 	// Show animation
 	window.parent.Throbber.Show( 100 ) ;
 	GetE( 'divUpload' ).style.display  = 'none' ;
-
 	return true ;
 }
