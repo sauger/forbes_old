@@ -3,9 +3,15 @@
 	require_once('reader.php');
 	$db = get_db();
 	
+	$upload = new upload_file_class();
+	$upload->save_dir = "/upload/xls/";
+	$xls = $upload->handle('xls');
+	$file = ROOT_DIR.'upload/xls/'.$xls;
+	echo $file;
+	
 	$data = new Spreadsheet_Excel_Reader();
     $data->setOutputEncoding('utf-8');
-    $data->read($_FILES['xls']['tmp_name']);
+    $data->read($file);
 	if($_POST['table']=='rich_list'){
 		for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 			$name = array();
@@ -117,6 +123,6 @@
 		}
 		
 	}
-	
+	unlink($file);
 	
 ?>
