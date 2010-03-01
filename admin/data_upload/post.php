@@ -7,7 +7,6 @@
 	$upload->save_dir = "/upload/xls/";
 	$xls = $upload->handle('xls');
 	$file = ROOT_DIR.'upload/xls/'.$xls;
-	echo $file;
 	
 	$data = new Spreadsheet_Excel_Reader();
     $data->setOutputEncoding('utf-8');
@@ -45,11 +44,7 @@
 					$name = implode(",", $name);
 					$value = implode(",", $value);
 					$set = implode(" and ", $set);
-					if($set==''){
-						$db->execute("insert into fb_fhbd ({$name}) values ({$value})");
-					}else{
-						$db->execute("insert into fb_fhbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
-					}
+					$db->execute("insert into fb_fhbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
 				}
 			}
 		}
@@ -91,11 +86,7 @@
 					$name = implode(",", $name);
 					$value = implode(",", $value);
 					$set = implode(" and ", $set);
-					if($set==''){
-						$db->execute("insert into fb_mrbd ({$name}) values ({$value})");
-					}else{
-						$db->execute("insert into fb_mrbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
-					}
+					$db->execute("insert into fb_mrbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
 				}
 			}
 		}
@@ -115,27 +106,24 @@
 			$name = array();
 			$value = array();
 			$set = array();
+			$full_set = array();
 			for($j=1;$j<count($table_fields);$j++){
 				if($_POST[$table_fields[$j]->Field]!=''){
 					array_push($name,$table_fields[$j]->Field);
 					array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST[$table_fields[$j]->Field]]}'");
-					if($table_fields[$j]->Key!='UNI'){
-						array_push($set,"{$table_fields[$j]->Field}='{$data->sheets[0]['cells'][$i][$_POST[$table_fields[$j]->Field]]}'");
-					}
+					array_push($set,"{$table_fields[$j]->Field}='{$data->sheets[0]['cells'][$i][$_POST[$table_fields[$j]->Field]]}'");
 				}
 			}
 			$name = implode(",", $name);
 			$value = implode(",", $value);
 			$set = implode(" and ", $set);
-			if($set==''){
-				$db->execute("insert into {$_POST['table']} ({$name}) values ({$value})");
-			}else{
-				$db->execute("insert into {$_POST['table']} ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
-			}
+			$db->execute("insert into {$_POST['table']} ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
 			
 		}
 		
 	}
 	unlink($file);
+	alert("数据导入成功");
+	redirect("/admin/data_upload/",'js');
 	
 ?>

@@ -6,6 +6,7 @@
 		<title>测试</title>
 		<?php
 		include "frame.php";
+		echo CURRENT_DIR;
 		use_jquery();
 		js_include_tag('jquery-ui-1.7.2.custom.min.js','autocomplete.jquery.js','jquery.colorbox-min.js');
 		css_include_tag('autocomplete','colorbox');
