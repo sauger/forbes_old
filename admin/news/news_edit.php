@@ -33,7 +33,6 @@
 		}else{
 			include "_news_edit.php";
 		}	
-		
 	?>
 </body>
 </html>
