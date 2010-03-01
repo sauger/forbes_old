@@ -42,6 +42,7 @@
 				<input type="text" size="20" name=news[keywords]  id="news_keywords"  value="<?php echo $news->keywords;?>">(空格分隔)　　/　　
 				<input type="text" size="10" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)</td>
 		</tr>
+		<?php if($id!=''){?>
 		<tr class="tr4">
 			<td>英文版</td>
 			<td align="left">
@@ -52,6 +53,7 @@
 			<?php } ?>
 			</td>
 		</tr>
+		<?php }?>
 		<tr class=tr4 id=target_url>
 			<td>URL</td><td align="left"><input type="text" size="50" name=news[target_url] value="<?php echo $news->target_url; ?>"></td>
 		</tr>
