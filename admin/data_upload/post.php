@@ -45,7 +45,11 @@
 					$name = implode(",", $name);
 					$value = implode(",", $value);
 					$set = implode(" and ", $set);
-					$db->execute("insert into fb_fhbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
+					if($set==''){
+						$db->execute("insert into fb_fhbd ({$name}) values ({$value})");
+					}else{
+						$db->execute("insert into fb_fhbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
+					}
 				}
 			}
 		}
@@ -87,7 +91,11 @@
 					$name = implode(",", $name);
 					$value = implode(",", $value);
 					$set = implode(" and ", $set);
-					$db->execute("insert into fb_mrbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
+					if($set==''){
+						$db->execute("insert into fb_mrbd ({$name}) values ({$value})");
+					}else{
+						$db->execute("insert into fb_mrbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
+					}
 				}
 			}
 		}
@@ -119,7 +127,12 @@
 			$name = implode(",", $name);
 			$value = implode(",", $value);
 			$set = implode(" and ", $set);
-			$db->execute("insert into {$_POST['table']} ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
+			if($set==''){
+				$db->execute("insert into {$_POST['table']} ({$name}) values ({$value})");
+			}else{
+				$db->execute("insert into {$_POST['table']} ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
+			}
+			
 		}
 		
 	}
