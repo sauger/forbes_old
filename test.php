@@ -6,9 +6,10 @@
 		<title>测试</title>
 		<?php
 		include "frame.php";
+		echo CURRENT_DIR;
 		use_jquery();
-		js_include_tag('jquery-ui-1.7.2.custom.min.js','autocomplete.jquery.js');
-		css_include_tag('autocomplete');
+		js_include_tag('jquery-ui-1.7.2.custom.min.js','autocomplete.jquery.js','jquery.colorbox-min.js');
+		css_include_tag('autocomplete','colorbox');
 		?>
 	</head>
 	<body>
@@ -58,5 +59,15 @@
 	<div id="msg">
 	<input style="width: 200px" type="text" id="test_xml" />
 	<span id='json_info'></span></div>
+	<div id="a">div</div>
+	
 	</body>
 </html>
+
+<script>
+	$(function(){
+		var related_news = "abc";
+		$('#a').colorbox({href:'test2.php'});
+	});
+	
+</script>

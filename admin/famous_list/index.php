@@ -53,7 +53,7 @@
 					</td>
 					<td>
 						<a href="bdedit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<a href="detail.php?year=<?php echo $record[$i]->year;?>" class="edit" name="<?php echo $record[$i]->year;?>" style="cursor:pointer">榜单管理</a>
+						<a href="detail.php?year=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->year;?>" style="cursor:pointer">榜单管理</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
 				</tr>

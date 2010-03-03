@@ -5,7 +5,10 @@ upload/*
 *.flv
 ~*
 *.bak
+<<<<<<< HEAD:.gitignore
 *.png
+=======
+>>>>>>> ff0a222070d157174f040d1551c59f06cbfbce96:.gitignore
 bbs/*
 blog/*
 ucenter/*
@@ -18,3 +21,7 @@ tools/*
 *.swf
 config/config.php
 .*~
+<<<<<<< HEAD:.gitignore
+=======
+discuz/*
+>>>>>>> ff0a222070d157174f040d1551c59f06cbfbce96:.gitignore

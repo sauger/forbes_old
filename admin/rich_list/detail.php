@@ -3,14 +3,13 @@
 	
 	$search = $_REQUEST['search'];
 	$year = $_REQUEST['year'];
-	$searchyear = $_REQUEST['searchyear'];
+	$list = new table_class('fb_mrb');
+	$list->find($year);
+	$year2 = ($_REQUEST['searchyear']=='')?$year:$_REQUEST['searchyear'];
 	$db = get_db();
-	$sql = "select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b,fb_fhb c where b.id=a.fh_id and a.bd_id=c.id and year ='".$year."' order by pm asc";
+	$sql = "select t1.id,t1.pm,t1.sr,t2.name from fb_fhbd t1 join fb_fh t2 on t1.fh_id=t2.id where t1.bd_id=".$year2;
 	if($search!=''){
-		$sql ="select a.id,name,year,pm,sr,bgl from fb_fhbd a,fb_fh b,fb_fhb c where a.fh_id=b.id and a.bd_id=c.id and name like '%{$search}%' ";
-	}
-	if($searchyear!=''){
-		$sql .=" and year=".$searchyear;
+		$sql .=" and (name like '%{$search}%' or pm like '%{$search}%' or sr like '%{$search}%')";
 	}
 	$record = $db->paginate($sql,15);
 	$count = count($record);
@@ -33,37 +32,34 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="6">
-				 <?php if ($year != ''){ echo $year; ?>富豪榜单   <a href="edit.php?year=<?php echo $year; ?>">添加富豪</a> <?php } ?>  搜索　
+				 <?php if ($year != ''){ ?>   <a href="edit.php?year=<?php echo $year; ?>">添加富豪</a> <?php } ?>  搜索　
 				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				 榜单名称<select id="searchyear">
-				 	<option value=""></option>
+				 榜单名称<select style="width:80px;" id="searchyear">
 					<?php 
-						$sql1 = "select * from fb_fhb order by year asc";
-						$record1 = $db->paginate($sql1,15);
+						$sql1 = "select * from fb_fhb";
+						$record1 = $db->query($sql1);
 						$count1 = count($record1);
 						for($k=0;$k< $count1;$k++){
 					?>
-					<option <?php if($searchyear==$record1[$k]->year)echo 'selected="selected"';?> value="<?php echo $record1[$k]->year;?>"><?php echo $record1[$k]->year;?></option>
+					<option <?php if($year2==$record1[$k]->id)echo 'selected="selected"';?> value="<?php echo $record1[$k]->id;?>"><?php echo $record1[$k]->year;?></option>
 					<?php }?>
 				</select>　
 				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
-				 <a href="index.php" style="cursor:pointer">返回榜单列表</a>   共有项目：<?php echo $count; ?>
+				 <a href="index.php" style="cursor:pointer">返回榜单列表</a>
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">姓名</td><td width="100">榜单名称</td><td width="110">排名</td><td width="130">收入</td><td width="100">曝光率</td><td width="210">操作</td>
+			<td width="115">姓名</td><td width="110">排名</td><td width="130">个人财富</td><td width="210">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
 					<td><?php echo $record[$i]->name;?></td>
-					<td><?php echo $record[$i]->year;?></td>
 					<td><?php echo $record[$i]->pm;?></td>
 					<td><?php echo $record[$i]->sr;?></td>
-					<td><?php echo $record[$i]->bgl;?></td>
 					<td>
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
+						<a href="edit.php?id=<?php echo $record[$i]->id;?>&year=<?php echo $year;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
 				</tr>
@@ -74,6 +70,7 @@
 		<tr class="tr3">
 			<td colspan=6><?php paginate();?></td>
 		</tr>
+		<input type="hidden" id="year" value="<?php echo $year;?>"> 
 	</table>
 </body>
 </html>

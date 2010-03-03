@@ -45,7 +45,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="100">名称</td><td width="40">国家</td><td width="40">省份</td><td width="40">城市</td><td width="100">地址</td><td width="80">网址</td><td width="80">介绍</td><td width="100">上市公司代码</td><td width="50">交易所</td><td width="60">货币种类</td><td width="70">操作</td>
+			<td width="100">名称</td><td width="40">国家</td><td width="100">股票代码</td><td width="50">交易所</td><td width="60">货币种类</td><td width="70">操作</td>
 		</tr>
 		<?php
 			$len = count($record);
@@ -53,28 +53,13 @@
 		?>
 				<tr class="tr3" id=<?php echo $record[$i]->id;?> >
 					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->mc);?></a></td>
-					<td>
+					<td align="center">
 						<?php echo strip_tags($record[$i]->gj);?>
 					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->sf);?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->cs);?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->dz);?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->wz);?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->js);?>
-					</td>
-					<td>
+					<td align="center">
 						<?php echo strip_tags($record[$i]->ssdm);?>
 					</td>
-					<td>
+					<td align="center">
 						<?php
 								switch ($record[$i]->jys)
 									{
@@ -110,7 +95,7 @@
 									}
 						?>
 					</td>
-					<td>
+					<td align="center">
 						<?php
 							$hbzl = new table_class('fb_currency');
 							if ($record[$i]->hbid != '')
@@ -120,7 +105,7 @@
 							}	
 						?>
 					</td>
-					<td>
+					<td align="center">
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>

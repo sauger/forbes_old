@@ -162,7 +162,6 @@ function FileUpload( $resourceType, $currentFolder, $sCommand )
 	}
 	$sErrorNumber = '0' ;
 	$sFileName = '' ;
-
 	if ( isset( $_FILES['NewFile'] ) && !is_null( $_FILES['NewFile']['tmp_name'] ) )
 	{
 		global $Config ;
@@ -280,7 +279,6 @@ function FileUpload( $resourceType, $currentFolder, $sCommand )
 
 	$sFileUrl = CombinePaths( GetResourceTypePath( $resourceType, $sCommand ) , $currentFolder ) ;
 	$sFileUrl = CombinePaths( $sFileUrl, $sFileName ) ;
-
 	SendUploadResults( $sErrorNumber, $sFileUrl, $sFileName ) ;
 
 	exit ;
