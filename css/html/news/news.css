@@ -1,7 +1,8 @@
 ﻿#ibody{width:1000px; margin:0 auto; margin-top:20px;}
 
+ul{list-style:none; padding:0; margin:0; margin-left:10px;}
 li{list-style-position:inside;}
-ul li{ line-height:24px; list-style-image:url(../../../images/html/news/tar3.jpg); list-style-position:outside;}
+li{background:url(../../../images/html/news/tar3.jpg) no-repeat left center; margin-top:6px; font-size:13px; height:19px; *height:17px; text-indent:17px; line-height:19px; *padding-top:3px; list-style-position:outside;}
 ul a:link{color:#283595;}
 
 a:link{	color:#626262; text-decoration:none;}

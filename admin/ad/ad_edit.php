@@ -15,9 +15,9 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>广告编辑</title>
 	<?php
-		css_include_tag('admin','thickbox');
+		css_include_tag('admin','colorbox');
 		use_jquery();
-		js_include_tag('thickbox');
+		js_include_tag('jquery.colorbox-min','admin/ad/ad_edit');
 		validate_form("ad");
 	?>
 </head>
@@ -81,7 +81,7 @@
 		
 		<tr  class="normal_news tr4">
 			<td>广告关联</td><td align="left">
-				<a style="color:blue;" href="filte_ad.php?width=600&height=400" class="thickbox">关联相关广告</a>
+				<a style="color:#0000FF;" href="filte_ad.php" title="关联广告" id="add_related_ad">关联相关广告</span>
 			</td>
 		</tr>
 
@@ -125,60 +125,7 @@
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="发布广告"></td>
 		</tr>			
 			</table>
-		<input type="hidden" name="news[related_news]" value="" id="hidden_related_news">
-		<input type="hidden" name="news[sub_news_id]" value=""  id="hidden_sub_headlines">
-		<input type="hidden" name="news[category_id]" id="category_id" value="4">
-		<input type="hidden" name="category_add" id="category_add" value="">
-		<input type="hidden" name="news[image_flag]" value="0" id="hidden_image_flag">
-		<input type="hidden" name="news[forbbide_copy]" value="" id="hidden_forbbide_copy">
-		<input type="hidden" name="id"  value="20475">
-		<input type="hidden" name="news[vote_id]"  id="vote_id" value="">
-		<input type="hidden" name="subject_id" value="" id="hidden_subject_id">
-		<input type="hidden" name="subject_category_id" value="''" id="hidden_subject_category_id">		
-		<input type="hidden" name="delete_subject" id="hidden_delete_subject" value="0">
-		<input type="hidden" name="news[is_commentable]" value="1" id="hidden_is_commentable">
-		<input type="hidden" name="news[related_videos]" value="" id="hidden_related_videos">
+		<input type="hidden" name="id"  value="<?php echo $id;?>">
 	</form>
 </body>
 </html>
-
-<script>
-	$(function(){
-		
-		$('#delete_vote').click(function(e){
-			e.preventDefault();
-			str = '<a href="add_vote.php?width=600&height=400" class="thickbox" id="a_vote_id" style="color:blue;">关联投票</a>';
-			$('#td_vote').html(str);
-			$('#vote_id').val('0');
-			tb_init('#a_vote_id');
-		});
-		$('#edit_vote').click(function(e){
-			e.preventDefault();
-			window.location.href="/admin/vote/vote_edit.php?id=" + $('#vote_id').val();
-		});
-		
-		$('#delete_subject').click(function(e){
-			e.preventDefault();
-			str = '<a style="color:blue;" href="assign_subject.php?width600&height=400" class="thickbox" id="a_assign_subject">关联专题</a>';
-			$('#td_subject').html(str);
-			tb_init('#a_assign_subject');
-			//$('#hidden_subject_id,#subject_category_id').val('0');
-			$('#hidden_delete_subject').val('2');
-		});
-		if( $('#hidden_sub_headlines').attr('value')){
-			sub_headlines = $('#hidden_sub_headlines').attr('value').split(",");
-		}
-		if($('#hidden_related_news').attr('value')){
-			related_news = $('#hidden_related_news').attr('value').split(",");
-		}
-		if($('#hidden_related_videos').attr('value')){
-			related_videos = $('#hidden_related_videos').attr('value').split(",");
-		}
-		
-	});
-
-
-
-	
-
-</script>
