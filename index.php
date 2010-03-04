@@ -11,7 +11,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('select2css');
-		css_include_tag('index','select2css');
+		css_include_tag('index','top','bottom','select2css');
 	?>
 </head>
 <body>

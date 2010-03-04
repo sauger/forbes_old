@@ -44,7 +44,7 @@
 						$record = $db->query("select id,name from fb_ad_ggw order by priority");
 						for($i=0;$i<count($record);$i++){
 					?>
-					<option <?php if($ad->ggw_id==$record[$i]->id echo 'selected="selected"';)?> value="<?php echo $record[$i]->id;?>"><?php echo $record[$i]->name;?></option>
+					<option <?php if($ad->ggw_id==$record[$i]->id) echo 'selected="selected"';?> value="<?php echo $record[$i]->id;?>"><?php echo $record[$i]->name;?></option>
 					<?php }?>
 				</select><span id="size"></span>
 			</td>
