@@ -54,6 +54,18 @@
 	</td>
 </tr>
 <tr class="tr3 add">
+	<td width="130">公司</td>
+	<td width="695" align="left">
+		<input style="width:50px;" type="text"  class="number" name="company">
+	</td>
+</tr>
+<tr class="tr3 add">
+	<td width="130">财富来源</td>
+	<td width="695" align="left">
+		<input style="width:50px;" type="text"  class="number" name="industry">
+	</td>
+</tr>
+<tr class="tr3 add">
 	<td width="130">备注</td>
 	<td width="695" align="left">
 		<input style="width:50px;" type="text"  class="number" name="sbly">

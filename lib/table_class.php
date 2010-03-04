@@ -5,8 +5,8 @@
 require_once(dirname(__FILE__) .'/belongs_to_object_class.php');
 class table_class{
 	private $_tablename = "";
-	private $fields_type = array();
-	private $fields_name = array();
+	public $fields_type = array();
+	public $fields_name = array();
 	private $fields_default = array();
 	private $fields = array();
 	private $changed_fields = array();
@@ -18,7 +18,8 @@ class table_class{
 	private $is_loaded = false;
 	private $db_type = 'mysql';
 	public $echo_sql = false;
-	function __construct($table_name){
+	public $fields_comment = array();
+	function __construct($table_name,$full=false){
 		echo $table_prex;
 		$this->_tablename = strtolower($table_name);
 		$this->db_type = get_config('db_type') == 'mssql' ? 'mssql' :'mysql';
@@ -27,7 +28,7 @@ class table_class{
 			
 		}else
 		{
-			$this->_load_table_struct_mysql();
+			$this->_load_table_struct_mysql($full);
 		}
 		//$this->_set_fields_default();
 		if (func_num_args() <= 0) {
@@ -43,16 +44,29 @@ class table_class{
 		}
 	}
 	
-	function _load_table_struct_mysql() {
+	function _load_table_struct_mysql($full) {
 		$db = get_db();
-		if ($db->query("show fields from " .$this->_tablename) === false) {
+		if($full){
+			$sql = "show full fields from " .$this->_tablename;
+		}else{
+			$sql = "show fields from " .$this->_tablename;
+		}
+		
+		if ($db->query($sql) === false) {
 			return ;
 		}
 		if (!$db->move_first()) return;
 		do {
 			$name = $db->field_by_index(0);
 			$type = $db->field_by_index(1);
-			$default = $db->field_by_index(4);
+			$this->fields_name[] = $name;
+			if($full){
+				$default = $db->field_by_index(5);
+				$this->fields_comment[$name] = $db->field_by_index(8);
+			}else{
+				$default = $db->field_by_index(4);
+			}
+			
 			$this->fields_type[$name] = $type;
 			$this->fields[$name] = $default;
 			$this->fields_default[$name] = $default;
