@@ -3,9 +3,14 @@
 	require_once('reader.php');
 	$db = get_db();
 	
+	$upload = new upload_file_class();
+	$upload->save_dir = "/upload/xls/";
+	$xls = $upload->handle('xls');
+	$file = ROOT_DIR.'upload/xls/'.$xls;
+	
 	$data = new Spreadsheet_Excel_Reader();
     $data->setOutputEncoding('utf-8');
-    $data->read($_FILES['xls']['tmp_name']);
+    $data->read($file);
 	if($_POST['table']=='rich_list'){
 		for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 			$name = array();
@@ -30,15 +35,25 @@
 					}
 					if($_POST['sbly']!=''){
 						array_push($name,"sbly");
-						array_push($value,$data->sheets[0]['cells'][$i][$_POST['sbly']]);
-						array_push($set,"sbly={$data->sheets[0]['cells'][$i][$_POST['sbly']]}");
+						array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST['sbly']]}'");
+						array_push($set,"sbly='{$data->sheets[0]['cells'][$i][$_POST['sbly']]}'");
+					}
+					if($_POST['company']!=''){
+						array_push($name,"company");
+						array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST['company']]}'");
+						array_push($set,"company='{$data->sheets[0]['cells'][$i][$_POST['company']]}'");
+					}
+					if($_POST['industry']!=''){
+						array_push($name,"industry");
+						array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST['industry']]}'");
+						array_push($set,"industry='{$data->sheets[0]['cells'][$i][$_POST['industry']]}'");
 					}
 					array_push($name,"bd_id");
 					array_push($value,$_POST['list_id']);
 					array_push($set,"bd_id={$_POST['list_id']}");
 					$name = implode(",", $name);
 					$value = implode(",", $value);
-					$set = implode(" and ", $set);
+					$set = implode(" , ", $set);
 					$db->execute("insert into fb_fhbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
 				}
 			}
@@ -68,19 +83,19 @@
 					if($_POST['bgl']!=''){
 						array_push($name,"bgl");
 						array_push($value,$data->sheets[0]['cells'][$i][$_POST['bgl']]);
-						array_push($set,"sbly={$data->sheets[0]['cells'][$i][$_POST['bgl']]}");
+						array_push($set,"bgl='{$data->sheets[0]['cells'][$i][$_POST['bgl']]}'");
 					}
 					if($_POST['sbly']!=''){
 						array_push($name,"sbly");
-						array_push($value,$data->sheets[0]['cells'][$i][$_POST['sbly']]);
-						array_push($set,"sbly={$data->sheets[0]['cells'][$i][$_POST['sbly']]}");
+						array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST['sbly']]}'");
+						array_push($set,"sbly='{$data->sheets[0]['cells'][$i][$_POST['sbly']]}'");
 					}
 					array_push($name,"bd_id");
 					array_push($value,$_POST['list_id']);
 					array_push($set,"bd_id={$_POST['list_id']}");
 					$name = implode(",", $name);
 					$value = implode(",", $value);
-					$set = implode(" and ", $set);
+					$set = implode(" , ", $set);
 					$db->execute("insert into fb_mrbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
 				}
 			}
@@ -101,22 +116,24 @@
 			$name = array();
 			$value = array();
 			$set = array();
+			$full_set = array();
 			for($j=1;$j<count($table_fields);$j++){
 				if($_POST[$table_fields[$j]->Field]!=''){
 					array_push($name,$table_fields[$j]->Field);
 					array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST[$table_fields[$j]->Field]]}'");
-					if($table_fields[$j]->Key!='UNI'){
-						array_push($set,"{$table_fields[$j]->Field}='{$data->sheets[0]['cells'][$i][$_POST[$table_fields[$j]->Field]]}'");
-					}
+					array_push($set,"{$table_fields[$j]->Field}='{$data->sheets[0]['cells'][$i][$_POST[$table_fields[$j]->Field]]}'");
 				}
 			}
 			$name = implode(",", $name);
 			$value = implode(",", $value);
-			$set = implode(" and ", $set);
+			$set = implode(" , ", $set);
 			$db->execute("insert into {$_POST['table']} ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
+			
 		}
 		
 	}
-	
+	unlink($file);
+	alert("数据导入成功");
+	redirect("/admin/data_upload/",'js');
 	
 ?>

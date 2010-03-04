@@ -114,6 +114,18 @@
 			</td>
 		</tr>
 		<tr class=tr4>
+			<td width="130">公司</td>
+			<td align="left">
+				<input type="text" name="bd[company]" value="<?php echo $f_bd->company;?>" class="required">
+			</td>
+		</tr>
+		<tr class=tr4>
+			<td width="130">资产来源</td>
+			<td align="left">
+				<input type="text" name="bd[industry]" value="<?php echo $f_bd->industry;?>" class="required">
+			</td>
+		</tr>
+		<tr class=tr4>
 			<td width="130">上传照片</td>
 			<td align="left">
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">

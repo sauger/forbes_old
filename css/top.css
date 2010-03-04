@@ -1,0 +1,14 @@
+#banner{width:1003px; height:90px; float:left; display:inline;}
+#itop{width:1003px; height:103px; margin-top:5px; background:url('/images/index/top_bg.jpg') no-repeat; float:left; display:inline;}
+#itop .iinput{width:160px; height:16px; border:1px solid #99CCFF; margin-top:41px; float:left; display:inline;}
+#itop .search{width:53px; height:22px; margin-top:41px; border:0px; color:#ffffff; line-height:22px; background:url('/images/index/search_bg.jpg') no-repeat; float:left; display:inline;}
+#itop .login{width:79px; height:22px; margin-top:41px; margin-left:20px; border:0px; color:#ffffff; line-height:22px; background:url('/images/index/login_bg.jpg') no-repeat; float:left; display:inline;}
+#itop a{color:#ffffff; margin-top:41px; margin-left:10px; text-decoration:underline; line-height:22px; float:left; display:inline;}
+#navigation{width:1003px; height:38px; margin-top:1px; background:#3366CC; float:left; display:inline;}
+#navigation .content{width:81px; height:38px; line-height:38px; text-align:center; color:#ffffff; float:left; display:inline;}
+#navigation .vertical{width:1px; height:25px; margin-top:6px; background:#3366CC; float:left; display:inline;}
+#navigation2{width:1003px; height:35px; background:#C1E1EE; float:left; display:inline;}
+#navigation2 .content{width:690px; height:35px; line-height:35px; text-align:center; float:left; display:inline;}
+#navigation2 .content a{color:#000000; text-decoration:underline;}
+#navigation2 #hyzq{width:218px; height:29px; margin-top:3px; margin-right:10px; line-height:35px; background:url('/images/index/hyzq.gif') no-repeat; float:right; display:inline;}
+#navigation2 #hyzq a{color:#ffffff; text-decoration:none;}

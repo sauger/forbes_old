@@ -396,5 +396,17 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 	}
 		
 }
+
+function write_log($msg){
+	global $g_log_dir;
+	if(empty($g_log_dir)){
+		return;
+	}
+	if(is_dir($g_log_dir) === false) return ;
+			echo 'Ok';
+	$file = $g_log_dir .substr(now(),0,10)  .".log";
+	$msg = now() . ": " .$msg .chr(13).chr(10);
+	write_to_file($file,$msg);
+}
 	
 ?>

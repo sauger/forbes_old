@@ -5,14 +5,17 @@
 		<meta http-equiv=Content-Language content=zh-CN>
 		<title>测试</title>
 		<?php
-		include "frame.php";
+		include "frame.php";		
 		use_jquery();
 		js_include_tag('jquery-ui-1.7.2.custom.min.js','autocomplete.jquery.js','jquery.colorbox-min.js');
 		css_include_tag('autocomplete','colorbox');
 		?>
 	</head>
 	<body>
+	sadfsad
 		<?php 
+		$db = get_db();
+		$db->execute("select *");
 		class Info {
 			var $id;
 			var $value;

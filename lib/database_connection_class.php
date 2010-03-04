@@ -113,7 +113,8 @@ include_once dirname(__FILE__) . '/database_row_item_class.php';
   		if ($this->_qresult===FALSE)
   		{
   			$this->_debug_info('fail to query db!' . $this->get_error() .";query string = " .$sql);
-  		  	return FALSE;
+  		  	write_log('fail to execute sql!' . $this->get_error() .";query string = " .$sql);
+  			return FALSE;
   		}
   		else
   		{  	
@@ -149,7 +150,8 @@ include_once dirname(__FILE__) . '/database_row_item_class.php';
   		if ($this->_qresult===FALSE)
   		{
   			$this->_debug_info('fail to execute sql!' . $this->get_error() .";query string = " .$sqlstr);
-  		  	return FALSE;
+  		  	write_log('fail to execute sql!' . $this->get_error() .";query string = " .$sqlstr);
+  			return FALSE;
   		}
   		else
   		{  			
