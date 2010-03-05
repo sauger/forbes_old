@@ -25,8 +25,8 @@ content1 a:visited{color:#003A7B;}
 .left-div3-1{width:96px; height:125px; margin-left:22px; margin-top:17px; float:left; display:inline;}
 .left-div3-text{width:96px; font-size:12px; color:#333333; text-align:center; margin-top:10px; float:left; display:inline;}
 #left-div4{width:625px; height:673px; margin-top:13px; background-image:url(../../../images/html/list/left-div4.jpg); float:left; display:inline;}
-.left-div4-1{width:261px; height:150px; margin-top:10px; text-indent:1em; margin-left:15px; float:left; display:inline;}
-.left-div4-2{width:261px; height:150px; margin-top:10px; text-indent:1em; margin-left:50px; float:left; display:inline;}
+.left-div4-1{width:261px; height:150px; margin-top:10px; text-indent:10px; margin-left:15px; float:left; display:inline;}
+.left-div4-2{width:261px; height:150px; margin-top:10px; text-indent:10px; margin-left:50px; float:left; display:inline;}
 .left-div4-text{width:261px; height:135px; margin-left:15px; float:left; display:inline; }
 
 #right-div1{width:339px; height:357px;margin-top:17px; margin-right:2px; background-image:url(../../../images/html/list/right-div1.jpg); float:right; display:inline;}
@@ -57,13 +57,13 @@ content1 a:visited{color:#003A7B;}
 .more1{font-size:10px; color:#003A7B; font-weight:normal; margin-right:7px; float:right; display:inline;}
 
 
-#content1{width:240px; height:268px; text-indent:1em; margin-top:12px; margin-left:10px; float:left; display:inline;}
+#content1{width:240px; height:268px; text-indent:10px; margin-top:12px; margin-left:10px; float:left; display:inline;}
 
 
 
-#ul1{width:278px; height:116px; font-size:12px; text-indent:1em; line-height:25px; margin-top:5px; margin-left:20px; float:left; display:inline; }
-#ul2{width:250px; height:116px; font-size:12px; text-indent:1em; line-height:25px; margin-top:5px; margin-left:60px; float:left; display:inline; }
-.ul3{width:150px; height:100px; font-size:12px; text-indent:1em; line-height:25px; margin-left:10px; float:left; display:inline;}
+#ul1{width:278px; height:116px; font-size:12px; text-indent:10px; line-height:25px; margin-top:5px; margin-left:20px; float:left; display:inline; }
+#ul2{width:250px; height:116px; font-size:12px; text-indent:10px; line-height:25px; margin-top:5px; margin-left:60px; float:left; display:inline; }
+.ul3{width:150px; height:100px; font-size:12px; text-indent:10px; line-height:25px; margin-left:10px; float:left; display:inline;}
 
 #ad{width:336px; height:126px; margin-top:10px; margin-left:27px; background-image:url(../../../images/html/list/ad.jpg); float:left; display:inline;}
 #ad1{width:988px; height:90px; margin-top:15px; background-image:url(../../../images/html/list/ad1.jpg); float:left; display:inline;}
