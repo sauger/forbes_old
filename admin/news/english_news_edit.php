@@ -104,6 +104,9 @@
 			</td>
 		</tr>
 		<tr id=newsshow1  class="normal_news tr4">
+			<td  height=100>头信息</td><td><?php show_fckeditor('news[top_info]','Admin',false,"100",$news->top_info);?></td>
+		</tr>
+		<tr id=newsshow1  class="normal_news tr4">
 			<td  height=100>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"100",$news->description);?></td>
 		</tr>
 		<tr id=newsshow1 class="normal_news tr4">

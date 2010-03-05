@@ -1,0 +1,1 @@
+﻿ALTER TABLE `forbes`.`fb_news` ADD COLUMN `top_info` TEXT COMMENT '头信息' AFTER `language_tag`;

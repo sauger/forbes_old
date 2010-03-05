@@ -19,6 +19,7 @@
 	$news->is_adopt = 1;
 	$news->content = str_replace("'",'\"',$news->content); //mysql_escape_string($news->content);
 	$news->description = str_replace("'",'\"',$news->description);//$news->description = mysql_escape_string($news->description);
+	$news->top_info = str_replace("'",'\"',$news->top_info);
 	$news->keywords = str_replace('　',' ',$news->keywords);
 	
 	$pos = strpos(strtolower($news->content), '<img ');

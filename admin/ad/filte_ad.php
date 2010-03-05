@@ -2,18 +2,27 @@
 	require_once('../../frame.php');
 	$key = urldecode($_REQUEST['key']);
 	$filter_adopt = $_REQUEST['filter_adopt'];
+	$id = $_REQUEST['id'];
 	$db = get_db();
-	$sql = "select t1.id,t1.name,t1.code,t2.name as g_name from fb_ad t1 join fb_ad_ggw t2 on t1.ggw_id=t2.id where 1=1";
+	if($id!=''){
+		$ids = $db->query("select relationship from fb_ad where id=$id");
+		$checked = $db->query("select t1.id,t1.name,t1.code,t2.name as g_name from fb_ad t1 join fb_ad_ggw t2 on t1.ggw_id=t2.id where t1.id in ({$ids->relationship})");
+		$sql = "select t1.id,t1.name,t1.code,t2.name as g_name from fb_ad t1 join fb_ad_ggw t2 on t1.ggw_id=t2.id where 1=1 and t1.id not in  ({$ids->relationship})";
+	}else{
+		$sql = "select t1.id,t1.name,t1.code,t2.name as g_name from fb_ad t1 join fb_ad_ggw t2 on t1.ggw_id=t2.id where 1=1";
+	}
+	
+	
 	if($_REQUEST['show_div'] != '0'){
 		echo "<div id='result_box'>";
 	}
 	if($key!=''){
-		$sql .= " and name like '%{$key}%' or code like '%{$key}%'";
+		$sql .= " and t1.name like '%{$key}%' or t1.code like '%{$key}%'";
 	}
 	if($filter_adopt!=''){
-		$sql .= " and is_adopt=$filter_adopt";
+		$sql .= " and t1.is_adopt=$filter_adopt";
 	}
-	$sql .= " order by priority";
+	$sql .= " order by t1.priority";
 	$record = $db->query($sql);
 	$count_record = count($record);
 ?>
@@ -115,8 +124,6 @@
 			$('#result_box').load(url,{'show_div':'0'});			
 			//$('#result_box').load('filte_news.php',{'show_div':'0','key':$('#search_text').attr('value'),'filter_dept':$('#filter_dept').attr('value'),'filter_category':$('.news_category:last').attr('value'),'filter_adopt':$('#filter_adopt').attr('value')});			
 		}
-		category.display_select('news_category',$('#span_category_select'),<?php echo $filter_category;?>,'',function(){send_search();});
-
 </script>
 <?php 
 	if($_REQUEST['show_div'] != '0'){

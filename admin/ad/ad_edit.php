@@ -19,10 +19,11 @@
 		use_jquery();
 		js_include_tag('jquery.colorbox-min','admin/ad/ad_edit');
 		validate_form("ad");
+		js_include_tag('swfobject');
 	?>
 </head>
 	<body style="background:#E1F0F7">
-	<form id="ad" action="asd.post.php" enctype="multipart/form-data" method="post"> 
+	<form id="ad" action="ad_edit.post.php" enctype="multipart/form-data" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
 			<td colspan="2" width="795">　　<?php if($id!='')echo "编辑广告";else echo "添加广告";?></td>
@@ -63,19 +64,19 @@
 		<tr class=tr3 id=tr_file_name >
 			<td>上传图片</td>
 			<td align="left">
-				<input type="file" name="image" style="width:250px;">
+				<input type="file" name="image" style="width:250px;"><?php if($ad->image!=''){?><a class="color" title="图片展示" href="<?php echo $ad->image;?>">点击查看</a><?php }?>
 			</td>
 		</tr>
 		<tr id=newsshow3  class="normal_news tr4">
 			<td>上传视频</td>
 			<td align="left" id="td_video">
-				<input type="file" name="video" style="width:250px;">
+				<input type="file" name="video" style="width:250px;"><?php if($ad->video!=''){?><a class="color" title="视频展示" href="/admin/show/show_video.php?id=<?php echo $id;?>&table=fb_ad">点击查看</a><?php }?>
 			</td>
 		</tr>
 		<tr id=newsshow3  class="normal_news tr4">
 			<td>上传FLASH</td>
 			<td align="left" id="td_video">
-				<input type="file" name="flash" style="width:250px;">
+				<input type="file" name="flash" style="width:250px;"><?php if($ad->flash!=''){?><a class="color" title="flash展示" href="/admin/show/show_flash.php?id=<?php echo $id;?>&table=fb_ad">点击查看</a><?php }?>
 			</td>
 		</tr>
 		

@@ -91,10 +91,13 @@
 			</td>
 		</tr>
 		<tr id=newsshow1  class="normal_news tr4">
+			<td  height=100>头信息</td><td><?php show_fckeditor('news[top_info]','Admin',false,"100",$news->top_info);?></td>
+		</tr>
+		<tr id=newsshow1  class="normal_news tr4">
 			<td  height=100>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"100",$news->description);?></td>
 		</tr>
 		<tr id=newsshow1 class="normal_news tr4">
-			<td height=265>新闻内容</td><td><?php show_fckeditor('news[content]','Admin',false,"265",$news->content);?></td>
+			<td height=215>新闻内容</td><td><?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?></td>
 		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="发布新闻"></td>
