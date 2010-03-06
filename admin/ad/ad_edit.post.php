@@ -56,7 +56,7 @@
 		$ad->flash = "/upload/ad/{$flash}";
 	}
 	$ad->save();
-	redirect('index.php');
+	//redirect('index.php');
 ?>
 </body>
 </html>

@@ -80,9 +80,16 @@
 			</td>
 		</tr>
 		
+		
 		<tr  class="normal_news tr4">
 			<td>广告关联</td><td align="left">
-				<a style="color:#0000FF;" href="filte_ad.php" title="关联广告" id="add_related_ad">关联相关广告</span>
+				<?php if($ad->relationship!=''){?>
+				<span style="color:#0000FF;cursor:pointer" title="关联广告" id="add_related_ad">关联相关广告</span>
+				<?php }else{
+					
+				?>
+				<span style="color:#0000FF;cursor:pointer" title="关联广告" id="add_related_ad">关联相关广告</span>
+				<?php }?>
 			</td>
 		</tr>
 
@@ -117,9 +124,9 @@
 		</tr>		
 
 		<tr id=newsshow1  class="normal_news tr3">
-			<td  height=160>简短描述</td>
+			<td height=160>简短描述</td>
 			<td>
-				<?php show_fckeditor('ad[description]','Admin',true,"265",$ad->description);?>
+				<?php show_fckeditor('ad[description]','Admin',true,"160",$ad->description);?>
 			</td>
 		</tr>				
 	<tr class="tr3">
@@ -127,6 +134,26 @@
 		</tr>			
 			</table>
 		<input type="hidden" name="id"  value="<?php echo $id;?>">
+		<input type="hidden" name="ad[relationship]" id="hidden_related_ad" value="<?php echo $ad->relationship;?>">
 	</form>
 </body>
 </html>
+<script>
+		var related_ad = new Array();
+		var old_href = "<?php echo 'filte_ad.php?id='.$id;?>";
+		var ad_href = "<?php echo 'filte_ad.php?id='.$id;?>&related="+$('#hidden_related_ad').val()
+		$(function(){
+			<?php if($id!=''){
+			$relationship = explode(',',$ad->relationship);
+			for($i=0;$i<count($relationship);$i++){
+			?>
+			related_ad.push(<?php echo $relationship[$i];?>);
+			<?php }}?>
+			$('#add_related_ad').colorbox({href:ad_href});
+			$('.color').colorbox();
+		});
+		
+		
+		
+		
+</script>
