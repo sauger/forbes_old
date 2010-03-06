@@ -14,6 +14,9 @@
 	}	
 	if($menu->parent_id){
 		$parent_menu = $menu1->find($menu->parent_id);
+		if(empty($id)){
+			$menu->role_level = $parent_menu->role_level;
+		}
 	}
 		
 ?>
@@ -104,7 +107,8 @@
 		</tr>
 		<input type="hidden" name="post[parent_id]" value="<?php echo $menu->parent_id;?>" id="post_parent_id">
 		<input type="hidden" name="id" value="<?php echo $menu->id;?>">
-		<input type="hidden" id="is_root" value="<?php echo $is_root;?>">
+		<input type="hidden" id="is_root" value="<?php echo $menu->is_root;?>">
+		<input type="hidden" name="post[is_root]" value="<?php echo $menu->is_root;?>">		"
 	</form>
 	</table>
 </body>
