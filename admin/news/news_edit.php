@@ -7,7 +7,7 @@
 	<?php 
 		require_once('../../frame.php');
 		judge_role();
-		css_include_tag('admin','thickbox','colorbox');
+		css_include_tag('admin','colorbox');
 		use_jquery();
 		validate_form("news_edit");
 		js_include_tag('category_class.js', 'admin/news_pub', 'admin/news_edit','jquery.colorbox-min.js','thickbox');
