@@ -12,28 +12,10 @@
 		?>
 	</head>
 	<body>
-	sadfsad
 		<?php 
-		$db = get_db();
-		$db->execute("select *");
-		class Info {
-			var $id;
-			var $value;
-			var $info;
-		}
-		$info1 = new Info();
-		$info1->id = 1;
-		$info1->value="value";
-		$info1->info = "info";
-		$info2 = new Info();
-		$info2->id = 2;
-		$info2->value="value2";
-		$info2->info = "info2";
-		$a = Array();
-		array_push($a, $info1,$info2);
-		$result = Array("result" => $a);
-		echo json_encode($result);
-		/*
+			$category = new category_class();
+			echo $category->parent_map(4);
+			/*
 		echo 8.12 / 100;
 		die();
 			 function reset_password(){

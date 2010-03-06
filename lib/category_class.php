@@ -28,6 +28,22 @@ class category_class
 		return $this->items[$id];
 	}
 	
+	public function parent_map($current_id){
+		$result = array();
+		while(intval($current_id) > 0){
+			$current = $this->find($current_id);
+			if($current->parent_id){
+				$result[] = $current->parent_id;
+				$current_id = $current->parent_id;
+			}
+			else{
+				break;
+			}
+
+		}
+		return implode(',',$result);
+	}
+	
 	public function find_sub_category($parent_id=null){
 		$ret = array();
 		if(empty($parent_id)){

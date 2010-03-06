@@ -1,0 +1,30 @@
+2010-03-05 11:17:26: fail to execute sql!No tables used;query string = select *
+2010-03-05 12:01:34: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COMMENT ''' at line 1;query string = alter table `test` ADD COLUMN `field_4`   COMMENT ''
+2010-03-05 12:02:57: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COMMENT ''' at line 1;query string = alter table `test` ADD COLUMN `field_4`   COMMENT ''
+2010-03-05 14:17:48: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by parent_id,priority desc' at line 1;query string = select * from fb_admin_menu where 1=1  and role_level <=  order by parent_id,priority desc
+2010-03-05 15:06:14: fail to execute sql!Column 'sort_id' cannot be null;query string = insert into fb_category(category_type,name,description,parent_id,priority,sort_id) values ('news','1_1',(NULL),'1',(NULL),(NULL))
+2010-03-05 15:10:20: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:12:43: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:12:46: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:13:12: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:13:26: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:13:45: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:14:19: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:15:04: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:15:34: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:15:51: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 15:16:58: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1;query string = 3
+2010-03-05 17:00:57: fail to execute sql!Incorrect index name '';query string = alter table `test` add index `` (`field_1`)
+2010-03-05 18:00:34: fail to execute sql!Column 'table_name' cannot be null;query string = insert into fb_custom_list_type(name,table_name,comment) values ('123',(NULL),(NULL))
+2010-03-05 18:17:25: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where id=10' at line 1;query string = update fb_custom_list_type set  where id=10
+2010-03-05 18:18:19: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where id=11' at line 1;query string = update fb_custom_list_type set  where id=11
+2010-03-05 18:19:33: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where id=12' at line 1;query string = update fb_custom_list_type set  where id=12
+2010-03-05 18:19:51: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where id=13' at line 1;query string = update fb_custom_list_type set  where id=13
+2010-03-05 18:23:16: fail to execute sql!Table 'forbes.fb_custom_list_table_1' doesn't exist;query string = show full fields from fb_custom_list_table_1
+2010-03-05 18:23:57: fail to execute sql!Table 'forbes.fb_custom_list_table_1' doesn't exist;query string = show full fields from fb_custom_list_table_1
+2010-03-05 18:24:16: fail to execute sql!Table 'forbes.fb_custom_list_table_1' doesn't exist;query string = show full fields from fb_custom_list_table_1
+2010-03-05 18:27:03: fail to execute sql!Column 'name' cannot be null;query string = insert into fb_custom_list_type(name,table_name,comment) values ((NULL),(NULL),(NULL))
+2010-03-05 18:27:03: fail to execute sql!Column 'name' cannot be null;query string = insert into fb_custom_list_type(name,table_name,comment) values ((NULL),'fb_custom_list_table_',(NULL))
+2010-03-05 18:27:49: fail to execute sql!Table 'forbes.fb_custom_list_table_1' doesn't exist;query string = show full fields from fb_custom_list_table_1
+2010-03-05 18:31:18: fail to execute sql!Column 'name' cannot be null;query string = insert into fb_custom_list_type(name,table_name,comment) values ((NULL),(NULL),(NULL))
+2010-03-05 18:31:18: fail to execute sql!Column 'name' cannot be null;query string = insert into fb_custom_list_type(name,table_name,comment) values ((NULL),'fb_custom_list_table_',(NULL))
