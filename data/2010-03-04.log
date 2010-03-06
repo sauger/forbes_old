@@ -1,0 +1,7 @@
+2010-03-04 12:53:13: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where 1=1  and id=1 limit 1' at line 1;query string = select * from  where 1=1  and id=1 limit 1
+2010-03-04 12:54:04: fail to execute sql!You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where 1=1  and id=1 limit 1' at line 1;query string = select * from  where 1=1  and id=1 limit 1
+2010-03-04 21:06:31: fail to execute sql!Specified key was too long; max key length is 1000 bytes;query string = alter table `test` modify column `a` varchar(255) comment 'a1123'
+2010-03-04 21:07:21: fail to execute sql!Specified key was too long; max key length is 1000 bytes;query string = alter table `test` modify column `a` varchar(255) comment 'a1123', modify column `b` varchar(255) comment 'b2'
+2010-03-04 21:07:46: fail to execute sql!Specified key was too long; max key length is 1000 bytes;query string = alter table `test` modify column `a` varchar(255) comment 'a1123', modify column `b` varchar(255) comment 'b2'
+2010-03-04 21:08:05: fail to execute sql!Specified key was too long; max key length is 1000 bytes;query string = alter table `test` modify column `a` varchar(255) comment 'a1123', modify column `b` varchar(255) comment 'b2'
+2010-03-04 21:10:14: fail to execute sql!Specified key was too long; max key length is 1000 bytes;query string = alter table `test` modify column `a` varchar(255) comment 'a1123'
