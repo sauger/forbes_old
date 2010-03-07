@@ -37,6 +37,9 @@
 			<td width="130">姓名</td><td width="695" align="left"><input id="fh_name" type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
 		</tr>
 		<tr class=tr4>
+			<td width="130">拼音</td><td width="695" align="left"><input type="text" name="fh[chinese_name]" value="<?php echo $record->chinese_name;?>">
+		</tr>		
+		<tr class=tr4>
 			<td>性别</td>
 			<td align="left" id="fh_xb">
 				<input type="radio" name="fh[xb]" value="0" <?php if($record->xb==0){ ?>checked="checked"<?php } ?>>女
