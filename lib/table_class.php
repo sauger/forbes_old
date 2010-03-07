@@ -47,7 +47,7 @@ class table_class{
 			}
 			
 		}
-		//$this->_set_fields_default();
+		$this->_set_fields_default();
 		if (func_num_args() <= 0) {
 			return ;
 		}
