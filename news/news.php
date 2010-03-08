@@ -127,8 +127,8 @@
 					</ul>
 					</div>
 				</div>
-				<div class=left-div1>
-					<div class=left-title7><font color="#186694">行业富豪</font></div>
+				<div id=left-div1>
+					<div class=left-title7>行业富豪</div>
 					<div class=left-div2>
 						<div class=div1-1>
 							<div id=picture1></div>
@@ -158,8 +158,8 @@
 						  </div>
 						</div>
 					</div>
-					<div class=left-div1>
-					<div class=left-title7><font color="#186694">福布斯杂志</font></div>
+					<div id=left-div1>
+					<div class=left-title7>福布斯杂志</div>
 					<div class=left-div2>
 						<div id=div2-1>
 							<div id=picture4></div>
@@ -171,7 +171,7 @@
 						</div>
 						<div id=div2-3>
 							<font color="#0c78d0"><b>往期杂志查阅</b></font><br/>
-							<select style="width:80px;"></select> <select style="width:80px;"></select><br/>
+							<select style="width:100px;"></select> <select style="width:80px;margin-left:30px;"></select><br/>
 							<div id=button1><input type="button" id="button2"><input type="button" id="button3"><br/></div>
 							<div align="right"><a href="" class="nor"><b>查看杂志列表>></b></a></div>
 						</div>
