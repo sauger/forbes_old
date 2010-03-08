@@ -24,7 +24,7 @@ a:visited{color:#626262; text-decoration:none;}
 #l_m_t2{width:426px; height:25px; line-height:25px; float:left; display:inline;}
 #l_m_r{width:426px; height:160px; margin-left:45px; float:left; display:inline;}
 
-#r{width:317px; height:1410px; float:left; display:inline;}
+#r{width:317px; height:1410px; margin-top:8px; float:right; display:inline;}
 
 
 #line{width:1000px; height:10px; background-image:url(../../../images/html/investor/line.jpg); float:left; display:inline;}
