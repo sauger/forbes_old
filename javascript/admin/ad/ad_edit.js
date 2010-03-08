@@ -18,5 +18,5 @@ function display_related_ad(){
 	$('#add_related_ad').html("已关联相关新闻 " + related_ad.length + " 条 " + '编辑');
 	ad_href = old_href+"&related="+$('#hidden_related_ad').val()
 	$('#add_related_ad').colorbox({href:ad_href});
-	alert(ad_href);
+	//alert(ad_href);
 };

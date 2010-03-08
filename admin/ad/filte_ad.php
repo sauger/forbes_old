@@ -3,6 +3,7 @@
 	$key = urldecode($_REQUEST['key']);
 	$filter_adopt = $_REQUEST['filter_adopt'];
 	$related = $_REQUEST['related'];
+	$ggw = $_REQUEST['ggw'];
 	$id = $_REQUEST['id'];
 	$db = get_db();
 	if(!empty($related)){
@@ -26,32 +27,40 @@
 	
 	
 	
-	if($_REQUEST['show_div'] != '0'){
-		echo "<div id='result_box'>";
-	}
 	if($key!=''){
 		$sql .= " and t1.name like '%{$key}%' or t1.code like '%{$key}%'";
 	}
 	if($filter_adopt!=''){
 		$sql .= " and t1.is_adopt=$filter_adopt";
 	}
+	if($ggw!=''){
+		$sql .= " and t1.ggw_id=$ggw";
+	}
 	$sql .= " order by t1.priority";
 	//echo $sql;
 	$record = $db->query($sql);
 	$count_record = count($record);
+	
+	$ggw = $db->query("select * from fb_ad_ggw");
 ?>
 <?php
 	css_include_tag('admin');
 ?>
-
+<div id='result_box'>
 	<table width="600" border="0" id="list" style="boder:1px solid">
 		<tr class="tr2">
 			<td colspan="4" align=center>　
 			搜索 <input id="search_text" type="text" value="<? echo $key;?>">
+			<select id=ggw style="width:120px">
+				<option value="">广告位</option>
+				<?php for($i=0;$i<count($ggw);$i++){?>
+				<option value="<?php echo $ggw[$i]->id; ?>" <?php if($ggw[$i]->id==$_REQUEST['ggw']){?>selected="selected"<? }?>><?php echo $ggw[$i]->name;?></option>
+				<? }?>
+			</select>
 			<select id="filter_adopt">
 				<option value="">发布状态</option>
-				<option value="0" <?php if($filter_adopt == 0) echo ' selected="selected"' ?>>未发布</option>
-				<option value="1" <?php if($filter_adopt == 1) echo ' selected="selected"' ?>>已发布</option>
+				<option value="0" <?php if($filter_adopt == '0') echo ' selected="selected"' ?>>未发布</option>
+				<option value="1" <?php if($filter_adopt == '1') echo ' selected="selected"' ?>>已发布</option>
 			</select>
 			<input type="button" value="搜索" id="subject_search" style="border:1px solid #0000ff; height:21px">
 			</td>
@@ -91,7 +100,7 @@
 				</td>
 		</tr>		
 	</table>
-
+</div>
 <script>
 		$('#list input:checkbox').click(function(){
 			if($(this).attr('checked')){
@@ -119,20 +128,19 @@
 			}
 		});
 		
+		$("#subject_search").click(function(){
+			send_search();
+		})
 		
 		
 		function send_search(){
-			var filter_category = $('.news_category:last').attr('value');
 			var filter_adopt = $('#filter_adopt').attr('value');
-			url = 'news_filter.php?filter_category=' + filter_category;
+			var ggw = $('#ggw').attr('value');
+			url = old_href+"&related="+$('#hidden_related_ad').val();
 			url += '&filter_adopt=' + filter_adopt;
+			url += '&ggw=' + ggw;
 			url += '&key=' + encodeURI($('#search_text').val());
 			$('#result_box').load(url,{'show_div':'0'});			
 			//$('#result_box').load('filte_news.php',{'show_div':'0','key':$('#search_text').attr('value'),'filter_dept':$('#filter_dept').attr('value'),'filter_category':$('.news_category:last').attr('value'),'filter_adopt':$('#filter_adopt').attr('value')});			
 		}
 </script>
-<?php 
-	if($_REQUEST['show_div'] != '0'){
-		echo "</div>";
-	}
-?>

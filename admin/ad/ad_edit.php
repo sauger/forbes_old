@@ -19,7 +19,6 @@
 		use_jquery();
 		js_include_tag('jquery.colorbox-min','admin/ad/ad_edit');
 		validate_form("ad");
-		js_include_tag('swfobject');
 	?>
 </head>
 	<body style="background:#E1F0F7">
@@ -30,16 +29,16 @@
 			
 		</tr>
 		<tr class=tr3>
-			<td width="130">广告名</td><td width="695" align="left"><input type="text" name="ad[name]" value="<?php echo $ad->name;?>" ></td>
+			<td width="130">广告名</td><td width="695" align="left"><input type="text" name="ad[name]" class="required" value="<?php echo $ad->name;?>" ></td>
 		</tr>
 
 		<tr class=tr3>
-			<td width="130">广告代码</td><td width="695" align="left"><input type="text" name="ad[code]" value="<?php echo $ad->code;?>" ></td>
+			<td width="130">广告代码</td><td width="695" align="left"><input type="text" name="ad[code]" class="required" value="<?php echo $ad->code;?>" ></td>
 		</tr>	
 		<tr class=tr3>
 			<td>广告位</td>
 			<td align="left">
-				<select id=select name="ad[ggw_id]">
+				<select id=select class="required" name="ad[ggw_id]">
 					<option value=""></option>
 					<?php
 						$record = $db->query("select id,name from fb_ad_ggw order by priority");
@@ -83,12 +82,12 @@
 		
 		<tr  class="normal_news tr4">
 			<td>广告关联</td><td align="left">
-				<?php if($ad->relationship!=''){?>
+				<?php if($ad->relationship==''){?>
 				<span style="color:#0000FF;cursor:pointer" title="关联广告" id="add_related_ad">关联相关广告</span>
 				<?php }else{
-					
+					$related = explode(",", $ad->relationship);
 				?>
-				<span style="color:#0000FF;cursor:pointer" title="关联广告" id="add_related_ad">关联相关广告</span>
+				<span style="color:#0000FF;cursor:pointer" title="关联广告" id="add_related_ad">已关联相关新闻 <?php echo count($related);?> 条　编辑</span>
 				<?php }?>
 			</td>
 		</tr>

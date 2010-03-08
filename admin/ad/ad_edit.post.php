@@ -8,6 +8,13 @@
 	<body>
 <?php
     require_once('../../frame.php');
+
+	if(empty($_POST)){
+		alert('提交失败，可能是上传文件过大或发生未知错误，请检查后再提交');
+		redirect($_SERVER['HTTP_REFERER']);
+		die();
+	}
+	
 	
 	$id = $_REQUEST['id'];
 	$ad = new table_class('fb_ad');
@@ -20,6 +27,11 @@
 		$ad->created_at = date("Y-m-d H:i:s");
 	}
 	if($_FILES['image']['name']!=null){
+		if($_FILES['image']['size']>2000000){
+			alert('上传图片不得大于2M，请重新上传 !');
+			redirect($_SERVER['HTTP_REFERER']);
+			die();
+		}
 		$upload = new upload_file_class();
 		$upload->save_dir = "/upload/ad/";
 		$img = $upload->handle('image','filter_pic');
@@ -32,6 +44,12 @@
 		$ad->image = "/upload/ad/{$img}";
 	}
 	if($_FILES['video']['name']!=null){
+		var_dump($_FILES);
+		if($_FILES['video']['size']>5000000){
+			alert('上传视频不得大于5M，请重新上传 !');
+			redirect($_SERVER['HTTP_REFERER']);
+			die();
+		}
 		$upload = new upload_file_class();
 		$upload->save_dir = "/upload/ad/";
 		$vid = $upload->handle('video','filter_video');
@@ -44,6 +62,11 @@
 		$ad->video = "/upload/ad/{$vid}";
 	}
 	if($_FILES['flash']['name']!=null){
+		if($_FILES['flash']['size']>2000000){
+			alert('上传flash不得大于2M，请重新上传 !');
+			redirect($_SERVER['HTTP_REFERER']);
+			die();
+		}
 		$upload = new upload_file_class();
 		$upload->save_dir = "/upload/ad/";
 		$flash = $upload->handle('flash');
@@ -56,7 +79,7 @@
 		$ad->flash = "/upload/ad/{$flash}";
 	}
 	$ad->save();
-	//redirect('index.php');
+	redirect('index.php');
 ?>
 </body>
 </html>
