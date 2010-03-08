@@ -17,6 +17,23 @@
 <body>
 	<div id=ibody>
 		<div id=banner><a herf="#"><img border=0 src="images/index/top_banner.jpg"></a></div>
+		<div id=top_login>
+			<div class=login_title><a href="">·登陆</a><a href="">·注册</a></div>
+			<div class=login_title><a href="">·设为首页</a><a href="">·收藏本页</a></div>
+			<div id=jieshao_title>
+				<div id=pic></div>
+			</div>
+			<div id=cleft></div>
+			<div id=ccenter>
+					<div id=cpic><a href=""><img border=0 src="/images/index/six.jpg"></a></div>
+					<div id=context>
+						<div id=title><a href="">福布斯中文版VOL.22</a></div>
+						<div id=content><a href="">版杂志知案例荟萃丰富的福布斯中文版杂志知识及案例...</a></div>
+						<div id=ck><button></button></div>
+					</div>
+			</div>	
+			<div id=cright></div>	
+		</div>
 		<div id=itop>
 			<div class="tm2008style">
 				<select name="selsearch" class="iselect">
@@ -27,41 +44,59 @@
 			</div>
 			<input class="iinput">
 			<button class=search>查 询</button>
-			<button class=login>登 陆</button>
-			<a herf="">注册</a>
 		</div>
 		<div id=navigation>
-			<div class="content" style="background:#336699;">首页</div>
-			<div class="content">榜单</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">富豪</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">城市</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">创业</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">商业</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">科技</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">投资</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">评论</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">奢华</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">forum</div><div class=vertical><img width=1 height=25px; src="/images/index/vertical.gif"></div>
-			<div class="content">专栏</div>
+			<div class="content" style="width:90px;background:#336699;"><div id=picindex></div></div><div class=vertical></div>
+			<div class="content"><div id=picbangdan></div></div><div class=vertical></div>
+			<div class="content"><div id=picfuhao></div></div><div class=vertical></div>
+			<div class="content"><div id=pictouzi></div></div><div class=vertical></div>
+			<div class="content"><div id=picchuangye></div></div><div class=vertical></div>
+			<div class="content"><div id=picshangye></div></div><div class=vertical></div>
+			<div class="content"><div id=pickeji></div></div><div class=vertical></div>
+			<div class="content"><div id=picchengshi></div></div><div class=vertical></div>
+			<div class="content"><div id=picshehua></div></div><div class=vertical></div>
+			<div class="content"><div id=piczhuanlan></div></div><div class=vertical></div>
+			<div id=hyzq>
+				<div id=zq></div><div id=zqhy></div>
+				<div id=zs></div><div id=zzzs></div>
+			</div>
 		</div>
 		<div id=navigation2>
 			<div class="content">
 				<a style="text-decoration:none;" herf="">能源重工</a> |　<a herf="">汽车</a> |　<a herf="">快速消费品</a> |　<a herf="">健康产业</a> |　<a herf="">房产</a> |　<a herf="">物流零售</a> |　<a herf="">金融</a> | <a herf="">3C</a> | <a herf="">文化媒体</a> | <a herf="">旅游酒店</a> | <a style="text-decoration:none;" herf="">领导力</a> | <a style="text-decoration:none;" herf="">职场</a> |
 			</div>
-			<div id=hyzq><a style="margin-left:40px;" href="">会员专区</a><a style="margin-left:60px;" href="">杂志赠送</a></div>
+			
 		</div>
 		<div id=t_l_t>
-			<img src="/images/index/google.jpg">
+			<div id=t_l_t_t>
+				<div id=t_l_t_t_l><a href=""><img border=0 src="images/index/l_t_t_img.jpg"></a></div>
+				<div id=t_l_t_t_r>
+					<div id=title><a href="">今早在意大利法庭判宣判谷</a></div>
+					<div id=content><a href="">据意大利安克罗诺斯通讯社报道，当庭被宣布定罪的3人当庭被宣布定罪的3人包括括谷歌高...</a></div>
+					<div class=cl><a href="">·　瑞银与高盛领跑AIG香港领跑</a></div>
+					<div class=cl><a href="">·　瑞银与高盛领跑AIG香港领跑</a></div>
+					<div class=cl><a href="">·　瑞银与高盛领跑AIG香港领跑</a></div>
+					<div id=more><a href="">查看更多</a></div>
+					<div id=btn>
+						<a href=""><img border=0 src="images/index/slideshow_back.gif"></a>
+						<a href=""><img border=0 src="images/index/slideshow_active.gif"></a>
+						<a href=""><img border=0 src="images/index/slideshow_unactive.gif"></a>
+						<a href=""><img border=0 src="images/index/slideshow_unactive.gif"></a>
+						<a href=""><img border=0 src="images/index/slideshow_unactive.gif"></a>
+						<a href=""><img border=0 src="images/index/slideshow_next.gif"></a>	
+					</div>
+				</div>
+			</div>
 			<div id=t_l_t_l>
 				<div id=title><a href="">陆家嘴早餐</a></div>
-				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=content><a href=""><img border=0 src="images/index/t_l_t_l_content.jpg"> 瑞银与高盛领跑AIG香港领跑AIG香港领跑AIG香港上市业务</a></div>
-				<?php } ?>
+					<div id=content1><a href=""><img border=0 src="images/index/t_l_t_l_content.jpg"> 瑞银与高盛领跑AIG香港领跑AIG香港领跑AIG香港上市业务</a></div>
+					<div id=content2><a href=""><img border=0 src="images/index/t_l_t_l_content.jpg"> 瑞银与高盛领跑AIG香港领跑AIG香港领跑AIG香港上市业务</a></div>
+					<div id=content3><a href=""><img border=0 src="images/index/t_l_t_l_content.jpg"> 瑞银与高盛领跑AIG香港领跑AIG香港领跑AIG香港上市业务</a></div>
+					<div id=coffee></div>
 			</div>
 			<div id=t_l_t_r>
-				<div id=title><a href="">专题</a></div>
 				<div id=left><img style="cursor:pointer;" border=0 src="images/index/t_l_t_r_left.jpg"></div>
-				<?php for($i=0;$i<4;$i++){ ?>
+				<?php for($i=0;$i<3;$i++){ ?>
 					<div class=content>
 						<div class=pic><a href=""><img border=0 src="images/index/one.jpg"></a></div>
 						<div class=cl><a href="">后危机时更</a></div>
@@ -71,257 +106,279 @@
 			</div>
 		</div>
 		<div id=t_r_t>
-			<div class=title style="background:url('images/index/t_t_t_title1.jpg') no-repeat;">富豪榜</div>
+			<div class=title style="background:url('images/index/t_r_t_title1.jpg') no-repeat;">实时财富</div>
 			<div class=title>公司榜</div>	
-			<div class=title>名人榜</div>
+			<div class=title>名人榜</div>	
+			<div class=title>城市榜</div>
 			<div id=phb>
-				<div id=ph>　排名　　 姓名　　　财富（亿）</div>
+				<div id=ph>　排名　　 　 姓名　　　　 财富（亿）　　 变动</div>
 				<div id=phname>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">1.</span><a href="">刘永行</a>　　　304.0</div>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">2.</span><a href="">刘永行</a>　　　304.0</div>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">3.</span><a href="">刘永行</a>　　　304.0</div>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">4.</span><a href="">刘永行</a>　　　304.0</div>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">5.</span><a href="">刘永行</a>　　　304.0</div>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">6.</span><a href="">刘永行</a>　　　304.0</div>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">7.</span><a href="">刘永行</a>　　　304.0</div>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">8.</span><a href="">刘永行</a>　　　304.0</div>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">9.</span><a href="">刘永行</a>　　　304.0</div>
-					<div class=content>　<span style="color:#000000; font-weight:bold;">10.</span><a href="">刘永行</a>　　　304.0</div>
+					<div class=content>　 <span style="color:#000000; font-weight:bold;">1.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#FF0000; font-size:14px; font-weight:bold;">↑</span></div>
+					<div class=content>　 <span style="color:#000000; font-weight:bold;">2.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#33CC00; font-size:14px; font-weight:bold;">↓</span></div>
+					<div class=content>　 <span style="color:#000000; font-weight:bold;">3.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#FF0000; font-size:14px; font-weight:bold;">↑</span></div>
+					<div class=content>　 <span style="color:#000000; font-weight:bold;">4.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#33CC00; font-size:14px; font-weight:bold;">↓</span></div>
+					<div class=content>　 <span style="color:#000000; font-weight:bold;">5.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#FF0000; font-size:14px; font-weight:bold;">↑</span></div>
+					<div class=content>　 <span style="color:#000000; font-weight:bold;">6.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#33CC00; font-size:14px; font-weight:bold;">↓</span></div>
+					<div class=content>　 <span style="color:#000000; font-weight:bold;">7.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#FF0000; font-size:14px; font-weight:bold;">↑</span></div>
+					<div class=content>　 <span style="color:#000000; font-weight:bold;">8.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#33CC00; font-size:14px; font-weight:bold;">↓</span></div>
+					<div class=content>　 <span style="color:#000000; font-weight:bold;">9.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#FF0000; font-size:14px; font-weight:bold;">↑</span></div>
+					<div class=content>　<span style="color:#000000; font-weight:bold;">10.</span><a style="margin-left:48px;" href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#33CC00; font-size:14px; font-weight:bold;">↓</span></div>
 				</div>
 				<div id=bottom>
-					<div id=title>动态富豪榜</div>
-					<?php for($i=0;$i<3;$i++){ ?>
+					<div id=title>实时财富动态</div>
+					<?php for($i=0;$i<2;$i++){ ?>
 						<div class=content><img border=0 src="images/index/t_l_t_l_content.jpg"> 瑞银与高盛领跑AIG香港上市业务</div>
 					<?php } ?>
 				</div>
 			</div>
 		</div>
-		<div id=c_l>
+		<div class=c_l>
 			<div class=title>
-				<div class=wz><img border=0 src="images/index/square.jpg"> 创业</div>
+				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
+				<div class=wz>创业　</div>
+				<div class=line>|</div>
+				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
 			</div>
 			<div class=content1>
-				<div class=pic><a href=""><img border=0 src="images/index/one.jpg"></a></div>
 				<div class=piccontent>
 					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
 					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
 				</div>
 				<?php for($i=0;$i<3;$i++){ ?>
-					<div class=cl><a href=""><img border=0 src="images/index/jia.gif">　【创业投资】中国经济的泡沫有多大？</a></div>
+					<div class=cl><a href=""><img border=0 src="images/index/point.jpg">　创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>
 			</div>
+			<div class=dash></div>
 			<div class=title>
-				<div class=wz><img border=0 src="images/index/square.jpg"> 投资</div>
-				<div class=more><a href="">more <span style="color:#0099FF">+</span></a></div>
+				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
+				<div class=wz>商业</div>
+				<div class=line>|</div>
+				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
 			</div>
-			<div class=content2>
-				<div class=pic><a href=""><img border=0 src="images/index/one.jpg"></a></div>
+			<div class=content1>
 				<div class=piccontent>
 					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
 					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
 				</div>
 				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl><a href=""><img border=0 src="images/index/jia.gif">　【创业投资】中国经济的泡沫有多大？</a></div>
+					<div class=cl><img border=0 src="images/index/point.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>	
 			</div>
+			<div class=dash></div>
 			<div class=title>
-				<div class=wz><img border=0 src="images/index/square.jpg"> 商业</div>
-				<div class=more><a href="">more <span style="color:#0099FF">+</span></a></div>
+				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
+				<div class=wz>科技</div>
+				<div class=line>|</div>
+				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
 			</div>
-			<div class=content2>
-				<div class=pic><a href=""><img border=0 src="images/index/one.jpg"></a></div>
+			<div class=content1>
 				<div class=piccontent>
 					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
 					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
 				</div>
 				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl><a href=""><img border=0 src="images/index/jia.gif">　【创业投资】中国经济的泡沫有多大？</a></div>
+					<div class=cl><img border=0 src="images/index/point.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>	
 			</div>
+			<div class=dash></div>
 			<div class=title>
-				<div class=wz><img border=0 src="images/index/square.jpg"> 科技</div>
-				<div class=more><a href="">more <span style="color:#0099FF">+</span></a></div>
+				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
+				<div class=wz>专栏</div>
+				<div class=line>|</div>
+				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
 			</div>
-			<div class=content2>
-				<div class=pic><a href=""><img border=0 src="images/index/one.jpg"></a></div>
-				<div class=piccontent>
-					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
-					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
-				</div>
-				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl><a href=""><img border=0 src="images/index/jia.gif">　【创业投资】中国经济的泡沫有多大？</a></div>
-				<?php } ?>	
+			<div class=content1>
+				<div id=left><img style="cursor:pointer;" border=0 src="images/index/left_zhuanlan.jpg"></div>
+				<?php for($i=0;$i<3;$i++){ ?>
+					<div class=content>
+						<div class=cpic><a href=""><img border=0 src="images/index/one.jpg"></a></div>
+						<div class=ccl><a href="">后危机时更</a></div>
+					</div>
+				<?php } ?>
+				<div id=right><img style="cursor:pointer;" border=0 src="images/index/right_zhuanlan.jpg"></div>
+				<div class=cltitle><a href="">送没摸的专栏</a></div>
+				<?php for($i=0;$i<2;$i++){ ?>
+					<div class=cl><a href="">创业投资中国经济的泡沫有多大？</a></div>
+				<?php } ?>
+				<div id=ck><a href="">查看更多此人专栏>></a></div>
 			</div>
-			<div id=l_b>
-				<div class=title>
-					<div id=wz>读者高见</div>
-					<div id=more><a href=""><img border=0 src="images/index/c_r_t_more.gif"></a></div>
-				</div>
-				<div class=content1>
-					<div class=context><a href="">XXXDDD说：<br>中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口提供担保... ...</a></div>	
-				</div>
-				<div class=content2>
-					<div class=context><a href="">XXXDDD说：<br>中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口提供担保... ...</a></div>	
-				</div>
-				<div class=content1>
-					<div class=context><a href="">XXXDDD说：<br>中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口提供担保... ...</a></div>	
-				</div>
-				<div class=content2>
-					<div class=context><a href="">XXXDDD说：<br>中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口提供担保... ...</a></div>	
-				</div>
+			<div class=dash></div>
+			<div class=title>
+				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
+				<div class=wz>读者高见</div>
+				<div class=line>|</div>
+				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
 			</div>
+			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
+			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
+			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
+			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
+			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
+			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
+			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
+			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
 		</div>
 		
-		<div id=c_c>
-			<div class=title>专栏</div>
-			<div class=content>
-				<div class=context>
-					<div class=cleft>
-						<div class=pic>
-								<a href=""><img border=0 src="images/index/two.jpg"></a>
-						</div>
-						<div class=piccl><a href="">送没摸</a></div>
-					</div>
-					<div class=piccontent>
-						<div class=p_title><a href="">送没摸的专栏</a></div>
-						<div class=p_content><a href="">在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</a></div>
-					</div>
-				</div>
-				<div class=context>
-					<div class=cleft>
-						<div class=pic>
-								<a href=""><img border=0 src="images/index/two.jpg"></a>
-						</div>
-						<div class=piccl><a href="">送没摸</a></div>
-					</div>
-					<div class=piccontent>
-						<div class=p_title><a href="">送没摸的专栏</a></div>
-						<div class=p_content><a href="">在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</a></div>
-					</div>
-				</div>
+		<div class=c_l style="margin-left:15px;">
+			<div class=title>
+				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
+				<div class=wz>投资</div>
+				<div class=line>|</div>
+				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>	
 			</div>
-			<div class=c_c_b>
-					<?php for($i=0;$i<6;$i++){ ?>
-						<div class=cl><a href=""><img border=0 src="images/index/jia.gif">　比尔盖茨的专栏</a></div>
-					<?php } ?>
-			</div>
-			<div class=title>采编专栏</div>
-			<div class=content>
-				<div class=context>
-					<div class=cleft>
-						<div class=pic>
-								<a href=""><img border=0 src="images/index/two.jpg"></a>
-						</div>
-						<div class=piccl><a href="">送没摸</a></div>
-					</div>
-					<div class=piccontent>
-						<div class=p_title><a href="">送没摸的专栏</a></div>
-						<div class=p_content><a href="">在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</a></div>
-					</div>
+			<div class=content3>
+				<div class=piccontent1>
+					<a class=pic href=""><img border=0 src="images/index/two.jpg"></a><a href="">直到资集团仍把持着中国约80%的私人股本市场，但如仍把持着把持着把持着把持中国约80%的私人股本市场，但如今中国已涌现出国已涌现出国已涌现出众多团...</a>
 				</div>
-				<div class=context>
-					<div class=cleft>
-						<div class=pic>
-								<a href=""><img border=0 src="images/index/two.jpg"></a>
-						</div>
-						<div class=piccl><a href="">送没摸</a></div>
-					</div>
-					<div class=piccontent>
-						<div class=p_title><a href="">送没摸的专栏</a></div>
-						<div class=p_content><a href="">在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</a></div>
-					</div>
-				</div>
+				<?php for($i=0;$i<4;$i++){ ?>
+					<div class=cl><img border=0 src="images/index/point.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
+				<?php } ?>
 			</div>
-			<div class=c_c_b>
-					<?php for($i=0;$i<5;$i++){ ?>
-						<div class=cl><img border=0 src="images/index/jia.gif">　<a href="">比尔盖茨的专栏</a></div>
-					<?php } ?>
-					<div class=cl><a style="color:#336699;" href="">更多专栏>></a></div>
+			<div class=dash style="margin-top:20px;"></div>
+			<div class=title>
+				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
+				<div class=wz>奢华</div>
+				<div class=line>|</div>
+				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>	
+			</div>
+			<div class=content3>
+					<div class=image><a href=""><img border=0 src="images/index/car.jpg"></a></div>
+					<div class=image_content>
+						<div class=image_title><a href="">2011款R8敞篷车</a></div>
+						<div class=image_context><a href="">奥迪汽车在09年的美国洛杉基国际车将他</a></div>
+					</div>
+					<div class=image_content style="margin-top:40px;">
+						<div class=image_title><a href="">2011款R8敞篷车</a></div>
+						<div class=image_context><a href="">奥迪汽车在09年的美国洛杉基国际车将他</a></div>
+					</div>
+					<div class=image style="margin-top:40px; margin-left:5px;"><a href=""><img border=0 src="images/index/car.jpg"></a></div>
 			</div>
 		</div>
 		<div id=c_r>
+			<div id=gg>
+				<div id=gg_t>
+					<div id=gg_t_l><a href="">财经魔鬼词典</a></div>
+					<div id=gg_t_r><a href="">实用商业词汇</a>  |  <a href="">实用财经词汇</a></div>
+				</div>
+				<div id=gg_b_l><a href="">股指期货</a></div>
+				<div id=gg_b_r><a href="">future 	index</a></div>
+			</div>
 			<div id=c_r_t>
 				<div id=title>
 					<div id=wz>论坛活动</div>
 					<div id=more><a href=""><img border=0 src="images/index/c_r_t_more.gif"></a></div>
 				</div>
-				<div id=content>
-					<img src="images/index/three.jpg"><br>
-					<span style="font-size:13px; color:#333333">　2010福布斯中国经济发展论坛</span><br>
-					　举办日期：3月18日
-					　<div id=address>地点：上海</div><div id=info><a href="">查看详细</a></div>
+				<div id=c_r_t_left></div>
+				<div id=c_r_t_content>
+					<div id=images><img src="images/index/three.jpg"></div>
+					<div id=context>
+						<span style="font-size:13px; color:#333333">2010福布斯中国经济发展论坛</span><br>举办日期：3月18日
+					</div>
+					<div id=address>地点：上海</div><div id=info><a href="">查看详细</a></div>	
 				</div>
+				<div id=c_r_t_right></div>
 			</div>
 			<div class=c_r_m>
-				<div class=c_r_m_t>
-					<div class=title>增长俱乐部</div>
-					<div class=content>
-						<div class=pic>
-							<a href=""><img border=0 src="images/index/one.jpg"></a>	
-						</div>	
-						<div class=pictitle>
-							<a href="">沪二手房议价空间议价</a>
-						</div>
-						<div class=piccontent>
-							<a href="">　2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
+				<div class=c_r_m_left></div>
+				<div class=c_r_m_content>
+					<div class=c_r_m_t>
+						<div class=title>增长俱乐部</div>
+						<div class=content>
+							<div class=pic>
+								<a href=""><img border=0 src="images/index/one.jpg"></a>	
+							</div>	
+							<div class=pictitle>
+								<a href="">沪二手房议价空间议价</a>
+							</div>
+							<div class=piccontent>
+								<a href="">　2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
+							</div>
 						</div>
 					</div>
+					<div class=c_r_m_b>
+						<div class=c_r_m_b_l><a href="">我要报名</a></div><div class=c_r_m_b_r><a style="color:#000000;" href="">VC/PE/天使人投资人数据库</a></div>	
+					</div>
 				</div>
-				<div class=c_r_m_b>
-					<a href="">我要报名</a>　<a style="color:#000000;" href="">VC/PE/天使人投资人数据库</a>	
-				</div>
+				<div class=c_r_m_right></div>
 			</div>
 			<div class=c_r_m>
-				<div class=c_r_m_t>
-					<div class=title>城市</div>
-					<div class=content>
-						<div class=pic>
-							<a href=""><img border=0 src="images/index/one.jpg"></a>	
-						</div>	
-						<div class=pictitle>
-							<a href="">沪二手房议价空间议价</a>
-						</div>
-						<div class=piccontent>
-							<a href="">　2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
+				<div class=c_r_m_left></div>
+				<div class=c_r_m_content>
+					<div class=c_r_m_t>
+						<div class=title>城市</div>
+						<div class=content>
+							<div class=pic>
+								<a href=""><img border=0 src="images/index/one.jpg"></a>	
+							</div>	
+							<div class=pictitle>
+								<a href="">沪二手房议价空间议价</a>
+							</div>
+							<div class=piccontent>
+								<a href="">　2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
+							</div>
 						</div>
 					</div>
+					<div class=c_r_m_b>
+						<div class=c_r_m_b_l><img class=image src="images/index/c_r_m_t.gif"><a href="">城市榜</a></div><div class=c_r_m_b_r><a style="color:#000000;" href="">太仓：被低估的商业城市</a></div>	
+					</div>
 				</div>
-				<div class=c_r_m_b>
-					<div class="image"><img border=0 src="images/index/c_r_m_t.gif"></div><a href="">城市榜</a>　<a style="color:#000000;" href="">太仓：被低估的商业城市</a>	
-				</div>
+				<div class=c_r_m_right></div>
 			</div>
 		</div>
 		<div class=c_r_img>
 			<a href=""><img border=0 src="images/index/bannwe-for.jpg"></a>
 		</div>
 		<div class=c_b_t>
-				<div class=title>奢华</div>
-				<div class=c_b_t_top><a href=""><img border=0 src="images/index/c_b_t_top.jpg"></a></div>
-				<div class=c_b_t_content>
-					<div class=top>
-						<div class=pic><a href=""><img border=0 src="images/index/four.jpg"></a></div>
-						<div class=piccontent>
-							<div class=pictitle><a href="">中国经济的泡沫多大？</a></div>
-							<div class=content><a href="">在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</a></div>
-						</div>
-					</div>
-					<div class=top style="margin-top:20px;">
-						<div class=pic><a href=""><img border=0 src="images/index/four.jpg"></a></div>
-						<div class=piccontent>
-							<div class=pictitle><a href="">中国经济的泡沫多大？</a></div>
-							<div class=content><a href="">在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</a></div>
-						</div>
-					</div>
-				</div>
-				<div class=c_b_t_bottom><a href=""><img border=0 src="images/index/c_b_t_bottom.jpg"></a></div>	
+			<div class=title>
+				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
+				<div class=wz>最受欢迎　</div>
+				<div class=line>|</div>
+				<div class=more><a href="">编辑推荐</a></div>
+			</div>
+			<div class=content>
+				<div class=cl style="margin-top:20px;"><a href=""><img border=0 src="images/index/point.jpg">　创业投资中国经济的泡沫有多大？</a></div>
+				<?php for($i=1;$i<6;$i++){ ?>
+					<div class=cl><a href=""><img border=0 src="images/index/point.jpg">　创业投资中国经济的泡沫有多大？</a></div>
+				<?php } ?>
+			</div>
+			<div class=dash></div>
+			
 		</div>
 		<div id=r_b_t>
 			<div class=title><div id=wz>在线调查</div><div id=more><a href=""><img border=0 src="images/index/c_r_t_more.gif"></a></div></div>
-			<div class=content>
-				<a href=""><img border=0 src="images/index/jiantou.jpg">　<span style="font-weight:bold">中国顶尖的NBA问卷调查</span><br>参与调查者有机会获得全年《福布斯》杂志<br><button>进入调查</button></a>	
+			<div id=r_b_t_left></div>
+			<div id=r_b_t_content>
+				<div class=r_b_t_context>
+					<a href=""><img border=0 src="images/index/jiantou.jpg">　<span style="font-weight:bold">中国顶尖的NBA问卷调查</span><br>参与调查者有机会获得全年《福布斯》杂志<br>参与调查者有机会获得全年《福布斯》杂志<br><button>进入调查</button></a>	
+				</div>
+				<div id=r_b_t_dash></div>
+				<div class=r_b_t_context>
+					<a href=""><img border=0 src="images/index/jiantou.jpg">　<span style="font-weight:bold">中国顶尖的NBA问卷调查</span><br>参与调查者有机会获得全年《福布斯》杂志<br>参与调查者有机会获得全年《福布斯》杂志<br><button>进入调查</button></a>	
+				</div>
 			</div>
-			<div class=content>
-				<a href=""><img border=0 src="images/index/jiantou.jpg">　<span style="font-weight:bold">中国顶尖的NBA问卷调查</span><br>参与调查者有机会获得全年《福布斯》杂志<br><button>进入调查</button></a>	
+			<div id=r_b_t_right></div>
+		</div>
+		<div class=c_l style="margin-left:15px;">
+			<div class=title>
+				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
+				<div class=wz>投资</div>
+				<div class=line>|</div>
+				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>	
+			</div>
+			<div class=content1>
+				<?php for($i=0;$i<8;$i++){ ?>
+					<div class=context2>
+						<div class=c_context_t>
+							<a href=""><img border=0 src="images/index/seven.jpg"></a>	
+						</div>
+						<div class=c_context_b>
+							<a href="">
+								<span style="font-weight:bold;">康健</span><br>
+								康桥健笔
+							</a>	
+						</div>	
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 		<div id=r_b_b>
@@ -333,33 +390,37 @@
 						<div class=context>在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</div>	
 					</div>
 				</div>
+				<div id=r_b_b_dash></div>
 				<div id=search>往期杂志查阅</div>
 				<div id=sel><select></select>　<select></select></div>
 				<button id="btnonline"></button><button id="sq"></button>
 				<div id=ck><a href="">查看杂志列表>></a></div>
 		</div>
-		<div id=c_b_b>
-			<div class=title1>最受欢迎</div>
-			<div class=title2>编辑推荐</div>
-			<?php for($i=0;$i<7;$i++){ ?>
-				<div class=cl><a href=""><img border=0 src="images/index/bitmap.jpg">　中国的出口优势不在汇不在汇不在率中国的出口汇率</a></div>
-			<?php } ?>
-		</div>
 		<div id=ibottom>
 				<div class=td1><a style="font-weight:bold;" href="">[榜单]</a><br><a href="">富豪榜</a><br><a href="">城市榜</a><br><a href="">公司榜</a><br><a href="">体育榜</a><br><a href="">名人榜</a><br><a href="">教育榜</a></div>
-				<div class=td1><a style="font-weight:bold;" href="">[富豪]</a><br><a href="">富豪榜</a><br><a href="">富豪报道</a><br><a href="">富豪对话</a><br><a href="">图片富豪榜</a></div>
-				<div class=td1><a style="font-weight:bold;" href="">[城市]</a><br><a href="">城市报道<br><a href="">城市资料</a><br><a href="">城市活动</a><br><a href="">城市列表</a><br><a href="">城市特辑</a><br><a href="">城市评论</a></div>
+				<div class=b_v></div>
+				<div class=td4><a style="font-weight:bold;" href="">[富豪]</a><br><a href="">富豪榜</a><br><a href="">富豪报道</a><br><a href="">富豪对话</a><br><a href="">图片富豪榜</a></div>
+				<div class=b_v></div>
+				<div class=td6><a style="font-weight:bold;" href="">[投资]</a><br><a href="">慈善</a><br><a href="">保险</a><br><a href="">基金</a><br><a href="">股票</a><br><a href="">收藏</a></div>
+				<div class=b_v></div>
 				<div class=td4><a style="font-weight:bold;" href="">[创业]</a><br><a href="">创业故事</a><br><a href="">创业投资</a><br><a href="">创业人物</a></div>
-				<div class=td1><a style="font-weight:bold;" href="">[商业]</a><br><a href="">能源重工</a><br><a href="">汽车</a><br><a href="">快速消费品</a><br><a href="">健康产业</a><br><a href="">房产</a><br><a href="">下一页>></a></div>
-				<div class=td1><a style="font-weight:bold;" href="">[科技]</a><br><a href="">创新</a><br><a href="">能源</a><br><a href="">生物</a><br><a href="">医药</a><br><a href="">TNT</a></div>
-				<div class=td1><a style="font-weight:bold;" href="">[投资]</a><br><a href="">慈善</a><br><a href="">保险</a><br><a href="">基金</a><br><a href="">股票</a><br><a href="">收藏</a></div>
-				<div class=td1><a style="font-weight:bold;" href="">[评论]</a><br><a href="">新闻</a><br><a href="">宏观</a><br><a href="">市场</a><br><a href="">商业</a><br><a href="">金融</a></div>
-				<div class=td4><a style="font-weight:bold;" href="">[奢侈]</a><br><a href="">奢侈品</a><br><a href="">旅游</a><br><a href="">社交圈</a><br><a href="">礼仪课堂</a></div>
+				<div class=b_v></div>
+				<div class=td7><a style="font-weight:bold;" href="">[商业]</a><br><a href="">能源重工</a><br><a href="">汽车</a><br><a href="">快速消费品</a><br><a href="">健康产业</a><br><a href="">房产</a><br><a href="">下一页>></a></div>
+				<div class=b_v></div>
+				<div class=td4><a style="font-weight:bold;" href="">[科技]</a><br><a href="">创新</a><br><a href="">能源</a><br><a href="">生物</a><br><a href="">医药</a><br><a href="">TNT</a></div>
+				<div class=b_v></div>
+				<div class=td1><a style="font-weight:bold;" href="">[城市]</a><br><a href="">城市报道<br><a href="">城市资料</a><br><a href="">城市活动</a><br><a href="">城市列表</a><br><a href="">城市特辑</a><br><a href="">城市评论</a></div>
+				<div class=b_v></div>
+				<div class=td1><a style="font-weight:bold;" href="">[奢华]</a><br><a href="">奢侈品</a><br><a href="">旅游</a><br><a href="">社交圈</a><br><a href="">礼仪课堂</a></div>
+				<div class=b_v></div>
 				<div class=td2><a style="font-weight:bold;" href="">[增长俱乐部]</a><br><a href="">创业创富</a><br><a href="">公司/产业研究报告</a><br><a href="">投融资行业分析报告</a><br><a href="">VC/PE/投资人数据库</a><br><a href="">项目创业者数据库</a></div>
-				<div class=td1><a style="font-weight:bold;" href="">[奢侈]</a><br><a href="">特约记者</a><br><a href="">记者专栏</a></div>
+				<div class=b_v></div>
+				<div class=td1><a style="font-weight:bold;" href="">[专栏]</a><br><a href="">特约记者</a><br><a href="">记者专栏</a></div>
+				<div class=b_v></div>
 				<div class=td3><a style="font-weight:bold;" href="">[会员俱乐部]</a><br><a href="">会员俱乐部介绍</a><br><a href="">读者调查</a><br><a href="">申请赠阅</a><br><a href="">会员公告</a><br><a href="">读者来函</a><br><a href="">礼品兑换</a></div>
 				<div id=td5><a href="">关于福布斯中文网</a> - <a href="">新闻动态</a> - <a href="">广告服务</a> - <a href="">诚聘英才</a> - <a href="">友情连接</a> - <a href="">会员活动</a> - <a href="">隐私声明</a> - <a href="">网站声明</a> - <a href="">联系我们</a> - <a href="">网站地图</a></div>
 		</div>
+		<div id=ibabout>Copyright ? 2010 Forbes.com Inc. 福布斯公司 版权所有<br><br>备案号：户CP备000000号</div>
 	</div>
 </body>
 </html>
