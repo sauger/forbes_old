@@ -35,15 +35,25 @@
 					}
 					if($_POST['sbly']!=''){
 						array_push($name,"sbly");
-						array_push($value,$data->sheets[0]['cells'][$i][$_POST['sbly']]);
-						array_push($set,"sbly={$data->sheets[0]['cells'][$i][$_POST['sbly']]}");
+						array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST['sbly']]}'");
+						array_push($set,"sbly='{$data->sheets[0]['cells'][$i][$_POST['sbly']]}'");
+					}
+					if($_POST['company']!=''){
+						array_push($name,"company");
+						array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST['company']]}'");
+						array_push($set,"company='{$data->sheets[0]['cells'][$i][$_POST['company']]}'");
+					}
+					if($_POST['industry']!=''){
+						array_push($name,"industry");
+						array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST['industry']]}'");
+						array_push($set,"industry='{$data->sheets[0]['cells'][$i][$_POST['industry']]}'");
 					}
 					array_push($name,"bd_id");
 					array_push($value,$_POST['list_id']);
 					array_push($set,"bd_id={$_POST['list_id']}");
 					$name = implode(",", $name);
 					$value = implode(",", $value);
-					$set = implode(" and ", $set);
+					$set = implode(" , ", $set);
 					$db->execute("insert into fb_fhbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
 				}
 			}
@@ -73,19 +83,19 @@
 					if($_POST['bgl']!=''){
 						array_push($name,"bgl");
 						array_push($value,$data->sheets[0]['cells'][$i][$_POST['bgl']]);
-						array_push($set,"sbly={$data->sheets[0]['cells'][$i][$_POST['bgl']]}");
+						array_push($set,"bgl='{$data->sheets[0]['cells'][$i][$_POST['bgl']]}'");
 					}
 					if($_POST['sbly']!=''){
 						array_push($name,"sbly");
-						array_push($value,$data->sheets[0]['cells'][$i][$_POST['sbly']]);
-						array_push($set,"sbly={$data->sheets[0]['cells'][$i][$_POST['sbly']]}");
+						array_push($value,"'{$data->sheets[0]['cells'][$i][$_POST['sbly']]}'");
+						array_push($set,"sbly='{$data->sheets[0]['cells'][$i][$_POST['sbly']]}'");
 					}
 					array_push($name,"bd_id");
 					array_push($value,$_POST['list_id']);
 					array_push($set,"bd_id={$_POST['list_id']}");
 					$name = implode(",", $name);
 					$value = implode(",", $value);
-					$set = implode(" and ", $set);
+					$set = implode(" , ", $set);
 					$db->execute("insert into fb_mrbd ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
 				}
 			}
@@ -116,7 +126,7 @@
 			}
 			$name = implode(",", $name);
 			$value = implode(",", $value);
-			$set = implode(" and ", $set);
+			$set = implode(" , ", $set);
 			$db->execute("insert into {$_POST['table']} ({$name}) values ({$value}) ON DUPLICATE KEY update {$set}");
 			
 		}

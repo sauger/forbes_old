@@ -212,7 +212,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page")
 	}
 	
 	
-	if ($pagecount <= 1) return;
+	//if ($pagecount <= 1) return;
 	if (!strpos($url,'?'))
 	{
 		$url .= '?';
@@ -224,9 +224,18 @@ function paginate($url="",$ajax_dom=null,$page_var="page")
 	$pagelast = $url ."&$pageindextoken=" .($pagecount);
 	if ($pageindex == 1 || $pageindex ==null || $pageindex == "")
 	{?>
+	  <span>[首页]</span> 
+	  <span>[上页]</span>	
+	  <?php 
+	  	if($pagecount > 1){
+	  ?>
 	  <span><a class="paginate_link" href="<?php echo $pagenext; ?>">[下页]</a></span> 
 	  <span><a class="paginate_link" href="<?php echo $pagelast; ?>">[尾页]</a></span>
+	  <?php }else{?>
+	  <span>[下页]</span> 
+	  <span>[尾页]</span>		  
 	<?php	
+	  }
 	}
 	if ($pageindex < $pagecount && $pageindex > 1 )
 	{?>
@@ -236,10 +245,12 @@ function paginate($url="",$ajax_dom=null,$page_var="page")
 	  <span><a class="paginate_link" href="<?php echo $pagelast; ?>">[尾页]</a></span>		
 	 <?php
 	}
-	if ($pageindex == $pagecount)
+	if ($pageindex == $pagecount && $pageindex != 1)
 	{?>
 	  <span><a class="paginate_link" href="<?php echo $pagefirst; ?>">[首页]</a></span> 
-	  <span><a class="paginate_link" href="<?php echo $pageprev; ?>">[上页]</a></span>		
+	  <span><a class="paginate_link" href="<?php echo $pageprev; ?>">[上页]</a></span>
+	  <span>[下页]</span> 
+	  <span>[尾页]</span>	  		
 	<?php	
 	}
 	?>共找到<?php echo $$record_count_token; ?>条记录　
@@ -395,6 +406,18 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 		return $db->query($sql);
 	}
 		
+}
+
+function write_log($msg){
+	global $g_log_dir;
+	if(empty($g_log_dir)){
+		return;
+	}
+	if(is_dir($g_log_dir) === false) return ;
+			echo 'Ok';
+	$file = $g_log_dir .substr(now(),0,10)  .".log";
+	$msg = now() . ": " .$msg .chr(13).chr(10);
+	write_to_file($file,$msg);
 }
 	
 ?>

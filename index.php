@@ -258,7 +258,7 @@
 			<div id=gg>
 				<div id=gg_t>
 					<div id=gg_t_l><a href="">财经魔鬼词典</a></div>
-					<div id=gg_t_r><a href="">实用商业词汇</a>  |  <a href="">实用财经词汇</a></div>
+					<div id=gg_t_r><a href="">实用商业词汇</a>  |  <a href="">实用财经词汇</a></div>
 				</div>
 				<div id=gg_b_l><a href="">股指期货</a></div>
 				<div id=gg_b_r><a href="">future 	index</a></div>
@@ -361,7 +361,7 @@
 		<div class=c_l style="margin-left:15px;">
 			<div class=title>
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>投资</div>
+				<div class=wz>采编智库　</div>
 				<div class=line>|</div>
 				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>	
 			</div>

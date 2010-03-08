@@ -50,3 +50,4 @@ a{text-decoration:none; color:black;}
 .v_box .content{width:180px; height:20px; line-height:20px; overflow:hidden; text-align:center; float:left; display:inline;}
 
 .div_box{width:795px; float:left; display:inline;}
+label.error{color:red;}

@@ -14,7 +14,13 @@
 			if($_REQUEST['id']){
 				$menu->find($_REQUEST['id']);
 			}
-			if($menu->update_attributes($_POST['post'])){
+			$menu->update_attributes($_POST['post'],false);
+			if($menu->parent_id){
+				$p_menu = new table_class($tb_menu);
+				$p_menu->find($menu->parent_id);
+				$menu->role_level = $p_menu->role_level;
+			}
+			if($menu->save()){
 				redirect('menu_list.php');
 			}else{
 				display_error('修改菜单失败');
