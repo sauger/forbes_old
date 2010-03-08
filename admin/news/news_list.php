@@ -54,7 +54,7 @@
 					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
 					<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
 				</select>
-				<input class="sau_search" id="search_category" name ="category_id" type="hidden"></input>
+				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 				<input type="button" value="搜索" id="search_button" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
