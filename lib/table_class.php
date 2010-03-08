@@ -3,12 +3,21 @@
 
 */
 require_once(dirname(__FILE__) .'/belongs_to_object_class.php');
+
+class table_field_class{
+	public $name;
+	public $type;
+	public $key;
+	public $comment;
+	public $null;
+	public $default;
+	public $extra;
+	public $value;
+}
+
 class table_class{
 	private $_tablename = "";
-	public $fields_type = array();
-	public $fields_name = array();
-	private $fields_default = array();
-	private $fields = array();
+	public $fields = array();
 	private $changed_fields = array();
 	private $has_many_objects = array();
 	private $has_many_objects_items = array();
@@ -17,20 +26,28 @@ class table_class{
 	private $belongs_to_name = null;
 	private $is_loaded = false;
 	private $db_type = 'mysql';
-	public $echo_sql = false;
-	public $fields_comment = array();
-	function __construct($table_name,$full=false){
-		echo $table_prex;
+	private $map_file;
+	function __construct($table_name,$loaddb=false){
 		$this->_tablename = strtolower($table_name);
+		$this->map_file = dirname(__FILE__). "/../data/dbcache/{$table_name}";
 		$this->db_type = get_config('db_type') == 'mssql' ? 'mssql' :'mysql';
 		if($this->db_type == 'mssql'){
 			$this->_load_table_struct_mssql();
-			
 		}else
 		{
-			$this->_load_table_struct_mysql($full);
+			if(get_config('debug_tag') || $loaddb){
+				$this->_load_table_struct_mysql();
+				$this->_save_table_struct_to_file();
+			}else{
+				$ret = $this->_load_table_struct_from_file();
+				if($ret===false){
+					$this->_load_table_struct_mysql();
+					$this->_save_table_struct_to_file();
+				}
+			}
+			
 		}
-		//$this->_set_fields_default();
+		$this->_set_fields_default();
 		if (func_num_args() <= 0) {
 			return ;
 		}
@@ -38,38 +55,42 @@ class table_class{
 		if (is_array($arg)){
 			foreach ($arg as $k => $v){
 				if (array_key_exists($k,$this->fields)) {
-					$this->fields[$k] = $v;
+					$this->$k = $v;
 				}
 			}
 		}
 	}
 	
-	function _load_table_struct_mysql($full) {
+	function _load_table_struct_from_file(){
+		if (!file_exists($this->map_file)) return false;
+		$data = file_get_contents($this->map_file);
+		$this->fields = get_object_vars(json_decode($data));
+	}
+	
+	function _save_table_struct_to_file(){
+		$data = json_encode($this->fields);
+		write_to_file($this->map_file,$data,'w');
+	}
+	
+	function _load_table_struct_mysql() {
 		$db = get_db();
-		if($full){
-			$sql = "show full fields from " .$this->_tablename;
-		}else{
-			$sql = "show fields from " .$this->_tablename;
-		}
-		
+		$sql = "show full fields from " .$this->_tablename;
 		if ($db->query($sql) === false) {
 			return ;
 		}
 		if (!$db->move_first()) return;
 		do {
-			$name = $db->field_by_index(0);
-			$type = $db->field_by_index(1);
-			$this->fields_name[] = $name;
-			if($full){
-				$default = $db->field_by_index(5);
-				$this->fields_comment[$name] = $db->field_by_index(8);
-			}else{
-				$default = $db->field_by_index(4);
-			}
 			
-			$this->fields_type[$name] = $type;
-			$this->fields[$name] = $default;
-			$this->fields_default[$name] = $default;
+			$name = $db->field_by_index(0);
+			$this->fields[$name] = new table_field_class();						
+			$this->fields[$name]->name = $name;
+			$this->fields[$name]->type = $db->field_by_index(1);
+			$this->fields[$name]->key = $db->field_by_index(4);
+			$this->fields[$name]->comment = $db->field_by_index(8);
+			$this->fields[$name]->default = $db->field_by_index(5);
+			$this->fields[$name]->null = $db->field_by_index(3);
+			$this->fields[$name]->extra = $db->field_by_index(5);
+			
 		}while ($db->move_next());
 	}
 	
@@ -90,11 +111,6 @@ class table_class{
 			$this->fields[$name] = $default;
 			$this->fields_default[$name] = $default;
 		}while ($db->move_next());
-	}
-	
-	public function get_field_info($field_name){
-		if(!array_key_exists($field_name, $this->fields)){return null;}
-		return array('name' => $field_name,'value' => $this->$field_name,'default' => $this->fields_default[$field_name],'type' => $this->fields_type[$field]);		
 	}
 	
 	public function find($param = 'all'){
@@ -143,8 +159,7 @@ class table_class{
 			if ($db->record_count <= 0) return null;
 			
 			foreach ($this->fields as $k => $v){
-				#$result->fields[$k] = $db->field_by_name($k);
-				$this->fields[$k] = $db->field_by_name($k);
+				$v->value = $db->field_by_name($k);
 			}
 			$result = clone $this;
 		}else {
@@ -152,10 +167,11 @@ class table_class{
 			if($db->record_count <= 0) return $result;
 			do {
 				$tmp = clone $this;
-				foreach ($this->fields as $k => $v){
-					$tmp->fields[$k] = $db->field_by_name($k);
+				foreach ($tmp->fields as $k => $v){
+					$v->value = $db->field_by_name($k);
 				}
-				$result[] = $tmp;
+				
+				array_push($result,$tmp);
 			}while ($db->move_next());
 			$this->fields = $result[0]->fields;
 		}
@@ -202,7 +218,7 @@ class table_class{
 			if ($db->record_count <= 0) return null;
 			
 			foreach ($this->fields as $k => $v){
-				$this->fields[$k] = $db_ret[0]->$k;
+				$v->value = $db_ret[0]->$k;
 			}
 			$result = clone $this;
 		}else {
@@ -210,8 +226,8 @@ class table_class{
 			if($db->record_count <= 0) return $result;
 			for($i=0; $i < $db->record_count; $i++){
 				$tmp = clone $this;
-				foreach ($this->fields as $k => $v){
-					$tmp->fields[$k] = $db_ret[$i]->$k;
+				foreach ($tmp->fields as $k => $v){
+					$v->value = $db_ret[$i]->$k;
 				}
 				$result[] = $tmp;
 			}
@@ -223,8 +239,7 @@ class table_class{
 	}
 
 	public function save(){
-
-		if(empty($this->fields['id']) || $this->fields['id'] <= 0){
+		if(empty($this->fields['id']->value) || $this->fields['id']->value <= 0){
 			//save net object
 			return $this->_save_new();
 		}else {
@@ -233,7 +248,7 @@ class table_class{
 	}
 	
 	public function delete($id=''){
-		$id = empty($id) ? $this->fields['id'] : $id;
+		$id = empty($id) ? $this->fields['id']->value : $id;
 		if(empty($id)){
 			debug_info('id is empty.fail to delete');
 		}
@@ -245,7 +260,7 @@ class table_class{
 		if (is_array($attributes)) {
 			foreach ($attributes as $k => $v) {		
 				if (array_key_exists($k,$this->fields)) {
-					if ($v == "" && strpos($this->fields_type[$k],'int') !== false) {
+					if ($v == "" && strpos($this->fields[$k]->type,'int') !== false) {
 						continue;
 					}
 					$this->$k = $v;
@@ -286,6 +301,8 @@ class table_class{
 	}
 	
 	private function _find_by_sql($sqlstr,$limit=0){
+		$this->is_edited = false;
+		$this->changed_fields = array();
 		$db = get_db();
 		if($this->echo_sql){
 			echo $sqlstr;
@@ -296,7 +313,7 @@ class table_class{
 			
 			foreach ($this->fields as $k => $v){
 				#$result->fields[$k] = $db->field_by_name($k);
-				$this->fields[$k] = $db->field_by_name($k);
+				$v->value = $db->field_by_name($k);
 			}
 			$result = clone $this;
 		}else {
@@ -304,8 +321,8 @@ class table_class{
 			if($db->record_count <= 0) return $result;
 			do {
 				$tmp = clone $this;
-				foreach ($this->fields as $k => $v){
-					$tmp->fields[$k] = $db->field_by_name($k);
+				foreach ($tmp->fields as $k => $v){
+					$v->value = $db->field_by_name($k);
 				}
 				$result[] = $tmp;
 			}while ($db->move_next());
@@ -318,26 +335,28 @@ class table_class{
 		$sqlstr = "insert into " .$this->_tablename ."(";
 		$first = true;
 		$sqltail ="";
+		$this->is_edited = false;
+		$this->changed_fields = array();
 		foreach ($this->fields as $k => $v){
-			if(is_string($v)){
-				$v = str_replace("'","''",$v);
+			if(is_string($v->value)){
+				$v->value = str_replace("'","''",$v->value);
 			}			
 			if(strtolower($k) == 'id') continue;
 			if ($first) {
 				$sqlstr .= $k;
-				if (is_null($v)) {
+				if (is_null($v->value)) {
 					$sqltail .="(NULL)";
 				}else {
-					$sqltail .= "'" .$v ."'";
+					$sqltail .= "'" .$v->value ."'";
 				}
 
 				unset($first);
 			}else {
 				$sqlstr .= "," .$k;
-				if (is_null($v)) {
+				if (is_null($v->value)) {
 					$sqltail .=",(NULL)";
 				}else {
-					$sqltail .= ",'" .$v ."'";
+					$sqltail .= ",'" .$v->value ."'";
 				}
 			}
 		}
@@ -350,11 +369,11 @@ class table_class{
 	}
 
 	private function _update(){
-		if (intval($this->fields['id']) <= 0){
+		if (intval($this->fields['id']->value) <= 0){
 			debug_info("invalid id!");
 			return false;
-		}
-		if(count($this->changed_fields) <= 0) return true;
+		}		
+		if(!$this->is_edited) return true;
 		$sqlstr = "update " .$this->_tablename ." set ";		
 		$tmp = array();
 		foreach ($this->changed_fields as $key) {
@@ -366,29 +385,39 @@ class table_class{
 			 }
 		}
 		$sqlstr .= implode(',',$tmp);
-		$sqlstr .= " where id=" .$this->fields['id'];
+		$sqlstr .= " where id=" .$this->fields['id']->value;
 		$db = get_db();
+		$this->is_edited = false;
+		$this->changed_fields = array();
 		$result = $db->execute($sqlstr);
 		$result = $result and  $result and $this->_save_belongs_to();
 		return  $result and $this->_save_has_many();
 	}
 
 	private function _set_fields_default(){
-		foreach ($this->fields_name as $v){
-			$this->$v = $this->fields_default[$v];
+		foreach ($this->fields as $v){
+			$v->value = $v->default;
 		}
 	}
 
 	protected function __clone(){
-		$this->_set_fields_default();
+		if($this->fields){
+			foreach ($this->fields as $k => $v) {
+				$this->fields[$k] = clone $this->fields[$k];
+			}
+		}
 	}
 
 	protected function __get($var){
+		if($var == 'echo_sql'){
+			$db = get_db();
+			return $db->echo_sql;
+		}
 		if(strtolower($var) == 'class_name'){
 			return $this->_tablename;
 		}
 		if (@array_key_exists($var,$this->fields)) {
-			return  $this->fields[$var];
+			return  $this->fields[$var]->value;
 		}elseif (strtolower($var) == $this->belongs_to_name){
 			
 			if(!$this->belongs_to_object->is_loaded){
@@ -406,8 +435,9 @@ class table_class{
 
 	protected function __set($key, $value){
 		if (@array_key_exists($key,$this->fields)) {
-			if($value != '' && $value == $this->fields[$key]) return;
-			$this->fields[$key] = $value;			
+			if(empty($key)) return;
+			if($this->fields[$key]->value == $value) return;
+			$this->fields[$key]->value = $value;		
 			$this->is_edited = true;
 			if(!in_array($key, $this->changed_fields)){
 				$this->changed_fields[] = $key;
@@ -415,6 +445,9 @@ class table_class{
 		}else if(@array_key_exists($key,$this->belongs_to_objects)){
 			$this->belongs_to_objects[$key]["value"] = $value;
 			$this->fields[$this->belongs_to_objects[$key]["key"]] = $value->id;
+		}else if($key == 'echo_sql'){
+			$db = get_db();
+			 $db->echo_sql = $value;
 		}
 	}
 

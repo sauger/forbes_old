@@ -28,4 +28,5 @@ li a:visited{color:#000000; text-decoration:none;}
 #right-text{width:680px; height:326px; font-size:13px; color:#999999;  margin-top:24px; margin-left:55px; float:left; display:inline;}
 #right-next{width:70px; height:25px; margin-top:56px; margin-left:381px; background-image:url(../../../images/html/user/right-next.jpg); float:left; display:inline;}
 
-.li1{width:680px; text-indent:10px; margin-top:15px; background:url(../../../images/html/user/tar.jpg) no-repeat 0% 50%; float:left; display:inline;}
+.li1{width:540px; text-indent:10px; margin-top:15px; background:url(../../../images/html/user/tar.jpg) no-repeat 0% 5.7px; float:left; display:inline;}
+.li2{width:134px; text-indent:10px; margin-top:15px; float:left; display:inline;}

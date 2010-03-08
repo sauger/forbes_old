@@ -212,7 +212,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page")
 	}
 	
 	
-	if ($pagecount <= 1) return;
+	//if ($pagecount <= 1) return;
 	if (!strpos($url,'?'))
 	{
 		$url .= '?';
@@ -224,9 +224,18 @@ function paginate($url="",$ajax_dom=null,$page_var="page")
 	$pagelast = $url ."&$pageindextoken=" .($pagecount);
 	if ($pageindex == 1 || $pageindex ==null || $pageindex == "")
 	{?>
+	  <span>[首页]</span> 
+	  <span>[上页]</span>	
+	  <?php 
+	  	if($pagecount > 1){
+	  ?>
 	  <span><a class="paginate_link" href="<?php echo $pagenext; ?>">[下页]</a></span> 
 	  <span><a class="paginate_link" href="<?php echo $pagelast; ?>">[尾页]</a></span>
+	  <?php }else{?>
+	  <span>[下页]</span> 
+	  <span>[尾页]</span>		  
 	<?php	
+	  }
 	}
 	if ($pageindex < $pagecount && $pageindex > 1 )
 	{?>
@@ -236,10 +245,12 @@ function paginate($url="",$ajax_dom=null,$page_var="page")
 	  <span><a class="paginate_link" href="<?php echo $pagelast; ?>">[尾页]</a></span>		
 	 <?php
 	}
-	if ($pageindex == $pagecount)
+	if ($pageindex == $pagecount && $pageindex != 1)
 	{?>
 	  <span><a class="paginate_link" href="<?php echo $pagefirst; ?>">[首页]</a></span> 
-	  <span><a class="paginate_link" href="<?php echo $pageprev; ?>">[上页]</a></span>		
+	  <span><a class="paginate_link" href="<?php echo $pageprev; ?>">[上页]</a></span>
+	  <span>[下页]</span> 
+	  <span>[尾页]</span>	  		
 	<?php	
 	}
 	?>共找到<?php echo $$record_count_token; ?>条记录　

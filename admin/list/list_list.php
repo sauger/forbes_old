@@ -8,22 +8,25 @@
 		require_once('../../frame.php');
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub');
+		js_include_tag('admin/list/list');
 	?>
 </head>
 
 <body>
-	<?php 
-		$db = get_db();
-		$record = $db->paginate("select * from fb_custom_list_type");
+	<?php
+		$list= new table_class('fb_custom_list_type');
+		if($_REQUEST['s_text']){
+			$conditions = array('conditions' => "name like '%{$_REQUEST['s_text']}%'");
+		} 
+		$record = $list->paginate("all",$conditions);
 		$count = count($record);
 	?>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="3">
-				　名人榜管理 <a href="bdedit.php">添加榜单</a>   搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
+				　自定义榜管理 <a href="custom_list_edit.php">添加榜单</a>   搜索　
+				 <input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
+				 <input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
 		<tr class="tr2">
@@ -36,11 +39,10 @@
 					<td><a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>"> <?php echo $record[$i]->name;?></a></td>
 					<td>
 						<a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<a href="custom_list_item_list.php?year=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->year;?>" style="cursor:pointer">榜单管理</a>
+						<a href="custom_list_item_list.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->year;?>" style="cursor:pointer">榜单管理</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_mrb">
 		<?php
 			}
 		?>
