@@ -135,7 +135,7 @@
 			</div>
 		</div>
 		<div id=t_r_t>
-			<div class=title style="background:url('images/index/t_r_t_title1.jpg') no-repeat;">实时财富</div>
+			<div class=title style="background:url('images/index/t_r_t_title1.jpg') no-repeat; font-weight:bold; color:#000000;">实时财富</div>
 			<div class=title>公司榜</div>	
 			<div class=title>名人榜</div>	
 			<div class=title>城市榜</div>
@@ -166,7 +166,7 @@
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
 				<div class=wz>创业　</div>
 				<div class=line>|</div>
-				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
+				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
 			<div class=content1>
 				<div class=piccontent>
@@ -182,7 +182,7 @@
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
 				<div class=wz>商业</div>
 				<div class=line>|</div>
-				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
+				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
 			<div class=content1>
 				<div class=piccontent>
@@ -198,7 +198,7 @@
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
 				<div class=wz>科技</div>
 				<div class=line>|</div>
-				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
+				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
 			<div class=content1>
 				<div class=piccontent>
@@ -214,7 +214,7 @@
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
 				<div class=wz>专栏</div>
 				<div class=line>|</div>
-				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
+				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
 			<div class=content1>
 				<div id=left><img style="cursor:pointer;" border=0 src="images/index/left_zhuanlan.jpg"></div>
@@ -226,8 +226,8 @@
 				<?php } ?>
 				<div id=right><img style="cursor:pointer;" border=0 src="images/index/right_zhuanlan.jpg"></div>
 				<div class=cltitle><a href="">送没摸的专栏</a></div>
-				<?php for($i=0;$i<2;$i++){ ?>
-					<div class=cl><a href="">创业投资中国经济的泡沫有多大？</a></div>
+				<?php for($i=0;$i<3;$i++){ ?>
+					<div class=cl><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>
 				<div id=ck><a href="">查看更多此人专栏>></a></div>
 			</div>
@@ -236,7 +236,7 @@
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
 				<div class=wz>读者高见</div>
 				<div class=line>|</div>
-				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>
+				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
 			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
 			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
@@ -253,7 +253,7 @@
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
 				<div class=wz>投资</div>
 				<div class=line>|</div>
-				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>	
+				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>	
 			</div>
 			<div class=content3>
 				<div id=content3_title><a href="">中国本土私人股本基金挑战</a></div>
@@ -269,7 +269,7 @@
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
 				<div class=wz>奢华</div>
 				<div class=line>|</div>
-				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>	
+				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>	
 			</div>
 			<div class=content3>
 					<div class=image><a href=""><img border=0 src="images/index/car.jpg"></a></div>
@@ -393,7 +393,7 @@
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
 				<div class=wz>采编智库　</div>
 				<div class=line>|</div>
-				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>	
+				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>	
 			</div>
 			<div class=content1>
 				<?php for($i=0;$i<8;$i++){ ?>

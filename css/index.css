@@ -1,4 +1,4 @@
-body {font-size:12px;  font-family:宋体; font-size:12px; color:#000;  margin:0 auto; padding:0;}
+body {font-size:12px;  font-family:宋体; color:#000;  margin:0 auto; padding:0;}
 
 #ibody{width:1000px; margin:0 auto;}
 #banner{width:780px; height:92px; border:1px solid #cccccc; margin-top:25px; float:left; display:inline;}
@@ -51,19 +51,19 @@ body {font-size:12px;  font-family:宋体; font-size:12px; color:#000;  margin:0
 #t_l_t_t_r #title a{color:#003399; font-weight:bold; font-size:24px; text-decoration:underline;}
 #t_l_t_t_r #content{width:351px; height:40px; margin-top:10px; margin-bottom:10px; line-height:20px; overflow:hidden; float:left; display:inline;}
 #t_l_t_t_r #content a{color:#000000; font-size:14px; text-decoration:none;}
-#t_l_t_t_r .cl{width:291px; height:18px; line-height:18px; overflow:hidden; float:left; display:inline;}
+#t_l_t_t_r .cl{width:291px; height:20px; line-height:20px; overflow:hidden; float:left; display:inline;}
 #t_l_t_t_r .cl a{color:#003399; text-decoration:none;}
 #t_l_t_t_r #more{width:60px; height:20px; float:right; display:inline;}
 #t_l_t_t_r #more a{color:#003399;}
 #t_l_t_t_r #btn{width:351px; height:14px; margin-top:10px; margin-right:10px; text-align:right; float:right; display:inline;}
-#t_l_t_l{width:288px; float:left; display:inline;}
-#t_l_t_l #title{width:270px;; height:20px; margin-top:10px; margin-left:18px; line-height:20px; float:left; display:inline;}
+#t_l_t_l{width:295px; float:left; display:inline;}
+#t_l_t_l #title{width:270px;; height:20px; margin-top:10px; margin-left:10px; line-height:20px; float:left; display:inline;}
 #t_l_t_l #title a{color:#003399; font-size:14px; font-weight:bold; text-decoration:none;}
-#t_l_t_l a{color:#2555a7; text-decoration:none;}
-#t_l_t_l #content1{width:270px; height:16px; margin-top:10px; margin-left:16px; line-height:16px; overflow:hidden; float:left; display:inline;}
-#t_l_t_l #content2{width:240px; height:16px; margin-top:10px; margin-left:16px; line-height:16px; overflow:hidden; float:left; display:inline;}
-#t_l_t_l #content3{width:210px; height:16px; margin-top:10px; margin-left:16px; line-height:16px; overflow:hidden; float:left; display:inline;}
-#t_l_t_l #coffee{width:50px; height:34px; background-image:url(/images/index/coffee.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/coffee.png"); float:right; display:inline;}
+#t_l_t_l a{color:#2555a7; font-size:14px; text-decoration:none;}
+#t_l_t_l #content1{width:278px; height:18px; margin-top:10px; margin-left:10px; line-height:20px; overflow:hidden; float:left; display:inline;}
+#t_l_t_l #content2{width:245px; height:18px; margin-top:5px; margin-left:10px; line-height:20px; overflow:hidden; float:left; display:inline;}
+#t_l_t_l #content3{width:231px; height:18px; margin-top:5px; margin-left:10px; line-height:20px; overflow:hidden; float:left; display:inline;}
+#t_l_t_l #coffee{width:50px; height:34px; margin-top:-5px; background-image:url(/images/index/coffee.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/coffee.png"); float:left; display:inline;}
 #t_l_t_r{width:351px; float:right; display:inline;}
 #t_l_t_r #left{width:5px; height:99px; margin-left:10px; float:left; display:inline;}
 #t_l_t_r #left img{margin-top:45px;}
@@ -89,9 +89,9 @@ body {font-size:12px;  font-family:宋体; font-size:12px; color:#000;  margin:0
 .c_l .title{width:320px; height:28px; color:#666666; font-weight:bold; float:left; display:inline;}
 .c_l .title .t_pic{width:8px; height:8px; margin-top:10px; float:left; display:inline;}
 .c_l .title .wz{height:18px; margin-top:5px; margin-left:10px; line-height:18px; font-size:14px;  float:left; display:inline;}
-.c_l .title .line{width:1px; height:10px; margin-top:7px; margin-left:10px; font-size:10px; line-height:10px; float:left; display:inline;}
-.c_l .title .more{width:38px; height:8px; margin-top:10px; margin-left:10px; line-height:8px;  font-size:8px; float:left; display:inline;}
-.c_l .title .more a{color:#666666; text-decoration:none;}
+.c_l .title .line{width:1px; height:10px; margin-top:9px; margin-left:10px; font-size:10px; line-height:10px; float:left; display:inline;}
+.c_l .title .more{width:38px; height:8px; margin-top:10px; margin-left:10px; line-height:8px; font-size:8px; float:left; display:inline;}
+.c_l .title .more a{color:#666666;  text-decoration:none;}
 .c_l .content1{width:320px; float:left; display:inline;}
 .c_l .content2{width:320px; float:left; display:inline;}
 .c_l #left{width:5px; height:87px; margin-top:10px; float:left; display:inline;}
@@ -125,11 +125,11 @@ body {font-size:12px;  font-family:宋体; font-size:12px; color:#000;  margin:0
 
 .c_l .cl{width:300px; height:16px; margin-top:12px; margin-left:10px; line-height:16px; float:left; display:inline;}
 .c_l .cl img{width:4px; height:4px; margin-top:6px; float:left; display:inline;}
-.c_l .cl a{font-size:13px; color:#003899; text-decoration:none;}
+.c_l .cl a{font-size:14px; color:#003899; text-decoration:none;}
 .c_l #ck{width:114px; height:20px; margin-top:10px; line-height:20px; float:right; display:inline;}
 .c_l #ck a{color:#256cb1; text-decoration:none;}
 .c_l .dash{width:320px; height:1px; margin-top:10px; margin-left:10px; background:url('/images/index/dashed.jpg') no-repeat; float:left;display:inline;}
-.c_l .cltitle{width:300px; height:22px; margin-top:10px; margin-left:20px; line-height:22px; float:left; display:inline;}
+.c_l .cltitle{width:300px; height:22px; margin-top:10px; margin-left:10px; line-height:22px; float:left; display:inline;}
 .c_l .cltitle a{color:#000066; font-size:18px; font-weight:bold; text-decoration:none;}
 .c_l .context{width:295px; height:38px; margin-top:11px; margin-left:13px; line-height:19px; float:left; display:inline;}
 .c_l .context a{color:#003899; font-size:12px; text-decoration:none;}
@@ -192,7 +192,7 @@ body {font-size:12px;  font-family:宋体; font-size:12px; color:#000;  margin:0
 .c_b_t .title .more a{color:#666666; font-weight:normal; text-decoration:none;}
 .c_b_t .content{width:320px; height;21px; float:left; display:inline;}
 .c_b_t .content .cl{width:300px; height:21px; margin-top:5px; margin-left:10px; line-height:21px; float:left; display:inline;}
-.c_b_t .content .cl a{color:#003399; font-size:13px; text-decoration:none;}
+.c_b_t .content .cl a{color:#003399; font-size:14px; text-decoration:none;}
 .c_b_t .dash{width:320px; height:1px; margin-top:20px; margin-bottom:10px; background:url('/images/index/dashed.jpg') no-repeat; float:left;display:inline;}
 #l_b{width:363px; margin-top:10px; padding-bottom:1px; border:1px solid #cccccc; float:left; display:inline;}
 #l_b .title{width:363px; height:28px; background:url('/images/index/l_b_title.jpg') no-repeat; float:left; display:inline;}
