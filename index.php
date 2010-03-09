@@ -46,26 +46,55 @@
 			<button class=search>查 询</button>
 		</div>
 		<div id=navigation>
-			<div class="content" style="width:90px;background:#336699;"><div id=picindex></div></div><div class=vertical></div>
-			<div class="content"><div id=picbangdan></div></div><div class=vertical></div>
-			<div class="content"><div id=picfuhao></div></div><div class=vertical></div>
-			<div class="content"><div id=pictouzi></div></div><div class=vertical></div>
-			<div class="content"><div id=picchuangye></div></div><div class=vertical></div>
-			<div class="content"><div id=picshangye></div></div><div class=vertical></div>
-			<div class="content"><div id=pickeji></div></div><div class=vertical></div>
-			<div class="content"><div id=picchengshi></div></div><div class=vertical></div>
-			<div class="content"><div id=picshehua></div></div><div class=vertical></div>
-			<div class="content"><div id=piczhuanlan></div></div><div class=vertical></div>
+			<div class="content" style="width:90px; background:url('images/index/dh1_bg.jpg') repeat-x;">
+				<div id=picindex></div>
+			</div>
+			<div class=vertical></div>
+			<div class="content">
+				<div id=picbangdan></div>
+			</div>
+			<div class=vertical></div>
+			<div class="content">
+				<div id=picfuhao></div>
+			</div>
+			<div class=vertical></div>
+			<div class="content">
+				<div id=pictouzi></div>
+			</div>
+			<div class=vertical></div>
+			<div class="content">
+				<div id=picchuangye></div>
+			</div>
+			<div class=vertical></div>
+			<div class="content">
+				<div id=picshangye></div>
+			</div>
+			<div class=vertical></div>
+			<div class="content">
+				<div id=pickeji></div>
+			</div>
+			<div class=vertical></div>
+			<div class="content">
+				<div id=picchengshi></div>
+			</div>
+			<div class=vertical></div>
+			<div class="content">
+				<div id=picshehua></div>
+			</div>
+			<div class=vertical></div>
+			<div class="content">
+				<div id=piczhuanlan></div>
+			</div>
+			<div class=vertical></div>
 			<div id=hyzq>
-				<div id=zq></div><div id=zqhy></div>
-				<div id=zs></div><div id=zzzs></div>
+				<div id=zqhy></div>
+				<div id=zzzs></div>
 			</div>
 		</div>
 		<div id=navigation2>
 			<div class="content">
 				<a style="text-decoration:none;" herf="">能源重工</a> |　<a herf="">汽车</a> |　<a herf="">快速消费品</a> |　<a herf="">健康产业</a> |　<a herf="">房产</a> |　<a herf="">物流零售</a> |　<a herf="">金融</a> | <a herf="">3C</a> | <a herf="">文化媒体</a> | <a herf="">旅游酒店</a> | <a style="text-decoration:none;" herf="">领导力</a> | <a style="text-decoration:none;" herf="">职场</a> |
 			</div>
-			
 		</div>
 		<div id=t_l_t>
 			<div id=t_l_t_t>
