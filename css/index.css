@@ -1,4 +1,4 @@
-body {font-size:12px;  font-family:宋体; color:#000;  margin:0 auto; padding:0;}
+body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
 
 #ibody{width:1000px; margin:0 auto;}
 #banner{width:780px; height:92px; border:1px solid #cccccc; margin-top:25px; float:left; display:inline;}
@@ -13,11 +13,11 @@ body {font-size:12px;  font-family:宋体; color:#000;  margin:0 auto; padding:0
 #top_login #ccenter{width:209px; height:120px; background:url('/images/index/login_content_bg.jpg') repeat-x; float:left; display:inline;}
 #top_login #ccenter #cpic{width:72px; height:93px; margin-top:14px; margin-left:10px; float:left; display:inline;}
 #top_login #ccenter #context{width:122px; height:93px; margin-top:14px; margin-left:5px; float:left; display:inline;}
-#top_login #ccenter #context #title{width:122px; height:20px; line-height:20px; overflow:hidden; float:left; display:inline;}
-#top_login #ccenter #context #title a{color:#333333; font-weight:bold; text-decoration:none;}
-#top_login #ccenter #context #content{width:122px; height:48px; line-height:16px; overflow:hidden; float:left; display:inline;}
-#top_login #ccenter #context #content a{color:#666666; text-decoration:none;}
-#top_login #ccenter #context #ck{width:122px; height:23px; margin-top:2px; float:left; display:inline;}
+#top_login #ccenter #context #title{width:122px; height:20px; margin-top:5px; line-height:20px; overflow:hidden; float:left; display:inline;}
+#top_login #ccenter #context #title a{color:#666666; font-weight:bold; text-decoration:none;}
+#top_login #ccenter #context #content{width:122px; height:34px; margin-top:5px; line-height:17px; overflow:hidden; float:left; display:inline;}
+#top_login #ccenter #context #content a{color:#999999; text-decoration:none;}
+#top_login #ccenter #context #ck{width:122px; height:23px; margin-top:5px; float:left; display:inline;}
 #top_login #ccenter #context #ck button{width:122px; height:23px; background:url('/images/index/btn_ck.jpg') no-repeat; cursor:pointer; text-align:center; border:0px;}
 #itop{width:785px; height:90px; margin-top:3px; background:url('/images/index/top_bg.jpg') no-repeat; float:left; display:inline;}
 #itop .iinput{width:160px; height:16px; border:1px solid #99CCFF; margin-top:41px; float:left; display:inline;}
