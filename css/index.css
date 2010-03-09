@@ -22,8 +22,8 @@ body {font-size:12px;  font-family:宋体; font-size:12px; color:#000;  margin:0
 #itop{width:785px; height:90px; margin-top:3px; background:url('/images/index/top_bg.jpg') no-repeat; float:left; display:inline;}
 #itop .iinput{width:160px; height:16px; border:1px solid #99CCFF; margin-top:41px; float:left; display:inline;}
 #itop .search{width:53px; height:22px; margin-top:41px; border:0px; color:#ffffff; line-height:22px; background:url('/images/index/search_bg.jpg') no-repeat; float:left; display:inline;}
-#navigation{width:1000px; height:40px; margin-top:1px; background:#3366CC; float:left; display:inline;}
-#navigation .content{width:75px; height:38px; margin-top:1px; line-height:38px; text-align:center; float:left; display:inline;}
+#navigation{width:1000px; height:35px; margin-top:1px; background:#3366CC; float:left; display:inline;}
+#navigation .content{width:75px; height:35px; margin-top:1px; line-height:35px; text-align:center; float:left; display:inline;}
 #navigation .content #picindex{width:29px; height:15px; cursor:pointer; background-image:url(/images/index/index.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/index.png"); margin:0 auto; margin-top:11px;}
 #navigation .content #picbangdan{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/bangdan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/bangdan.png"); margin:0 auto; margin-top:11px;}
 #navigation .content #picfuhao{width:29px; height:15px; cursor:pointer; background-image:url(/images/index/fuhao.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/fuhao.png"); margin:0 auto; margin-top:11px;}
