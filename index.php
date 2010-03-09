@@ -145,7 +145,7 @@
 					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
 				</div>
 				<?php for($i=0;$i<3;$i++){ ?>
-					<div class=cl><a href=""><img border=0 src="images/index/point.jpg">　创业投资中国经济的泡沫有多大？</a></div>
+					<div class=cl><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>
 			</div>
 			<div class=dash></div>
@@ -161,7 +161,7 @@
 					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
 				</div>
 				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl><img border=0 src="images/index/point.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
+					<div class=cl><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>	
 			</div>
 			<div class=dash></div>
@@ -177,7 +177,7 @@
 					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
 				</div>
 				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl><img border=0 src="images/index/point.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
+					<div class=cl><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>	
 			</div>
 			<div class=dash></div>
@@ -227,11 +227,12 @@
 				<div class=more><a href="">MORE <span style="color:#0099FF">+</span></a></div>	
 			</div>
 			<div class=content3>
+				<div id=content3_title><a href="">中国本土私人股本基金挑战</a></div>
 				<div class=piccontent1>
 					<a class=pic href=""><img border=0 src="images/index/two.jpg"></a><a href="">直到资集团仍把持着中国约80%的私人股本市场，但如仍把持着把持着把持着把持中国约80%的私人股本市场，但如今中国已涌现出国已涌现出国已涌现出众多团...</a>
 				</div>
-				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl><img border=0 src="images/index/point.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
+				<?php for($i=0;$i<5;$i++){ ?>
+					<div class=cl><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>
 			</div>
 			<div class=dash style="margin-top:20px;"></div>
@@ -247,11 +248,11 @@
 						<div class=image_title><a href="">2011款R8敞篷车</a></div>
 						<div class=image_context><a href="">奥迪汽车在09年的美国洛杉基国际车将他</a></div>
 					</div>
-					<div class=image_content style="margin-top:40px;">
+					<div class=image_content style="margin-top:20px;">
 						<div class=image_title><a href="">2011款R8敞篷车</a></div>
 						<div class=image_context><a href="">奥迪汽车在09年的美国洛杉基国际车将他</a></div>
 					</div>
-					<div class=image style="margin-top:40px; margin-left:5px;"><a href=""><img border=0 src="images/index/car.jpg"></a></div>
+					<div class=image style="margin-top:20px; margin-left:5px;"><a href=""><img border=0 src="images/index/car.jpg"></a></div>
 			</div>
 		</div>
 		<div id=c_r>
