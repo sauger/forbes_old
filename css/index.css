@@ -38,8 +38,9 @@ body {font-size:12px;  font-family:宋体; color:#000;  margin:0 auto; padding:0
 #navigation2{width:1000px; height:27px; background:#C1E1EE; float:left; display:inline;}
 #navigation2 .content{width:690px; height:27px; margin-left:30px; line-height:27px; float:left; display:inline;}
 #navigation2 .content a{color:#000000; text-decoration:underline;}
-#navigation #hyzq{width:214px; height:29px; margin-top:3px; background:url('/images/index/hyzq.jpg') no-repeat; background-position:bottom; float:right; display:inline;}
-#navigation #hyzq #zqhy{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background-image:url(/images/index/hyzq_a.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/hyzq_a.png"); float:left; display:inline;}}
+#navigation #hyzq{width:214px; height:29px; margin-top:3px; background:url('/images/index/hyzq.jpg') no-repeat; background-position:bottom; float:right; display:inline;}
+#navigation #hyzq #zqhy{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background-image:url(/images/index/hyzq_a.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/hyzq_a.png"); float:left; display:inline;}
+}
 #navigation #hyzq #zzzs{width:52px; height:12px; margin-top:12px; margin-right:10px; cursor:pointer; background-image:url(/images/index/zszz.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/zszz.png"); float:right; display:inline;}
 #t_l_t{width:680px; height:325px; margin-top:10px; border:1px solid #e1e9f0; background:url('/images/index/t_l_t.jpg') repeat-x; float:left; display:inline;}
 #t_l_t img{margin:1px;}
@@ -202,7 +203,7 @@ body {font-size:12px;  font-family:宋体; color:#000;  margin:0 auto; padding:0
 #r_b_t_left{width:3px; height:206px; background:url('/images/index/r_b_t_left.gif') no-repeat; float:left; display:inline;}
 #r_b_t_right{width:3px; height:206px; background:url('/images/index/r_b_t_right.gif') no-repeat; float:left; display:inline;}
 #r_b_t .title{width:298px; height:28px; border:1px solid #dfdfdf; background:url('/images/index/r_b_t_title.jpg') repeat-x; float:left; display:inline;}
-#r_b_t .title #wz{width:100px; height:18px; margin-top:6px; margin-left:10px; line-height:18px; color:#003399; font-size:14px; font-weight:bold; float:left; display:inline;}
+#r_b_t .title #wz{width:100px; height:18px; margin-top:6px; margin-left:10px; line-height:18px; color:#4990b9; font-size:14px; font-weight:bold; float:left; display:inline;}
 #r_b_t .title #more{width:19px; height:9px; margin-top:10px; margin-right:10px; line-height:18px; float:right; display:inline;}
 #r_b_t_content{width:294px; height:205px; border-bottom:1px solid #dfdfdf; float:left; display:inline;}
 #r_b_t .r_b_t_context{width:270px; height:85px; margin-top:5px; padding-top:5px; padding-left:5px; line-height:18px; margin-left:7px; overflow:hidden; float:left; display:inline;}
@@ -211,7 +212,7 @@ body {font-size:12px;  font-family:宋体; color:#000;  margin:0 auto; padding:0
 #r_b_t #r_b_t_dash{width:270px; height:1px; margin-left:12px; background:url('/images/index/b_r_t_dash.jpg') no-repeat; float:left; display:inline;}
 #r_b_b{width:298px; height:285px; border:1px solid #dfdfdf; margin-top:5px; float:right; display:inline;}
 #r_b_b .title{width:298px; height:28px; border-bottom:1px solid #dfdfdf; background:url('/images/index/r_b_b_title.jpg') repeat-x; float:left; display:inline;}
-#r_b_b .title #wz{width:100px; height:18px; margin-top:6px; margin-left:10px; line-height:18px; color:#003399; font-size:14px; font-weight:bold; float:left; display:inline;}
+#r_b_b .title #wz{width:100px; height:18px; margin-top:6px; margin-left:10px; line-height:18px; color:#4990b9; font-size:14px; font-weight:bold; float:left; display:inline;}
 #r_b_b .title #more{width:19px; height:9px; margin-top:10px; margin-right:10px; line-height:18px; float:right; display:inline;}
 #r_b_b .content{width:270px; height:127px; margin-top:15px; margin-left:14px; float:left; display:inline;}
 #r_b_b .content .pic{width:88px; height:114px; border:1px solid #cccccc; float:left; display:inline;}
