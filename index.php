@@ -136,7 +136,7 @@
 		</div>
 		<div id=t_r_t>
 			<div class=title style="background:url('images/index/t_r_t_title1.jpg') no-repeat; font-weight:bold; color:#000000;">实时财富</div>
-			<div class=title>公司榜</div>	
+			<div class=title>财富过山车</div>	
 			<div class=title>名人榜</div>	
 			<div class=title>城市榜</div>
 			<div id=phb>

@@ -76,7 +76,7 @@ body {font-size:12px;  font-family:宋体; color:#000;  margin:0 auto; padding:0
 #t_l_t_r .content .cl{width:74px; height:16px; margin-top:9px; line-height:16px; overflow:hidden; float:left; display:inline;}
 #t_l_t_r .content .cl a{color:#003899; text-decoration:none;}
 #t_r_t{width:300px; margin-top:10px; float:right; display:inline;}
-#t_r_t .title{width:75px; height:26px; line-height:26px; font-size:14px; color:#003399; background:url('/images/index/t_r_t_title.jpg') no-repeat; text-align:center; float:left; display:inline;}
+#t_r_t .title{width:75px; height:26px; line-height:26px; font-size:13px; color:#003399; background:url('/images/index/t_r_t_title.jpg') no-repeat; text-align:center; float:left; display:inline;}
 #t_r_t #ph{width:300px; height:23px; line-height:23px; border-top:2px solid #666666; border-bottom:1px solid #666666; overflow:hidden; float:left; display:inline;}
 #t_r_t #phb{width:300px; float:left; display:inline;}
 #t_r_t #phname{width:300px; height:250px; background:url('/images/index/t_r_t_ph.jpg') no-repeat; float:left; display:inline;}
@@ -195,7 +195,7 @@ body {font-size:12px;  font-family:宋体; color:#000;  margin:0 auto; padding:0
 .c_b_t .content .cl{width:300px; height:21px; margin-top:5px; margin-left:10px; line-height:21px; float:left; display:inline;}
 .c_b_t .content .cl a{color:#003399; font-size:14px; text-decoration:none;}
 .c_b_t .dash{width:320px; height:1px; margin-top:20px; margin-bottom:10px; background:url('/images/index/dashed.jpg') no-repeat; float:left;display:inline;}
-#l_b{width:363px; margin-top:10px; padding-bottom:1px; border:1px solid #cccccc; float:left; display:inline;}
+#l_b{width:363px; margin-top:5px; padding-bottom:1px; border:1px solid #cccccc; float:left; display:inline;}
 #l_b .title{width:363px; height:28px; background:url('/images/index/l_b_title.jpg') no-repeat; float:left; display:inline;}
 #l_b .title #wz{width:200px; height:18px; margin-top:6px; margin-left:40px; line-height:18px; color:#6699CC; font-size:14px; font-weight:bold; float:left; display:inline;}
 #l_b .title #more{width:19px; height:9px; margin-top:10px; margin-right:10px; line-height:18px; float:right; display:inline;}
