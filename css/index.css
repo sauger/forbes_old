@@ -8,8 +8,8 @@ body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; pad
 #t_l_t_t_l{float:left; display:inline;}
 #t_l_t_t_l img{margin:0px;}
 #t_l_t_t_r{width:361px; height:200px; margin-top:1px; float:right; display:inline;}
-#t_l_t_t_r #title{width:351px; height:28px; margin-top:20px; line-height:28px; filter:Chroma(Color = #cccccc); font-family:宋体; overflow:hidden; float:left; display:inline;}
-#t_l_t_t_r #title a{color:#003399; font-weight:bold; font-size:24px; text-decoration:underline;}
+#t_l_t_t_r #title{width:351px; height:28px; margin-top:20px; line-height:28px; overflow:hidden; float:left; display:inline;}
+#t_l_t_t_r #title a{color:#003399; font-size: 24px; font-family: "Microsoft YaHei", Arial, Tahoma;  font-weight:bold;  text-decoration:underline;}
 #t_l_t_t_r #content{width:351px; height:40px; margin-top:10px; margin-bottom:10px; line-height:20px; overflow:hidden; float:left; display:inline;}
 #t_l_t_t_r #content a{color:#000000; font-size:14px; text-decoration:none;}
 #t_l_t_t_r .cl{width:291px; height:22px; line-height:22px; overflow:hidden; float:left; display:inline;}
