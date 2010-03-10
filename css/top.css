@@ -1,14 +1,40 @@
-#banner{width:1003px; height:90px; float:left; display:inline;}
-#itop{width:1003px; height:103px; margin-top:5px; background:url('/images/index/top_bg.jpg') no-repeat; float:left; display:inline;}
+#banner{width:780px; height:92px; border:1px solid #cccccc; margin-top:25px; float:left; display:inline;}
+#banner img{width:778px; height:90px; margin:1px;}
+#top_login{width:215px; height:187px; margin-top:25px; background:url('/images/index/top_right_bg.jpg') repeat-x; float:right; display:inline;}
+#top_login .login_title{width:213px; height:22px; margin-top:1px; margin-left:1px; line-height:22px; background:url('/images/index/top_login_bg.jpg') repeat-x; float:left; display:inline;}
+#top_login .login_title a{margin-left:10px; color:#ffffff; text-decoration:none;}
+#top_login #jieshao_title{width:213px; height:22px; margin-left:1px; background:url('/images/index/t_r_login_bg.gif') no-repeat; float:left; display:inline;}
+#top_login #jieshao_title #pic{width:84px; height:14px; margin-top:4px; margin-left:10px; background-image:url(/images/index/jieshao.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/jieshao.png"); float:left; display:inline;}
+#top_login #cleft{width:2px; height:120px; margin-left:1px; background:url('/images/index/l_b_c_left.gif') no-repeat; float:left; display:inline;}
+#top_login #cright{width:2px; height:120px; background:url('/images/index/l_b_c_right.gif') no-repeat; float:left; display:inline;}
+#top_login #ccenter{width:209px; height:120px; background:url('/images/index/login_content_bg.jpg') repeat-x; float:left; display:inline;}
+#top_login #ccenter #cpic{width:72px; height:93px; margin-top:14px; margin-left:10px; float:left; display:inline;}
+#top_login #ccenter #context{width:122px; height:93px; margin-top:14px; margin-left:5px; float:left; display:inline;}
+#top_login #ccenter #context #title{width:122px; height:20px; margin-top:5px; line-height:20px; overflow:hidden; float:left; display:inline;}
+#top_login #ccenter #context #title a{color:#666666; font-weight:bold; text-decoration:none;}
+#top_login #ccenter #context #content{width:122px; height:34px; margin-top:5px; line-height:17px; overflow:hidden; float:left; display:inline;}
+#top_login #ccenter #context #content a{color:#999999; text-decoration:none;}
+#top_login #ccenter #context #ck{width:122px; height:23px; margin-top:5px; float:left; display:inline;}
+#top_login #ccenter #context #ck button{width:122px; height:23px; background:url('/images/index/btn_ck.jpg') no-repeat; cursor:pointer; text-align:center; border:0px;}
+#itop{width:785px; height:90px; margin-top:3px; background:url('/images/index/top_bg.jpg') no-repeat; float:left; display:inline;}
 #itop .iinput{width:160px; height:16px; border:1px solid #99CCFF; margin-top:41px; float:left; display:inline;}
 #itop .search{width:53px; height:22px; margin-top:41px; border:0px; color:#ffffff; line-height:22px; background:url('/images/index/search_bg.jpg') no-repeat; float:left; display:inline;}
-#itop .login{width:79px; height:22px; margin-top:41px; margin-left:20px; border:0px; color:#ffffff; line-height:22px; background:url('/images/index/login_bg.jpg') no-repeat; float:left; display:inline;}
-#itop a{color:#ffffff; margin-top:41px; margin-left:10px; text-decoration:underline; line-height:22px; float:left; display:inline;}
-#navigation{width:1003px; height:38px; margin-top:1px; background:#3366CC; float:left; display:inline;}
-#navigation .content{width:81px; height:38px; line-height:38px; text-align:center; color:#ffffff; float:left; display:inline;}
-#navigation .vertical{width:1px; height:25px; margin-top:6px; background:#3366CC; float:left; display:inline;}
-#navigation2{width:1003px; height:35px; background:#C1E1EE; float:left; display:inline;}
-#navigation2 .content{width:690px; height:35px; line-height:35px; text-align:center; float:left; display:inline;}
+#navigation{width:1000px; height:35px; margin-top:1px; background:url('/images/index/dh_bg.jpg') repeat-x; float:left; display:inline;}
+#navigation .content{width:75px; height:35px; text-align:center; overflow:hidden; float:left; display:inline;}
+#navigation .content #picindex{width:29px; height:15px; cursor:pointer; background-image:url(/images/index/index.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/index.png"); margin:0 auto; margin-top:10px;}
+#navigation .content #picbangdan{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/bangdan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/bangdan.png"); margin:0 auto; margin-top:10px;}
+#navigation .content #picfuhao{width:29px; height:15px; cursor:pointer; background-image:url(/images/index/fuhao.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/fuhao.png"); margin:0 auto; margin-top:10px;}
+#navigation .content #pictouzi{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/touzi.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/touzi.png"); margin:0 auto; margin-top:10px;}
+#navigation .content #picchuangye{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/chuangye.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/chuangye.png"); margin:0 auto; margin-top:10px;}
+#navigation .content #picshangye{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/shangye.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/shangye.png"); margin:0 auto; margin-top:10px;}
+#navigation .content #pickeji{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/keji.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/keji.png"); margin:0 auto; margin-top:11px;}
+#navigation .content #picchengshi{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/chengshi.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/chengshi.png"); margin:0 auto; margin-top:10px;}
+#navigation .content #picshehua{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/shehua.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/shehua.png"); margin:0 auto; margin-top:11px;}
+#navigation .content #piczhuanlan{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/zhuanlan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/zhuanlan.png"); margin:0 auto; margin-top:10px;}
+#navigation .vertical{width:2px; height:25px; margin-top:5px; background:url('/images/index/vertical.jpg'); float:left; display:inline;}
+#navigation2{width:1000px; height:27px; background:#C1E1EE; float:left; display:inline;}
+#navigation2 .content{width:690px; height:27px; margin-left:30px; line-height:27px; float:left; display:inline;}
 #navigation2 .content a{color:#000000; text-decoration:underline;}
-#navigation2 #hyzq{width:218px; height:29px; margin-top:3px; margin-right:10px; line-height:35px; background:url('/images/index/hyzq.gif') no-repeat; float:right; display:inline;}
-#navigation2 #hyzq a{color:#ffffff; text-decoration:none;}
+#navigation #hyzq{width:214px; height:29px; margin-top:3px; background:url('/images/index/hyzq.jpg') no-repeat; background-position:bottom; float:right; display:inline;}
+#navigation #hyzq #zqhy{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background-image:url(/images/index/hyzq_a.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/hyzq_a.png"); float:left; display:inline;}
+#navigation #hyzq #zzzs{width:52px; height:12px; margin-top:12px; margin-right:10px; cursor:pointer; background-image:url(/images/index/zszz.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/zszz.png"); float:right; display:inline;}
