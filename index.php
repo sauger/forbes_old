@@ -23,9 +23,9 @@
 				<div id=t_l_t_t_r>
 					<div id=title><a href="">今早在意大利法庭判宣判谷</a></div>
 					<div id=content><a href="">据意大利安克罗诺斯通讯社报道，当庭被宣布定罪的3人当庭被宣布定罪的3人包括括谷歌高...</a></div>
-					<div class=cl><a href="">·　瑞银与高盛领跑AIG香港领跑</a></div>
-					<div class=cl><a href="">·　瑞银与高盛领跑AIG香港领跑</a></div>
-					<div class=cl><a href="">·　瑞银与高盛领跑AIG香港领跑</a></div>
+					<div class=cl><a href=""><img border=0 src="images/index/yuan.jpg">瑞银与高盛领跑AIG香港领跑</a></div>
+					<div class=cl><a href=""><img border=0 src="images/index/yuan.jpg">瑞银与高盛领跑AIG香港领跑</a></div>			
+					<div class=cl><a href=""><img border=0 src="images/index/yuan.jpg">瑞银与高盛领跑AIG香港领跑</a></div>
 					<div id=more><a href="">查看更多</a></div>
 					<div id=btn>
 						<a href=""><img border=0 src="images/index/slideshow_back.gif"></a>
@@ -95,13 +95,13 @@
 					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
 				</div>
 				<?php for($i=0;$i<3;$i++){ ?>
-					<div class=cl><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>
 			</div>
 			<div class=dash></div>
 			<div class=title>
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>商业</div>
+				<div class=wz>商业　</div>
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
@@ -111,13 +111,13 @@
 					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
 				</div>
 				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>	
 			</div>
 			<div class=dash></div>
 			<div class=title>
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>科技</div>
+				<div class=wz>科技　</div>
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
@@ -127,13 +127,13 @@
 					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
 				</div>
 				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>	
 			</div>
 			<div class=dash></div>
 			<div class=title>
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>专栏</div>
+				<div class=wz>专栏　</div>
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
@@ -148,7 +148,7 @@
 				<div id=right><img style="cursor:pointer;" border=0 src="images/index/right_zhuanlan.jpg"></div>
 				<div class=cltitle><a href="">送没摸的专栏</a></div>
 				<?php for($i=0;$i<3;$i++){ ?>
-					<div class=cl><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>
 				<div id=ck><a href="">查看更多此人专栏>></a></div>
 			</div>
@@ -179,7 +179,7 @@
 			<div class=content3>
 				<div id=content3_title><a href="">中国本土私人股本基金挑战</a></div>
 				<div class=piccontent1>
-					<a class=pic href=""><img border=0 src="images/index/two.jpg"></a><a href="">直到资集团仍把持着中国约80%的私人股本市场，但如仍把持着把持着把持着把持中国约80%的私人股本市场，但如今中国已涌现出国已涌现出国已涌现出众多团...</a>
+					<a class=pic href=""><img border=0 src="images/index/two.jpg"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href="">直到资集团仍把持着中国约80%的私人股本市场，但如仍把持着把持着把持着把持中国约80%的私人股本市场，但如今中国已涌现出国已涌现出国已涌现出众多团...</a>
 				</div>
 				<?php for($i=0;$i<5;$i++){ ?>
 					<div class=cl><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>

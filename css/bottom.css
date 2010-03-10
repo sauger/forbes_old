@@ -1,11 +1,11 @@
 #ibottom{width:1000px; height:184px; margin-top:10px; background:url('/images/index/bottom_bg.jpg') repeat-x; float:left; display:inline;}
 #ibottom a{color:#ffffff; text-decoration:none;}
-#ibottom .b_v{width:2px; height:133px; margin-top:10px; background:url('/images/index/bottom_vertical.jpg') no-repeat; filter: Alpha(Opacity=50); float:left; display:inline;}
-#ibottom .td1{width:83px; height:138px; margin-top:10px; line-height:20px; text-align:center; float:left; display:inline;}
-#ibottom .td2{width:123px; height:138px; margin-top:10px; line-height:20px; text-align:center; float:left; display:inline;}
-#ibottom .td3{width:128px; height:138px; margin-top:10px;line-height:20px; text-align:center; float:right; display:inline;}
-#ibottom .td4{width:78px; height:138px; margin-top:10px; line-height:20px; text-align:center; float:left; display:inline;}
-#ibottom .td6{width:75px; height:138px; margin-top:10px; line-height:20px; text-align:center; float:left; display:inline;}
-#ibottom .td7{width:88px; height:138px; margin-top:10px; line-height:20px; text-align:center; float:left; display:inline;}
-#ibottom #td5{width:1000px; height:30px; line-height:30px; text-align:center; color:#ffffff; float:left; display:inline;}
+#ibottom .b_v{width:2px; height:133px; margin-top:5px; background:url('/images/index/bottom_vertical.jpg') no-repeat; filter: Alpha(Opacity=50); float:left; display:inline;}
+#ibottom .td1{width:83px; height:138px; margin-top:5px; line-height:20px; text-align:center; float:left; display:inline;}
+#ibottom .td2{width:123px; height:138px; margin-top:5px; line-height:20px; text-align:center; float:left; display:inline;}
+#ibottom .td3{width:128px; height:138px; margin-top:5px;line-height:20px; text-align:center; float:right; display:inline;}
+#ibottom .td4{width:78px; height:138px; margin-top:5px; line-height:20px; text-align:center; float:left; display:inline;}
+#ibottom .td6{width:75px; height:138px; margin-top:5px; line-height:20px; text-align:center; float:left; display:inline;}
+#ibottom .td7{width:88px; height:138px; margin-top:5px; line-height:20px; text-align:center; float:left; display:inline;}
+#ibottom #td5{width:1000px; height:30px; margin-top:5px; line-height:30px; text-align:center; color:#ffffff; float:left; display:inline;}
 #ibabout{width:1000px; height:48px; margin-top:20px; margin-bottom:10px; line-height:16px; text-align:center; float:left; display:inline;}
