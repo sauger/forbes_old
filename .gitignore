@@ -5,7 +5,6 @@ upload/*
 *.flv
 ~*
 *.bak
-*.png
 bbs/*
 blog/*
 ucenter/*
