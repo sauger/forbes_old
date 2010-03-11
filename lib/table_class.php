@@ -7,6 +7,8 @@ require_once(dirname(__FILE__) .'/belongs_to_object_class.php');
 class table_field_class{
 	public $name;
 	public $type;
+	public $short_type;
+	public $type_length;
 	public $key;
 	public $comment;
 	public $null;
@@ -72,6 +74,25 @@ class table_class{
 		write_to_file($this->map_file,$data,'w');
 	}
 	
+	function _get_mysql_short_type($type){
+		if(strpos(strtolower($type),'int') === 0){
+			return 'int';
+		}
+		if(strpos(strtolower($type),'varchar') === 0){
+			return 'varchar';
+		}
+		if(strpos(strtolower($type),'float') === 0){
+			return 'float';
+		}
+		if(strpos(strtolower($type),'char') === 0){
+			return 'char';
+		}
+		if(strpos(strtolower($type),'text') === 0){
+			return 'text';
+		}
+		return $type;
+	}
+	
 	function _load_table_struct_mysql() {
 		$db = get_db();
 		$sql = "show full fields from " .$this->_tablename;
@@ -85,6 +106,7 @@ class table_class{
 			$this->fields[$name] = new table_field_class();						
 			$this->fields[$name]->name = $name;
 			$this->fields[$name]->type = $db->field_by_index(1);
+			$this->fields[$name]->short_type = $this->_get_mysql_short_type($this->fields[$name]->type);
 			$this->fields[$name]->key = $db->field_by_index(4);
 			$this->fields[$name]->comment = $db->field_by_index(8);
 			$this->fields[$name]->default = $db->field_by_index(5);
@@ -119,14 +141,24 @@ class table_class{
 		if (is_string($param)) {
 			$param = strtolower($param);
 		}
+		if((string)$param == 'all'){
+			$type = 'all';
+		}elseif ((string)$param == 'first'){
+			$type = 'first';
+		}elseif(intval($param) > 0){
+			$param = intval($param);
+			$type = 'id';
+		}else{
+			return false;
+		}
 		$limit = -1;
 		$argsnum = func_num_args();
 		$sqlstr = " * from " . $this->_tablename . " where 1=1 ";
-		if (intval($param) > 0) {
+		if ($type == 'id') {
 			$sqlstr .= " and id=" .$param;
 			$limit = 1;
 		}
-		if ($param == 'first' || is_int($param)) {
+		if ($type == 'first') {
 			$limit = 1;
 		}
 		if ($argsnum >= 2) {
@@ -154,7 +186,7 @@ class table_class{
 		if($this->echo_sql){
 			echo $sqlstr;
 		};
-		if (!$db->query($sqlstr)) return  null ;
+		if (!$db->query($sqlstr)) return  false ;
 		if($limit == 1){
 			if ($db->record_count <= 0) return null;
 			
