@@ -138,16 +138,16 @@
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
 			<div class=content1>
-				<div id=left><img style="cursor:pointer;" border=0 src="images/index/left_zhuanlan.jpg"></div>
+				<div id=left><img style="cursor:pointer;" border=0 src="images/index/t_l_t_r_left.jpg"></div>
 				<?php for($i=0;$i<3;$i++){ ?>
 					<div class=content>
 						<div class=cpic><a href=""><img border=0 src="images/index/one.jpg"></a></div>
 						<div class=ccl><a href="">后危机时更</a></div>
 					</div>
 				<?php } ?>
-				<div id=right><img style="cursor:pointer;" border=0 src="images/index/right_zhuanlan.jpg"></div>
+				<div id=right><img style="cursor:pointer;" border=0 src="images/index/t_l_t_r_right.jpg"></div>
 				<div class=cltitle><a href="">送没摸的专栏</a></div>
-				<?php for($i=0;$i<3;$i++){ ?>
+				<?php for($i=0;$i<5;$i++){ ?>
 					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
 				<?php } ?>
 				<div id=ck><a href="">查看更多此人专栏>></a></div>
@@ -159,8 +159,6 @@
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
-			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
-			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
 			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
 			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
 			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
