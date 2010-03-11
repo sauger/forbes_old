@@ -1,4 +1,5 @@
-﻿#ibody{width:1000px; margin:0 auto; margin-top:20px;}
+﻿body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+#ibody{width:1000px; margin:0 auto;}
 
 ul{list-style:none; padding:0; margin:0; margin-left:10px;}
 li{font-size:12px; list-style-position:inside;}
@@ -25,7 +26,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 
 
 #top{margin-top:15px; margin-left:10px; float:left; display:inline;}
-#content{width:1000px; margin-left:10px; height:1570px; float:left; display:inline;}
+#news_content{width:1000px; margin-left:10px; height:1570px; float:left; display:inline;}
 #center-left{width:668px; height:1543px; float:left; display:inline;}
 #center-right{width:326px; height:1543px; float:left; display:inline;}
 #title{height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}

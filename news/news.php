@@ -18,7 +18,7 @@
 			<div id=title1><a href="">福布斯中文网</a> > <a href="">创业</a> > <a href="">物流零售</a> > <a href="" style="color:#246BB0;">华为"跨界"切入电子阅读领域</a></div>
 			<div id=line></div>
 		</div>
-		<div id=content>
+		<div id=news_content>
 			<div id=center-left>
 				<div id=title3>
 					华为"跨界"切入电子阅读领域
