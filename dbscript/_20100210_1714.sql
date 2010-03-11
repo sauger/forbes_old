@@ -38,7 +38,7 @@ CREATE TABLE  `forbes`.`fb_admin_menu` (
   `role_level` int(10) unsigned DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `Index_2` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `forbes`.`fb_admin_menu`
@@ -218,7 +218,7 @@ CREATE TABLE  `forbes`.`fb_images` (
   `thumb_name` varchar(255) DEFAULT NULL COMMENT '缩略图',
   PRIMARY KEY (`id`),
   KEY `Index_2` (`category_id`,`is_adopt`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
 
 --
 -- Dumping data for table `forbes`.`fb_images`
@@ -290,7 +290,7 @@ CREATE TABLE  `forbes`.`fb_user` (
   `role_level` int(10) unsigned DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `Index_2` (`name`,`password`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ;
 
 --
 -- Dumping data for table `forbes`.`fb_user`
@@ -327,8 +327,8 @@ CREATE TABLE  `forbes`.`fb_video` (
   KEY `Index_2` (`priority`),
   KEY `Index_4` (`is_adopt`),
   KEY `Index_5` (`title`),
-  KEY `Index_6` (`category_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+  KEY `Index_6` (`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
 
 --
 -- Dumping data for table `forbes`.`fb_video`
