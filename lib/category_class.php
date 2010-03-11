@@ -13,7 +13,7 @@ class category_class
 				$items = $table->find('all',array('conditions' => "category_type = '" .$type ."'",'order' => 'priority'));
 			}
 		}else{
-			$items = $table->find('all',array('conditions' => "name = '" .$name ."'",'order' => 'platform ,priority'));
+			$items = $table->find('all',array('conditions' => "name = '" .$name ."'",'order' => 'priority'));
 		}
 		
 		if($items){
@@ -28,8 +28,9 @@ class category_class
 		return $this->items[$id];
 	}
 	
-	public function parent_map($current_id){
+	public function tree_map($current_id){
 		$result = array();
+		$result[] = $current_id;
 		while(intval($current_id) > 0){
 			$current = $this->find($current_id);
 			if($current->parent_id){
@@ -41,7 +42,7 @@ class category_class
 			}
 
 		}
-		return implode(',',$result);
+		return $result;
 	}
 	
 	public function find_sub_category($parent_id=null){
