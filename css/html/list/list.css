@@ -88,3 +88,8 @@ content1 a:visited{color:#003A7B;}
 #button{width:52px; height:20px; border:0px; background-image:url(../../../images/html/list/button.jpg); float:left; display:inline;}
 #more2{width:55px; height:10px; margin-top:10px; margin-right:530px; background-image:url(../../../images/html/list/more.jpg); float:right; display:inline; }
 #more3{width:55px; height:24px; font-size:12px;  margin-left:50px; margin-top:50px; float:left; display:inline;}
+#page{width:330px; height:22px; margin-left:345px; float:left; display:inline;}
+#prev{width:15px; height:14px; margin-left:210px; margin-top:10px; background-image:url(../../../images/html/list/prev.jpg); float:left; display:inline;}
+#num{width:14px; height:14px; margin-left:5px; margin-top:10px; background-image:url(../../../images/html/list/num.jpg); float:left; display:inline;}
+#selected{width:14px; height:14px; margin-left:5px; margin-top:10px; background-image:url(../../../images/html/list/selected.jpg); float:left; display:inline;}
+#next{width:14px; height:14px; margin-left:5px; margin-top:10px; background-image:url(../../../images/html/list/next.jpg); float:left; display:inline;}
