@@ -108,8 +108,8 @@
 					<div class=t_r_content><a href="">·宇星科技、搜房网、聚光科技夺得新能源等行业表现抢眼</a></div>
 					<div class=t_r_content><a href="">·宇星科技、搜房网、聚光科技夺得新能源等行业表现抢眼</a></div>
 					<div id=btn>
-						<button>申请阅读</button>	
-						<button style="float:right;">在线阅读</button>
+						<button id=btn1></button>	
+						<button id=btn2></button>
 					</div>					
 				</div>
 				<div class=dash></div>

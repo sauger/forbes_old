@@ -17,6 +17,7 @@
 			<div id=cright></div>	
 		</div>
 		<div id=itop>
+			<div id=logo></div>
 			<div class="tm2008style">
 				<select name="selsearch" class="iselect">
 					<option>榜单</option>

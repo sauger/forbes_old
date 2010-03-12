@@ -16,7 +16,8 @@
 #top_login #ccenter #context #content a{color:#999999; text-decoration:none;}
 #top_login #ccenter #context #ck{width:122px; height:23px; margin-top:5px; float:left; display:inline;}
 #top_login #ccenter #context #ck button{width:122px; height:23px; background:url('/images/index/btn_ck.jpg') no-repeat; cursor:pointer; text-align:center; border:0px;}
-#itop{width:785px; height:90px; margin-top:3px; background:url('/images/index/top_bg.jpg') no-repeat; float:left; display:inline;}
+#itop{width:785px; height:90px; margin-top:3px; background:#21528c; float:left; display:inline;}
+#itop #logo{width:177px; height:90px; background:url('/images/index/forbes_Logo.jpg') no-repeat; float:left; display:inline;}
 #itop .iinput{width:160px; height:22px; border:1px solid #99CCFF; margin-top:37px; float:left; display:inline;}
 #itop .search{width:83px; height:26px; margin-top:38px; margin-left:5px; border:0px; color:#ffffff; line-height:26px; background:url('/images/index/search_bg.jpg') no-repeat; float:left; display:inline;}
 #navigation{width:1000px; height:35px; margin-top:1px; background:url('/images/index/dh_bg.jpg') repeat-x; float:left; display:inline;}
