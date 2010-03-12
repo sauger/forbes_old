@@ -1,4 +1,4 @@
-<div id=banner><a herf="#"><img border=0 src="images/index/top_banner.jpg"></a></div>
+<div id=banner><a herf="#"><img border=0 src="/images/index/top_banner.jpg"></a></div>
 		<div id=top_login>
 			<div class=login_title><a href="">·登陆</a><a href="">·注册</a></div>
 			<div class=login_title><a href="">·设为首页</a><a href="">·收藏本页</a></div>
@@ -28,7 +28,7 @@
 			<button class=search>查 询</button>
 		</div>
 		<div id=navigation>
-			<div class="content" style="width:90px; background:url('images/index/dh1_bg.jpg') repeat-x;">
+			<div class="content" style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;">
 				<div id=picindex></div>
 			</div>
 			<div class=vertical></div>
