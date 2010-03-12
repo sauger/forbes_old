@@ -88,7 +88,7 @@ body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; pad
 .c_l .cl{width:300px; height:16px; margin-top:7px; margin-left:10px; line-height:16px; float:left; display:inline;}
 .c_l .cl img{width:4px; height:4px; margin-top:6px; float:left; display:inline;}
 .c_l .cl a{font-size:14px; color:#003899; text-decoration:none;}
-.c_l #ck{width:114px; height:20px; margin-top:10px; line-height:20px; float:right; display:inline;}
+.c_l #ck{width:150px; height:20px; margin-top:10px; line-height:20px; text-align:right; float:right; display:inline;}
 .c_l #ck a{color:#256cb1; text-decoration:none;}
 .c_l .dash{width:320px; height:1px; margin-top:10px; margin-left:10px; background:url('/images/index/dashed.jpg') no-repeat; float:left;display:inline;}
 .c_l .cltitle{width:300px; height:24px; margin-top:10px; margin-left:10px; line-height:24px; float:left; display:inline;}

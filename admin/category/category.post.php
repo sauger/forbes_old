@@ -14,7 +14,19 @@
 			if($_REQUEST['id']){
 				$cate->find($_REQUEST['id']);
 			}
-			if($cate->update_attributes($_POST['post'])){
+			$cate->update_attributes($_POST['post'],false);
+			if($_REQUEST['post']['parent_id']!='0'){
+				$category = new category_class('news');
+				$parent_ids = $category->tree_map($_REQUEST['post']['parent_id']);
+				if(count($parent_ids)>1){
+					$cate->sort_id = $parent_ids[count($parent_ids)-1];
+				}else{
+					$cate->sort_id = $_REQUEST['post']['parent_id'];
+				}
+			}else{
+				$cate->sort_id = 0;
+			}
+			if($cate->save()){
 				redirect('category_list.php?type='.$_POST['post']['category_type'].'');
 			}else{
 				display_error('修改类别失败');

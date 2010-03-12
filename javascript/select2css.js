@@ -8,7 +8,7 @@ var selects = document.getElementsByName('selsearch');
 
 var isIE = (document.all && window.ActiveXObject && !window.opera) ? true : false;
 
-function $(id) {
+function gebid(id) {
 	return document.getElementById(id);
 }
 
@@ -60,7 +60,7 @@ function rOptions(i, name) {
 		option_li = document.createElement('li');
 			option_li.style.cursor='pointer';
 			option_li.className='open';
-		$(options_ul).appendChild(option_li);
+		gebid(options_ul).appendChild(option_li);
 
 		option_text = document.createTextNode(selects[i].options[n].text);
 		option_li.appendChild(option_text);
@@ -70,7 +70,7 @@ function rOptions(i, name) {
 		if(option_selected){
 			option_li.className='open_selected';
 			option_li.id='selected_' + name;
-			$('select_info_' + name).appendChild(document.createTextNode(option_li.innerHTML));
+			gebid('select_info_' + name).appendChild(document.createTextNode(option_li.innerHTML));
 		}
 		
 		option_li.onmouseover = function(){	this.className='open_hover';}
@@ -90,15 +90,15 @@ function rOptions(i, name) {
 function mouseSelects(name){
 	var sincn = 'select_info_' + name;
 
-	$(sincn).onmouseover = function(){ if(this.className=='tag_select') this.className='tag_select_hover'; }
-	$(sincn).onmouseout = function(){ if(this.className=='tag_select_hover') this.className='tag_select'; }
+	gebid(sincn).onmouseover = function(){ if(this.className=='tag_select') this.className='tag_select_hover'; }
+	gebid(sincn).onmouseout = function(){ if(this.className=='tag_select_hover') this.className='tag_select'; }
 
 	if (isIE){
-		$(sincn).onclick = new Function("clickSelects('"+name+"');window.event.cancelBubble = true;");
+		gebid(sincn).onclick = new Function("clickSelects('"+name+"');window.event.cancelBubble = true;");
 	}
 	else if(!isIE){
-		$(sincn).onclick = new Function("clickSelects('"+name+"');");
-		$('select_info_' +name).addEventListener("click", stopBubbling, false);
+		gebid(sincn).onclick = new Function("clickSelects('"+name+"');");
+		gebid('select_info_' +name).addEventListener("click", stopBubbling, false);
 	}
 
 }
@@ -109,43 +109,43 @@ function clickSelects(name){
 
 	for (i=0;i<selects.length;i++){	
 		if(selects[i].name == name){				
-			if( $(sincn).className =='tag_select_hover'){
-				$(sincn).className ='tag_select_open';
-				$(sinul).style.display = '';
+			if( gebid(sincn).className =='tag_select_hover'){
+				gebid(sincn).className ='tag_select_open';
+				gebid(sinul).style.display = '';
 			}
 			else if( $(sincn).className =='tag_select_open'){
-				$(sincn).className = 'tag_select_hover';
-				$(sinul).style.display = 'none';
+				gebid(sincn).className = 'tag_select_hover';
+				gebid(sinul).style.display = 'none';
 			}
 		}
 		else{
-			$('select_info_' + selects[i].name).className = 'tag_select';
-			$('options_' + selects[i].name).style.display = 'none';
+			gebid('select_info_' + selects[i].name).className = 'tag_select';
+			gebid('options_' + selects[i].name).style.display = 'none';
 		}
 	}
 
 }
 
 function clickOptions(i, n, name){		
-	var li = $('options_' + name).getElementsByTagName('li');
+	var li = gebid('options_' + name).getElementsByTagName('li');
 
-	$('selected_' + name).className='open';
-	$('selected_' + name).id='';
+	gebid('selected_' + name).className='open';
+	gebid('selected_' + name).id='';
 	li[n].id='selected_' + name;
 	li[n].className='open_hover';
-	$('select_' + name).removeChild($('select_info_' + name));
+	gebid('select_' + name).removeChild($('select_info_' + name));
 
 	select_info = document.createElement('div');
 		select_info.id = 'select_info_' + name;
 		select_info.className='tag_select';
 		select_info.style.cursor='pointer';
-	$('options_' + name).parentNode.insertBefore(select_info,$('options_' + name));
+	gebid('options_' + name).parentNode.insertBefore(select_info,$('options_' + name));
 
 	mouseSelects(name);
 
-	$('select_info_' + name).appendChild(document.createTextNode(li[n].innerHTML));
-	$( 'options_' + name ).style.display = 'none' ;
-	$( 'select_info_' + name ).className = 'tag_select';
+	gebid('select_info_' + name).appendChild(document.createTextNode(li[n].innerHTML));
+	gebid( 'options_' + name ).style.display = 'none' ;
+	gebid( 'select_info_' + name ).className = 'tag_select';
 	selects[i].options[n].selected = 'selected';
 
 }
@@ -155,8 +155,8 @@ window.onload = function(e) {
 	rSelects();
 	bodyclick.onclick = function(){
 		for (i=0;i<selects.length;i++){	
-			$('select_info_' + selects[i].name).className = 'tag_select';
-			$('options_' + selects[i].name).style.display = 'none';
+			gebid('select_info_' + selects[i].name).className = 'tag_select';
+			gebid('options_' + selects[i].name).style.display = 'none';
 		}
 	}
 }
