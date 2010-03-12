@@ -48,7 +48,7 @@
 #right #r_b_b_c #btn #btn1{width:60px; height:28px; border:0px; background:url('/images/right/sqread.jpg') no-repeat; line-height:16px; overflow:hidden; float:left; display:inline;}
 #right #r_b_b_c #btn #btn2{width:60px; height:28px; border:0px; background:url('/images/right/onlineread.jpg') no-repeat; line-height:16px; float:right; display:inline;}
 #right #r_b_b_c .dash{width:300px; height:2px; margin-top:10px; margin-left:5px; background:url('/images/right/right_dash.jpg') no-repeat; float:left; display:inline;}
-#right #r_b_b_c #b_b{width:294px; height:20px; margin-top:10px; margin-left:8px; font-weight:bold; font-size:14px; line-height:20px; float:left; display:inline;}
+#right #r_b_b_c #b_b{width:294px; height:20px; margin-top:5px; margin-left:8px; font-weight:bold; font-size:14px; line-height:20px; float:left; display:inline;}
 #right #r_b_b_c #b_b select{width:113px; height:20px;}
 #right #r_b_b_c #b_b a{font-size:12px; font-weight:normal; color:#11579e; margin-top:2px;}
 #right #r_b_b_r{width:3px; height:288px; margin-top:10px; background:url('/images/right/right_b_b_right.jpg') no-repeat; float:left; display:inline;}
