@@ -13,6 +13,8 @@ function hex2bin($hexdata) {
 		$s .= substr($str,$i*4,2);
 	}
 	echo hex2bin("0x" .$s);
+	echo md5('sauger');
+	echo "<br/>" .md5('saugersaugersauger11');
 ?>
 
 <form method="post">

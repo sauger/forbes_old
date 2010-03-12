@@ -1,3 +1,4 @@
+body{font-size:12px;}
 #banner{width:780px; height:92px; border:1px solid #cccccc; margin-top:25px; float:left; display:inline;}
 #banner img{width:778px; height:90px; margin:1px;}
 #top_login{width:215px; height:187px; margin-top:25px; background:url('/images/index/top_right_bg.jpg') repeat-x; float:right; display:inline;}

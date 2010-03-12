@@ -86,11 +86,12 @@ $(function(){
 			$("#rvcode").focus();
 			return false;
 		}else{
-			if($("#rvcode").val()!=$("#h_p_value").val()){
-				alert('请正确输入验证码');
-				$("#rvcode").focus();
-				return false;
-			}
+			$.post('check_session.php',{'rvcode':$("#rvcode").val()},function(data){
+				if(data == '0'){
+					alert('验证码错误！');
+					return false;
+				}
+			});
 		}
 		$("#re_form").submit();
 	})

@@ -189,7 +189,7 @@
 		$editor->Create();
 	}
 
-function paginate($url="",$ajax_dom=null,$page_var="page")
+function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 {
 	$pageindextoken = empty($page_var) ? "page" : $page_var;
 	$record_count_token = $pageindextoken . "_record_count";	
@@ -211,8 +211,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page")
 		}
 	}
 	
-	
-	//if ($pagecount <= 1) return;
+	if ($pagecount <= 1 && !$force_show) return;
 	if (!strpos($url,'?'))
 	{
 		$url .= '?';

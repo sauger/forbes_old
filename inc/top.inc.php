@@ -1,4 +1,11 @@
-<div id=banner><a herf="#"><img border=0 src="images/index/top_banner.jpg"></a></div>
+	<?php 
+	    
+		$path = dirname(__FILE__) .'/';
+	    include_once($path ."../frame.php");
+	    js_include_tag('select2css');
+	    css_include_tag('top','select2css');
+	?>
+	<div id=banner><a herf="#"><img border=0 src="/images/index/top_banner.jpg"></a></div>
 		<div id=top_login>
 			<div class=login_title><a href="">·登陆</a><a href="">·注册</a></div>
 			<div class=login_title><a href="">·设为首页</a><a href="">·收藏本页</a></div>
