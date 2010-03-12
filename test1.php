@@ -11,6 +11,8 @@ the returned xml has the following structure
 	<rs>bar</rs>
 </results>
 */
+var_dump($_COOKIE);
+die();
 
 	$aUsers = array(
 		"Ädams, Egbert",

@@ -35,7 +35,7 @@
 			<button class=search>查 询</button>
 		</div>
 		<div id=navigation>
-			<div class="content" style="width:90px; background:url('images/index/dh1_bg.jpg') repeat-x;">
+			<div class="content" style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;">
 				<div id=picindex></div>
 			</div>
 			<div class=vertical></div>

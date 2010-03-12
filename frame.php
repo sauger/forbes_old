@@ -310,6 +310,27 @@ function role_include($file, $role='member'){
 	}
 }
 
+function require_login(){
+	if($_SESSION['name']){
+		return true;
+	}
+	if($_COOKIE['name'] && $_COOKIE['password']){
+		echo "here";
+		$name = $_COOKIE['name'];
+		$password = md5($_COOKIE['password']);
+		$db = get_db();
+		$sql = "select * from fb_yh where name = '{$name}' and password = '{$password}'";
+		$record = $db->query($sql);
+		if($db->record_count == 1){
+			$_SESSION['id']=$record[0]->id;
+			$_SESSION['name']=$name;
+		}
+	}else{
+		$url = '/login/?last_url=' .get_current_url();
+		redirect($url);		
+	}
+}
+
 function search_content($key,$table_name='fb_news',$conditions=null,$page_count = 10, $order='',$full_text=false){
 	$db = get_db();
 	$key = str_replace('　', ' ', $key);

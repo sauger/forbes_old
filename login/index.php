@@ -36,6 +36,9 @@
 	  		 <option value="30" selected="selected">一月</option>
 	  		 <option value="365">一年</option>
 	  		 </select>
+	  		 <?php if($_REQUEST['last_url']){?>
+	  		 <input type="hidden" name="last_url" value="<?php echo $_REQUEST['last_url'];?>"></input>
+	  		 <?php }?>
 	  		</div>
 	  		<div><input type="submit"  id="login" value="登录"></button></div>
 	  		<div style="width:300px;">

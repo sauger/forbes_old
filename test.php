@@ -1,4 +1,8 @@
-<?php 
+<?php
+#require 'frame.php';
+var_dump($_COOKIE);
+die();
+require_login(); 
 function hex2bin($hexdata) {
     $bindata = '';
     for($i=0; $i < strlen($hexdata); $i += 2) {
@@ -12,9 +16,7 @@ function hex2bin($hexdata) {
 	for($i=0;$i<$len-1;$i++){
 		$s .= substr($str,$i*4,2);
 	}
-	echo hex2bin("0x" .$s);
-	echo md5('sauger');
-	echo "<br/>" .md5('saugersaugersauger11');
+	
 ?>
 
 <form method="post">

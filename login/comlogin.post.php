@@ -2,9 +2,11 @@
 	$name=$_POST['name'];
 	$password=$_POST['password'];
 	include("../frame.php");
+	$suess_url =   $_POST['last_url'] ? $_POST['last_url'] :'/html/forbesuser/user.html';
+	$fail_url = $_POST['last_url'] ?"index.php?last_url=" .$_POST['last_url'] :"index.php";
 	if(strlen($name)>20 || strlen($password)>20){
 		alert("用户名或密码错误");
-		redirect('index.php'); 
+		redirect($fail_url); 
 	}
 	$password = md5($password);
 	$db = get_db();
@@ -15,17 +17,18 @@
 		if($_POST['time']!='')
 		{
 			$limit=$_POST['time']*3600*24;
-			setcookie("id",$record[0]->id,time()+$limit);
-			setcookie("name",$name,time()+$limit);
-			setcookie("password",$_POST['password'],time()+$limit);
+			setcookie("id",$record[0]->id,time()+$limit,'/');
+			setcookie("name",$name,time()+$limit,'/');
+			setcookie("password",$_POST['password'],time()+$limit,'/');
 		}
 		$_SESSION['id']=$record[0]->id;
 		$_SESSION['name']=$name;
-		redirect('/html/forbesuser/user.html','header');
+		$last_url = $suess_url;
+		redirect($last_url);
 	}
 	else
 	{
 		alert("用户名或密码错误");
-		redirect('index.php');
+		redirect($fail_url);
 	}
 ?>

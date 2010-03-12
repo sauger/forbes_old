@@ -1,3 +1,3 @@
 <?php 
-	echo "µÇÂ¼³É¹¦";
+	var_dump($_COOKIE);
 ?>
