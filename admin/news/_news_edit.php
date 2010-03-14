@@ -55,6 +55,12 @@
 			<td align="left" id="td_related_news">
 			</td>
 		</tr>
+		<tr class=tr4>
+			<td>上传PDF版</td>
+			<td align="left">
+				<input type="file" name="pdf_src" id="pdf_src">
+			</td>
+		</tr>
 		<?php if($id!=''){?>
 		<tr class="tr4">
 			<td>英文版</td>
@@ -98,6 +104,13 @@
 						echo "　<a href=\"{$news->video_photo_src}\" target=\"_blank\">查看</a>";
 					}
 				?>
+			</td>
+		</tr>
+		<tr class="normal_news tr4">
+			<td>其他设定</td>
+			<td align="left">
+				<input type="checkbox" id="news_ad_id" <?php if($news->ad_id == 1) echo "checked='checked'";?>><label for="news_ad_id">放置广告</label></input><input type="hidden" id="input_news_ad_id" name="news[ad_id]" value="<?php echo $news->ad_id;?>"></input>
+				<input type="checkbox" id="news_forbbide_copy" <?php if($news->forbbide_copy == 1) echo "checked='checked'";?>></input><label for="news_forbbide_copy">禁止复制</label><input type="hidden" id="input_news_forbbide_copy"  name="news[forbbide_copy]" value="<?php echo $news->forbbide_copy;?>"></input>
 			</td>
 		</tr>
 		<tr id=newsshow1  class="normal_news tr4">

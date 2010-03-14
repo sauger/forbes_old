@@ -15,11 +15,8 @@ content1 a:link{color:#003A7B;}
 content1 a:visited{color:#003A7B;}
 #more3 a:link{color:#003899;}
 #more3 a:visited{color:#003899;}
-<<<<<<< HEAD
-=======
 #title1 a:link{text-decoration:none;}
 #title1 a:visited{text-decoration:none;}
->>>>>>> b48989b9411ee8f8aa669e2e3d4aaf2bd2c05ce1
 
 #title{height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
 #title1{height:20px; font-size:12px; line-height:20px; margin-top:6px; margin-left:19px; float:left; display:inline;}
@@ -90,13 +87,9 @@ content1 a:visited{color:#003A7B;}
 .radio1{font-weight:normal; margin-top:10px; margin-left:12px; float:left; display:inline;}
 #button{width:52px; height:20px; border:0px; background-image:url(../../../images/html/list/button.jpg); float:left; display:inline;}
 #more2{width:55px; height:10px; margin-top:10px; margin-right:530px; background-image:url(../../../images/html/list/more.jpg); float:right; display:inline; }
-<<<<<<< HEAD
-#more3{width:55px; height:24px; font-size:12px;  margin-left:50px; margin-top:50px; float:left; display:inline;}
-=======
 #more3{width:55px; height:24px; font-size:12px;  margin-left:50px; margin-top:50px; float:left; display:inline;}
 #page{width:330px; height:22px; margin-left:345px; float:left; display:inline;}
-#prev{width:15px; height:14px; margin-left:210px; margin-top:10px; background-image:url(../../../images/html/list/prev.jpg); float:left; display:inline;}
-#num{width:14px; height:14px; margin-left:5px; margin-top:10px; background-image:url(../../../images/html/list/num.jpg); float:left; display:inline;}
-#selected{width:14px; height:14px; margin-left:5px; margin-top:10px; background-image:url(../../../images/html/list/selected.jpg); float:left; display:inline;}
-#next{width:14px; height:14px; margin-left:5px; margin-top:10px; background-image:url(../../../images/html/list/next.jpg); float:left; display:inline;}
->>>>>>> b48989b9411ee8f8aa669e2e3d4aaf2bd2c05ce1
+#page .prev{width:15px; height:14px; margin-left:210px; margin-top:10px; background-image:url(../../../images/html/list/prev.jpg); float:left; display:inline;}
+#page .num{width:14px; height:14px; margin-left:5px; margin-top:10px; background-image:url(../../../images/html/list/num.jpg); float:left; display:inline;}
+#page .selected{width:14px; height:14px; margin-left:5px; margin-top:10px; background-image:url(../../../images/html/list/selected.jpg); float:left; display:inline;}
+#page .next{width:14px; height:14px; margin-left:5px; margin-top:10px; background-image:url(../../../images/html/list/next.jpg); float:left; display:inline;}

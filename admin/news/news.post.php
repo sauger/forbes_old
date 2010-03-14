@@ -10,11 +10,13 @@
 	
 	$news->update_attributes($_POST['news'],false);
 	$news->is_adopt = 1;
+	#var_dump($news);	
+	/*
 	$news->content = str_replace("'",'\"',$news->content); //mysql_escape_string($news->content);
 	$news->description = str_replace("'",'\"',$news->description);//$news->description = mysql_escape_string($news->description);
 	$news->keywords = str_replace('　',' ',$news->keywords);
 	$news->top_info = str_replace("'",'\"',$news->top_info);
-	
+	*/
 	$pos = strpos(strtolower($news->content), '<img ');
 	if($pos !== false){
 		$pos_end = strpos(strtolower($news->content), '>',$pos);

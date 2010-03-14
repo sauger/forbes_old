@@ -3,25 +3,42 @@
 	$id = intval($_REQUEST['id']);
 	if(!empty($id)){
 		$news = new table_class('fb_news');
-		$news->find($id);
+		if(!$news->find($id)){
+			redirect('error.html');
+			die();
+		}
 	}else{
 		redirect('error.html');
+		die();
 	}
 	$db = get_db();
+	$db->query("select english_news_id from fb_news_relationship where chinese_news_id={$id}");
+	if($db->move_first()){
+		$english_id = $db->field_by_name('english_news_id');
+	}
+	if(strtolower($_GET['lang']) == 'en' && $english_id){
+		$english_news = new table_class('fb_news');
+		$english_news->find($english_id);
+		$title = $english_news->title;
+		$content = $english_news->content;
+	}else{
+		$title = $news->title;
+		$content = $news->content;
+	}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title>福布斯首页</title>
+	<title>福布斯-新闻</title>
 	<?php
 		use_jquery();
 		js_include_tag('news/news','select2css');
 		css_include_tag('html/news/news','top','bottom','select2css');
 	?>
 </head>
-<body>
+<body <?php if($news->forbbide_copy == 1){ ?> oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="return false" oncopy="return false" onbeforecopy="return false" onmouseup="return false" <?php }?>>
 	<div id=ibody>
 		<?php include "../inc/top.inc.php";?>
 		<div id=top>
@@ -31,9 +48,10 @@
 				$parent_ids = $category->tree_map($news->category_id);
 			?>
 			<div id=title1>
-				<a href="">福布斯中文网</a> > 
+				<a href="/">福布斯中文网</a> > 
 				<?php
-					for($i=count($parent_ids)-1;$i>=0;$i--){
+					$len = count($parent_ids);
+					for($i=$len-1;$i>=0;$i--){
 						$item = $category->find($parent_ids[$i]);
 				?>
 				<a href=""><?php echo $item->name;?></a> > 
@@ -48,20 +66,37 @@
 			<div id=center-left>
 				<div id=title3>
 					<span>
-					<?php echo $news->title;?>
+					<?php echo $title;?>
 					</span>
 					<div id=title2>
-						<div id=t1><a href="" class=nor5>English</a></div><div id=t2><a href="" class=nor5>我要评论(0)</a></div><a href="" class="nor">下载PDF格式</a>   <a href="" class="nor">加入收藏</a>
+						<div id=t1>
+						<?php if($english_id && $_GET['lang'] != 'en'){?>
+							<a href="news.php?id=<?php echo $id?>&lang=en" class=nor5>English</a>
+						<?php }?>
+						<?php if($_GET['lang'] == 'en'){?>
+							<a href="news.php?id=<?php echo $id?>" class=nor5>中文</a>
+						<?php }?>
+						&nbsp;
+						</div>
+						<div id=t2>
+							<a href="" class=nor5>我要评论(0)</a>
+						</div>
+						<?php if($news->pdf_src){?>
+						<a href="" class="nor">下载PDF格式</a>
+						<?php }?>   						
+						<a href="<?php echo $news->id;?>" class="nor" id="a_collect">加入收藏</a>
 					</div>
 				</div>
 				
 				<div id=text>
 					<div id=text3>
 						<div id="roll"></div>
+						<?php if($news->ad_id){?>
 						<div id=picture6>
 							<img src="/images/html/news/picture6.jpg">
 						</div>
-						<div id="news_text"><?php echo $news->content;?></div>
+						<?php }?>
+						<div id="news_text"><?php echo $content;?></div>
 					</div>
 					<div id=text5>
 						<div id=button>
