@@ -20,6 +20,14 @@ $(function(){
 		$(".left_list").find('.icon2').css('display','none');
 	});
 	
+	$("#left").mouseleave(function(){
+		$(".left_list").css('background','');
+		$(".left_list").find('a').css('color','#5B5B5B');
+		$(".left_list").find('img:first').css('display','inline');
+		$(".left_list").find('img:eq(1)').css('display','none');
+		$(".left_list").find('.icon2').css('display','none');
+	})
+	
 	$(".right-title4").hover(function(){
 		$(".right-title4").css('background','');
 		$(".right-title4").css('color','#fff');
