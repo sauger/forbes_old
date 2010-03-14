@@ -7,7 +7,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title>福布斯-文化娱乐</title>
+	<title>福布斯-会员俱乐部</title>
 	<?php
 		use_jquery();
 		js_include_tag('select2css');
