@@ -17,11 +17,10 @@
 		if($_POST['time']!='')
 		{
 			$limit=$_POST['time']*3600*24;
-			setcookie("id",$record[0]->id,time()+$limit,'/');
 			setcookie("name",$name,time()+$limit,'/');
 			setcookie("password",$_POST['password'],time()+$limit,'/');
 		}
-		$_SESSION['id']=$record[0]->id;
+		$_SESSION['user_id']=$record[0]->id;
 		$_SESSION['name']=$name;
 		$last_url = $suess_url;
 		redirect($last_url);
