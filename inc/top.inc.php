@@ -23,17 +23,21 @@
 			</div>	
 			<div id=cright></div>	
 		</div>
+		
 		<div id=itop>
-			<div id=logo></div>
-			<div class="tm2008style">
-				<select name="selsearch" class="iselect">
-					<option>榜单</option>
-					<option>富豪</option>
-					<option>文章</option>
-				</select>
+			<div id=itop_l></div>
+			<div id=itop_r>
+				<div id=logo></div>
+				<div class="tm2008style">
+					<select name="selsearch" class="iselect">
+						<option>榜单</option>
+						<option>富豪</option>
+						<option>文章</option>
+					</select>
+				</div>
+				<input class="iinput">
+				<button class=search>查 询</button>
 			</div>
-			<input class="iinput">
-			<button class=search>查 询</button>
 		</div>
 		<div id=navigation>
 			<div class="content" style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;">

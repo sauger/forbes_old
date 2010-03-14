@@ -1,7 +1,6 @@
 body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
 
 #ibody{width:1000px; margin:0 auto;}
-
 #t_l_t{width:680px; height:325px; margin-top:10px; border:1px solid #e1e9f0; background:url('/images/index/t_l_t.jpg') repeat-x; float:left; display:inline;}
 #t_l_t img{margin:1px;}
 #t_l_t_t{width:680px; height:202px; margin-top:1px; margin-left:1px; background:#f4f4f4; float:left; display:inline;}

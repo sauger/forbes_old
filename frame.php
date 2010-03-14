@@ -310,7 +310,7 @@ function role_include($file, $role='member'){
 	}
 }
 
-function require_login(){
+function require_login($type="redirect"){
 	if($_SESSION['name']){
 		return true;
 	}
@@ -324,10 +324,18 @@ function require_login(){
 		if($db->record_count == 1){
 			$_SESSION['user_id']=$record[0]->id;
 			$_SESSION['name']=$name;
+			return true;
+		}else{
+			return false;
 		}
 	}else{
-		$url = '/login/?last_url=' .get_current_url();
-		redirect($url);		
+		if($type=="redirect"){
+			$url = '/login/?last_url=' .get_current_url();
+			redirect($url);
+		}else{
+			return false;
+		}
+				
 	}
 }
 

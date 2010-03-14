@@ -83,8 +83,8 @@
 						</div>
 						<?php if($news->pdf_src){?>
 						<a href="" class="nor">下载PDF格式</a>
-						<?php }?>   
-						<a href="" class="nor">加入收藏</a>
+						<?php }?>   						
+						<a href="<?php echo $news->id;?>" class="nor" id="a_collect">加入收藏</a>
 					</div>
 				</div>
 				

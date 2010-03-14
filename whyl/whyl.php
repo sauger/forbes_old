@@ -7,11 +7,11 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title>福布斯首页</title>
+	<title>福布斯-文化娱乐</title>
 	<?php
 		use_jquery();
 		js_include_tag('select2css');
-		css_include_tag('whyl','top','bottom','right','select2css');
+		css_include_tag('whyl','top','bottom','right');
 	?>
 </head>
 <body>
