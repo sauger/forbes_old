@@ -189,7 +189,7 @@
 		$editor->Create();
 	}
 
-function paginate($url="",$ajax_dom=null,$page_var="page")
+function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 {
 	$pageindextoken = empty($page_var) ? "page" : $page_var;
 	$record_count_token = $pageindextoken . "_record_count";	
@@ -211,8 +211,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page")
 		}
 	}
 	
-	
-	//if ($pagecount <= 1) return;
+	if ($pagecount <= 1 && !$force_show) return;
 	if (!strpos($url,'?'))
 	{
 		$url .= '?';
@@ -308,6 +307,27 @@ function require_role($role='member'){
 function role_include($file, $role='member'){
 	if ($_SESSION['role_name'] == $role){
 		include($file);
+	}
+}
+
+function require_login(){
+	if($_SESSION['name']){
+		return true;
+	}
+	if($_COOKIE['name'] && $_COOKIE['password']){
+		echo "here";
+		$name = $_COOKIE['name'];
+		$password = md5($_COOKIE['password']);
+		$db = get_db();
+		$sql = "select * from fb_yh where name = '{$name}' and password = '{$password}'";
+		$record = $db->query($sql);
+		if($db->record_count == 1){
+			$_SESSION['user_id']=$record[0]->id;
+			$_SESSION['name']=$name;
+		}
+	}else{
+		$url = '/login/?last_url=' .get_current_url();
+		redirect($url);		
 	}
 }
 

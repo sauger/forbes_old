@@ -83,10 +83,15 @@ $(function(){
 			alert('请选择上传的文件!');
 			return false;
 		}
-				
 		return true;
 	});	
-	
+	$('#news_ad_id,#news_forbbide_copy').change(function(){
+		if($(this).attr('checked')){
+			$('#input_' + $(this).attr('id')).val('1');
+		}else{
+			$('#input_' + $(this).attr('id')).val('0');
+		}
+	});	
 	$('#delete_english_news').click(function(e){
 		e.preventDefault();
 		if(!window.confirm("确定要删除吗"))

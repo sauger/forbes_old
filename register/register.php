@@ -20,7 +20,7 @@
 		<form id="re_form" action="register.post.php" method="post">
 		<table>
 			<tr>
-				<td class=td1><span style="color:red;">*</span>用 户 名：</td>
+				<td class=td1><span style="color:red;">*</span><label for="user_name">用 户 名：</label></td>
 				<td class=td3><input class="txt" id="user_name" name="user[name]" type="text"></td>
 				<td class=td2>
 					<div id="user1" class="display1 name_check">4-20个字符，包含英文大小写字母和数字组成</div>
@@ -31,7 +31,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class=td1><span style="color:red;">*</span>邮　　箱：</td>
+				<td class=td1><span style="color:red;">*</span><label for="user_email">邮　　箱：</label></td>
 				<td class=td3><input class="txt" name="user[email]" id="user_email" type="text"></td>
 				<td class=td2>
 					<div id="email1" class="display1 email_check">邮箱作为您找回密码的唯一凭证，请填写真实有效地邮箱地址并妥善保管！</div>
@@ -40,7 +40,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class=td1><span style="color:red;">*</span>登陆密码：</td>
+				<td class=td1><span style="color:red;">*</span><label for="user_pass">登陆密码：</label></td>
 				<td  class=td3><input class="txt" id="user_pass" name="user[password]" type="password"></td>
 				<td class=td2>
 					<div id="pass1" class="display1 pass_check">请设置4-20个字符，包含英文大小写字母、数字和部分标点符号的组合</div>
@@ -65,10 +65,10 @@
 				<td class=td2><a href="">查看快闻板式</a></td>
 			</tr>
 			<tr>
-				<td class=td5><input type="checkbox" name="jhtj" id="order1">我愿意订阅</td>
+				<td class=td5><input type="checkbox" name="jhtj" id="order1"><label for="order1">我愿意订阅</label></td>
 			</tr>
 			<tr>
-				<td class=td5><input id="order2" type="checkbox">不，暂时不考虑</td>
+				<td class=td5><input id="order2" type="checkbox"><label for="order12">不，暂时不考虑</label></td>
 			</tr>
 			<tr>
 				<td class=td5>是否愿意订阅福布斯分类文章（一周发送一次）：</td>
@@ -85,12 +85,11 @@
 		<table>
 			<tr>
 				<td class=td1 style="line-height:32px;"><span style="color:red;">*</span>注册验证码：</td>
-				<td class=td3 style="line-height:32px;"><div id=yzm_input><input style="margin-top:5px;" id="rvcode" type="text"></div><div id=yzm><img id="pic" src="yz.php"></div></td>
+				<td class=td3 style="line-height:32px;"><div id=yzm_input><input style="margin-top:5px;" id="rvcode" name="rvcode" type="text"></div><div id=yzm><img id="pic" src="yz.php"></div></td>
 				<td class=td2 style="line-height:32px;">
 					<a style="cursor:pointer;" id="chang_pic">看不清楚？换张图片</a>
 				</td>
 				<div id="pic_value">
-				<input type="hidden" id="h_p_value" value="">
 				</div>
 			</tr>
 		</table>

@@ -1,4 +1,9 @@
-<div id=ibottom>
+		<?php 
+			$path = dirname(__FILE__) .'/';
+	    	include_once($path ."../frame.php");
+	    	css_include_tag('bottom');
+		?>
+		<div id=ibottom>
 				<div class=td1><a style="font-weight:bold;" href="">[榜单]</a><br><a href="">富豪榜</a><br><a href="">城市榜</a><br><a href="">公司榜</a><br><a href="">体育榜</a><br><a href="">名人榜</a><br><a href="">教育榜</a></div>
 				<div class=b_v></div>
 				<div class=td4><a style="font-weight:bold;" href="">[富豪]</a><br><a href="">富豪榜</a><br><a href="">富豪报道</a><br><a href="">富豪对话</a><br><a href="">图片富豪榜</a></div>
