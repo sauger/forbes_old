@@ -14,7 +14,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title>福布斯首页</title>
+	<title>福布斯-新闻</title>
 	<?php
 		use_jquery();
 		js_include_tag('news/news','select2css');
