@@ -1,13 +1,16 @@
 <?php 
 	require_once('../frame.php');
+	require_login();
 	$id = intval($_REQUEST['id']);
 	if(!empty($id)){
 		if($id>4){
 			redirect('error.html');
 		}
 	}else{
-		redirect('error.html');
+		$id = 1;
 	}
+	$db = get_db();
+	$uid = $_SESSION['user_id'];
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -66,10 +69,14 @@
 				<div class="icon2" <?php if($id==4)echo 'style="display:inline"';?>><img src="/images/html/user/coin.gif"></div>
 			</div>
 		</div>
+		<?php if($id==1){
+		?>
+		<?php
+		}elseif($id==3){?>
 		<div id=right>
 			<div id=right-title1>
-				<?php if($id==3)echo '我的收藏';?>
-			</div>	
+				我的收藏
+			</div>
 			<div id=right-title2>
 				<div style="background:url(/images/html/user/right_title.jpg); color:#055C99;" class=right-title4>
 					专栏文章
@@ -85,20 +92,21 @@
 				</div>
 			</div>
 			<div id=right-text>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
-				<div class=li1><a href="">基金“纠结”银行股机会蓝筹行机会蓝筹行情行机会蓝筹行情行股机会蓝筹行情	谁主沉浮？</a></div><div class=li2> 收藏于：2010-1-31</div>
+				<?php
+					$sql = "select t1.title,t1.id,t2.created_at from fb_news t1 join fb_collection t2 on t1.id=t2.resoure_id where t2.resoure_type='news' and t2.user_id=$uid order by t2.created_at";
+					$news = $db->paginate($sql,10);
+					$news_count = count($news);
+					for($i=0;$i<$news_count;$i++){
+				?>
+				<div class=li1><a target="_blank" title="<?php echo $news[$i]->title;?>" href="/news/news.php?id=<?php echo $news[$i]->id;?>"><?php echo $news[$i]->title;?></a></div><div class=li2> 收藏于：<?php echo substr($news[$i]->created_at, 0, 10);?></div>
+				<?php
+					}
+				?>
+				
 			</div>
-			<a href=""><div id=right-next>
-			</div></a>
+			<div id="paginate"></div>
 		</div>
+		<?php }?>
 		<?php include "../inc/bottom.inc.php";?>
 	</div>
 </body>
