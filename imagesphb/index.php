@@ -7,7 +7,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title>福布斯-奢侈品</title>
+	<title>福布斯-图片排行榜</title>
 	<?php
 		use_jquery();
 		js_include_tag('select2css');
