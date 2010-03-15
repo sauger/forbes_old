@@ -2,6 +2,7 @@
 
 $filter_pic = array('jpg','png','bmp','gif','icon');
 $filter_video = array('flv','wmv','wav','mp3','mp4','avi','rm','wma');
+$filter_pdf = array('pdf');
 
 class upload_file_class
 {
@@ -42,7 +43,7 @@ class upload_file_class
 			if(!empty($filter)){
 				global $$filter;
 				if(!in_array(strtolower($extension),$$filter)){
-					debug_info('unknow file type');
+					alert('unknow file type');
 					return false;
 				}
 			}

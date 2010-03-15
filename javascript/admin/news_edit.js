@@ -1,65 +1,53 @@
 /**
  * @author sauger
  */
-	var related_news = new Array();
-	function add_related_news(id){
-		related_news.push(id);
-		$('#hidden_related_news').attr('value',related_news.join(','));
+	function refresh_related_news(){
+		if($('#hidden_related_news').val()){
+			$('#span_related_news').html($('#hidden_related_news').val().split(',').length);
+		}else{
+			$('#span_related_news').html('0');
+		}
 	}
-
-	function remove_related_news(id){
-		icount = related_news.length;
-		for(i=0;i<icount;i++){
-			if(related_news[i] == id){
-				related_news.splice(i,1);
-			}
+	function save_related_news(ids){
+		$('#hidden_related_news').val(ids);
+		refresh_related_news();
+		$('#a_related_news').colorbox({href:'news_filter.php?show_div=1&selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
+	}
+	function refresh_sub_headlines(){
+		if($('#hidden_sub_headline').val()){
+			$('#span_sub_headline').html($('#hidden_sub_headline').val().split(',').length);
+		}else{
+			$('#span_sub_headline').html('0');
 		}
-		$('#hidden_related_news').attr('value',related_news.join(','));
+	}
+	function save_sub_headlines(ids){
+		$('#hidden_sub_headline').val(ids);
+		refresh_sub_headlines();
+		$('#a_sub_headline').colorbox({href:'news_filter.php?show_div=1&selected_news=' + $('#hidden_sub_headline').val()+'&call_back=save_sub_headlines'});
 	}	
-	function display_related_news(){
-		if ($('#td_related_news')){
-			$('#td_related_news').html("已关联相关新闻 " + related_news.length + " 条 " + '<a style="color:blue;" href="#" id="a_related_news">编辑</a>');
-			$('#a_related_news').colorbox({href:'news_filter.php?show_div=1'});
-			$('hidden_related_news').val(related_news.join(','));
-		}
-	};
 $(function(){
 	$('#news_edit').submit(function(){		
 		var video_array = new Array('flv','wmv','wav','mp3','mp4','avi','rm');
 		var pic_array = new Array('jpg','png','bmp','gif','icon');
-		if($('#video_src').val() != ''){
-			var video_src = $('#video_src').val().replace(/.+\./,'');
-			video_src = video_src.toLowerCase();
-			if(jQuery.inArray(video_src,video_array) == -1){
-				alert('视频格式不支持,请转换格式后再上传!可上传格式:' + video_array.join('|'));
-				return false;
-			}
-		}
-		if($('#video_pic').val() != ''){
-			var video_pic = $('#video_pic').val().replace(/.+\./,'');
-			video_pic = video_pic.toLowerCase();
-			if(jQuery.inArray(video_pic,pic_array) == -1){
-				alert('图片格式不支持,请转换格式后再上传!可上传格式:' + pic_array.join('|'));
-				return false;
-			}
-		}
 		if($('#news_keywords').val()==''){
 			alert("请输入关键字!");
 			return false;
 		}
-		var title = $("#title").val();
+		var editor = CKEDITOR.instances['news[title]'];
+		var title = editor.getData(); 
 		if(title==""){
 			alert("请输入标题！");
 			return false;
 		}	
-		var short_title = $("#short_title").val();
+		var editor = CKEDITOR.instances['news[short_title]'] ;
+		var short_title = remove_hmtl_tag(editor.getData());
 		if(short_title==""){
 			alert("请输入短标题！");
 			return false;
 		}
-		var oEditor = FCKeditorAPI.GetInstance('news[content]') ;
-		var content = oEditor.GetHTML();
-		if(news_type==1&&content==""){
+		var oEditor = CKEDITOR.instances['news[content]'] ;
+		var content = editor.getData();
+		if(content==""){
 			alert("请输入新闻内容！");
 			return false;
 		}
@@ -73,16 +61,19 @@ $(function(){
 			return false;
 		}
 		$('#category_id').val(category_id);
-		news_type=  $('#td_newstype').find('input:checked').attr('value');
-		if(news_type == 3){
-			if($('#target_url input').attr('value')== ''){
-				alert('请输入新闻目标地址!');
-				return false;
+		//handle the news_copy
+		if($('#tr_copy_news').css('display') != 'none'){
+			var copy_cateogry_id = $('.category_select_copy:last').val();
+			if(copy_cateogry_id > 0 ){
+				$('#hidden_copy_news').val(copy_cateogry_id);
+			}else{
+				$('#hidden_copy_news').val(0);
 			}
-		}else if(news_type==2 && $('#file_name').next('a').length <= 0 && $('#file_name').val() == ''){
-			alert('请选择上传的文件!');
-			return false;
-		}
+			
+		}else{
+			$('#hidden_copy_news').val(0);
+		};
+		alert($('#hidden_copy_news').val());
 		return true;
 	});	
 	$('#news_ad_id,#news_forbbide_copy').change(function(){
@@ -105,7 +96,32 @@ $(function(){
 			});
 		}
 	});
+	$('#a_delete_pdf').click(function(e){
+		e.preventDefault();
+		$('#news_edit').append('<input type="hidden" name="news[pdf_src]" value=""></input>');
+		$(this).parent().find('a').remove();
+	});
+	$('#a_delete_pic').click(function(e){
+		e.preventDefault();
+		$('#news_edit').append('<input type="hidden" name="news[video_photo_src]" value=""></input>');
+		$(this).parent().find('a').remove();
+	});	
 	
+	$('#copy_news').live('click',function(e){
+		e.preventDefault();
+		$('#tr_copy_news').show();
+		$(this).hide();
+	});
+	$('#delete_copy_news').live('click',function(e){
+		alert(1);
+		e.preventDefault();
+		$('#copy_news').show();
+		$('#tr_copy_news').hide();
+		$(this).next().val(0);
+	});
 	
-	$('#a_related_news').colorbox({href:'news_filter.php?show_div=1'});
+	$('#a_sub_headline').colorbox({href:'news_filter.php?show_div=1&selected_news=' + $('#hidden_sub_headline').val()+'&call_back=save_sub_headlines'});
+	$('#a_related_news').colorbox({href:'news_filter.php?show_div=1&selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
+	refresh_sub_headlines();
+	refresh_related_news();
 });

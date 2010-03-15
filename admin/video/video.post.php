@@ -46,6 +46,7 @@
 						if($img === false){
 							alert('上传图片失败 !');
 							redirect($_SERVER['HTTP_REFERER']);
+							die();
 						}
 						$video->photo_url = "/upload/images/" .$img;
 					}

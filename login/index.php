@@ -19,11 +19,11 @@
 	  <div id="left">
 	  <form name="login" id="form_login" action="comlogin.post.php" method="post">
 	  	<div id=leftp>
-	  		<div>
+	  		<div style="float:left; display:inline">
 	  		 <div id=left-font1>用户名：</div>
 	  		 <input type="text" id=font1 class="required"  name="name" value="<?php echo $_COOKIE['name'];?>"></input>
 	  		</div>
-	  		<div>
+	  		<div style="float:left; display:inline">
 	  		 <div id=left-font2>密　码：</div>
 	  		 <input type="password" class=font2 class="required" name="password" value="<?php echo $_COOKIE['password'];?>"></input>
 	  		</div>
