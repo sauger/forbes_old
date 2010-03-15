@@ -80,7 +80,7 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<td class=td1>姓　　名：</td>
-							<td class=td3><input class="txt" value="<?php echo $user->xm?>" name="post[xm]" type="text"></td>
+							<td class=td3><input class="txt" value="<?php echo htmlspecialchars($user->xm);?>" name="post[xm]" type="text"></td>
 							<td colspan=2></td>
 						</tr>
 						<tr>
@@ -150,11 +150,11 @@
 						</tr>
 						<tr>
 							<td class=td1>工作单位：</td>
-							<td colspan=3 class=td2><input class="txt1" value="<?php echo $user->gzdw?>" name="post[gzdw]" type="text"></td>
+							<td colspan=3 class=td2><input class="txt1" value="<?php echo htmlspecialchars($user->gzdw);?>" name="post[gzdw]" type="text"></td>
 						</tr>
 						<tr>
 							<td class=td1>所在部门：</td>
-							<td colspan=3 class=td2><input class="txt1" value="<?php echo $user->szbm?>" name="post[szbm]" type="text"></td>
+							<td colspan=3 class=td2><input class="txt1" value="<?php echo htmlspecialchars($user->szbm);?>" name="post[szbm]" type="text"></td>
 						</tr>
 						<tr>
 							<td class=td1>公司性质：</td>
@@ -275,11 +275,11 @@
 					<table cellpadding="0" style="margin-top:0" cellspacing="0">
 						<tr>
 							<td class=td1>您的通讯地址：</td>
-							<td colspan=3 class=td2><input value="<?php echo $user->txdz?>" class="txt1" name="post[txdz]" type="text"></td>
+							<td colspan=3 class=td2><input value="<?php echo htmlspecialchars($user->txdz);?>" class="txt1" name="post[txdz]" type="text"></td>
 						</tr>
 						<tr>
 							<td class=td1>邮　　编：</td>
-							<td colspan=3 class=td2><input value="<?php echo $user->yb?>" class="txt1" name="post[yb]" type="text"></td>
+							<td colspan=3 class=td2><input value="<?php echo htmlspecialchars($user->yb);?>" class="txt1" name="post[yb]" type="text"></td>
 						</tr>
 						<tr>
 							<td class=td1>您的固定电话：</td>
@@ -289,15 +289,15 @@
 						</tr>
 						<tr>
 							<td class=td1>手　　机：</td>
-							<td colspan=3 class=td2><input class="txt1" value="<?php echo $user->sj?>" name="post[sj]" type="text"></td>
+							<td colspan=3 class=td2><input class="txt1" value="<?php echo htmlspecialchars($user->sj);?>" name="post[sj]" type="text"></td>
 						</tr>
 						<tr>
 							<td class=td1>M　S　N：</td>
-							<td colspan=3 class=td2><input class="txt1" value="<?php echo $user->msn?>" name="post[msn]" type="text"></td>
+							<td colspan=3 class=td2><input class="txt1" value="<?php echo htmlspecialchars($user->msn);?>" name="post[msn]" type="text"></td>
 						</tr>
 						<tr>
 							<td class=td1>Ｑ　　Ｑ：</td>
-							<td colspan=3 class=td2><input class="txt1" value="<?php echo $user->qq?>" name="post[qq]" type="text"></td>
+							<td colspan=3 class=td2><input class="txt1" value="<?php echo htmlspecialchars($user->qq);?>" name="post[qq]" type="text"></td>
 						</tr>
 						<tr >
 							<td class=td1>您的头像：</td>
