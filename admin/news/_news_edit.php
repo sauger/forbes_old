@@ -13,7 +13,7 @@
 		$news->news_type = 1;
 	}
 	$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
-	$sub_headline = $db->query("select group_concat(child_resource_id order by priority asc) as sub_headline from fb_has_many  where resource_type='news_sub_headline' and resource_id={$news->id} group by resource_type,resource_id");
+	$sub_headline = $news->sub_headline  ? explode(',',$news->sub_headline) : array();
 ?>
 	<form id="news_edit" enctype="multipart/form-data" action="news.post.php" method="post"> 
 	<table width="795" border="0">
@@ -33,8 +33,17 @@
 			<td>分　类</td>
 			<td align="left" class="newsselect1" >
 				<span id="span_category"></span>
+				<a href="#" id="copy_news" style="color:blue">复制到其他分类</a>
 			</td>
 		</tr>
+		<tr class=tr4 style="display:none;" id="tr_copy_news">
+			<td>复制到分类</td>
+			<td align="left">
+				<span id="span_category_copy"></span>
+				<a href="#" id="delete_copy_news" style="color:blue">删除</a>
+				<input type="hidden" name="copy_news" id="hidden_copy_news" value="0"></input>
+			</td>
+		</tr>		
 		<tr class=tr4>
 			<td>作　者</td>
 			<td align="left" class="newsselect1" >
@@ -117,12 +126,14 @@
 		<input type="hidden" name="news[image_flag]" value="<?php echo $news->image_flag;?>" id="hidden_image_flag">
 		<input type="hidden" name="id" id="hidden_news_id" value="<?php echo $news->id; ?>">
 		<input type="hidden" name="news[related_news]" id="hidden_related_news" value="<?php echo $news->related_news ? $news->related_news : "";?>"></input>
-		<input type="hidden" name="sub_headline" id="hidden_sub_headline" value="<?php echo $sub_headline[0]->sub_headline;?>"></input>
+		<input type="hidden" name="news[sub_headline]" id="hidden_sub_headline" value="<?php echo $news->sub_headline ? $news->sub_headline : "";?>"></input>
 	</form>
 
 <script>
 $(function(){
 		category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){			
+		});
+		category.display_select('category_select_copy',$('#span_category_copy'),<?php echo $category_id;?>,'', function(id){			
 		});
 	});	
 

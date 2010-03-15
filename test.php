@@ -4,7 +4,7 @@
 		require 'frame.php';
 		use_jquery();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
-		search_content('a di hu');
+		var_dump($_SERVER);
 		?>
 	</head>
 	<body>
@@ -21,9 +21,7 @@
 <script>
 	//$('#editor').val('ok');	
 	var a = ['a','b','c','a','b','c'];
-	alert(a.join(','));
 	array_remove(a,'b');
-	alert(a.join(','));
 	$('#test').click(function(e){
 		var editor = CKEDITOR.instances;
 		if(editor['title[news]'].getData() ==''){
