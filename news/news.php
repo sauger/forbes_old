@@ -58,127 +58,98 @@
 				<?php
 					}
 				?>
-				<span style="color:#246BB0;"><?php echo $news->short_title;?></span>
+				<span style="color:#246BB0;"><?php echo strip_tags($news->short_title);?></span>
 			</div>
 			<div id=line></div>
 		</div>
 		<div id=news_content>
 			<div id=center-left>
 				<div id=title3>
-					<span>
+					<div id="news_title">
 					<?php echo $title;?>
-					</span>
+					</div>
 					<div id=title2>
-						<div id=t1>
-						<?php if($english_id && $_GET['lang'] != 'en'){?>
-							<a href="news.php?id=<?php echo $id?>&lang=en" class=nor5>English</a>
-						<?php }?>
-						<?php if($_GET['lang'] == 'en'){?>
-							<a href="news.php?id=<?php echo $id?>" class=nor5>中文</a>
-						<?php }?>
-						&nbsp;
+						<div class="top_title">正文</div>
+						<div style="background:url(/images/html/news/t_title2.jpg); color:#fff" class="top_title">English</div>
+						<div id="top_box">
+							<?php if($news->pdf_src){?>
+							<a href="" class="nor">下载PDF格式</a>
+							<?php }?>   						
+							<a href="<?php echo $news->id;?>" class="nor" id="a_collect">加入收藏</a>
 						</div>
-						<div id=t2>
-							<a href="" class=nor5>我要评论(0)</a>
-						</div>
-						<?php if($news->pdf_src){?>
-						<a href="" class="nor">下载PDF格式</a>
-						<?php }?>   						
-						<a href="<?php echo $news->id;?>" class="nor" id="a_collect">加入收藏</a>
+						
 					</div>
 				</div>
-				
+				<div id="news_right">
 				<div id=text>
 					<div id=text3>
-						<div id="roll"></div>
-						<?php if($news->ad_id){?>
-						<div id=picture6>
-							<img src="/images/html/news/picture6.jpg">
-						</div>
-						<?php }?>
 						<div id="news_text"><?php echo $content;?></div>
 					</div>
-					<div id=text5>
-						<div id=button>
-							<input type="button" id=button4>
-						</div>
-					</div>
-					<div id="text_dash"></div>
-					<?php if($news->top_info!=''){?>
-					<div id=text1>
-						<div id=text2>
+					
+				</div>
+				<div id="left_box">
+					<div id="l_b_top"></div>
+					<div id="l_b_center">
+						<?php if($news->top_info!=''){?>
 							<div id=text4>
 								<?php echo $news->top_info?>
 							</div>
+						<?php }?>
+						<?php
+							if($news->author!=''){
+								$record = $db->query("select id,short_title,title from fb_news where author='{$news->author}' and id!=$id limit 3");
+								if(count($record)>0){
+						?>
+						<div id=right-div3>
+							<div id=right-title3>
+								该作者的其他文章
+							</div>
+							<div class=tar1>
+								<a href="news_list.php?news_id=<?php echo $id?>&type=author"><img src="/images/html/news/tar1.gif"></a>
+							</div>
+							<div class=list1>
+							<ul>
+								<?php for($i=0;$i<count($record);$i++){?>
+								<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+								<?php }?>
+							</ul>
+							</div>
 						</div>
+						<?php
+								}
+							}
+						?>
+							<?php
+								if($news->related_news!=''){
+									$record = $db->query("select id,title,short_title from fb_news where id in({$news->related_news})");
+							?>
+							<div class=right-div3>
+								<div id=right-title3>
+								推荐的 评论文章
+								</div>
+								<div class=tar1>
+									<a href="news_list.php?news_id=<?php echo $id?>&type=related"><img src="/images/html/news/tar1.gif"></a>
+								</div>
+								<div class=list1>
+								<ul>
+									<?php for($i=0;$i<count($record);$i++){?>
+									<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+									<?php }?>
+								</ul>
+								</div>
+							</div>
+							<?php }?>
+							<div class=right-div3>
+								<div id=right-title3>
+								文章的关键字
+								</div>
+								<div class=list1>
+								</div>
+							</div>
 					</div>
-					<?php }?>
+					<div id="l_b_bottom"></div>
 				</div>
-				<?php
-					if($news->author!=''){
-						$record = $db->query("select id,short_title,title from fb_news where author='{$news->author}' and id!=$id limit 3");
-						if(count($record)>0){
-				?>
-				<div id=right-div3>
-					<div id=right-title3>
-						<div class=tar></div>该作者的其他文章
-					</div>
-					<div class=tar1>
-						<a href="news_list.php?news_id=<?php echo $id?>&type=author"><img src="/images/html/news/tar1.gif"></a>
-					</div>
-					<div class=list1>
-					<ul>
-						<?php for($i=0;$i<count($record);$i++){?>
-						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
-						<?php }?>
-					</ul>
-					</div>
 				</div>
-				<div class="dash"></div>
-				<?php
-						}
-					}
-				?>
-				<?php
-					if($news->related_news!=''){
-						$record = $db->query("select id,title,short_title from fb_news where id in({$news->related_news})");
-				?>
-				<div class=right-div1>
-					<div id=right-title1>
-					<div class=tar></div>推荐的 评论文章
-					</div>
-					<div class=tar1>
-						<a href="news_list.php?news_id=<?php echo $id?>&type=related"><img src="/images/html/news/tar1.gif"></a>
-					</div>
-					<div class=list2>
-					<ul>
-						<?php for($i=0;$i<count($record);$i++){?>
-						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
-						<?php }?>
-					</ul>
-					</div>
-				</div>
-				<?php }?>
-				<?php
-					$record = $db->query("select id,title,short_title from fb_news where keywords like '%{$news->keywords}%' and id!=$id");
-					if(count($record)>0){
-				?>
-				<div class=right-div1>
-					<div id=right-title2>
-					<div class=tar></div>关键字"<?php echo $news->keywords;?>"的评论文章
-					</div>
-					<div class=tar1>
-						<a href="news_list.php?news_id=<?php echo $id?>&type=keywords"><img src="/images/html/news/tar1.gif"></a>
-					</div>
-					<div class=list2>
-					<ul>
-						<?php for($i=0;$i<count($record);$i++){?>
-						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
-						<?php }?>
-					</ul>
-					</div>
-				</div>
-				<?php }?>
 		  </div>
 			<div id=center-right>
 				<div id=ad></div>
@@ -251,7 +222,6 @@
 						<?php }?>
 					</ul>
 					</div>
-				</div>
 				<div id=left-div1>
 					<div class=left-title7>行业富豪</div>
 					<div class=left-div2>
