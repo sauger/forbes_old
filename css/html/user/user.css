@@ -6,7 +6,7 @@
 #title1 a{text-decoration:none;}
 
 
-#line{width:1000px; height:10px; background-image:url(../../../images/html/user/line.jpg); float:left; display:inline;}
+#line{width:1000px; height:10px; background-image:url(/images/html/user/line.jpg); float:left; display:inline;}
 
 #left{width:180px; height:235px; margin-top:23px; font-weight:bold; background:url("/images/html/user/left_list.gif"); float:left; display:inline;}
 #left_top{width:180px; height:42px; font-size:14px; font-weight:bold; line-height:43px; text-align:center; text-indent:15px;   float:left; display:inline;}
@@ -23,12 +23,12 @@
 .right{width:812px; margin-top:23px; margin-left:8px; border-color:#CCCCCC; float:left; display:inline;}
 .right_title{width:812px; height:43px; font-size:14px; font-weight:bold; line-height:43px; background:url(/images/html/user/right_title.gif); text-indent:54px; float:left; display:inline;}
 .right_text{width:810px; padding-bottom:30px; border:1px solid #CCCCCC; border-top:0px; float:left; display:inline;}
-.right-title2{width:754px; height:30px; background-image:url(../../../images/html/user/right-title2.jpg); margin-top:26px; margin-left:26px; float:left; display:inline;}
+.right-title2{width:754px; height:30px; background-image:url(/images/html/user/right-title2.jpg); margin-top:26px; margin-left:26px; float:left; display:inline;}
 .right-title3{width:107px; height:24px; font-size:13px; color:#055C99; font-weight:bold; text-align:center; line-height:24px; margin-top:6px; margin-left:27px; float:left; display:inline;}
 .right-title4{width:107px; height:24px; font-size:13px; color:#FFFFFF; margin-top:6px; margin-left:25px; text-align:center; line-height:20px; font-weight:bold; float:left; display:inline;}
 .right-text{width:800px; font-size:13px; color:#999999;  margin-top:24px; margin-left:55px; float:left; display:none;}
 
-.li1{width:540px; height:15px; text-indent:10px; margin-top:15px; line-height:15px; overflow:hidden; background:url(../../../images/html/user/tar.jpg) no-repeat 0% 5.7px; float:left; display:inline;}
+.li1{width:540px; height:15px; text-indent:10px; margin-top:15px; line-height:15px; overflow:hidden; background:url(/images/html/user/tar.jpg) no-repeat 0% 5.7px; float:left; display:inline;}
 .li1 a{color:#000000; text-decoration:none;}
 .li2{width:134px; text-indent:10px; margin-top:15px; float:left; display:inline;}
 
