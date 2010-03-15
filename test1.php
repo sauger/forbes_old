@@ -11,6 +11,9 @@ the returned xml has the following structure
 	<rs>bar</rs>
 </results>
 */
+include "frame.php";
+var_dump($_POST);
+die();
 
 	$aUsers = array(
 		"Ädams, Egbert",

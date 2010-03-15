@@ -66,7 +66,7 @@
 			for($i=0;$i<count($record);$i++){
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
-					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->short_title);?></a></td>
+					<td><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->short_title);?></a></td>
 					<td>
 						<a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF">
 							<?php echo $category->find($record[$i]->category_id)->name;?>

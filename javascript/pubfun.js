@@ -30,3 +30,13 @@ function display_login(dom_id,admin){
 	}
 	$('#' + dom_id).html(str);
 }
+
+function array_remove(array,val){
+	icount = array.length;
+	for(i=0;i<icount;i++){
+		if(array[i] == val){
+			array.splice(i,1);
+		}
+	}
+}
+

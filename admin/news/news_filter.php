@@ -4,7 +4,15 @@
 	if($_REQUEST['show_div'] != '0'){
 		echo "<div id='result_box'>";
 	}
+	$order = "";
 	$filter_adopt = isset($_REQUEST['filter_adopt']) ? $_REQUEST['filter_adopt'] : -1;
+	$filter_selected = isset($_REQUEST['filter_selected']) ? $_REQUEST['filter_selected'] : -1;
+	if($filter_selected == 0){
+		$conditions[] = "id not in({$_REQUEST['selected_news']})";
+	}elseif($filter_selected == 1){
+		$conditions[] = "id in({$_REQUEST['selected_news']})";
+		$order = " find_in_set(id,'{$_REQUEST['selected_news']}')";
+	}
 	if($filter_adopt != -1){
 		$conditions[] = 'is_adopt= ' .$filter_adopt;
 	}
@@ -17,12 +25,13 @@
 	}
 	$category = new category_class('news');
 	$category->echo_jsdata();	
+	$selected_news = ($_REQUEST['selected_news']);
+	if($selected_news){
+		$selected_news = explode(',',$selected_news);
+	}
+	$db = get_db();
+	$db->echo_sql = true;
 ?>
-<?
-		css_include_tag('admin');
-
-?>
-
 	<table width="600" border="0" id="list" style="boder:1px solid">
 		<tr class="tr2">
 			<td colspan="4" align=center>　
@@ -33,6 +42,11 @@
 				<option value="0" <?php if($filter_adopt == 0) echo ' selected="selected"' ?>>未发布</option>
 				<option value="1" <?php if($filter_adopt == 1) echo ' selected="selected"' ?>>已发布</option>
 			</select>
+			<select id="filter_selected">
+				<option value="-1">所有新闻</option>
+				<option value="0" <?php if($filter_selected == 0) echo ' selected="selected"' ?>>未选择</option>
+				<option value="1" <?php if($filter_selected == 1) echo ' selected="selected"' ?>>已选择</option>
+			</select>
 			<input type="button" value="搜索" id="subject_search" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
@@ -42,7 +56,7 @@
 		<?php
 			$subject = new table_class("fb_news");
 
-			$items = search_content($_REQUEST['key'],'fb_news',$conditions,10);
+			$items = search_content($_REQUEST['key'],'fb_news',$conditions,10,$order);
 			$count_record = count($items);			
 			//--------------------		
 			for($i=0;$i<$count_record;$i++)	{
@@ -62,66 +76,84 @@
 				<td colspan="4"><?php paginate('','result_box');?></td>
 		</tr>
 		<tr class=tr3>
-				<td colspan="4"><button id="button_ok" style="width:150px">确定</button><button id="save" style="width:150px">取消所有关联</button>
-					<input type="hidden" id="chosen_subject_id" value="">
-					<input type="hidden" id="chosen_subject_name" value="">
-					<input type="hidden" id="chosen_subject_category_id" value="">
+				<td colspan="4">
+					<button id="button_ok" style="width:150px">确定</button>
+					<button id="button_cancel" style="width:150px">取消</button>
+					<button id="cancel_all" style="width:150px">取消所有关联</button>
 				</td>
 		</tr>		
 	</table>
 
 <script>
-		$('#list input:checkbox').click(function(){
-			if($(this).attr('checked')){
-				add_related_news($(this).attr('id'));
-			}else{
-				remove_related_news($(this).attr('id'));
+		var selected_news = new Array();
+		<?php if($selected_news){
+			foreach ($selected_news as $v) {
+				echo "selected_news.push('$v');";
 			}
-		});
-		
-		$('#save').click(function(){
-			related_news.length = 0;
-			$('#hidden_related_news').attr('value','');
-			$('#list input:checkbox').each(function(){
-				$(this).attr('checked',false);
+		?>
+		<?php }?>
+
+		$(function(){
+			$('#list input:checkbox').click(function(){
+				if($(this).attr('checked')){
+					selected_news.push($(this).attr('id'));
+				}else{
+					array_remove(selected_news,$(this).attr('id'));
+				}
 			});
-		});
-		$('#button_ok').click(function(){
-			$.fn.colorbox.close();
-			display_related_news();
-		});	
-		$('input:radio').click(function(){
-			$('#chosen_subject_id').attr('value',$(this).attr('value'));
-			$('#chosen_subject_name').attr('value',$(this).next('span').html());
-			$('#chosen_subject_category_id').attr('value','');						
-		});
-		$('.subject_category_select').change(function(){
-			$('#chosen_subject_category_id').attr('value',$(this).attr('value'));
-		});
-		$('#subject_search').click(function(){
-			send_search();
-		});
-		$('#filter_dept,#filter_adopt').change(function(){
-			send_search();
-		});
-		$('#list input:checkbox').each(function(){
-			if($.inArray($(this).attr('id'),related_news) != -1){
-				$(this).attr('checked',true);
-			}
-		});
-		$('#search_text').keydown(function(e){
-			if(e.keyCode == 13){
+			$('#cancel_all').click(function(){
+				$('#list input:checkbox').each(function(){
+					$(this).attr('checked',false);
+				});
+				selected_news.length = 0;
+			});
+			$('#button_ok').click(function(){
+				<?php if($_REQUEST['call_back']){
+				?>
+					var func = "<?php echo $_REQUEST['call_back'];?>" + "('" + selected_news.join(',') + "');";
+					eval(func);
+				<?php }?>
+				$.fn.colorbox.close();
+			});	
+			$('#button_cancel').click(function(){
+				$.fn.colorbox.close();
+			});
+			
+
+			//initilize checkbox_status
+			
+			$('#list input:checkbox').each(function(){
+				if($.inArray($(this).attr('id'),selected_news) != -1){
+					$(this).attr('checked',true);
+				}
+			});
+
+			//search trigger
+			$('.subject_category_select').change(function(){
+				$('#chosen_subject_category_id').attr('value',$(this).attr('value'));
+			});
+			$('#subject_search').click(function(){
 				send_search();
-			}
+			});
+			$('#filter_dept,#filter_adopt').change(function(){
+				send_search();
+			});
+			$('#search_text').keydown(function(e){
+				if(e.keyCode == 13){
+					send_search();
+				}
+			});
 		});
 		
 		function send_search(){
 			var filter_category = $('.news_category:last').attr('value');
 			var filter_adopt = $('#filter_adopt').attr('value');
+			var filter_selected = $('#filter_selected').attr('value');
 			url = 'news_filter.php?filter_category=' + filter_category;
 			url += '&filter_adopt=' + filter_adopt;
+			url += '&filter_selected=' + filter_selected;
 			url += '&key=' + encodeURI($('#search_text').val());
-			$('#result_box').load(url,{'show_div':'0'});			
+			$('#result_box').load(url,{'show_div':'0','selected_news':selected_news.join(',')});			
 			//$('#result_box').load('filte_news.php',{'show_div':'0','key':$('#search_text').attr('value'),'filter_dept':$('#filter_dept').attr('value'),'filter_category':$('.news_category:last').attr('value'),'filter_adopt':$('#filter_adopt').attr('value')});			
 		}
 		category.display_select('news_category',$('#span_category_select'),<?php echo $filter_category;?>,'',function(){send_search();});

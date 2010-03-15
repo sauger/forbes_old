@@ -176,20 +176,18 @@
 	}
 	
 	function show_fckeditor($name,$toolbarset='Admin',$expand_toolbar=true,$height="200",$value="",$width = null) {
-		require_once(CURRENT_DIR . 'fckeditor/fckeditor.php');
-		$editor = new FCKeditor($name);
-		$editor->BasicPath = CURRENT_DIR . 'fckeditor';
-		$editor->ToolbarSet = $toolbarset;	
-		$editor->Config['ToolbarStartExpanded'] = $expand_toolbar;
-		$editor->Value = $value;
-		$editor->Height = $height;
+		require_once(CURRENT_DIR . 'ckeditor/ckeditor_php5.php');
+		$editor = new CKEditor(CURRENT_DIR . 'ckeditor');
+		$editor->config['toolbar'] = $toolbarset;	
+		$editor->config['toolbarStartupExpanded'] = $expand_toolbar;
+		$editor->config['height'] = $height;
 		if($width){
-			$editor->Width = $width;
+			$editor->config['width'] = $width;
 		}
-		$editor->Create();
+		$editor->editor($name,$value);
 	}
 
-function paginate($url="",$ajax_dom=null,$page_var="page")
+function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 {
 	$pageindextoken = empty($page_var) ? "page" : $page_var;
 	$record_count_token = $pageindextoken . "_record_count";	
@@ -211,8 +209,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page")
 		}
 	}
 	
-	
-	//if ($pagecount <= 1) return;
+	if ($pagecount <= 1 && !$force_show) return;
 	if (!strpos($url,'?'))
 	{
 		$url .= '?';
@@ -311,11 +308,74 @@ function role_include($file, $role='member'){
 	}
 }
 
+function require_login($type="redirect"){
+	if($_SESSION['name']){
+		return true;
+	}
+	if($_COOKIE['name'] && $_COOKIE['password']){
+		echo "here";
+		$name = $_COOKIE['name'];
+		$password = md5($_COOKIE['password']);
+		$db = get_db();
+		$sql = "select * from fb_yh where name = '{$name}' and password = '{$password}'";
+		$record = $db->query($sql);
+		if($db->record_count == 1){
+			$_SESSION['user_id']=$record[0]->id;
+			$_SESSION['name']=$name;
+			$db->execute("insert into fb_yh_log (yh_id,time) values ({$_SESSION['user_id']},now())");
+			return true;
+		}else{
+			if($type=="redirect"){
+				$url = '/login/?last_url=' .get_current_url();
+				redirect($url);
+			}else{
+				return false;
+			}
+			return false;
+		}
+	}else{
+		if($type=="redirect"){
+			$url = '/login/?last_url=' . get_current_url();
+			redirect($url);
+		}else{
+			return false;
+		}
+	}
+}
+
 function search_content($key,$table_name='fb_news',$conditions=null,$page_count = 10, $order='',$full_text=false){
 	$db = get_db();
-	$key = str_replace('　', ' ', $key);
-	$key = str_replace(',', ' ', $key);
-	$keys = explode(' ',$key);
+	if($key){
+		$change = array('('=>'\(',')' => '\)');
+		strtr($key,$change);
+		$key = str_replace('　', ' ', $key);
+		$key = str_replace(',', ' ', $key);
+		$key = explode(' ',$key);	
+		$len = count($key);
+		for($i=0;$i<$len;$i++){
+			$key[$i] = "({$key[$i]})+";
+		}
+		$key = implode('|',$key);
+	}
+	$sql = "select * from {$table_name} where language_tag = 0 ";
+	if($conditons){
+		$sql .= " and {$conditions}";
+	}
+	if($key){
+		$sql .= " and (title regexp '{$key}' or short_title regexp '{$key}' or keywords regexp '{$key}'";
+		if($full_text){
+			$sql .= " or content regexp '{$key}'";
+		}
+		$sql .= ")";
+	}
+	if( $order ){
+		$sql .= " order by " .$order;
+	}
+	if($page_count > 0){
+		return $db->paginate($sql,$page_count);	
+	}else{
+		return $db->query($sql);
+	}
 	/*
 	if($keys){
 		$now = now();
@@ -325,11 +385,12 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 			}			
 		}
 	}
-	*/
+
 	$table = new table_class($table_name);	
 	$c = array();
 	$d=array();
 	foreach ($keys as $v) {
+		if(empty($v)) continue;
 		array_push($c, "title like '%$v%'");
 		array_push($c, "keywords like '%$v%'");
 	 	if($full_text){array_push($c, "description like '%$v%'");}
@@ -342,7 +403,7 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 		}
 	}
 	foreach ($keys as $v) {
-		
+		if(empty($v)) continue;
 	 	if($full_text){array_push($d, "description like '%$v%'");}
 		if($table_name == 'fb_news'){
 			
@@ -355,11 +416,18 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 			}
 		}
 	}
-	$d = implode(' and ' ,$d);
-	if($conditions){
-		$d = $conditions . ' and (' .$d .')';
+	if($d){
+		$d = implode(' and ' ,$d);
+	}		
+		if($conditions){
+			$d = $conditions . ' and (' .$d .')';
+		}
+
+	
+	$sql1 = 'select a.id,a.short_title,a.title,a.category_id,a.created_at,a.is_adopt from (select * from ' . $table_name ." where language_tag=0";
+	if($d){
+		$sql1 .= ' and ' .$d;
 	}
-	$sql1 = 'select a.id,a.short_title,a.title,a.category_id,a.created_at,a.is_adopt from (select * from ' . $table_name ." where language_tag=0 and ".$d;
 	if($order)
 	{
 		$sql1 = $sql1 . ' order  by ' .$order;
@@ -384,11 +452,11 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 	{
 		$sql2 = 'select b.id,b.title,b.short_title,b.category_id,b.created_at,b.is_adopt from (select * from ' . $table_name ." where language_tag=0 and ".$c;	
 	}
+	$sql2=$sql2.') as b';
 	if($order)
 	{
 		$sql2 = $sql2 . ' order  by ' .$order;
 	}
-	$sql2=$sql2.') as b';
 	if(count($content1)>0)
 	{
 		$sql=$sql1." union ".$sql2;
@@ -397,15 +465,15 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 	{
 		$sql=$sql2;	
 	}
-	/*if ($order){
+	if ($order){
 		$sql = $sql . ' order  by ' .$order;
-	}*/
+	}
 	if($page_count > 0){
 		return $db->paginate($sql,$page_count);	
 	}else{
 		return $db->query($sql);
 	}
-		
+		*/	
 }
 
 function write_log($msg){
@@ -414,7 +482,6 @@ function write_log($msg){
 		return;
 	}
 	if(is_dir($g_log_dir) === false) return ;
-			echo 'Ok';
 	$file = $g_log_dir .substr(now(),0,10)  .".log";
 	$msg = now() . ": " .$msg .chr(13).chr(10);
 	write_to_file($file,$msg);

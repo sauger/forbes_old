@@ -1,3 +1,35 @@
 ﻿body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
 
 #ibody{width:1000px; margin:0 auto;}
+#cyindex{width:72px; height:19px; cursor:pointer; background-image:url(/images/tyzl/chuangye.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/tyzl/chuangye.png"); margin-top:10px; float:left; display:inline;}
+#cytitle{width:494px; height:16px; margin-top:13px; margin-left:20px; line-height:16px; float:left; display:inline;}
+#cytitle a{color:#246bb0; text-decoration:none;}
+#cyline{width:1000px; height:8px; margin-top:10px; background:url('/images/tyzl/tyzl_line.jpg') no-repeat; float:left; display:inline;}
+#cy_left{width:635px; margin-left:10px; float:left; display:inline;}
+#cy_left #search{width:472px; height:21px; margin-top:10px; margin-left:25px; line-height:21px; font-size:14px; font-weight:bold; float:left; display:inline;}
+#cy_left #search select{width:200px; height:21px; margin-left:10px;}
+#cy_left #search input{width:100px; height:16px;  margin-left:20px;}
+#cy_left #search button{width:46px; height:21px; margin-left:10px; border:0px; background:url('/images/tyzl/search_btn_bg.jpg') no-repeat;}
+#cy_title{width:635px; height:28px; margin-top:20px; float:left; display:inline;}
+#cy_title #title_left{width:1px; height:28px; background:url(/images/tyzl/tyzl_title_left.jpg) no-repeat; float:left; display:inline;}
+#cy_title #title_center{width:633px; height:28px; background:url('/images/tyzl/tyzl_title_center.jpg') repeat-x; float:left; display:inline;}
+#cy_title #title_center #bt{height:28px; margin-left:10px; line-height:28px; color:#999999; font-size:14px; font-weight:bold; float:left; display:inline;}
+#cy_title #title_right{width:1px; height:28px; background:url(/images/tyzl/tyzl_title_left.jpg) no-repeat; float:left; display:inline;}
+.cy_content{width:635px; margin-top:15px; float:left; display:inline;}
+.cy_content .pic{width:92px; height:92px; margin-left:10px; border:1px solid #999999; float:left; display:inline;}
+.cy_content .pic img{width:90px; height:90px; margin-top:1px; margin-left:1px; float:left; display:inline;}
+.cy_content .pictitle{width:482px; height:20px; margin-left:10px; line-height:20px; font-size:14px; font-weight:bold; overflow:hidden; float:left; display:inline;}
+.cy_content .pictitle a{color:#0d4471; text-decoration:none;}
+.cy_content .piccontent{width:482px; height:52px; margin-top:10px; margin-left:10px; line-height:14px; overflow:hidden; float:left; display:inline;}
+.cy_content .piccontent a{color:#666666; text-decoration:none;}
+.newarticle{width:635px; margin-top:10px; float:left; display:inline;}
+.newarticle .wz{width:96px; height:18px; margin-left:10px; margin-bottom:10px; font-size:14px; line-height:18px; font-weight:bold; float:left; display:inline;}
+.newarticle .wx{width:518px; height:16px; margin-top:1px; background:url(/images/tyzl/wx.jpg) no-repeat; line-height:16px; float:right; display:inline;}
+.newarticle .wx .enterzl{width:82px; height:16px; margin-right:10px; line-height:16px; background:#ffffff; text-align:center; float:right; display:inline;}
+.newarticle .wx .enterzl a{color:#0d447e; text-decoration:none;}
+.newarticle .content{width:615px; height:20px; margin-left:10px; line-height:20px; overflow:hidden; float:left; display:inline;}
+.newarticle .content .images{width:5px; height:5px; margin-top:7px; background:url('/images/tyzl/sjt.jpg') no-repeat; float:left; display:inline;}
+.newarticle .content .context{width:600px; height:20px; margin-left:10px; font-size:13px; overflow:hidden; float:left; display:inline;}
+.newarticle .content .context a{color:#0d447e; text-decoration:none;}
+.newarticle .content_dash{width:615px; height:1px; margin-top:5px; margin-bottom:5px; margin-left:10px;  background:url('/images/tyzl/newarticle_content_dash.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+.cy_dash{width:635px; height:1px; margin-top:10px; background:url('/images/tyzl/cy_dash.jpg') no-repeat; overflow:hidden; float:left; display:inline;}

@@ -1,5 +1,18 @@
+body{font-size:12px;}
 #banner{width:780px; height:92px; border:1px solid #cccccc; margin-top:25px; float:left; display:inline;}
 #banner img{width:778px; height:90px; margin:1px;}
+.tm2008style{margin-top:36px; margin-left:73px; float:left; display:inline;}
+.tm2008style .select_box{width:102px; height:28px; float:left; display:inline;}
+
+.tm2008style div.tag_select{display:block;color:#000;width:82px;height:27px;background:transparent url("/images/index/tm2008-select.gif") no-repeat 0 0;padding:0 10px;line-height:26px;}
+.tm2008style div.tag_select_hover{display:block;color:#000;width:82px;height:28px;background:transparent url("/images/index/tm2008-select.gif") no-repeat 0 -28px;padding:0 10px;line-height:28px;}
+.tm2008style div.tag_select_open{display:block;color:#000;width:82px;height:27px;background:transparent url("/images/index/tm2008-select.gif") no-repeat 0 -56px;padding:0 10px;line-height:26px;}
+
+.tm2008style ul.tag_options{position:absolute;margin:0;list-style:none;background:transparent url("/images/index/tm2008-select.gif") no-repeat left bottom;width:100px;padding:0 0 1px;margin:0;width:80px;}
+.tm2008style ul.tag_options li{background:transparent url("/images/index/tm2008-select.gif") repeat-y -102px 0;display:block;width:61px;padding:0 10px;height:26px;text-decoration:none;line-height:26px;color:#000;}
+
+.tm2008style ul.tag_options li.open_hover{background:transparent url("/images/index/tm2008-select.gif") no-repeat 0 -113px;color:#000}
+.tm2008style ul.tag_options li.open_selected{background:transparent url("/images/index/tm2008-select.gif") no-repeat 0 -84px;color:#19555F}
 #top_login{width:215px; height:187px; margin-top:25px; background:url('/images/index/top_right_bg.jpg') repeat-x; float:right; display:inline;}
 #top_login .login_title{width:213px; height:22px; margin-top:1px; margin-left:1px; line-height:22px; background:url('/images/index/top_login_bg.jpg') repeat-x; float:left; display:inline;}
 #top_login .login_title a{margin-left:10px; color:#ffffff; text-decoration:none;}
@@ -16,7 +29,10 @@
 #top_login #ccenter #context #content a{color:#999999; text-decoration:none;}
 #top_login #ccenter #context #ck{width:122px; height:23px; margin-top:5px; float:left; display:inline;}
 #top_login #ccenter #context #ck button{width:122px; height:23px; background:url('/images/index/btn_ck.jpg') no-repeat; cursor:pointer; text-align:center; border:0px;}
-#itop{width:785px; height:90px; margin-top:3px; background:url('/images/index/top_bg.jpg') no-repeat; float:left; display:inline;}
+#itop{width:785px; height:90px; margin-top:3px; float:left; display:inline;}
+#itop_l{width:2px; height:90px; background:url('/images/index/top_bg_left.jpg') no-repeat; float:left; display:inline;}
+#itop_r{width:783px; height:90px; background:url('/images/index/top_bg.jpg') repeat-x; float:left; display:inline;}
+#itop #logo{width:170px; height:75px; margin-top:7px; margin-left:15px; background-image:url(/images/index/forbes_logo.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/forbes_logo.png"); float:left; display:inline;}
 #itop .iinput{width:160px; height:22px; border:1px solid #99CCFF; margin-top:37px; float:left; display:inline;}
 #itop .search{width:83px; height:26px; margin-top:38px; margin-left:5px; border:0px; color:#ffffff; line-height:26px; background:url('/images/index/search_bg.jpg') no-repeat; float:left; display:inline;}
 #navigation{width:1000px; height:35px; margin-top:1px; background:url('/images/index/dh_bg.jpg') repeat-x; float:left; display:inline;}

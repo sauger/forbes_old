@@ -1,26 +1,34 @@
-<?php 
-function hex2bin($hexdata) {
-    $bindata = '';
-    for($i=0; $i < strlen($hexdata); $i += 2) {
-        $bindata .= chr(hexdec(substr($hexdata, $i, 2)));
-    }
-    return $bindata;
-}
-	$str = $_POST['str'];
-	$len = strlen($str) / 2;	
-	$s = '';
-	for($i=0;$i<$len-1;$i++){
-		$s .= substr($str,$i*4,2);
-	}
-	echo hex2bin("0x" .$s);
-?>
+<html>
+	<head>
+		<?php
+		require 'frame.php';
+		use_jquery();
+		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
+		search_content('a di hu');
+		?>
+	</head>
+	<body>
+		<form method="post" action="test1.php">
+			<div id="editor" name="editor"></div>
+			<?php show_fckeditor('title[news]')?>
+			<input type="submit" value="send"></input>		
+		</form>
+		
+		<a id="test" href="#">test</a>
+	</body>
+</html>
 
-<form method="post">
-	<textarea rows="20" cols="100" name="str" value="<?php echo $str;?>"></textarea>
-	<input type="submit"></input>
-</form>
-<?php
-
-?>
 <script>
+	//$('#editor').val('ok');	
+	var a = ['a','b','c','a','b','c'];
+	alert(a.join(','));
+	array_remove(a,'b');
+	alert(a.join(','));
+	$('#test').click(function(e){
+		var editor = CKEDITOR.instances;
+		if(editor['title[news]'].getData() ==''){
+			alert('emptyp');
+		}
+		alert(editor['title[news]'].getData());
+	});
 </script>
