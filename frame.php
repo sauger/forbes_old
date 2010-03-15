@@ -322,8 +322,15 @@ function require_login($type="redirect"){
 		if($db->record_count == 1){
 			$_SESSION['user_id']=$record[0]->id;
 			$_SESSION['name']=$name;
+			$db->execute("insert into fb_yh_log (yh_id,time) values ({$_SESSION['user_id']},now())");
 			return true;
 		}else{
+			if($type=="redirect"){
+				$url = '/login/?last_url=' .get_current_url();
+				redirect($url);
+			}else{
+				return false;
+			}
 			return false;
 		}
 	}else{
@@ -333,7 +340,6 @@ function require_login($type="redirect"){
 		}else{
 			return false;
 		}
-				
 	}
 }
 

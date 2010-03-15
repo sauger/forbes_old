@@ -6,7 +6,7 @@
 #title1 a{text-decoration:none;}
 
 
-#line{width:1000px; height:10px; background-image:url(../../../images/html/user/line.jpg); float:left; display:inline;}
+#line{width:1000px; height:10px; background-image:url(/images/html/user/line.jpg); float:left; display:inline;}
 
 #left{width:180px; height:235px; margin-top:23px; font-weight:bold; background:url("/images/html/user/left_list.gif"); float:left; display:inline;}
 #left_top{width:180px; height:42px; font-size:14px; font-weight:bold; line-height:43px; text-align:center; text-indent:15px;   float:left; display:inline;}
@@ -16,18 +16,36 @@
 .left_list2 a{color:#fff; text-decoration:none;}
 .icon{width:20px; height:20px; margin-left:12px; margin-top:15px; float:left; display:inline;}
 .iconb{width:20px; height:20px; margin-left:12px; margin-top:15px; float:left; display:inline;}
-.left_text{width:100px; height:20px; cursor:pointer; line-height:20px; margin-left:10px; margin-top:12px; float:left; display:inline;}
+.left_text{width:100px; height:20px; line-height:20px; margin-left:10px; margin-top:12px; float:left; display:inline;}
 .icon2{width:5px; height:10px; margin-top:17px; margin-left:10px; float:left; display:none;}
 
 
-#right{width:805px; height:604px; margin-top:23px; margin-left:10px; border-right-style:solid; border-bottom-style:solid; border-width:1px; border-color:#CCCCCC; background-image:url(../../../images/html/user/right.jpg); float:left; display:inline;}
-#right-title1{width:173px; height:43px; font-size:14px; font-weight:bold; line-height:43px; text-indent:54px; float:left; display:inline;}
-#right-title2{width:754px; height:30px; background-image:url(../../../images/html/user/right-title2.jpg); margin-top:26px; margin-left:26px; float:left; display:inline;}
-#right-title3{width:107px; height:24px; font-size:13px; color:#055C99; font-weight:bold; text-align:center; line-height:24px; margin-top:6px; margin-left:27px; float:left; display:inline;}
+.right{width:812px; margin-top:23px; margin-left:8px; border-color:#CCCCCC; float:left; display:inline;}
+.right_title{width:812px; height:43px; font-size:14px; font-weight:bold; line-height:43px; background:url(/images/html/user/right_title.gif); text-indent:54px; float:left; display:inline;}
+.r_t_right{color:#ff0000; margin-right:20px; float:right; display:inline;}
+.right_text{width:810px; padding-bottom:30px; border:1px solid #CCCCCC; border-top:0px; float:left; display:inline;}
+.right-title2{width:754px; height:30px; background-image:url(/images/html/user/right-title2.jpg); margin-top:26px; margin-left:26px; float:left; display:inline;}
+.right-title3{width:107px; height:24px; font-size:13px; color:#055C99; font-weight:bold; text-align:center; line-height:24px; margin-top:6px; margin-left:27px; float:left; display:inline;}
 .right-title4{width:107px; height:24px; font-size:13px; color:#FFFFFF; margin-top:6px; margin-left:25px; text-align:center; line-height:20px; font-weight:bold; float:left; display:inline;}
-#right-text{width:680px; height:326px; font-size:13px; color:#999999;  margin-top:24px; margin-left:55px; float:left; display:inline;}
-#right-next{width:70px; height:25px; margin-top:56px; margin-left:381px; background-image:url(../../../images/html/user/right-next.jpg); float:left; display:inline;}
+.right-text{width:800px; font-size:13px; color:#999999;  margin-top:24px; margin-left:55px; float:left; display:none;}
 
-.li1{width:540px; height:15px; text-indent:10px; margin-top:15px; overflow:hidden; background:url(../../../images/html/user/tar.jpg) no-repeat 0% 5.7px; float:left; display:inline;}
+.li1{width:540px; height:15px; text-indent:10px; margin-top:15px; line-height:15px; overflow:hidden; background:url(/images/html/user/tar.jpg) no-repeat 0% 5.7px; float:left; display:inline;}
 .li1 a{color:#000000; text-decoration:none;}
 .li2{width:134px; text-indent:10px; margin-top:15px; float:left; display:inline;}
+
+.right_list{width:800px; height:20px; margin-left:20px; margin-top:10px; font-size:15px; font-weight:bolder; line-height:20px; float:left; display:inline;}
+.right_list2{font-size:12px; text-decoration:underline;}
+.right_check_list{width:600px; height:15px; line-height:15px; margin-left:40px; margin-top:10px; float:left; display:inline;}
+.right_check_list input{margin-left:15px; float:left; display:inline;}
+.right_check_list label{margin-top:2px; *margin-top:4px; margin-left:2px; float:left; display:inline;}
+
+.p_list{width:410px; margin-left:80px; margin-top:20px; line-height:20px; font-size:14px; float:left; display:inline;}
+.p_list input{width:320px; height:18px; border:1px solid #85A5C1; float:right; display:inline;}
+.p_list label{float:left; display:inline;}
+
+.right_box{width:805px; float:left; display:inline;}
+
+.paginate{width:800px; margin-top:50px; line-height:20px; text-align:center; float:left; display:inline;}
+.paginate a{color:#000;}
+
+.user_b{width:94px; height:26px; margin-left:300px; margin-top:50px; clear:both; line-height:26px; background:url(/images/register/upload_bg.jpg); border:0; float:left; display:inline;}
