@@ -5,10 +5,12 @@
 	$filter_adopt = isset($_REQUEST['filter_adopt']) ? $_REQUEST['filter_adopt'] : -1;
 	$filter_selected = isset($_REQUEST['filter_selected']) ? $_REQUEST['filter_selected'] : -1;
 	if($filter_selected == 0){
-		$conditions[] = "id not in({$_REQUEST['selected_news']})";
+		$ids = $_REQUEST['selected_news'] ? $_REQUEST['selected_news'] : 0;
+		$conditions[] = "id not in($ids)";
 	}elseif($filter_selected == 1){
-		$conditions[] = "id in({$_REQUEST['selected_news']})";
-		$order = " find_in_set(id,'{$_REQUEST['selected_news']}')";
+		$ids = $_REQUEST['selected_news'] ? $_REQUEST['selected_news'] : 0;
+		$conditions[] = "id in($ids)";
+		$order = " find_in_set(id,'{$ids}')";
 	}
 	if($filter_adopt != -1){
 		$conditions[] = 'is_adopt= ' .$filter_adopt;

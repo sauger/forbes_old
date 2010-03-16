@@ -112,7 +112,6 @@ $(function(){
 		$(this).hide();
 	});
 	$('#delete_copy_news').live('click',function(e){
-		alert(1);
 		e.preventDefault();
 		$('#copy_news').show();
 		$('#tr_copy_news').hide();
