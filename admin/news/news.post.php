@@ -52,8 +52,8 @@
 	}
 	$table_change = array('<p>'=>'');
 	$table_change += array('</p>'=>'');
-	strtr($news->title,$table_change);
-	strtr($news->short_title,$table_change);	
+	$news->title = strtr($news->title,$table_change);
+	$news->short_title = strtr($news->short_title,$table_change);	
 	if($news_id == ''){
 		//insert news
 		$news->created_at = date("Y-m-d H:i:s");
@@ -85,6 +85,12 @@
 			$english_news->news_type = $news->news_type;
 			$english_news->save();
 		}
+	}
+	
+	if($_POST['copy_news']){
+		$news->id = 0;
+		$news->category_id = intval($_POST['copy_news']);
+		$news->save();
 	}
 	
 	redirect('news_list.php?category='.$_POST['news']['category_id']);
