@@ -331,19 +331,19 @@
 			</div>
 		</div>
 		<div id=r_b_b>
-				<div class=title><div id=wz>福布斯杂志</div><div id=more><a href=""><img border=0 src="images/index/c_r_t_more.gif"></a></div></div>
-				<div class=content>
-					<div class=pic><a href=""><img border=0 src="images/index/five.jpg"></a></div>
-					<div class=piccontent>
-						<div class=pictitle>福布斯2010/1</div>
-						<div class=context>在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</div>	
-					</div>
+			<div class=title><div id=wz>福布斯杂志</div><div id=more><a href=""><img border=0 src="images/index/c_r_t_more.gif"></a></div></div>
+			<div class=content>
+				<div class=pic><a href=""><img border=0 src="images/index/five.jpg"></a></div>
+				<div class=piccontent>
+					<div class=pictitle>福布斯2010/1</div>
+					<div class=context>在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</div>	
 				</div>
-				<div id=r_b_b_dash></div>
-				<div id=search>往期杂志查阅</div>
-				<div id=sel><select></select>　<select></select></div>
-				<button id="btnonline"></button><button id="sq"></button>
-				<div id=ck><a href="">查看杂志列表>></a></div>
+			</div>
+			<div id=r_b_b_dash></div>
+			<div id=search>往期杂志查阅</div>
+			<div id=sel><select></select>　<select></select></div>
+			<button id="btnonline"></button><button id="sq"></button>
+			<div id=ck><a href="">查看杂志列表>></a></div>
 		</div>
 		<? require_once('inc/bottom.inc.php');?>
 	</div>
