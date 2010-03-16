@@ -210,7 +210,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 	}
 	
 	if ($pagecount <= 1 && !$force_show) return;
-	if (!strpos($url,'?'))
+	if (strpos($url,'?')===false)
 	{
 		$url .= '?';
 	}
@@ -376,104 +376,6 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 	}else{
 		return $db->query($sql);
 	}
-	/*
-	if($keys){
-		$now = now();
-		foreach ($keys as $v) {
-			if($v){
-				$db->execute("insert into smg_search_keys (search_key,created_at) values ('{$v}','{$now}')");;
-			}			
-		}
-	}
-
-	$table = new table_class($table_name);	
-	$c = array();
-	$d=array();
-	foreach ($keys as $v) {
-		if(empty($v)) continue;
-		array_push($c, "title like '%$v%'");
-		array_push($c, "keywords like '%$v%'");
-	 	if($full_text){array_push($c, "description like '%$v%'");}
-		if($table_name == 'fb_news'){
-			array_push($c, "short_title like '%$v%'");
-			array_push($c, "tags like '%$v%'");	
-			if($full_text){						
-				array_push($c, "content like '%$v%'");
-			}			
-		}
-	}
-	foreach ($keys as $v) {
-		if(empty($v)) continue;
-	 	if($full_text){array_push($d, "description like '%$v%'");}
-		if($table_name == 'fb_news'){
-			
-			if($full_text){
-				array_push($d, "(title like '%$v%' or keywords like '%$v%' or short_title like '%$v%' or tags like '%$v%' or content like '%$v%')");				
-			}
-			else
-			{
-				array_push($d, "(title like '%$v%' or keywords like '%$v%' or short_title like '%$v%' or tags like '%$v%')");		
-			}
-		}
-	}
-	if($d){
-		$d = implode(' and ' ,$d);
-	}		
-		if($conditions){
-			$d = $conditions . ' and (' .$d .')';
-		}
-
-	
-	$sql1 = 'select a.id,a.short_title,a.title,a.category_id,a.created_at,a.is_adopt from (select * from ' . $table_name ." where language_tag=0";
-	if($d){
-		$sql1 .= ' and ' .$d;
-	}
-	if($order)
-	{
-		$sql1 = $sql1 . ' order  by ' .$order;
-	}
-	$sql1=$sql1.') as a';
-	$content1=$db->query($sql1);
-	for($i=0;$i<count($content1);$i++)
-	{
-		$notid[]=$content1[$i]->id;
-	}
-	
-	$e= @implode(',',$notid);
-	$c = implode(' OR ' ,$c);
-	if($conditions){
-		$c = $conditions . ' and (' .$c .')';
-	}
-	if($e!="")
-	{
-		$sql2 = 'select b.id,b.title,b.short_title,b.category_id,b.created_at,b.is_adopt from (select * from ' . $table_name .' where language_tag=0 and id not in ('.$e.') and ('.$c.')';
-	}
-	else
-	{
-		$sql2 = 'select b.id,b.title,b.short_title,b.category_id,b.created_at,b.is_adopt from (select * from ' . $table_name ." where language_tag=0 and ".$c;	
-	}
-	$sql2=$sql2.') as b';
-	if($order)
-	{
-		$sql2 = $sql2 . ' order  by ' .$order;
-	}
-	if(count($content1)>0)
-	{
-		$sql=$sql1." union ".$sql2;
-	}
-	else
-	{
-		$sql=$sql2;	
-	}
-	if ($order){
-		$sql = $sql . ' order  by ' .$order;
-	}
-	if($page_count > 0){
-		return $db->paginate($sql,$page_count);	
-	}else{
-		return $db->query($sql);
-	}
-		*/	
 }
 
 function write_log($msg){

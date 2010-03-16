@@ -30,7 +30,6 @@
 		$selected_news = explode(',',$selected_news);
 	}
 	$db = get_db();
-	$db->echo_sql = true;
 ?>
 	<table width="600" border="0" id="list" style="boder:1px solid">
 		<tr class="tr2">
@@ -62,7 +61,7 @@
 			for($i=0;$i<$count_record;$i++)	{
 				
 		?>
-				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
+				<tr class=tr3>
 					<td><input type="checkbox" id="<?php echo $items[$i]->id;?>" value="<?php echo $items[$i]->id;?>" name="subject" style="width:12px;"></td>
 					<td><?php echo strip_tags($items[$i]->short_title);?></td>
 					<td><?php echo strip_tags($items[$i]->created_at);?></td>					
@@ -80,6 +79,7 @@
 					<button id="button_ok" style="width:150px">确定</button>
 					<button id="button_cancel" style="width:150px">取消</button>
 					<button id="cancel_all" style="width:150px">取消所有关联</button>
+					<a href="#" id="news_sort">排序</a>
 				</td>
 		</tr>		
 	</table>
@@ -142,6 +142,11 @@
 				if(e.keyCode == 13){
 					send_search();
 				}
+			});
+
+			$('#news_sort').click(function(e){
+				e.preventDefault();
+				$('#result_box').load('_news_filter_sort.php',{'show_div':'0','selected_news':selected_news.join(','),'call_back':'<?php echo $_REQUEST['call_back'];?>'});
 			});
 		});
 		
