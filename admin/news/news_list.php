@@ -42,8 +42,8 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">
-				　<a href="news_edit.php" id="add_news">发布新闻</a>　　　搜索　
-				<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
+				<a style="margin-left:20px" href="news_edit.php" id="add_news">发布新闻</a>
+				<input style="margin-left:20px" class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
 				<span id="span_category"></span>
 				<select id=adopt name="adopt" style="width:90px" class="sau_search">
 					<option value="">发布状况</option>
@@ -66,7 +66,7 @@
 			for($i=0;$i<count($record);$i++){
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
-					<td><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->short_title);?></a></td>
+					<td style="text-align:left; text-indent:24px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->short_title);?></a></td>
 					<td>
 						<a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF">
 							<?php echo $category->find($record[$i]->category_id)->name;?>
