@@ -68,29 +68,35 @@
 					<div id="news_title">
 					<?php echo $title;?>
 					</div>
+					<div id="top_info">记者：<?php echo $news->author;?>　　发布于：<?php echo substr($news->created_at,0,10);?></div>
 					<div id=title2>
 						<?php if(isset($english_news)){?>
-							<div style="background:url(/images/html/news/t_title2.jpg); color:#fff" class="top_title"><a href="news.php?id=<?php echo $id?>">正文</a></div>
-							<div class="top_title">English</div>
+							<div style="border-left:0" class="top_title"><img src="/images/html/news/zw.gif"><span class="top_span"><a href="news.php?id=<?php echo $id?>">正文</a></span></div>
+							<div class="top_title"><img src="/images/html/news/ew.gif"><span class="top_span">English</span></div>
 						<?php }else{?>
-							<div class="top_title">正文</div>
+							<div style="border-left:0" class="top_title"><img src="/images/html/news/zw.gif"><span class="top_span">正文</span></div>
 							<?php if(isset($english_id)){?>
-							<div style="background:url(/images/html/news/t_title2.jpg); color:#fff" class="top_title"><a href="news.php?id=<?php echo $id?>&lang=en">English</a></div>
+							<div class="top_title"><img src="/images/html/news/ew.gif"><span class="top_span"><a href="news.php?id=<?php echo $id?>&lang=en">English</a></span></div>
 							<?php }?>
 						<?php }?>
-						<div id="top_box" <?php if(!isset($english_id)){?>style="width:532px;"<?php }?>>
-							<a href="<?php echo $news->id;?>" class="top_n" id="a_collect">加入收藏</a><img src="/images/html/news/coin2.gif">
+						<div class="top_title"><img src="/images/html/news/fx.gif"><span class="top_span"><a href="">分享</a></span></div>
+						<div class="top_title"><img src="/images/html/news/dy.gif"><span class="top_span"><a href="">打印</a></span></div>
+						<div class="top_title"><img id="font_down" src="/images/html/news/font1.gif"><span class="top_span"><a href="">字体大小</a></span><img id="font_up" src="/images/html/news/font2.gif"></div>
+						<div style="border-right:0" class="top_title">
 							<?php if($news->pdf_src){?>
-							<a target="_blank" href="<?php echo $news->pdf_src;?>" style="margin-right:20px;" class="top_n">下载PDF格式</a>
 							<img src="/images/html/news/coin1.gif">
-							<?php }?>   						
+							<span class="top_span">
+							<a target="_blank" href="<?php echo $news->pdf_src;?>" class="top_n">下载PDF格式</a>
+							</span>
+							<?php }?>
+							<img style="margin-left:10px;" src="/images/html/news/coin2.gif"><span class="top_span"><a href="<?php echo $news->id;?>" class="top_n" id="a_collect">加入收藏</a></span>
 						</div>
 					</div>
 				</div>
 				<div id="news_text">
 					<div id="left_box">
-						<div id="l_b_top"></div>
 						<div id="l_b_center">
+							<div id="resource">来源于：福布斯中文网</div>
 							<?php if($news->top_info!=''){?>
 								<div id=text4>
 									<?php echo $news->top_info?>
@@ -140,10 +146,8 @@
 									</div>
 								</div>
 								<?php }?>
+								<div class="dash2"></div>
 								<div class=right-div3>
-									<div id=right-title3>
-									文章的关键字
-									</div>
 									<div class=keywords>
 										<?php 
 											$keywords = explode(' ',$news->keywords);
@@ -154,12 +158,17 @@
 										<?php
 											}
 										?>
-										
+									</div>
+									<div id="keyword_bottom">
+										<div style="margin-left:0;" id=right-title3>
+											文章的关键字：
+										</div>
 									</div>
 								</div>
 						</div>
-						<div id="l_b_bottom"></div>
 					</div>
+					<div id="roll"></div>
+					<div id="picture6"><img src="/images/html/news/picture6.jpg"></div>
 					<div id=text3>
 						<?php echo $content;?>
 					</div>
