@@ -80,13 +80,6 @@
 						
 					</div>
 				</div>
-				<div id="news_right">
-				<div id=text>
-					<div id=text3>
-						<div id="news_text"><?php echo $content;?></div>
-					</div>
-					
-				</div>
 				<div id="left_box">
 					<div id="l_b_top"></div>
 					<div id="l_b_center">
@@ -143,12 +136,24 @@
 								<div id=right-title3>
 								文章的关键字
 								</div>
-								<div class=list1>
+								<div class=keywords>
+									<?php 
+										$keywords = explode(' ',$news->keywords);
+										for($i=0;$i<count($keywords);$i++){
+											if($i!=0)echo '、';
+									?>
+									<a href="news_list.php?keyword=<?php echo urlencode($keywords[$i]);?>"><?php echo $keywords[$i];?></a>
+									<?php
+										}
+									?>
+									
 								</div>
 							</div>
 					</div>
 					<div id="l_b_bottom"></div>
 				</div>
+				<div id=text3>
+					<?php echo $content;?>
 				</div>
 		  </div>
 			<div id=center-right>
@@ -272,6 +277,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 		<?php include "../inc/bottom.inc.php";?>
