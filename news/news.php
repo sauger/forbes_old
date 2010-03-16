@@ -111,7 +111,7 @@
 								<div class=list1>
 								<ul>
 									<?php for($i=0;$i<count($record);$i++){?>
-									<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+									<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 									<?php }?>
 								</ul>
 								</div>
@@ -134,7 +134,7 @@
 									<div class=list1>
 									<ul>
 										<?php for($i=0;$i<count($record);$i++){?>
-										<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+										<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 										<?php }?>
 									</ul>
 									</div>
