@@ -44,18 +44,16 @@
 			<td colspan="5">
 				<a style="margin-left:20px" href="news_edit.php" id="add_news">发布新闻</a>
 				<input style="margin-left:20px" class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
-				<span id="span_category"></span>
-				<select id=adopt name="adopt" style="width:90px" class="sau_search">
+				<span id="span_category"></span><select id=adopt name="adopt" style="width:90px" class="sau_search">
 					<option value="">发布状况</option>
 					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已发布</option>
 					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未发布</option>
-				</select>
-				<select id="language_tag" name="language_tag" class="sau_search">					
+				</select><select id="language_tag" name="language_tag" class="sau_search">					
 					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
 					<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
 				</select>
 				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
-				<input type="button" value="搜索" id="search_button" style="border:1px solid #0000ff; height:21px">
+				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
 			</td>
 		</tr>
 		<tr class="tr2">
