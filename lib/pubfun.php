@@ -163,6 +163,41 @@ function get_fck_content($str,$symbol='fck_pageindex')
 	return strfck($contents[$index-1]);
 }
 
+function print_fck_pages2($url="",$symbol='fck_pageindex'){
+	if(empty($url))$url = 'news.php?id='.$_REQUEST['id'];
+	$str = $symbol."_count";
+	global $$str;
+	$count = $$str;
+	if(empty($_REQUEST[$symbol])||$_REQUEST[$symbol]==1){
+		$prev = '<span class="paginate_botton">上页</span>';
+	}else{
+		$prev = '<span class="paginate_botton"><a href="'.$url.'&'.$symbol.'='.($_REQUEST[$symbol]-1).'">上页</a></span>';
+	}
+	for($i=0;$i<$count;$i++){
+		if(empty($_REQUEST[$symbol])){
+			$page .= '<span class="page_span';
+			if($i==0)$page.='2';
+			$page.='"><a href="'.$url.'&'.$symbol.'='.($i+1).'">'.($i+1).'</a></span>';
+		}else{
+			$page .= '<span class="page_span';
+			if($_REQUEST[$symbol]==($i+1))$page.='2';
+			$page .= '"><a href="'.$url.'&'.$symbol.'='.($i+1).'">'.($i+1).'</a></span>';
+		}
+	}
+	if($_REQUEST[$symbol]==$count){
+		$next = '<span class="paginate_botton">下页</span>';
+	}else{
+		$next = '<span class="paginate_botton"><a href="'.$url.'&'.$symbol.'=';
+		if(empty($_REQUEST[$symbol])){
+			$next .=2;
+		}else{
+			$next .=($_REQUEST[$symbol]+1);
+		}
+		$next .='">下页</a></span>';
+	}
+	echo $prev.$page.$next;
+}
+
 function print_fck_pages($str,$url="",$symbol='fck_pageindex'){
 	paginate($url,null,$symbol);
 };

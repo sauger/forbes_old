@@ -35,7 +35,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('news/news','select2css');
-		css_include_tag('html/news/news','top','bottom','select2css');
+		css_include_tag('html/news/news','top','bottom','select2css','paginate');
 	?>
 </head>
 <body <?php if($news->forbbide_copy == 1){ ?> oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="return false" oncopy="return false" onbeforecopy="return false" onmouseup="return false" <?php }?>>
@@ -186,7 +186,9 @@
 					<div id=text3>
 						<?php echo get_fck_content($content);?>
 					</div>
-					<div id="paginate"><?php print_fck_pages($content);?></div>
+					<div id="paginate">
+						<?php print_fck_pages2();?>
+					</div>
 				</div>
 				<div class="dash"></div>
 		  	</div>
