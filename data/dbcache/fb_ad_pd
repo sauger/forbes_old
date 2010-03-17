@@ -1,0 +1,1 @@
+{"id":{"name":"id","type":"int(10) unsigned","short_type":"int","type_length":null,"key":"PRI","comment":"","null":"NO","default":null,"extra":null,"value":null},"name":{"name":"name","type":"varchar(45)","short_type":"varchar","type_length":null,"key":"","comment":"\u5e7f\u544a\u9891\u9053","null":"NO","default":"","extra":"","value":null}}
