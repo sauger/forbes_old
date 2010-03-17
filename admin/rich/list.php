@@ -108,7 +108,9 @@
 		<?php
 			}
 		?>
-		<tr><td colspan="5" align="right"><?php paginate(); ?></td></tr>
+		<tr class="tr3">
+			<td colspan=9><?php paginate();?></td>
+		</tr>
 	</table>
 </body>
 </html>

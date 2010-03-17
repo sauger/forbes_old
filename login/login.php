@@ -8,7 +8,11 @@
 	<head>
 		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 		<meta http-equiv=Content-Language content=zh-CN>
-		<title>系统登录</title>
+<<<<<<< HEAD:login/login.php
+		<title>福布斯中文网后台管理</title>
+=======
+		<title>Manage : Forbeschina</title>
+>>>>>>> d4009668675ad066c0503391cb684da16a76907e:login/login.php
 		<?php
 			use_jquery();
 			css_include_tag('login');
@@ -23,7 +27,7 @@
 						<div id=box style="border:1px solid #0066FF">
 							<div id="name">用户名　　<input type="text" id=login_text name=login_text style="width:145px; height:17px;" class="required"></div>
 							<div id="pwd">密　码　　<input type="password" id=password_text name=password_text style="width:145px; height:17px;"></div>
-							<div id="btn"><input type="checkbox" name=nickname >昵称　　<input type="button" value="登录" id="login_btn" class="botton"></div>	
+							<div id="btn"><input type="button" value="登录" id="login_btn" class="botton"></div>	
 							<input type="hidden" name="lasturl" value="<?php echo $lasturl;?>">
 							<input type="hidden" name="user_type" value="login">						
 						</div>				

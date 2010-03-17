@@ -43,7 +43,7 @@ $(function(){
 			alert("请输入短标题！");
 			return false;
 		}
-		var oEditor = CKEDITOR.instances['news[content]'] ;
+		var editor = CKEDITOR.instances['news[content]'] ;
 		var content = editor.getData();
 		if(content==""){
 			alert("请输入新闻内容！");

@@ -13,7 +13,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('select2css','user/user');
-		css_include_tag('html/user/user','top','bottom','select2css');
+		css_include_tag('html/user/favorites','html/user/user','top','bottom','select2css');
 	?>
 </head>
 <body>
@@ -82,30 +82,60 @@
 					收藏的专栏
 				</div>
 			</div>
-			<div class=right-text id="news" style="display:inline;">
+			<div class=right-text id="news" >
 				<div class="right_box">
 				<?php
-					$sql = "select t1.title,t1.id,t2.created_at from fb_news t1 join fb_collection t2 on t1.id=t2.resource_id where t2.resource_type='news' and t2.user_id=$uid order by t2.created_at";
+					$sql = "select t1.title,t1.id,t2.created_at from fb_news t1 join fb_collection t2 on t1.id=t2.resource_id where t2.resource_type='fb_news' and t2.user_id=$uid order by t2.created_at";
 					$news = $db->paginate($sql,10);
 					$news_count = count($news);
 					for($i=0;$i<$news_count;$i++){
 				?>
-				<div class=li1><a target="_blank" title="<?php echo $news[$i]->title;?>" href="/news/news.php?id=<?php echo $news[$i]->id;?>"><?php echo $news[$i]->title;?></a></div><div class=li2> 收藏于：<?php echo substr($news[$i]->created_at, 0, 10);?></div>
+				<div class=li1><a target="_blank" title="<?php echo strip_tags($news[$i]->title);?>" href="/news/news.php?id=<?php echo $news[$i]->id;?>"><?php echo $news[$i]->title;?></a></div><div class=li2> 收藏于：<?php echo substr($news[$i]->created_at, 0, 10);?></div>
 				<?php
 					}
 				?>
 				</div>
 				<div class="paginate"><?php paginate();?></div>
 			</div>
-			<div class=right-text id="rich">
+			<div class=right-text id="rich" style="display:inline;">
 				<div class="right_box">
 				<?php
-					$sql = "select t1.name,t1.id,t2.created_at from fb_fh t1 join fb_collection t2 on t1.id=t2.resource_id where t2.resource_type='rich' and t2.user_id=$uid order by t2.created_at";
-					$rich = $db->paginate($sql,10);
+					$sql = "select t1.* from fb_fh t1 join fb_collection t2 on t1.id=t2.resource_id where t2.resource_type='fb_fh' and t2.user_id=$uid order by t2.created_at";
+					$rich = $db->paginate($sql,4);
 					$rich_count = count($rich);
-					for($i=0;$i<$rich_count;$i++){
+					for($i=0;$i<count($i);$i++){
+						$money = $db->query("select * from fb_fh_grcf where fh_id={$rich[$i]->id} order by jzrq desc limit 1");
+						$company = $db->query("select t2.mc,t2.id from fb_fh_gs t1 join fb_gs t2 on t1.gs_id=t2.id where t1.fh_id={$rich[$i]->id}");
+						$com_count = count($company);
+						$ind_ids = $company[0]->id;
+						if($ind_ids>1){
+							for($k=1;$k<count($company);$k++){
+								$ind_ids .= ','.$company[$k]->id;
+							}
+						}
+						$industry = $db->query("select t2.id,t2.name from fb_company_industry t1 join fb_industry t2 on t1.industry_id=t2.id where t1.company_id in ({$ind_ids})");
+						$ind_count = count($industry);
 				?>
-				<div class=li1><a target="_blank" title="<?php echo $rich[$i]->name;?>" href="/rich/rich.php?id=<?php echo $rich[$i]->id;?>"><?php echo $rich[$i]->name;?></a></div><div class=li2> 收藏于：<?php echo substr($news[$i]->created_at, 0, 10);?></div>
+				<div class="rich_box">
+					<div class="rich_pic"><img src="/images/html/news/picture.jpg" width="70" height="70"></div>
+					<div class="rich_info">
+						<div class="rich_name"><a href="/rich/rich.php?id="><?php echo $rich[$i]->name;?></a> <?php if($rich[$i]->xb==1)echo '男';elseif($rich[$i]->xb==0)echo '女';?> <?php if($rich[$i]->birthday!='')echo (date('Y')-$rich[$i]->birthday).'岁'?></div>
+						<div class="rich_com"><?php for($j=0;$j<$com_count;$j++){if($j!=0)echo ',';?><a class="style1" href="company.php?id=<?php echo $company[$j]->id;?>"><?php echo $company[$j]->mc;?></a><?php }?></div>
+						<div class="rich_ind">（<?php for($j=0;$j<$ind_count;$j++){if($j!=0)echo ',';?><a class="style2" href="company.php?id=<?php echo $industry[$j]->id;?>"><?php echo $industry[$j]->name;?></a><?php }?>）</div>
+						<div class="rich_rank">
+							年度排名：<span class="red">7</span>　今日排名：<span class="red">9</span><br/>
+							个人财富：<?php echo $money[0]->zc;?><br/>
+							（截止日期：<?php echo substr($money[0]->jzrq,0,10);?>）
+						</div>
+					</div>
+					<div class="rich_bd">
+						<div class="bd_left">入选榜单：</div>
+						<div class="bd_list">
+							<a href="">08富豪榜</a><a href="">08富豪榜</a><a href="">08富豪榜</a>
+							<a href="">08富豪榜</a><a href="">08富豪榜</a><a href="">08富豪榜</a>
+						</div>
+					</div>
+				</div>
 				<?php
 					}
 				?>
