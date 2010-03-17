@@ -50,6 +50,11 @@
 		$upload->save_dir = '/upload/news/';
 		$news->video_photo_src = '/upload/news/' .$upload->handle('news_pic','filter_pic');
 	}
+	if($_FILES['author_image']['name'] != ''){
+		$upload = new upload_file_class();
+		$upload->save_dir = '/upload/news/';
+		$news->author_image = '/upload/news/' .$upload->handle('author_image','filter_pic');
+	}
 	$table_change = array('<p>'=>'');
 	$table_change += array('</p>'=>'');
 	$news->title = strtr($news->title,$table_change);

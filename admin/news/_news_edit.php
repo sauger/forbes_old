@@ -47,7 +47,17 @@
 		<tr class=tr4>
 			<td>作　者</td>
 			<td align="left" class="newsselect1" >
-				<input type="text" name="news[author]" value="<?php echo $news->author;?>"></input>
+				<input style="width:100px" type="text" name="news[author]" value="<?php echo ($news->author ? $news->author : $_SESSION['admin_nick_name']);?>"></input>
+				<select name="news[author_type]">
+					<option value="1" <?php if($news->author_type == 1) echo " selected='selected'"?>>特约记者</option>
+					<option value="2" <?php if($news->author_type == 2) echo " selected='selected'"?>>专栏作者</option>
+					<option value="3" <?php if($news->author_type == 3) echo " selected='selected'"?>>其他作者</option>
+				</select>
+				<b>头像：</b><input type="file" name="author_image">
+				<?php if($news->author_image){?>
+				<a href="<?php echo $news->author_image;?>" target="_blank">查看</a>
+				<?php }?>
+				<span>(40*40最佳)</span>
 			</td>
 		</tr>
 		<tr class=tr4>

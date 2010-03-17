@@ -20,9 +20,9 @@
 			}
 			$record = $db->query($sql);		
 			if(count($record)==1){
-				$_SESSION["user_name"] = $record[0]->name;
-				$_SESSION["id"] = $record[0]->id;
-				$_SESSION["nick_name"] = $record[0]->nick_name;
+				$_SESSION["admin_user_name"] = $record[0]->name;
+				$_SESSION["admin_user_id"] = $record[0]->id;
+				$_SESSION["admin_nick_name"] = $record[0]->nick_name;
 				$_SESSION["role_name"] = $record[0]->role_name;
 				$_SESSION['role_level'] = $record[0]->role_level;
 				if($last_url == '/index.php' && ($_SESSION['role_level'] == 1 || $_SESSION['role_level'])){

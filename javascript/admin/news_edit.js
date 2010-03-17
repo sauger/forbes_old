@@ -117,7 +117,6 @@ $(function(){
 		$('#tr_copy_news').hide();
 		$(this).next().val(0);
 	});
-	
 	$('#a_sub_headline').colorbox({href:'news_filter.php?selected_news=' + $('#hidden_sub_headline').val()+'&call_back=save_sub_headlines'});
 	$('#a_related_news').colorbox({href:'news_filter.php?selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
 	refresh_sub_headlines();
