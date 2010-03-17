@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>编辑新闻</title>
+	<title>发布新闻</title>
 	<?php 
 		require_once('../../frame.php');
 		judge_role();
