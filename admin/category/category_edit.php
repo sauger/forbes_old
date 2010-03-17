@@ -30,17 +30,17 @@
 				<?php if($id){echo "修改类别";}else{echo "添加类别";}?>
 			</td>
 		</tr>
-		<tr class=tr3>
+		<tr class=tr4>
 			<td width=150>名称：</td>
-			<td width=645 align="left"><input type="text" name="post[name]" value="<?php echo $cate->name;?>" class="required"></td>
+			<td width=645 align="left"><input style="width:400px" type="text" name="post[name]" value="<?php echo $cate->name;?>" class="required"></td>
 		</tr>
-		<tr class=tr3>
+		<tr class=tr4>
 			<td>描述：</td>
-			<td align="left"><input type="text" name="post[description]" value="<?php echo $cate->description;?>"></td>
+			<td align="left"><input type="text" style="width:400px" name="post[description]" value="<?php echo $cate->description;?>"></td>
 		</tr>
-		<tr class=tr3>
+		<tr class=tr4>
 			<td>优先级：</td>
-			<td align="left"><input type="text" name="post[priority]" id="priority" class="number" value="<?php echo $cate->priority;?>"></td>
+			<td align="left"><input type="text" style="width:400px" name="post[priority]" id="priority" class="number" value="<?php echo $cate->priority;?>"></td>
 		</tr>
 		<tr class=tr3>
 			<td colspan="2"><button type="submit">提 交</button></td>

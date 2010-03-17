@@ -34,7 +34,7 @@ a{text-decoration:none; color:black;}
 .tr1 a{color:#0000ff; text-decoration:underline;}
 .tr2{height:25px; font-weight:bold; font-size:13px; text-align:center; background:#f9f9f9;}
 .tr3{height:22px; text-align:center; font-size:12px; line-height:15px; background:#f9f9f9;}
-.tr3 td{text-align:center; adding-left:5px;}
+.tr3 td{text-align:center; padding-left:5px;}
 .sub_menu li{margin-left:25px;}
 .tr3 input{width:230px;}
 .tr4{height:22px; text-align:center; font-size:12px;  line-height:15px; background:#f9f9f9;}
