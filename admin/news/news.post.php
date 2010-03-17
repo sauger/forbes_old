@@ -59,6 +59,7 @@
 	$table_change += array('</p>'=>'');
 	$news->title = strtr($news->title,$table_change);
 	$news->short_title = strtr($news->short_title,$table_change);	
+	$news->news_type= 1;
 	if($news_id == ''){
 		//insert news
 		$news->created_at = date("Y-m-d H:i:s");

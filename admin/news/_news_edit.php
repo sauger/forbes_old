@@ -140,10 +140,10 @@
 			</td>
 		</tr>
 		<tr id=newsshow1  class="normal_news tr4">
-			<td  height=100>相关信息</td><td><?php show_fckeditor('news[top_info]','Admin',false,"60",$news->top_info);?></td>
+			<td  height=100>相关信息</td><td><?php show_fckeditor('news[top_info]','Admin',false,"80",$news->top_info);?></td>
 		</tr>
 		<tr id=newsshow1  class="normal_news tr4">
-			<td  height=100>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"60",$news->description);?></td>
+			<td  height=100>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"80",$news->description);?></td>
 		</tr>
 		<tr id=newsshow1 class="normal_news tr4">
 			<td height=215>新闻内容</td><td><?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?></td>
