@@ -4,11 +4,18 @@
 		require 'frame.php';
 		use_jquery();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
-		var_dump($_SERVER);
 		?>
 	</head>
 	<body>
+	<?php 
+		$a = array('a','b','c');
+		$b = array('b','c','1');
+		var_dump(array_diff($a,$b));
+		var_dump(array_diff($b,$a));
+		die();
+	?>
 		<form method="post" action="test1.php">
+		
 			<div id="editor" name="editor"></div>
 			<?php show_fckeditor('title[news]')?>
 			<input type="submit" value="send"></input>		

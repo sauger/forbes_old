@@ -71,10 +71,10 @@
 		</tr>
 		<tr class=tr3>
 				<td colspan="4">
-					<button id="button_ok" style="width:150px">确定</button>
-					<button id="button_cancel" style="width:150px">取消</button>
-					<button id="cancel_all" style="width:150px">取消所有关联</button>
-					<a href="#" id="news_sort">排序</a>
+					<button id="button_ok" style="width:120px">确　　定</button>
+					<button id="button_cancel" style="width:120px">取　　消</button>
+					<button id="cancel_all" style="width:120px">取消所有关联</button>
+					<button href="#" id="news_sort" style="width:120px">排　　序</button>
 				</td>
 		</tr>		
 	</table>

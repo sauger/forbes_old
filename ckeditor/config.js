@@ -8,9 +8,13 @@ CKEDITOR.editorConfig = function( config )
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
+<<<<<<< HEAD
 
 	config.language = 'zh-cn';
 	config.toolbar = 'title';
+=======
+	 	config.toolbar = 'title';
+>>>>>>> a94873e51fd903f815bbbb5b6fa0d31d88859461
 
 	    config.toolbar_title =
 	    [
