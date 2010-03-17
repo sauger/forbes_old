@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+[]
+=======
 <<<<<<< HEAD:data/dbcache/fb_yh
 {"id":{"name":"id","type":"int(10) unsigned","short_type":"int","type_length":null,"key":"PRI","comment":"","null":"NO","default":null,"extra":null,"value":null},"name":{"name":"name","type":"varchar(45)","short_type":"varchar","type_length":null,"key":"","comment":"","null":"NO","default":"","extra":"","value":null},"email":{"name":"email","type":"varchar(45)","short_type":"varchar","type_length":null,"key":"","comment":"","null":"NO","default":"","extra":"","value":null},"password":{"name":"password","type":"varchar(45)","short_type":"varchar","type_length":null,"key":"","comment":"","null":"NO","default":"","extra":"","value":null}}
 =======
 {"id":{"name":"id","type":"int(10) unsigned","short_type":"int","type_length":null,"key":"PRI","comment":"","null":"NO","default":null,"extra":null,"value":null},"name":{"name":"name","type":"varchar(45)","short_type":"varchar","type_length":null,"key":"","comment":"","null":"NO","default":null,"extra":null,"value":null},"email":{"name":"email","type":"varchar(45)","short_type":"varchar","type_length":null,"key":"","comment":"","null":"NO","default":null,"extra":null,"value":null},"password":{"name":"password","type":"varchar(45)","short_type":"varchar","type_length":null,"key":"","comment":"","null":"NO","default":null,"extra":null,"value":null}}
 >>>>>>> 9740ea29431cb44e589c88f9eecd5a09b6b45078:data/dbcache/fb_yh
+>>>>>>> 96316f6be182cbebef708340d66dd6507ac87821
