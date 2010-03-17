@@ -1,9 +1,8 @@
-﻿#ibody{width:1000px; margin:0 auto; margin-top:20px;}
+﻿body {font-size:0px; line-height:0; font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+p {margin:0; padding:0}
+#ibody{width:1000px; margin:0 auto; margin-top:20px;}
 
 
-
-a:link{	color:#626262; text-decoration:none;}
-a:visited{color:#626262; text-decoration:none;}
 #l_t_m_r_t1 a:link{color:#246BB0; text-decoration:none;}
 #l_t_m_r_t1 a:visited{color:#246BB0; text-decoration:none;}
 #l_t_m_r_t3 a:link{color:#246BB0; text-decoration:underline;}
@@ -17,9 +16,10 @@ a:visited{color:#626262; text-decoration:none;}
 #r_m_d4_t7 a:link{color:#11579E;text-decoration:underline; }
 #r_m_d4_t7 a:visited{color:#11579E;text-decoration:underline; }
 
-
-#title{height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
-#title1{height:20px; font-size:12px; line-height:20px; margin-top:6px; margin-left:19px; float:left; display:inline;}
+#top{margin-top:15px; margin-left:10px; float:left; display:inline;}
+#title{height:27px; line-height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
+#title1{height:20px; font-size:12px; line-height:20px; color:#666666; margin-top:6px; margin-left:19px; float:left; display:inline;}
+#title1 a{margin-left:5px; color:#666666; text-decoration:none;}
 
 
 #l{width:659px; height:1410px; margin-top:8px; margin-left:8px; float:left; display:inline;}
