@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	require_once('../frame.php');
 	$id = intval($_REQUEST['id']);
 	if(!empty($id)){
@@ -81,7 +81,9 @@
 						<?php }?>
 						<div class="top_title"><img src="/images/html/news/fx.gif"><span class="top_span"><a href="">分享</a></span></div>
 						<div class="top_title"><img src="/images/html/news/dy.gif"><span class="top_span"><a href="">打印</a></span></div>
+
 						<div class="top_title"><img id="font_down" src="/images/html/news/font3.gif"><span class="top_span"><a>字体大小</a></span><img id="font_up" src="/images/html/news/font2.gif"></div>
+
 						<div style="border-right:0" class="top_title">
 							<?php if($news->pdf_src!=''){?>
 							<img src="/images/html/news/coin1.gif">
@@ -115,11 +117,11 @@
 									<a href="news_list.php?news_id=<?php echo $id?>&type=author"><img src="/images/html/news/tar1.gif"></a>
 								</div>
 								<div class=list1>
-								<ul>
+									<ul>
 									<?php for($i=0;$i<count($record);$i++){?>
 									<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 									<?php }?>
-								</ul>
+									</ul>
 								</div>
 							</div>
 							<?php
