@@ -21,14 +21,13 @@
 			<td colspan="2" width="795">　　编辑新闻</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">标题</td>
+			<td width="130">标题/短标题/wap标题</td>
 			<td width="695" align="left">
-				<?php show_fckeditor('news[title]','title',false,"40",$news->title);?>　
+				<input type="text" name="news[title]" id="news_title" value="<?php echo strip_tags($news->title);?>">
+				/ <input type="text" name="news[short_title" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
+				/ <input type="text" name="news[wap_title]" id="news_wap_title" value="<?php echo strip_tags($news->wap_title);?>"></input>
 			</td>
 		</tr>
-		<tr class=tr4>
-			<td width="130">短标题</td><td width="695" align="left"> <?php show_fckeditor('news[short_title]','title',false,"40",$news->short_title);?>　</td>
-		</tr>		
 		<tr class=tr4>
 			<td>分　类</td>
 			<td align="left" class="newsselect1" >

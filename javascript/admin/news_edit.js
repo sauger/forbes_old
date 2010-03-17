@@ -33,14 +33,12 @@ $(function(){
 			alert("请输入关键字!");
 			return false;
 		}
-		var editor = CKEDITOR.instances['news[title]'];
-		var title = editor.getData(); 
+		var title = $('#news_title').val();
 		if(title==""){
 			alert("请输入标题！");
 			return false;
 		}	
-		var editor = CKEDITOR.instances['news[short_title]'] ;
-		var short_title = remove_hmtl_tag(editor.getData());
+		var short_title = $('#news_short_title').val();
 		if(short_title==""){
 			alert("请输入短标题！");
 			return false;
