@@ -44,7 +44,11 @@ a.top_n{float:right; display:inline;text-decoration:underline;}
 #right-div2{width:300px; height:120px; font-size:12px; margin-left:25px; margin-top:20px; float:left; display:inline;}
 #right-div3{width:180px; font-size:12px; margin-top:5px; color:#9B9B9B; float:left; display:inline;}
 .dash{width:625px; height:1px; margin-top:15px; margin-left:25px; background:url("/images/html/news/dash2.gif"); float:left; display:inline;}
+<<<<<<< HEAD:css/html/news/news.css
+.dash2{width:175px; height:1px; margin-top:15px; margin-left:5px; background:url("/images/html/news/dash2.gif"); float:left; display:inline;}
+=======
 .dash2{width:175px; height:1px; margin-top:20px; margin-left:5px; background:url("/images/html/news/dash.gif"); float:left; display:inline;}
+>>>>>>> d4009668675ad066c0503391cb684da16a76907e:css/html/news/news.css
 .picture1-right{width:210px; height:88px; margin-left:10px; float:left; display:inline;}
 
 .div1-1{width:300px; height:100px; margin-top:8px; margin-left:10px; border-color:#777777; border-bottom-style:dotted; border-width:1px; float:left; display:inline;}
@@ -122,7 +126,15 @@ a.top_n{float:right; display:inline;text-decoration:underline;}
 .blue{width:138px; height:33px; margin-left:14px; background-color:#298DC8; float:left; display:inline;}
 
 #news_right{width:680px; float:left; display:inline;}
+<<<<<<< HEAD:css/html/news/news.css
+<<<<<<< HEAD:css/html/news/news.css
+.top_title{height:14px; margin-top:10px; padding-left:12px; line-height:13px; font-size:13px; padding-right:16px; border-right:#FFFFFF solid 1px; border-left:#DBE1E7 solid 1px; float:left; display:inline;}
+=======
+.top_title{height:14px; margin-top:10px; padding-left:12px; line-height:13px; font-size:12px; padding-right:16px; border-right:#FFFFFF solid 1px; border-left:#DBE1E7 solid 1px; float:left; display:inline;}
+>>>>>>> d4009668675ad066c0503391cb684da16a76907e:css/html/news/news.css
+=======
 .top_title{height:14px; margin-top:10px; padding-left:12px; line-height:14px; font-size:12px; padding-right:16px; border-right:#FFFFFF solid 1px; border-left:#DBE1E7 solid 1px; float:left; display:inline;}
+>>>>>>> 2a5410cda07947021a72c0377150c28002157b23:css/html/news/news.css
 .top_title img{marin-right:10px; float:left; display:inline;}
 .top_title a{color:#666666}
 #top_box{width:460px; height:27px; float:left; display:inline;}
@@ -131,7 +143,11 @@ a.top_n{float:right; display:inline;text-decoration:underline;}
 #l_b_top{width:185px; height:10px; background:url(/images/html/news/left_top.gif); float:left; display:inline;}
 #l_b_center{width:185px; padding-left:5px; border-left:1px dotted #CCCCCC; float:left; display:inline;}
 #l_b_bottom{width:185px; height:10px; background:url(/images/html/news/left_bottom.gif); float:left; display:inline;}
+<<<<<<< HEAD:css/html/news/news.css
+.keywords{width:164px; margin-left:5px; color:#666666; border:3px solid #C4E0F5; border-bottom:0; padding:5px; line-height:20px; float:left; display:inline;}
+=======
 .keywords{width:164px; margin-left:5px; margin-top:15px; color:#666666; border:3px solid #C4E0F5; border-bottom:0; padding:5px; line-height:20px; float:left; display:inline;}
+>>>>>>> d4009668675ad066c0503391cb684da16a76907e:css/html/news/news.css
 .keywords a{color:#666666; text-decoration:none;}
 .keywords a:hover{color:#003899; text-decoration:underline;}
 
@@ -141,5 +157,8 @@ a.top_n{float:right; display:inline;text-decoration:underline;}
 #top_info{width:500px; height:15px; margin-top:10px; color:#97ABCA; line-height:15px; font-size:14px; float:left; display:inline;}
 #resource{width:180px; height:20px; margin-left:10px; color:#666666; font-weight:bolder; font-size:14px; line-height:20px; float:left; display:inline;}
 #keyword_bottom{width:180px; height:20px; margin-left:5px; padding-top:10px; background:url(/images/html/news/keywords.gif) no-repeat; float:left; display:inline;}
+<<<<<<< HEAD:css/html/news/news.css
+=======
 #paginate{width:600px; height:25px; text-align:center; margin-top:30px; color:#666666; line-height:25px; float:left; display:inline;}
 #paginate a{color:#000; text-decoration:underline;}
+>>>>>>> d4009668675ad066c0503391cb684da16a76907e:css/html/news/news.css
