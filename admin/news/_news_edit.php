@@ -23,15 +23,9 @@
 		<tr class=tr4>
 			<td width="130">标题/短标题/wap标题</td>
 			<td width="695" align="left">
-<<<<<<< HEAD:admin/news/_news_edit.php
 				<input type="text" style="width:200px" name="news[title]" id="news_title" value="<?php echo strip_tags($news->title);?>">
 				/ <input type="text" style="width:200px"  name="news[short_title" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
 				/ <input type="text" style="width:200px"  name="news[wap_title]" id="news_wap_title" value="<?php echo strip_tags($news->wap_title);?>"></input>
-=======
-				<input type="text" name="news[title]" id="news_title" value="<?php echo strip_tags($news->title);?>">
-				/ <input type="text" name="news[short_title]" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
-				/ <input type="text" name="news[wap_title]" id="news_wap_title" value="<?php echo strip_tags($news->wap_title);?>"></input>
->>>>>>> c89a3706d19b92077358c2b91c00e394fd46bacc:admin/news/_news_edit.php
 			</td>
 		</tr>
 		<tr class=tr4>

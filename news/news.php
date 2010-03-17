@@ -84,7 +84,7 @@
 
 						<div class="top_title"><img id="font_down" src="/images/html/news/font3.gif"><span class="top_span"><a>字体大小</a></span><img id="font_up" src="/images/html/news/font2.gif"></div>
 
-						<div style="border-right:0" class="top_title">
+						<div style="border-right:0" class="top_title2">
 							<?php if($news->pdf_src!=''){?>
 							<img src="/images/html/news/coin1.gif">
 							<span class="top_span">
@@ -169,8 +169,10 @@
 								</div>
 						</div>
 					</div>
+					<?php if($news->ad_id){?>
 					<div id="roll"></div>
 					<div id="picture6"><img src="/images/html/news/picture6.jpg"></div>
+					<?php }?>
 					<div id=text3>
 						<?php echo get_fck_content($content);?>
 					</div>
