@@ -21,4 +21,4 @@ discuz/*
 *.log
 data/dbcache/*.*
 data/dbcache
-data/*
+data/**/*
