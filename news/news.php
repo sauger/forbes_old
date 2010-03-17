@@ -117,11 +117,11 @@
 									<a href="news_list.php?news_id=<?php echo $id?>&type=author"><img src="/images/html/news/tar1.gif"></a>
 								</div>
 								<div class=list1>
-								<ul>
+									<ul>
 									<?php for($i=0;$i<count($record);$i++){?>
 									<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 									<?php }?>
-								</ul>
+									</ul>
 								</div>
 							</div>
 							<?php

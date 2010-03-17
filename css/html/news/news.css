@@ -4,7 +4,7 @@ p {margin:0; padding:0}
 
 ul{list-style:none; padding:0; margin:0; margin-left:10px;}
 ul li{background:url(/images/html/news/tar3.jpg) no-repeat left center; margin-top:6px; font-size:13px; height:19px; *height:17px; text-indent:17px; line-height:19px; *padding-top:3px; list-style-position:outside;}
-.list1 ul li{width:170px; height:20px; line-height:20px; overflow:hidden; background:url(/images/html/news/tar5.gif) no-repeat left center; text-indent:10px;}
+.list1 ul li{width:170px; font-size:13px; height:19px; text-indent:10px; line-height:19px;  overflow:hidden; background:url(/images/html/news/tar5.gif) no-repeat; }
 .list2 ul li{width:280px; overflow:hidden; list-style:none; background:none;}
 ul a:link{color:#283595;}
 
@@ -115,7 +115,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 #picture5{width:454px; height:320px; margin-top:28px; margin-left:65px; background-image:url(/images/html/news/picture5.jpg); float:left; display:inline;}
 #picture6{clear:left; *margin-top:15px; margin-right:20px; float:left; display:inline;}
 
-#roll{width:1px; height:390px;  float:left; display:inline;}
+#roll{width:1px; height:200px;  float:left; display:inline;}
 
 #title1 a:link{text-decoration:none;}
 
