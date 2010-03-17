@@ -28,6 +28,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 #center-right{width:326px; height:1543px; float:left; display:inline;}
 #title{height:27px; line-height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
 #title1{height:20px; font-size:12px; line-height:20px; margin-top:6px; margin-left:19px; float:left; display:inline;}
+#title1 a{color:#666666; text-decoration:none;}
 #title2{width:638px; height:34px; margin-top:22px; font-size:12px; border-left:1px solid #D1D7DD; border-right:1px solid #D1D7DD; background:url('/images/html/news/top_background.jpg'); text-align:right; line-height:30px; float:left; display:inline;}
 #title3{width:640px; font-size:23px; color:#1E448D; font-family:宋体; margin-top:16px; margin-left:10px; float:left; display:inline;}
 #title4{width:590px; margin-top:6px; text-align:center; float:left; display:inline;}
