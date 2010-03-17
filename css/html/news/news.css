@@ -106,7 +106,7 @@ a.top_n{float:right; display:inline;text-decoration:underline;}
 #next{width:30px height:20px; font-size:14px; line-height:20px; float:left; display:inline;}
 
 
-#news_title{font-size:30px; font-weight:bolder; font-family:"黑体"; clear:both; float:left; display:inline;}
+#news_title{width:600px; font-size:30px; font-weight:bolder; font-family:"黑体"; clear:both; float:left; display:inline;}
 
 #picture1{width:75px; height:75px; background-image:url(/images/html/news/picture.jpg); background-position:center; border-style:solid; border-width:1px; border-color:#E1E1E1; background-repeat:no-repeat; float:left; display:inline;}
 #picture2{width:75px; height:75px; background-image:url(/images/html/news/picture.jpg); background-position:center; border-style:solid; border-width:1px; border-color:#E1E1E1; background-repeat:no-repeat; float:left; display:inline;}
@@ -135,7 +135,7 @@ a.top_n{float:right; display:inline;text-decoration:underline;}
 .keywords a{color:#666666; text-decoration:none;}
 .keywords a:hover{color:#003899; text-decoration:underline;}
 
-.top_span{margin-left:6px; margin-top:1px; float:left; display:inline;}
+.top_span{margin-left:6px;  float:left; display:inline;}
 #font_up{margin-left:6px; cursor:pointer;}
 #font_down{ cursor:pointer;}
 #top_info{width:500px; height:15px; margin-top:10px; color:#97ABCA; line-height:15px; font-size:14px; float:left; display:inline;}
