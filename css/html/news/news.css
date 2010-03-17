@@ -43,7 +43,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 .right-div1{width:300px; height:120px; font-size:12px; margin-left:16px; margin-top:20px; float:left; display:inline;}
 #right-div2{width:300px; height:120px; font-size:12px; margin-left:25px; margin-top:20px; float:left; display:inline;}
 #right-div3{width:180px; font-size:12px; margin-top:5px; color:#9B9B9B; float:left; display:inline;}
-.dash{width:625px; height:1px; margin-top:15px; margin-left:25px; background:url("/images/html/news/dash2.gif"); float:left; display:inline;}
+.dash{width:625px; height:1px; margin-top:15px; margin-left:25px; background:url("/images/html/news/dash2.gif") repeat-x; float:left; display:inline;}
 .dash2{width:175px; height:1px; margin-top:20px; margin-left:5px; background:url("/images/html/news/dash.gif") repeat-x; float:left; display:inline;}
 .picture1-right{width:210px; height:88px; margin-left:10px; float:left; display:inline;}
 
@@ -86,7 +86,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 #text_dash{width:580px; height:1px; background:url("/images/html/news/dash2.gif"); float:left; display:inline;}
 
 #ad{width:318px; height:265px; background-image:url(/images/html/news/ad.jpg); float:left; display:inline;}
-#line{width:1000px; height:10px; background-image:url(/images/html/news/line.jpg); float:left; display:inline;}
+#line{width:1000px; height:10px; background:url(/images/html/news/line.jpg) no-repeat; float:left; display:inline;}
 #square{width:54px; height:54px; border-style:solid; border-width:1px; border-color:#CDCCC7; background:url(/images/html/news/square.jpg) no-repeat center; float:left; display:inline;}
 #button{margin-top:5px; margin-left:7px; float:left; display:inline;}
 #button1{width:210px; margin-top:10px; float:left; display:inline;}
