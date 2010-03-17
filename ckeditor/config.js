@@ -16,6 +16,11 @@ CKEDITOR.editorConfig = function( config )
 
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
+
+	config.language = 'zh-cn';
+	config.skin='kama';
+	config.toolbarLocation = 'bottom';	
+
 	 	config.toolbar = 'title';
 
 	    config.toolbar_title =
