@@ -8,11 +8,7 @@
 	<head>
 		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 		<meta http-equiv=Content-Language content=zh-CN>
-<<<<<<< HEAD:login/login.php
 		<title>福布斯中文网后台管理</title>
-=======
-		<title>Manage : Forbeschina</title>
->>>>>>> d4009668675ad066c0503391cb684da16a76907e:login/login.php
 		<?php
 			use_jquery();
 			css_include_tag('login');
