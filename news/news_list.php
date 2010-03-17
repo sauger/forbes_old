@@ -57,7 +57,7 @@
 				?>
 				<div id=l_t_m>
 					<div id=picture>
-						<img src="<?php echo $top_news[0]->video_photo_src?>">
+						<img height="200" width="300" src="<?php echo $top_news[0]->video_photo_src?>">
 					</div>
 					<div id=l_t_m_r>
 						<div id=l_t_m_r_t1>
