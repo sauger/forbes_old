@@ -177,10 +177,13 @@
 	
 	function show_fckeditor($name,$toolbarset='Admin',$expand_toolbar=true,$height="200",$value="",$width = null) {
 		require_once(CURRENT_DIR . 'ckeditor/ckeditor_php5.php');
+		require_once(CURRENT_DIR . 'ckfinder/ckfinder.php');
 		$editor = new CKEditor(CURRENT_DIR . 'ckeditor');
 		$editor->config['toolbar'] = $toolbarset;	
 		$editor->config['toolbarStartupExpanded'] = $expand_toolbar;
 		$editor->config['height'] = $height;
+		CKFinder::SetupCKEditor($editor, '/ckfinder/');
+		
 		if($width){
 			$editor->config['width'] = $width;
 		}

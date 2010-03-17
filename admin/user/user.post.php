@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 		<meta http-equiv=Content-Language content=zh-CN>
-		<title>迅傲信息</title>
+		<title>福布斯中文网</title>
 		<?php 
 			include("../../frame.php"); 
 		?>
