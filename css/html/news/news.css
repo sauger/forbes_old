@@ -4,7 +4,7 @@ p {margin:0; padding:0}
 
 ul{list-style:none; padding:0; margin:0; margin-left:10px;}
 ul li{background:url(/images/html/news/tar3.jpg) no-repeat left center; margin-top:6px; font-size:13px; height:19px; *height:17px; text-indent:17px; line-height:19px; *padding-top:3px; list-style-position:outside;}
-.list1 ul li{width:170px; font-size:13px; height:19px; text-indent:10px; line-height:19px;  overflow:hidden; background:url(/images/html/news/tar5.gif) no-repeat; }
+.list1 ul li{width:170px; font-size:13px; height:19px; text-indent:10px; line-height:19px; *line-height:15px; overflow:hidden; background:url(/images/html/news/tar5.gif) no-repeat; }
 .list2 ul li{width:280px; overflow:hidden; list-style:none; background:none;}
 ul a:link{color:#283595;}
 
@@ -67,9 +67,9 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 .left-title7{width:317px; height:30px; font-size:14px; font-weight:bold; color:#999999; text-align:left; line-height:30px; text-indent:1em; background-image:url(/images/html/news/border8.jpg); float:left; display:inline;}
 #right-title1{width:152px; height:30px; font-size:14px; font-weight:bold; color:#666666; line-height:30px; text-indent:1em; float:left; display:inline;}
 #right-title2{width:197px; height:30px; font-size:14px; font-weight:bold; color:#666666; line-height:30px; text-indent:1em; float:left; display:inline;}
-#right-title3{width:105px; height:25px; margin-left:8px; font-size:12px; font-weight:bold; color:#666666; line-height:30px; float:left; display:inline;}
+#right-title3{width:105px; height:25px; margin-left:8px; font-size:12px; font-weight:bold; color:#66630px; float:left; display:inline;}
 
-#t1{width:70px; font-size:12px; text-align:left; margin-left:220px; float:left; display:inline;}
+#t1{width:70px; font-size:12px; text-align:left; margin-left:220px; float:left; display:inline;}666; line-height:
 #t2{width:70px; font-size:12px; float:left; display:inline;}
 
 #news_text{width:630px; margin-left:13px; margin-top:20px; float:left; display:inline;}
