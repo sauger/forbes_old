@@ -90,4 +90,11 @@ $(function(){
 			$("#checkbox1").attr('checked',false);
 		}
 	});
+	
+	$("#province").change(function(){
+		$.post("show_city.php",{'id':$(this).val()},function(data){
+			$("#city").html(data);
+		})
+	});
+	
 });

@@ -1,0 +1,52 @@
+﻿body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+
+#ibody{width:1000px; margin:0 auto;}
+#cyindex{width:72px; height:19px; cursor:pointer; background-image:url(/images/whyl/whyl.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/whyl/whyl.png"); margin-top:10px; float:left; display:inline;}
+#cytitle{width:494px; height:16px; margin-top:13px; margin-left:20px; line-height:16px; float:left; display:inline;}
+#cytitle a{color:#246bb0; text-decoration:none;}
+#cyline{width:1000px; height:8px; margin-top:10px; background:url('/images/tyzl/tyzl_line.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#zzleft{width:660px; float:left; display:inline;}
+#zzleft .l_t_top{width:660px; height:2px; margin-top:10px; background:url('/images/zz/left_top.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#zzleft .l_t_bottom{width:660px; height:3px; background:url('/images/zz/left_bottom.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#zzleft #l_t_content{width:658px; height:575px; border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf; float:left; display:inline;}
+#zzleft .l_title{width:658px; height:27px; background:url('/images/zz/title_bg.jpg') repeat-x; border-bottom:1px solid #dfdfdf; float:left; display:inline;}
+#zzleft .l_title .wz{width:191px; height:18px; margin-top:4px; margin-left:20px; font-size:14px; color:#999999; font-weight:bold; line-height:18px; float:left; display:inline;}
+#zzleft .l_pic{width:349px; height:451px; margin-top:20px; margin-left:25px; float:left; display:inline;}
+#zzleft .l_pic img{width:349px; height:451px; margin:1px;}
+#zzleft #r_t{width:229px; margin-left:30px; float:left; display:inline;}
+#zzleft #r_t #title{width:229px; height:22px; margin-top:20px; line-height:22px; font-size:18px; font-weight:bold; float:left; display:inline;}
+#zzleft #r_t #title a{color:#246bb0; text-decoration:none;}
+#zzleft #r_t #content{width:229px; height:42px; margin-top:10px; line-height:21px; font-size:13px; font-weight:bold; float:left; display:inline;}
+#zzleft #r_t #content a{color:#666666; text-decoration:none;}
+#zzleft .r_b{width:229px; margin-top:10px; margin-left:30px; float:left; display:inline;}
+#zzleft .r_b .title{width:229px; height:18px; margin-top:10px; overflow:hidden;  float:left; display:inline;}
+#zzleft .r_b .title .jt{width:12px; height:11px; margin-top:3px; background:url('/images/zz/jiantou.jpg') no-repeat; float:left; display:inline;}
+#zzleft .r_b .title .wz{width:210px; height:18px; font-size:14px; font-weight:bold; line-height:18px; float:right; display:inline;}
+#zzleft .r_b .title .wz a{color:#246bb0; text-decoration:none;}
+#zzleft .r_b .content{width:229px; height:63px; margin-top:10px; line-height:21px; float:left; display:inline;}
+#zzleft .r_b .content a{color:#666666; text-decoration:none;}
+#zzleft .r_b .r_b_dash{width:214px; height:1px; margin-top:10px; margin-left:2px; background:url('/images/zz/dash.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#zzleft .l_b{width:349px; height:34px; margin-top:15px; margin-left:25px; float:left; display:inline;}
+#zzleft .l_b .btn_ck{width:146px; height:34px; background:url('/images/zz/btn_ck.jpg') no-repeat; float:left; display:inline;}
+#zzleft .l_b .btn_readonline{width:146px; height:34px; background:url('/images/zz/btn_readonline.jpg') no-repeat; float:right; display:inline;}
+#zzleft #l_b_content{width:658px; height:659px;  border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf; float:left; display:inline;}
+#zzleft #l_b_content .imgandtitle{width:134px; height:275px; margin-top:25px; margin-left:25px; float:left; display:inline;}
+#zzleft #l_b_content .pic{width:134px; height:173px; float:left; display:inline;}
+#zzleft #l_b_content .pic img{width:134px; height:173px;}
+#zzleft #l_b_content .pictitle{width:134px; height:20px; margin-top:5px; margin-bottom:5px; font-size:14px; line-height:20px; float:left; display:inline;}
+#zzleft #l_b_content .pictitle a{color:#246bb0; text-decoration:none;}
+#zzleft #l_b_content .piccontent{width:134px; height:20px; margin-top:5px; line-height:20px; overflow:hidden; float:left; display:inline;}
+#zzleft #l_b_content .piccontent a{color:#666666; text-decoration:none;}
+#right{width:322px; margin-top:10px; float:right; display:inline;}
+#right .r_b_b_t{width:322px; height:2px; margin-top:10px; background:url('/images/zz/r_top.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#right #r_b_b_m{width:320px; height:132px; border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf; float:left; display:inline;}
+#right .r_b_title{width:310px; height:24px; padding-top:6px; padding-left:10px; background:url('/images/right/right_b_title_bg.jpg') repeat-x; font-size:14px; line-height:18px; color:#999999; font-weight:bold; float:left; display:inline;}
+#right #r_b_b_m #b_b{width:294px; height:20px; margin-top:10px; margin-left:10px; font-weight:bold; font-size:14px; line-height:20px; float:left; display:inline;}
+#right #r_b_b_m #b_b select{width:86px; height:20px;}
+#right #r_b_b_m #b_b .btn1{width:132px; height:32px; margin-top:20px; border:0px; cursor:pointer; background:url('/images/zz/sqzy.jpg') no-repeat; float:left; display:inline;}
+#right #r_b_b_m #b_b .btn2{width:60px; height:28px; margin-top:24px; border:0px; cursor:pointer; background:url('/images/zz/btn_bg.jpg') no-repeat; line-height:28px; float:right; display:inline;}
+#right .r_b_b_b{width:322px; height:3px; background:url('/images/zz/r_bottom.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#right #r_b_b{width:320px; height:805px; border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf; overflow:hidden; float:left; display:inline;}
+#right #r_b_b .content{width:290px; height:63px; margin-top:10px; margin-left:15px; line-height:21px; overflow:hidden; float:left; display:inline;}
+#right #r_b_b .content a{color:#246bb0; text-decoration:none;}
+#right #r_b_b .dash{width:295px; height:1px; margin-top:15px; margin-bottom:5px; margin-left:12px; background:url('/images/zz/right_dash.jpg') no-repeat; overflow:hidden; float:left; display:inline;}

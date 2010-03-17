@@ -1,5 +1,5 @@
 ﻿<div id=right>
-			<a href=""><img border=0 width=317 height=265 src="/images/right/one.jpg"></a>
+			<a style="margin:0px; float:right; display:inline;" href=""><img border=0 width=317 height=265 src="/images/right/one.jpg"></a>
 			<div id=r_title>
 				<div class=title1>最受欢迎</div><div class=title2>编辑推荐</div>
 			</div>

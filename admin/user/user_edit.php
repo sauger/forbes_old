@@ -13,7 +13,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>迅傲信息</title>
+	<title>福布斯中文网-用户管理</title>
 	<?
 		css_include_tag('admin');
 	?>
@@ -53,7 +53,7 @@
 			<td colspan="2"><button type="submit">提 交</button></td>
 		</tr>
 		<input type="hidden" name="id" value="<?php echo $id;?>">
-		<input type="hidden" name="post[role_level]" id="role_level" value="2">
+		<input type="hidden" name="post[role_level]" id="role_level" value="<?php echo $user->role_level;?>">
 	</form>
 	</table>
 </body>

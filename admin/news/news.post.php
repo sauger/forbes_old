@@ -1,13 +1,12 @@
 <?php 
 	require "../../frame.php";
 	$news_id = $_POST['id'] ? $_POST['id'] : 0;
-	//var_dump($_POST);
-	//exit;
 	$news = new table_class($tb_news);
 	if($news_id!=0){
 		$news->find($news_id);
 	}
-	
+	$old_pdf_src = $news->pdf_src;
+	$old_video_photo_src = $news->video_photo_src;
 	$news->update_attributes($_POST['news'],false);
 	$news->is_adopt = 1;
 	#var_dump($news);	
@@ -36,28 +35,31 @@
 		$news->priority = 100;
 	}
 	
-	if($_FILES['video_src']['name'] != ''){
+	if($_FILES['pdf_src']['name'] != ''){
 		$upload = new upload_file_class();
-		$upload->save_dir = '/upload/video/';
-		$upload_name = $upload->handle('video_src','filter_video');
-		$news->video_src = '/upload/video/' .$upload_name;		
-		$news->video_flag = 1;		
+		$upload->save_dir = '/upload/news/';
+		if(!$upload_name = $upload->handle('pdf_src','filter_pdf')){
+			alert('上传PDF失败！');
+			redirect($_SERVER['HTTP_REFERER']);
+			die();
+		};		
+		$news->pdf_src = '/upload/news/' .$upload_name;		
 	}
-	if($_FILES['video_pic']['name'] != ''){
+	if($_FILES['news_pic']['name'] != ''){
 		$upload = new upload_file_class();
-		$upload->save_dir = '/upload/video/';
-		$news->video_photo_src = '/upload/video/' .$upload->handle('video_pic','filter_pic');
+		$upload->save_dir = '/upload/news/';
+		$news->video_photo_src = '/upload/news/' .$upload->handle('news_pic','filter_pic');
 	}
-	
-	if($_FILES['file_name']['name'] != ''){
+	if($_FILES['author_image']['name'] != ''){
 		$upload = new upload_file_class();
-		$upload->save_dir = '/upload/file/';
-		$upload_name = $upload->handle('file_name');
-		$news->file_name = '/upload/file/' .$upload_name;	
+		$upload->save_dir = '/upload/news/';
+		$news->author_image = '/upload/news/' .$upload->handle('author_image','filter_pic');
 	}
 	$table_change = array('<p>'=>'');
 	$table_change += array('</p>'=>'');
-		
+	$news->title = strtr($news->title,$table_change);
+	$news->short_title = strtr($news->short_title,$table_change);	
+	$news->news_type= 1;
 	if($news_id == ''){
 		//insert news
 		$news->created_at = date("Y-m-d H:i:s");
@@ -70,6 +72,13 @@
 		//update news
 		$news->last_edited_at = date("Y-m-d H:i:s");
 		$news->save();
+		if($old_pdf_src && $old_pdf_src != $news->pdf_src){
+			unlink(ROOT_DIR .$old_pdf_src);
+		}
+		
+		if($old_video_photo_src && $old_video_photo_src != $news->video_photo_src){
+			unlink(ROOT_DIR .$old_video_photo_src);
+		}
 		//if it has english new, should update the english news's category_id, news_type and so on.
 		$db = get_db();
 		$db->query("select english_news_id from fb_news_relationship where chinese_news_id={$news->id}");
@@ -82,6 +91,12 @@
 			$english_news->news_type = $news->news_type;
 			$english_news->save();
 		}
+	}
+	
+	if($_POST['copy_news']){
+		$news->id = 0;
+		$news->category_id = intval($_POST['copy_news']);
+		$news->save();
 	}
 	
 	redirect('news_list.php?category='.$_POST['news']['category_id']);

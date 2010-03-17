@@ -1,7 +1,7 @@
 <?php
 	require_once('../../frame.php');
 	judge_role();
-	$id=$_REQUEST['id'];	
+	$id=intval($_REQUEST['id']);	
 	$menu1 = new table_class($tb_menu);
 	if($id)	{
 		$menu = $menu1->find($id);
@@ -18,6 +18,8 @@
 			$menu->role_level = $parent_menu->role_level;
 		}
 	}
+	$db = get_db();
+	$roles = $db->query('select * from fb_role');
 		
 ?>
 

@@ -12,10 +12,6 @@
 		$record->find($fh_id);
 	}
 	$record->update_attributes($_POST['fh'],false);
-	if ($record->birthday == '')
-	{
-		$record->birthday='0000-00-00';
-	}
 	if($_FILES['photo']['name']!=null){
 		$upload = new upload_file_class();
 		$upload->save_dir = "/upload/rich_images/";
