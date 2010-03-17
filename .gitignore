@@ -20,3 +20,5 @@ config/config.php
 discuz/*
 *.log
 data/dbcache/*.*
+data/dbcache
+data/*

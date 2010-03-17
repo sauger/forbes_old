@@ -2,6 +2,9 @@
 	require_once('../../frame.php');
 	$selected_news = ($_REQUEST['selected_news']);
 	$selected_news_a = explode(',',$selected_news);
+	if(!$selected_news){
+		$selected_news = 0;
+	}
 	$category = new category_class('news');
 	?>
 	<style type="text/css">
