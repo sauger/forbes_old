@@ -1,5 +1,5 @@
 body{font-size:12px;}
-#banner{width:780px; height:92px; border:1px solid #cccccc; margin-top:25px; float:left; display:inline;}
+#banner{width:780px; height:92px; border:1px solid #cccccc; margin-top:8px; float:left; display:inline;}
 #banner img{width:778px; height:90px; margin:1px;}
 .tm2008style{margin-top:36px; margin-left:73px; float:left; display:inline;}
 .tm2008style .select_box{width:102px; height:28px; float:left; display:inline;}
@@ -13,7 +13,7 @@ body{font-size:12px;}
 
 .tm2008style ul.tag_options li.open_hover{background:transparent url("/images/index/tm2008-select.gif") no-repeat 0 -113px;color:#000}
 .tm2008style ul.tag_options li.open_selected{background:transparent url("/images/index/tm2008-select.gif") no-repeat 0 -84px;color:#19555F}
-#top_login{width:215px; height:187px; margin-top:25px; background:url('/images/index/top_right_bg.jpg') repeat-x; float:right; display:inline;}
+#top_login{width:215px; height:187px; margin-top:8px; background:url('/images/index/top_right_bg.jpg') repeat-x; float:right; display:inline;}
 #top_login .login_title{width:213px; height:22px; margin-top:1px; margin-left:1px; line-height:22px; background:url('/images/index/top_login_bg.jpg') repeat-x; float:left; display:inline;}
 #top_login .login_title a{margin-left:10px; color:#ffffff; text-decoration:none;}
 #top_login #jieshao_title{width:213px; height:22px; margin-left:1px; background:url('/images/index/t_r_login_bg.gif') no-repeat; float:left; display:inline;}

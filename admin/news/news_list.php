@@ -57,7 +57,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="345">短标题</td><td width="110">所属类别</td><td width="130">发布时间</td><td width="210">操作</td>
+			<td width="405">标题</td><td width="110">所属类别</td><td width="130">发布时间</td><td width="150">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -75,17 +75,17 @@
 					</td>
 					<td>
 						<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>"  title="编辑"><img src="/images/btn_delete.png" border="0"></span>
+						<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="编辑"><img src="/images/btn_delete.png" border="0"></span>
 						
 						<?php if($record[$i]->is_adopt=="1"){?>
-						<span style="color:#FF0000;cursor:pointer" class="revocation" name="<?php echo $record[$i]->id;?>">撤消</span>
+						<span style="cursor:pointer" class="revocation" name="<?php echo $record[$i]->id;?>" title="撤销"><img src="/images/btn_apply.png" border="0"></span>
 						<?php }?>
 						<?php if($record[$i]->is_adopt=="0"){?>
-						<span style="color:#0000FF;cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>">发布</span>
+						<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="发布"><img src="/images/btn_unapply.png" border="0"></span>
 						<?php }?>
 						
 						
-						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news">评论管理</a>
+						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/btn_comment.png" border="0"></a>
 						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
 					</td>
 				</tr>
