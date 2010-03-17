@@ -1,4 +1,4 @@
-﻿body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+﻿body {font-size:0px; line-height:0; font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
 p {margin:0; padding:0}
 #ibody{width:1000px; margin:0 auto;}
 
@@ -30,7 +30,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 #news_content{width:1000px; margin-left:10px;  float:left; display:inline;}
 #center-left{width:668px; float:left; display:inline;}
 #center-right{width:326px; height:1543px; float:left; display:inline;}
-#title{height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
+#title{height:27px; line-height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
 #title1{height:20px; font-size:12px; line-height:20px; margin-top:6px; margin-left:19px; float:left; display:inline;}
 #title2{width:638px; height:34px; margin-top:22px; font-size:12px; border-left:1px solid #D1D7DD; border-right:1px solid #D1D7DD; background:url('/images/html/news/top_background.jpg'); text-align:right; line-height:30px; float:left; display:inline;}
 #title3{width:640px; font-size:23px; color:#1E448D; font-family:宋体; margin-top:16px; margin-left:10px; float:left; display:inline;}
@@ -106,7 +106,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 #next{width:30px height:20px; font-size:14px; line-height:20px; float:left; display:inline;}
 
 
-#news_title{width:600px; margin-top:20px; font-size:30px; font-weight:bolder; font-family:"黑体"; clear:both; float:left; display:inline;}
+#news_title{width:600px; margin-top:20px; font-size:30px; line-height:30px; font-weight:bolder; font-family:"黑体"; clear:both; float:left; display:inline;}
 
 #picture1{width:75px; height:75px; background-image:url(/images/html/news/picture.jpg); background-position:center; border-style:solid; border-width:1px; border-color:#E1E1E1; background-repeat:no-repeat; float:left; display:inline;}
 #picture2{width:75px; height:75px; background-image:url(/images/html/news/picture.jpg); background-position:center; border-style:solid; border-width:1px; border-color:#E1E1E1; background-repeat:no-repeat; float:left; display:inline;}
