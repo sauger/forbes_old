@@ -86,14 +86,14 @@
 
 						<div style="border-right:0" class="top_title">
 							<?php if($news->pdf_src){?>
+							<span class="top_span">
 							<img src="/images/html/news/coin1.gif">
+							<span>
 							<span class="top_span">
 							<a target="_blank" href="<?php echo $news->pdf_src;?>" class="top_n">下载PDF格式</a>
 							</span>
 							<?php }?>
-
-							<img style="margin-left:20px;" src="/images/html/news/coin2.gif"><span class="top_span"><a href="<?php echo $news->id;?>" class="top_n" id="a_collect">加入收藏</a></span>
-
+							<span class="top_span"><img style="margin-left:20px;" src="/images/html/news/coin2.gif"></span><span class="top_span"><a href="<?php echo $news->id;?>" class="top_n" id="a_collect">加入收藏</a></span>
 						</div>
 					</div>
 				</div>
