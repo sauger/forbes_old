@@ -28,7 +28,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>迅傲信息</title>
+	<title>发布新闻</title>
 	<?php
 		css_include_tag('admin');
 		use_jquery();
@@ -41,8 +41,8 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="5">
-				<a style="margin-left:20px" href="news_edit.php" id="add_news">发布新闻</a>
+			<td colspan="5">　
+				<a href="news_edit.php" id="add_news">发布新闻</a>
 				<input style="margin-left:20px" class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
 				<span id="span_category"></span><select id=adopt name="adopt" style="width:90px" class="sau_search">
 					<option value="">发布状况</option>
