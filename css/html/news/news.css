@@ -44,7 +44,7 @@ a.top_n{float:right; display:inline;text-decoration:underline;}
 #right-div2{width:300px; height:120px; font-size:12px; margin-left:25px; margin-top:20px; float:left; display:inline;}
 #right-div3{width:180px; font-size:12px; margin-top:5px; color:#9B9B9B; float:left; display:inline;}
 .dash{width:625px; height:1px; margin-top:15px; margin-left:25px; background:url("/images/html/news/dash2.gif"); float:left; display:inline;}
-.dash2{width:175px; height:1px; margin-top:20px; margin-left:5px; background:url("/images/html/news/dash.gif"); float:left; display:inline;}
+.dash2{width:175px; height:1px; margin-top:20px; margin-left:5px; background:url("/images/html/news/dash.gif") repeat-x; float:left; display:inline;}
 .picture1-right{width:210px; height:88px; margin-left:10px; float:left; display:inline;}
 
 .div1-1{width:300px; height:100px; margin-top:8px; margin-left:10px; border-color:#777777; border-bottom-style:dotted; border-width:1px; float:left; display:inline;}
