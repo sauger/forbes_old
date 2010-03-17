@@ -133,4 +133,117 @@ function show_video_player($width,$height,$image='',$file,$autostart = "false")
 			<?php
 			}
 	}
+	
+function strfck($str)
+{
+	$str=str_replace('\"','"',$str);
+	$str=str_replace('"font-size','"mso-bidi-font-size',$str);
+	$str=str_replace('FONT-SIZE','mso-bidi-font-size',$str);
+	return $str;
+}
+
+//获取FCK字符串内容
+function get_fck_content($str,$symbol='fck_pageindex')
+{
+	$ies = '<div style="page-break-after: always;">
+	<span style="display: none;">&nbsp;</span></div>';	
+	$ffs = '<div style="page-break-after: always;">
+	<span style="display: none;">&nbsp;</span></div>';		   	
+	$contents = split($ies,$str);
+	echo count($contents);
+	$record_count_token = $symbol . "_record_count";	
+	$pagecounttoken = $symbol . "_count";
+	global $$pagecounttoken;
+	global $$record_count_token;
+	if (count($contents) < 2 ) {
+		$contents = split($ffs,$str);
+		echo count($contents);
+	}
+	$$record_count_token = count($contents);
+	$$pagecounttoken = $$record_count_token;
+	$index = isset($_REQUEST[$symbol]) ? $_REQUEST[$symbol] : 1;
+	return strfck($contents[$index-1]);
+}
+
+function print_fck_pages($str,$url="",$symbol='fck_pageindex'){
+	paginate($url,null,$symbol);
+};
+
+function print_fck_pages1($str,$url="",$symbol='fck_pageindex')
+{
+	$ies = '<div style="page-break-after: always;"><span style="display: none;">&nbsp;</span>';	
+	$ffs = '<div style="page-break-after: always;"><span style="display: none;">&nbsp;</span></div>';
+	$pagecount = substr_count($str,$ies);
+	$pagecount = $pagecount <=0 ? substr_count($str,$ffs) : $pagecount;
+	$pagecount++;
+	$pageindex = isset($_REQUEST[$symbol]) ? $_REQUEST[$symbol] : 1;
+	
+	if ($pagecount <= 1) return;
+	if ($url == "") {
+		parse_str($_SERVER['QUERY_STRING'], $urlparams);
+		$params = array();
+		foreach ($urlparams as $k => $v) {
+			if ($k == $symbol || $k == $pagecounttoken) {
+				continue;				
+			}
+			$params[$k] = $v;
+		}
+		$url = $_SERVER['PHP_SELF'] ."?";
+		foreach ($params as $k => $v) {
+			$url .= "&" .$k . "=" . $v;
+		}
+	}	
+	if (!strpos($url,'?'))
+	{
+		$url .= '?';
+	}
+	$symbol = "&" .$symbol ."=";
+	$pagefirst = $url .$symbol ."1";
+	$pagenext = $url .$symbol .($pageindex + 1);
+	$pageprev = $url .$symbol .($pageindex-1);
+	$pagelast = $url .$symbol .($pagecount);
+	if ($pageindex == 1 || $pageindex ==null || $pageindex == "")
+	{ ?>
+	  <span><a href="<?php echo $pagenext; ?>">[下页]</a></span> 
+	  <span><a href="<?php echo $pagelast; ?>">[尾页]</a></span>
+	<?php	
+	}
+	if ($pageindex < $pagecount && $pageindex > 1 )
+	{?>
+	  <span><a href="<?php echo $pagefirst; ?>">[首页]</a></span> 
+	  <span><a href="<?php echo $pageprev; ?>">[上页]</a></span>			
+	  <span><a href="<?php echo $pagenext; ?>">[下页]</a></span> 
+	  <span><a href="<?php echo $pagelast; ?>">[尾页]</a></span>		
+	 <?php
+	}
+	if ($pageindex == $pagecount)
+	{?>
+	  <span><a href="<?php echo $pagefirst; ?>">[首页]</a></span> 
+	  <span><a href="<?php echo $pageprev; ?>">[上页]</a></span>		
+	<?php	
+	}
+	?>
+  当前第<select name="pageselect" id="pageselect" onChange="jumppage('<?php echo $url.$symbol; ?>',this.options[this.options.selectedIndex].value);">
+	<?php	
+	//产生所有页面链接
+	for($i=1;$i<=$pagecount;$i++)
+	{  
+		
+		?>
+		<option <?php if($pageindex== $i) echo 'selected="selected"';?> value="<?php echo $i;?>"><?php echo $i;?></option>
+	 <?php	
+	}
+	?>
+	</select>页
+	<script>
+			function jumppage(urlprex,pageindex)
+			{
+				var surl=urlprex+pageindex;
+				window.location.href=surl;
+			} 
+	</script>
+
+	<?php	
+	
+}
 ?>
