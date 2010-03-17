@@ -75,7 +75,7 @@ a.top_n{float:right; display:inline;text-decoration:underline;}
 #news_text{width:630px; margin-left:10px; float:left; display:inline;}
 #text1{width:580px; height:66px; font-size:23px; color:#1E448D; text-align:center; font-family:宋体; margin-top:18px; float:left; display:inline;}
 #text2{width:464px; height:50px; font-size:12px; color:#626262; text-align:left; margin-left:16px; float:left; display:inline; }
-#text3{width:620px; font-size:13px; line-height:30px;}
+#text3{width:620px; font-size:13px; display:inline; line-height:30px;}
 #text3-1{width:580px; height:50px; font-size:12px; font-weight:bold; line-height:25px; float:left; display:inline; }
 .text3-2{width:580px; height:50px; margin-top:17px; font-size:12px; text-indent:2em; float:left; display:inline; }
 .text3-3{width:250px; margin-top:28px; margin-left:18px; font-size:12px; text-indent:2em; float:left; display:inline; }
