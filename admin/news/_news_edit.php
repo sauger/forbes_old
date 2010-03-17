@@ -23,9 +23,15 @@
 		<tr class=tr4>
 			<td width="130">标题/短标题/wap标题</td>
 			<td width="695" align="left">
+<<<<<<< HEAD:admin/news/_news_edit.php
+				<input type="text" style="width:200px" name="news[title]" id="news_title" value="<?php echo strip_tags($news->title);?>">
+				/ <input type="text" style="width:200px"  name="news[short_title" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
+				/ <input type="text" style="width:200px"  name="news[wap_title]" id="news_wap_title" value="<?php echo strip_tags($news->wap_title);?>"></input>
+=======
 				<input type="text" name="news[title]" id="news_title" value="<?php echo strip_tags($news->title);?>">
 				/ <input type="text" name="news[short_title]" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
 				/ <input type="text" name="news[wap_title]" id="news_wap_title" value="<?php echo strip_tags($news->wap_title);?>"></input>
+>>>>>>> c89a3706d19b92077358c2b91c00e394fd46bacc:admin/news/_news_edit.php
 			</td>
 		</tr>
 		<tr class=tr4>
@@ -46,13 +52,13 @@
 		<tr class=tr4>
 			<td>作　者</td>
 			<td align="left" class="newsselect1" >
-				<input style="width:100px" type="text" name="news[author]" value="<?php echo ($news->author ? $news->author : $_SESSION['admin_nick_name']);?>"></input>
+				<input style="width:200px" type="text" name="news[author]" value="<?php echo ($news->author ? $news->author : $_SESSION['admin_nick_name']);?>"></input>
 				<select name="news[author_type]">
 					<option value="1" <?php if($news->author_type == 1) echo " selected='selected'"?>>特约记者</option>
 					<option value="2" <?php if($news->author_type == 2) echo " selected='selected'"?>>专栏作者</option>
 					<option value="3" <?php if($news->author_type == 3) echo " selected='selected'"?>>其他作者</option>
 				</select>
-				<b>头像：</b><input type="file" name="author_image">
+				头像:<input type="file" name="author_image">
 				<?php if($news->author_image){?>
 				<a href="<?php echo $news->author_image;?>" target="_blank">查看</a>
 				<?php }?>
@@ -62,8 +68,8 @@
 		<tr class=tr4>
 			<td>关键词/优先级</td>
 			<td align="left">
-				<input type="text" size="20" name=news[keywords]  id="news_keywords"  value="<?php echo $news->keywords;?>">(空格分隔)　　/　　
-				<input type="text" size="10" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)
+				<input type="text" style="width:200px" name=news[keywords]  id="news_keywords"  value="<?php echo $news->keywords;?>">(空格分隔) / 
+				<input type="text" style="width:200px" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)
 			</td>
 		</tr>
 		<tr class=tr4>
@@ -119,10 +125,10 @@
 			</td>
 		</tr>
 		<tr id=newsshow1  class="normal_news tr4">
-			<td  height=100>相关信息</td><td><?php show_fckeditor('news[top_info]','Admin',false,"100",$news->top_info);?></td>
+			<td  height=100>相关信息</td><td><?php show_fckeditor('news[top_info]','Admin',false,"60",$news->top_info);?></td>
 		</tr>
 		<tr id=newsshow1  class="normal_news tr4">
-			<td  height=100>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"100",$news->description);?></td>
+			<td  height=100>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"60",$news->description);?></td>
 		</tr>
 		<tr id=newsshow1 class="normal_news tr4">
 			<td height=215>新闻内容</td><td><?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?></td>
