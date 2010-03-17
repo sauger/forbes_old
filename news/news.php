@@ -81,7 +81,7 @@
 						<?php }?>
 						<div class="top_title"><img src="/images/html/news/fx.gif"><span class="top_span"><a href="">分享</a></span></div>
 						<div class="top_title"><img src="/images/html/news/dy.gif"><span class="top_span"><a href="">打印</a></span></div>
-						<div class="top_title"><img id="font_down" src="/images/html/news/font1.gif"><span class="top_span"><a href="">字体大小</a></span><img id="font_up" src="/images/html/news/font2.gif"></div>
+						<div class="top_title"><img id="font_down" src="/images/html/news/font3.gif"><span class="top_span"><a>字体大小</a></span><img id="font_up" src="/images/html/news/font2.gif"></div>
 						<div style="border-right:0" class="top_title">
 							<?php if($news->pdf_src){?>
 							<img src="/images/html/news/coin1.gif">
@@ -89,7 +89,7 @@
 							<a target="_blank" href="<?php echo $news->pdf_src;?>" class="top_n">下载PDF格式</a>
 							</span>
 							<?php }?>
-							<img style="margin-left:10px;" src="/images/html/news/coin2.gif"><span class="top_span"><a href="<?php echo $news->id;?>" class="top_n" id="a_collect">加入收藏</a></span>
+							<img style="margin-left:20px;" src="/images/html/news/coin2.gif"><span class="top_span"><a href="<?php echo $news->id;?>" class="top_n" id="a_collect">加入收藏</a></span>
 						</div>
 					</div>
 				</div>
@@ -170,8 +170,9 @@
 					<div id="roll"></div>
 					<div id="picture6"><img src="/images/html/news/picture6.jpg"></div>
 					<div id=text3>
-						<?php echo $content;?>
+						<?php echo get_fck_content($content);?>
 					</div>
+					<div id="paginate"><?php print_fck_pages($content);?></div>
 				</div>
 				<div class="dash"></div>
 		  	</div>
