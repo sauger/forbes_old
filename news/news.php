@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	require_once('../frame.php');
 	$id = intval($_REQUEST['id']);
 	if(!empty($id)){
@@ -81,7 +81,9 @@
 						<?php }?>
 						<div class="top_title"><img src="/images/html/news/fx.gif"><span class="top_span"><a href="">分享</a></span></div>
 						<div class="top_title"><img src="/images/html/news/dy.gif"><span class="top_span"><a href="">打印</a></span></div>
+
 						<div class="top_title"><img id="font_down" src="/images/html/news/font3.gif"><span class="top_span"><a>字体大小</a></span><img id="font_up" src="/images/html/news/font2.gif"></div>
+
 						<div style="border-right:0" class="top_title">
 							<?php if($news->pdf_src!=''){?>
 							<img src="/images/html/news/coin1.gif">
