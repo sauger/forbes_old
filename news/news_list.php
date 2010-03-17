@@ -5,6 +5,7 @@
 		redirect('error.html');
 		die();
 	}
+	$db = get_db();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -50,138 +51,60 @@
 						文化娱乐
 					</div>
 				</div>
+				<?php
+					$top_news = $db->query("select * from fb_news where category_id={$cid} and video_photo_src!='' order by priority asc,created_at desc limit 1");
+					if($db->record_count==1&&(empty($_REQUEST['page'])||($_REQUEST['page']==1))){
+				?>
 				<div id=l_t_m>
 					<div id=picture>
+						<img src="<?php echo $top_news[0]->video_photo_src?>">
 					</div>
 					<div id=l_t_m_r>
 						<div id=l_t_m_r_t1>
-							<a href="">李宁公司网络营销渠道建设案例分析</a>
+							<a href="news.php?id=<?php echo $top_news[0]->id;?>"><?php echo $top_news[0]->title;?></a>
 						</div>
 						<div id=l_t_m_r_t2>
-							1990年，李宁有限公司从广东三水起步。1995年，李宁公司成为中国体育用品行业的领跑者。1998年，公司建立了本土公司第一家服装与鞋的产品设计开发中心，成为自主开发的中国体育用品公司。
+							<?php echo $top_news[0]->description;?>
 						</div>
 						<div id=l_t_m_r_t3>
-							<a href="">详细>></a>
+							<a href="news.php?id=<?php echo $top_news[0]->id;?>">详细>></a>
 						</div>
 					</div>
 					<div id=l_t_b>
-						《福布斯》  记者：小妹   发布与：2010-1-25
+						《福布斯》　记者：<?php echo $top_news[0]->author;?>　发布于：<?php echo substr($top_news[0]->created_at,0,10);?>
 					</div>
 				</div>
+				<?php }?>
 				<div id=l_m>
-					<div id=l_m_t>
-						<div id=l_m_t1>
-							<div id=l_m_t2>
-								李宁公司网络营销渠道建设案例分析
+					<?php
+						$sql = "select id,author,created_at,title,description from fb_news where category_id=$cid and id!={$top_news[0]->id} order by priority asc,created_at desc";
+						$record = $db->paginate($sql,4);
+						$count = count($record);
+						for($i=0;$i<$count;$i++){
+					?>
+					<div class=l_m_t>
+						<div class=l_m_t1>
+							<div class=l_m_t2>
+								<a title="<?php echo $record[$i]->title;?>" href="news.php?id=<?php echo $record[$i]->id;?>"><?php echo $record[$i]->title?></a>
 							</div>
-							<div id=l_m_t3>
-								《福布斯》  记者：小妹   发布与：2010-1-25
+							<div class=l_m_t3>
+								《福布斯》　记者：<?php echo $record[$i]->author;?>　发布于：<?php echo substr($record[$i]->created_at,0,10);?>
 							</div>
-							<div id=l_m_t4>
-								导语：1990年，李宁有限公司从广东三水起步。1995年，李宁公司成为中国体育用品行业的领跑者。1998年，公司建立了本土公司第一家服装与鞋的产品设计开发中心，成为自主开发的中国体育用品公司。
+							<div class=l_m_t4 >
+								<?php echo $record[$i]->description;?>
 							</div>
 						</div>
+						<div class="dash"></div>
 					</div>
-					<div id=l_m_t>
-						<div id=l_m_t1>
-							<div id=l_m_t2>
-								李宁公司网络营销渠道建设案例分析
-							</div>
-							<div id=l_m_t3>
-								《福布斯》  记者：小妹   发布与：2010-1-25
-							</div>
-							<div id=l_m_t4>
-								导语：1990年，李宁有限公司从广东三水起步。1995年，李宁公司成为中国体育用品行业的领跑者。1998年，公司建立了本土公司第一家服装与鞋的产品设计开发中心，成为自主开发的中国体育用品公司。
-							</div>
-						</div>
-					</div><div id=l_m_t>
-						<div id=l_m_t1>
-							<div id=l_m_t2>
-								李宁公司网络营销渠道建设案例分析
-							</div>
-							<div id=l_m_t3>
-								《福布斯》  记者：小妹   发布与：2010-1-25
-							</div>
-							<div id=l_m_t4>
-								导语：1990年，李宁有限公司从广东三水起步。1995年，李宁公司成为中国体育用品行业的领跑者。1998年，公司建立了本土公司第一家服装与鞋的产品设计开发中心，成为自主开发的中国体育用品公司。
-							</div>
-						</div>
-					</div><div id=l_m_t>
-						<div id=l_m_t1>
-							<div id=l_m_t2>
-								李宁公司网络营销渠道建设案例分析
-							</div>
-							<div id=l_m_t3>
-								《福布斯》  记者：小妹   发布与：2010-1-25
-							</div>
-							<div id=l_m_t4>
-								导语：1990年，李宁有限公司从广东三水起步。1995年，李宁公司成为中国体育用品行业的领跑者。1998年，公司建立了本土公司第一家服装与鞋的产品设计开发中心，成为自主开发的中国体育用品公司。
-							</div>
-						</div>
-					</div><div id=l_m_t>
-						<div id=l_m_t1>
-							<div id=l_m_t2>
-								李宁公司网络营销渠道建设案例分析
-							</div>
-							<div id=l_m_t3>
-								《福布斯》  记者：小妹   发布与：2010-1-25
-							</div>
-							<div id=l_m_t4>
-								导语：1990年，李宁有限公司从广东三水起步。1995年，李宁公司成为中国体育用品行业的领跑者。1998年，公司建立了本土公司第一家服装与鞋的产品设计开发中心，成为自主开发的中国体育用品公司。
-							</div>
-						</div>
-					</div><div id=l_m_t>
-						<div id=l_m_t1>
-							<div id=l_m_t2>
-								李宁公司网络营销渠道建设案例分析
-							</div>
-							<div id=l_m_t3>
-								《福布斯》  记者：小妹   发布与：2010-1-25
-							</div>
-							<div id=l_m_t4>
-								导语：1990年，李宁有限公司从广东三水起步。1995年，李宁公司成为中国体育用品行业的领跑者。1998年，公司建立了本土公司第一家服装与鞋的产品设计开发中心，成为自主开发的中国体育用品公司。
-							</div>
-						</div>
-					</div><div id=l_m_t>
-						<div id=l_m_t1>
-							<div id=l_m_t2>
-								李宁公司网络营销渠道建设案例分析
-							</div>
-							<div id=l_m_t3>
-								《福布斯》  记者：小妹   发布与：2010-1-25
-							</div>
-							<div id=l_m_t4>
-								导语：1990年，李宁有限公司从广东三水起步。1995年，李宁公司成为中国体育用品行业的领跑者。1998年，公司建立了本土公司第一家服装与鞋的产品设计开发中心，成为自主开发的中国体育用品公司。
-							</div>
-						</div>
-					</div><div id=l_m_t>
-						<div id=l_m_t1>
-							<div id=l_m_t2>
-								李宁公司网络营销渠道建设案例分析
-							</div>
-							<div id=l_m_t3>
-								《福布斯》  记者：小妹   发布与：2010-1-25
-							</div>
-							<div id=l_m_t4>
-								导语：1990年，李宁有限公司从广东三水起步。1995年，李宁公司成为中国体育用品行业的领跑者。1998年，公司建立了本土公司第一家服装与鞋的产品设计开发中心，成为自主开发的中国体育用品公司。
-							</div>
-						</div>
-					</div>
+					<?php }?>
 					<div id=page>
-						<div id=prev>
-						</div>
-						<div id=num>
-							123456789
-						</div>
-						<div id=num1>
-							10
-						</div>
+						<?php paginate();?>
 					</div>
-					<div id=next>
-					</div>			
-				</div>		
+				</div>
 			</div>
 		</div>
+		
+		
 		<div id=r>
 			<div id=ad>
 			</div>
