@@ -128,7 +128,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 #top_box img{margin-right:4px; float:right; display:inline;}
 #left_box{width:185px; margin-top:5px; margin-left:20px; float:right; display:inline; }
 #l_b_top{width:185px; height:10px; background:url(/images/html/news/left_top.gif); float:left; display:inline;}
-#l_b_center{width:185px; padding-left:5px; border-left:1px dotted #CCCCCC; float:left; display:inline;}
+#l_b_center{width:185px; padding-left:5px; background:url('/images/html/news/dash3.gif') repeat-y; float:left; display:inline;}
 #l_b_bottom{width:185px; height:10px; background:url(/images/html/news/left_bottom.gif); float:left; display:inline;}
 .keywords{width:164px; margin-left:5px; margin-top:15px; color:#666666; border:3px solid #C4E0F5; border-bottom:0; padding:5px; line-height:20px; float:left; display:inline;}
 .keywords a{color:#666666; text-decoration:none;}
