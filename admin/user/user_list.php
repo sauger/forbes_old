@@ -8,6 +8,10 @@
 			return '系统管理员';
 		}elseif($param == 'admin'){
 			return '管理员';
+		}elseif($param == 'journalist'){
+			return '记者';
+		}elseif($param == 'author'){
+			return '专栏作者';
 		}
 	}
 	$user = new table_class($user_table);

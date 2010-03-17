@@ -31,7 +31,7 @@ class table_class{
 	private $map_file;
 	function __construct($table_name,$loaddb=false){
 		$this->_tablename = strtolower($table_name);
-		$this->map_file = dirname(__FILE__). "/../data/dbcache/{$table_name}";
+		$this->map_file = dirname(__FILE__). "/../data/dbcache/{$table_name}.tb";
 		$this->db_type = get_config('db_type') == 'mssql' ? 'mssql' :'mysql';
 		if($this->db_type == 'mssql'){
 			$this->_load_table_struct_mssql();
