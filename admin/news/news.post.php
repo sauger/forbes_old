@@ -64,7 +64,7 @@
 		//insert news
 		$news->created_at = date("Y-m-d H:i:s");
 		$news->last_edited_at = date("Y-m-d H:i:s");
-		$news->publisher_id = $_SESSION['admin'];
+		$news->publisher_id = $_SESSION['admin_user_id'];
 		$news->click_count = 0;					
 		$news->is_adopt = 1;
 		$news->save();

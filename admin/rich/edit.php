@@ -9,7 +9,7 @@
 		judge_role();
 		css_include_tag('admin','thickbox','autocomplete');
 		use_jquery();
-		js_include_tag('admin/rich','autocomplete.jquery');
+		js_include_tag('autocomplete.jquery','admin/rich','../ckeditor/ckeditor.js');
 		validate_form("fhgl_edit");
 	?>
 </head>
