@@ -77,7 +77,11 @@
 				<?php }?>
 				<div id=l_m>
 					<?php
-						$sql = "select id,author,created_at,title,description from fb_news where category_id=$cid and id!={$top_news[0]->id} order by priority asc,created_at desc";
+						if($db->record_count==1){
+							$sql = "select id,author,created_at,title,description from fb_news where category_id=$cid and id!={$top_news[0]->id} order by priority asc,created_at desc";
+						}else{
+							$sql = "select id,author,created_at,title,description from fb_news where category_id=$cid order by priority asc,created_at desc";
+						}
 						$record = $db->paginate($sql,4);
 						$count = count($record);
 						for($i=0;$i<$count;$i++){
