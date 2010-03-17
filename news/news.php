@@ -35,7 +35,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('news/news','select2css');
-		css_include_tag('html/news/news','top','bottom','select2css');
+		css_include_tag('html/news/news','top','bottom','select2css','paginate');
 	?>
 </head>
 <body <?php if($news->forbbide_copy == 1){ ?> oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="return false" oncopy="return false" onbeforecopy="return false" onmouseup="return false" <?php }?>>
@@ -153,13 +153,23 @@
 									<div class=keywords>
 										<?php 
 											$keywords = explode(' ',$news->keywords);
-											for($i=0;$i<count($keywords);$i++){
-												if($i!=0)echo '、';
+											$keywords2 = explode('　',$news->keywords);
+											if(count($keywords)>count($keywords2)){
+												for($i=0;$i<count($keywords);$i++){
+													if($i!=0&&$keywords[$i]!='')echo '、';
 										?>
 										<a href="news_list.php?keyword=<?php echo urlencode($keywords[$i]);?>"><?php echo $keywords[$i];?></a>
 										<?php
-											}
+												}
+											}else{
+												for($i=0;$i<count($keywords2);$i++){
+												if($i!=0&&$keywords2[$i]!='')echo '、';
 										?>
+										<a href="news_list.php?keyword=<?php echo urlencode($keywords2[$i]);?>"><?php echo $keywords2[$i];?></a>
+										<?php
+												}
+											}
+										?>	
 									</div>
 									<div id="keyword_bottom">
 										<div style="margin-left:0;" class=right-title3>
@@ -176,7 +186,9 @@
 					<div id=text3>
 						<?php echo get_fck_content($content);?>
 					</div>
-					<div id="paginate"><?php print_fck_pages($content);?></div>
+					<div id="paginate">
+						<?php print_fck_pages2();?>
+					</div>
 				</div>
 				<div class="dash"></div>
 		  	</div>

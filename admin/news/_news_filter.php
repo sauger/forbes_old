@@ -30,27 +30,25 @@
 		<tr class="tr2">
 			<td colspan="4" align=center>　
 			搜索 <input id="search_text" type="text" value="<? echo $key;?>">
-			<span id="span_category_select"></span>
-			<select id="filter_adopt">
+			<span id="span_category_select"></span><select id="filter_adopt">
 				<option value="-1">发布状态</option>
 				<option value="0" <?php if($filter_adopt == 0) echo ' selected="selected"' ?>>未发布</option>
 				<option value="1" <?php if($filter_adopt == 1) echo ' selected="selected"' ?>>已发布</option>
-			</select>
-			<select id="filter_selected">
-				<option value="-1">所有新闻</option>
+			</select><select id="filter_selected">
+				<option value="-1">选择状态</option>
 				<option value="0" <?php if($filter_selected == 0) echo ' selected="selected"' ?>>未选择</option>
 				<option value="1" <?php if($filter_selected == 1) echo ' selected="selected"' ?>>已选择</option>
 			</select>
-			<input type="button" value="搜索" id="subject_search" style="border:1px solid #0000ff; height:21px">
+			<input type="button" value="搜索" id="subject_search" style="height:20px; border:2px solid #999999;">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="50">选择</td><td width="250">短标题</td><td width="200">发表时间</td><td width="100">所属类别</td>
+			<td width="50">选择</td><td width="320">短标题</td><td width="130">发表时间</td><td width="100">所属类别</td>
 		</tr>
 		<?php
 			$subject = new table_class("fb_news");
 
-			$items = search_content($_REQUEST['key'],'fb_news',$conditions,10,$order);
+			$items = search_content($_REQUEST['key'],'fb_news',$conditions,15,$order);
 			$count_record = count($items);			
 			//--------------------		
 			for($i=0;$i<$count_record;$i++)	{
@@ -58,7 +56,7 @@
 		?>
 				<tr class=tr3>
 					<td><input type="checkbox" id="<?php echo $items[$i]->id;?>" value="<?php echo $items[$i]->id;?>" name="subject" style="width:12px;"></td>
-					<td><?php echo strip_tags($items[$i]->short_title);?></td>
+					<td style="text-align:left;"><?php echo strip_tags($items[$i]->title);?></td>
 					<td><?php echo strip_tags($items[$i]->created_at);?></td>					
 					<td><?php echo $category->find($items[$i]->category_id)->name; ?></td>
 				</tr>

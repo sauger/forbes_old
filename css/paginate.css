@@ -1,0 +1,6 @@
+.page_span{height:15px; padding-left:7px; padding-right:8px; font-family:Arial; margin:0; font-size:13px; line-height:15px; border-right:1px solid #666666;}
+.page_span a{color:#003399; text-decoration:none;}
+.page_span2{height:15px; padding-left:7px; padding-right:8px; font-family:Arial; margin:0; font-weight:bolder; font-size:13px; line-height:15px; border-right:1px solid #666666;}
+.page_span2 a{color:#000; text-decoration:none;}
+.paginate_botton{height:16px; color:#666666; font-family:Arial; margin-left:12px; font-size:13px; line-height:16px;}
+.paginate_botton a{color:#003399; text-decoration:none;}

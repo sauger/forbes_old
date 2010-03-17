@@ -26,7 +26,7 @@
 			}else{
 				$cate->sort_id = 0;
 			}
-			$cate->echo_sql = true;
+			//$cate->echo_sql = true;
 			if($cate->save()){
 				redirect('category_list.php?type='.$_POST['post']['category_type'].'');
 				
