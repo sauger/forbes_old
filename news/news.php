@@ -109,8 +109,8 @@
 									$record = $db->query("select id,short_title,title from fb_news where author='{$news->author}' and id!=$id limit 3");
 									if(count($record)>0){
 							?>
-							<div id=right-div3>
-								<div id=right-title3>
+							<div class=right-div3>
+								<div class=right-title3>
 									该作者的其他文章
 								</div>
 								<div class=tar1>
@@ -133,7 +133,7 @@
 										$record = $db->query("select id,title,short_title from fb_news where id in({$news->related_news})");
 								?>
 								<div class=right-div3>
-									<div id=right-title3>
+									<div class=right-title3>
 									推荐的 评论文章
 									</div>
 									<div class=tar1>
@@ -162,7 +162,7 @@
 										?>
 									</div>
 									<div id="keyword_bottom">
-										<div style="margin-left:0;" id=right-title3>
+										<div style="margin-left:0;" class=right-title3>
 											文章的关键字：
 										</div>
 									</div>

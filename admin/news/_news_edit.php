@@ -21,13 +21,26 @@
 			<td colspan="2" width="795">　　发布新闻</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">标题/短标题/wap标题</td>
+			<td width="130">标题</td>
 			<td width="695" align="left">
-				<input type="text" style="width:200px" name="news[title]" id="news_title" value="<?php echo strip_tags($news->title);?>">
-				/ <input type="text" style="width:200px" name="news[short_title]" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
-				/ <input type="text" style="width:200px" name="news[wap_title]" id="news_wap_title" value="<?php echo strip_tags($news->wap_title);?>"></input>
+				<input type="text" style="width:400px" name="news[title]" id="news_title" value="<?php echo strip_tags($news->title);?>">
 			</td>
 		</tr>
+
+		<tr class=tr4>
+			<td width="130">短标题</td>
+			<td width="695" align="left">
+				<input type="text" style="width:400px" name="news[short_title]" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
+			</td>
+		</tr>
+		
+		<tr class=tr4>
+			<td width="130">wap标题</td>
+			<td width="695" align="left">
+				<input type="text" style="width:400px" name="news[wap_title]" id="news_wap_title" value="<?php echo strip_tags($news->wap_title);?>"></input>
+			</td>
+		</tr>		
+
 		<tr class=tr4>
 			<td>分　类</td>
 			<td align="left" class="newsselect1" >
@@ -60,12 +73,20 @@
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td>关键词/优先级</td>
+			<td>关键词</td>
 			<td align="left">
-				<input type="text" style="width:200px" name=news[keywords]  id="news_keywords"  value="<?php echo $news->keywords;?>">(空格分隔) / 
-				<input type="text" style="width:200px" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)
+				<input type="text" style="width:400px" name=news[keywords]  id="news_keywords"  value="<?php echo $news->keywords;?>">(空格分隔) 
 			</td>
 		</tr>
+
+		<tr class=tr4>
+			<td>优先级</td>
+			<td align="left">
+				<input type="text" style="width:400px" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)
+			</td>
+		</tr>
+
+		
 		<tr class=tr4>
 			<td>关联子头条新闻</td>
 			<td align="left" id="td_related_sub_headline">
