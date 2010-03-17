@@ -59,11 +59,12 @@ $(function(){
 		};
 	});
 	
-	var font_size = 13;
+	var font_size = 14;
 	
 	$("#font_down").click(function(){
 		if(font_size>12){
-			$("#text3").find("*").css('font-size',--font_size);
+			font_size = font_size-2;
+			$("#text3").find("*").css('font-size',font_size);
 		}
 		if(font_size==12){
 			$("#font_down").attr('src','/images/html/news/font1.gif');
@@ -74,10 +75,11 @@ $(function(){
 		}
 	});
 	$("#font_up").click(function(){
-		if (font_size < 14) {
-			$("#text3").find("*").css('font-size', ++font_size);
+		if (font_size < 16) {
+			font_size = font_size+2;
+			$("#text3").find("*").css('font-size', font_size);
 		}
-		if(font_size==14){
+		if(font_size==16){
 			$("#font_up").attr('src','/images/html/news/font4.gif');
 			$("#font_up").css('cursor','auto');
 		}else{
