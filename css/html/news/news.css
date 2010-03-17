@@ -141,3 +141,5 @@ a.top_n{float:right; display:inline;text-decoration:underline;}
 #top_info{width:500px; height:15px; margin-top:10px; color:#97ABCA; line-height:15px; font-size:14px; float:left; display:inline;}
 #resource{width:180px; height:20px; margin-left:10px; color:#666666; font-weight:bolder; font-size:14px; line-height:20px; float:left; display:inline;}
 #keyword_bottom{width:180px; height:20px; margin-left:5px; padding-top:10px; background:url(/images/html/news/keywords.gif) no-repeat; float:left; display:inline;}
+#paginate{width:600px; height:25px; text-align:center; margin-top:30px; color:#666666; line-height:25px; float:left; display:inline;}
+#paginate a{color:#000; text-decoration:underline;}

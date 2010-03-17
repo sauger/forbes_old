@@ -172,6 +172,7 @@
 					<div id=text3>
 						<?php echo get_fck_content($content);?>
 					</div>
+					<div id="paginate"><?php print_fck_pages($content);?></div>
 				</div>
 				<div class="dash"></div>
 		  	</div>
