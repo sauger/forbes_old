@@ -64,7 +64,7 @@
 			for($i=0;$i<count($record);$i++){
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
-					<td style="text-align:left; text-indent:24px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
+					<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
 					<td>
 						<a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF">
 							<?php echo $category->find($record[$i]->category_id)->name;?>
@@ -73,14 +73,18 @@
 					<td>
 						<?php echo $record[$i]->created_at;?>
 					</td>
-					<td><?php if($record[$i]->is_adopt=="1"){?>
+					<td>
+						<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
+						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>"  title="编辑"><img src="/images/btn_delete.png" border="0"></span>
+						
+						<?php if($record[$i]->is_adopt=="1"){?>
 						<span style="color:#FF0000;cursor:pointer" class="revocation" name="<?php echo $record[$i]->id;?>">撤消</span>
 						<?php }?>
 						<?php if($record[$i]->is_adopt=="0"){?>
 						<span style="color:#0000FF;cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>">发布</span>
 						<?php }?>
-						<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
+						
+						
 						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news">评论管理</a>
 						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
 					</td>
