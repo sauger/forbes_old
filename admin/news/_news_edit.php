@@ -24,7 +24,7 @@
 			<td width="130">标题/短标题/wap标题</td>
 			<td width="695" align="left">
 				<input type="text" name="news[title]" id="news_title" value="<?php echo strip_tags($news->title);?>">
-				/ <input type="text" name="news[short_title" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
+				/ <input type="text" name="news[short_title]" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
 				/ <input type="text" name="news[wap_title]" id="news_wap_title" value="<?php echo strip_tags($news->wap_title);?>"></input>
 			</td>
 		</tr>
