@@ -200,20 +200,18 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 	$pagecount = isset($_REQUEST[$pagecounttoken]) ? $_REQUEST[$pagecounttoken] : $$pagecounttoken;
 	
 	
-	if ($url == "") {
-		parse_str($_SERVER['QUERY_STRING'], $params);
-		unset($params[$pageindextoken]);
-		$url = $_SERVER['PHP_SELF'] ."?";
-		foreach ($params as $k => $v) {
-			$url .= "&" .$k . "=" . urlencode($v);
-		}
-	}
-	
-	if ($pagecount <= 1 && !$force_show) return;
-	if (strpos($url,'?')===false)
+	$url = $url ? $url : $_SERVER['PHP_SELF'] ."?";
+	if (!strpos($url,'?'))
 	{
 		$url .= '?';
+	}	
+	parse_str($_SERVER['QUERY_STRING'], $params);
+	unset($params[$pageindextoken]);
+	
+	foreach ($params as $k => $v) {
+		$url .= "&" .$k . "=" . urlencode($v);
 	}
+	if ($pagecount <= 1 && !$force_show) return;
 	
 	$pagefirst = $url . "&$pageindextoken=1";
 	$pagenext = $url ."&$pageindextoken=" .($pageindex + 1);
@@ -358,7 +356,7 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 		$key = implode('|',$key);
 	}
 	$sql = "select * from {$table_name} where language_tag = 0 ";
-	if($conditons){
+	if($conditions){
 		$sql .= " and {$conditions}";
 	}
 	if($key){
