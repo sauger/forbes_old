@@ -8,7 +8,7 @@
 	<head>
 		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 		<meta http-equiv=Content-Language content=zh-CN>
-		<title>系统登录</title>
+		<title>福布斯中文网后台管理</title>
 		<?php
 			use_jquery();
 			css_include_tag('login');
