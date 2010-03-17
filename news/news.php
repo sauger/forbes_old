@@ -153,13 +153,23 @@
 									<div class=keywords>
 										<?php 
 											$keywords = explode(' ',$news->keywords);
-											for($i=0;$i<count($keywords);$i++){
-												if($i!=0)echo '、';
+											$keywords2 = explode('　',$news->keywords);
+											if(count($keywords)>count($keywords2)){
+												for($i=0;$i<count($keywords);$i++){
+													if($i!=0&&$keywords[$i]!='')echo '、';
 										?>
 										<a href="news_list.php?keyword=<?php echo urlencode($keywords[$i]);?>"><?php echo $keywords[$i];?></a>
 										<?php
-											}
+												}
+											}else{
+												for($i=0;$i<count($keywords2);$i++){
+												if($i!=0&&$keywords2[$i]!='')echo '、';
 										?>
+										<a href="news_list.php?keyword=<?php echo urlencode($keywords2[$i]);?>"><?php echo $keywords2[$i];?></a>
+										<?php
+												}
+											}
+										?>	
 									</div>
 									<div id="keyword_bottom">
 										<div style="margin-left:0;" class=right-title3>
