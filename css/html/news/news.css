@@ -112,7 +112,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 #picture3{width:75px; height:75px; background-image:url(/images/html/news/picture.jpg); background-position:center; border-style:solid; border-width:1px; border-color:#E1E1E1; background-repeat:no-repeat; float:left; display:inline;}
 #picture4{width:90px; height:116px; background-image:url(/images/html/news/picture1.jpg); background-position:center; border-style:solid; border-width:1px; border-color:#E1E1E1; background-repeat:no-repeat; float:left; display:inline;}
 #picture5{width:454px; height:320px; margin-top:28px; margin-left:65px; background-image:url(/images/html/news/picture5.jpg); float:left; display:inline;}
-#picture6{clear:left; *margin-top:20px; margin-right:20px; float:left; display:inline;}
+#picture6{clear:left; *margin-top:15px; margin-right:20px; float:left; display:inline;}
 
 #roll{width:1px; height:390px;  float:left; display:inline;}
 
