@@ -1,13 +1,12 @@
 <?php
 include "../../frame.php";
 
-$id = $_POST['id'] ? $_POST['id'] : 0;
+$id = intval($_POST['id']);
 $list_type = new table_class('fb_custom_list_type');
 if($id){
 	$list_type->find($id);	
 }
-$list_type->name = $_POST['name'];
-$list_type->position = $_POST['position'];
+$list_type->update_attributes($_POST['mlist'],false);
 if($_FILES['image_src']['name'] != ''){
 		$upload = new upload_file_class();
 		$upload->save_dir = '/upload/news/';
