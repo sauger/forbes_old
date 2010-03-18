@@ -31,7 +31,9 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title>福布斯-新闻</title>
+	<title><?php echo strip_tags($news->short_title);?>-福布斯中文网</title>
+	<meta name="Keywords" content="<?php echo strip_tags($news->keywords);?>"/>
+	<meta name="Description" content="<?php echo strip_tags($news->description);?>"/>
 	<?php
 		use_jquery();
 		js_include_tag('news/news','select2css');
