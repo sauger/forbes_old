@@ -105,8 +105,13 @@
 						#$list = $db->query("select id from fb_fhb where publish_year=".date('Y'));
 						$list = $db->query("select id from fb_fhb where publish_year=2010");
 						$sql = "select t1.*,t3.pm from fb_fh t1 join fb_collection t2 on t1.id=t2.resource_id join fb_fhbd t3 on t1.id=t3.fh_id where t2.resource_type='fb_fh' and t2.user_id=$uid and t3.bd_id={$list[0]->id} order by t2.created_at";
-						$rich = $db->paginate($sql,4,'rich_page');
-						$rich_count = count($rich);
+						if($db->record_count==1){
+							$rich = $db->paginate($sql,4,'rich_page');
+							$rich_count = count($rich);
+						}else{
+							$rich_count = 0;
+						}
+					
 						$rich_list = $db->query("select t1.bd_id,t3.year,t1.fh_id from fb_fhbd t1 join fb_collection t2 on t1.fh_id=t2.resource_id join fb_fhb t3 on t1.bd_id=t3.id where t2.resource_type='fb_fh' and t2.user_id=$uid  order by t2.created_at");
 						$list_count = count($rich_list);
 						for($i=0;$i<$rich_count;$i++){
