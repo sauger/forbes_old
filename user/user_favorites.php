@@ -82,7 +82,7 @@
 					收藏的专栏
 				</div>
 			</div>
-			<div class=right-text id="news" >
+			<div class=right-text id="news"  style="display:inline;">
 				<div class="right_box">
 				<?php
 					$sql = "select t1.title,t1.id,t2.created_at from fb_news t1 join fb_collection t2 on t1.id=t2.resource_id where t2.resource_type='fb_news' and t2.user_id=$uid order by t2.created_at";
@@ -97,7 +97,7 @@
 				</div>
 				<div class="paginate"><?php paginate();?></div>
 			</div>
-			<div class=right-text id="rich" style="display:inline;">
+			<div class=right-text id="rich">
 				<div class="right_box">
 				<?php
 					$list = $db->query("select id from fb_fhb where publish_year=".date('Y'));

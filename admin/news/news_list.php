@@ -5,6 +5,7 @@
 	$title = $_REQUEST['title'];
 	$category_id = $_REQUEST['category'] ? $_REQUEST['category'] : -1;
 	$is_adopt = $_REQUEST['adopt'];
+	$up = $_REQUEST['up'];
 	$language_tag = $_REQUEST['language_tag'] ? $_REQUEST['language_tag'] : 0;
 	
 	$db = get_db();
@@ -18,6 +19,9 @@
 	}
 	if($is_adopt!=''){
 		array_push($c, "is_adopt=$is_adopt");
+	}
+	if($up!=''){
+		array_push($c, "set_up=$up");
 	}
 	$news = new table_class($tb_news);
 	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),20);
@@ -51,13 +55,17 @@
 				</select><select id="language_tag" name="language_tag" class="sau_search">					
 					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
 					<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
+				</select><select id=up name="up" style="width:90px" class="sau_search">
+					<option value="">是否置顶</option>
+					<option value="1" <? if($_REQUEST['up']=="1"){?>selected="selected"<? }?>>已置顶</option>
+					<option value="0" <? if($_REQUEST['up']=="0"){?>selected="selected"<? }?>>未置顶</option>
 				</select>
 				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="405">标题</td><td width="110">所属类别</td><td width="130">发布时间</td><td width="150">操作</td>
+			<td width="405">标题</td><td width="80">所属类别</td><td width="130">发布时间</td><td width="180">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -83,8 +91,12 @@
 						<?php if($record[$i]->is_adopt=="0"){?>
 						<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="发布"><img src="/images/btn_unapply.png" border="0"></span>
 						<?php }?>
-						
-						
+						<?php if($record[$i]->set_up=="1"){?>
+						<span style="cursor:pointer" class="set_down" name="<?php echo $record[$i]->id;?>" title="取消置顶"><img src="/images/btn_up.png" border="0"></span>
+						<?php }?>
+						<?php if($record[$i]->set_up=="0"){?>
+						<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/btn_unup.png" border="0"></span>
+						<?php }?>
 						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/btn_comment.png" border="0"></a>
 						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
 					</td>
