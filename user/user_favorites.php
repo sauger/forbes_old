@@ -88,7 +88,7 @@
 				<div class="right_box">
 				<?php
 					$sql = "select t1.title,t1.id,t2.created_at from fb_news t1 join fb_collection t2 on t1.id=t2.resource_id where t2.resource_type='fb_news' and t2.user_id=$uid order by t2.created_at";
-					$news = $db->paginate($sql,10,'news');
+					$news = $db->paginate($sql,10,'news_page');
 					$news_count = count($news);
 					for($i=0;$i<$news_count;$i++){
 				?>
@@ -97,14 +97,14 @@
 					}
 				?>
 				</div>
-				<div class="paginate"><?php paginate("user_favorites.php?type=news",'','news');?></div>
+				<div class="paginate"><?php paginate("user_favorites.php?type=news",null,'news_page');?></div>
 			</div>
 			<div class=right-text id="rich" <?php if($type=="rich")echo 'style="display:inline;"';?>>
 				<div class="right_box">
 				<?php
 					$list = $db->query("select id from fb_fhb where publish_year=".date('Y'));
 					$sql = "select t1.*,t3.pm from fb_fh t1 join fb_collection t2 on t1.id=t2.resource_id join fb_fhbd t3 on t1.id=t3.fh_id where t2.resource_type='fb_fh' and t2.user_id=$uid and t3.bd_id={$list[0]->id} order by t2.created_at";
-					$rich = $db->paginate($sql,4,'rich');
+					$rich = $db->paginate($sql,4,'rich_page');
 					$rich_count = count($rich);
 					$rich_list = $db->query("select t1.bd_id,t3.year,t1.fh_id from fb_fhbd t1 join fb_collection t2 on t1.fh_id=t2.resource_id join fb_fhb t3 on t1.bd_id=t3.id where t2.resource_type='fb_fh' and t2.user_id=$uid  order by t2.created_at");
 					$list_count = count($rich_list);
@@ -148,7 +148,7 @@
 					}
 				?>
 				</div>
-				<div class="paginate"><?php paginate("user_favorites.php?type=rich",'','rich');?></div>
+				<div class="paginate"><?php paginate("user_favorites.php?type=rich",null,'rich_page');?></div>
 			</div>
 			</div>
 		</div>

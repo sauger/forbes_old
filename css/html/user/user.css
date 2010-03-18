@@ -45,7 +45,7 @@
 
 .right_box{width:755px; float:left; display:inline;}
 
-.paginate{width:755px; margin-top:50px; line-height:20px; text-align:center; float:left; display:inline;}
+.paginate{width:650px; margin-top:50px; line-height:20px; text-align:center; float:left; display:inline;}
 .paginate a{color:#000;}
 
 .user_b{width:94px; height:26px; margin-left:300px; margin-top:50px; clear:both; line-height:26px; background:url(/images/register/upload_bg.jpg); border:0; float:left; display:inline;}
