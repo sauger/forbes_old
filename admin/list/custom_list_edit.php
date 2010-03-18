@@ -25,7 +25,7 @@
 ?>
 
 <body style="background:#E1F0F7">
-	<form id="list_edit" action="edit.post.php" method="post"> 
+	<form id="list_edit" action="edit.post.php" enctype="multipart/form-data"  method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
 			<td colspan="2" width="795">　　<?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?>　<button type="button" id="add_attribute">添加一列</button></td>
@@ -33,32 +33,57 @@
 		<tr class=tr4 id="list_name">
 			<td width="130">榜单名称</td>
 			<td width="695" align="left">
-				<input type="text" name="name" value="<?php echo $record->name;?>" class="required">
+				<input type="text" name="mlist[name]" value="<?php echo $record->name;?>" class="required">
 			</td>
 		</tr>
-		<?php
-			if($id && $record->table_name){
-			$table = new table_class($record->table_name);
-			foreach($table->fields as $k => $v){
-				if($k == 'id') continue;
-		?>
+		<tr class=tr4>
+			<td width="130">榜单年份</td><td width="695" align="left"><input type="text" name="mlist[year]" value="<?php echo $record->year?>"></input>(四位年，如：2010,可选)</td>
+		</tr>
 		<tr class="tr4">
-			<td width="130">列名</td>
-			<td width="695" align="left">
-				<input type="text" name="list[<?php echo $k;?>][comment]" value="<?php echo $v->comment;?>" class="required">
-				<select name="list[<?php echo $k;?>][type]">
-					<option value="varchar(255)" <?php if($v->type == 'varchar(255)') echo "selected='selected'";?>>字符串</option>
-					<option value="int(11)" <?php if($v->type == 'int(11)') echo "selected='selected'";?>>整数</option>
-					<option value="float" <?php if($v->type == 'float') echo "selected='selected'";?>>浮点数</option>
-					<option value="text" <?php if($v->type == 'text') echo "selected='selected'";?>>长字符串</option>
+			<td width="130">榜单类型</td>
+			<td align="left">
+				<select name="list_type" id="list_type"  <?php if($id) echo "disabled=true";?>>
+					<option value="0">自定义榜单</option>
+					<option value="1">年度富豪榜</option>
+					<option value="2">年度名人榜</option>
 				</select>
-				<input name="list[<?php echo $k;?>][key]" value="MUL" type="checkbox" <?php if($v->key == 'MUL') echo "checked='checked'"?>></input>排序
-				<input name="list[<?php echo $k;?>][key]" value="UNI"  type="checkbox" <?php if($v->key == 'UNI') echo "checked='checked'"?>></input>唯一
-				<input type="hidden" value="<?php echo $k;?>"></input>
-				<img alt="删除" title="删除" src="/images/btn_delete.png" style="cursor:pointer;" class="del_old del_column">
+				<script type="text/javascript">$('#list_type').val('<?php echo $record->list_type;?>');</script>
 			</td>
 		</tr>
-		<?php }}?>
+		<tr class=tr4>
+			<td width="130">榜单图片</td>
+			<td width="695" align="left"><input type="file" name="image_src"></input><?php if($record->image_src){?> <a href="<?php echo $record->image_src;?>" target="_blank" style="color:blue;">查看</a><?php }?></td>
+		</tr>
+		<tr class=tr4>
+			<td width="130">榜单位置</td>
+			<td width="695" align="left">
+				<select name="mlist[position]" id="list_position" value="<?php echo $record->position;?>">
+					<option value="1">富豪</option>
+					<option value="2">投资</option>
+					<option value="3">公司</option>
+					<option value="4">城市</option>
+					<option value="5">名人</option>
+					<option value="6">体育</option>
+					<option value="7">科技</option>
+					<option value="8">教育</option>
+				</select>
+				<script type="text/javascript">$('#list_position').val('<?php echo $record->position;?>');</script>
+			</td>
+		</tr>
+		<?php 
+			/*
+			 * list columns
+			 */
+			if($id && $record->list_type=="0"){
+				include '_custom_list_edit.php';
+			}
+		?>
+		<tr class=tr4 <?php if($record->list_type=='0') echo "style='display:none;'"?>>
+			<td width="130">财富单位</td><td width="695" align="left"><select name="list[unit]"><option value="亿人民币">亿人民币</option><option value="亿美元"<?php if($record->unit == '亿美元') echo " selected='selected'"?> >亿美元</option></select></td>
+		</tr>
+		<tr class=tr3>
+			<td width="130">说明</td><td width="695" align="left"><textarea rows="10" cols="60" name="list[comment]"><?php echo $record->comment;?></textarea> </td>
+		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="保　　　存"></td>
 		</tr>

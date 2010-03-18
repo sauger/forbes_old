@@ -62,7 +62,16 @@
 		if($_POST['id']!='')$post->find($_POST['id']);
 		$post->update_attribute("is_adopt","1");
 	}
-
+	elseif("set_up"==$_POST['post_type'])
+	{
+		if($_POST['id']!='')$post->find($_POST['id']);
+		$post->update_attribute("set_up","1");
+	}
+	elseif("set_down"==$_POST['post_type'])
+	{
+		if($_POST['id']!='')$post->find($_POST['id']);
+		$post->update_attribute("set_up","0");
+	}
 	elseif("rights"==$_POST['type'])
 	{
 		$db = get_db();

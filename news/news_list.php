@@ -52,7 +52,7 @@
 					</div>
 				</div>
 				<?php
-					$top_news = $db->query("select * from fb_news where category_id={$cid} and video_photo_src!='' order by priority asc,created_at desc limit 1");
+					$top_news = $db->query("select * from fb_news where category_id={$cid} and video_photo_src!='' and set_up=1 order by priority asc,created_at desc limit 1");
 					if($db->record_count==1&&(empty($_REQUEST['page'])||($_REQUEST['page']==1))){
 				?>
 				<div id=l_t_m>
@@ -82,7 +82,7 @@
 						}else{
 							$sql = "select id,author,created_at,title,description from fb_news where category_id=$cid order by priority asc,created_at desc";
 						}
-						$record = $db->paginate($sql,4);
+						$record = $db->paginate($sql,8);
 						$count = count($record);
 						for($i=0;$i<$count;$i++){
 					?>

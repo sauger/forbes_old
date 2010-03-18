@@ -2,8 +2,17 @@
  * @author loong
  */
 var field_index = 0;
+function toggle_list_type(){
+	var list_type = $('#list_type').val();
+	if(list_type == "1"){
+		$('#add_attribute').hide();
+	}
+};
 $(function(){
 
+	$('#list_type').change(function(){
+		
+	});
 	$('img.del_old').click(function(){
 		var col = $(this).prev().val();
 		$('form').append('<input type="hidden" name="del_columns[]" value="'+col+'"');

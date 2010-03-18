@@ -195,7 +195,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 	$pageindextoken = empty($page_var) ? "page" : $page_var;
 	$record_count_token = $pageindextoken . "_record_count";	
 
-	$pagecounttoken = $pageindextoken . "_count";
+	$pagecounttoken = $pageindextoken . "_page_count";
 
 	global $$pagecounttoken;
 	global $$record_count_token;
