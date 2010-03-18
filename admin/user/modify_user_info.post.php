@@ -26,6 +26,12 @@ if($_FILES['image_src']['name'] != ''){
 		$changed = true;
 }
 
+if($_POST['description']!=$user->description){
+	$user->description = $_POST['description'];
+	$changed = true;
+}
+
+
 if($changed){
 	if($user->save()){
 		alert('修改成功！');
@@ -34,4 +40,4 @@ if($changed){
 	};
 	
 }
-#redirect('modify_user_info.php');
+redirect('modify_user_info.php');

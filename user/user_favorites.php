@@ -166,9 +166,13 @@
 						<?php
 							#$list = $db->query("select id from fb_fhb where publish_year=".date('Y'));
 							$list = $db->query("select id from fb_mrb where publish_year=2009");
-							$sql = "select t1.id,t1.name,t1.xb,t1.mr_zp,t1.zy,t3.sr,t3.bgl,t3.sr_pm,t3.bgl_pm from fb_mr t1 join fb_collection t2 on t1.id=t2.resource_id join fb_mrbd t3 on t1.id=t3.mr_id where t2.resource_type='fb_mr' and t2.user_id=$uid and t3.bd_id={$list[0]->id} order by t2.created_at";
-							$famous = $db->paginate($sql,4,'famous_page');
-							$famous_count = count($famous);
+							if($db->record_count==1){
+								$sql = "select t1.id,t1.name,t1.xb,t1.mr_zp,t1.zy,t3.sr,t3.bgl,t3.sr_pm,t3.bgl_pm from fb_mr t1 join fb_collection t2 on t1.id=t2.resource_id join fb_mrbd t3 on t1.id=t3.mr_id where t2.resource_type='fb_mr' and t2.user_id=$uid and t3.bd_id={$list[0]->id} order by t2.created_at";
+								$famous = $db->paginate($sql,4,'famous_page');
+								$famous_count = count($famous);
+							}else{
+								$famous_count = 0;
+							}
 							$famous_list = $db->query("select t1.bd_id,t3.year,t1.mr_id from fb_mrbd t1 join fb_collection t2 on t1.mr_id=t2.resource_id join fb_mrb t3 on t1.bd_id=t3.id where t2.resource_type='fb_mr' and t2.user_id=$uid  order by t2.created_at");
 							$list_count = count($famous_list);
 							for($i=0;$i<$famous_count;$i++){

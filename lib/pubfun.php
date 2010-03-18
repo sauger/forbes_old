@@ -195,7 +195,10 @@ function print_fck_pages2($url="",$symbol='fck_pageindex'){
 		}
 		$next .='">下页</a></span>';
 	}
-	echo $prev.$page.$next;
+	if($count==1){
+	}else{
+		echo $prev.$page.$next;
+	}
 }
 
 function print_fck_pages($str,$url="",$symbol='fck_pageindex'){
