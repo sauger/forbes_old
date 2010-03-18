@@ -82,7 +82,7 @@
 						}else{
 							$sql = "select id,author,created_at,title,description from fb_news where category_id=$cid order by priority asc,created_at desc";
 						}
-						$record = $db->paginate($sql,4);
+						$record = $db->paginate($sql,8);
 						$count = count($record);
 						for($i=0;$i<$count;$i++){
 					?>

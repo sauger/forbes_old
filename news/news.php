@@ -196,7 +196,7 @@
 				<div id=ad></div>
 				<div class=left-div>
 					<div id="left_title">
-						<div style="background:url(/images/html/news/background1.jpg);" name="favor" class="left_top_title">最受欢迎</div><div style="margin-left:1px;" name="comm" class="left_top_title">编辑推荐</div>
+						<div style="background:url(/images/html/news/background1.jpg); color:#000;" name="favor" class="left_top_title">最受欢迎</div><div style="margin-left:1px;" name="comm" class="left_top_title">编辑推荐</div>
 					</div>
 					<div id="favor" class="list left_top">
 					<ul>
@@ -221,7 +221,7 @@
 				</div>
 				<div class=left-div>
 					<div id="left_title2">
-						<div class="left_bottom_title" name="create" style="background:url(/images/html/news/background2.jpg);">创业</div><div name="ology" class="left_bottom_title">科技</div><div name="business" class="left_bottom_title">商业</div><div name="invest" class="left_bottom_title">投资</div>
+						<div class="left_bottom_title" name="create" style="background:url(/images/html/news/background2.jpg); color:#000;">创业</div><div name="ology" class="left_bottom_title">科技</div><div name="business" class="left_bottom_title">商业</div><div name="invest" class="left_bottom_title">投资</div>
 					</div>
 					<div id="create" class="list left_bottom">
 					<ul>
