@@ -32,15 +32,21 @@
 }
 $(function(){
 	$(".left_top_title").hover(function(){
-		$(".left_top_title").css('background','');
-		$(this).css('background','url(/images/html/news/background1.jpg)');
+		$(".left_top_title").css({background:'none',color:'#999'});
+		$(this).css({
+			background: 'url(/images/html/news/background1.jpg)',
+			color: '#000'
+		});
 		$(".left_top").css('display','none');
 		$("#"+$(this).attr('name')).css('display','inline');
 	});
 	
 	$(".left_bottom_title").hover(function(){
-		$(".left_bottom_title").css('background','');
-		$(this).css('background','url(/images/html/news/background2.jpg)');
+		$(".left_bottom_title").css({background:'none',color:'#999'});
+		$(this).css({
+			background: 'url(/images/html/news/background2.jpg)',
+			color:'#000'
+		});
 		$(".left_bottom").css('display','none');
 		$("#"+$(this).attr('name')).css('display','inline');
 	});
@@ -57,5 +63,34 @@ $(function(){
 		if(copyToClipboard(window.location.href)){
 			alert('已复制到剪贴板，在msn，qq，或者邮件中，使用Ctrl + V与好友分享这篇文章！');
 		};
+	});
+	
+	var font_size = 14;
+	
+	$("#font_down").click(function(){
+		if(font_size>12){
+			font_size = font_size-2;
+			$("#text3").find("*").css('font-size',font_size);
+		}
+		if(font_size==12){
+			$("#font_down").attr('src','/images/html/news/font1.gif');
+			$("#font_down").css('cursor','auto');
+		}else{
+			$("#font_up").attr('src','/images/html/news/font2.gif');
+			$("#font_up").css('cursor','pointer');
+		}
+	});
+	$("#font_up").click(function(){
+		if (font_size < 16) {
+			font_size = font_size+2;
+			$("#text3").find("*").css('font-size', font_size);
+		}
+		if(font_size==16){
+			$("#font_up").attr('src','/images/html/news/font4.gif');
+			$("#font_up").css('cursor','auto');
+		}else{
+			$("#font_down").attr('src','/images/html/news/font3.gif');
+			$("#font_down").css('cursor','pointer');
+		}
 	});
 });

@@ -17,7 +17,7 @@
 	<?php
 		css_include_tag('admin','colorbox');
 		use_jquery();
-		js_include_tag('jquery.colorbox-min','admin/ad/ad_edit');
+		js_include_tag('jquery.colorbox-min','admin/ad/ad_edit','../ckeditor/ckeditor.js');
 		validate_form("ad");
 	?>
 </head>

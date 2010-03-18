@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	require_once('../frame.php');
 	$id = intval($_REQUEST['id']);
 	if(!empty($id)){
@@ -31,11 +31,13 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title>福布斯-新闻</title>
+	<title><?php echo strip_tags($news->short_title);?>-福布斯中文网</title>
+	<meta name="Keywords" content="<?php echo strip_tags($news->keywords);?>"/>
+	<meta name="Description" content="<?php echo strip_tags($news->description);?>"/>
 	<?php
 		use_jquery();
 		js_include_tag('news/news','select2css');
-		css_include_tag('html/news/news','top','bottom','select2css');
+		css_include_tag('html/news/news','top','bottom','select2css','paginate');
 	?>
 </head>
 <body <?php if($news->forbbide_copy == 1){ ?> oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="return false" oncopy="return false" onbeforecopy="return false" onmouseup="return false" <?php }?>>
@@ -54,7 +56,7 @@
 					for($i=$len-1;$i>=0;$i--){
 						$item = $category->find($parent_ids[$i]);
 				?>
-				<a href=""><?php echo $item->name;?></a> > 
+				<a href="news_list.php?cid=<?php echo $parent_ids[$i];?>"><?php echo $item->name;?></a> > 
 				<?php
 					}
 				?>
@@ -68,99 +70,135 @@
 					<div id="news_title">
 					<?php echo $title;?>
 					</div>
+					<div id="top_info">记者：<?php echo $news->author;?>　　发布于：<?php echo substr($news->created_at,0,10);?></div>
 					<div id=title2>
-						<div class="top_title">正文</div>
-						<div style="background:url(/images/html/news/t_title2.jpg); color:#fff" class="top_title">English</div>
-						<div id="top_box">
-							<?php if($news->pdf_src){?>
-							<a href="" class="nor">下载PDF格式</a>
-							<?php }?>   						
-							<a href="<?php echo $news->id;?>" class="nor" id="a_collect">加入收藏</a>
+						<?php if(isset($english_news)){?>
+							<div style="border-left:0" class="top_title"><img src="/images/html/news/zw.gif"><span class="top_span"><a href="news.php?id=<?php echo $id?>">正文</a></span></div>
+							<div class="top_title"><img src="/images/html/news/ew.gif"><span class="top_span">English</span></div>
+						<?php }else{?>
+							<div style="border-left:0" class="top_title"><img src="/images/html/news/zw.gif"><span class="top_span">正文</span></div>
+							<?php if(isset($english_id)){?>
+							<div class="top_title"><img src="/images/html/news/ew.gif"><span class="top_span"><a href="news.php?id=<?php echo $id?>&lang=en">English</a></span></div>
+							<?php }?>
+						<?php }?>
+						<div class="top_title"><img src="/images/html/news/fx.gif"><span class="top_span"><a href="">分享</a></span></div>
+						<div class="top_title"><img src="/images/html/news/dy.gif"><span class="top_span"><a href="">打印</a></span></div>
+
+						<div class="top_title"><img id="font_down" src="/images/html/news/font3.gif"><span class="top_span"><a>字体大小</a></span><img id="font_up" src="/images/html/news/font2.gif"></div>
+
+						<div style="border-right:0" class="top_title2">
+							<?php if($news->pdf_src!=''){?>
+							<img src="/images/html/news/coin1.gif">
+							<span class="top_span">
+							<a target="_blank" href="<?php echo $news->pdf_src;?>" class="top_n">下载PDF格式</a>
+							</span>
+							<?php }?>
+							<img style="margin-left:20px;" src="/images/html/news/coin2.gif"><span class="top_span"><a href="<?php echo $news->id;?>" class="top_n" id="a_collect">加入收藏</a></span>
 						</div>
-						
 					</div>
 				</div>
-				<div id="left_box">
-					<div id="l_b_top"></div>
-					<div id="l_b_center">
-						<?php if($news->top_info!=''){?>
-							<div id=text4>
-								<?php echo $news->top_info?>
-							</div>
-						<?php }?>
-						<?php
-							if($news->author!=''){
-								$record = $db->query("select id,short_title,title from fb_news where author='{$news->author}' and id!=$id limit 3");
-								if(count($record)>0){
-						?>
-						<div id=right-div3>
-							<div id=right-title3>
-								该作者的其他文章
-							</div>
-							<div class=tar1>
-								<a href="news_list.php?news_id=<?php echo $id?>&type=author"><img src="/images/html/news/tar1.gif"></a>
-							</div>
-							<div class=list1>
-							<ul>
-								<?php for($i=0;$i<count($record);$i++){?>
-								<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
-								<?php }?>
-							</ul>
-							</div>
-						</div>
-						<?php
-								}
-							}
-						?>
+				<div id="news_text">
+					<div id="left_box">
+						<div id="l_b_center">
+							<div id="resource">来源于：福布斯中文网</div>
+							<?php if($news->top_info!=''){?>
+								<div id=text4>
+									<?php echo $news->top_info?>
+								</div>
+							<?php }?>
 							<?php
-								if($news->related_news!=''){
-									$record = $db->query("select id,title,short_title from fb_news where id in({$news->related_news})");
+								if($news->author!=''){
+									$record = $db->query("select id,short_title,title from fb_news where author='{$news->author}' and id!=$id limit 3");
+									if(count($record)>0){
 							?>
 							<div class=right-div3>
-								<div id=right-title3>
-								推荐的 评论文章
+								<div class=right-title3>
+									该作者的其他文章
 								</div>
 								<div class=tar1>
-									<a href="news_list.php?news_id=<?php echo $id?>&type=related"><img src="/images/html/news/tar1.gif"></a>
+									<a href="news_list.php?news_id=<?php echo $id?>&type=author"><img src="/images/html/news/tar1.gif"></a>
 								</div>
 								<div class=list1>
-								<ul>
+									<ul>
 									<?php for($i=0;$i<count($record);$i++){?>
-									<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+									<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 									<?php }?>
-								</ul>
+									</ul>
 								</div>
 							</div>
-							<?php }?>
-							<div class=right-div3>
-								<div id=right-title3>
-								文章的关键字
+							<?php
+									}
+								}
+							?>
+								<?php
+									if($news->related_news!=''){
+										$record = $db->query("select id,title,short_title from fb_news where id in({$news->related_news})");
+								?>
+								<div class=right-div3>
+									<div class=right-title3>
+									推荐的 评论文章
+									</div>
+									<div class=tar1>
+										<a href="news_list.php?news_id=<?php echo $id?>&type=related"><img src="/images/html/news/tar1.gif"></a>
+									</div>
+									<div class=list1>
+									<ul>
+										<?php for($i=0;$i<count($record);$i++){?>
+										<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+										<?php }?>
+									</ul>
+									</div>
 								</div>
-								<div class=keywords>
-									<?php 
-										$keywords = explode(' ',$news->keywords);
-										for($i=0;$i<count($keywords);$i++){
-											if($i!=0)echo '、';
-									?>
-									<a href="news_list.php?keyword=<?php echo urlencode($keywords[$i]);?>"><?php echo $keywords[$i];?></a>
-									<?php
-										}
-									?>
-									
+								<?php }?>
+								<div class="dash2"></div>
+								<div class=right-div3>
+									<div class=keywords>
+										<?php 
+											$keywords = explode(' ',$news->keywords);
+											$keywords2 = explode('　',$news->keywords);
+											if(count($keywords)>count($keywords2)){
+												for($i=0;$i<count($keywords);$i++){
+													if($i!=0&&$keywords[$i]!='')echo '、';
+										?>
+										<a href="news_list.php?keyword=<?php echo urlencode($keywords[$i]);?>"><?php echo $keywords[$i];?></a>
+										<?php
+												}
+											}else{
+												for($i=0;$i<count($keywords2);$i++){
+												if($i!=0&&$keywords2[$i]!='')echo '、';
+										?>
+										<a href="news_list.php?keyword=<?php echo urlencode($keywords2[$i]);?>"><?php echo $keywords2[$i];?></a>
+										<?php
+												}
+											}
+										?>	
+									</div>
+									<div id="keyword_bottom">
+										<div style="margin-left:0;" class=right-title3>
+											文章的关键字：
+										</div>
+									</div>
 								</div>
-							</div>
+						</div>
 					</div>
-					<div id="l_b_bottom"></div>
+					<?php if($news->ad_id){?>
+					<div id="roll"></div>
+					<div id="picture6"><img src="/images/html/news/picture6.jpg"></div>
+					<?php }?>
+					<div id=text3>
+						<?php echo get_fck_content($content);?>
+					</div>
+					<div id="paginate">
+						<?php print_fck_pages2();?>
+					</div>
 				</div>
-				<div id=text3>
-					<?php echo $content;?>
-				</div>
-		  </div>
+				<div class="dash"></div>
+		  	</div>
 			<div id=center-right>
 				<div id=ad></div>
 				<div class=left-div>
 					<div id="left_title">
-						<div style="background:url(/images/html/news/background1.jpg);" name="favor" class="left_top_title">最受欢迎</div><div style="margin-left:1px;" name="comm" class="left_top_title">编辑推荐</div>
+						<div style="background:url(/images/html/news/background1.jpg); color:#000;" name="favor" class="left_top_title">最受欢迎</div><div style="margin-left:1px;" name="comm" class="left_top_title">编辑推荐</div>
 					</div>
 					<div id="favor" class="list left_top">
 					<ul>
@@ -168,7 +206,7 @@
 							$record = $db->query("select t1.id,t1.title,t1.short_title from fb_news t1 join fb_category t2 on t1.category_id=t2.id where t2.name='最受欢迎' and t1.is_adopt=1 order by t1.priority asc,t1.created_at desc limit 7");
 							for($i=0;$i<count($record);$i++){
 						?>
-						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 						<?php }?>
 					</ul>
 					</div>
@@ -178,14 +216,14 @@
 							$record = $db->query("select t1.id,t1.title,t1.short_title from fb_news t1 join fb_category t2 on t1.category_id=t2.id where t2.name='编辑推荐' and t1.is_adopt=1 order by t1.priority asc,t1.created_at desc limit 7");
 							for($i=0;$i<count($record);$i++){
 						?>
-						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 						<?php }?>
 					</ul>
 					</div>
 				</div>
 				<div class=left-div>
 					<div id="left_title2">
-						<div class="left_bottom_title" name="create" style="background:url(/images/html/news/background2.jpg);">创业</div><div name="ology" class="left_bottom_title">科技</div><div name="business" class="left_bottom_title">商业</div><div name="invest" class="left_bottom_title">投资</div>
+						<div class="left_bottom_title" name="create" style="background:url(/images/html/news/background2.jpg); color:#000;">创业</div><div name="ology" class="left_bottom_title">科技</div><div name="business" class="left_bottom_title">商业</div><div name="invest" class="left_bottom_title">投资</div>
 					</div>
 					<div id="create" class="list left_bottom">
 					<ul>
@@ -193,7 +231,7 @@
 							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='创业') order by priority asc,created_at desc limit 7");
 							for($i=0;$i<count($record);$i++){
 						?>
-						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo  strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 						<?php }?>
 					</ul>
 					</div>
@@ -203,7 +241,7 @@
 							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='商业') order by priority asc,created_at desc limit 7");
 							for($i=0;$i<count($record);$i++){
 						?>
-						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>
+						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>
 						<?php }?>
 					</ul>
 					</div>
@@ -213,7 +251,7 @@
 							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='科技') order by priority asc,created_at desc limit 7");
 							for($i=0;$i<count($record);$i++){
 						?>
-						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 						<?php }?>
 					</ul>
 					</div>
@@ -223,7 +261,7 @@
 							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='投资') order by priority asc,created_at desc limit 7");
 							for($i=0;$i<count($record);$i++){
 						?>
-						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo $record[$i]->title;?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
+						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
 						<?php }?>
 					</ul>
 					</div>

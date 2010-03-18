@@ -33,7 +33,7 @@
 		css_include_tag('admin','autocomplete');
 		use_jquery();
 		validate_form("fbd_edit");
-		js_include_tag('admin/rich/edit','autocomplete.jquery');
+		js_include_tag('admin/rich/edit','autocomplete.jquery','../ckeditor/ckeditor.js');
 	?>
 </head>
 <body style="background:#E1F0F7">

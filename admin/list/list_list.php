@@ -14,6 +14,22 @@
 
 <body>
 	<?php
+		function list_type($type){
+			switch ($type) {
+				case 0:
+					return "自定义榜单";
+				break;
+				case 1:
+					return "年度富豪榜";
+				break;
+				case 2:
+					return "年度名人榜";
+				break;				
+				default:
+					;
+				break;
+			}
+		}
 		$list= new table_class('fb_custom_list_type');
 		if($_REQUEST['s_text']){
 			$conditions = array('conditions' => "name like '%{$_REQUEST['s_text']}%'");
@@ -24,19 +40,22 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="3">
-				　自定义榜管理 <a href="custom_list_edit.php">添加榜单</a>   搜索　
+				　<a href="custom_list_edit.php">添加榜单</a>   搜索　
 				 <input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
 				 <input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">榜单类型名称</td><td width="210">操作</td>
+			<td>榜单名称</td><td width="115">榜单类型</td><td width="210">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
 					<td><a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>"> <?php echo $record[$i]->name;?></a></td>
+					<td>
+						<?php echo list_type($record[$i]->list_type);?>
+					</td>
 					<td>
 						<a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<a href="custom_list_item_list.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->year;?>" style="cursor:pointer">榜单管理</a>

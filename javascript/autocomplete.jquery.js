@@ -61,6 +61,7 @@
 					case self.KEY_RETURN: 
 						self.setHighlightedValue();
 						e.stopPropagation();
+						return false;
 						break;
 					case self.KEY_TAB: 
 						self.setHighlightedValue();
@@ -109,7 +110,7 @@
         	var ol = this.nInpC; 
         	this.nInpC = val.length ? val.length : 0;
         	var l = this.aSug.length;
-        	if(this.options.cache && (this.nInpC > ol) && l && (l < this.options.maxentries))
+        	if(this.options.cache && (this.nInpC < ol) && l && (l < this.options.maxentries))
         	{
         		var arr = new Array();
         		var oldval = '';

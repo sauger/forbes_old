@@ -17,7 +17,7 @@
 <body style="background:url(/images/admin/bg.jpg) repeat-x;">
 	<div id=admin_body>
 		<div id=part1>
-			<div id=nav style="width:360px;">欢迎你：  <?php echo $_SESSION["nick_name"]; ?> [<a href="/login/logout.post.php">退出</a>]</div>
+			<div id=nav style="width:360px;">欢迎你：  <?php echo $_SESSION["admin_nick_name"]; ?> [<a href="/login/logout.post.php">退出</a>]</div>
 			<div id=title><?php echo $site_name; ?>后台管理</div>
 			<div id=index><a href="/index.php" target="_blank">动态主页</a></div>
 		</div>
@@ -59,7 +59,7 @@
 		</div>
 		
 		<div id=part3>
-		  <iframe id=admin_iframe name="admin_iframe" scrolling="yes" frameborder="0" src="/admin/news/news_list.php" width="99%" height="700px"></iframe>
+		  <iframe id=admin_iframe name="admin_iframe" scrolling="yes" frameborder="0" src="/admin/news/news_list.php" width="99%" height="1000px"></iframe>
 		</div>		
 	</div>
 </body>

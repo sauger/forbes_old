@@ -17,6 +17,7 @@
 	<?php 
 		css_include_tag('admin');
 		use_jquery();
+		js_include_tag('../ckeditor/ckeditor.js');
 		validate_form("famous_edit");
 	?>
 </head>

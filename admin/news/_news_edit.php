@@ -18,17 +18,29 @@
 	<form id="news_edit" enctype="multipart/form-data" action="news.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　编辑新闻</td>
+			<td colspan="2" width="795">　　发布新闻</td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">标题</td>
 			<td width="695" align="left">
-				<?php show_fckeditor('news[title]','title',false,"40",$news->title);?>　
+				<input type="text" style="width:400px" name="news[title]" id="news_title" value="<?php echo strip_tags($news->title);?>">
 			</td>
 		</tr>
+
 		<tr class=tr4>
-			<td width="130">短标题</td><td width="695" align="left"> <?php show_fckeditor('news[short_title]','title',false,"40",$news->short_title);?>　</td>
+			<td width="130">短标题</td>
+			<td width="695" align="left">
+				<input type="text" style="width:400px" name="news[short_title]" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input>
+			</td>
+		</tr>
+		
+		<tr class=tr4>
+			<td width="130">wap标题</td>
+			<td width="695" align="left">
+				<input type="text" style="width:400px" name="news[wap_title]" id="news_wap_title" value="<?php echo strip_tags($news->wap_title);?>"></input>
+			</td>
 		</tr>		
+
 		<tr class=tr4>
 			<td>分　类</td>
 			<td align="left" class="newsselect1" >
@@ -47,16 +59,35 @@
 		<tr class=tr4>
 			<td>作　者</td>
 			<td align="left" class="newsselect1" >
-				<input type="text" name="news[author]" value="<?php echo $news->author;?>"></input>
+				<input style="width:200px" type="text" name="news[author]" id="news_author" value="<?php echo ($news->author ? $news->author : $_SESSION['admin_nick_name']);?>"></input>
+				<select name="news[author_type]" id="news_author_type">
+					<option value="1" <?php if($news->author_type == 1) echo " selected='selected'"?>>特约记者</option>
+					<option value="2" <?php if($news->author_type == 2) echo " selected='selected'"?>>专栏作者</option>
+					<option value="3" <?php if($news->author_type == 3) echo " selected='selected'"?>>其他作者</option>
+				</select>
+				头像:<input type="file" name="author_image">
+				<?php if($news->author_image){?>
+				<a href="<?php echo $news->author_image;?>" target="_blank">查看</a>
+				<?php }?>
+				<span>(40*40最佳)</span>
+				<input type="hidden" name="news[author_id]" id="news_author_id" value="<?php echo $news->author_id;?>"></input>
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td>关键词/优先级</td>
+			<td>关键词</td>
 			<td align="left">
-				<input type="text" size="20" name=news[keywords]  id="news_keywords"  value="<?php echo $news->keywords;?>">(空格分隔)　　/　　
-				<input type="text" size="10" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)
+				<input type="text" style="width:400px" name=news[keywords]  id="news_keywords"  value="<?php echo $news->keywords;?>">(空格分隔) 
 			</td>
 		</tr>
+
+		<tr class=tr4>
+			<td>优先级</td>
+			<td align="left">
+				<input type="text" style="width:400px" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)
+			</td>
+		</tr>
+
+		
 		<tr class=tr4>
 			<td>关联子头条新闻</td>
 			<td align="left" id="td_related_sub_headline">
@@ -110,10 +141,10 @@
 			</td>
 		</tr>
 		<tr id=newsshow1  class="normal_news tr4">
-			<td  height=100>相关信息</td><td><?php show_fckeditor('news[top_info]','Admin',false,"100",$news->top_info);?></td>
+			<td  height=100>英文来源</td><td><?php show_fckeditor('news[top_info]','Admin',false,"80",$news->top_info);?></td>
 		</tr>
 		<tr id=newsshow1  class="normal_news tr4">
-			<td  height=100>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"100",$news->description);?></td>
+			<td  height=100>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"80",$news->description);?></td>
 		</tr>
 		<tr id=newsshow1 class="normal_news tr4">
 			<td height=215>新闻内容</td><td><?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?></td>

@@ -1,0 +1,28 @@
+.rich_box{width:330px;  margin-right:30px; font-size:13px; margin-top:25px; color:#626262; line-height:20px; float:left; display:inline;}
+.rich_pic{width:70px; height:70px; margin-top:5px; padding:2px; border:1px solid #E1E1E1;  float:left; display:inline;}
+.rich_info{width:240px; margin-left:10px; float:left; display:inline;}
+.rich_bd{width:330px; height:40px; float:left; display:inline}
+.bd_left{width:65px; height:25px; line-height:25px; float:left; display:inline;}
+.bd_list{width:210px; float:left; display:inline;}
+.bd_list a{color:#626262; height:25px; line-height:25px; word-break:keep-all; line-height:20px; margin-right:5px; float:left; display:inline;}
+.rich_name{width:240px; height:18px; float:left; display:inline;}
+.rich_name a{color:#626262; font-weight:bolder; text-decoration:none;}
+.rich_com{float:left; display:inline;}
+.rich_ind{float:left; display:inline;}
+.rich_rank{width:200px; height:60px; float:left; display:inline;}
+
+
+.famous_box{width:330px; margin-right:30px; margin-top:20px; font-size:13px; color:#626262; line-height:20px; float:left; display:inline;}
+.famous_pic{width:90px; height:90px; font-size:0; margin-top:5px; padding:2px; border:1px solid #E1E1E1;  float:left; display:inline;}
+.famous_info{width:220px; margin-top:5px; line-height:20px; margin-left:10px; float:left; display:inline;}
+.famous_name{width:220px; height:18px; float:left; display:inline;}
+.famous_name a{color:#626262; font-weight:bolder; text-decoration:none;}
+.famous_rank{width:210px; height:90px; line-height:25px; float:left; display:inline;}
+.famous_bd{width:330px; float:left; display:inline}
+
+.style1{color:#3E83BA; text-decoration:underline;}
+.style2{color:#999999; text-decoration:none;}
+.red{color:#ff0000; font-weight:bolder;}
+.blue{color:#3E83BA;}
+.famous_a{height:20px; margin-left:10px; float:left; display:inline;}
+

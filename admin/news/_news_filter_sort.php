@@ -2,6 +2,9 @@
 	require_once('../../frame.php');
 	$selected_news = ($_REQUEST['selected_news']);
 	$selected_news_a = explode(',',$selected_news);
+	if(!$selected_news){
+		$selected_news = 0;
+	}
 	$category = new category_class('news');
 	?>
 	<style type="text/css">
@@ -55,22 +58,16 @@
 		</tr>		
 	</table>
 	<script type="text/javascript">
-		var selected_news = new Array();
-		<?php if($selected_news_a){
-			foreach ($selected_news_a as $v) {
-				echo "selected_news.push('$v');";
-			}
-		}?>
 		$(function(){
 			$('#button_back').click(function(){
-				$('#result_box').load('news_filter.php',{'show_div':'0','selected_news':selected_news.join(','),'call_back':'<?php echo $_REQUEST['call_back'];?>'});
+				$('#result_box').load('_news_filter.php');
 			});
 			$('#button_ok').click(function(){
 				selected_news.length =0;
 				$('div.items').each(function(){
 					selected_news.push($(this).attr('id'));
 				});
-				$('#result_box').load('news_filter.php',{'show_div':'0','selected_news':selected_news.join(','),'call_back':'<?php echo $_REQUEST['call_back'];?>'});
+				$('#result_box').load('_news_filter.php');
 			});
 			$('#sortable').sortable();
 		});

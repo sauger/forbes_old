@@ -176,11 +176,14 @@
 	}
 	
 	function show_fckeditor($name,$toolbarset='Admin',$expand_toolbar=true,$height="200",$value="",$width = null) {
-		require_once(CURRENT_DIR . 'ckeditor/ckeditor_php5.php');
-		$editor = new CKEditor(CURRENT_DIR . 'ckeditor');
+		require_once(ROOT_DIR . 'ckeditor/ckeditor_php5.php');
+		require_once(ROOT_DIR . 'ckfinder/ckfinder.php');
+		$editor = new CKEditor(ROOT_DIR . 'ckeditor');
 		$editor->config['toolbar'] = $toolbarset;	
 		$editor->config['toolbarStartupExpanded'] = $expand_toolbar;
 		$editor->config['height'] = $height;
+		CKFinder::SetupCKEditor($editor, '/ckfinder/');
+		
 		if($width){
 			$editor->config['width'] = $width;
 		}
@@ -192,7 +195,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 	$pageindextoken = empty($page_var) ? "page" : $page_var;
 	$record_count_token = $pageindextoken . "_record_count";	
 
-	$pagecounttoken = $pageindextoken . "_count";
+	$pagecounttoken = $pageindextoken . "_page_count";
 
 	global $$pagecounttoken;
 	global $$record_count_token;
@@ -200,20 +203,18 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 	$pagecount = isset($_REQUEST[$pagecounttoken]) ? $_REQUEST[$pagecounttoken] : $$pagecounttoken;
 	
 	
-	if ($url == "") {
-		parse_str($_SERVER['QUERY_STRING'], $params);
-		unset($params[$pageindextoken]);
-		$url = $_SERVER['PHP_SELF'] ."?";
-		foreach ($params as $k => $v) {
-			$url .= "&" .$k . "=" . urlencode($v);
-		}
-	}
-	
-	if ($pagecount <= 1 && !$force_show) return;
-	if (strpos($url,'?')===false)
+	$url = $url ? $url : $_SERVER['PHP_SELF'] ."?";
+	if (!strpos($url,'?'))
 	{
 		$url .= '?';
+	}	
+	parse_str($_SERVER['QUERY_STRING'], $params);
+	unset($params[$pageindextoken]);
+	
+	foreach ($params as $k => $v) {
+		$url .= "&" .$k . "=" . urlencode($v);
 	}
+	if ($pagecount <= 1 && !$force_show) return;
 	
 	$pagefirst = $url . "&$pageindextoken=1";
 	$pagenext = $url ."&$pageindextoken=" .($pageindex + 1);
@@ -358,7 +359,7 @@ function search_content($key,$table_name='fb_news',$conditions=null,$page_count 
 		$key = implode('|',$key);
 	}
 	$sql = "select * from {$table_name} where language_tag = 0 ";
-	if($conditons){
+	if($conditions){
 		$sql .= " and {$conditions}";
 	}
 	if($key){

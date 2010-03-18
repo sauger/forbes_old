@@ -33,19 +33,17 @@ $(function(){
 			alert("请输入关键字!");
 			return false;
 		}
-		var editor = CKEDITOR.instances['news[title]'];
-		var title = editor.getData(); 
+		var title = $('#news_title').val();
 		if(title==""){
 			alert("请输入标题！");
 			return false;
 		}	
-		var editor = CKEDITOR.instances['news[short_title]'] ;
-		var short_title = remove_hmtl_tag(editor.getData());
+		var short_title = $('#news_short_title').val();
 		if(short_title==""){
 			alert("请输入短标题！");
 			return false;
 		}
-		var oEditor = CKEDITOR.instances['news[content]'] ;
+		var editor = CKEDITOR.instances['news[content]'] ;
 		var content = editor.getData();
 		if(content==""){
 			alert("请输入新闻内容！");
@@ -73,7 +71,6 @@ $(function(){
 		}else{
 			$('#hidden_copy_news').val(0);
 		};
-		alert($('#hidden_copy_news').val());
 		return true;
 	});	
 	$('#news_ad_id,#news_forbbide_copy').change(function(){
@@ -113,15 +110,47 @@ $(function(){
 		$(this).hide();
 	});
 	$('#delete_copy_news').live('click',function(e){
-		alert(1);
 		e.preventDefault();
 		$('#copy_news').show();
 		$('#tr_copy_news').hide();
 		$(this).next().val(0);
 	});
-	
-	$('#a_sub_headline').colorbox({href:'news_filter.php?show_div=1&selected_news=' + $('#hidden_sub_headline').val()+'&call_back=save_sub_headlines'});
-	$('#a_related_news').colorbox({href:'news_filter.php?show_div=1&selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
+	$('#a_sub_headline').colorbox({href:'news_filter.php?selected_news=' + $('#hidden_sub_headline').val()+'&call_back=save_sub_headlines'});
+	$('#a_related_news').colorbox({href:'news_filter.php?selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
 	refresh_sub_headlines();
 	refresh_related_news();
+	var json_options = {
+			script:'/admin/user/_user_autocomplete.php?limit=6&',
+			varname:'auto_name',
+			json:true,
+			shownoresults:true,
+			maxresults:16,
+			meth:'post',
+			//noresults:"没有匹配的记录",
+			valueSep:null
+	};
+	$('#news_author').autoComplete(json_options);
+	$('#news_author_type').change(function(e){
+		var author_type= $(this).val();
+		//记者
+		if(author_type == 1 && $('#news_author').val()){
+			$.post('/admin/user/_check_user.php',{'name':$('#news_author').val(),'role_name':'journalist'},function(data){
+				data = parseInt(data);
+				if(data <= 0){
+					$('#news_author').val('');
+					$('#news_author').focus();
+				}
+				$('#news_author_id').val(data);
+			});
+		}else if(author_type == 2){
+			$.post('/admin/user/_check_user.php',{'name':$('#news_author').val(),'role_name':'author'},function(data){
+				data = parseInt(data);
+				if(data <= 0){
+					$('#news_author').val('');
+					$('#news_author').focus();
+				}
+				$('#news_author_id').val(data);
+			});
+		}
+	});
 });

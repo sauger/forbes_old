@@ -3,14 +3,14 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>编辑新闻</title>
+	<title>发布新闻</title>
 	<?php 
 		require_once('../../frame.php');
 		judge_role();
-		css_include_tag('admin','colorbox');
+		css_include_tag('admin','colorbox','autocomplete');
 		use_jquery();
 		validate_form("news_edit");
-		js_include_tag('category_class.js', 'admin/news_pub', 'admin/news_edit','jquery.colorbox-min.js','jquery-ui-1.7.2.custom.min.js','../ckeditor/ckeditor.js','pubfun');
+		js_include_tag('category_class.js', 'admin/news_pub', 'admin/news_edit','jquery.colorbox-min.js','jquery-ui-1.7.2.custom.min.js','../ckeditor/ckeditor.js','autocomplete.jquery','pubfun');
 	?>
 </head>
 <?php 

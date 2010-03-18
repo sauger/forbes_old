@@ -50,15 +50,21 @@
 		$upload->save_dir = '/upload/news/';
 		$news->video_photo_src = '/upload/news/' .$upload->handle('news_pic','filter_pic');
 	}
+	if($_FILES['author_image']['name'] != ''){
+		$upload = new upload_file_class();
+		$upload->save_dir = '/upload/news/';
+		$news->author_image = '/upload/news/' .$upload->handle('author_image','filter_pic');
+	}
 	$table_change = array('<p>'=>'');
 	$table_change += array('</p>'=>'');
 	$news->title = strtr($news->title,$table_change);
 	$news->short_title = strtr($news->short_title,$table_change);	
+	$news->news_type= 1;
 	if($news_id == ''){
 		//insert news
 		$news->created_at = date("Y-m-d H:i:s");
 		$news->last_edited_at = date("Y-m-d H:i:s");
-		$news->publisher_id = $_SESSION['admin'];
+		$news->publisher_id = $_SESSION['admin_user_id'];
 		$news->click_count = 0;					
 		$news->is_adopt = 1;
 		$news->save();

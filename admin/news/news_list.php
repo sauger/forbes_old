@@ -5,6 +5,7 @@
 	$title = $_REQUEST['title'];
 	$category_id = $_REQUEST['category'] ? $_REQUEST['category'] : -1;
 	$is_adopt = $_REQUEST['adopt'];
+	$up = $_REQUEST['up'];
 	$language_tag = $_REQUEST['language_tag'] ? $_REQUEST['language_tag'] : 0;
 	
 	$db = get_db();
@@ -19,6 +20,9 @@
 	if($is_adopt!=''){
 		array_push($c, "is_adopt=$is_adopt");
 	}
+	if($up!=''){
+		array_push($c, "set_up=$up");
+	}
 	$news = new table_class($tb_news);
 	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),20);
 ?>
@@ -28,7 +32,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>迅傲信息</title>
+	<title>发布新闻</title>
 	<?php
 		css_include_tag('admin');
 		use_jquery();
@@ -41,32 +45,34 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="5">
-				　<a href="news_edit.php" id="add_news">发布新闻</a>　　　搜索　
-				<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
-				<span id="span_category"></span>
-				<select id=adopt name="adopt" style="width:90px" class="sau_search">
+			<td colspan="5">　
+				<a href="news_edit.php" id="add_news">发布新闻</a>
+				<input style="margin-left:20px" class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
+				<span id="span_category"></span><select id=adopt name="adopt" style="width:90px" class="sau_search">
 					<option value="">发布状况</option>
 					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已发布</option>
 					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未发布</option>
-				</select>
-				<select id="language_tag" name="language_tag" class="sau_search">					
+				</select><select id="language_tag" name="language_tag" class="sau_search">					
 					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
 					<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
+				</select><select id=up name="up" style="width:90px" class="sau_search">
+					<option value="">是否置顶</option>
+					<option value="1" <? if($_REQUEST['up']=="1"){?>selected="selected"<? }?>>已置顶</option>
+					<option value="0" <? if($_REQUEST['up']=="0"){?>selected="selected"<? }?>>未置顶</option>
 				</select>
 				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
-				<input type="button" value="搜索" id="search_button" style="border:1px solid #0000ff; height:21px">
+				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="345">短标题</td><td width="110">所属类别</td><td width="130">发布时间</td><td width="210">操作</td>
+			<td width="385">标题</td><td width="80">所属类别</td><td width="130">发布时间</td><td width="200">操作</td>
 		</tr>
 		<?php
 			//--------------------
 			for($i=0;$i<count($record);$i++){
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
-					<td><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->short_title);?></a></td>
+					<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
 					<td>
 						<a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF">
 							<?php echo $category->find($record[$i]->category_id)->name;?>
@@ -75,15 +81,25 @@
 					<td>
 						<?php echo $record[$i]->created_at;?>
 					</td>
-					<td><?php if($record[$i]->is_adopt=="1"){?>
-						<span style="color:#FF0000;cursor:pointer" class="revocation" name="<?php echo $record[$i]->id;?>">撤消</span>
+					<td>
+						<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
+						<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/btn_delete.png" border="0"></span>
+						
+						<?php if($record[$i]->is_adopt=="1"){?>
+						<span style="cursor:pointer" class="revocation" name="<?php echo $record[$i]->id;?>" title="撤销"><img src="/images/btn_apply.png" border="0"></span>
 						<?php }?>
 						<?php if($record[$i]->is_adopt=="0"){?>
-						<span style="color:#0000FF;cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>">发布</span>
+						<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="发布"><img src="/images/btn_unapply.png" border="0"></span>
 						<?php }?>
-						<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
-						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news">评论管理</a>
+						<?php if($record[$i]->set_up=="1"){?>
+						<span style="cursor:pointer" class="set_down" name="<?php echo $record[$i]->id;?>" title="取消置顶"><img src="/images/btn_up.png" border="0"></span>
+						<?php }?>
+						<?php if($record[$i]->set_up=="0"){?>
+						<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/btn_unup.png" border="0"></span>
+						<?php }?>
+						<span style="cursor:pointer" title="静态"><img src="/images/btn_static.png" border="0"></span>
+
+						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/btn_comment.png" border="0"></a>
 						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
 					</td>
 				</tr>

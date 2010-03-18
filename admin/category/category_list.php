@@ -33,10 +33,10 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="6"><?php echo $category_name;?>类别管理　<a href="category_edit.php?type=<?php echo $type;?>">添加类别</a></td>
+			<td colspan="6">　 <a href="category_edit.php?type=<?php echo $type;?>">添加<?php echo $category_name;?>类别</a></td>
 		</tr>
 		<tr class="tr2">
-			<td width="260">类别名称</td><td width="100">优先级</td><td width="260">父类</td><td width="175">操作</td>
+			<td width="260">类别名称</td><td width="100">优先级</td><td width="200">父类</td><td width="60">级别</td><td width="175">操作</td>
 		</tr>
 		<?php
 			$category = new table_class($tb_category);
@@ -49,9 +49,10 @@
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 					<td><?php echo $record[$i]->name;?></td>
-					<td><input type="text" class="priority" name="<?php echo $record[$i]->id;?>" value="<?php if($record[$i]->priority!=100){echo $record[$i]->priority;}?>" style="width:30px;"></td>
+					<td><input type="text" style="width:80px" class="priority" name="<?php echo $record[$i]->id;?>" value="<?php if($record[$i]->priority!=100){echo $record[$i]->priority;}?>" style="width:30px;"></td>
 					<td><?php for($j=0;$j<$count_record2;$j++){if($record2[$j]->id==$record[$i]->parent_id){echo $record2[$j]->name;break;}}?></td>
-					<td><a title="添加子类别" href="category_edit.php?parent_id=<?php echo $record[$i]->id;?>&type=<?php echo $type?>"><img src="/images/btn_add.png" border="0"></a>　<a href="category_edit.php?id=<?php echo $record[$i]->id;?>&type=<?php echo $type?>" title="编辑" target="admin_iframe"><img src="/images/btn_edit.png" border="0"></a>　<a class="del" name="<?php echo $record[$i]->id;?>" title="删除" style="color:#ff0000; cursor:pointer"><img src="/images/btn_delete.png" border="0"></a></td>
+					<td><?php echo $record[$i]->level;?></td>
+					<td><a title="添加子类别" href="category_edit.php?parent_id=<?php echo $record[$i]->id;?>&type=<?php echo $type?>&level=<?php echo $record[$i]->level+1;?>"><img src="/images/btn_add.png" border="0"></a>　<a href="category_edit.php?id=<?php echo $record[$i]->id;?>&type=<?php echo $type?>" title="编辑" target="admin_iframe"><img src="/images/btn_edit.png" border="0"></a>　<a class="del" name="<?php echo $record[$i]->id;?>" title="删除" style="color:#ff0000; cursor:pointer"><img src="/images/btn_delete.png" border="0"></a></td>
 				</tr>
 		<?php
 			}
