@@ -9,6 +9,7 @@
 	}else{
 		$flag1=1;$flag2=1;
 	}
+	$flag1=1;$flag2=1;
 	$f_bd->update_attributes($_POST['bd'],false);
 	
 	if($_FILES['photo']['name']!=null){
