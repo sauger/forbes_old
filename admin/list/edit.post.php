@@ -1,11 +1,23 @@
 <?php
 include "../../frame.php";
-$id = $_POST['id'] ? $_POST['id'] : 0;
+
+$id = intval($_POST['id']);
 $list_type = new table_class('fb_custom_list_type');
 if($id){
 	$list_type->find($id);	
 }
-$list_type->name = $_POST['name'];
+$list_type->update_attributes($_POST['mlist'],false);
+if($_FILES['image_src']['name'] != ''){
+		$upload = new upload_file_class();
+		$upload->save_dir = '/upload/news/';
+		if(!$upload_name = $upload->handle('image_src','filter_pic')){
+			alert('上传图片失败！');
+			redirect($_SERVER['HTTP_REFERER']);
+			die();
+		};		
+		$list_type->image_src = '/upload/news/' .$upload_name;		
+	}
+$list_type->save();
 
 function get_add_column_name(){
 	global $table;
@@ -113,13 +125,14 @@ if($id){
 		}
 	};
 	
-	if(empty($array)) return;
-	$str = implode(', ',$array);
-	$sql .= " {$str}";
-	$db = get_db();
-	$db->execute($sql);
+	if(!empty($array)){
+		$str = implode(', ',$array);
+		$sql .= " {$str}";
+		$db = get_db();
+		$db->execute($sql);
+	};
+
 }else{
-	$list_type->save();
 	$list_type->table_name = "fb_custom_list_table_{$list_type->id}";
 	$list_type->save();
 	$sql = "create table `{$list_type->table_name}` (`id` integer unsigned not null auto_increment,";
