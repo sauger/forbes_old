@@ -61,7 +61,7 @@ include_once dirname(__FILE__) . '/database_row_item_class.php';
   	}  		
   	
 	function paginate($sql, $per_page=10,$page_var='page') {
-		$page_count_var  = $page_var ."_count";
+		$page_count_var  = $page_var ."_page_count";
 		$record_count_var = $page_var ."_record_count";
 		global $$page_count_var;
 		global $$record_count_var;
