@@ -63,7 +63,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 .left-title7{width:317px; height:30px; font-size:14px; font-weight:bold; color:#999999; text-align:left; line-height:30px; text-indent:1em; background-image:url(/images/html/news/border8.jpg); float:left; display:inline;}
 #right-title1{width:152px; height:30px; font-size:14px; font-weight:bold; color:#666666; line-height:30px; text-indent:1em; float:left; display:inline;}
 #right-title2{width:197px; height:30px; font-size:14px; font-weight:bold; color:#666666; line-height:30px; text-indent:1em; float:left; display:inline;}
-.right-title3{width:120px; height:25px; padding-top:1px; *padding-top:3px; line-height:25px; margin-left:8px; font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
+.right-title3{width:120px; height:25px; line-height:25px; margin-left:8px; font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
 
 #t1{width:70px; font-size:12px; text-align:left; margin-left:220px; float:left; display:inline;}666; line-height:
 #t2{width:70px; font-size:12px; float:left; display:inline;}
@@ -90,7 +90,7 @@ a.nor6:visited{color:#003399;font-weight:bold;}
 #button3{width:66px; height:22px; margin-left:20px; border:0px; background:url('/images/html/news/button3.jpg') no-repeat; float:left; display:inline;}
 #button4{width:122px; height:22px; border:0px; background:url('/images/html/news/button4.jpg') no-repeat; float:left; display:inline;}
 .tar{width:8px; height:8px; margin-top:11px; margin-left:5px; background-image:url(/images/html/news/tar.jpg); float:left; display:inline;}
-.tar1{width:45px; height:12px; margin-top:8px; margin-left:5px; padding-left:8px; border-left:1px #666666 solid; float:left; display:inline;}
+.tar1{width:45px; height:12px; margin-top:6px; margin-left:5px; padding-left:8px; border-left:1px #666666 solid; float:left; display:inline;}
 .tar1 img{border:0; float:left; display:inline;}
 .tar2{width:1px; height:10px; margin-left:150px; margin-top:5px; background-image:url(/images/html/news/tar2.jpg); float:right; display:inline;}
 .tar3{width:13px; height:13px; margin-top:7px; margin-right:7px; background-image:url(/images/html/news/tar4.jpg); float:left; display:inline;}

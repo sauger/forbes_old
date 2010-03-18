@@ -1,7 +1,7 @@
 <?php
 	require_once('../../frame.php');
 	judge_role();
-	$id=$_REQUEST['id'];
+	$id=intval($_REQUEST['id']);
 	$user1 = new table_class($tb_user);
 	if($id)	{
 		$user = $user1->find($id);
@@ -32,6 +32,10 @@
 			<td width=645 align="left"><input type="text" name="post[name]" value="<?php echo $user->name;?>" class="required"></td>
 		</tr>
 		<tr class=tr3>
+			<td width=150>拼音：</td>
+			<td width=645 align="left"><input type="text" name="post[chinese_name]" value="<?php echo $user->chinese_name;?>"></td>
+		</tr>
+		<tr class=tr3>
 			<td>密码：</td>
 			<td align="left"><input type="password" name="post[password]" value="<?php echo $user->password;?>" class="required"></td>
 		</tr>
@@ -43,6 +47,8 @@
 			<td width=150>用户身份：</td>
 			<td width=645 align="left">
 				<select name="post[role_name]" id="role_name">
+					<option value="journalist" <?php if($user->role_name=="journalist") echo "selected=selected"?>>记者</option>
+					<option value="author" <?php if($user->role_name=="author") echo "selected=selected"?>>专栏作者</option>
 					<option value="member" <?php if($user->role_name=="member") echo "selected=selected"?>>普通会员</option>
 					<option value="sys_admin" <?php if($user->role_name=="sys_admin") echo "selected=selected"?>>系统管理员</option>
 					<option value="admin" <?php if($user->role_name=="admin") echo "selected=selected"?>>管理员</option>
@@ -65,7 +71,7 @@
 		}else if($(this).val()=='sys_admin'){
 			$('#role_level').val(2);
 		}else{
-			$('#role_level').val(0);
+			$('#role_level').val(1);
 		}
 			
 	});
