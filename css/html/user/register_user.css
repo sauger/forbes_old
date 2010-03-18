@@ -1,7 +1,7 @@
 body {font-size:12px;  font-family:宋体; font-size:12px; color:#000;  margin:0; padding:0;}
 
-#register{width:840px; margin:0 auto;}
-#person{width:825px; margin-top:10px; margin-left:15px; font-size:14px; color:#999999; line-height:30px; float:left; display:inline;}
+#register{width:810px; margin:0 auto;}
+#person{width:795px; margin-top:10px; margin-left:15px; font-size:14px; color:#999999; line-height:30px; float:left; display:inline;}
 table{margin-top:20px; margin-left:50px; float:left; display:inline;}
 tr{height:40px; line-height:40px; margin-top:0; float:left; display:inline;}
 .td1{width:130px; color:#336666; font-size:13px; font-weight:bold; line-height:22px;  float:left; display:inline;}
@@ -28,4 +28,4 @@ hr{width:840px; height:1px; margin-top:10px; color:#cccccc; float:left; display:
 .upload{width:94px; height:26px; margin-left:30px; line-height:26px; font-size:14px; border:0px; font-weight:bold; background:url('/images/register/upload_bg.jpg') no-repeat; float:left; display:inline;}
 #yzm{width:60px; height:25px; margin-left:10px; margin-top:3px; font-size:16px; font-weight:bold; line-height:32px; background:url('/images/register/yzm_bg.jpg') no-repeat; float:left; display:inline;}
 button{width:154px; height:26px; line-height:26px; font-size:14px; border:0px; font-weight:bold; background:url('/images/register/button.jpg') no-repeat;}
-#submit{width:840px; height:40px; margin-top:40px; line-height:40px; text-align:center; float:left; display:inline;}
+#submit{width:810px; height:40px; margin-top:40px; line-height:40px; text-align:center; float:left; display:inline;}

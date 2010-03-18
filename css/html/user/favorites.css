@@ -4,7 +4,7 @@
 .rich_bd{width:330px; height:40px; float:left; display:inline}
 .bd_left{width:65px; height:20px; float:left; display:inline;}
 .bd_list{width:210px; float:left; display:inline;}
-.bd_list a{color:#626262; margin-right:5px; float:left; display:inline;}
+.bd_list a{color:#626262; height:20px; word-break:keep-all; line-height:20px; margin-right:5px; float:left; display:inline;}
 .rich_name{width:240px; height:18px; float:left; display:inline;}
 .rich_name a{color:#626262; font-weight:bolder; text-decoration:none;}
 .rich_com{float:left; display:inline;}
