@@ -33,11 +33,11 @@
 		<tr class=tr4 id="list_name">
 			<td width="130">榜单名称</td>
 			<td width="695" align="left">
-				<input type="text" name="list[name]" value="<?php echo $record->name;?>" class="required">
+				<input type="text" name="mlist[name]" value="<?php echo $record->name;?>" class="required">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">榜单年份</td><td width="695" align="left"><input type="text" name="list[year]" value="<?php echo $record->year?>"></input>(四位年，如：2010,可选)</td>
+			<td width="130">榜单年份</td><td width="695" align="left"><input type="text" name="mlist[year]" value="<?php echo $record->year?>"></input>(四位年，如：2010,可选)</td>
 		</tr>
 		<tr class="tr4">
 			<td width="130">榜单类型</td>
@@ -57,7 +57,7 @@
 		<tr class=tr4>
 			<td width="130">榜单位置</td>
 			<td width="695" align="left">
-				<select name="position" id="list_position" value="<?php echo $record->position;?>">
+				<select name="mlist[position]" id="list_position" value="<?php echo $record->position;?>">
 					<option value="1">富豪</option>
 					<option value="2">投资</option>
 					<option value="3">公司</option>
