@@ -108,10 +108,8 @@
 			//--------------------
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button></td>
+			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button>		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>"></td>
 		</tr>
-		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
-
 	</table>
 </body>
 </html>
