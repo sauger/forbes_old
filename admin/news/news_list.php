@@ -24,7 +24,7 @@
 		array_push($c, "set_up=$up");
 	}
 	$news = new table_class($tb_news);
-	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),20);
+	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),30);
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -65,7 +65,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="405">标题</td><td width="80">所属类别</td><td width="130">发布时间</td><td width="180">操作</td>
+			<td width="345">标题</td><td width="120">所属类别</td><td width="130">发布时间</td><td width="200">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -78,12 +78,12 @@
 							<?php echo $category->find($record[$i]->category_id)->name;?>
 						</a>
 					</td>
-					<td>
+					<td >
 						<?php echo $record[$i]->created_at;?>
 					</td>
 					<td>
 						<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
-						<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="编辑"><img src="/images/btn_delete.png" border="0"></span>
+						<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/btn_delete.png" border="0"></span>
 						
 						<?php if($record[$i]->is_adopt=="1"){?>
 						<span style="cursor:pointer" class="revocation" name="<?php echo $record[$i]->id;?>" title="撤销"><img src="/images/btn_apply.png" border="0"></span>
@@ -97,6 +97,8 @@
 						<?php if($record[$i]->set_up=="0"){?>
 						<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/btn_unup.png" border="0"></span>
 						<?php }?>
+						<span style="cursor:pointer" title="静态"><img src="/images/btn_static.png" border="0"></span>
+
 						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/btn_comment.png" border="0"></a>
 						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
 					</td>
@@ -106,7 +108,7 @@
 			//--------------------
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate();?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button></td>
+			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button></td>
 		</tr>
 		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
 

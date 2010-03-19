@@ -31,7 +31,9 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title>福布斯-新闻</title>
+	<title><?php echo strip_tags($news->short_title);?>-福布斯中文网</title>
+	<meta name="Keywords" content="<?php echo strip_tags($news->keywords);?>"/>
+	<meta name="Description" content="<?php echo strip_tags($news->description);?>"/>
 	<?php
 		use_jquery();
 		js_include_tag('news/news','select2css');
@@ -201,7 +203,7 @@
 					<div id="favor" class="list left_top">
 					<ul>
 						<?php
-							$record = $db->query("select t1.id,t1.title,t1.short_title from fb_news t1 join fb_category t2 on t1.category_id=t2.id where t2.name='最受欢迎' and t1.is_adopt=1 order by t1.priority asc,t1.created_at desc limit 7");
+							$record = $db->query("select t1.id,t1.title,t1.short_title from fb_news t1 join fb_category t2 on t1.category_id=t2.id where t2.name='最受欢迎' and t1.is_adopt=1 order by t1.priority asc,t1.created_at desc limit 6");
 							for($i=0;$i<count($record);$i++){
 						?>
 						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
@@ -211,7 +213,7 @@
 					<div id="comm" style="display:none;" class="list left_top">
 					<ul>
 						<?php
-							$record = $db->query("select t1.id,t1.title,t1.short_title from fb_news t1 join fb_category t2 on t1.category_id=t2.id where t2.name='编辑推荐' and t1.is_adopt=1 order by t1.priority asc,t1.created_at desc limit 7");
+							$record = $db->query("select t1.id,t1.title,t1.short_title from fb_news t1 join fb_category t2 on t1.category_id=t2.id where t2.name='编辑推荐' and t1.is_adopt=1 order by t1.priority asc,t1.created_at desc limit 6");
 							for($i=0;$i<count($record);$i++){
 						?>
 						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
@@ -226,7 +228,7 @@
 					<div id="create" class="list left_bottom">
 					<ul>
 						<?php
-							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='创业') order by priority asc,created_at desc limit 7");
+							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='创业') order by priority asc,created_at desc limit 6");
 							for($i=0;$i<count($record);$i++){
 						?>
 						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo  strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
@@ -236,7 +238,7 @@
 					<div id="ology" style="display:none;" class="list left_bottom">
 					<ul>
 						<?php
-							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='商业') order by priority asc,created_at desc limit 7");
+							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='商业') order by priority asc,created_at desc limit 6");
 							for($i=0;$i<count($record);$i++){
 						?>
 						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>
@@ -246,7 +248,7 @@
 					<div id="business" style="display:none;" class="list left_bottom">
 					<ul>
 						<?php
-							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='科技') order by priority asc,created_at desc limit 7");
+							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='科技') order by priority asc,created_at desc limit 6");
 							for($i=0;$i<count($record);$i++){
 						?>
 						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
@@ -256,7 +258,7 @@
 					<div id="invest" style="display:none;" class="list left_bottom">
 					<ul>
 						<?php
-							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='投资') order by priority asc,created_at desc limit 7");
+							$record = $db->query("select id,title,short_title from fb_news where is_adopt=1 and category_id in (select t1.id from fb_category t1 join fb_category t2 on t1.sort_id=t2.id where t2.name='投资') order by priority asc,created_at desc limit 6");
 							for($i=0;$i<count($record);$i++){
 						?>
 						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	

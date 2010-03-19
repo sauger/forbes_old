@@ -9,7 +9,7 @@ $(function(){
 		search_news();
 	});
 	$('input[name=title]').keypress(function(e){
-		if(e.keyCode = 13){
+		if(e.keyCode == 13){
 			search_news();
 		}
 	});

@@ -10,7 +10,7 @@
 		css_include_tag('admin','thickbox');
 		use_jquery();
 		validate_form("gsgl_edit");
-		js_include_tag('admin/company');
+		js_include_tag('admin/company','../ckeditor/ckeditor.js');
 	?>
 </head>
 

@@ -40,7 +40,7 @@
 		</tr>
 		<?php
 			$category = new table_class($tb_category);
-			$record = $category->paginate("all",array('conditions' => 'category_type="'.$type.'"','order' => 'parent_id,priority'),20);
+			$record = $category->paginate("all",array('conditions' => 'category_type="'.$type.'"','order' => 'parent_id,priority'),30);
 			$count_record = count($record);
 			$record2 = $category->find("all",array('conditions' => 'category_type="'.$type.'"','order' => 'priority'));
 			$count_record2 = count($record2);

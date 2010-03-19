@@ -148,7 +148,10 @@ function get_fck_content($str,$symbol='fck_pageindex')
 	$ies = '<div style="page-break-after: always;">
 	<span style="display: none;">&nbsp;</span></div>';	
 	$ffs = '<div style="page-break-after: always">
-	<span style="display: none">&nbsp;</span></div>';   	
+		<span style="display: none">&nbsp;</span></div>';
+	$ffs2 = '<div style="page-break-after: always;">
+		<span style="display: none;">&nbsp;</span></div>
+';
 	$contents = split($ies,$str);
 	$record_count_token = $symbol . "_record_count";	
 	$pagecounttoken = $symbol . "_count";
@@ -156,6 +159,9 @@ function get_fck_content($str,$symbol='fck_pageindex')
 	global $$record_count_token;
 	if (count($contents) < 2 ) {
 		$contents = split($ffs,$str);
+	}
+	if (count($contents) < 2 ) {
+		$contents = split($ffs2,$str);
 	}
 	$$record_count_token = count($contents);
 	$$pagecounttoken = $$record_count_token;
@@ -195,7 +201,10 @@ function print_fck_pages2($url="",$symbol='fck_pageindex'){
 		}
 		$next .='">下页</a></span>';
 	}
-	echo $prev.$page.$next;
+	if($count==1){
+	}else{
+		echo $prev.$page.$next;
+	}
 }
 
 function print_fck_pages($str,$url="",$symbol='fck_pageindex'){

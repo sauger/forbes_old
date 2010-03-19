@@ -27,4 +27,4 @@
 				<div class=td2><a style="font-weight:bold;" href="">[会员俱乐部]</a><br><a href="">会员俱乐部介绍</a><br><a href="">读者调查</a><br><a href="">申请赠阅</a><br><a href="">会员公告</a><br><a href="">读者来函</a><br><a href="">礼品兑换</a></div>
 				<div id=td5><a href="">关于福布斯中文网</a> - <a href="">新闻动态</a> - <a href="">广告服务</a> - <a href="">诚聘英才</a> - <a href="">友情连接</a> - <a href="">会员活动</a> - <a href="">隐私声明</a> - <a href="">网站声明</a> - <a href="">联系我们</a> - <a href="">网站地图</a></div>
 		</div>
-		<div id=ibabout>Copyright ? 2010 Forbes.com Inc. 福布斯公司 版权所有<br><br>备案号：户CP备000000号</div>
+		<div class=ibabout>Copyright ? 2010 Forbes.com Inc. 福布斯公司 版权所有<br><br>备案号：户CP备000000号</div>

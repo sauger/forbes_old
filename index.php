@@ -1,6 +1,7 @@
 ﻿<?php 
 	session_start();
 	require_once('frame.php');
+	$db = get_db();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,7 +11,7 @@
 	<title>福布斯首页</title>
 	<?php
 		use_jquery();
-		js_include_tag('select2css');
+		js_include_tag('select2css','index');
 		css_include_tag('index','top','bottom');
 	?>
 </head>
@@ -18,30 +19,63 @@
 	<div id=ibody>
 		<? require_once('inc/top.inc.php');?>
 		<div id=t_l_t>
+			<?php
+				$sql = 'select n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.name="每日头条" and c.category_type="news" order by n.priority asc,n.created_at desc limit 4';
+				$record_head=$db -> query($sql);
+  		?>
 			<div id=t_l_t_t>
-				<div id=t_l_t_t_l><a href=""><img border=0 src="images/index/l_t_t_img.jpg"></a></div>
+				<div class=head_pic id=head_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[0]->video_photo_src; ?>"></a></div>
+				<div class=head_pic id=head_pic_1 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[1]->video_photo_src; ?>"></a></div>
+				<div class=head_pic id=head_pic_2 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[2]->video_photo_src; ?>"></a></div>
+				<div class=head_pic id=head_pic_3 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[3]->video_photo_src; ?>"></a></div>
 				<div id=t_l_t_t_r>
-					<div id=title><a href="">今早在意大利法庭判宣判谷</a></div>
-					<div id=content><a href="">据意大利安克罗诺斯通讯社报道，当庭被宣布定罪的3人当庭被宣布定罪的3人包括括谷歌高...</a></div>
-					<div class=cl><a href=""><img border=0 src="images/index/yuan.jpg">瑞银与高盛领跑AIG香港领跑</a></div>
-					<div class=cl><a href=""><img border=0 src="images/index/yuan.jpg">瑞银与高盛领跑AIG香港领跑</a></div>			
-					<div class=cl><a href=""><img border=0 src="images/index/yuan.jpg">瑞银与高盛领跑AIG香港领跑</a></div>
+					<div class=head_title id=head_title_0><a href=""><?php echo $record_head[0]->short_title; ?></a></div>
+					<div class=head_title id=head_title_1 style="display:none;"><a href=""><?php echo $record_head[1]->short_title; ?></a></div>
+					<div class=head_title id=head_title_2 style="display:none;"><a href=""><?php echo $record_head[2]->short_title; ?></a></div>
+					<div class=head_title id=head_title_3 style="display:none;"><a href=""><?php echo $record_head[3]->short_title; ?></a></div>
+					<div class=head_content id=head_content_0><?php echo $record_head[0]->description; ?></div>
+					<div class=head_content id=head_content_1 style="display:none;"><?php echo $record_head[1]->description; ?></div>
+					<div class=head_content id=head_content_2 style="display:none;"><?php echo $record_head[2]->description; ?></div>
+					<div class=head_content id=head_content_3 style="display:none;"><?php echo $record_head[3]->description; ?></div>
+					
+				<?php for($j=0;$j<=3;$j++){?>	
+					<div class=head_related id=head_related_<?php echo $j?> <?php if($j<>0){echo "style='display:none'";}?> >
+					<?php				
+					 		$sub_news_str=explode(",",$record_head[$j]->sub_headline); 
+				  		$sub_news_str_num=sizeof($sub_news_str)-1;
+
+							for($i=0;$i<=$sub_news_str_num;$i++)
+							{
+								  if($sub_news_str_num<1){break;}
+									$sql="select n.short_title from fb_news n where n.id=".$sub_news_str[$i];
+									$record_sub_news = $db -> query($sql);
+									echo '<div class=cl><a href="">'.strip_tags($record_sub_news[0]->short_title).'</a></div>';
+							}
+					?>				
+					</div>
+				<? }?>	
+	
 					<div id=more><a href="">查看更多</a></div>
 					<div id=btn>
-						<a href=""><img border=0 src="images/index/slideshow_back.gif"></a>
-						<a href=""><img border=0 src="images/index/slideshow_active.gif"></a>
-						<a href=""><img border=0 src="images/index/slideshow_unactive.gif"></a>
-						<a href=""><img border=0 src="images/index/slideshow_unactive.gif"></a>
-						<a href=""><img border=0 src="images/index/slideshow_unactive.gif"></a>
-						<a href=""><img border=0 src="images/index/slideshow_next.gif"></a>	
+						<div class=head_btn1 id=l style="background:url(images/index/slideshow_back.gif) no-repeat;"></div>
+						<div class=head_btn2 id=0 style="background:url(images/index/slideshow_active.gif) no-repeat"></div>
+						<div class=head_btn2 id=1 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
+						<div class=head_btn2 id=2 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
+						<div class=head_btn2 id=3 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
+						<div class=head_btn1 id=r style="background:url(images/index/slideshow_next.gif) no-repeat"></div>
 					</div>
 				</div>
 			</div>
+		 <div id=t_l_t_b>	
 			<div id=t_l_t_l>
+			<?php
+				$sql = 'select n.short_title,n.id as news_id from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.name="陆家嘴早餐" and c.category_type="news" order by n.priority asc,n.created_at desc limit 3';
+				$record_breakfast=$db -> query($sql);
+  		?>
 				<div id=title><a href="">陆家嘴早餐</a></div>
-					<div id=content1><a href=""><img border=0 src="images/index/t_l_t_l_content.jpg"> 瑞银与高盛领跑AIG香港领跑AIG香港领跑AIG香港上市业务</a></div>
-					<div id=content2><a href=""><img border=0 src="images/index/t_l_t_l_content.jpg"> 瑞银与高盛领跑AIG香港领跑AIG香港领跑AIG香港上市业务</a></div>
-					<div id=content3><a href=""><img border=0 src="images/index/t_l_t_l_content.jpg"> 瑞银与高盛领跑AIG香港领跑AIG香港领跑AIG香港上市业务</a></div>
+					<div class=content><a href=""><?php echo $record_breakfast[0]->short_title; ?></a></div>
+					<div class=content><a href=""><?php echo $record_breakfast[1]->short_title; ?></a></div>
+					<div class=content><a href=""><?php echo $record_breakfast[2]->short_title; ?></a></div>
 					<div id=coffee></div>
 			</div>
 			<div id=t_l_t_r>
@@ -54,7 +88,8 @@
 				<?php } ?>
 				<div id=right><img style="cursor:pointer;" border=0 src="images/index/t_l_t_r_right.jpg"></div>
 			</div>
-		</div>
+		  </div>
+		 </div> 
 		<div id=t_r_t>
 			<div class=title style="background:url('images/index/t_r_t_title1.jpg') no-repeat; font-weight:bold; color:#000000;">实时财富</div>
 			<div class=title>财富过山车</div>	

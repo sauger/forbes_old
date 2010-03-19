@@ -1,0 +1,21 @@
+﻿body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+
+#ibody{width:1000px; margin:0 auto;}
+#cyindex{width:72px; height:19px; cursor:pointer; background-image:url(/images/fh/searchfh.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/fh/searchfh.png"); margin-top:10px; float:left; display:inline;}
+#cytitle{width:494px; height:16px; margin-top:13px; margin-left:20px; line-height:16px; float:left; display:inline;}
+#cytitle a{color:#246bb0; text-decoration:none;}
+#cyline{width:1000px; height:8px; margin-top:10px; background:url('/images/tyzl/tyzl_line.jpg') no-repeat; float:left; display:inline;}
+#searchfh_left{width:657px; margin-top:10px; float:left; display:inline;}
+#searchfh_left #s_l_t{width:637px; margin-top:20px; margin-left:20px;  color:#666666; font-size:13px; font-weight:bold; float:left; display:inline;}
+#searchfh_left #s_l_t #s_l_t_l{width:445px; margin-top:25px; margin-left:13px;  float:left; display:inline;}
+#searchfh_left #s_l_t #s_l_t_r{width:114px; margin-top:15px; float:left; display:inline;}
+#searchfh_left #s_l_t button{width:114px; height:37px; cursor:pointer; border:0px; background:url('/images/fh/btn_search.jpg') no-repeat;}
+#searchfh_left #s_l_t select{width:113px; height:19px;}
+#searchfh_left #s_l_t input{width:111px; height:17px; border:1px solid #999999;}
+#searchfh_left #s_l_title_left{width:3px; height:30px; margin-top:30px; background:url('/images/fh/search_result_left.jpg') no-repeat; float:left; display:inline;}
+#searchfh_left #s_l_title_center{width:651px; height:30px; margin-top:30px; background:#f3f3f3; float:left; display:inline;}
+#searchfh_left #s_l_title_center #wz{width:96px; height:18px; margin-top:6px; margin-left:15px; color:#246bb0; font-size:14px; font-weight:bold; float:left; display:inline;}
+#searchfh_left .icon1{width:16px; height:18px; margin-top:10px; margin-left:20px; background:url('/images/fh/icon.jpg') no-repeat; float:left; display:inline;}
+#searchfh_left .content{width:565px; height:18px; margin-top:10px; margin-left:10px; line-height:18px; color:#333333; font-size:13px; overflow:hidden; float:left; display:inline;}
+#searchfh_left .dash{width:611px; height:1px; margin-top:10px; margin-left:20px; background:url('/images/fh/dash.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#searchfh_left #s_l_title_right{width:3px; height:30px; margin-top:30px; background:url('/images/fh/search_result_right.jpg') no-repeat; float:right; display:inline;}

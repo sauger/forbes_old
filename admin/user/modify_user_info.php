@@ -17,7 +17,7 @@
 	<?
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin/user/modify_user_info');
+		js_include_tag('admin/user/modify_user_info','../ckeditor/ckeditor.js');
 	?>
 </head>
 <body>
@@ -54,6 +54,10 @@
 		<tr class="tr3">
 			<td>确认新密码：</td>
 			<td><input type="password" id="re_new_password"></input></td>
+		</tr>
+		<tr class="tr3">
+			<td>个人简介：</td>
+			<td><?php show_fckeditor('description','Admin',false,"215",$user->description);?></input></td>
 		</tr>
 		<tr class=tr3>
 			<td colspan="2"><button id="btn_submit" type="submit">提 交</button></td>
