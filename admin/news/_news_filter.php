@@ -48,7 +48,7 @@
 		<?php
 			$subject = new table_class("fb_news");
 
-			$items = search_content($_REQUEST['key'],'fb_news',$conditions,15,$order);
+			$items = search_content($_REQUEST['key'],'fb_news',$conditions,25,$order);
 			$count_record = count($items);			
 			//--------------------		
 			for($i=0;$i<$count_record;$i++)	{
