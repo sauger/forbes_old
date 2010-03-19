@@ -1,4 +1,5 @@
 var head_id=0;
+var is_changed=0;
 function head(now_id)
 {
 		$(".head_btn2").css('background','url(/images/index/slideshow_unactive.gif) no-repeat');
@@ -17,10 +18,17 @@ function head(now_id)
 		$("#head_related_"+now_id).show();		
 		
 		head_id=now_id;
+		is_changed=1;
 }
 
 function head2()
 {
+	  if(is_changed=="1")
+	  {
+	  	is_changed=0;
+			setTimeout("head2()",7000);
+	  	return false;
+	  }
 		var now_id=head_id;	
 		now_id=parseInt(head_id)+1;
     if(now_id>3){now_id=0;}
@@ -41,7 +49,7 @@ function head2()
 		$("#head_related_"+now_id).show();		
 		
 		head_id=now_id;
-		setTimeout("head2()",5000);
+		setTimeout("head2()",7000);
 }		
 
 
@@ -69,4 +77,4 @@ $(function(){
 });
 
 
-setTimeout("head2()",5000);
+setTimeout("head2()",7000);

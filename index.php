@@ -57,11 +57,7 @@
 					?>				
 					</div>
 				<? }?>	
-					
-					
-					
-					
-					
+	
 					<div id=more><a href="">查看更多</a></div>
 					<div id=btn>
 						<div class=head_btn1 id=l style="background:url(images/index/slideshow_back.gif) no-repeat;"></div>
