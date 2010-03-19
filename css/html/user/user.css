@@ -2,12 +2,9 @@
 #ibody{width:1000px; margin:0 auto;}
 
 #top{width:1000px; height:37px; margin-top:10px; float:left; display:inline;}
-
 #title{width:75px; height:27px; line-height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
 #title1{width:900px; height:27px; font-size:12px; line-height:27px; margin-left:19px; float:left; display:inline;}
 #title1 a{text-decoration:none;}
-
-
 #line{width:999px; height:10px; line-height:0; font-size:0; background:url(/images/html/user/line.jpg) repeat-x; float:left; display:inline;}
 
 #left{width:180px; height:235px; margin-top:10px; font-weight:bold; background:url("/images/html/user/left_list.gif"); float:left; display:inline;}
