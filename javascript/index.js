@@ -77,4 +77,4 @@ $(function(){
 });
 
 
-//setTimeout("head2()",7000);
+setTimeout("head2()",7000);
