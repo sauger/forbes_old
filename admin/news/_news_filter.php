@@ -1,5 +1,6 @@
 <?php
 	require_once('../../frame.php');
+	$category = new category_class('news');
 	$key = urldecode($_REQUEST['key']);
 	$order = "";
 	$filter_adopt = isset($_REQUEST['filter_adopt']) ? $_REQUEST['filter_adopt'] : -1;
@@ -17,12 +18,12 @@
 	}
 	$filter_category = $_REQUEST['filter_category'] ? $_REQUEST['filter_category'] : -1;
 	if($filter_category != -1){
-		$conditions[] = 'category_id =' .$filter_category;		
+		$cate_ids = $category->children_map($filter_category);
+		$conditions[] = 'category_id in (' .$filter_category .")";		
 	}
 	if($conditions){
 		$conditions = implode(' and ', $conditions);	
 	}
-	$category = new category_class('news');
 	$category->echo_jsdata();
 	$db = get_db();
 ?>
