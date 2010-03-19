@@ -6,10 +6,10 @@
 	$db = get_db();
 	
 	if($type=='publish'){
-		$pos = new table_class("fb_postion");
-		$pos->find($pid);
+		$postion = new table_class("fb_postion");
+		$postion->find($pid);
 		$count = $db->query("select count(*) as num from fb_news_postion where postion_id=$pid");
-		if($count[0]->num==$pos->postion_limit){
+		if($count[0]->num==$postion->postion_limit){
 			echo "full";
 			die();
 		}
@@ -17,6 +17,8 @@
 		$pos->postion_id = $pid;
 		$pos->news_id = $nid;
 		$pos->save();
+		$postion->type='news';
+		$postion->save();
 	}
 	elseif($type=='revocation'){
 		$pos = new table_class("fb_news_postion");

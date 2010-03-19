@@ -21,6 +21,11 @@
 	$id = $_REQUEST['id'];
 	$record = new table_class('fb_postion');
 	$record->find($id);
+	if($record->category_id==''){
+		$category = -1;
+	}else{
+		$category = $record->category_id;
+	}
 ?>
 
 <body style="background:#E1F0F7">
@@ -44,14 +49,14 @@
 		</tr>	
 	</table>
 		<input type="hidden" name="id" id="id"  value="<?php echo $record->id;?>">
-		<input type="hidden" name="category" id="category"  value="<?php echo $pid;?>">
+		<input type="hidden" name="category" id="category"  value="<?php echo $category;?>">
 	</form>
 </body>
 </html>
 
 <script>
 	$(function(){
-		category.display_select('category_select',$('#span_category'),-1,'', function(id){
+		category.display_select('category_select',$('#span_category'),<?php echo $category;?>,'', function(id){
 			$('#category').val(id);
 		});
 	});

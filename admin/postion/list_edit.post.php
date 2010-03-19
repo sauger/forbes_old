@@ -6,7 +6,6 @@
 	if($id!=''){
 		$postion->find($id);
 	}
-	
 	$postion->category_id = $_POST['category'];
 	$postion->type = "category";
 	$postion->save();
