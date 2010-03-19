@@ -19,11 +19,9 @@ p{padding:0; margin:0}
 #t_l_t_t_r .cl a{color:#003399; font-size:14px; text-decoration:none;}
 #t_l_t_t_r .cl a:hover{color:#94000B;}
 
-
-
 #t_l_t_t_r #more{width:60px; height:20px; margin-top:50px; float:right; display:inline;}
 #t_l_t_t_r #more a{color:#003399;}
-#t_l_t_t_r #btn{width:115px; height:14px; margin-top:5px; margin-right:10px; float:right; display:inline;}
+#t_l_t_t_r #btn{width:115px; height:14px; margin-top:3px; margin-right:10px; float:right; display:inline;}
 #t_l_t_t_r #btn .head_btn1{width:14px; height:14px; margin-left:5px; float:left; display:inline; cursor:pointer;}
 #t_l_t_t_r #btn .head_btn2{width:14px; height:14px; margin-left:5px; float:left; display:inline; cursor:pointer;}
 
