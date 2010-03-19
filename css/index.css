@@ -6,8 +6,6 @@ p{padding:0; margin:0}
 #t_l_t{width:680px; height:323px; margin-top:10px; padding:1px; border:1px solid #e1e9f0; float:left; display:inline;}
 #t_l_t_t{width:680px; height:200px; background:#f4f4f4; float:left; display:inline;}
 .head_pic{float:left; display:inline;}
-#head_pic2{width:72px; height:200px; margin-left:-72px; background:url(/images/index/head.png) no-repeat; float:left; display:inline;}
-
 #t_l_t_t_r{width:361px; height:200px; margin-top:1px; float:right; display:inline;}
 .head_title{width:351px; height:28px; margin-top:16px; line-height:28px; overflow:hidden; float:left; display:inline;}
 .head_title a{color:#003399; font-size:24px; font-family:微软雅黑,黑体; font-weight:bold;  text-decoration:none;}
