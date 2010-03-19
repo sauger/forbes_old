@@ -18,7 +18,7 @@
 	<form id="news_edit" enctype="multipart/form-data" action="news.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　发布新闻</td>
+			<td colspan="2" width="795">　　发布新闻 <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">标题</td>

@@ -1,7 +1,7 @@
 <?php
 	require_once('../../frame.php');
 	judge_role();
-	
+	$category = new category_class('news');
 	$title = $_REQUEST['title'];
 	$category_id = $_REQUEST['category'] ? $_REQUEST['category'] : -1;
 	$is_adopt = $_REQUEST['adopt'];
@@ -15,7 +15,8 @@
 		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'");
 	}
 	if($category_id > 0){
-		array_push($c, "category_id=$category_id");
+		$cate_ids = implode(',',$category->children_map($category_id));
+		array_push($c, "category_id in($cate_ids)");
 	}
 	if($is_adopt!=''){
 		array_push($c, "is_adopt=$is_adopt");
@@ -24,7 +25,7 @@
 		array_push($c, "set_up=$up");
 	}
 	$news = new table_class($tb_news);
-	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),30);
+	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'category_id,priority asc,created_at desc'),30);
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -37,7 +38,6 @@
 		css_include_tag('admin');
 		use_jquery();
 		js_include_tag('admin_pub','category_class','admin/pub/search','admin/news/news_list');
-		$category = new category_class('news');
 		$category->echo_jsdata();		
 	?>
 </head>
@@ -108,10 +108,8 @@
 			//--------------------
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button></td>
+			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button>		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>"></td>
 		</tr>
-		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
-
 	</table>
 </body>
 </html>

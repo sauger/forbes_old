@@ -53,20 +53,29 @@ $(function(){
 		if(priority == '') priority = 100;
 		
 		$('#priority').attr('value', priority);
+		var category_count = $('.category_select').length;
 		category_id = $('.category_select:last').attr('value');
 		if(category_id == -1){
-			alert('请选择分类!');
-			return false;
+			if(category_count < 2){
+				alert('请选择分类!');
+				return false;	
+			}else{
+				category_id = $('.category_select:eq('+ (category_count - 2) + ')').val();
+			}
 		}
 		$('#category_id').val(category_id);
 		//handle the news_copy
 		if($('#tr_copy_news').css('display') != 'none'){
 			var copy_cateogry_id = $('.category_select_copy:last').val();
-			if(copy_cateogry_id > 0 ){
-				$('#hidden_copy_news').val(copy_cateogry_id);
-			}else{
-				$('#hidden_copy_news').val(0);
+			if(copy_cateogry_id <= 0 ){
+				var copy_category_count = $('.category_select_copy').length;
+				if(copy_category_count < 2){
+					copy_cateogry_id = 0;	
+				}else{
+					copy_cateogry_id = $('.category_select_copy:eq('+ (copy_category_count - 2) + ')').val();
+				}
 			}
+			$('#hidden_copy_news').val(copy_cateogry_id);
 			
 		}else{
 			$('#hidden_copy_news').val(0);

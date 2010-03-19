@@ -4,23 +4,38 @@ class category_class
 {
 	public $items;
 	private $table;
+	public $group_items;
 	function __construct($type=null,$name=null) {
 		$table = new table_class(get_config('tb_category'));
 		if(empty($name)){
 			if(empty($type)){
 				$items = $table->find('all');
 			}else{
-				$items = $table->find('all',array('conditions' => "category_type = '" .$type ."'",'order' => 'priority'));
+				$items = $table->find('all',array('conditions' => "category_type = '" .$type ."'",'order' => 'sort_id ,priority'));
 			}
 		}else{
-			$items = $table->find('all',array('conditions' => "name = '" .$name ."'",'order' => 'priority'));
+			$items = $table->find('all',array('conditions' => "name = '" .$name ."'",'order' => 'sort_id,priority'));
 		}
 		
 		if($items){
 			foreach ($items as $item) {
 				$this->items[$item->id] = $item;
+				$this->group_items[$item->parent_id][]=$item->id;
+				$this->group_items[$item->id] = array();
 			}
 		}
+		
+	}
+	
+	public function children_map($id, $include_self = true){
+		
+		if($include_self) $result[] = $id;
+		if($this->group_items[$id]){
+			foreach ($this->group_items[$id] as $g) {
+				$result = array_merge($result,$this->children_map($g,true));
+			}
+		} 
+		return $result;
 		
 	}
 	

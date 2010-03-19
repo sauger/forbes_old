@@ -7,11 +7,9 @@
 		?>
 	</head>
 	<body>
-	<?php 
-		$a = array('a','b','c');
-		$b = array('b','c','1');
-		var_dump(array_diff($a,$b));
-		var_dump(array_diff($b,$a));
+		<?php 
+		$c = new category_class('news');
+		echo implode(',',$c->children_map(5));
 		die();
 	?>
 		<form method="post" action="test1.php">
