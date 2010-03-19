@@ -8,12 +8,12 @@
 	if($type=='publish'){
 		$postion = new table_class("fb_postion");
 		$postion->find($pid);
-		$count = $db->query("select count(*) as num from fb_news_postion where postion_id=$pid");
+		$count = $db->query("select count(*) as num from fb_postion_relation where postion_id=$pid");
 		if($count[0]->num==$postion->postion_limit){
 			echo "full";
 			die();
 		}
-		$pos = new table_class("fb_news_postion");
+		$pos = new table_class("fb_postion_relation");
 		$pos->postion_id = $pid;
 		$pos->news_id = $nid;
 		$pos->save();
@@ -21,7 +21,7 @@
 		$postion->save();
 	}
 	elseif($type=='revocation'){
-		$pos = new table_class("fb_news_postion");
+		$pos = new table_class("fb_postion_relation");
 		$pos->delete($nid);
 	}
 	elseif("edit_priority"==$type)
@@ -34,7 +34,7 @@
 		{
 			if($priority_str[$i]==""){$priority_str[$i]="";}
 			$db = get_db();
-			$sql="update fb_news_postion set ".$priority."=".$priority_str[$i]." where id=".$id_str[$i];
+			$sql="update fb_postion_relation set ".$priority."=".$priority_str[$i]." where id=".$id_str[$i];
 			$db->execute($sql);
 		}
 	}

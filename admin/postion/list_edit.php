@@ -13,7 +13,7 @@
 	
 	$db = get_db();
 	
-	$sql = "select t1.title,t1.id,t2.id as p_id,t1.category_id,t2.priority,t1.created_at from fb_news t1 left join fb_news_postion t2 on t1.id=t2.news_id where 1=1";
+	$sql = "select t1.title,t1.id,t2.id as p_id,t1.category_id,t2.priority,t1.created_at from fb_news t1 left join fb_postion_relation t2 on t1.id=t2.news_id where 1=1";
 	$sql .= " and t1.language_tag=$language_tag";
 	if($title!= ''){
 		$sql .= " t1.title like '%".trim($title)."%' or t1.keywords like '%".trim($title)."%' or t1.description like '%".trim($title)."%'";
@@ -21,7 +21,7 @@
 	if($category_id > 0){
 		$sql .= " and t1.category_id=$category_id";
 	}
-	$news = $db->query("select * from fb_news_postion where postion_id=$id");
+	$news = $db->query("select * from fb_postion_relation where postion_id=$id");
 	$ids = $news[0]->news_id;
 	for($i=1;$i<count($news);$i++){
 		$ids.=','.$news[$i]->news_id;
@@ -69,7 +69,7 @@
 				</select>
 				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
-				　　<a href="list.php?id=<?php echo $page->page_id;?>">返回位置管理</a>
+				　　<a href="index.php">返回位置管理</a>
 			</td>
 		</tr>
 		<tr class="tr2">
