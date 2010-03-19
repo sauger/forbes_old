@@ -2,10 +2,13 @@
 	require_once('../../frame.php');
 	judge_role();
 	
+	$id = $_REQUEST['id'];
+	$page = new table_class("fb_postion");
+	$page->find($id);
+	
 	$title = $_REQUEST['title'];
 	$category_id = $_REQUEST['category'] ? $_REQUEST['category'] : -1;
 	$is_adopt = $_REQUEST['adopt'];
-	$up = $_REQUEST['up'];
 	$language_tag = $_REQUEST['language_tag'] ? $_REQUEST['language_tag'] : 0;
 	
 	$db = get_db();
@@ -17,14 +20,27 @@
 	if($category_id > 0){
 		array_push($c, "category_id=$category_id");
 	}
-	if($is_adopt!=''){
-		array_push($c, "is_adopt=$is_adopt");
+	$news = $db->query("select * from fb_news_postion where postion_id=$id");
+	$ids = $news[0]->news_id;
+	$rids = $news[0]->id;
+	for($i=1;$i<count($news);$i++){
+		$ids.=','.$news[$i]->news_id;
+		$rids .= ','.$news[$i]->id;
 	}
-	if($up!=''){
-		array_push($c, "set_up=$up");
+	
+	if($is_adopt!=''){
+		if($is_adopt==0&&$ids!=''){
+			array_push($c, "id not in({$ids})");
+		}elseif($is_adopt==1&&$ids!=''){
+			array_push($c, "id in({$ids})");
+		}elseif($is_adopt==0&&$ids==''){
+		}elseif($is_adopt==1&&$ids==''){
+			array_push($c, "id=''");
+		}
 	}
 	$news = new table_class($tb_news);
 	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),20);
+	
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -36,7 +52,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub','category_class','admin/pub/search','admin/news/news_list');
+		js_include_tag('category_class','admin/postion/postion_list');
 		$category = new category_class('news');
 		$category->echo_jsdata();		
 	?>
@@ -50,9 +66,14 @@
 				<span id="span_category"></span><select id="language_tag" name="language_tag" class="sau_search">					
 					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
 					<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
+				</select><select id=adopt name="adopt" style="width:90px" class="sau_search">
+					<option value="">加入状况</option>
+					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已加入</option>
+					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未加入</option>
 				</select>
 				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
+				　　<a href="list.php?id=<?php echo $page->page_id;?>">返回位置管理</a>
 			</td>
 		</tr>
 		<tr class="tr2">
@@ -91,7 +112,7 @@
 			<td colspan=5><?php paginate();?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button></td>
 		</tr>
 		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
-
+		<input type="hidden" id="list_id" value="<?php echo $id?>">
 	</table>
 </body>
 </html>
