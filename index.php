@@ -69,6 +69,7 @@
 					</div>
 				</div>
 			</div>
+		 <div id=t_l_t_b>	
 			<div id=t_l_t_l>
 			<?php
 				$sql = 'select n.short_title,n.id as news_id from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.name="陆家嘴早餐" and c.category_type="news" order by n.priority asc,n.created_at desc limit 3';
@@ -90,7 +91,8 @@
 				<?php } ?>
 				<div id=right><img style="cursor:pointer;" border=0 src="images/index/t_l_t_r_right.jpg"></div>
 			</div>
-		</div>
+		  </div>
+		 </div> 
 		<div id=t_r_t>
 			<div class=title style="background:url('images/index/t_r_t_title1.jpg') no-repeat; font-weight:bold; color:#000000;">实时财富</div>
 			<div class=title>财富过山车</div>	
