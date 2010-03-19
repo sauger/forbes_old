@@ -28,7 +28,7 @@
 				<div class=head_pic id=head_pic_1 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[1]->video_photo_src; ?>"></a></div>
 				<div class=head_pic id=head_pic_2 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[2]->video_photo_src; ?>"></a></div>
 				<div class=head_pic id=head_pic_3 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[3]->video_photo_src; ?>"></a></div>
-
+				<div id=head_pic2></div>
 
 
 				<div id=t_l_t_t_r>
