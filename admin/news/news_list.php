@@ -24,7 +24,7 @@
 		array_push($c, "set_up=$up");
 	}
 	$news = new table_class($tb_news);
-	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),20);
+	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),30);
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -65,7 +65,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="385">标题</td><td width="80">所属类别</td><td width="130">发布时间</td><td width="200">操作</td>
+			<td width="345">标题</td><td width="120">所属类别</td><td width="130">发布时间</td><td width="200">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -108,7 +108,7 @@
 			//--------------------
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate();?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button></td>
+			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button></td>
 		</tr>
 		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
 
