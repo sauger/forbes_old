@@ -78,7 +78,7 @@
 							<?php echo $category->find($record[$i]->category_id)->name;?>
 						</a>
 					</td>
-					<td>
+					<td >
 						<?php echo $record[$i]->created_at;?>
 					</td>
 					<td>
