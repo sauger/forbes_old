@@ -149,8 +149,9 @@ function get_fck_content($str,$symbol='fck_pageindex')
 	<span style="display: none;">&nbsp;</span></div>';	
 	$ffs = '<div style="page-break-after: always">
 		<span style="display: none">&nbsp;</span></div>';
-	$ffs2 = '<div style="page-break-after: always">
-	<span style="display: none">&nbsp;</span></div>';
+	$ffs2 = '<div style="page-break-after: always;">
+		<span style="display: none;">&nbsp;</span></div>
+';
 	$contents = split($ies,$str);
 	$record_count_token = $symbol . "_record_count";	
 	$pagecounttoken = $symbol . "_count";
