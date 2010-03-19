@@ -15,8 +15,7 @@ p{padding:0; margin:0}
 
 .head_related{width:230px; height:80px; float:left; display:inline;}
 
-#t_l_t_t_r .cl{width:224px; height:24px; line-height:22px; overflow:hidden; float:left; display:inline;}
-#t_l_t_t_r .cl img{width:4px; height:4px; margin-top:8px; margin-right:10px;}
+#t_l_t_t_r .cl{width:224px; height:24px; padding-left:13px; line-height:22px; background:url(/images/index/yuan.jpg) no-repeat 0 8px; overflow:hidden; float:left; display:inline;}
 #t_l_t_t_r .cl a{color:#003399; font-size:14px; text-decoration:none;}
 #t_l_t_t_r .cl a:hover{color:#94000B;}
 

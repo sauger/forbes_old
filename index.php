@@ -52,7 +52,7 @@
 								  if($sub_news_str_num<1){break;}
 									$sql="select n.short_title from fb_news n where n.id=".$sub_news_str[$i];
 									$record_sub_news = $db -> query($sql);
-									echo '<div class=cl><a href=""><img border=0 src="/images/index/yuan.jpg">'.strip_tags($record_sub_news[0]->short_title).'</a></div>';
+									echo '<div class=cl><a href="">'.strip_tags($record_sub_news[0]->short_title).'</a></div>';
 							}
 					?>				
 					</div>
