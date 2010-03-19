@@ -12,7 +12,6 @@
 		js_include_tag('admin_pub','category_class','admin/gl/search');
 	?>
 </head>
-
 <?php
 	$content = $_REQUEST['content'];
 	$type = $_REQUEST['type'];
@@ -22,6 +21,7 @@
 		if($type == '1')
 		{
 			$sql = "select * from fb_fh where name like '%".trim($content)."%'";
+			
 		}
 		else if ($type == '0')
 		{
@@ -33,30 +33,39 @@
 			{
 				$sql = "select * from fb_fh where xb = '0'";
 			}
+			else
+			{
+				$sql = "select * from fb_fh where 1=2";
+			}
+			
 		}
 	}
 	else
 	{
 		$sql = "select * from fb_fh";
 	}
-  $record = $db->paginate($sql,15);
-?>
 
+  $record = $db->paginate($sql,30);
+
+?>
 <body>
-	<table width="800" border="0" id="list">
+	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="10">
-				　<a href="edit.php">添加富豪</a>　　　搜索　
-				<input id="content" type="text" value="<? echo $_REQUEST['content']?>"><select id="type" style="width:90px" class="">
+			<td colspan="10">　
+				<a href="edit.php">添加富豪</a>
+				<input  style="margin-left:20px" id="content" type="text" value="<? echo $_REQUEST['content']?>"><select id="type" style="width:90px" class="">
 					<option value="1" <?php if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >姓名</option>
 					<option value="0" <?php if($_REQUEST['type']=="0"){?>selected="selected"<? }?> >性别</option>
 				</select>
-				<input type="button" value="搜索" id="search" style="border:1px solid #0000ff; height:21px">
+				<input type="button" value="搜索" id="search" style="height:20px; border:2px solid #999999;">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="130">出生年份</td><td width="130">今日排名</td><td width="100">个人财富</td><td width="100">拥有公司</td><td width="210">操作</td>
+			<td width="200">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="100">出生年份</td><td width="100">今日排名</td><td width="100">个人财富</td><td width="100">拥有公司</td><td width="150">操作</td>
 		</tr>
+
+
+
 		<?php
 			//--------------------
 			$len = count($record);
@@ -65,7 +74,7 @@
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->name);?></a></td>
 					<td>
-						<?php if($record[$i]->xb==0) {echo '女';} else if($record[$i]->xb==1) {echo '男';} else {echo '未知';} ?>
+						<?php if($record[$i]->xb==0) {echo '女';} else if($record[$i]->xb==1) {echo '男';} else {echo '未知';}?>
 					</td>
 					<td>
 						<?php echo strip_tags($record[$i]->nl);?>
@@ -99,17 +108,18 @@
 						?>
 					</td>
 					<td>
-						<a href="/admin/rich_list/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">加入榜单</a>
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
+						<a href="/admin/rich_list/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="加入榜单"><img src="/images/btn_add.png" border="0"></a>
+						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
+						<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/btn_delete.png" border="0"></span>
+
+						
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_fh">
 		<?php
 			}
 		?>
 		<tr class="tr3">
-			<td colspan=9><?php paginate();?></td>
+			<td colspan=9><?php paginate();?><input type="hidden" id="db_table" value="fb_fh"></td>
 		</tr>
 	</table>
 </body>

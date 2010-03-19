@@ -4,9 +4,6 @@
 	$search = $_REQUEST['search'];
 	$db = get_db();
 	$sql = "select * from fb_postion where page_id=0";
-	if($search!=''){
-		$sql .= " where name like '%".$search."%'";
-	}
 	$record = $db->paginate($sql,15);
 	$count = count($record);
 ?>
@@ -20,7 +17,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub');
+		js_include_tag('admin_pub','admin/menu_list');
 	?>
 </head>
 
@@ -28,19 +25,17 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="3">
-				　位置管理 <a href="edit.php">添加页面</a>   搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
+				　位置管理 <a href="edit.php">添加页面</a>
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td>位置名称</td><td>操作</td>
+			<td width="500">位置名称</td><td width="295">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
-					<td><?php echo $record[$i]->name;?></a></td>
+					<td><img class="img_plus" style="cursor:pointer" name="<?php echo $record[$i]->name;?>" src="/images/admin/plus.gif"><?php echo $record[$i]->name;?></a></td>
 					<td>
 						<a href="list.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">管理</a>
 						<a href="edit.php?pid=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">添加位置</a>
@@ -48,31 +43,23 @@
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_postion">
+				<?php
+					$records = $db->query("select * from fb_postion where page_id={$record[$i]->id}");
+					for($j=0;$j<count($records);$j++){
+				?>
+				<tr class="tr3" style="display:none;" id=<?php echo $records[$j]->id;?> name="<?php echo $record[$i]->name;?>">
+					<td class="sub_menu"><li style="color:#0000ff;"><?php echo $records[$j]->name;?></li></td>
+					<td><a href="list_edit2.php?id=<?php echo $records[$i]->id;?>" class="list_edit" name="<?php echo $records[$i]->id;?>" style="cursor:pointer">使用已有类别</a>
+						<a href="list_edit.php?id=<?php echo $records[$i]->id;?>" class="list_edit" name="<?php echo $records[$i]->id;?>" style="cursor:pointer">配置新闻</a></td>
+				</tr>
 		<?php
-			}
+			}}
 		?>
 			<tr class="tr3">
 				<td colspan=6><?php paginate();?></td>
 			</tr>
+			<input type="hidden" id="db_table" value="fb_postion">
 		</table>	
 
 	</body>
 </html>
-<script>
-$(function(){
-	$("#search").keypress(function(event){
-		if (event.keyCode == 13) {
-			search();
-		}
-	});
-	
-	$('#search_b').click(function(){
-		search();
-	})
-})
-
-function search(){
-	window.location.href="?search="+encodeURI($("#search").attr('value'));
-}
-</script>
