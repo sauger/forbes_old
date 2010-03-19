@@ -61,9 +61,9 @@
 			<td align="left" class="newsselect1" >
 				<input style="width:200px" type="text" name="news[author]" id="news_author" value="<?php echo ($news->author ? $news->author : $_SESSION['admin_nick_name']);?>"></input>
 				<select name="news[author_type]" id="news_author_type">
-					<option value="1" <?php if($news->author_type == 1) echo " selected='selected'"?>>特约记者</option>
-					<option value="2" <?php if($news->author_type == 2) echo " selected='selected'"?>>专栏作者</option>
-					<option value="3" <?php if($news->author_type == 3) echo " selected='selected'"?>>其他作者</option>
+					<option value="1" <?php if($news->author_type == 1) echo " selected='selected'"?>>采编智库</option>
+					<option value="2" <?php if($news->author_type == 2) echo " selected='selected'"?>>特约作者</option>
+					<option value="3" <?php if($news->author_type == 3) echo " selected='selected'"?>>网站编辑</option>
 				</select>
 				头像:<input type="file" name="author_image">
 				<?php if($news->author_image){?>
