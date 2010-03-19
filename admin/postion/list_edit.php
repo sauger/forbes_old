@@ -12,34 +12,30 @@
 	$language_tag = $_REQUEST['language_tag'] ? $_REQUEST['language_tag'] : 0;
 	
 	$db = get_db();
-	$c = array();
-	array_push($c, "language_tag=$language_tag");
+	
+	$sql = "select t1.title,t1.id,t2.id as p_id,t1.category_id,t2.priority,t1.created_at from fb_news t1 left join fb_news_postion t2 on t1.id=t2.news_id where 1=1";
+	$sql .= " and t1.language_tag=$language_tag";
 	if($title!= ''){
-		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'");
+		$sql .= " t1.title like '%".trim($title)."%' or t1.keywords like '%".trim($title)."%' or t1.description like '%".trim($title)."%'";
 	}
 	if($category_id > 0){
-		array_push($c, "category_id=$category_id");
+		$sql .= " and t1.category_id=$category_id";
 	}
 	$news = $db->query("select * from fb_news_postion where postion_id=$id");
 	$ids = $news[0]->news_id;
-	$rids = $news[0]->id;
 	for($i=1;$i<count($news);$i++){
 		$ids.=','.$news[$i]->news_id;
-		$rids .= ','.$news[$i]->id;
 	}
 	
-	if($is_adopt!=''){
-		if($is_adopt==0&&$ids!=''){
-			array_push($c, "id not in({$ids})");
-		}elseif($is_adopt==1&&$ids!=''){
-			array_push($c, "id in({$ids})");
-		}elseif($is_adopt==0&&$ids==''){
-		}elseif($is_adopt==1&&$ids==''){
-			array_push($c, "id=''");
+	if($is_adopt==1){
+		$sql .= " and t2.postion_id=$id";
+	}elseif($is_adopt=='0'){
+		if($ids!=''){
+			$sql .= " and t1.id not in ($ids)";
 		}
 	}
-	$news = new table_class($tb_news);
-	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),20);
+	$sql .= " order by t1.priority asc,t1.created_at desc";
+	$record = $db->paginate($sql,30);
 	
 ?>
 
@@ -94,14 +90,13 @@
 						<?php echo $record[$i]->created_at;?>
 					</td>
 					<td>
-						<?php if($record[$i]->is_adopt=="1"){?>
-						<span style="cursor:pointer" class="revocation" name="<?php echo $record[$i]->id;?>" title="">加入</span>
+						<?php if($record[$i]->p_id==""){?>
+						<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="">加入</span>
 						<?php }?>
-						<?php if($record[$i]->is_adopt=="0"){?>
-						<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>">删除</span>
+						<?php if($record[$i]->p_id!=""){?>
+						<span style="cursor:pointer" class="revocation" name="<?php echo $record[$i]->p_id;?>">删除</span>
+						<input type="text" class="priority"  name="<?php echo $record[$i]->p_id;?>"  value="<?php echo $record[$i]->priority;?>" style="width:40px;">
 						<?php }?>
-
-						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
 					</td>
 				</tr>
 		<?php
@@ -109,7 +104,7 @@
 			//--------------------
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate();?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button></td>
+			<td colspan=5><?php paginate();?>　<button id=edit_priority>编辑优先级</button></td>
 		</tr>
 		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
 		<input type="hidden" id="list_id" value="<?php echo $id?>">
