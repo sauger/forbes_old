@@ -9,13 +9,10 @@
 	<body>
 		<?php 
 		$c = new category_class('news');
-		echo implode(',',$c->children_map(5));
-		die();
 	?>
-		<form method="post" action="test1.php">
+		<form method="post" action="test1.php" enctype="multipart/form-data" >
 		
-			<div id="editor" name="editor"></div>
-			<?php show_fckeditor('title[news]')?>
+			<input type="file" name="item[field_4]">
 			<input type="submit" value="send"></input>		
 		</form>
 		

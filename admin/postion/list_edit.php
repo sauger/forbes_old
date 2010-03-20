@@ -73,7 +73,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="385">标题</td><td width="80">所属类别</td><td width="130">发布时间</td><td width="200">操作</td>
+			<td width="385">标题</td><td width="130">所属类别</td><td width="130">发布时间</td><td width="130">操作</td>
 		</tr>
 		<?php
 			//--------------------

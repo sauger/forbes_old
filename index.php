@@ -20,7 +20,19 @@
 		<? require_once('inc/top.inc.php');?>
 		<div id=t_l_t>
 			<?php
-				$sql = 'select n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.name="每日头条" and c.category_type="news" order by n.priority asc,n.created_at desc limit 4';
+			  $sql ='select * from fb_position where name="每日头条"';
+				$record=$db -> query($sql);
+				if($record[0]->type=="category")
+				{
+					$category_id=$record[0]->category_id;
+					$sql = 'select n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.id='.$category_id.' and c.category_type="news" order by n.priority asc,n.created_at desc limit 4';
+					
+				}
+				if($record[0]->type=="news")
+			  {
+			  	
+			  }
+			
 				$record_head=$db -> query($sql);
   		?>
 			<div id=t_l_t_t>
