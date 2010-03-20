@@ -288,4 +288,9 @@ function print_fck_pages1($str,$url="",$symbol='fck_pageindex')
 	<?php	
 	
 }
+
+function navigation($name)
+{
+		
+}
 ?>
