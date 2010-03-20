@@ -37,5 +37,7 @@
 			$sql="update fb_position_relation set ".$priority."=".$priority_str[$i]." where id=".$id_str[$i];
 			$db->execute($sql);
 		}
+		$position->type='news';
+		$position->save();
 	}
 ?>
