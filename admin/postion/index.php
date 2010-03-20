@@ -29,13 +29,14 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="500">位置名称</td><td width="295">操作</td>
+			<td width="300">位置名称</td><td width="200">条数限制</td><td width="295">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
-					<td><img class="img_plus" style="cursor:pointer" name="<?php echo $record[$i]->name;?>" src="/images/admin/plus.gif"><?php echo $record[$i]->name;?></a></td>
+					<td><?php echo $record[$i]->name;?></td>
+					<td></td>
 					<td>
 						<a href="list.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">管理</a>
 						<a href="edit.php?pid=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">添加位置</a>
@@ -47,8 +48,9 @@
 					$records = $db->query("select * from fb_postion where page_id={$record[$i]->id}");
 					for($j=0;$j<count($records);$j++){
 				?>
-				<tr class="tr3" style="display:none;" id=<?php echo $records[$j]->id;?> name="<?php echo $record[$i]->name;?>">
+				<tr class="tr3" id=<?php echo $records[$j]->id;?> name="<?php echo $record[$i]->name;?>">
 					<td class="sub_menu"><li style="color:#0000ff;"><?php echo $records[$j]->name;?></li></td>
+					<td><?php echo $records[$j]->position_limit1;?></td>
 					<td><a href="list_edit2.php?id=<?php echo $records[$i]->id;?>" class="list_edit" name="<?php echo $records[$i]->id;?>" style="cursor:pointer">使用已有类别</a>
 						<a href="list_edit.php?id=<?php echo $records[$i]->id;?>" class="list_edit" name="<?php echo $records[$i]->id;?>" style="cursor:pointer">配置新闻</a></td>
 				</tr>
@@ -56,9 +58,8 @@
 			}}
 		?>
 			<tr class="tr3">
-				<td colspan=6><?php paginate();?></td>
+				<td colspan=6><?php paginate();?>			<input type="hidden" id="db_table" value="fb_postion"></td>
 			</tr>
-			<input type="hidden" id="db_table" value="fb_postion">
 		</table>	
 
 	</body>
