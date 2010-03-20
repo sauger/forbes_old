@@ -2,7 +2,7 @@
 	require "../../frame.php";
 	$id = $_POST['id'];
 	
-	$postion = new table_class('fb_position');
+	$position = new table_class('fb_position');
 	if($id!=''){
 		$position->find($id);
 	}
