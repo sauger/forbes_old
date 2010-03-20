@@ -26,36 +26,36 @@
 		<tr class=tr1>
 			<td colspan="2">修改账号信息</td>
 		</tr>
-		<tr class="tr3">
-			<td>头像</td>
-			<td>
+		<tr class=tr4>
+			<td >头像</td>
+			<td width=645 align="left">
 			<?php if($user->image_src){?>
 			<image src="<?php echo $user->image_src;?>" border="0"></image>
 			<?php }?>
 			<input type="file" name="image_src"></input>
 			</td>
 		</tr>		
-		<tr class=tr3>
+		<tr class=tr4>
 			<td width=150>用户名：</td>
 			<td width=645 align="left"><?php echo $user->name;?></td>
 		</tr>
-		<tr class=tr3>
+		<tr class=tr4>
 			<td width=150>昵称：</td>
 			<td width=645 align="left"><?php echo $user->nick_name;?></td>
 		</tr>		
-		<tr class=tr3>
+		<tr class=tr4>
 			<td>密码：</td>
-			<td align="left"><input type="password" name="old_password"></td>
+			<td width=645 align="left"><input type="password" name="old_password"></td>
 		</tr>
-		<tr class="tr3">
+		<tr class=tr4>
 			<td>新密码：</td>
-			<td><input type="password" name="new_password" id="new_password"></input></td>
+			<td width=645 align="left"><input type="password" name="new_password" id="new_password"></input></td>
 		</tr>
-		<tr class="tr3">
+		<tr class=tr4>
 			<td>确认新密码：</td>
-			<td><input type="password" id="re_new_password"></input></td>
+			<td width=645 align="left"><input type="password" id="re_new_password"></input></td>
 		</tr>
-		<tr class="tr3">
+		<tr class=tr4>
 			<td>个人简介：</td>
 			<td><?php show_fckeditor('description','Admin',false,"215",$user->description);?></input></td>
 		</tr>

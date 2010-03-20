@@ -2,10 +2,10 @@
 	    
 		$path = dirname(__FILE__) .'/';
 	    include_once($path ."../frame.php");
-	    js_include_tag('select2css');
+	    js_include_tag('select2css','top');
 	    css_include_tag('top','select2css');
 	?>
-	<div id=banner><a herf="#"><img border=0 src="/images/index/top_banner.jpg"></a></div>
+	<div id=banner><a href="#"><img border=0 src="/images/index/top_banner.jpg"></a></div>
 		<div id=top_login>
 			<div class=login_title><a href="">·登陆</a><a href="">·注册</a></div>
 			<div class=login_title><a href="">·设为首页</a><a href="">·收藏本页</a></div>
@@ -39,45 +39,51 @@
 				<button class=search>查 询</button>
 			</div>
 		</div>
+		<?php
+		$db=get_db();
+		$countnav=$db->query("select * from fb_navigation where parent_id=0 and (type='both' or type='top') order by priority asc");
+		$nav=3;
+		$navigation=$db->query('select name,id from fb_navigation where id='.$nav); 
+	?>
 		<div id=navigation>
-			<div class="content" style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;">
-				<div id=picindex></div>
+			<div class="content" <?php if($navigation[0]->name=="首页"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[0]->href; ?>" param1="<?php echo $countnav[0]->id; ?>" id=picindex></div>
 			</div>
 			<div class=vertical></div>
-			<div class="content">
-				<div id=picbangdan></div>
+			<div class="content"  <?php if($navigation[0]->name=="榜单"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[1]->href; ?>" param1="<?php echo $countnav[1]->id; ?>" id=picbangdan></div>
 			</div>
 			<div class=vertical></div>
-			<div class="content">
-				<div id=picfuhao></div>
+			<div class="content"  <?php if($navigation[0]->name=="富豪"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[2]->href; ?>" param1="<?php echo $countnav[2]->id; ?>" id=picfuhao></div>
 			</div>
 			<div class=vertical></div>
-			<div class="content">
-				<div id=pictouzi></div>
+			<div class="content" <?php if($navigation[0]->name=="投资"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[3]->href; ?>" param1="<?php echo $countnav[3]->id; ?>" id=pictouzi></div>
 			</div>
 			<div class=vertical></div>
-			<div class="content">
-				<div id=picchuangye></div>
+			<div class="content"  <?php if($navigation[0]->name=="创业"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[4]->href; ?>" param1="<?php echo $countnav[4]->id; ?>" id=picchuangye></div>
 			</div>
 			<div class=vertical></div>
-			<div class="content">
-				<div id=picshangye></div>
+			<div class="content"  <?php if($navigation[0]->name=="商业"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[5]->href; ?>" param1="<?php echo $countnav[5]->id; ?>" id=picshangye></div>
 			</div>
 			<div class=vertical></div>
-			<div class="content">
-				<div id=pickeji></div>
+			<div class="content"  <?php if($navigation[0]->name=="科技"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[6]->href; ?>" param1="<?php echo $countnav[6]->id; ?>" id=pickeji></div>
 			</div>
 			<div class=vertical></div>
-			<div class="content">
-				<div id=picchengshi></div>
+			<div class="content"  <?php if($navigation[0]->name=="城市"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[7]->href; ?>" param1="<?php echo $countnav[7]->id; ?>" id=picchengshi></div>
 			</div>
 			<div class=vertical></div>
-			<div class="content">
-				<div id=picshehua></div>
+			<div class="content"  <?php if($navigation[0]->name=="奢华"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[8]->href; ?>" param1="<?php echo $countnav[8]->id; ?>" id=picshehua></div>
 			</div>
 			<div class=vertical></div>
-			<div class="content">
-				<div id=piczhuanlan></div>
+			<div class="content"  <?php if($navigation[0]->name=="专栏"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
+				<div class="nav" param="<?php echo  $countnav[9]->href; ?>" param1="<?php echo $countnav[9]->id; ?>" id=piczhuanlan></div>
 			</div>
 			<div class=vertical></div>
 			<div id=hyzq>
@@ -86,7 +92,10 @@
 			</div>
 		</div>
 		<div id=navigation2>
-			<div class="content">
-				<a style="text-decoration:none;" herf="">能源重工</a> |　<a herf="">汽车</a> |　<a herf="">快速消费品</a> |　<a herf="">健康产业</a> |　<a herf="">房产</a> |　<a herf="">物流零售</a> |　<a herf="">金融</a> | <a herf="">3C</a> | <a herf="">文化媒体</a> | <a herf="">旅游酒店</a> | <a style="text-decoration:none;" herf="">领导力</a> | <a style="text-decoration:none;" herf="">职场</a> |
-			</div>
+			<?php for($i=0;$i<count($countnav);$i++){ 
+				$navigation2=$db->query('select name,target,href from fb_navigation where parent_id='.$countnav[$i]->id.' and (type="both" or type="top") order by priority asc'); ?>	
+				<div class="n_content" <?php if($countnav[$i]->id==$nav){?>style="display:inline;"<?php }?> id="nav<?php echo $countnav[$i]->id; ?>">
+					<?php for($j=0;$j<count($navigation2);$j++){ ?><a target="<?php echo $navigation2[$i]->target; ?>" href="<?php echo $navigation2[$i]->href; ?>"><?php echo $navigation2[$j]->name; ?></a>　|　<?php } ?>
+				</div>
+			<?php } ?>
 		</div>

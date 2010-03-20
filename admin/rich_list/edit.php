@@ -4,11 +4,17 @@
 	$id = $_REQUEST['id'];
 	$f_id = $_REQUEST['f_id'];
 	$year = $_REQUEST['year'];
+	if($f_id!=''){
+		$href = "/admin/rich/list.php";
+	}
+	if($year!=''){
+		$href = "detail.php?year=$year";
+	}
 	if($id!=''){
 		$f_bd = new table_class('fb_fhbd');
 		$f_bd->find($id);
 		$rich = new table_class('fb_fh');
-		$rich->find($f_bd->mr_id);
+		$rich->find($f_bd->fh_id);
 		$list = new table_class('fb_fhb');
 		$list->find($f_bd->bd_id);
 	}else{
@@ -40,7 +46,7 @@
 	<form id="fbd_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑富豪榜单";}else{echo "添加富豪榜单";}?> <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a></td>
+			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑富豪榜单";}else{echo "添加富豪榜单";}?> <a href="<?php echo $href;?>"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">姓名</td>
@@ -48,7 +54,7 @@
 				<?php if ($year == ''){ echo $rich->name; ?>
 				<input type="hidden" name="bd[fh_id]" id="fh_id" value="<?php echo $rich->id;?>">
 				<?php } else { ?>
-				<input value="<?php echo $rich->name;?>" id="fh_id"><span id="error"></span>
+				<input style="text" value="<?php echo $rich->name;?>" id="fh_id"><span id="error"></span>
 				<input type="hidden" name="bd[fh_id]" value="<?php echo $f_bd->fh_id;?>" id="h_fh_id">
 				<input type="hidden" id="f_type" value="1">
 				<!-- 
@@ -88,7 +94,7 @@
 					<?php }?>
 				</select>
 				-->
-				<input id="bd_id"><span id="error"></span>
+				<input type="text" id="bd_id"><span id="error"></span>
 				<input type="hidden" name="bd[bd_id]" id="h_bd_id">
 				<input type="hidden" id="f_type" value="2">
 				<?php } else { ?>

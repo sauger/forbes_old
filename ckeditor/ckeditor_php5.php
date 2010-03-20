@@ -153,7 +153,7 @@ class CKEditor
 			print $out;
 			$out = "";
 		}
-
+		
 		return $out;
 	}
 

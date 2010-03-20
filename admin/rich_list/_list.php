@@ -10,11 +10,11 @@ class Company{
 
 if(is_ajax()){
 	$limit = $_REQUEST['limit'] ? $_REQUEST['limit'] : 6;
-	if(!$_REQUEST['name']){
+	if($_REQUEST['rich_name']==''){
 		return "";	
 	}
 	$db = get_db();
-	$sql = "select id, year from fb_fhb where year like '%{$_REQUEST['name']}%' limit $limit";
+	$sql = "select id, year from fb_fhb where year like '%{$_REQUEST['rich_name']}%' limit $limit";
 	$list = $db->query($sql);
 	if(empty($list)){
 		return "";

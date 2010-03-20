@@ -16,28 +16,34 @@
 </head>
 <body>
 	<div id=ibody>
-	<? require_once('../inc/top.inc.php');?>
+	<? require_once('../inc/top.inc.php');
+	?>
 		<div id=cyindex></div>
 		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　</a><a href="">城市首页</a></div>
 		<div id=cyline></div>
 		<div id=cy_left>
 			<div id=search>专栏搜索：<select></select><input type="text"><button>搜索</button></div>
 			<div id=cy_title>
+				<?php 
+				$db=get_db();
+				$user=$db->paginate('select * from fb_user where role_name="author"',5);
+				?>
 				<div id=title_left></div>
 				<div id=title_center>
-					<div id=bt>特约专栏共有25位作者</div>	
+					<div id=bt>特约专栏共有<?php echo count($user); ?>位作者</div>	
 				</div>
 				<div id=title_right></div>
 			</div>
+			<?php for($i=0;$i<count($user);$i++){ ?>
 			<div class=cy_content>
 				<div class=pic>
-					<a href=""><img border=0 src="/images/tyzl/one.jpg"></a>	
+					<a href=""><img border=0 src="<?php echo $user[$i]->image_src; ?>"></a>	
 				</div>
 				<div class=pictitle>
-					<a href="">周人气专栏</a>	
+					<a href=""><?php echo $user[$i]->nick_name; ?>专栏</a>	
 				</div>
 				<div class=piccontent>
-					<a href="">　　自1996年以来，为北京大学和浙江大学相继开设了有关经济组织和经济制度、发展经济学、新制度经济学等课程。1997年被评为“北京大学最受同学欢迎的老师”。1999年后，并为北京大学国际MBA开设“中国商务活动的制度环境”。</a>	
+					<a href=""><?php echo $user[$i]->descripition; ?></a>	
 				</div>
 			</div>
 			<div class=newarticle>
@@ -45,124 +51,22 @@
 				<div class=wx>
 					<div class="enterzl"><a href="">进入专栏>></a></div>	
 				</div>
+				<?php 
+					$news=$db->query('select * from fb_news where author_id='.$user[$i]->id.' and is_adopt=1 order by priority asc, created_at desc limit 2');
+				?>
 				<div class=content>
 					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
+					<div class=context><a href=""><?php echo $news[0]->title; ?></a></div>
 				</div>
 				<div class=content_dash></div>
 				<div class=content>
 					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
+					<div class=context><a href=""><?php echo $news[1]->title; ?></a></div>
 				</div>
 			</div>
 			<div class=cy_dash></div>
-			<div class=cy_content>
-				<div class=pic>
-					<a href=""><img border=0 src="/images/tyzl/one.jpg"></a>	
-				</div>
-				<div class=pictitle>
-					<a href="">周人气专栏</a>	
-				</div>
-				<div class=piccontent>
-					<a href="">　　自1996年以来，为北京大学和浙江大学相继开设了有关经济组织和经济制度、发展经济学、新制度经济学等课程。1997年被评为“北京大学最受同学欢迎的老师”。1999年后，并为北京大学国际MBA开设“中国商务活动的制度环境”。</a>	
-				</div>
-			</div>
-			<div class=newarticle>
-				<div class=wz>最新专栏文章</div>
-				<div class=wx>
-					<div class="enterzl"><a href="">进入专栏>></a></div>	
-				</div>
-				<div class=content>
-					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
-				</div>
-				<div class=content_dash></div>
-				<div class=content>
-					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
-				</div>
-			</div>
-			<div class=cy_dash></div>
-			<div class=cy_content>
-				<div class=pic>
-					<a href=""><img border=0 src="/images/tyzl/one.jpg"></a>	
-				</div>
-				<div class=pictitle>
-					<a href="">周人气专栏</a>	
-				</div>
-				<div class=piccontent>
-					<a href="">　　自1996年以来，为北京大学和浙江大学相继开设了有关经济组织和经济制度、发展经济学、新制度经济学等课程。1997年被评为“北京大学最受同学欢迎的老师”。1999年后，并为北京大学国际MBA开设“中国商务活动的制度环境”。</a>	
-				</div>
-			</div>
-			<div class=newarticle>
-				<div class=wz>最新专栏文章</div>
-				<div class=wx>
-					<div class="enterzl"><a href="">进入专栏>></a></div>	
-				</div>
-				<div class=content>
-					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
-				</div>
-				<div class=content_dash></div>
-				<div class=content>
-					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
-				</div>
-			</div>
-			<div class=cy_dash></div>
-			<div class=cy_content>
-				<div class=pic>
-					<a href=""><img border=0 src="/images/tyzl/one.jpg"></a>	
-				</div>
-				<div class=pictitle>
-					<a href="">周人气专栏</a>	
-				</div>
-				<div class=piccontent>
-					<a href="">　　自1996年以来，为北京大学和浙江大学相继开设了有关经济组织和经济制度、发展经济学、新制度经济学等课程。1997年被评为“北京大学最受同学欢迎的老师”。1999年后，并为北京大学国际MBA开设“中国商务活动的制度环境”。</a>	
-				</div>
-			</div>
-			<div class=newarticle>
-				<div class=wz>最新专栏文章</div>
-				<div class=wx>
-					<div class="enterzl"><a href="">进入专栏>></a></div>	
-				</div>
-				<div class=content>
-					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
-				</div>
-				<div class=content_dash></div>
-				<div class=content>
-					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
-				</div>
-			</div>
-			<div class=cy_dash></div>
-			<div class=cy_content>
-				<div class=pic>
-					<a href=""><img border=0 src="/images/tyzl/one.jpg"></a>	
-				</div>
-				<div class=pictitle>
-					<a href="">周人气专栏</a>	
-				</div>
-				<div class=piccontent>
-					<a href="">　　自1996年以来，为北京大学和浙江大学相继开设了有关经济组织和经济制度、发展经济学、新制度经济学等课程。1997年被评为“北京大学最受同学欢迎的老师”。1999年后，并为北京大学国际MBA开设“中国商务活动的制度环境”。</a>	
-				</div>
-			</div>
-			<div class=newarticle>
-				<div class=wz>最新专栏文章</div>
-				<div class=wx>
-					<div class="enterzl"><a href="">进入专栏>></a></div>	
-				</div>
-				<div class=content>
-					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
-				</div>
-				<div class=content_dash></div>
-				<div class=content>
-					<div class="images"><a href=""><img border=0 src="/images/tyzl/sjt.jpg"></div>
-					<div class=context><a href="">沪二价空间空间升至升至10%沪二手价空升至10%10%沪二手价空升至10%10%沪二手价空升至10%</a></div>
-				</div>
-			</div>
+			<?php } ?>
+			<div id=cy_paginate><?php paginate(''); ?></div>
 		</div>
 	<? require_once('../inc/right.inc.php');?>
 	<? require_once('../inc/bottom.inc.php');?>

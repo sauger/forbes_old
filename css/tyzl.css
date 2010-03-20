@@ -33,3 +33,4 @@
 .newarticle .content .context a{color:#0d447e; text-decoration:none;}
 .newarticle .content_dash{width:615px; height:1px; margin-top:5px; margin-bottom:5px; margin-left:10px;  background:url('/images/tyzl/newarticle_content_dash.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
 .cy_dash{width:635px; height:1px; margin-top:10px; background:url('/images/tyzl/cy_dash.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#cy_paginate{width:635px; height:20px; text-align:center; float:left; display:inline;}

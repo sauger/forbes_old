@@ -49,8 +49,8 @@ body{font-size:12px;}
 #navigation .content #piczhuanlan{width:31px; height:15px; cursor:pointer; background-image:url(/images/index/zhuanlan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/zhuanlan.png"); margin:0 auto; margin-top:10px;}
 #navigation .vertical{width:2px; height:25px; margin-top:5px; background:url('/images/index/vertical.jpg'); float:left; display:inline;}
 #navigation2{width:1000px; height:27px; background:#C1E1EE; float:left; display:inline;}
-#navigation2 .content{width:690px; height:27px; margin-left:30px; line-height:27px; float:left; display:inline;}
-#navigation2 .content a{color:#000000; text-decoration:underline;}
+#navigation2 .n_content{width:940px; height:27px; margin-left:30px; line-height:27px; float:left; display:none;}
+#navigation2 .n_content a{color:#000000; text-decoration:underline;}
 #navigation #hyzq{width:214px; height:29px; margin-top:3px; background:url('/images/index/hyzq.jpg') no-repeat; background-position:bottom; float:right; display:inline;}
 #navigation #hyzq #zqhy{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background-image:url(/images/index/hyzq_a.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/hyzq_a.png"); float:left; display:inline;}
 #navigation #hyzq #zzzs{width:52px; height:12px; margin-top:12px; margin-right:10px; cursor:pointer; background-image:url(/images/index/zszz.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/index/zszz.png"); float:right; display:inline;}
