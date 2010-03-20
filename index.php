@@ -128,11 +128,11 @@
   		?>
 			<div class=content1>
 				<div class=piccontent>
-					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
-					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
+					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+					<div class=p_content><a href=""><?php echo $record_show[0]->description;?></a></div>
 				</div>
-				<?php for($i=0;$i<3;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
+				<?php for($i=1;$i<4;$i++){ ?>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
 			</div>
 			<div class=dash></div>
@@ -142,15 +142,18 @@
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
+			<?php
+				$record_show = get_news_by_pos('商业');
+  		?>
 			<div class=content1>
 				<div class=piccontent>
-					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
-					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
+					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+					<div class=p_content><a href=""><?php echo $record_show[0]->description;?></a></div>
 				</div>
-				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
-				<?php } ?>	
-			</div>
+				<?php for($i=1;$i<5;$i++){ ?>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+				<?php } ?>
+			</div>		
 			<div class=dash></div>
 			<div class=title>
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
@@ -158,14 +161,17 @@
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
+			<?php
+				$record_show = get_news_by_pos('科技');
+  		?>
 			<div class=content1>
 				<div class=piccontent>
-					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
-					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
+					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+					<div class=p_content><a href=""><?php echo $record_show[0]->description;?></a></div>
 				</div>
-				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
-				<?php } ?>	
+				<?php for($i=1;$i<5;$i++){ ?>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+				<?php } ?>
 			</div>
 			<div class=dash></div>
 			<div class=title>
@@ -211,13 +217,17 @@
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>	
 			</div>
+			<?php
+				$record_show = get_news_by_pos('投资');
+  		?>
+			
 			<div class=content3>
-				<div id=content3_title><a href="">中国本土私人股本基金挑战</a></div>
+				<div id=content3_title><a href=""><?php echo $record_show[0]->short_title ?></a></div>
 				<div class=piccontent1>
-					<a class=pic href=""><img border=0 src="images/index/two.jpg"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href="">直到资集团仍把持着中国约80%的私人股本市场，但如仍把持着把持着把持着把持中国约80%的私人股本市场，但如今中国已涌现出国已涌现出国已涌现出众多团...</a>
+					<a class=pic href=""><img border=0 width=70 height=70 src="<?php echo $record_show[0]->video_photo_src ?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href=""><?php echo $record_show[0]->description;?></a>
 				</div>
-				<?php for($i=0;$i<5;$i++){ ?>
-					<div class=cl><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
+				<?php for($i=1;$i<6;$i++){ ?>
+					<div class=cl style="margin-left:0px;"><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
 			</div>
 			<div class=dash style="margin-top:20px;"></div>
