@@ -21,14 +21,11 @@ CKEDITOR.editorConfig = function( config )
 	    
 	    config.toolbar = 'Admin';
 	    config.toolbar_Admin = [
-	                                  	['Source','Preview','Undo','Bold','NumberedList','BulletedList','-','Link','Unlink','-'],	
-	                                  	['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'], 
-	                                  	['Image','Flash','Table','SpecialChar','PageBreak'],
-	                                  	['Styles','Format','Font','FontSize','TextColor','BGColor','Maximize','RemoveFormat'],
+	                                  	['Source','Undo','Bold','NumberedList','BulletedList','Link','Unlink','JustifyLeft','JustifyCenter','JustifyRight','Image','SpecialChar','PageBreak','TextColor','BGColor','Maximize','RemoveFormat','Font','FontSize'],
 	                                  ] ;
 	    config.resize_enabled = false;
 	    config.entities = false;
-	    config.ignoreEmptyParagraph = true;
+	    config.ignoreEmptyParagraph = false;
 	    config.startupOutlineBlocks = true;
-	    config.font_names = 'Arial;Times New Roman;Verdana;宋体';
+	    config.font_names = 'Arial;Times New Roman;Verdana;宋体;黑体;微软雅黑';
 };
