@@ -6,22 +6,22 @@
 	$db = get_db();
 	
 	if($type=='publish'){
-		$postion = new table_class("fb_postion");
-		$postion->find($pid);
-		$count = $db->query("select count(*) as num from fb_postion_relation where postion_id=$pid");
-		if($count[0]->num==$postion->postion_limit){
+		$position = new table_class("fb_position");
+		$position->find($pid);
+		$count = $db->query("select count(*) as num from fb_position_relation where position_id=$pid");
+		if($count[0]->num==$position->position_limit){
 			echo "full";
 			die();
 		}
-		$pos = new table_class("fb_postion_relation");
-		$pos->postion_id = $pid;
+		$pos = new table_class("fb_position_relation");
+		$pos->position_id = $pid;
 		$pos->news_id = $nid;
 		$pos->save();
-		$postion->type='news';
-		$postion->save();
+		$position->type='news';
+		$position->save();
 	}
 	elseif($type=='revocation'){
-		$pos = new table_class("fb_postion_relation");
+		$pos = new table_class("fb_position_relation");
 		$pos->delete($nid);
 	}
 	elseif("edit_priority"==$type)
@@ -34,7 +34,7 @@
 		{
 			if($priority_str[$i]==""){$priority_str[$i]="";}
 			$db = get_db();
-			$sql="update fb_postion_relation set ".$priority."=".$priority_str[$i]." where id=".$id_str[$i];
+			$sql="update fb_position_relation set ".$priority."=".$priority_str[$i]." where id=".$id_str[$i];
 			$db->execute($sql);
 		}
 	}

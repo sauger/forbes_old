@@ -3,19 +3,19 @@
 	$id = $_POST['id'];
 	$pid = $_POST['pid'];
 	
-	$postion = new table_class('fb_postion');
+	$position = new table_class('fb_position');
 	if($id!=''){
-		$postion->find($id);
+		$position->find($id);
 	}else{
-		$postion->page_id = '0';
+		$position->page_id = '0';
 	}
 	if($pid!=''){
-		$postion->page_id = $pid;
+		$position->page_id = $pid;
 	}
 	
-	$postion->name = $_POST['name'];
-	$postion->postion_limit = $_POST['postion_limit'];
+	$position->name = $_POST['name'];
+	$position->position_limit = $_POST['position_limit'];
 	
-	$postion->save();
+	$position->save();
 	redirect('index.php');
 ?>

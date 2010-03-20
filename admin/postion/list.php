@@ -2,11 +2,11 @@
 	require_once('../../frame.php');
 	
 	$id = $_REQUEST['id'];
-	$page = new table_class("fb_postion");
+	$page = new table_class("fb_position");
 	$page->find($id);
 	$search = $_REQUEST['search'];
 	$db = get_db();
-	$sql = "select * from fb_postion where page_id=$id";
+	$sql = "select * from fb_position where page_id=$id";
 	if($search!=''){
 		$sql .= " where name like '%".$search."%'";
 	}
@@ -51,7 +51,7 @@
 			}
 		?>
 			<tr class="tr3">
-				<input type="hidden" id="db_table" value="fb_postion">
+				<input type="hidden" id="db_table" value="fb_position">
 				<td colspan=6><?php paginate();?></td>
 			</tr>
 		</table>	
