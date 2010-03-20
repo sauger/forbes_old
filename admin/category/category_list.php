@@ -24,9 +24,9 @@
 			for($i=0;$i<$count;$i++){
 				$record = $category->find($cate[$i]);
 				if(!$pname){
-					$str = "<tr class='tr4' id='{$record->id}'";
+					$str = "<tr class='tr4' id='{$record->id}'>";
 				}else{
-					$str = "<tr class='tr4' style='display:none' name='$pname' id='{$record->id}'";
+					$str = "<tr class='tr4' style='display:none' name='$pname' id='{$record->id}'>";
 				}
 				
 				$str .= "<td align='left'>";
@@ -77,7 +77,7 @@
 			<td width="330">类别名称</td><td width="100">优先级</td><td width="60">级别</td><td width="300">操作</td>
 		</tr>
 		<?php
-			$category = new category_class();
+			$category = new category_class('news');
 			show_category($category,0,$type,'',0);
 		?>
 		<input type="hidden" id="db_table" value="<?php echo $tb_category?>">
