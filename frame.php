@@ -179,11 +179,10 @@
 		require_once(ROOT_DIR . 'ckeditor/ckeditor_php5.php');
 		require_once(ROOT_DIR . 'ckfinder/ckfinder.php');
 		$editor = new CKEditor(ROOT_DIR . 'ckeditor');
-		$editor->config['toolbar'] = $toolbarset;	
+		$editor->config['toolbar'] = $toolbarset;
 		$editor->config['toolbarStartupExpanded'] = $expand_toolbar;
 		$editor->config['height'] = $height;
 		CKFinder::SetupCKEditor($editor, '/ckfinder/');
-		
 		if($width){
 			$editor->config['width'] = $width;
 		}

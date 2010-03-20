@@ -203,7 +203,15 @@
 					<div id="favor" class="list left_top">
 					<ul>
 						<?php
-							$record = $db->query("select t1.id,t1.title,t1.short_title from fb_news t1 join fb_category t2 on t1.category_id=t2.id where t2.name='最受欢迎' and t1.is_adopt=1 order by t1.priority asc,t1.created_at desc limit 6");
+							$pub = $db->query("select id from fb_position where name='公共'");
+							$pub_id = $pub[0]->id;
+							$favor = $db->query("select * from fb_position where name='最受欢迎' and page_id=$pub_id");
+							if($favor[0]->type=="category"){
+								$record = $db->query("select id,title,short_title from fb_news where category_id={$favor[0]->category_id} and is_adopt=1 order by priority asc,created_at desc limit {$favor[0]->position_limit}");
+							}elseif($favor[0]->type=="news"){
+								$record = $db->query("select t1.id,t1.title,t1.short_title from fb_news t1 join fb_position_relation t2 on t1.id=t2.news_id where t2.position_id={$favor[0]->id} and t1.is_adopt=1 order by t2.priority asc,t1.created_at desc limit {$favor[0]->position_limit}");
+							}
+							
 							for($i=0;$i<count($record);$i++){
 						?>
 						<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	

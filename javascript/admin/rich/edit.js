@@ -1,6 +1,6 @@
 var json_options = {
 		script:'/admin/rich_list/_rich.php?limit=6&',
-		varname:'name',
+		varname:'rich_name',
 		json:true,
 		shownoresults:true,
 		maxresults:16,
@@ -10,7 +10,7 @@ var json_options = {
 		};
 var json_options2 = {
 		script:'/admin/rich_list/_list.php?limit=6&',
-		varname:'name',
+		varname:'rich_name',
 		json:true,
 		shownoresults:true,
 		maxresults:16,
@@ -59,7 +59,7 @@ $(function(){
 				$("#error").html('不能为空');
 				$("#bd_id").focus();
 			}else{
-				$.post('validate_list.post.php',{'id':$("#fh_id").val(),'name':$("#bd_id").val(),},function(data){
+				$.post('validate_list.post.php',{'id':$("#fh_id").val(),'name':$("#bd_id").val()},function(data){
 					if(data=='no'){
 						$("#error").html('还没有该榜单');
 						$("#bd_id").focus();
