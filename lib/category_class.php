@@ -27,7 +27,7 @@ class category_class
 	}
 	
 	public function children_map($id, $include_self = true){
-		
+		$result = array();
 		if($include_self) $result[] = $id;
 		if($this->group_items[$id]){
 			foreach ($this->group_items[$id] as $g) {
