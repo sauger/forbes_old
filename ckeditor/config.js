@@ -29,6 +29,6 @@ CKEDITOR.editorConfig = function( config )
 	    config.resize_enabled = false;
 	    config.entities = false;
 	    config.ignoreEmptyParagraph = false;
-	    config.startupOutlineBlocks = false;
+	    config.startupOutlineBlocks = true;
 
 };
