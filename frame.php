@@ -388,5 +388,46 @@ function write_log($msg){
 	$msg = now() . ": " .$msg .chr(13).chr(10);
 	write_to_file($file,$msg);
 }
-	
+
+function show_category($category,$id,$type,$pname='',$num){
+	$cate = $category->group_items[$id];
+	$count = count($cate);
+	if($count==0){return;}else{
+		$num2 = $num;
+		for($i=0;$i<$count;$i++){
+			$record = $category->find($cate[$i]);
+			if(!$pname){
+				$str = "<tr class='tr4' id='{$record->id}'";
+			}else{
+				$str = "<tr class='tr4' style='display:none' name='$pname' id='{$record->id}'";
+			}
+			
+			$str .= "<td align='left'>";
+			for($j=0;$j<$num2;$j++){
+				$str .= "　";
+			}
+			$child = $category->group_items[$record->id];
+			if(count($child)>0){
+				$str .= "<img class='img_plus' style='cursor:pointer' name='{$record->name}' src='/images/admin/plus.gif'>{$record->name}</td>";
+			}else{
+				$str .= "<img name='{$record->name}' src='/images/admin/moners.gif'>{$record->name}</td>";
+			}
+			$str .= "<td><input type='text' style='width:80px' class='priority' name='{$record->id}' value='";
+			if($record->priority!=100){$str .= $record->priority;}
+			$str .= "' style='width:30px;'></td>";
+			$str .= "<td>{$record->level}</td>";
+			$level = $record->level+1;
+			$str .= "<td><a title='添加子类别' href='category_edit.php?parent_id={$record->id}&type={$type}&level={$level}'><img src='/images/btn_add.png' border='0'></a>　";
+			$str .= "<a href='category_edit.php?id={$record->id}&type={$type}' title='编辑' target='admin_iframe'><img src='/images/btn_edit.png' border='0'></a>　";
+			$str .= "<a class='del' name='{$category->id}' title='删除' style='color:#ff0000; cursor:pointer'><img src='/images/btn_delete.png' border='0'></a></td>";
+			$str .= "</tr>";
+			echo $str;
+			$num = $num2+1;
+			show_category($category,$record->id,$type,$record->name,$num);
+		}
+	}
+}
+
+
+
 ?>
