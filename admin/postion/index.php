@@ -49,8 +49,8 @@
 				?>
 				<tr class="tr3" style="display:none;" id=<?php echo $records[$j]->id;?> name="<?php echo $record[$i]->name;?>">
 					<td class="sub_menu"><li style="color:#0000ff;"><?php echo $records[$j]->name;?></li></td>
-					<td><a href="list_edit2.php?id=<?php echo $records[$i]->id;?>" class="list_edit" name="<?php echo $records[$i]->id;?>" style="cursor:pointer">使用已有类别</a>
-						<a href="list_edit.php?id=<?php echo $records[$i]->id;?>" class="list_edit" name="<?php echo $records[$i]->id;?>" style="cursor:pointer">配置新闻</a></td>
+					<td><a href="list_edit2.php?id=<?php echo $records[$j]->id;?>" class="list_edit" name="<?php echo $records[$j]->id;?>" style="cursor:pointer">使用已有类别</a>
+						<a href="list_edit.php?id=<?php echo $records[$j]->id;?>" class="list_edit" name="<?php echo $records[$j]->id;?>" style="cursor:pointer">配置新闻</a></td>
 				</tr>
 		<?php
 			}}

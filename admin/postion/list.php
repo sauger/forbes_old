@@ -47,11 +47,11 @@
 						<a href="list_edit.php?id=<?php echo $record[$i]->id;?>" class="list_edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">配置新闻</a>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_postion">
 		<?php
 			}
 		?>
 			<tr class="tr3">
+				<input type="hidden" id="db_table" value="fb_postion">
 				<td colspan=6><?php paginate();?></td>
 			</tr>
 		</table>	
