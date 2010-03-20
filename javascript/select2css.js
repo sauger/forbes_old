@@ -39,7 +39,6 @@ function rSelects() {
 		select_tag.appendChild(select_ul);
 
 		rOptions(i,selects[i].name);
-		
 		mouseSelects(selects[i].name);
 
 		if (isIE){
@@ -113,7 +112,7 @@ function clickSelects(name){
 				gebid(sincn).className ='tag_select_open';
 				gebid(sinul).style.display = '';
 			}
-			else if( $(sincn).className =='tag_select_open'){
+			else if( gebid(sincn).className =='tag_select_open'){
 				gebid(sincn).className = 'tag_select_hover';
 				gebid(sinul).style.display = 'none';
 			}
@@ -133,13 +132,13 @@ function clickOptions(i, n, name){
 	gebid('selected_' + name).id='';
 	li[n].id='selected_' + name;
 	li[n].className='open_hover';
-	gebid('select_' + name).removeChild($('select_info_' + name));
+	gebid('select_' + name).removeChild(gebid('select_info_' + name));
 
 	select_info = document.createElement('div');
 		select_info.id = 'select_info_' + name;
 		select_info.className='tag_select';
 		select_info.style.cursor='pointer';
-	gebid('options_' + name).parentNode.insertBefore(select_info,$('options_' + name));
+	gebid('options_' + name).parentNode.insertBefore(select_info,gebid('options_' + name));
 
 	mouseSelects(name);
 

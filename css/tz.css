@@ -21,11 +21,11 @@
 .l_b_l_title .wz{height:18px; margin-left:5px; color:#686868; font-size:14px; font-weight:bold; line-height:18px; float:left; display:inline;}
 .l_b_l_title .l_b_sx{width:1px; margin-left:10px; color:#686868; float:left; display:inline;}
 .l_b_l_title .more{width:38px; height:7px; margin-top:4px; margin-left:10px; float:left; display:inline;}
-.tz_l_b_l_t_title{width:306px; height:24px; margin-top:10px; margin-left:10px; font-size:20px; font-family:黑体; float:left; display:inline;}
+.tz_l_b_l_t_title{width:306px; height:24px; margin-top:10px; margin-left:10px; font-size:20px; font-family:黑体; overflow:hidden; float:left; display:inline;}
 .tz_l_b_l_t_title a{color:#003899; text-decoration:none;}
-.tz_l_b_l_t_content{width:306px; height:40px; margin-top:10px; margin-left:10px; line-height:20px; font-size:14px; float:left; display:inline;}
+.tz_l_b_l_t_content{width:306px; height:40px; margin-top:10px; margin-left:10px; line-height:20px; font-size:14px; overflow:hidden; float:left; display:inline;}
 .tz_l_b_l_t_content a{color:#666666; text-decoration:none;}
-.tz_l_b_l_b_content{width:306px; height:22px; margin-top:5px; margin-left:10px; line-height:22px; font-size:14px; font-weight:bold; float:left; display:inline;}
+.tz_l_b_l_b_content{width:306px; height:22px; margin-top:5px; margin-left:10px; line-height:22px; font-size:14px; font-weight:bold; overflow:hidden; float:left; display:inline;}
 .tz_l_b_l_b_content a{color:#003899; text-decoration:none;}
 #tz_l_dash{width:1px; height:808px; margin-top:40px; margin-left:10px; background:url(/images/tz/l_dash.jpg) no-repeat; overflow:hidden; float:left; display:inline;}
 #tz_l_b_r{width:315px; margin-top:20px; float:right; display:inline;}
