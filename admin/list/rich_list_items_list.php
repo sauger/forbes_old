@@ -28,7 +28,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub','admin/famous/famous_list');
+		js_include_tag('admin_pub','admin/list/rich_item_list');
 	?>
 </head>
 
@@ -64,7 +64,7 @@
 		<tr class="tr3">
 			<td colspan=6><?php paginate();?></td>
 		</tr>
-		<input type="hidden" id="year" name="id" value="<?php echo $id;?>"> 
+		<input type="hidden" id="list_id" name="id" value="<?php echo $id;?>"> 
 	</table>
 </body>
 </html>
