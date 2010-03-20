@@ -5,9 +5,10 @@
 	$type = $_POST['type'];
 	$db = get_db();
 	
+	
+	$position = new table_class("fb_position");
+	$position->find($pid);
 	if($type=='publish'){
-		$position = new table_class("fb_position");
-		$position->find($pid);
 		$count = $db->query("select count(*) as num from fb_position_relation where position_id=$pid");
 		if($count[0]->num==$position->position_limit){
 			echo "full";
