@@ -20,6 +20,23 @@
 .famous_rank{width:210px; height:90px; line-height:25px; float:left; display:inline;}
 .famous_bd{width:330px; float:left; display:inline}
 
+
+.column_box{width:650px; margin-top:20px; border-bottom:2px solid #D7D7D7; color:#000; line-height:20px; font-size:14px; float:left; display:inline;}
+.column_photo{width:90px; height:90px; float:left; display:inline;}
+.column_info{width:540px; margin-left:20px; float:left; display:inline;}
+.column_title{width:300px; height:25px; float:left; display:inline;}
+.column_title a{color:#000;}
+.column_description{width:520px; margin-top:5px; float:left; display:inline;}
+.column_news{width:650px; height:75px; margin-top:5px; float:left; display:inline;}
+.news_new{width:100px; height:40px; margin-left:5px; float:left; display:inline;}
+.news_title{width:490px; height:20px; overflow:hidden; float:left; display:inline;}
+.news_title a{color:#000; text-decoration:none;}
+.go_to{width:100px; height:20px; float:right; display:inline;}
+.go_to a{color:#000;}
+
+
+
+
 .style1{color:#3E83BA; text-decoration:underline;}
 .style2{color:#999999; text-decoration:none;}
 .red{color:#ff0000; font-weight:bolder;}
