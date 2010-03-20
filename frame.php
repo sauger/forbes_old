@@ -410,7 +410,7 @@ function show_category($category,$id,$type,$pname='',$num){
 			if(count($child)>0||$id==0){
 				$str .= "<img class='img_plus' style='cursor:pointer' name='{$record->name}' src='/images/admin/plus.gif'>{$record->name}</td>";
 			}else{
-				$str .= "　{$record->name}</td>";
+				$str .= "{$record->name}</td>";
 			}
 			$str .= "<td><input type='text' style='width:80px' class='priority' name='{$record->id}' value='";
 			if($record->priority!=100){$str .= $record->priority;}
