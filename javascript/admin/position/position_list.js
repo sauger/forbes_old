@@ -61,7 +61,7 @@ $(function(){
 			id_str=id_str+$(this).attr("name")+"|";
 			priority_str=priority_str+$(this).attr("value")+"|";
 		});
-		$.post("postion.post.php",{'id_str':id_str,'priority_str':priority_str,'type':'edit_priority'},function(data){
+		$.post("postion.post.php",{'id_str':id_str,'priority_str':priority_str,'pid':$("#list_id").val(),'type':'edit_priority'},function(data){
 			window.location.reload();
 		});		
 	})
