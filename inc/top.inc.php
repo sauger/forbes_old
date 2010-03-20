@@ -1,5 +1,4 @@
 	<?php 
-	    
 		$path = dirname(__FILE__) .'/';
 	    include_once($path ."../frame.php");
 	    js_include_tag('select2css','top');
@@ -41,9 +40,12 @@
 		</div>
 		<?php
 		$db=get_db();
+		if($nav=="")
+		{
+			$nav=3;	
+		}
 		$countnav=$db->query("select * from fb_navigation where parent_id=0 and (type='both' or type='top') order by priority asc");
-		$nav=3;
-		$navigation=$db->query('select name,id from fb_navigation where id='.$nav); 
+		$navigation=$db->query('select name,id from fb_navigation where id='.$nav);
 	?>
 		<div id=navigation>
 			<div class="content" <?php if($navigation[0]->name=="首页"){?>style="width:90px; background:url('/images/index/dh1_bg.jpg') repeat-x;"<?php } ?>>
