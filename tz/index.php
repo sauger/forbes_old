@@ -18,77 +18,126 @@
 	<div id=ibody>
 	<? require_once('../inc/top.inc.php');?>
 		<div id=cyindex></div>
-		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　<a href="">投资首页</a></div>
+		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　<a href="#">投资首页</a></div>
 		<div id=cyline></div>
+		<?php 
+			$db=get_db();
+			$cate=$db->query('select * from fb_position where name="投资首页头条"');
+			if($cate[0]->type=="category")
+			{
+				$news=$db->query('select photo_src,title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
+			}
+			else if($cate[0]->type="news")
+			{
+				$news=$db->query('select n.photo_src,n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
+			}
+		?>
 		<div id=tz_left>
-			<div id=tz_l_t_title><a href="">迟福林：提升消费率可以改变经济增长</a></div>
+			<div id=tz_l_t_title><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo $news[0]->title;?></a></div>
 			<div id=tz_l_t_pic>
-				<a href=""><img border=0 src="/images/tz/one.jpg"></a>	
+				<a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><img border=0 src="<?php echo $news[0]->photo_src;?>"></a>	
 			</div>
 			<div id=tz_l_t_r>
-				<div id=tz_l_t_r_t><a href="">让人民币升值对世界将是一件好事。这倒不是因为缩小中国贸易盈余将提振全球需求，而是因为这将遏制又一场廉价信贷“海啸”。重要得多的是，这将有利于中国。</a></div>
-				<div id=tz_l_t_r_b><a href="">·两会释放的人民币升值信号</a>　<a href="">·周小川：“特殊”汇率政策迟早要退出</a><br><a href="">·两会释放的人民币升值信号</a></div>
+				<div id=tz_l_t_r_t><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo get_fck_content($news[0]->description);?></a></div>
+				<div id=tz_l_t_r_b><a href="/news/news.php?id=<?php echo $news[1]->id; ?>">·<?php echo $news[1]->short_title; ?></a>　<a href="/news/news.php?id=<?php echo $news[2]->id; ?>">·<?php echo $news[2]->short_title; ?></a><br>
+					<a href="/news/news.php?id=<?php echo $news[3]->id; ?>">·<?php echo $news[3]->short_title; ?></a>　<a href="/news/news.php?id=<?php echo $news[4]->id; ?>">·<?php echo $news[4]->short_title; ?></a></div>
 			</div>
+			<?php 
+				$cate=$db->query('select * from fb_position where name="投资首页投资文章"');
+				if($cate[0]->type=="category")
+				{
+					$news=$db->query('select title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
+				}
+				else if($cate[0]->type="news")
+				{
+					$news=$db->query('select n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
+				}	
+			?>
 			<div id=tz_l_b_l>
 				<div class=l_b_l_title>
 					<div class=pic></div>
-					<div class=wz>投资新闻</div>
+					<div class=wz>投资文章</div>
 					<div class=l_b_sx>|</div>
-					<div class=more><a href=""><img border=0 src="/images/index/more.jpg"></a></div>
+					<div class=more><a href="/news/news_list.php?cid=<?php echo $category[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
 				</div>
-				<?php for($i=0;$i<5;$i++){ ?>
-					<div class=tz_l_b_l_t_title><a href="">深航总裁李昆涉嫌经济犯罪接调查</a></div>
-					<div class=tz_l_b_l_t_content><a href="">深圳航空有限责任公司总裁的任中国南方航空股份有限公司常务副总经理，接掌深航仅3...</a></div>
-				<?php } ?>
+				<?php 
+				for($i=0;$i<count($news);$i++){ ?>
+					<div class=tz_l_b_l_t_title><a href=""><?php echo $news[$i]->title; ?></a></div>
+					<div class=tz_l_b_l_t_content><a href=""><?php echo get_fck_content($news[$i]->description); ?></a></div>
+				<?php } 
+				$cate=$db->query('select * from fb_position where name="投资首页文章"');
+				if($cate[0]->type=="category")
+				{
+					$news=$db->query('select title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
+				}
+				else if($cate[0]->type="news")
+				{
+					$news=$db->query('select n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
+				}	?>
 				<div class=l_b_l_title>
 					<div class=pic></div>
 					<div class=wz>文章</div>
 					<div class=l_b_sx>|</div>
-					<div class=more><a href=""><img border=0 src="/images/index/more.jpg"></a></div>
+					<div class=more><a href="/news/news_list.php?cid=<?php echo $cate[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
 				</div>
-				<?php for($i=0;$i<10;$i++){ ?>
-					<div class=tz_l_b_l_b_content><a href="">·希腊成功发行50亿欧元国债</a></div>
+				<?php 
+		 		 for($i=0;$i<count($news);$i++){ ?>
+					<div class=tz_l_b_l_b_content><a href="/news/news.php?id=<?php echo $news[$i]->id; ?>">·<?php echo $news[$i]->short_title; ?></a></div>
 				<?php } ?>
 			</div>
 			<div id=tz_l_dash></div>
 			<div id=tz_l_b_r>
+				<?php $cate=$db->query('select * from fb_position where name="投资首页文章"');
+				if($cate[0]->type=="category")
+				{
+					$news=$db->query('select photo_src,title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
+				}
+				else if($cate[0]->type="news")
+				{
+					$news=$db->query('select n.photo_src n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
+				}	
+				
+				?>
 				<div class=l_b_l_title>
 					<div class=pic></div>
 					<div class=wz>投资专题</div>
 					<div class=l_b_sx>|</div>
-					<div class=more><a href=""><img border=0 src="/images/index/more.jpg"></a></div>
+					<div class=more><a href="/news/news_list.php?cid=<?php echo $cate[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
 				</div>
 				<div class="tz_l_b_r_content">
-					<div class=tz_l_b_r_pic><a href=""><img border=0 src="/images/tz/two.jpg"></a></div>
-					<div class=tz_l_b_r_pictitle><a href="">深航总裁李昆涉嫌经济犯罪接受调查</a></div>
-					<div class=tz_l_b_r_piccontent><a href="">深圳航空有限责任公司总裁的李昆国南方航空股份有限公司常务副总经理，接掌深航仅3...</a></div>
+					<div class=tz_l_b_r_pic><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><img border=0 src="<?php echo $news[0]->photo_src; ?>"></a></div>
+					<div class=tz_l_b_r_pictitle><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo $news[0]->title; ?></a></div>
+					<div class=tz_l_b_r_piccontent><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo get_fck_content($news[0]->description); ?></a></div>
 				</div>
 				<div class="tz_l_b_r_content">
-					<div class=tz_l_b_r_pic><a href=""><img border=0 src="/images/tz/two.jpg"></a></div>
-					<div class=tz_l_b_r_pictitle><a href="">深航总裁李昆涉嫌经济犯罪接受调查</a></div>
-					<div class=tz_l_b_r_piccontent><a href="">深圳航空有限责任公司总裁的李昆国南方航空股份有限公司常务副总经理，接掌深航仅3...</a></div>
+					<div class=tz_l_b_r_pic><a href="/news/news.php?id=<?php echo $news[1]->id; ?>"><img border=0 src="<?php echo $news[1]->photo_src; ?>"></a></div>
+					<div class=tz_l_b_r_pictitle><a href="/news/news.php?id=<?php echo $news[1]->id; ?>"><?php echo $news[1]->title; ?></a></div>
+					<div class=tz_l_b_r_piccontent><a href="/news/news.php?id=<?php echo $news[1]->id; ?>"><?php echo get_fck_content($news[1]->description); ?></a></div>
 				</div>
-				<?php for($i=0;$i<6;$i++){ ?>
-					<div class=tz_l_b_l_b_content><a href="">·希腊成功发行50亿欧元国债</a></div>
-				<?php } ?>
+				<?php for($i=2;$i<count($news);$i++){ ?>
+					<div class=tz_l_b_l_b_content><a href="/news/news.php?id=<?php echo $news[$i]->id; ?>">·<?php echo $news[$i]->short_title; ?></a></div>
+				<?php } 
+				$cate=$db->query('select * from fb_position where name="投资首页投资专栏"');
+				if($cate[0]->type=="category")
+				{
+					$news=$db->query('select photo_src,title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
+				}
+				else if($cate[0]->type="news")
+				{
+					$news=$db->query('select n.photo_src, n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
+				}	?>
 				<div class=l_b_l_title style="margin-bottom:5px;">
 					<div class=pic></div>
 					<div class=wz>投资专栏</div>
 					<div class=l_b_sx>|</div>
-					<div class=more><a href=""><img border=0 src="/images/index/more.jpg"></a></div>
+					<div class=more><a href="/news/news_list.php?cid=<?php echo $cate[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
 				</div>
+				<?php for($i=0;$i<count($news);$i++){ ?>
 				<div class=tz_l_b_r_b>
-					<a href=""><span style="color:#003899; font-size:14px; font-weight:bold;">网络业的水模式</span><br>FT 中文网专栏作家程苓峰：水有“真诚，清净，平等，觉悟，慈悲”五性。水能承载，与万物相安，体现于商业。</a>	
+					<a href="/news/news.php?id=<?php echo $news[$i]->id; ?>"><span style="color:#003899; font-size:14px; font-weight:bold;"><?php echo $news[$i]->title; ?></span><br><?php get_fck_content($news[$i]->description); ?></a>	
 				</div>
-				<div class=tz_l_b_r_b_zl>——康桥健笔专栏</div>
-				<div class=tz_l_b_r_b>
-					<a href=""><span style="color:#003899; font-size:14px; font-weight:bold;">网络业的水模式</span><br>FT 中文网专栏作家程苓峰：水有“真诚，清净，平等，觉悟，慈悲”五性。水能承载，与万物相安，体现于商业。</a>	
-				</div>
-				<div class=tz_l_b_r_b_zl>——康桥健笔专栏</div>
-				<div class=tz_l_b_r_b>
-					<a href=""><span style="color:#003899; font-size:14px; font-weight:bold;">网络业的水模式</span><br>FT 中文网专栏作家程苓峰：水有“真诚，清净，平等，觉悟，慈悲”五性。水能承载，与万物相安，体现于商业。</a>	
-				</div>
-				<div class=tz_l_b_r_b_zl>——康桥健笔专栏</div>
+				<div class=tz_l_b_r_b_zl>——<?php echo $news[$i]->author; ?>专栏</div>
+				<?php } ?>
 			</div>
 		</div>
 		<div id=right>
