@@ -3,9 +3,9 @@ function get_news_by_pos($pos) {
 	$db = get_db();
 	$pos = addslashes($pos);
 	$sql ="select * from fb_position where name='{$pos}'";
-	if(!$db->query($sql)) return false;
-
-	if($record = $db->move_first()===false) return false;
+	$record = $db->query($sql);
+	if($record === false) return false;
+	
 	if($record[0]->type=="category")
 	{
 		$category_id=$record[0]->category_id;
@@ -16,7 +16,6 @@ function get_news_by_pos($pos) {
 	 	$sql='select f.*,n.title,n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_position_relation f left join fb_news n on f.news_id=n.id where  n.is_adopt=1 and f.position_id='.$record[0]->id.' order by f.priority limit '.$record[0]->position_limit;
 	 }
 		
-	
 	return $db->query($sql); 
 	
 } 

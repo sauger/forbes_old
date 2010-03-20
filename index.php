@@ -21,7 +21,9 @@
 		<div id=t_l_t>
 			<?php
 			  /*每日头条*/
-				get_news_by_pos('每日头条');
+				$record_show = get_news_by_pos('每日头条');
+				var_dump($record_show[0]->title);
+				
   		?>
 			<div id=t_l_t_t>
 				<div class=head_pic id=head_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[0]->video_photo_src; ?>"></a></div>
