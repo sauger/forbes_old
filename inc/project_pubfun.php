@@ -1,6 +1,6 @@
 <?php
 function get_news_by_pos($pos) {
-	$pos = add_slashes($pos);
+	$pos = addslashes($pos);
 	$sql ="select * from fb_position where name='{$pos}'";
 	if($db->query($sql)) return false;
 	if($record = $db->move_first()===false) return false;
