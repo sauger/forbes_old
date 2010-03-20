@@ -28,7 +28,7 @@
 	<form id="list_edit" action="edit.post.php" enctype="multipart/form-data"  method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?>　<button type="button" id="add_attribute">添加一列</button></td>
+			<td colspan="2" width="795">　　<?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?>　<button type="button" id="add_attribute" <?php if($record->list_type != 0) echo "style='display:none;'"?>>添加一列</button></td>
 		</tr>
 		<tr class=tr4 id="list_name">
 			<td width="130">榜单名称</td>
@@ -42,12 +42,16 @@
 		<tr class="tr4">
 			<td width="130">榜单类型</td>
 			<td align="left">
-				<select name="list_type" id="list_type"  <?php if($id) echo "disabled=true";?>>
+			
+				<select name="mlist[list_type]" id="list_type"  <?php if($id) echo "disabled=true";?>>
 					<option value="0">自定义榜单</option>
 					<option value="1">年度富豪榜</option>
 					<option value="2">年度名人榜</option>
 				</select>
 				<script type="text/javascript">$('#list_type').val('<?php echo $record->list_type;?>');</script>
+				<?php if($id){?>
+				<input name="mlist[list_type]" value="<?php echo $record->list_type;?>" type="hidden"></input>
+				<?php }?>
 			</td>
 		</tr>
 		<tr class=tr4>
@@ -79,10 +83,10 @@
 			}
 		?>
 		<tr class=tr4 <?php if($record->list_type=='0') echo "style='display:none;'"?>>
-			<td width="130">财富单位</td><td width="695" align="left"><select name="list[unit]"><option value="亿人民币">亿人民币</option><option value="亿美元"<?php if($record->unit == '亿美元') echo " selected='selected'"?> >亿美元</option></select></td>
+			<td width="130">财富单位</td><td width="695" align="left"><select name="mlist[unit]"><option value="亿人民币">亿人民币</option><option value="亿美元"<?php if($record->unit == '亿美元') echo " selected='selected'"?> >亿美元</option></select></td>
 		</tr>
 		<tr class=tr3>
-			<td width="130">说明</td><td width="695" align="left"><textarea rows="10" cols="60" name="list[comment]"><?php echo $record->comment;?></textarea> </td>
+			<td width="130">说明</td><td width="695" align="left"><textarea rows="10" cols="60" name="mlist[comment]"><?php echo $record->comment;?></textarea> </td>
 		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="保　　　存"></td>

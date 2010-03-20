@@ -304,6 +304,54 @@ class table_class{
 		}
 	}
 	
+	public function update_file_attributes($name){
+		if(!$_FILES[$name]['name']) return true;
+		$default_filter = array('jpg','png','bmp','gif','icon','flv','wmv','wav','mp3','mp4','avi','rm','wma');
+		$default_save_dir = '/upload';
+		$default_limit = '0';
+		global $msg_fail;
+		global $msg_max_size;
+		global $msg_error_type;
+		if(!isset($msg_fail)) $msg_fail = 'fail to upload the file';
+		if(!isset($msg_max_size)) $msg_max_size = 'fail to upload file!out of max size range';
+		if(!isset($msg_error_type)) $msg_error_type = 'unknown file type!';
+		foreach ($_FILES[$name]['name'] as $key => $val) {
+			$filter = $key ."_filter";
+			$save_dir = $key ."_save_dir";
+			$limit = $key ."_limit";
+			global $$filter;
+			global $$save_dir;
+			global $$limit;
+
+			if(!isset($$filter)) $$filter = $default_filter;
+			if(!isset($$save_dir)) $$save_dir = $default_save_dir;
+			
+			if($_FILES[$name]['error'][$key] != UPLOAD_ERR_OK){
+				alert($msg_fail);
+				return false;
+			}
+			if($_FILES[$name]['size'][$key] > $$limit & $this->max_file_size > 0){
+				alert($msg_max_size);
+				return false;
+			}		
+			$path_info = pathinfo($val);
+			$extension = strtolower($path_info['extension']);
+			if(!in_array($extension,$$filter)){
+				alert($msg_error_type);
+				return false;
+			}
+			$save_name = rand_str() .'.'.$extension;
+			$save = ROOT_DIR_NONE .$$save_dir . '/'. $save_name;
+			if(move_uploaded_file($_FILES[$name]['tmp_name'][$key],$save)){
+				$this->$key = $$save_dir .'/' . $save_name;
+				return true;
+			}else{
+				debug_info('fail to upload file:' .$val,'js');
+				return false;
+			}
+		}
+	}
+	
 	public function update_attribute($field, $value,$auto_save =true){
 		$this->$field = $value;
 		if($auto_save){

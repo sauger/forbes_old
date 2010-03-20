@@ -20,40 +20,30 @@
 		<? require_once('inc/top.inc.php');?>
 		<div id=t_l_t>
 			<?php
-			  $sql ='select * from fb_position where name="每日头条"';
-				$record=$db -> query($sql);
-				if($record[0]->type=="category")
-				{
-					$category_id=$record[0]->category_id;
-					$sql = 'select n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.id='.$category_id.' and c.category_type="news" order by n.priority asc,n.created_at desc limit 4';
-					
-				}
-				if($record[0]->type=="news")
-			  {
-			  	
-			  }
-			
-				$record_head=$db -> query($sql);
+			  /*每日头条*/
+				$record_show = get_news_by_pos('每日头条');
+				var_dump($record_show[0]->title);
+				
   		?>
 			<div id=t_l_t_t>
-				<div class=head_pic id=head_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[0]->video_photo_src; ?>"></a></div>
-				<div class=head_pic id=head_pic_1 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[1]->video_photo_src; ?>"></a></div>
-				<div class=head_pic id=head_pic_2 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[2]->video_photo_src; ?>"></a></div>
-				<div class=head_pic id=head_pic_3 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_head[3]->video_photo_src; ?>"></a></div>
+				<div class=head_pic id=head_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[0]->video_photo_src; ?>"></a></div>
+				<div class=head_pic id=head_pic_1 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[1]->video_photo_src; ?>"></a></div>
+				<div class=head_pic id=head_pic_2 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[2]->video_photo_src; ?>"></a></div>
+				<div class=head_pic id=head_pic_3 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[3]->video_photo_src; ?>"></a></div>
 				<div id=t_l_t_t_r>
-					<div class=head_title id=head_title_0><a href=""><?php echo $record_head[0]->short_title; ?></a></div>
-					<div class=head_title id=head_title_1 style="display:none;"><a href=""><?php echo $record_head[1]->short_title; ?></a></div>
-					<div class=head_title id=head_title_2 style="display:none;"><a href=""><?php echo $record_head[2]->short_title; ?></a></div>
-					<div class=head_title id=head_title_3 style="display:none;"><a href=""><?php echo $record_head[3]->short_title; ?></a></div>
-					<div class=head_content id=head_content_0><?php echo $record_head[0]->description; ?></div>
-					<div class=head_content id=head_content_1 style="display:none;"><?php echo $record_head[1]->description; ?></div>
-					<div class=head_content id=head_content_2 style="display:none;"><?php echo $record_head[2]->description; ?></div>
-					<div class=head_content id=head_content_3 style="display:none;"><?php echo $record_head[3]->description; ?></div>
+					<div class=head_title id=head_title_0><a href=""><?php echo $record_show[0]->short_title; ?></a></div>
+					<div class=head_title id=head_title_1 style="display:none;"><a href=""><?php echo $record_show[1]->short_title; ?></a></div>
+					<div class=head_title id=head_title_2 style="display:none;"><a href=""><?php echo $record_show[2]->short_title; ?></a></div>
+					<div class=head_title id=head_title_3 style="display:none;"><a href=""><?php echo $record_show[3]->short_title; ?></a></div>
+					<div class=head_content id=head_content_0><?php echo $record_show[0]->description; ?></div>
+					<div class=head_content id=head_content_1 style="display:none;"><?php echo $record_show[1]->description; ?></div>
+					<div class=head_content id=head_content_2 style="display:none;"><?php echo $record_show[2]->description; ?></div>
+					<div class=head_content id=head_content_3 style="display:none;"><?php echo $record_show[3]->description; ?></div>
 					
 				<?php for($j=0;$j<=3;$j++){?>	
 					<div class=head_related id=head_related_<?php echo $j?> <?php if($j<>0){echo "style='display:none'";}?> >
 					<?php				
-					 		$sub_news_str=explode(",",$record_head[$j]->sub_headline); 
+					 		$sub_news_str=explode(",",$record_show[$j]->sub_headline); 
 				  		$sub_news_str_num=sizeof($sub_news_str)-1;
 
 							for($i=0;$i<=$sub_news_str_num;$i++)
@@ -81,13 +71,28 @@
 		 <div id=t_l_t_b>	
 			<div id=t_l_t_l>
 			<?php
-				$sql = 'select n.short_title,n.id as news_id from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.name="陆家嘴早餐" and c.category_type="news" order by n.priority asc,n.created_at desc limit 3';
-				$record_breakfast=$db -> query($sql);
+			  /*陆家嘴早餐*/
+			  $sql ='select * from fb_position where name="陆家嘴早餐"';
+				$record=$db -> query($sql);
+				if($record[0]->type=="category")
+				{
+					$category_id=$record[0]->category_id;
+					$sql = 'select n.title,n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.id='.$category_id.' and c.category_type="news" order by n.priority asc,n.created_at desc limit '.$record[0]->position_limit;
+					
+				}
+				if($record[0]->type=="news")
+			  {
+			  	$sql='select f.*,n.title,n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_position_relation f left join fb_news n on f.news_id=n.id where  n.is_adopt=1 and f.position_id='.$record[0]->id.' order by f.priority limit '.$record[0]->position_limit;
+			  }
+			
+				$record_show=$db -> query($sql);
   		?>
+  		
+  		
 				<div id=title><a href="">陆家嘴早餐</a></div>
-					<div class=content><a href=""><?php echo $record_breakfast[0]->short_title; ?></a></div>
-					<div class=content><a href=""><?php echo $record_breakfast[1]->short_title; ?></a></div>
-					<div class=content><a href=""><?php echo $record_breakfast[2]->short_title; ?></a></div>
+					<div class=content><a href="" title="<?php echo $record_show[0]->title; ?>"><?php echo $record_show[0]->short_title; ?></a></div>
+					<div class=content><a href="" title="<?php echo $record_show[1]->title; ?>"><?php echo $record_show[1]->short_title; ?></a></div>
+					<div class=content><a href="" title="<?php echo $record_show[2]->title; ?>"><?php echo $record_show[2]->short_title; ?></a></div>
 					<div id=coffee></div>
 			</div>
 			<div id=t_l_t_r>

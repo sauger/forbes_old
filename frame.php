@@ -11,7 +11,9 @@
 	require_once(CURRENT_DIR ."lib/table_images_class.php");
 	require_once(CURRENT_DIR ."lib/upload_file_class.php");
 	require_once CURRENT_DIR ."lib/image_handler_class.php";
-
+	if(file_exists(ROOT_DIR ."inc/project_pubfun.php")){
+		require_once CURRENT_DIR ."inc/project_pubfun.php";
+	}
 	
 	function get_config($var,$path=''){
 		if(empty($path)){$path = LIB_PATH .'../config/config.php';}
@@ -386,5 +388,6 @@ function write_log($msg){
 	$msg = now() . ": " .$msg .chr(13).chr(10);
 	write_to_file($file,$msg);
 }
-	
+
+
 ?>

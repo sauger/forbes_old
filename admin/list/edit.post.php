@@ -1,12 +1,18 @@
 <?php
 include "../../frame.php";
 
+$post_type = intval($_POST['mlist']['list_type']);
 $id = intval($_POST['id']);
 $list_type = new table_class('fb_custom_list_type');
 if($id){
 	$list_type->find($id);	
 }
 $list_type->update_attributes($_POST['mlist'],false);
+if($post_type == 1){
+	$list_type->table_name = 'fb_fhbd';
+}else if($post_type == 2){
+	$list_type->table_name = 'fb_mrbd';
+}
 if($_FILES['image_src']['name'] != ''){
 		$upload = new upload_file_class();
 		$upload->save_dir = '/upload/news/';
@@ -38,6 +44,10 @@ function get_add_column_name(){
 	return "field_{$column_index}";
 };
 
+if($post_type > 0 ){
+	redirect("index.php");
+	exit;
+}
 //update
 if($id){
 	$table = new table_class($list_type->table_name,true);
@@ -164,4 +174,4 @@ if($id){
 	}
 }
 
-redirect("custom_list_item_list.php?id={$list_type->id}");
+redirect("index.php");

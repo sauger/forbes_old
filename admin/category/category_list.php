@@ -16,6 +16,44 @@
 		default:
 			$category_name = "其他";
 	}
+	function show_category($category,$id,$type,$pname='',$num){
+		$cate = $category->group_items[$id];
+		$count = count($cate);
+		if($count==0){return;}else{
+			$num2 = $num;
+			for($i=0;$i<$count;$i++){
+				$record = $category->find($cate[$i]);
+				if(!$pname){
+					$str = "<tr class='tr4' id='{$record->id}'";
+				}else{
+					$str = "<tr class='tr4' style='display:none' name='$pname' id='{$record->id}'";
+				}
+				
+				$str .= "<td align='left'>";
+				for($j=0;$j<$num2;$j++){
+					$str .= "　";
+				}
+				$child = $category->group_items[$record->id];
+				if(count($child)>0){
+					$str .= "<img class='img_plus' style='cursor:pointer' name='{$record->name}' src='/images/admin/plus.gif'>{$record->name}</td>";
+				}else{
+					$str .= "<img name='{$record->name}' src='/images/admin/moners.gif'>{$record->name}</td>";
+				}
+				$str .= "<td><input type='text' style='width:80px' class='priority' name='{$record->id}' value='";
+				if($record->priority!=100){$str .= $record->priority;}
+				$str .= "' style='width:30px;'></td>";
+				$str .= "<td>{$record->level}</td>";
+				$level = $record->level+1;
+				$str .= "<td><a title='添加子类别' href='category_edit.php?parent_id={$record->id}&type={$type}&level={$level}'><img src='/images/btn_add.png' border='0'></a>　";
+				$str .= "<a href='category_edit.php?id={$record->id}&type={$type}' title='编辑' target='admin_iframe'><img src='/images/btn_edit.png' border='0'></a>　";
+				$str .= "<a class='del' name='{$category->id}' title='删除' style='color:#ff0000; cursor:pointer'><img src='/images/btn_delete.png' border='0'></a></td>";
+				$str .= "</tr>";
+				echo $str;
+				$num = $num2+1;
+				show_category($category,$record->id,$type,$record->name,$num);
+			}
+		}
+	}
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -27,7 +65,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub');
+		js_include_tag('admin_pub','admin/menu_list');
 	?>
 </head>
 <body>
@@ -36,27 +74,11 @@
 			<td colspan="6">　 <a href="category_edit.php?type=<?php echo $type;?>">添加<?php echo $category_name;?>类别</a></td>
 		</tr>
 		<tr class="tr2">
-			<td width="260">类别名称</td><td width="100">优先级</td><td width="200">父类</td><td width="60">级别</td><td width="175">操作</td>
+			<td width="330">类别名称</td><td width="100">优先级</td><td width="60">级别</td><td width="300">操作</td>
 		</tr>
 		<?php
-			$category = new table_class($tb_category);
-			$record = $category->paginate("all",array('conditions' => 'category_type="'.$type.'"','order' => 'parent_id,priority'),30);
-			$count_record = count($record);
-			$record2 = $category->find("all",array('conditions' => 'category_type="'.$type.'"','order' => 'priority'));
-			$count_record2 = count($record2);
-			//--------------------
-			for($i=0;$i<$count_record;$i++){
-		?>
-				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
-					<td><?php echo $record[$i]->name;?></td>
-					<td><input type="text" style="width:80px" class="priority" name="<?php echo $record[$i]->id;?>" value="<?php if($record[$i]->priority!=100){echo $record[$i]->priority;}?>" style="width:30px;"></td>
-					<td><?php for($j=0;$j<$count_record2;$j++){if($record2[$j]->id==$record[$i]->parent_id){echo $record2[$j]->name;break;}}?></td>
-					<td><?php echo $record[$i]->level;?></td>
-					<td><a title="添加子类别" href="category_edit.php?parent_id=<?php echo $record[$i]->id;?>&type=<?php echo $type?>&level=<?php echo $record[$i]->level+1;?>"><img src="/images/btn_add.png" border="0"></a>　<a href="category_edit.php?id=<?php echo $record[$i]->id;?>&type=<?php echo $type?>" title="编辑" target="admin_iframe"><img src="/images/btn_edit.png" border="0"></a>　<a class="del" name="<?php echo $record[$i]->id;?>" title="删除" style="color:#ff0000; cursor:pointer"><img src="/images/btn_delete.png" border="0"></a></td>
-				</tr>
-		<?php
-			}
-			//--------------------
+			$category = new category_class();
+			show_category($category,0,$type,'',0);
 		?>
 		<input type="hidden" id="db_table" value="<?php echo $tb_category?>">
 	</table>
