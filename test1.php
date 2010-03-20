@@ -12,7 +12,15 @@ the returned xml has the following structure
 </results>
 */
 include "frame.php";
-var_dump($_POST);
+#var_dump($_POST);
+#var_dump($_FILES);
+
+$test = new table_class('test');
+$test->update_attributes($_POST['item'],false);
+$field_4_filter = array('exe');
+$msg_error_type = 'sdfasdfas';
+$test->update_file_attributes('item');
+var_dump($test);
 die();
 
 	$aUsers = array(
