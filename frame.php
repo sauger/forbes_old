@@ -201,18 +201,16 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 	$pageindex = isset($_REQUEST[$pageindextoken]) ? $_REQUEST[$pageindextoken] : 1;
 	$pagecount = isset($_REQUEST[$pagecounttoken]) ? $_REQUEST[$pagecounttoken] : $$pagecounttoken;
 	
-	
-	$url = $url ? $url : $_SERVER['PHP_SELF'] ."?";
-	if (!strpos($url,'?'))
-	{
-		$url .= '?';
-	}	
-	parse_str($_SERVER['QUERY_STRING'], $params);
-	unset($params[$pageindextoken]);
-	
-	foreach ($params as $k => $v) {
-		$url .= "&" .$k . "=" . urlencode($v);
+	if(empty($url)){
+		$url = $_SERVER['PHP_SELF'] ."?";
+		parse_str($_SERVER['QUERY_STRING'], $params);
+		unset($params[$pageindextoken]);
+		
+		foreach ($params as $k => $v) {
+			$url .= "&" .$k . "=" . urlencode($v);
+		}	
 	}
+	
 	if ($pagecount <= 1 && !$force_show) return;
 	
 	$pagefirst = $url . "&$pageindextoken=1";

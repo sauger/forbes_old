@@ -88,7 +88,7 @@
 					<div class="right_box">
 					<?php
 						$sql = "select t1.title,t1.id,t2.created_at from fb_news t1 join fb_collection t2 on t1.id=t2.resource_id where t2.resource_type='fb_news' and t2.user_id=$uid order by t2.created_at";
-						$news = $db->paginate($sql,10,'news_page');
+						$news = $db->paginate($sql,7,'news_page');
 						$news_count = count($news);
 						for($i=0;$i<$news_count;$i++){
 					?>
@@ -205,6 +205,41 @@
 						<?php }?>
 					</div>
 					<div class="paginate"><?php paginate("user_favorites.php?type=famous",null,'famous_page');?></div>
+				</div>
+				<div class=right-text id="column" <?php if($type=="column")echo 'style="display:inline;"';?>>
+					<div class="right_box">
+						<?php
+							$sql = "select t1.* from fb_collection t2 join fb_user t1 on t1.id=t2.resource_id where t2.user_id=$uid and t2.resource_type='column'";
+							$author = $db->paginate($sql,2,'column_page');
+							$sql = "select t1.title,t1.id,t1.short_title,t1.author_id from fb_collection t2 join fb_news t1 on t1.author_id=t2.resource_id where t2.user_id=$uid and t2.resource_type='column'";
+							$news = $db->query($sql);
+							for($i=0;$i<count($author);$i++){
+								$k=0;
+						?>
+						<div <?php if($i==1){?>style="border:0"<?php }?> class="column_box">
+							<div class="column_photo"><img width="90" height="90" src="<?php if(!$author[$i]->image_src)echo '/images/html/column/picture.jpg';else echo $author[$i]->image_src;?>"></div>
+							<div class="column_info">
+								<div class="column_title"><a href=""><?php echo $author[$i]->nick_name;?></a></div>
+								<div class="column_description"><?php echo $author[$i]->description;?></div>
+							</div>
+							<div class="column_news">
+								<div class="news_new">最新专栏文章：</div>
+								<?php 
+									for($j=0;$j<count($news);$j++){
+										if($news[$j]->author_id==$author[$i]->id){
+											$k++;
+											if($k>2) break;
+								?>
+								<div class="news_title"><a title="<?php echo strip_tags($news[$j]->title);?>" href="/news/news.php?id=<?php echo $news[$j]->id?>"><?php echo $news[$j]->short_title;?></a></div>
+								<?php
+									}}
+								?>
+								<div class="go_to"><a href="">进入专栏>></a></div>
+							</div>
+						</div>
+						<?php }?>
+					</div>
+					<div class="paginate"><?php paginate("user_favorites.php?type=column",null,'column_page');?></div>
 				</div>
 			</div>
 		</div>
