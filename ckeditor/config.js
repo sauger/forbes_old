@@ -31,5 +31,4 @@ CKEDITOR.editorConfig = function( config )
 	    config.ignoreEmptyParagraph = true;
 	    config.startupOutlineBlocks = true;
 	    config.font_names = 'Arial;Times New Roman;Verdana;宋体';
-
 };

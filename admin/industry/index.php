@@ -46,10 +46,10 @@
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_industry">
 		<?php
 			}
 		?>
+		<input type="hidden" id="db_table" value="fb_industry">
 			<tr class="tr3">
 				<td colspan=6><?php paginate();?></td>
 			</tr>

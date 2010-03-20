@@ -4,11 +4,8 @@
 	
 	$db = get_db();
 	$sql = "select * from fb_currency where 1=1";
-	if($search!=''){
-		$sql .= " and (name like '%{$search}%' or code like '%{$search}%')";
-	}
-	
-	$record = $db->paginate($sql,15);
+
+	$record = $db->paginate($sql,30);
 	$count = count($record);
 ?>
 
@@ -28,14 +25,11 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="5">
-				　　　　搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
+			<td colspan="5">　 汇率管理
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="215">名称</td><td width="110">代码</td><td width="150">汇率（1:RMB）</td>
+			<td width="295">货币</td><td width="250">代码</td><td width="250">汇率（1:RMB）</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -45,12 +39,11 @@
 					<td><?php echo $record[$i]->code;?></td>
 					<td><?php echo $record[$i]->rate;?></td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_hbgl">
 		<?php
 			}
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate();?></td>
+			<td colspan=5><?php paginate();?>				<input type="hidden" id="db_table" value="fb_hbgl"></td>
 		</tr>
 	</table>
 </body>

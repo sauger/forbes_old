@@ -19,7 +19,7 @@
 <?php
 	$db = get_db();
 	$id = $_REQUEST['id'];
-	$record = new table_class('fb_postion');
+	$record = new table_class('fb_position');
 	$record->find($id);
 	if($record->category_id==''){
 		$category = -1;

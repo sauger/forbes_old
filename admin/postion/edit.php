@@ -17,7 +17,7 @@
 	$db = get_db();
 	$id = $_REQUEST['id'];
 	$pid = $_REQUEST['pid'];
-	$record = new table_class('fb_postion');
+	$record = new table_class('fb_position');
 	if ($id != '')
 	{
 		$record->find($id);
@@ -34,7 +34,7 @@
 			<td width="130">位置名称</td><td width="695" align="left"><input type="text" name="name" value="<?php echo $record->name;?>">
 		</tr>
 		<tr class=tr4>
-			<td width="130">限制</td><td width="695" align="left"><input type="text" name="postion_limit" <?php if($pid!=''){?>class="number required"<?php }?> value="<?php echo $record->postion_limit;?>">
+			<td width="130">限制</td><td width="695" align="left"><input type="text" name="position_limit" <?php if($pid!=''){?>class="number required"<?php }?> value="<?php echo $record->position_limit;?>">
 		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>

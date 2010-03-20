@@ -2,12 +2,12 @@
 	require "../../frame.php";
 	$id = $_POST['id'];
 	
-	$postion = new table_class('fb_postion');
+	$postion = new table_class('fb_position');
 	if($id!=''){
-		$postion->find($id);
+		$position->find($id);
 	}
-	$postion->category_id = $_POST['category'];
-	$postion->type = "category";
-	$postion->save();
+	$position->category_id = $_POST['category'];
+	$position->type = "category";
+	$position->save();
 	redirect('index.php');
 ?>

@@ -3,7 +3,7 @@
 	judge_role();
 	
 	$id = $_REQUEST['id'];
-	$page = new table_class("fb_postion");
+	$page = new table_class("fb_position");
 	$page->find($id);
 	
 	$title = $_REQUEST['title'];
@@ -13,7 +13,7 @@
 	
 	$db = get_db();
 	
-	$sql = "select t1.title,t1.id,t2.id as p_id,t1.category_id,t2.priority,t1.created_at from fb_news t1 left join fb_postion_relation t2 on t1.id=t2.news_id where 1=1";
+	$sql = "select t1.title,t1.id,t2.id as p_id,t1.category_id,t2.priority,t1.created_at,t2.position_id from fb_news t1 left join fb_position_relation t2 on t1.id=t2.news_id where 1=1";
 	$sql .= " and t1.language_tag=$language_tag";
 	if($title!= ''){
 		$sql .= " t1.title like '%".trim($title)."%' or t1.keywords like '%".trim($title)."%' or t1.description like '%".trim($title)."%'";
@@ -21,14 +21,14 @@
 	if($category_id > 0){
 		$sql .= " and t1.category_id=$category_id";
 	}
-	$news = $db->query("select * from fb_postion_relation where postion_id=$id");
+	$news = $db->query("select * from fb_position_relation where position_id=$id");
 	$ids = $news[0]->news_id;
 	for($i=1;$i<count($news);$i++){
 		$ids.=','.$news[$i]->news_id;
 	}
 	
 	if($is_adopt==1){
-		$sql .= " and t2.postion_id=$id";
+		$sql .= " and t2.position_id=$id";
 	}elseif($is_adopt=='0'){
 		if($ids!=''){
 			$sql .= " and t1.id not in ($ids)";
@@ -48,7 +48,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('category_class','admin/postion/postion_list');
+		js_include_tag('category_class','admin/position/position_list');
 		$category = new category_class('news');
 		$category->echo_jsdata();		
 	?>
@@ -90,10 +90,10 @@
 						<?php echo $record[$i]->created_at;?>
 					</td>
 					<td>
-						<?php if($record[$i]->p_id==""){?>
+						<?php if($record[$i]->position_id!=$id){?>
 						<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="">加入</span>
 						<?php }?>
-						<?php if($record[$i]->p_id!=""){?>
+						<?php if($record[$i]->position_id==$id){?>
 						<span style="cursor:pointer" class="revocation" name="<?php echo $record[$i]->p_id;?>">删除</span>
 						<input type="text" class="priority"  name="<?php echo $record[$i]->p_id;?>"  value="<?php echo $record[$i]->priority;?>" style="width:40px;">
 						<?php }?>

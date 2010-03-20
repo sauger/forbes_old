@@ -40,11 +40,7 @@
 	<form id="fbd_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑富豪榜单";}else{echo "添加富豪榜单";}?>
-			<?php if ($f_id != ''){?><a href="/admin/rich/list.php" style="cursor:pointer">返回列表</a>	<?php }?>
-			<?php if ($year != ''){?><a href="detail.php?year=<?php echo $year; ?>" style="cursor:pointer">返回<?php echo $list->year?></a>	<?php }?>		
-			<?php if ($id != ''){?><a href="index.php" style="cursor:pointer">返回榜单列表</a>	<?php }?>
-			</td>
+			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑富豪榜单";}else{echo "添加富豪榜单";}?> <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">姓名</td>
