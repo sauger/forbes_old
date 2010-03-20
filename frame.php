@@ -422,7 +422,8 @@ function show_category($category,$id,$type,$pname='',$num){
 			$str .= "<a class='del' name='{$category->id}' title='删除' style='color:#ff0000; cursor:pointer'><img src='/images/btn_delete.png' border='0'></a></td>";
 			$str .= "</tr>";
 			echo $str;
-			show_category($category,$record->id,$type,$record->name,++$num);
+			$num = $num2+1;
+			show_category($category,$record->id,$type,$record->name,$num);
 		}
 	}
 }
