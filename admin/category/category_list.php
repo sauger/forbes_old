@@ -77,10 +77,10 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="6">　 <a href="category_edit.php?type=<?php echo $type;?>">添加<?php echo $category_name;?>类别</a></td>
+			<td colspan="6">　 <a href="category_edit.php?type=<?php echo $type;?>">添加<?php echo $category_name;?>栏目</a></td>
 		</tr>
 		<tr class="tr2">
-			<td width="330">类别名称</td><td width="100">优先级</td><td width="60">级别</td><td width="300">操作</td>
+			<td width="330">栏目名称</td><td width="100">优先级</td><td width="60">级别</td><td width="300">操作</td>
 		</tr>
 		<?php
 			$category = new category_class($type);

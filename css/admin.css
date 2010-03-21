@@ -14,7 +14,7 @@ a{text-decoration:none; color:black;}
 
 #admin_body{width:980px; margin:0 auto;}
 #part1{width:980px; height:93px; background:url(/images/admin/nav_bg.jpg) repeat-x; float:left; display:inline;}
-#part1 #nav{width:280px; height:30px; margin-top:10px; color:#ffffff; float:right; display:inline;}
+#part1 #nav{width:360px; height:30px; text-align:right; text-indent:24px;  margin-top:10px; color:#ffffff; float:right; display:inline;}
 #part1 #nav a{color:#ffffff; text-decoration:none;}
 #part1 #title{width:930px; height:25px; margin-left:10px; font-size:30px; font-weight:bold; color:#ffffff; float:left; display:inline;}
 #part1 #index{width:100px; float:right; display:inline;}
