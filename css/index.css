@@ -79,9 +79,9 @@ p{padding:0; margin:0}
 .c_l .piccontent{width:320px; height:74px; margin-top:10px; margin-left:10px; float:left; display:inline;}
 .c_l .piccontent .p_title{width:228px; height:24px; line-height:24px; overflow:hidden; float:left; display:inline;}
 .c_l .piccontent .p_title a{font-size:20px; color:#003899; font-weight:bold; font-family:黑体; text-decoration:none;}
-.c_l .piccontent .p_content{width:228px; height:40px; margin-top:10px; line-height:20px; overflow:hidden; float:left; display:inline;}
+.c_l .piccontent .p_content{width:294px; height:40px; margin-top:10px; font-size:14px; line-height:20px; overflow:hidden; float:left; display:inline;}
 .c_l .piccontent .p_content a{color:#666666; text-decoration:none;}
-.c_l .piccontent1{width:310px; height:100px; line-height:25px; overflow:hidden; float:left; display:inline;}
+.c_l .piccontent1{width:310px; height:100px; font-size:14px; line-height:25px; overflow:hidden; float:left; display:inline;}
 .c_l .piccontent1 a{color:#666666; text-decoration:none;}
 .c_l .content3{width:320px; margin-top:10px;  margin-left:10px; float:left; display:inline;}
 .c_l .content3 #content3_title{width:320px; height:24px; margin-bottom:10px; line-height:24px; float:left; display:inline;}
@@ -94,8 +94,7 @@ p{padding:0; margin:0}
 .c_l .image_content .image_context{width:135px; height:100px; margin-top:10px; line-height:20px; overflow:hidden; float:left; display:inline;}
 .c_l .image_content .image_context a{color:#666666; text-decoration:none;}
 
-.c_l .cl{width:300px; height:16px; margin-top:7px; margin-left:10px; line-height:16px; float:left; display:inline;}
-.c_l .cl img{width:4px; height:4px; margin-top:6px; float:left; display:inline;}
+.c_l .cl{width:300px; height:16px; margin-top:7px; margin-left:10px; padding-left:15px; background:url(/images/index/point1.jpg) no-repeat 0 5px; line-height:16px; float:left; display:inline;}
 .c_l .cl a{font-size:14px; color:#003899; text-decoration:none;}
 .c_l #ck{width:150px; height:20px; margin-top:10px; line-height:20px; text-align:right; float:right; display:inline;}
 .c_l #ck a{color:#256cb1; text-decoration:none;}

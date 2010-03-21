@@ -48,7 +48,7 @@
 			<div id=l_t>
 				<div id=l_t_t>
 					<div id=l_t_t1>
-						文化娱乐
+						<?php echo $item->name;?>
 					</div>
 				</div>
 				<?php

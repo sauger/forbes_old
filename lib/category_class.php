@@ -16,7 +16,6 @@ class category_class
 		}else{
 			$items = $table->find('all',array('conditions' => "name = '" .$name ."'",'order' => 'sort_id,priority'));
 		}
-		
 		if($items){
 			foreach ($items as $item) {
 				$this->items[$item->id] = $item;
