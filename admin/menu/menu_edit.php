@@ -1,7 +1,7 @@
 <?php
 	require_once('../../frame.php');
 	judge_role();
-	$id=intval($_REQUEST['id']);	
+	$id=intval($_REQUEST['id']);
 	$menu1 = new table_class($tb_menu);
 	if($id)	{
 		$menu = $menu1->find($id);
@@ -11,7 +11,7 @@
 		$menu->is_root = 1;
 		$menu->role_level = 1;
 		if($menu->parent_id == 0) $menu->href="#";
-	}	
+	}
 	if($menu->parent_id){
 		$parent_menu = $menu1->find($menu->parent_id);
 		if(empty($id)){
@@ -20,9 +20,7 @@
 	}
 	$db = get_db();
 	$roles = $db->query('select * from fb_role');
-		
 ?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>

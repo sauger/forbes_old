@@ -42,7 +42,11 @@
 		<tr class=tr4>
 			<td width=150>昵称：</td>
 			<td width=645 align="left"><?php echo $user->nick_name;?></td>
-		</tr>		
+		</tr>
+		<tr class=tr4>
+			<td>专栏名：</td>
+			<td width=645 align="left"><input type="text" value="<?php echo $user->column_name;?>" name="column_name"></td>
+		</tr>
 		<tr class=tr4>
 			<td>密码：</td>
 			<td width=645 align="left"><input type="password" name="old_password"></td>
@@ -66,8 +70,3 @@
 	</table>
 </body>
 </html>
-<script>
-	$(function(){
-		$('.colorbox').colorbox();
-	})
-</script>

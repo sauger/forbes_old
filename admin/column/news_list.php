@@ -11,6 +11,7 @@
 	$db = get_db();
 	$c = array();
 	array_push($c, "language_tag=$language_tag");
+	array_push($c, "author_id=".$_SESSION["admin_user_id"]);
 	if($title!= ''){
 		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'");
 	}
@@ -20,9 +21,6 @@
 	}
 	if($is_adopt!=''){
 		array_push($c, "is_adopt=$is_adopt");
-	}
-	if($up!=''){
-		array_push($c, "set_up=$up");
 	}
 	$news = new table_class($tb_news);
 	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'created_at desc,category_id'),30);
