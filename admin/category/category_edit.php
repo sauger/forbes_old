@@ -29,7 +29,7 @@
 	<form id="category_form" method="post" action="/admin/category/category.post.php">
 		<tr class=tr1>
 			<td colspan="2">　
-				<?php if($id){echo "修改类别";}else{echo "添加类别";}?>
+				<?php if($id){echo "修改类别";}else{echo "添加类别";}?> <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a>
 			</td>
 		</tr>
 		<tr class=tr4>
@@ -45,12 +45,15 @@
 			<td align="left"><input type="text" style="width:400px" name="post[priority]" id="priority" class="number" value="<?php echo $cate->priority;?>"></td>
 		</tr>
 		<tr class=tr3>
-			<td colspan="2"><button type="submit">提 交</button></td>
+			<td colspan="2"><button type="submit">提 交</button> 		
+			
+				<input type="hidden" name="post[id]" value="<?php echo $id;?>">
+				<input type="hidden" name="post[category_type]" value="<?php echo $type;?>">
+				<input type="hidden" name="post[parent_id]" value="<?php echo $parent_id;?>">
+				<input type="hidden" name="post[level]" value="<?php echo $level;?>">
+			</td>
 		</tr>
-		<input type="hidden" name="post[id]" value="<?php echo $id;?>">
-		<input type="hidden" name="post[category_type]" value="<?php echo $type;?>">
-		<input type="hidden" name="post[parent_id]" value="<?php echo $parent_id;?>">
-		<input type="hidden" name="post[level]" value="<?php echo $level;?>">
+
 	</form>
 	</table>
 </body>
