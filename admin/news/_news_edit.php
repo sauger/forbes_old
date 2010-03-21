@@ -80,7 +80,7 @@
 			</td>
 		</tr>
 
-		<tr class=tr4>
+		<tr class=tr4 style="display:none">
 			<td>优先级</td>
 			<td align="left">
 				<input type="text" style="width:400px" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)
@@ -133,13 +133,20 @@
 			</td>
 		</tr>
 		<?php }?>
-		<tr class="normal_news tr4">
-			<td>其他设定</td>
+		<tr class="tr4">
+			<td>放置广告</td>
 			<td align="left">
 				<input type="checkbox" id="news_ad_id" <?php if($news->ad_id == 1) echo "checked='checked'";?>><label for="news_ad_id">放置广告</label></input><input type="hidden" id="input_news_ad_id" name="news[ad_id]" value="<?php echo $news->ad_id;?>"></input>
+			</td>
+		</tr>
+
+		<tr class="tr4">
+			<td>禁止复制</td>
+			<td align="left">
 				<input type="checkbox" id="news_forbbide_copy" <?php if($news->forbbide_copy == 1) echo "checked='checked'";?>></input><label for="news_forbbide_copy">禁止复制</label><input type="hidden" id="input_news_forbbide_copy"  name="news[forbbide_copy]" value="<?php echo $news->forbbide_copy;?>"></input>
 			</td>
 		</tr>
+
 		<tr id=newsshow1  class="normal_news tr4">
 			<td  height=100>英文来源</td><td><?php show_fckeditor('news[top_info]','Admin',false,"80",$news->top_info);?></td>
 		</tr>

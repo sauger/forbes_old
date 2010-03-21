@@ -29,7 +29,7 @@
 					$str = "<tr class='tr4' style='display:none' name='{$pname}' img_name='{$record->id}' id='{$record->id}'>";
 				}
 				
-				$str .= "<td align='left'>";
+				$str .= "<td style='text-align:left; text-indent:80px;'>";
 				for($j=0;$j<$num2;$j++){
 					$str .= "　";
 				}
@@ -85,11 +85,10 @@
 			$category = new category_class($type);
 			show_category($category,0,$type,'',0);
 		?>
-		<input type="hidden" id="db_table" value="<?php echo $tb_category?>">
 	</table>
 	<table width="795" border="0">
 		<tr colspan="5" class=tr3>
-			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button></td>
+			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button> 		<input type="hidden" id="db_table" value="<?php echo $tb_category?>"></td>
 		</tr>
 	</table>
 </body>
