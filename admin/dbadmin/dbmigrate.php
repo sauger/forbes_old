@@ -11,7 +11,7 @@
 	?>
 </head>
 <?php
-	$dir = '/dbscript1/';
+	$dir = '/dbscript/';
 	$files = dir_files($dir,false);
 	if($files === false) die('执行失败');
 	$db = get_db();
@@ -26,9 +26,10 @@
 	$fail_scripts = array();
 	foreach ($doing_files as $file) {
 		$scripts = file_get_contents(ROOT_DIR .$dir . $file);
-		$scripts = explode(',',$scripts);
+		$scripts = explode(';',$scripts);
 		$done = true;
 		foreach ($scripts as $script) {
+			if($script == '') continue;
 			if(!$db->execute($script)){
 				$fail_scripts[] = $script;
 				$done = false;
