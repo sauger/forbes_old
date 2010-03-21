@@ -1,7 +1,6 @@
 <?php 
 	require_once('../frame.php');
 	$db = get_db();
-	$uid = $_SESSION['user_id'];
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,11 +29,14 @@
 						<div class="t_title">特约专栏</div><div class=more></div>
 					</div>
 					<div id=l_t_l_t>
+						<?php
+							$news = get_news_by_pos("特约专栏","专栏");
+						?>
 						<div class=t1>
-							<a href="">其加薪理由是是在在期接作</a>
+							<a href="/news/news.php?id=<?php echo $news[0]->news_id;?>"><?php echo $news[0]->title;?></a>
 						</div>
 						<div class=t2>
-							工作部门 北京大学中国经济研究中心，中国证券市场研究设计中心(联办)研发部。
+							<?php echo strip_tags($news[0]->description);?>
 						</div>
 					</div>
 					<?php 
@@ -80,56 +82,37 @@
 					<div class="t">
 						<div style="width:120px;float:left; display:inline;">专栏文章推荐</div><div id=more></div>
 					</div>
-					<div id=l_t_r_t>
-						<div id=t1>
-							<div id=t2>
-								其加薪理由是在期间是在期接作
+					<?php
+						$news = get_news_by_pos("专栏文章推荐","专栏");
+						$author2 = new table_class("fb_user");
+						$count_a = count($news);
+						if($count_a<3)$count1 = $count_a;else $count1 = 3;
+						for($i=0;$i<$count1;$i++){
+					?>
+					<div class=l_t_r_t>
+						<div class=t1>
+							<div class=t2>
+								<a href="/news/news.php?id=<?php echo $news[$i]->news_id;?>"><?php echo $news[$i]->title;?></a>
 							</div>
-							<div id=t3>
-								——宋国青
-							</div>
-						</div>
-						<div id=t4>
-							工作部门 北京大学中国经学中国经济研究中心，中国证券市场研究设计中心(联办)研发部...
-						</div>
-					</div>
-					<div id=l_t_r_t>
-						<div id=t1>
-							<div id=t2>
-								其加薪理由是在期间是在期接作
-							</div>
-							<div id=t3>
-								——宋国青
+							<div class=t3>
+								——<?php echo $author2->find($news[$i]->author_id)->nick_name;?>
 							</div>
 						</div>
-						<div id=t4>
-							工作部门 北京大学中国经学中国经济研究中心，中国证券市场研究设计中心(联办)研发部...
+						<div class=t4>
+							<?php echo strip_tags($news[$i]->description);?>
 						</div>
 					</div>
-					<div id=l_t_r_t>
-						<div id=t1>
-							<div id=t2>
-								其加薪理由是在期间是在期接作
-							</div>
-							<div id=t3>
-								——宋国青
-							</div>
-						</div>
-						<div id=t4>
-							工作部门 北京大学中国经学中国经济研究中心，中国证券市场研究设计中心(联办)研发部...
-						</div>
-					</div>
+					<?php }?>
 					<div id=l_t_r_m>
 						<?php
-							$news = $db->query("select id,title,short_title from fb_news where is_adopt=1  and author_type=2 order by created_at desc,priority asc limit 8");
-							for($i=0;$i<count($news);$i++){
+							for($i=3;$i<count($news);$i++){
 						?>
 						<div class=t1>
 							<div class=t2>
-								<a href=""><?php echo $new[$i]->title;?></a>
+								<a href="/news/news.php?id=<?php echo $news[$i]->news_id;?>"><?php echo $news[$i]->title;?></a>
 							</div>
 							<div class=t3>
-								——<?php echo '';?>
+								——<?php echo $author2->find($news[$i]->author_id)->nick_name;?>
 							</div>
 						</div>
 						<?php }?>
@@ -138,11 +121,11 @@
 						<div class=t>
 							<div class="t_title">专栏列表</div><div id=more></div>
 						</div>
-						<div id=t1>
-							<div id=t2>
+						<div class=t1>
+							<div class=t2>
 								<a href="">周其仁—康桥健笔专栏</a>
 							</div>
-							<div id=t3>
+							<div class=t3>
 								<a href="">周其仁—康桥健笔专栏</a>
 							</div>
 						</div>

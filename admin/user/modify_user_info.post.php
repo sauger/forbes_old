@@ -14,7 +14,7 @@ if($_POST['new_password']){
 	if($_POST['old_password'] != $user->password){
 		alert('原有密码错误！请重新输入！');
 		redirect('modify_user_info.php');
-		die();		
+		die();
 	}
 	$user->password = $_POST['new_password'];
 	$changed = true;	

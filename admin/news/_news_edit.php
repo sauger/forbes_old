@@ -12,13 +12,14 @@
 	if (!$news->news_type){
 		$news->news_type = 1;
 	}
+	if($_SESSION["role_name"]=='author')$href="/admin/column/news_list.php";else $href="news_list.php";
 	$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 	$sub_headline = $news->sub_headline  ? explode(',',$news->sub_headline) : array();
 ?>
 	<form id="news_edit" enctype="multipart/form-data" action="news.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　发布新闻 <a href="news_list.php"><img src="/images/btn_back.png" border=0></a></td>
+			<td colspan="2" width="795">　　发布新闻 <a href="<?php echo $href;?>"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">标题</td>
