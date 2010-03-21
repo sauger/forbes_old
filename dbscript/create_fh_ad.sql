@@ -1,0 +1,27 @@
+﻿DROP TABLE IF EXISTS `forbes`.`fb_ad`;
+CREATE TABLE  `forbes`.`fb_ad` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '名称',
+  `code` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '代码',
+  `ggw_id` int(10) unsigned DEFAULT NULL COMMENT '广告位',
+  `priority` int(10) unsigned DEFAULT NULL COMMENT '优先级',
+  `url` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '链接',
+  `word_ad` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '文字广告',
+  `image` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '图片',
+  `video` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '视频',
+  `flash` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'flash',
+  `day_time1` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '定期播放1',
+  `day_time2` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '定期播放2',
+  `hour_time1` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '定时播放1',
+  `hour_time2` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '定时播放2',
+  `delay` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '延时播放',
+  `show_price` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '千次展示',
+  `click_price` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '千次点击',
+  `box_price` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '千次弹框',
+  `show_page` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '展示页面',
+  `description` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '描述',
+  `relationship` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '关联广告',
+  `is_adopt` int(10) unsigned DEFAULT NULL COMMENT '是否发布',
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
