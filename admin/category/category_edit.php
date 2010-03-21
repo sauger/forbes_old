@@ -29,7 +29,7 @@
 	<form id="category_form" method="post" action="/admin/category/category.post.php">
 		<tr class=tr1>
 			<td colspan="2">　
-				<?php if($id){echo "修改类别";}else{echo "添加类别";}?> <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a>
+				<?php if($id){echo "修改栏目";}else{echo "添加栏目";}?> <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a>
 			</td>
 		</tr>
 		<tr class=tr4>
