@@ -22,7 +22,6 @@
 			<?php
 			  /*每日头条*/
 				$record_show = get_news_by_pos('每日头条');
-				var_dump($record_show[0]->title);
 				
   		?>
 			<div id=t_l_t_t>
