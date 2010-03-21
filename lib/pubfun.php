@@ -26,13 +26,15 @@ function display_error($msg) {
 	echo '<font style="color:red;">' .$msg .'</font>';;
 }
 
-function dir_files($dir,$include_path=true){
-	$dir = opendir('dbscript');
+function dir_files($path,$include_path=true){
+	$dir = opendir(ROOT_DIR .$path);
+	if(substr($path,-1)!='/') $path .= '/';
 	if($dir === false) return false;
 	$result = array();
 	while (($file = readdir($dir)) !== false)
 	{
 		if ($file == '.' || $file == '..') continue;
+		if($include_path) $file = $path . $file;
 		$result[] = $file;
 	}
 	closedir($dir);
