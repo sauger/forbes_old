@@ -71,7 +71,7 @@
 				<a href="<?php echo $news->author_image;?>" target="_blank">查看</a>
 				<?php }?>
 				<span>(40*40最佳)</span>
-				<input type="hidden" name="news[author_id]" id="news_author_id" value="<?php echo $news->author_id;?>"></input>
+				<input type="hidden" name="news[author_id]" id="news_author_id" value="<?php if(empty($id)) echo $_SESSION['admin_user_id'];else echo $news->author_id;?>"></input>
 			</td>
 		</tr>
 		<tr class=tr4>

@@ -31,6 +31,11 @@ if($_POST['description']!=$user->description){
 	$changed = true;
 }
 
+if($_POST['column_name']!=$user->column_name){
+	$user->column_name = $_POST['column_name'];
+	$changed = true;
+}
+
 
 if($changed){
 	if($user->save()){
