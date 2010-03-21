@@ -20,10 +20,7 @@
 		<? require_once('inc/top.inc.php');?>
 		<div id=t_l_t>
 			<?php
-			  /*每日头条*/
 				$record_show = get_news_by_pos('每日头条');
-				var_dump($record_show[0]->title);
-				
   		?>
 			<div id=t_l_t_t>
 				<div class=head_pic id=head_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[0]->video_photo_src; ?>"></a></div>
@@ -36,9 +33,9 @@
 					<div class=head_title id=head_title_2 style="display:none;"><a href=""><?php echo $record_show[2]->short_title; ?></a></div>
 					<div class=head_title id=head_title_3 style="display:none;"><a href=""><?php echo $record_show[3]->short_title; ?></a></div>
 					<div class=head_content id=head_content_0><?php echo $record_show[0]->description; ?></div>
-					<div class=head_content id=head_content_1 style="display:none;"><?php echo $record_show[1]->description; ?></div>
-					<div class=head_content id=head_content_2 style="display:none;"><?php echo $record_show[2]->description; ?></div>
-					<div class=head_content id=head_content_3 style="display:none;"><?php echo $record_show[3]->description; ?></div>
+					<div class=head_content id=head_content_1 style="display:none;"><?php echo strip_tags($record_show[1]->description); ?></div>
+					<div class=head_content id=head_content_2 style="display:none;"><?php echo strip_tags($record_show[2]->description); ?></div>
+					<div class=head_content id=head_content_3 style="display:none;"><?php echo strip_tags($record_show[3]->description); ?></div>
 					
 				<?php for($j=0;$j<=3;$j++){?>	
 					<div class=head_related id=head_related_<?php echo $j?> <?php if($j<>0){echo "style='display:none'";}?> >
@@ -71,23 +68,8 @@
 		 <div id=t_l_t_b>	
 			<div id=t_l_t_l>
 			<?php
-			  /*陆家嘴早餐*/
-			  $sql ='select * from fb_position where name="陆家嘴早餐"';
-				$record=$db -> query($sql);
-				if($record[0]->type=="category")
-				{
-					$category_id=$record[0]->category_id;
-					$sql = 'select n.title,n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.id='.$category_id.' and c.category_type="news" order by n.priority asc,n.created_at desc limit '.$record[0]->position_limit;
-					
-				}
-				if($record[0]->type=="news")
-			  {
-			  	$sql='select f.*,n.title,n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_position_relation f left join fb_news n on f.news_id=n.id where  n.is_adopt=1 and f.position_id='.$record[0]->id.' order by f.priority limit '.$record[0]->position_limit;
-			  }
-			
-				$record_show=$db -> query($sql);
+				$record_show = get_news_by_pos('陆家嘴早餐');
   		?>
-  		
   		
 				<div id=title><a href="">陆家嘴早餐</a></div>
 					<div class=content><a href="" title="<?php echo $record_show[0]->title; ?>"><?php echo $record_show[0]->short_title; ?></a></div>
@@ -137,17 +119,20 @@
 		<div class=c_l>
 			<div class=title>
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>创业　</div>
+				<div class=wz>创业</div>
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
+			<?php
+				$record_show = get_news_by_pos('创业');
+  		?>
 			<div class=content1>
 				<div class=piccontent>
-					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
-					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
+					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+					<div class=p_content><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
-				<?php for($i=0;$i<3;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
+				<?php for($i=1;$i<4;$i++){ ?>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
 			</div>
 			<div class=dash></div>
@@ -157,15 +142,18 @@
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
+			<?php
+				$record_show = get_news_by_pos('商业');
+  		?>
 			<div class=content1>
 				<div class=piccontent>
-					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
-					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
+					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+					<div class=p_content><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
-				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
-				<?php } ?>	
-			</div>
+				<?php for($i=1;$i<5;$i++){ ?>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+				<?php } ?>
+			</div>		
 			<div class=dash></div>
 			<div class=title>
 				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
@@ -173,14 +161,17 @@
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
+			<?php
+				$record_show = get_news_by_pos('科技');
+  		?>
 			<div class=content1>
 				<div class=piccontent>
-					<div class=p_title><a href="">安东尼·波顿中国基金揭秘</a></div>
-					<div class=p_content><a href="">这位明星基金经理将面对私人投资者推出一个迄今规的投资信托，希望募资6.3亿...</a></div>
+					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+					<div class=p_content><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
-				<?php for($i=0;$i<4;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
-				<?php } ?>	
+				<?php for($i=1;$i<5;$i++){ ?>
+					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+				<?php } ?>
 			</div>
 			<div class=dash></div>
 			<div class=title>
@@ -226,13 +217,17 @@
 				<div class=line>|</div>
 				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>	
 			</div>
+			<?php
+				$record_show = get_news_by_pos('投资');
+  		?>
+			
 			<div class=content3>
-				<div id=content3_title><a href="">中国本土私人股本基金挑战</a></div>
+				<div id=content3_title><a href=""><?php echo $record_show[0]->short_title ?></a></div>
 				<div class=piccontent1>
-					<a class=pic href=""><img border=0 src="images/index/two.jpg"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href="">直到资集团仍把持着中国约80%的私人股本市场，但如仍把持着把持着把持着把持中国约80%的私人股本市场，但如今中国已涌现出国已涌现出国已涌现出众多团...</a>
+					<a class=pic href=""><img border=0 width=70 height=70 src="<?php echo $record_show[0]->video_photo_src ?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href=""><?php echo strip_tags($record_show[0]->description);?></a>
 				</div>
-				<?php for($i=0;$i<5;$i++){ ?>
-					<div class=cl><img border=0 src="images/index/point1.jpg">　<a href="">创业投资中国经济的泡沫有多大？</a></div>
+				<?php for($i=1;$i<6;$i++){ ?>
+					<div class=cl style="margin-left:0px;"><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
 			</div>
 			<div class=dash style="margin-top:20px;"></div>

@@ -3,7 +3,7 @@
 		<div id=cyindex></div>
 		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　<a href="#"><?php echo $catename[0]->name; ?>首页</a></div>
 		<div id=cyline></div>
-		<?php 
+		<?php
 			$news = get_news_by_pos($catename[0]->name.'首页头条');
 		?>
 		<div id=tz_left>
