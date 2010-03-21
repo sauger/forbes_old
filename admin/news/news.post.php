@@ -98,8 +98,8 @@
 		$news->category_id = intval($_POST['copy_news']);
 		$news->save();
 	}
-	
-	redirect('news_list.php?category='.$_POST['news']['category_id']);
+	if($_SESSION["role_name"]=='author')$href="/admin/column/news_list.php";else $href="news_list.php";
+	redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	
 ?>

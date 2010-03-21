@@ -57,6 +57,7 @@
 				$num = $num2+1;
 				show_category($category,$record->id,$type,$record->name,$num);
 			}
+			return;
 		}
 	}
 ?>
