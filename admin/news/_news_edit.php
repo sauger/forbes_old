@@ -90,16 +90,16 @@
 
 		
 		<tr class=tr4>
-			<td>关联子头条新闻</td>
+			<td>头条新闻关联</td>
 			<td align="left" id="td_related_sub_headline">
-				已关联子 <span id="span_sub_headline"></span> 条头条
+				已关联　<span id="span_sub_headline"></span>　条新闻
 			<a href="#" id="a_sub_headline" style="color:blue">编辑</a>
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td>关联相关新闻</td>
+			<td>相关新闻关联</td>
 			<td align="left" id="td_related_news">
-				已关联 <span id="span_related_news"></span> 条相关新闻
+				已关联　<span id="span_related_news"></span>　条新闻
 				<a href="#" id="a_related_news" style="color:blue">编辑</a>
 			</td>
 		</tr>

@@ -94,13 +94,13 @@
 							$rate_flag = false;
 							for($j=0;$j<$news_count;$j++){
 								if($record[$i]->id==$news[$j]->news_id){ $rate_flag=true;?>
-								<span style="cursor:pointer" class="revocation" name="<?php echo $news[$j]->id;?>">删除</span>
+								<span style="cursor:pointer" class="revocation" name="<?php echo $news[$j]->id;?>" title="删除"><img src='/images/btn_delete.png' border='0'></span>
 								<input type="text" class="priority"  name="<?php echo $news[$j]->id;?>"  value="<?php echo $news[$j]->priority;?>" style="width:40px;">
 								<?php }?>
 						<?php }
 							if(!$rate_flag){
 						?>
-						<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="">加入</span>
+						<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="加入"><img src='/images/btn_add.png' border='0'></span>
 						<?php }?>
 					</td>
 				</tr>
