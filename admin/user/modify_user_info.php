@@ -14,7 +14,7 @@
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>迅傲信息</title>
-	<?
+	<?php
 		css_include_tag('admin');
 		use_jquery();
 		js_include_tag('admin/user/modify_user_info','../ckeditor/ckeditor.js');
@@ -30,7 +30,7 @@
 			<td >头像</td>
 			<td width=645 align="left">
 			<?php if($user->image_src){?>
-			<image src="<?php echo $user->image_src;?>" border="0"></image>
+			<img src="<?php echo $user->image_src;?>">
 			<?php }?>
 			<input type="file" name="image_src"></input>
 			</td>
@@ -66,3 +66,8 @@
 	</table>
 </body>
 </html>
+<script>
+	$(function(){
+		$('.colorbox').colorbox();
+	})
+</script>
