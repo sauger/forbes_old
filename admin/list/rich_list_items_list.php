@@ -14,7 +14,11 @@
 		exit;
 	};
 	$db = get_db();
-	$sql = "select * from fb_rich_list_items where list_id={$id} order by overall_order asc";
+	$sql = "select * from fb_rich_list_items where list_id={$id}" ;
+	if($search){
+		$sql .= " and name like '%{$search}%'";
+	}
+	$sql .= " order by overall_order asc";
 	$record = $db->paginate($sql,30);
 	$count = $db->record_count;
 ?>

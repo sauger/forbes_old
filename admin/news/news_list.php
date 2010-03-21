@@ -118,8 +118,17 @@
 	$(function(){
 		category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){
 			$('#category').val(id);
-			category_id = $('.category_select:last').val();
-			$('#search_category').val(id);
+			var category_id = $('.category_select:last').val();
+			if(category_id <= 0){
+				var count = $('.category_select').length;
+				for(var i=count-1;i>=0;i--){
+					if($('.category_select:eq(' + i +')').val() > 0 ){
+						category_id = $('.category_select:eq(' + i +')').val();
+						break;
+					}
+				}
+			}
+			$('#search_category').val(category_id);
 			search_news();
 		});
 	});

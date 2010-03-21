@@ -44,9 +44,9 @@
 			<td align="left">
 			
 				<select name="mlist[list_type]" id="list_type"  <?php if($id) echo "disabled=true";?>>
-					<option value="0">自定义榜单</option>
-					<option value="1">年度富豪榜</option>
-					<option value="2">年度名人榜</option>
+					<option value="1">自定义榜单</option>
+					<option value="2">年度富豪榜</option>
+					<option value="3">年度名人榜</option>
 				</select>
 				<script type="text/javascript">$('#list_type').val('<?php echo $record->list_type;?>');</script>
 				<?php if($id){?>
