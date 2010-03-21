@@ -29,7 +29,7 @@
 		$scripts = explode(';',$scripts);
 		$done = true;
 		foreach ($scripts as $script) {
-			if(!$script) continue;
+			if($script == '') continue;
 			if(!$db->execute($script)){
 				$fail_scripts[] = $script;
 				$done = false;
