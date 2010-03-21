@@ -28,7 +28,7 @@
 	<form id="industry" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!='')echo "编辑位置";else echo "添加位置";?></td>
+			<td colspan="2" width="795">　　<?php if($id!='')echo "编辑位置";else echo "添加位置";?> <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">位置名称</td><td width="695" align="left"><input type="text" name="name" value="<?php echo $record->name;?>">

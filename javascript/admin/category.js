@@ -17,4 +17,11 @@ $(function(){
 			}
 			
 		});
+		
+		
+		$(".del_cate").click(function(){
+			$.post('post.php',{'id':$(this).attr('name')},function(data){
+				window.location.reload();
+			});
+		});
 });
