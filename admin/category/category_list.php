@@ -51,7 +51,7 @@
 				$level = $record->level+1;
 				$str .= "<td><a title='添加子类别' href='category_edit.php?parent_id={$record->id}&type={$type}&level={$level}'><img src='/images/btn_add.png' border='0'></a>　";
 				$str .= "<a href='category_edit.php?id={$record->id}&type={$type}' title='编辑' target='admin_iframe'><img src='/images/btn_edit.png' border='0'></a>　";
-				$str .= "<a class='del' name='{$record->id}' title='删除' style='color:#ff0000; cursor:pointer'><img src='/images/btn_delete.png' border='0'></a></td>";
+				$str .= "<a class='del_cate' name='{$record->id}' title='删除' style='color:#ff0000; cursor:pointer'><img src='/images/btn_delete.png' border='0'></a></td>";
 				$str .= "</tr>";
 				echo $str;
 				$num = $num2+1;

@@ -32,7 +32,7 @@
 	<form id="industry" action="list_edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　选择类别</td>
+			<td colspan="2" width="795">　　选择类别 <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">位置名称</td><td width="695" align="left"><?php echo $record->name;?>

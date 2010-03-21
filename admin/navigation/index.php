@@ -77,12 +77,12 @@
 			}
 			//--------------------
 		?>
-		<input type="hidden" id="db_table" value="fb_navigation">
 	</table>
 	<table width="795" border="0">
-		<tr colspan="5" class=tr3>
+		<tr colspan="6" class=tr3>
 			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button></td>
 		</tr>
 	</table>
+	<input type="hidden" id="db_table" value="fb_navigation">
 </body>
 </html>
