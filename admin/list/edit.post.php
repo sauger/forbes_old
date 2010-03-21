@@ -9,9 +9,9 @@ if($id){
 }
 $list_type->update_attributes($_POST['mlist'],false);
 if($post_type == 1){
-	$list_type->table_name = 'fb_fhbd';
+	$list_type->table_name = 'fb_rich_list_items';
 }else if($post_type == 2){
-	$list_type->table_name = 'fb_mrbd';
+	$list_type->table_name = 'fb_famous_list_items';
 }
 if($_FILES['image_src']['name'] != ''){
 		$upload = new upload_file_class();

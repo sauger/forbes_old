@@ -24,7 +24,7 @@ $(function(){
 	$('#s_list_type,#s_list_position').change(function(){
 		send_search();
 	});
-	$('span.del').click(function(){
+	$('span.del1').click(function(){
 		if(confirm("删除榜单将删除所有与该榜单的相关数据，是否删除？")){
 			var id = $(this).attr('name');
 			var ithis = $(this);
