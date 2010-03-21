@@ -174,7 +174,7 @@
 						<div class=left-title4>
 							<div style="float:left; display:inline;">富豪</div><div id=line1></div>
 						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position=1 order by year desc limit 4'); ?>
+						<?php $bd=$db->query('select * from fb_custom_list_type where position=1 order by priority asc,created_at desc limit 4'); ?>
 						<div class=picture4>
 							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
 						</div>
@@ -197,7 +197,7 @@
 						<div class=left-title4>
 							<div style="float:left; display:inline;">公司</div><div id=line1></div>
 						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position=3 order by year desc limit 4'); ?>
+						<?php $bd=$db->query('select * from fb_custom_list_type where position=3 order by priority asc,created_at desc limit 4'); ?>
 						<div class=picture4>
 							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
 						</div>
@@ -219,7 +219,7 @@
 						<div class=left-title4>
 							<div style="float:left; display:inline;">名人</div><div id=line1></div>
 						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position=5 order by year desc limit 4'); ?>
+						<?php $bd=$db->query('select * from fb_custom_list_type where position=5 order by priority asc,created_at desc limit 4'); ?>
 						<div class=picture4>
 							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
 						</div>
@@ -242,7 +242,7 @@
 						<div class=left-title4>
 							<div style="float:left; display:inline;">科技</div><div id=line1></div>
 						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position=7 order by year desc limit 4'); ?>
+						<?php $bd=$db->query('select * from fb_custom_list_type where position=7 order by priority asc,created_at desc limit 4'); ?>
 						<div class=picture4>
 							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
 						</div>
@@ -269,7 +269,7 @@
 						<div class=left-title4>
 							<div style="float:left; display:inline;">科技</div><div id=line1></div>
 						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position=2 order by year desc limit 4'); ?>
+						<?php $bd=$db->query('select * from fb_custom_list_type where position=2 order by priority asc,created_at desc limit 4'); ?>
 						<div class=picture4>
 							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
 						</div>
@@ -291,7 +291,7 @@
 						<div class=left-title4>
 							<div style="float:left; display:inline;">投资</div><div id=line1></div>
 						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position=4 order by year desc limit 4'); ?>
+						<?php $bd=$db->query('select * from fb_custom_list_type where position=4 order by priority asc,created_at desc limit 4'); ?>
 						<div class=picture4>
 							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
 						</div>
@@ -314,7 +314,7 @@
 						<div class=left-title4>
 							<div style="float:left; display:inline;">城市</div><div id=line1></div>
 						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position=6 order by year desc limit 4'); ?>
+						<?php $bd=$db->query('select * from fb_custom_list_type where position=6 order by priority asc,created_at desc limit 4'); ?>
 						<div class=picture4>
 							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
 						</div>
@@ -337,7 +337,7 @@
 						<div class=left-title4>
 							<div style="float:left; display:inline;">教育</div><div id=line1></div>
 						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position=8 order by year desc limit 4'); ?>
+						<?php $bd=$db->query('select * from fb_custom_list_type where position=8 order by priority asc,created_at desc limit 4'); ?>
 						<div class=picture4>
 							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
 						</div>
@@ -357,7 +357,6 @@
 					</div>
 					
 				</div>
-			</div>
 			
 		</div>
 		<? require_once('../inc/bottom.inc.php');?>
