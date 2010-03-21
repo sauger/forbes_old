@@ -16,7 +16,7 @@
 	$sql = "select id,title,short_title,created_at,category_id from fb_news where 1=1";
 	$sql .= " and language_tag=$language_tag";
 	if($title!= ''){
-		$sql .= " and title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'";
+		$sql .= " and (title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%')";
 	}
 	if($category_id > 0){
 		$sql .= " and category_id=$category_id";
@@ -70,7 +70,7 @@
 				</select>
 				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
-				　　<a href="index.php">返回位置管理</a>
+				<a href="index.php">返回位置管理</a>
 			</td>
 		</tr>
 		<tr class="tr2">
