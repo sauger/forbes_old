@@ -20,8 +20,6 @@
 		die('执行成功，无新脚本');
 	};
 	$executed_files =  explode(',',$db->field_by_name('files'));
-	var_dump($executed_files);
-	var_dump($files);
 	$doing_files = array_diff($files,$executed_files);
 	$done_files = array();
 	$fail_files = array();
