@@ -25,6 +25,19 @@ function debug_info($msg,$type='php') {
 function display_error($msg) {
 	echo '<font style="color:red;">' .$msg .'</font>';;
 }
+
+function dir_files($dir,$include_path=true){
+	$dir = opendir('dbscript');
+	if($dir === false) return false;
+	$result = array();
+	while (($file = readdir($dir)) !== false)
+	{
+		if ($file == '.' || $file == '..') continue;
+		$result[] = $file;
+	}
+	closedir($dir);
+	return $result;
+}
 	
 define("ROOT_PATH", "/");
 function redirect($url, $type='js')

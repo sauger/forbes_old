@@ -2,9 +2,10 @@
 	<head>
 		<?php
 		require 'frame.php';
-		var_dump(get_news_by_pos('aa'));
 		use_jquery();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
+		var_dump(dir_files('dbscript'));
+				
 		?>
 	</head>
 	<body>

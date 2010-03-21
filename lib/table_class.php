@@ -316,6 +316,7 @@ class table_class{
 		if(!isset($msg_max_size)) $msg_max_size = 'fail to upload file!out of max size range';
 		if(!isset($msg_error_type)) $msg_error_type = 'unknown file type!';
 		foreach ($_FILES[$name]['name'] as $key => $val) {
+			if(!$val) break;
 			$filter = $key ."_filter";
 			$save_dir = $key ."_save_dir";
 			$limit = $key ."_limit";
@@ -415,6 +416,7 @@ class table_class{
 		$sqlstr = "insert into " .$this->_tablename ."(";
 		$first = true;
 		$sqltail ="";
+		$this->created_at = now();
 		$this->is_edited = false;
 		$this->changed_fields = array();
 		foreach ($this->fields as $k => $v){

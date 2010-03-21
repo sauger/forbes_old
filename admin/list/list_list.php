@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
@@ -8,7 +8,7 @@
 		require_once('../../frame.php');
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin/list/list');
+		js_include_tag('admin_pub','admin/list/list');
 	?>
 </head>
 
@@ -76,6 +76,8 @@
 		if($conditions){
 			$conditions = array('conditions' => implode(' and ', $conditions));
 		}
+		$order = ' priority asc, created_at desc';
+		$conditions['order'] = $order;
 		$record = $list->paginate("all",$conditions);
 		$count = count($record);
 	?>
@@ -130,15 +132,18 @@
 						<a href="custom_list_item_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单管理</a>
 						<?php }elseif($record[$i]->list_type == 2){?>
 						<a href="rich_list_items_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单管理</a>
+						<?php }elseif($record[$i]->list_type == 3){?>
+						<a href="famous_list_items_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单管理</a>
 						<?php }?>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
+						<span style="cursor:pointer;color:#FF0000" class="del1" name="<?php echo $record[$i]->id;?>">删除</span>
+						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
 					</td>
 				</tr>
 		<?php
 			}
 		?>
 			<tr class="tr3">
-				<td colspan=6><?php paginate();?></td>
+				<td colspan=6><input type="hidden" id="db_table" value="fb_custom_list_type"><button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><?php paginate();?></td>
 			</tr>
 		</table>	
 
