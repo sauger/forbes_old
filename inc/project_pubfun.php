@@ -12,7 +12,7 @@ function get_news_by_pos($pos) {
 		$category_id=$record[0]->category_id;
 		$all_category_ids = $category->children_map($category_id);
 		$all_category_ids = implode(',',$all_category_ids);
-		$sql = 'select n.id as news_id,n.title,n.short_title,n.video_photo_src,n.description,n.sub_headline from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.id in('.$all_category_ids.') and c.category_type="news" order by n.created_at desc limit '.$record[0]->position_limit;
+		$sql = 'select n.id as news_id,n.title,n.short_title,n.video_photo_src,n.description,n.sub_headline,n.category_id from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.id in('.$all_category_ids.') and c.category_type="news" order by n.created_at desc limit '.$record[0]->position_limit;
 	}
 	if($record[0]->type=="news")
 	 {
