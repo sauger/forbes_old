@@ -1,1 +1,0 @@
-alter table `forbes`.`fb_mrbd` change year bd_id INTEGER
