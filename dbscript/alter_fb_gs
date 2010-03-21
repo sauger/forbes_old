@@ -1,1 +1,0 @@
-ALTER TABLE `forbes`.`fb_gs` MODIFY COLUMN `dqgj` float  DEFAULT NULL COMMENT '当前股价';

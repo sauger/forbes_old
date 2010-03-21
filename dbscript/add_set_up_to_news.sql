@@ -1,2 +1,0 @@
-﻿ALTER TABLE `forbes`.`fb_news` MODIFY COLUMN `is_adopt` TINYINT(1) UNSIGNED DEFAULT 0 COMMENT '是否发布',
- ADD COLUMN `set_up` TINYINT(1) UNSIGNED DEFAULT 0 COMMENT '是否置顶' AFTER `top_info`;
