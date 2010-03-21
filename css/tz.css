@@ -13,8 +13,9 @@
 #tz_l_t_r{width:532px; height:104px; margin-top:10px; float:right; display:inline;}
 #tz_l_t_r_t{width:532px; height:46px; font-size:14px; line-height:23px; overflow:hidden; float:left; display:inline;}
 #tz_l_t_r_t a{color:#666666; text-decoration:none;}
-#tz_l_t_r_b{width:532px; height:46px; margin-top:10px; font-size:14px; line-height:23px; overflow:hidden; float:left; display:inline;}
-#tz_l_t_r_b a{color:#003899; text-decoration:none;}
+#tz_l_t_r_b{width:532px; height:46px; margin-top:10px; float:left; display:inline;}
+#tz_l_t_r_b .cl{width:266px; height:23px; font-size:14px; line-height:23px; background:url('/images/index/point1.jpg') no-repeat 0 10px; overflow:hidden; float:left; display:inline;}
+#tz_l_t_r_b .cl a{margin-left:10px; color:#003899; text-decoration:none;}
 #tz_l_b_l{width:315px; margin-top:20px; float:left; display:inline;}
 .l_b_l_title{width:315px; margin-top:20px; float:left; display:inline;}
 .l_b_l_title .pic{width:8px; height:8px; margin-top:5px; background:url('/images/fh/squre.jpg') no-repeat; float:left; display:inline;}
@@ -25,8 +26,8 @@
 .tz_l_b_l_t_title a{color:#003899; text-decoration:none;}
 .tz_l_b_l_t_content{width:306px; height:40px; margin-top:10px; margin-left:10px; line-height:20px; font-size:14px; overflow:hidden; float:left; display:inline;}
 .tz_l_b_l_t_content a{color:#666666; text-decoration:none;}
-.tz_l_b_l_b_content{width:306px; height:22px; margin-top:5px; margin-left:10px; line-height:22px; font-size:14px; font-weight:bold; overflow:hidden; float:left; display:inline;}
-.tz_l_b_l_b_content a{color:#003899; text-decoration:none;}
+.tz_l_b_l_b_content{width:306px; height:22px; margin-top:5px; margin-left:10px; line-height:22px; font-size:14px; font-weight:bold; background:url('/images/index/point1.jpg') no-repeat 0 10px; overflow:hidden; float:left; display:inline;}
+.tz_l_b_l_b_content a{margin-left:10px; color:#003899; text-decoration:none;}
 #tz_l_dash{width:1px; height:808px; margin-top:40px; margin-left:10px; background:url(/images/tz/l_dash.jpg) no-repeat; overflow:hidden; float:left; display:inline;}
 #tz_l_b_r{width:315px; margin-top:20px; float:right; display:inline;}
 .tz_l_b_r_content{width:315px; height:120px; margin-top:10px; margin-bottom:10px; float:right; display:inline;}
