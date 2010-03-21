@@ -129,54 +129,6 @@
 								<a href="">周其仁—康桥健笔专栏</a>
 							</div>
 						</div>
-						<div id=t1>
-							<div id=t2>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-							<div id=t3>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-						</div>
-						<div id=t1>
-							<div id=t2>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-							<div id=t3>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-						</div>
-						<div id=t1>
-							<div id=t2>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-							<div id=t3>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-						</div>
-						<div id=t1>
-							<div id=t2>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-							<div id=t3>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-						</div>
-						<div id=t1>
-							<div id=t2>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-							<div id=t3>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-						</div>
-						<div id=t1>
-							<div id=t2>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-							<div id=t3>
-								<a href="">周其仁—康桥健笔专栏</a>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>

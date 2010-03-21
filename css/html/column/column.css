@@ -45,7 +45,7 @@
 .l_t_r_t .t3{width:72px; height:23px; color:#999999; overflow:hidden; line-height:23px; margin-left:5px; float:left; display:inline;}
 .l_t_r_t .t4{width:290px; color:#666666; line-height:22px; margin-top:5px; float:left; display:inline;}
 #l_t_r_m{width:310px; height:257px; line-height:20px; border-bottom:dotted 1px #7F7F7F; float:left; display:inline;}
-#l_t_r_m .t1{width:310px; height:20px; margin-top:7px; background:url(/images/html/column/tar1.jpg) no-repeat left center; float:left; display:inline;}
+#l_t_r_m .t1{width:310px; height:20px; margin-top:7px; text-indent:5px; background:url(/images/html/column/tar1.jpg) no-repeat 0 8px; *background:url(/images/html/column/tar1.jpg) no-repeat 0 7px; float:left; display:inline;}
 #l_t_r_m .t1 a{color:#333385; text-decoration:none;}
 #l_t_r_m .t2{width:228px; height:20px; overflow:hidden; font-size:14px; font-weight:bold; line-height:20px; margin-left:5px; float:left; display:inline;}
 #l_t_r_m .t3{width:72px; height:20px; overflow:hidden; color:#999999; line-height:20px; margin-left:5px; float:left; display:inline;}
