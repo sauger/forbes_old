@@ -24,9 +24,9 @@
 			for($i=0;$i<$count;$i++){
 				$record = $category->find($cate[$i]);
 				if(!$pname){
-					$str = "<tr class='tr4' id='{$record->id}'";
+					$str = "<tr class='tr4' id='{$record->id}'>";
 				}else{
-					$str = "<tr class='tr4' style='display:none' name='$pname' id='{$record->id}'";
+					$str = "<tr class='tr4' style='display:none' name='{$pname}' img_name='{$record->id}' id='{$record->id}'>";
 				}
 				
 				$str .= "<td align='left'>";
@@ -35,7 +35,12 @@
 				}
 				$child = $category->group_items[$record->id];
 				if(count($child)>0){
-					$str .= "<img class='img_plus' style='cursor:pointer' name='{$record->name}' src='/images/admin/plus.gif'>{$record->name}</td>";
+					$ids = $category->children_map($record->id,false);
+					$id2 = $ids[0];
+					for($m=1;$m<count($ids);$m++){
+						$id2 .= ','.$ids[$m];
+					}
+					$str .= "<img class='img_plus middle' style='cursor:pointer' name='{$record->name}' img_name='{$id2}' src='/images/admin/plus.gif'>{$record->name}</td>";
 				}else{
 					$str .= "<img name='{$record->name}' src='/images/admin/moners.gif'>{$record->name}</td>";
 				}
@@ -46,7 +51,7 @@
 				$level = $record->level+1;
 				$str .= "<td><a title='添加子类别' href='category_edit.php?parent_id={$record->id}&type={$type}&level={$level}'><img src='/images/btn_add.png' border='0'></a>　";
 				$str .= "<a href='category_edit.php?id={$record->id}&type={$type}' title='编辑' target='admin_iframe'><img src='/images/btn_edit.png' border='0'></a>　";
-				$str .= "<a class='del' name='{$category->id}' title='删除' style='color:#ff0000; cursor:pointer'><img src='/images/btn_delete.png' border='0'></a></td>";
+				$str .= "<a class='del' name='{$record->id}' title='删除' style='color:#ff0000; cursor:pointer'><img src='/images/btn_delete.png' border='0'></a></td>";
 				$str .= "</tr>";
 				echo $str;
 				$num = $num2+1;
@@ -77,7 +82,7 @@
 			<td width="330">类别名称</td><td width="100">优先级</td><td width="60">级别</td><td width="300">操作</td>
 		</tr>
 		<?php
-			$category = new category_class();
+			$category = new category_class($type);
 			show_category($category,0,$type,'',0);
 		?>
 		<input type="hidden" id="db_table" value="<?php echo $tb_category?>">
