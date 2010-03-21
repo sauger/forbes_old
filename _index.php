@@ -5,15 +5,7 @@
 		<div id=cyline></div>
 		<?php 
 			
-			$cate=$db->query('select * from fb_position where name="'.$catename[0]->name.'首页头条"');
-			if($cate[0]->type=="category")
-			{
-				$news=$db->query('select photo_src,title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
-			}
-			else if($cate[0]->type="news")
-			{
-				$news=$db->query('select n.photo_src,n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
-			}
+				$news = get_news_by_pos('投资首页头条');
 		?>
 		<div id=tz_left>
 			<div id=tz_l_t_title><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo $news[0]->title;?></a></div>

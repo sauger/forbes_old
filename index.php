@@ -33,9 +33,9 @@
 					<div class=head_title id=head_title_2 style="display:none;"><a href=""><?php echo $record_show[2]->short_title; ?></a></div>
 					<div class=head_title id=head_title_3 style="display:none;"><a href=""><?php echo $record_show[3]->short_title; ?></a></div>
 					<div class=head_content id=head_content_0><?php echo $record_show[0]->description; ?></div>
-					<div class=head_content id=head_content_1 style="display:none;"><?php echo $record_show[1]->description; ?></div>
-					<div class=head_content id=head_content_2 style="display:none;"><?php echo $record_show[2]->description; ?></div>
-					<div class=head_content id=head_content_3 style="display:none;"><?php echo $record_show[3]->description; ?></div>
+					<div class=head_content id=head_content_1 style="display:none;"><?php echo strip_tags($record_show[1]->description); ?></div>
+					<div class=head_content id=head_content_2 style="display:none;"><?php echo strip_tags($record_show[2]->description); ?></div>
+					<div class=head_content id=head_content_3 style="display:none;"><?php echo strip_tags($record_show[3]->description); ?></div>
 					
 				<?php for($j=0;$j<=3;$j++){?>	
 					<div class=head_related id=head_related_<?php echo $j?> <?php if($j<>0){echo "style='display:none'";}?> >
@@ -129,7 +129,7 @@
 			<div class=content1>
 				<div class=piccontent>
 					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
-					<div class=p_content><a href=""><?php echo $record_show[0]->description;?></a></div>
+					<div class=p_content><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
 				<?php for($i=1;$i<4;$i++){ ?>
 					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
@@ -148,7 +148,7 @@
 			<div class=content1>
 				<div class=piccontent>
 					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
-					<div class=p_content><a href=""><?php echo $record_show[0]->description;?></a></div>
+					<div class=p_content><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
 				<?php for($i=1;$i<5;$i++){ ?>
 					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
@@ -167,7 +167,7 @@
 			<div class=content1>
 				<div class=piccontent>
 					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
-					<div class=p_content><a href=""><?php echo $record_show[0]->description;?></a></div>
+					<div class=p_content><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
 				<?php for($i=1;$i<5;$i++){ ?>
 					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
@@ -224,7 +224,7 @@
 			<div class=content3>
 				<div id=content3_title><a href=""><?php echo $record_show[0]->short_title ?></a></div>
 				<div class=piccontent1>
-					<a class=pic href=""><img border=0 width=70 height=70 src="<?php echo $record_show[0]->video_photo_src ?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href=""><?php echo $record_show[0]->description;?></a>
+					<a class=pic href=""><img border=0 width=70 height=70 src="<?php echo $record_show[0]->video_photo_src ?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href=""><?php echo strip_tags($record_show[0]->description);?></a>
 				</div>
 				<?php for($i=1;$i<6;$i++){ ?>
 					<div class=cl style="margin-left:0px;"><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
