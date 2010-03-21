@@ -42,21 +42,21 @@
 		<tr class=tr1>
 			<?php 
 				if($menu->id){ ?>									
-			<td colspan="2">　修改菜单 <?php if($parent_menu){echo '<span style="color:red;font-size:12px;">上级菜单--'. $parent_menu->name .'</span>';}?></td>
+			<td colspan="2">　 修改菜单 <a href="menu_list.php"><img src="/images/btn_back.png" border=0></a> <?php if($parent_menu){echo '<span style="color:red;font-size:12px;">上级菜单--'. $parent_menu->name .'</span>';}?></td>
 			<?php
 				}else{ ?>
-			<td colspan="2">　添加菜单 <?php if($parent_menu){echo '<span style="color:red;font-size:12px;">上级菜单--'. $parent_menu->name .'</span>';}?></td>		
+			<td colspan="2">　 添加菜单 <a href="menu_list.php"><img src="/images/btn_back.png" border=0></a> <?php if($parent_menu){echo '<span style="color:red;font-size:12px;">上级菜单--'. $parent_menu->name .'</span>';}?></td>		
 			<?php
 				}
 			?>
 		</tr>		
-		<tr class=tr3>
+		<tr class=tr4>
 			<td width=150>名称：</td>
 			<td width=645 align="left"><input type="text" name="post[name]" value="<?php echo $menu->name;?>" class="required"></td>
 		</tr>
 		<?php
 		if ($menu->parent_id == 0){ ?>
-		<tr class=tr3>
+		<tr class=tr4>
 			<td width=150>类型：</td>
 			<td width=645 align="left">
 				<select id="select_is_root" name="post[is_root]">
@@ -67,11 +67,11 @@
 		</tr>	
 		<?php	}
 		?>				
-		<tr class="tr3 menu_item">
+		<tr class="tr4 menu_item">
 			<td>链接：</td>
 			<td align="left"><input type="text" name="post[href]" value="<?php echo $menu->href;?>"></td>
 		</tr>
-		<tr class="tr3 menu_item">
+		<tr class="tr4 menu_item">
 			<td>链接方式:</td>
 			<td align="left">
 				<select id="sel_target" name="post[target]">
@@ -83,7 +83,7 @@
 		</tr>	
 		<?php
 		if ($menu->parent_id == 0){ ?>
-		<tr class="tr3">
+		<tr class="tr4">
 			<td>
 				要求权限:
 			</td>
@@ -96,21 +96,25 @@
 		</tr>
 		<?php	}
 		?>	
-		<tr class=tr3>
+		<tr class=tr4>
 			<td>描述：</td>
 			<td align="left"><input type="text" name="post[description]" value="<?php echo $menu->description;?>"></td>
 		</tr>
-		<tr class=tr3>
+		<tr class=tr4>
 			<td>优先级：</td>
 			<td align="left"><input type="text" name="post[priority]" id="priority" value="<?php echo $menu->priority;?>" class="number"></td>
 		</tr>
 		<tr class=tr3>
-			<td colspan="2"><button type="submit" id="btn_submit">提 交</button></td>
+			<td colspan="2"><button type="submit" id="btn_submit">提 交</button>
+			
+				<input type="hidden" name="post[parent_id]" value="<?php echo $menu->parent_id;?>" id="post_parent_id">
+				<input type="hidden" name="id" value="<?php echo $menu->id;?>">
+				<input type="hidden" id="is_root" value="<?php echo $menu->is_root;?>">
+				<input type="hidden" name="post[is_root]" value="<?php echo $menu->is_root;?>">	
+				
+			</td>
 		</tr>
-		<input type="hidden" name="post[parent_id]" value="<?php echo $menu->parent_id;?>" id="post_parent_id">
-		<input type="hidden" name="id" value="<?php echo $menu->id;?>">
-		<input type="hidden" id="is_root" value="<?php echo $menu->is_root;?>">
-		<input type="hidden" name="post[is_root]" value="<?php echo $menu->is_root;?>">		"
+
 	</form>
 	</table>
 </body>

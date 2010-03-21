@@ -12,13 +12,14 @@
 	if (!$news->news_type){
 		$news->news_type = 1;
 	}
+	if($_SESSION["role_name"]=='author')$href="/admin/column/news_list.php";else $href="news_list.php";
 	$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 	$sub_headline = $news->sub_headline  ? explode(',',$news->sub_headline) : array();
 ?>
 	<form id="news_edit" enctype="multipart/form-data" action="news.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　发布新闻 <a href="news_list.php"><img src="/images/btn_back.png" border=0></a></td>
+			<td colspan="2" width="795">　　发布新闻 <a href="<?php echo $href;?>"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">标题</td>
@@ -89,16 +90,16 @@
 
 		
 		<tr class=tr4>
-			<td>关联子头条新闻</td>
+			<td>头条新闻关联</td>
 			<td align="left" id="td_related_sub_headline">
-				已关联子 <span id="span_sub_headline"></span> 条头条
+				已关联　<span id="span_sub_headline"></span>　条新闻
 			<a href="#" id="a_sub_headline" style="color:blue">编辑</a>
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td>关联相关新闻</td>
+			<td>相关新闻关联</td>
 			<td align="left" id="td_related_news">
-				已关联 <span id="span_related_news"></span> 条相关新闻
+				已关联　<span id="span_related_news"></span>　条新闻
 				<a href="#" id="a_related_news" style="color:blue">编辑</a>
 			</td>
 		</tr>
