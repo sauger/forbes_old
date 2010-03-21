@@ -29,7 +29,7 @@
 	}
 	
 	if($is_adopt==1){
-		$sql .= " and id in {$ids}";
+		$sql .= " and id in ($ids)";
 	}elseif($is_adopt=='0'){
 		if($ids!=''){
 			$sql .= " and id not in ($ids)";
