@@ -12,7 +12,7 @@
 	if (!$news->news_type){
 		$news->news_type = 1;
 	}
-	if($_SESSION["role_name"]=='author')$href="/admin/column/news_list.php";else $href="news_list.php";
+	if($_SESSION["role_name"]=='author'||$_SESSION["role_name"]=='journalist')$href="/admin/column/news_list.php";else $href="news_list.php";
 	$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 	$sub_headline = $news->sub_headline  ? explode(',',$news->sub_headline) : array();
 ?>

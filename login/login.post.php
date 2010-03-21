@@ -28,7 +28,7 @@
 				if($last_url == '/index.php' && ($_SESSION['role_level'] == 1 || $_SESSION['role_level'])){
 					$last_url = '/admin/admin.php';
 				}
-				if($record[0]->role_name=='author'){
+				if($record[0]->role_name=='author'||$record[0]->role_name=='journalist'){
 					$last_url = '/admin/column/admin_column.php';
 				}
 				redirect($last_url);
