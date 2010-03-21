@@ -52,6 +52,7 @@
 					<td><?php echo $records[$j]->position_limit;?></td>
 					<td><a href="list_edit2.php?id=<?php echo $records[$j]->id;?>" class="list_edit" name="<?php echo $records[$j]->id;?>" style="cursor:pointer">使用已有类别</a>
 						<a href="list_edit.php?id=<?php echo $records[$j]->id;?>" class="list_edit" name="<?php echo $records[$j]->id;?>" style="cursor:pointer">配置新闻</a>
+						<a href="edit.php?id=<?php echo $records[$j]->id;?>" class="edit" style="cursor:pointer">编辑</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $records[$j]->id;?>">删除</span></td>
 				</tr>
 		<?php

@@ -59,6 +59,7 @@
 				</tr>
 				<?php
 				$record2 = $menu->find("all",array('conditions' => 'parent_id>0 and parent_id='.$record[$i]->id,'order' => 'priority'));
+				if($record2){
 				//----------
 				for($j=0;$j<count($record2);$j++){
 				?>
@@ -71,7 +72,7 @@
 					<td><a href="edit.php?id=<?php echo $record2[$j]->id;?>&type=<?php echo $type?>" target="admin_iframe" title="编辑"><img src="/images/btn_edit.png" border="0"></a>　<a class="del" name="<?php echo $record2[$j]->id;?>" style="color:#ff0000; cursor:pointer" title="删除"><img src="/images/btn_delete.png" border="0"></a></td>
 				</tr>
 		<?php
-				}
+				}}
 				//----------
 			}
 			//--------------------
