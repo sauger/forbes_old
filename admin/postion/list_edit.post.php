@@ -6,7 +6,12 @@
 	if($id!=''){
 		$position->find($id);
 	}
-	$position->category_id = $_POST['category'];
+	if($_POST['category']=='-1'){
+		$position->category_id = '0';
+	}else{
+		$position->category_id = $_POST['category'];
+	}
+	
 	$position->type = "category";
 	$position->save();
 	redirect('index.php');
