@@ -4,16 +4,7 @@
 		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　<a href="#"><?php echo $catename[0]->name; ?>首页</a></div>
 		<div id=cyline></div>
 		<?php 
-			
-			$cate=$db->query('select * from fb_position where name="'.$catename[0]->name.'首页头条"');
-			if($cate[0]->type=="category")
-			{
-				$news=$db->query('select photo_src,title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
-			}
-			else if($cate[0]->type="news")
-			{
-				$news=$db->query('select n.photo_src,n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
-			}
+			$news = get_news_by_pos($catename[0]->name.'首页头条');
 		?>
 		<div id=tz_left>
 			<div id=tz_l_t_title><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo $news[0]->title;?></a></div>
@@ -21,42 +12,30 @@
 				<a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><img border=0 src="<?php echo $news[0]->photo_src;?>"></a>	
 			</div>
 			<div id=tz_l_t_r>
-				<div id=tz_l_t_r_t><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo get_fck_content($news[0]->description);?></a></div>
-				<div id=tz_l_t_r_b><a href="/news/news.php?id=<?php echo $news[1]->id; ?>">·<?php echo $news[1]->short_title; ?></a>　<a href="/news/news.php?id=<?php echo $news[2]->id; ?>">·<?php echo $news[2]->short_title; ?></a><br>
-					<a href="/news/news.php?id=<?php echo $news[3]->id; ?>">·<?php echo $news[3]->short_title; ?></a>　<a href="/news/news.php?id=<?php echo $news[4]->id; ?>">·<?php echo $news[4]->short_title; ?></a></div>
+				<div id=tz_l_t_r_t><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo strip_tags($news[0]->description);?></a></div>
+				<div id=tz_l_t_r_b>
+					<?php for($i=1; $i<count($news);$i++){ ?>
+						<div class=cl><a href="/news/news.php?id=<?php echo $news[$i]->id; ?>"><?php echo $news[$i]->short_title; ?></a></div>
+					<?php } ?>
+				</div>
 			</div>
 			<?php 
-				$cate=$db->query('select * from fb_position where name="'.$catename[0]->name.'首页'.$catename[0]->name.'文章"');
-				if($cate[0]->type=="category")
-				{
-					$news=$db->query('select title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
-				}
-				else if($cate[0]->type="news")
-				{
-					$news=$db->query('select n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
-				}	
+				$news = get_news_by_pos($catename[0]->name.'首页'.$catename[0]->name.'文章');
 			?>
 			<div id=tz_l_b_l>
 				<div class=l_b_l_title>
 					<div class=pic></div>
 					<div class=wz><?php echo $catename[0]->name; ?>文章</div>
 					<div class=l_b_sx>|</div>
-					<div class=more><a href="/news/news_list.php?cid=<?php echo $category[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
+					<div class=more><a href="/news/news_list.php?cid=<?php echo $news[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
 				</div>
 				<?php 
 				for($i=0;$i<count($news);$i++){ ?>
-					<div class=tz_l_b_l_t_title><a href=""><?php echo $news[$i]->title; ?></a></div>
-					<div class=tz_l_b_l_t_content><a href=""><?php echo get_fck_content($news[$i]->description); ?></a></div>
-				<?php } 
-				$cate=$db->query('select * from fb_position where name="'.$catename[0]->name.'首页'.$catename[0]->name.'文章"');
-				if($cate[0]->type=="category")
-				{
-					$news=$db->query('select title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
-				}
-				else if($cate[0]->type="news")
-				{
-					$news=$db->query('select n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
-				}	?>
+					<div class=tz_l_b_l_t_title><a href="/news/news.php?id=<?php echo $news[$i]->id; ?>"><?php echo $news[$i]->title; ?></a></div>
+					<div class=tz_l_b_l_t_content><a href="/news/news.php?id=<?php echo $news[$i]->id; ?>"><?php echo strip_tags($news[$i]->description); ?></a></div>
+				<?php }
+				$news = get_news_by_pos($catename[0]->name.'首页文章');
+				?>
 				<div class=l_b_l_title>
 					<div class=pic></div>
 					<div class=wz>文章</div>
@@ -65,29 +44,13 @@
 				</div>
 				<?php 
 		 		 for($i=0;$i<count($news);$i++){ ?>
-					<div class=tz_l_b_l_b_content><a href="/news/news.php?id=<?php echo $news[$i]->id; ?>">·<?php echo $news[$i]->short_title; ?></a></div>
+					<div class=tz_l_b_l_b_content><a href="/news/news.php?id=<?php echo $news[$i]->id; ?>"><?php echo $news[$i]->short_title; ?></a></div>
 				<?php } ?>
 			</div>
 			<div id=tz_l_dash></div>
 			<div id=tz_l_b_r>
-				<?php $cate=$db->query('select * from fb_position where name="'.$catename[0]->name.'首页文章"');
-				if($cate[0]->type=="category")
-				{
-					$news=$db->query('select photo_src,title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
-				}
-				else if($cate[0]->type="news")
-				{
-					$news=$db->query('select n.photo_src n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
-				}	
-				$cate=$db->query('select * from fb_position where name="'.$catename[0]->name.'首页'.$catename[0]->name.'专题"');
-				if($cate[0]->type=="category")
-				{
-					$news=$db->query('select photo_src,title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
-				}
-				else if($cate[0]->type="news")
-				{
-					$news=$db->query('select n.photo_src, n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
-				}	
+				<?php 
+					$news = get_news_by_pos($catename[0]->name.'首页'.$catename[0]->name.'专题');
 				?>
 				<div class=l_b_l_title>
 					<div class=pic></div>
@@ -98,25 +61,17 @@
 				<div class="tz_l_b_r_content">
 					<div class=tz_l_b_r_pic><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><img border=0 src="<?php echo $news[0]->photo_src; ?>"></a></div>
 					<div class=tz_l_b_r_pictitle><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo $news[0]->title; ?></a></div>
-					<div class=tz_l_b_r_piccontent><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo get_fck_content($news[0]->description); ?></a></div>
+					<div class=tz_l_b_r_piccontent><a href="/news/news.php?id=<?php echo $news[0]->id; ?>"><?php echo strip_tags($news[0]->description); ?></a></div>
 				</div>
 				<div class="tz_l_b_r_content">
 					<div class=tz_l_b_r_pic><a href="/news/news.php?id=<?php echo $news[1]->id; ?>"><img border=0 src="<?php echo $news[1]->photo_src; ?>"></a></div>
 					<div class=tz_l_b_r_pictitle><a href="/news/news.php?id=<?php echo $news[1]->id; ?>"><?php echo $news[1]->title; ?></a></div>
-					<div class=tz_l_b_r_piccontent><a href="/news/news.php?id=<?php echo $news[1]->id; ?>"><?php echo get_fck_content($news[1]->description); ?></a></div>
+					<div class=tz_l_b_r_piccontent><a href="/news/news.php?id=<?php echo $news[1]->id; ?>"><?php echo strip_tags($news[1]->description); ?></a></div>
 				</div>
 				<?php for($i=2;$i<count($news);$i++){ ?>
 					<div class=tz_l_b_l_b_content><a href="/news/news.php?id=<?php echo $news[$i]->id; ?>">·<?php echo $news[$i]->short_title; ?></a></div>
-				<?php } 
-				$cate=$db->query('select * from fb_position where name="'.$catename[0]->name.'首页'.$catename[0]->name.'专栏"');
-				if($cate[0]->type=="category")
-				{
-					$news=$db->query('select photo_src,title,short_title,description,id from fb_news where category_id='.$cate[0]->category_id.' and is_adopt=1 order by priority asc,created_at desc limit '.$cate[0]->position_limit);
-				}
-				else if($cate[0]->type="news")
-				{
-					$news=$db->query('select n.photo_src, n.title,n.short_title,n.description,n.id from fb_news n inner join fb_position_relation r on n.id=r.news_id where r.position_id='.$cate[0]->id.' and n.is_adopt=1 order by r.priority asc, n.created_at desc limit '.$cate[0]->position_limit);	
-				}	
+				<?php }
+				$news = get_news_by_pos($catename[0]->name.'首页'.$catename[0]->name.'专栏');
 				?>
 				<div class=l_b_l_title style="margin-bottom:5px;">
 					<div class=pic></div>
@@ -126,7 +81,7 @@
 				</div>
 				<?php for($i=0;$i<count($news);$i++){ ?>
 				<div class=tz_l_b_r_b>
-					<a href="/news/news.php?id=<?php echo $news[$i]->id; ?>"><span style="color:#003899; font-size:14px; font-weight:bold;"><?php echo $news[$i]->title; ?></span><br><?php get_fck_content($news[$i]->description); ?></a>	
+					<a href="/news/news.php?id=<?php echo $news[$i]->id; ?>"><span style="color:#003899; font-size:14px; font-weight:bold;"><?php echo $news[$i]->title; ?></span><br><?php strip_tags($news[$i]->description); ?></a>	
 				</div>
 				<div class=tz_l_b_r_b_zl>——<?php echo $news[$i]->author; ?>专栏</div>
 				<?php } ?>

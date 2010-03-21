@@ -19,3 +19,4 @@ function get_news_by_pos($pos) {
 	return $db->query($sql); 
 	
 } 
+?>
