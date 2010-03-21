@@ -29,7 +29,7 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="5">　<a href="menu_edit.php"><?php echo $menu_title?></a></td>
+			<td colspan="5">　 <a href="menu_edit.php"><?php echo $menu_title?></a></td>
 		</tr>
 		<tr class="tr2">
 			<td width="200">菜单名称</td><td width="50">优先级</td><td width="285">链接</td><td width="80">链接方式</td><td width="175">操作</td>
@@ -74,11 +74,10 @@
 			}
 			//--------------------
 		?>
-		<input type="hidden" id="db_table" value="<?php echo $menu_table;?>">
 	</table>
 	<table width="795" border="0">
 		<tr colspan="5" class=tr3>
-			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button></td>
+			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button>　		<input type="hidden" id="db_table" value="<?php echo $menu_table;?>"></td>
 		</tr>
 	</table>
 </body>

@@ -23,8 +23,8 @@
 				$count=count($bd);
 				for($i=0;$i<ceil($count/5); $i++){ ?>
 				<div class=td1 id="<?php echo 'sy'.$i;?>" <?php if($i>0){ ?>style="display:none;"<?php } ?>><a style="font-weight:bold;" href="">[商业]</a><br><?php for($j=($i*5);$j<($i*5+5);$j++){ ?><a target="<?php echo $bd[$j]->target; ?>" href="<?php echo $bd[$j]->href; ?>"><?php echo $bd[$j]->name; ?></a><br><?php } ?><?php if($i==0){ ?><span style="color:#ffffff; cursor:pointer;" class="next" param="<?php echo $i;?>">下一页>></span><?php }else if($i==(ceil($count/5)-1)){ ?><span style="color:#ffffff; cursor:pointer;" class="prev" param="<?php echo $i;?>"><<上一页</span><?php } else{ ?><span class="prev" param="<?php echo $i;?>" style="color:#ffffff; cursor:pointer;"><<</span>　　<span class="next" style="color:#ffffff; cursor:pointer;" param="<?php echo $i;?>">>></span><?php } ?></div>
-				<div class=b_v></div>
 				<?php } ?>
+				<div class=b_v></div>
 				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="科技" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
 				<div class=td1><a style="font-weight:bold;" href="">[科技]</a><br><?php for($i=0;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
