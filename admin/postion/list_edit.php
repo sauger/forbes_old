@@ -16,7 +16,7 @@
 	$sql = "select id,title,short_title,created_at,category_id from fb_news where 1=1";
 	$sql .= " and language_tag=$language_tag";
 	if($title!= ''){
-		$sql .= " title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'";
+		$sql .= " and title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'";
 	}
 	if($category_id > 0){
 		$sql .= " and category_id=$category_id";

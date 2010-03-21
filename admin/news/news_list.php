@@ -55,7 +55,7 @@
 				</select><select id="language_tag" name="language_tag" class="sau_search">					
 					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
 					<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
-				</select><select id=up name="up" style="width:90px" class="sau_search">
+				</select><select id=up name="up" style="width:90px" class="sau_search" style="display:none">
 					<option value="">是否置顶</option>
 					<option value="1" <? if($_REQUEST['up']=="1"){?>selected="selected"<? }?>>已置顶</option>
 					<option value="0" <? if($_REQUEST['up']=="0"){?>selected="selected"<? }?>>未置顶</option>
@@ -65,7 +65,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="345">标题</td><td width="120">所属类别</td><td width="130">发布时间</td><td width="200">操作</td>
+			<td width="395">标题</td><td width="120">所属类别</td><td width="130">发布时间</td><td width="150">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -100,7 +100,7 @@
 						<span style="cursor:pointer" title="静态"><img src="/images/btn_static.png" border="0"></span>
 
 						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/btn_comment.png" border="0"></a>
-						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
+						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;" style="display:none">
 					</td>
 				</tr>
 		<?php
@@ -108,7 +108,7 @@
 			//--------------------
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority>清空优先级</button>　<button id=edit_priority>编辑优先级</button>		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>"></td>
+			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority style="display:none">清空优先级</button>　<button id=edit_priority  style="display:none">编辑优先级</button>		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>"></td>
 		</tr>
 	</table>
 </body>
