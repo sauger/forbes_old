@@ -40,7 +40,7 @@
 						</div>
 					</div>
 					<?php 
-						$sql = "SELECT t1.id,t1.nick_name,t1.image_src FROM fb_news t2 join fb_user t1 on t2.author_id=t1.id where t2.author_type=2 group by  author_id  order by t2.created_at desc limit 4";
+						$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_news t2 join fb_user t1 on t2.author_id=t1.id where t2.author_type=2 group by  author_id  order by t2.created_at desc limit 4";
 						$author = $db->query($sql);
 						$author_count = count($author);
 						for($i=0;$i<$author_count;$i++){
@@ -58,7 +58,7 @@
 							</div>
 							<div class=l_t_l_m_t_r>
 								<div class=t1>
-									<?php echo $author[$i]->nick_name;?>专栏
+									<?php echo !$author[$i]->column_name?$author[$i]->nick_name:$author[$i]->column_name;?>专栏
 								</div>
 								<div class=t2>
 									<a href="/news/news.php?id=<?php echo $news[0]->id;?>"><?php echo $news[0]->title;?></a>
