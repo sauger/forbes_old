@@ -1,3 +1,7 @@
+<?php
+		require_once('frame.php');
+		$db=get_db();
+?>
 <div id=top_>
 	<div id=top_banner><a href="#"><img border=0 src="/images/index/top_banner.jpg"></a></div>
 	<div id=top_function>
@@ -23,7 +27,6 @@
   </div>	
 	
 	<?php
-		$db=get_db();
 		if($nav==""){	$nav=3;	}
 		$countnav=$db->query("select * from fb_navigation where parent_id=0 and (type='both' or type='top') order by priority asc");
 		$navigation=$db->query('select name,id from fb_navigation where id='.$nav);
