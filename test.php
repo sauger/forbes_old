@@ -5,9 +5,9 @@
 		use_jquery();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
 		//echo substr('dbscript',-1);;
-		$script = file_get_contents('dbscript/test.sql');
-		$db = get_db();
-		var_dump($db->execute($script));
+		//$script = file_get_contents('dbscript/test.sql');
+		//$db = get_db();
+		//var_dump($db->execute($script));
 				
 		?>
 	</head>
