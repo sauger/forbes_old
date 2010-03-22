@@ -1,5 +1,5 @@
 <?php
-			if($id && $record->table_name && $record->list_type=="0"){
+			if($id && $record->table_name && $record->list_type=="1"){
 			$table = new table_class($record->table_name);
 			foreach($table->fields as $k => $v){
 				if($k == 'id') continue;

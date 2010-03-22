@@ -44,7 +44,7 @@ function get_add_column_name(){
 	return "field_{$column_index}";
 };
 
-if($post_type > 0 ){
+if($post_type > 1 ){
 	redirect("index.php");
 	exit;
 }

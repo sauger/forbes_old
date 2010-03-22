@@ -80,6 +80,9 @@
 		<tr class=tr4 <?php if($record->list_type=='1') echo "style='display:none;'"?>>
 			<td width="130">财富单位</td><td width="695" align="left"><select name="mlist[unit]"><option value="亿人民币">亿人民币</option><option value="亿美元"<?php if($record->unit == '亿美元') echo " selected='selected'"?> >亿美元</option></select></td>
 		</tr>
+		<?php if($record->list_type==1){
+			include_once '_custom_list_edit.php';
+		}?>
 		<tr class=tr3>
 			<td width="130">说明</td><td width="695" align="left"><textarea rows="10" cols="60" name="mlist[comment]"><?php echo $record->comment;?></textarea> </td>
 		</tr>
