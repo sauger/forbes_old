@@ -25,7 +25,7 @@
 ?>
 
 <body style="background:#E1F0F7">
-	<form id="list_edit" action="picture_list_edit.post.php" enctype="multipart/form-data"  method="post"> 
+	<form id="list_edit" action="file_list_edit.post.php" enctype="multipart/form-data"  method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
 			<td colspan="2" width="795">　　<?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?></td>
@@ -54,7 +54,7 @@
 		</tr>
 	</table>
 		<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>">
-		<input type="hidden" name="mlist[list_type]" value="4"></input>
+		<input type="hidden" name="mlist[list_type]" value="5"></input>
 	</form>
 </body>
 </html>

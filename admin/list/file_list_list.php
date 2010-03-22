@@ -18,7 +18,7 @@
 		if($_REQUEST['s_text']){
 			$conditions[] = "name like '%{$_REQUEST['s_text']}%'";
 		} 
-		$conditions[]= "list_type=4";			
+		$conditions[]= "list_type=5";			
 		if($conditions){
 			$conditions = array('conditions' => implode(' and ', $conditions));
 		}
@@ -30,7 +30,7 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">
-				　<a href="picture_list_edit.php">添加榜单</a>   搜索　
+				　<a href="file_list_edit.php">添加榜单</a>   搜索　
 				 <input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
 				 <input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
 			</td>
@@ -44,8 +44,8 @@
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
 					<td><a href="#"> <?php echo $record[$i]->name;?></a></td>
 					<td>
-						<a href="picture_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<a href="picture_list_items_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单项管理</a>
+						<a href="file_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
+						<a href="file_list_items_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单项管理</a>
 						<span style="cursor:pointer;color:#FF0000" class="del1" name="<?php echo $record[$i]->id;?>">删除</span>
 						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
 					</td>

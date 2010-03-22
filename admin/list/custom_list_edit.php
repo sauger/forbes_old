@@ -77,7 +77,7 @@
 				<script type="text/javascript">$('#list_position').val('<?php echo $record->position;?>');</script>
 			</td>
 		</tr>
-		<tr class=tr4 <?php if($record->list_type=='0') echo "style='display:none;'"?>>
+		<tr class=tr4 <?php if($record->list_type=='1') echo "style='display:none;'"?>>
 			<td width="130">财富单位</td><td width="695" align="left"><select name="mlist[unit]"><option value="亿人民币">亿人民币</option><option value="亿美元"<?php if($record->unit == '亿美元') echo " selected='selected'"?> >亿美元</option></select></td>
 		</tr>
 		<tr class=tr3>
