@@ -1,9 +1,3 @@
-/*#############################################################
-Name: Select to CSS
-Version: 0.2
-Author: Utom
-URL: http://utombox.com/
-#############################################################*/
 var selects = document.getElementsByName('selsearch');
 
 var isIE = (document.all && window.ActiveXObject && !window.opera) ? true : false;
