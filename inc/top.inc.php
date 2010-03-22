@@ -1,5 +1,5 @@
 <?php
-		require_once('frame.php');
+		require_once(dirname(__FILE__).'/../frame.php');
 		$db=get_db();
 ?>
 <div id=top_>
