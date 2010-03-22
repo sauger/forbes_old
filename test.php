@@ -17,7 +17,8 @@
 	?>
 		<form method="post" action="test1.php" enctype="multipart/form-data" >
 		
-			<input type="file" name="item[field_4]">
+			<input type="file" name="item[picture]">
+			<input type="file" name="item[image]">
 			<input type="submit" value="send"></input>		
 		</form>
 		

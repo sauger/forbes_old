@@ -64,6 +64,7 @@
 			}
 		}
 		$list= new table_class('fb_custom_list_type');
+		$conditions = array('list_type != 4 and list_type !=5');
 		if($_REQUEST['s_text']){
 			$conditions[] = "name like '%{$_REQUEST['s_text']}%'";
 		} 
@@ -132,11 +133,11 @@
 					<td>
 						<a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<?php if($record[$i]->list_type == 1){?>
-						<a href="custom_list_item_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单管理</a>
+						<a href="custom_list_item_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单项管理</a>
 						<?php }elseif($record[$i]->list_type == 2){?>
-						<a href="rich_list_items_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单管理</a>
+						<a href="rich_list_items_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单项管理</a>
 						<?php }elseif($record[$i]->list_type == 3){?>
-						<a href="famous_list_items_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单管理</a>
+						<a href="famous_list_items_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单项管理</a>
 						<?php }?>
 						<span style="cursor:pointer;color:#FF0000" class="del1" name="<?php echo $record[$i]->id;?>">删除</span>
 						<input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
