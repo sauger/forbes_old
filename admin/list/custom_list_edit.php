@@ -55,6 +55,9 @@
 			</td>
 		</tr>
 		<tr class=tr4>
+			<td width="130">推荐优先级</td><td width="695" align="left"><input type="text" name="mlist[recommend_priority]"></input></td>
+		</tr>
+		<tr class=tr4>
 			<td width="130">榜单图片</td>
 			<td width="695" align="left"><input type="file" name="image_src"></input><?php if($record->image_src){?> <a href="<?php echo $record->image_src;?>" target="_blank" style="color:blue;">查看</a><?php }?></td>
 		</tr>

@@ -29,8 +29,11 @@
 		$scripts = explode(';',$scripts);
 		$done = true;
 		foreach ($scripts as $script) {
-			if($script == '') continue;
+			$script = str_replace(chr(13),'',$script);
+			$script = str_replace(chr(10),'',$script);
+			if(empty($script)) continue;
 			if(!$db->execute($script)){
+				var_dump($script);
 				$fail_scripts[] = $script;
 				$done = false;
 			}

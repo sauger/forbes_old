@@ -83,7 +83,7 @@
 	?>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="4">
+			<td colspan="5">
 				　<a href="custom_list_edit.php">添加榜单</a>   搜索　
 				 <input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
 				 <select id="s_list_type">
@@ -113,7 +113,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td>榜单名称</td><td width="115">榜单类型</td><td width="115">发布位置</td><td width="210">操作</td>
+			<td>榜单名称</td><td width="115">榜单类型</td><td width="115">发布位置</td><td width="100">推荐优先级</td><td width="210">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -125,6 +125,9 @@
 					</td>
 					<td>
 						<?php echo list_position($record[$i]->position);?>
+					</td>
+					<td>
+						<?php echo $record[$i]->recommend_priority;?>
 					</td>
 					<td>
 						<a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
