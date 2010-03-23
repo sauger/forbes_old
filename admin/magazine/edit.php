@@ -46,9 +46,19 @@
 			<td width="695" align="left"><input type="file" name="post[img_src]"></input><?php if($record->img_src){?> <a href="<?php echo $record->img_src;?>" title="封面图片" target="_blank" class="colorbox">查看</a><?php }?></td>
 		</tr>
 		<tr class=tr4>
+			<td width="130">首页导语</td>
+			<td width="695" align="left">
+				<input type="text" style="width:300px;" name="post[short_title]" value="<?php echo $record->short_title;?>">
+			</td>
+		</tr>
+		<tr class=tr4>
+			<td width="130">首页封面缩略图</td>
+			<td width="695" align="left"><input type="file" name="post[img_src3]"></input><?php if($record->img_src3){?> <a href="<?php echo $record->img_src3;?>" title="首页封面缩略图" target="_blank" class="colorbox">查看</a><?php }?></td>
+		</tr>
+		<tr class=tr4>
 			<td width="130">导语标题</td>
 			<td width="695" align="left">
-				<input type="text" name="post[title]" value="<?php echo $record->title;?>">
+				<input type="text" style="width:300px;" name="post[title]" value="<?php echo $record->title;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
