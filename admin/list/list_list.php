@@ -114,7 +114,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td>榜单名称</td><td width="115">榜单类型</td><td width="115">发布位置</td><td width="100">推荐优先级</td><td width="210">操作</td>
+			<td>榜单名称</td><td width="115">榜单类型</td><td width="85">发布位置</td><td width="100">推荐优先级</td><td width="240">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -132,6 +132,7 @@
 					</td>
 					<td>
 						<a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
+						<a href="data_upload.php?id=<?php echo $record[$i]->id;?>">数据导入</a>
 						<?php if($record[$i]->list_type == 1){?>
 						<a href="custom_list_item_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单项管理</a>
 						<?php }elseif($record[$i]->list_type == 2){?>

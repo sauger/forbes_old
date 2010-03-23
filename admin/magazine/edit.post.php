@@ -13,8 +13,9 @@
     #var_dump($_POST);
    
     $magazine = new table_class("fb_magazine");
-    if($_POST['id']!=''){
-   		$magazine->find($_POST['id']);
+	$id = intval($_POST['id']);
+    if($id!=''){
+   		$magazine->find($id);
     }
 	
 	$magazine->update_attributes($_POST['post'],false);

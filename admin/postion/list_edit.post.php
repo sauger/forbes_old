@@ -1,6 +1,6 @@
 <?php 
 	require "../../frame.php";
-	$id = $_POST['id'];
+	$id = intval($_POST['id']);
 	
 	$position = new table_class('fb_position');
 	if($id!=''){
