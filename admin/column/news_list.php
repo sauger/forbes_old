@@ -11,7 +11,6 @@
 	$db = get_db();
 	$c = array();
 	array_push($c, "language_tag=$language_tag");
-	array_push($c, "author_id=".$_SESSION["admin_user_id"]);
 	if($title!= ''){
 		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'");
 	}
