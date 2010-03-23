@@ -39,7 +39,7 @@ function dir_files($path){
 	while (($file = readdir($dir)) !== false)
 	{
 		if ($file == '.' || $file == '..') continue;
-		$LastModified = filectime($path . $file);
+		$LastModified = filectime(ROOT_DIR.$path . $file);
     	$Files[] = array($file, $LastModified);
 	}
 	closedir($dir);
