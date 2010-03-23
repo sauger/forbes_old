@@ -30,7 +30,7 @@ $(function(){
 		$(this).parent().find('input:checkbox').not($(this)).attr('checked',false);
 	});
 	$('#submit').click(function(){
-		if($('#list_type').val() != '0') return true;
+		if($('#list_type').val() != '1') return true;
 		var id = $('#id').val();
 		if(!id){
 			if($('img.del_column').length <= 0){

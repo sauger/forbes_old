@@ -8,9 +8,9 @@ if($id){
 	$list_type->find($id);	
 }
 $list_type->update_attributes($_POST['mlist'],false);
-if($post_type == 1){
+if($post_type == 2){
 	$list_type->table_name = 'fb_rich_list_items';
-}else if($post_type == 2){
+}else if($post_type == 3){
 	$list_type->table_name = 'fb_famous_list_items';
 }
 if($_FILES['image_src']['name'] != ''){
@@ -44,7 +44,7 @@ function get_add_column_name(){
 	return "field_{$column_index}";
 };
 
-if($post_type > 0 ){
+if($post_type > 1 ){
 	redirect("index.php");
 	exit;
 }

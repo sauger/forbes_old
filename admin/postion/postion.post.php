@@ -1,7 +1,7 @@
 <?php 
 	require "../../frame.php";
-	$nid = $_POST['nid'];
-	$pid = $_POST['pid'];
+	$nid = intval($_POST['nid']);
+	$pid = intval($_POST['pid']);
 	$type = $_POST['type'];
 	$db = get_db();
 	

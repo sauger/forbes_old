@@ -37,6 +37,7 @@
 		<?php
 			$menu = new table_class($menu_table);
 			$record = $menu->find("all",array('conditions' => 'parent_id=0','order' => 'priority'));
+			$record2 = $menu->find("all",array('conditions' => 'parent_id>0','order' => 'priority'));
 			//--------------------
 			for($i=0;$i<count($record);$i++){
 		?>
@@ -57,9 +58,9 @@
 					<td><a href="menu_edit.php?parent_id=<?php echo $record[$i]->id;?>" title="添加子菜单"><img src="/images/btn_add.png" border="0"></a>　<a href="menu_edit.php?id=<?php echo $record[$i]->id;?>&type=<?php echo $type?>" target="admin_iframe" title="编辑"><img src="/images/btn_edit.png" border="0"></a>　<a class="del" name="<?php echo $record[$i]->id;?>" style="color:#ff0000; cursor:pointer" title="删除"><img src="/images/btn_delete.png" border="0"></a></td>
 				</tr>
 				<?php
-				$record2 = $menu->find("all",array('conditions' => 'parent_id>0 and parent_id='.$record[$i]->id,'order' => 'priority'));
 				//----------
 				for($j=0;$j<count($record2);$j++){
+					if($record2[$j]->parent_id==$record[$i]->id){
 				?>
 				<tr class="tr3" style="display:none;" id=<?php echo $record2[$j]->id;?> name="<?php echo $record[$i]->name;?>">
 					<td class="sub_menu"><li style="color:#0000ff;"><?php echo $record2[$j]->name;?></li></td>
@@ -71,7 +72,7 @@
 		<?php
 				}
 				//----------
-			}
+			}}
 			//--------------------
 		?>
 	</table>

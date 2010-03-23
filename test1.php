@@ -17,8 +17,6 @@ include "frame.php";
 
 $test = new table_class('test');
 $test->update_attributes($_POST['item'],false);
-$field_4_filter = array('exe');
-$msg_error_type = 'sdfasdfas';
 $test->update_file_attributes('item');
 var_dump($test);
 die();

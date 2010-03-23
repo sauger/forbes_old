@@ -6,6 +6,8 @@
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
 		//echo substr('dbscript',-1);;
 		//$script = file_get_contents('dbscript/test.sql');
+		dir_files('dbscript/');
+		
 		//$db = get_db();
 		//var_dump($db->execute($script));
 		die();				
@@ -17,7 +19,8 @@
 	?>
 		<form method="post" action="test1.php" enctype="multipart/form-data" >
 		
-			<input type="file" name="item[field_4]">
+			<input type="file" name="item[picture]">
+			<input type="file" name="item[image]">
 			<input type="submit" value="send"></input>		
 		</form>
 		
