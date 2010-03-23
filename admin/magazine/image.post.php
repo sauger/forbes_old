@@ -11,8 +11,9 @@
 	<body>
 		<?php
 			$image = new table_class('fb_magazine_image');
-			if($_POST['id']!=''){
-				$image->find($_POST['id']);
+			$id = intval($_POST['id']);
+			if($id!=''){
+				$image->find($id);
 			}else{
 				$image->created_at = date("Y-m-d H:i:s");
 			}

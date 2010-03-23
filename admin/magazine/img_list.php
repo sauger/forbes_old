@@ -22,7 +22,7 @@
 <body>
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="5" width="795">　<a href="image_edit.php?pid=<?php echo $id;?>" style="color:#0000FF">发布图片</a></td>
+			<td colspan="5" width="795">　<a href="image_edit.php?pid=<?php echo $id;?>" style="color:#0000FF">发布图片</a><a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 	</table>
 	<div class="div_box">
