@@ -8,7 +8,7 @@
 		//$script = file_get_contents('dbscript/test.sql');
 		//$db = get_db();
 		//var_dump($db->execute($script));
-				
+		die();				
 		?>
 	</head>
 	<body>
