@@ -36,6 +36,9 @@ function dir_files($path,$include_path=true){
 		if ($file == '.' || $file == '..') continue;
 		if($include_path) $file = $path . $file;
 		$result[] = $file;
+		echo "{$file}:ctime=" .date("Y-m-d H:i:s.",filectime($file)) ."|";
+		echo "{$file}:mtime=" .date("Y-m-d H:i:s.",filemtime($file)) ."|";
+		echo "{$file}:atime=" .date("Y-m-d H:i:s.",fileatime($file)) ."<br/>";
 	}
 	closedir($dir);
 	return $result;
