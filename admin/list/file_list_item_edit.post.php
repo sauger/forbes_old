@@ -1,7 +1,7 @@
 <?php 
 	require "../../frame.php";
 	$news_id = $_POST['id'] ? $_POST['id'] : 0;
-	$news = new table_class($tb_news);
+	$news = new table_class('fb_file_list_items');
 	if($news_id!=0){
 		$news->find($news_id);
 	}
@@ -9,13 +9,6 @@
 	$old_video_photo_src = $news->video_photo_src;
 	$news->update_attributes($_POST['news'],false);
 	$news->is_adopt = 1;
-	#var_dump($news);	
-	/*
-	$news->content = str_replace("'",'\"',$news->content); //mysql_escape_string($news->content);
-	$news->description = str_replace("'",'\"',$news->description);//$news->description = mysql_escape_string($news->description);
-	$news->keywords = str_replace('　',' ',$news->keywords);
-	$news->top_info = str_replace("'",'\"',$news->top_info);
-	*/
 	$pos = strpos(strtolower($news->content), '<img ');
 	if($pos !== false){
 		$pos_end = strpos(strtolower($news->content), '>',$pos);
@@ -64,16 +57,12 @@
 		//insert news
 		$news->created_at = date("Y-m-d H:i:s");
 		$news->last_edited_at = date("Y-m-d H:i:s");
-		$news->publisher = $_SESSION['admin_user_id'];
+		$news->publisher_id = $_SESSION['admin_user_id'];
 		$news->click_count = 0;					
 		$news->is_adopt = 1;
 		$news->save();
 	}else{
 		//update news
-		if(!$news->publisher){
-			$news->publisher = $_SESSION['admin_user_id'];			
-		}
-		$news->publisher = $_SESSION['admin_user_id'];
 		$news->last_edited_at = date("Y-m-d H:i:s");
 		$news->save();
 		if($old_pdf_src && $old_pdf_src != $news->pdf_src){
@@ -103,7 +92,7 @@
 		$news->save();
 	}
 	if($_SESSION["role_name"]=='author'||$_SESSION["role_name"]=='journalist')$href="/admin/column/news_list.php";else $href="news_list.php";
-	redirect($href.'?category='.$_POST['news']['category_id']);
+	redirect('file_list_items_list.php?id='.$news->list_id);
 	#var_dump($news);
 	
 ?>

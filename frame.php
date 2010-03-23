@@ -299,6 +299,7 @@ function redirect_login($type='js',$referer=true){
 function require_role($role='member'){
 	if(empty($_SESSION[role_name])){
 		redirect_login();
+		die();
 	}	
 }
 

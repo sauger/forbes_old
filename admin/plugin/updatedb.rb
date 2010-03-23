@@ -16,6 +16,8 @@ my.query("select d.id,d.name,sum(a.dqgj*c.rate*b.stock_count*100) as fortune fro
 	end
 	stmt = my.prepare("insert into fb_dynamic_fortune_history (richer_id,current_index,name,fortune,regdate) values (?,?,?,?,NOW())")
 	stmt.execute id,index,name,count
+	stmt = my.prepare("update fb_fh set jrpm=? where id=?")
+	stmt.execute index,id
 end
 p "finish the update! totle count: #{index}"
 my.close
