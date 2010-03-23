@@ -27,8 +27,8 @@ p{margin:0; padding:0}
 #t_l_t{width:417px; height:600px; border:solid 1px #CCCCCC; float:left; display:inline;}
 .top_picture{width:417px; height:540px; float:left; display:none;}
 #t_l_t_b{width:414px; height:52px; float:left; display:inline;}
-#t_l_t_b #prev{width:72px; height:22px; border:0px; margin-left:12px; margin-top:18px; background-image:url(/images/html/magazine/prev.jpg); float:left; display:inline;}
-#t_l_t_b #next{width:72px; height:22px; border:0px; margin-left:18px; margin-top:18px; background-image:url(/images/html/magazine/next.jpg); float:left; display:inline;}
+#t_l_t_b #prev{width:72px; height:22px; border:0px; margin-left:12px; margin-top:18px; background:url(/images/html/magazine/prev.jpg); float:left; display:inline;}
+#t_l_t_b #next{width:72px; height:22px; border:0px; margin-left:18px; margin-top:18px; background:url(/images/html/magazine/next.jpg); float:left; display:inline;}
 #t_l_t_b #text{width:111px; height:22px; margin-left:111px; margin-top:18px; float:left; display:inline;}
 #t_l_b{width:417px; height:34px; font-size:14px; font-weight:bold; text-align:center; line-height:34px; margin-top:16px; background-image:url(/images/html/magazine/t_l_b.jpg); float:left; display:inline;}
 #t_r{width:565px; height:649px; margin-left:11px; background-image:url(/images/html/magazine/t_r.jpg); float:left; display:inline;}
@@ -61,4 +61,5 @@ p{margin:0; padding:0}
 
 #button{width:122px; height:23px; border:0px; margin-left:121px; margin-top:17px; background-image:url(/images/html/magazine/button.jpg); float:left; display:inline;}
 #ad{width:1000px; height:102px; background-image:url(/images/html/magazine/ad.jpg); margin-top:18px; float:left; display:inline;}
+
 
