@@ -26,7 +26,12 @@ function display_error($msg) {
 	echo '<font style="color:red;">' .$msg .'</font>';;
 }
 
-function dir_files($path,$include_path=true){
+
+function dir_files($path){
+	function DateCmp($a, $b)
+	{
+	  return ($a[1] < $b[1]) ? -1: 1;
+	}
 	$dir = opendir(ROOT_DIR .$path);
 	if(substr($path,-1)!='/') $path .= '/';
 	if($dir === false) return false;
@@ -34,13 +39,14 @@ function dir_files($path,$include_path=true){
 	while (($file = readdir($dir)) !== false)
 	{
 		if ($file == '.' || $file == '..') continue;
-		if($include_path) $file = $path . $file;
-		$result[] = $file;
-		echo "{$file}:ctime=" .date("Y-m-d H:i:s.",filectime($file)) ."|";
-		echo "{$file}:mtime=" .date("Y-m-d H:i:s.",filemtime($file)) ."|";
-		echo "{$file}:atime=" .date("Y-m-d H:i:s.",fileatime($file)) ."<br/>";
+		$LastModified = filectime($path . $file);
+    	$Files[] = array($file, $LastModified);
 	}
 	closedir($dir);
+	usort($Files, 'DateCmp');
+	foreach ($Files as $file) {
+		$result[] = $file[0];
+	}
 	return $result;
 }
 	

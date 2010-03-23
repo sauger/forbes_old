@@ -46,7 +46,22 @@ $(function(){
 		$.post('relation.post.php',{'type':'revocation','nid':$(this).attr("name")},function(data){
 			window.location.reload();
 		});
-	})
+	});
+	
+	
+	$(".set_down").live('click',function(){
+		var ob = $(this);
+		$.post('relation.post.php',{'type':'set_down','nid':$(this).attr("name")},function(data){
+			window.location.reload();
+		});
+	});
+	
+	$(".set_up").live('click',function(){
+		var ob = $(this);
+		$.post('relation.post.php',{'type':'set_up','nid':$(this).attr("name")},function(data){
+			window.location.reload();
+		});
+	});
 	
 	$("#edit_priority").click(function(){
 		if(!window.confirm("编辑优先级")){return false;}

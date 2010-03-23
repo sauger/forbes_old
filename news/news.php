@@ -102,9 +102,7 @@
 						<div id="l_b_center">
 							<div id="resource">来源于：福布斯中文网</div>
 							<?php if($news->top_info!=''){?>
-								<div id=text4>
-									<?php echo $news->top_info?>
-								</div>
+								<div id="text4"><?php echo $news->top_info;?></div>
 							<?php }?>
 							<?php
 								if($news->author!=''){
