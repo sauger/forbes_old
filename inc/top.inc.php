@@ -8,9 +8,12 @@
 			<div class=user_btn><a href="">登陆</a>　<a href="">注册</a></div>
 			<div class=user_btn><a href="">设为首页</a>　<a href="">收藏本页</a></div>
 			<div id=magazine_title>本期杂志介绍</div>
-			<div id=magazine_pic><a href=""><img border=0 src="/images/index/six.jpg"></a></div>
-			<div id=magazine_description><span class=font1>福布斯中文版VOL.22</span><br>版杂志知案例荟萃丰富的福布斯中文版杂志知识及案例...</div>
-			<div id=magazine_btn><a href=""><img src="/images/top/magazine_btn.jpg" border=0></a></div>
+			<?php 
+				$magazine = $db->query("select * from fb_magazine where is_adopt=1 order by publish_data");
+			?>
+			<div id=magazine_pic><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img border=0 src="<?php echo $magazine[0]->img_src3?>"></a></div>
+			<div id=magazine_description><span class=font1><?php echo $magazine[0]->name;?></span><br><?php echo $magazine[0]->short_title;?></div>
+			<div id=magazine_btn><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img src="/images/top/magazine_btn.jpg" border=0></a></div>
 	</div>
   <div id=top_logo>
 			<div id=border></div>

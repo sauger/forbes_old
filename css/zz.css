@@ -1,7 +1,8 @@
 ﻿body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+p{margin:0; padding:0}
 
 #ibody{width:1000px; margin:0 auto;}
-#cyindex{width:72px; height:19px; cursor:pointer; background-image:url(/images/whyl/whyl.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/whyl/whyl.png"); margin-top:10px; float:left; display:inline;}
+#cyindex{width:72px; height:19px; cursor:pointer; margin-top:10px; float:left; display:inline;}
 #cytitle{width:494px; height:16px; margin-top:13px; margin-left:20px; line-height:16px; float:left; display:inline;}
 #cytitle a{color:#246bb0; text-decoration:none;}
 #cyline{width:1000px; height:8px; margin-top:10px; background:url('/images/tyzl/tyzl_line.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
@@ -23,12 +24,12 @@
 #zzleft .r_b .title .jt{width:12px; height:11px; margin-top:3px; background:url('/images/zz/jiantou.jpg') no-repeat; float:left; display:inline;}
 #zzleft .r_b .title .wz{width:210px; height:18px; font-size:14px; font-weight:bold; line-height:18px; float:right; display:inline;}
 #zzleft .r_b .title .wz a{color:#246bb0; text-decoration:none;}
-#zzleft .r_b .content{width:229px; height:63px; margin-top:10px; line-height:21px; float:left; display:inline;}
+#zzleft .r_b .content{width:229px; height:63px; margin-top:10px; overflow:hidden; line-height:21px; float:left; display:inline;}
 #zzleft .r_b .content a{color:#666666; text-decoration:none;}
 #zzleft .r_b .r_b_dash{width:214px; height:1px; margin-top:10px; margin-left:2px; background:url('/images/zz/dash.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
 #zzleft .l_b{width:349px; height:34px; margin-top:15px; margin-left:25px; float:left; display:inline;}
-#zzleft .l_b .btn_ck{width:146px; height:34px; background:url('/images/zz/btn_ck.jpg') no-repeat; float:left; display:inline;}
-#zzleft .l_b .btn_readonline{width:146px; height:34px; background:url('/images/zz/btn_readonline.jpg') no-repeat; float:right; display:inline;}
+#zzleft .l_b .btn_ck{width:146px; height:34px; float:left; display:inline;}
+#zzleft .l_b .btn_readonline{width:146px; height:34px;  float:right; display:inline;}
 #zzleft #l_b_content{width:658px; height:659px;  border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf; float:left; display:inline;}
 #zzleft #l_b_content .imgandtitle{width:134px; height:275px; margin-top:25px; margin-left:25px; float:left; display:inline;}
 #zzleft #l_b_content .pic{width:134px; height:173px; float:left; display:inline;}

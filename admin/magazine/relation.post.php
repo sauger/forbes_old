@@ -16,6 +16,18 @@
 		$relation = new table_class("fb_magazine_relation");
 		$relation->delete($nid);
 	}
+	elseif($type=='set_down'){
+		$relation = new table_class("fb_magazine_relation");
+		$relation->find($nid);
+		$relation->is_show = 0;
+		$relation->save();
+	}
+	elseif($type=='set_up'){
+		$relation = new table_class("fb_magazine_relation");
+		$relation->find($nid);
+		$relation->is_show = 1;
+		$relation->save();
+	}
 	elseif("edit_priority"==$type)
 	{
 		$id_str=explode("|",$_POST['id_str']); 

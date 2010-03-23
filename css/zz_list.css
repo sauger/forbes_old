@@ -1,7 +1,8 @@
 ﻿body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+p{margin:0; padding:0}
 
 #ibody{width:1000px; margin:0 auto;}
-#cyindex{width:72px; height:19px; cursor:pointer; background-image:url(/images/whyl/whyl.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/whyl/whyl.png"); margin-top:10px; float:left; display:inline;}
+#cyindex{width:72px; height:19px; cursor:pointer; margin-top:10px; float:left; display:inline;}
 #cytitle{width:494px; height:16px; margin-top:13px; margin-left:20px; line-height:16px; float:left; display:inline;}
 #cytitle a{color:#246bb0; text-decoration:none;}
 #cyline{width:1000px; height:8px; margin-top:10px; background:url('/images/tyzl/tyzl_line.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
@@ -30,8 +31,8 @@
 #zzleft .l_b_content .pictitle a{color:#246bb0; text-decoration:none;}
 #zzleft .l_b_content .piccontent{width:461px; height:98px; margin-right:10px; float:right; display:inline;}
 #zzleft .l_b_content .piccontent a{color:#333333; text-decoration:none;}
-#zzleft .l_b_content .piccontent .pic_c_t{width:461px; height:18px; margin-top:20px; font-size:14px; font-weight:bold; float:left; display:inline;}
-#zzleft .l_b_content .piccontent .pic_c_m{width:461px; height:63px; margin-top:10px; line-height:21px; float:left; display:inline;}
+#zzleft .l_b_content .piccontent .pic_c_t{width:461px; height:18px; margin-top:20px; overflow:hidden; font-size:14px; font-weight:bold; float:left; display:inline;}
+#zzleft .l_b_content .piccontent .pic_c_m{width:461px; height:63px; margin-top:10px; overflow:hidden; line-height:21px; float:left; display:inline;}
 #zzleft .l_b_content .picinfo{width:90px; height:16px; margin-top:20px; line-height:16px; float:right; display:inline;}
 #zzleft .l_b_content .picinfo a{color:#246bb0;}
 #right{width:317px; margin-top:10px; float:right; display:inline;}
@@ -110,3 +111,6 @@
 #r_b_b #sq{width:66px; height:22px; margin-top:10px; margin-left:20px; border:0px; background:url('/images/index/sqread.jpg') no-repeat; float:left; display:inline;}
 #r_b_b #ck{width:200px; height:20px; margin-right:10px; line-height:20px; text-align:right; float:right; display:inline;}
 #r_b_b #ck a{color:#666666; font-weight:bold;}
+
+.paginate{width:660px; margin-top:90px; line-height:20px; color:#666666; text-align:center; float:left; display:inline;}
+.paginate a{color:#246BB0; text-decoration:none;}

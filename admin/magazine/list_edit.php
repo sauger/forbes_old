@@ -58,7 +58,7 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="5">　　自定义新闻 <a href="index.php"><img src="/images/btn_back.png" border=0></a>
+			<td colspan="5">　　加入文章 <a href="index.php"><img src="/images/btn_back.png" border=0></a>
 				<input style="margin-left:20px" class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
 				<span id="span_category"></span><select id="language_tag" name="language_tag" class="sau_search">					
 					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
@@ -94,6 +94,12 @@
 							$rate_flag = false;
 							for($j=0;$j<$news_count;$j++){
 								if($record[$i]->id==$news[$j]->resource_id){ $rate_flag=true;?>
+								<?php if($news[$j]->is_show=="1"){?>
+								<span style="cursor:pointer" class="set_down" name="<?php echo $news[$j]->id;?>" title="取消置于封面"><img src="/images/btn_up.png" border="0"></span>
+								<?php }?>
+								<?php if($news[$j]->is_show=="0"){?>
+								<span style="cursor:pointer" class="set_up" name="<?php echo $news[$j]->id;?>" title="置于封面"><img src="/images/btn_unup.png" border="0"></span>
+								<?php }?>
 								<span style="cursor:pointer" class="revocation" name="<?php echo $news[$j]->id;?>" title="删除"><img src='/images/btn_delete.png' border='0'></span>
 								<input type="text" class="priority"  name="<?php echo $news[$j]->id;?>"  value="<?php echo $news[$j]->priority;?>" style="width:40px;">
 								<?php }?>

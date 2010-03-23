@@ -1,4 +1,5 @@
-﻿body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+﻿body {font-size:12px; font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+p{margin:0; padding:0}
 #ibody{width:1000px; margin:0 auto;}
 
 #title1	a:link{color:#666666; text-decoration:none;}
@@ -14,10 +15,17 @@
 #title1{height:20px; font-size:12px; line-height:20px; margin-top:6px; margin-left:19px; float:left; display:inline;}
 #line{width:1000px; height:10px; background-image:url(/images/html/news/line.jpg); float:left; display:inline;}
 
+#ibody{width:1000px; margin:0 auto;}
+#cyindex{width:72px; height:19px; cursor:pointer; margin-top:10px; float:left; display:inline;}
+#cytitle{width:494px; height:16px; margin-top:13px; margin-left:20px; line-height:16px; float:left; display:inline;}
+#cytitle a{color:#246bb0; text-decoration:none;}
+#cyline{width:1000px; height:8px; margin-top:10px; background:url('/images/tyzl/tyzl_line.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+
+
 #t{width:996px; height:652px; margin-top:9px; float:left; display:inline;}
 #t_l{width:418px; height:649px; float:left; display:inline;}
 #t_l_t{width:417px; height:600px; border:solid 1px #CCCCCC; float:left; display:inline;}
-#t_l_t_t{width:412px; height:546px; margin-top:1px; margin-left:1px; background-image:url(/images/html/magazine/t_l_t_t.jpg); float:left; display:inline;}
+.top_picture{width:417px; height:540px; float:left; display:none;}
 #t_l_t_b{width:414px; height:52px; float:left; display:inline;}
 #t_l_t_b #prev{width:72px; height:22px; border:0px; margin-left:12px; margin-top:18px; background-image:url(/images/html/magazine/prev.jpg); float:left; display:inline;}
 #t_l_t_b #next{width:72px; height:22px; border:0px; margin-left:18px; margin-top:18px; background-image:url(/images/html/magazine/next.jpg); float:left; display:inline;}
@@ -27,26 +35,27 @@
 #t_r_t{width:565px; height:30px; font-size:14px; font-weight:bold; color:#8D8D8D; line-height:30px; text-indent:13px; border-bottom-style:solid; border-width:1px; border-color:#DADADA; float:left; display:inline;}
 #t_r_b{width:565px; height:616px; float:left; display:inline;}
 #t_r_b_l{width:196px; height:518px; float:left; display:inline;}
-#t_r_b_l #picture1{width:169px; height:246px; margin-left:12px; margin-top:15px; border:solid 1px #CCCCCC; background:url(/images/html/magazine/picture1.jpg) no-repeat center center; float:left; display:inline;}
+#t_r_b_l #picture1{width:169px; margin-left:12px; margin-top:15px; float:left; display:inline;}
 #t_r_b_l #text{width:104px; height:41px; font-size:14px; font-weight:bold; text-indent:40px; line-height:41px; margin-left:35px; margin-top:22px; background:url(/images/html/magazine/tar1.jpg) no-repeat left center; float:left; display:inline;}
 #t_r_b_r{width:366px; height:518px; float:left; display:inline;}
 #t_r_b_r #title2{width:366px; height:30px; font-size:18px; font-weight:bold; color:#003A7B; line-height:30px; margin-left:2px; margin-top:10px; float:left; display:inline;}
-#t_r_b_r #text{width:366px; height:444px; color:#666666; line-height:22px; margin-left:2px; float:left; display:inline;}
+#t_r_b_r #text{width:360px; height:540px; overflow:hidden; color:#666666; line-height:22px; margin-left:2px; float:left; display:inline;}
 
-#m{width:995px; height:521px; margin-top:33px; background-image:url(/images/html/magazine/m.jpg); float:left; display:inline;}
+#m{width:996px; *width:995px; height:521px; margin-top:33px; background:url(/images/html/magazine/m.jpg); float:left; display:inline;}
 #m #title2{width:995px; height:30px; font-size:14px; font-weight:bold; color:#8D8D8D; line-height:30px; text-indent:20px; background-image:url(/images/html/magazine/title1.jpg); float:left; display:inline;}
-#m_l{width:479px; height:217px; margin-left:12px; margin-top:13px; float:left; display:inline;}
-#m_l #picture{width:150px; height:195px; margin-left:9px; margin-top:11px; background-image:url(/images/html/magazine/picture2.jpg); float:left; display:inline;}
-#m_l_r{width:282px; height:195px; margin-left:17px; margin-top:11px; float:left; display:inline;}
-#m_l_r #title3{width:282px; height:26px; font-size:18px; font-weight:bold; color:#003A7B; margin-top:10px; float:left; display:inline;}
-#m_l_r #text{width:280px; height:138px; color:#666666; line-height:20px; margin-top:17px; float:left; display:inline;}
+.m_l{width:479px; height:217px; margin-left:12px; margin-top:13px; float:left; display:inline;}
+.m_l .picture{width:150px; height:195px; margin-left:9px; margin-top:11px; float:left; display:inline;}
+.m_l_r{width:282px; height:195px; margin-left:17px; margin-top:11px; float:left; display:inline;}
+.m_l_r .title3{width:282px; height:26px; font-size:18px; font-weight:bold; color:#003A7B; margin-top:10px; float:left; display:inline;}
+.m_l_r .text{width:280px; height:138px; color:#666666; line-height:20px; margin-top:17px; float:left; display:inline;}
 
 #b{width:991px; height:174px; margin-top:26px; float:left; display:inline;}
 #b_l{width:715px; height:173px; background-image:url(/images/html/magazine/b_l.jpg); float:left; display:inline;}
 #b_l #title4{width:715px; height:30px; font-size:14px; font-weight:bold; color:#003A7B; line-height:30px; text-indent:14px; background-image:url(/images/html/magazine/title2.jpg); float:left; display:inline;}
 #b_l_b{width:714px; height:142px; background-image:url(/images/html/magazine/b_l_b.jpg); float:left; display:inline;}
-#b_l_b #picture{width:94px; height:124px; border:solid 1px #13638C; margin-left:26px; margin-top:9px; float:left; display:inline;}
-#b_l_b #picture1{width:93px; height:123px; border:solid 1px #99BBCD; background-image:url(/images/html/magazine/picture3.jpg); float:left; display:inline;}
+#picture_box{margin-left:190px; font-size:0; float:left; display:inline;}
+#b_l_b .picture{width:94px; height:124px; border:solid 1px #13638C; margin-left:26px; margin-top:9px; float:left; display:inline;}
+#b_l_b .picture1{width:93px; height:123px; border:solid 1px #99BBCD; float:left; display:inline;}
 #b_r{width:255px; height:173px; margin-left:21px; background-image:url(/images/html/magazine/b_r.jpg); float:left; display:inline;}
 #b_r #text{width:236px; height:21px; font-size:14px; font-weight:bold; text-align:right; font-family:微软雅黑; margin-left:7px; margin-top:10px; float:left; display:inline;}
 
