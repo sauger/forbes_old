@@ -1,6 +1,6 @@
 require 'mysql'
 p "start to update the dynamic fortune list >>>>>>>"
-my = Mysql.connect('localhost','root','xunao','forbes')
+my = Mysql.connect('192.168.1.4', 'forbes_db','xunao','forbes')
 stmt = my.prepare("delete from fb_dynamic_fortune_list")
 stmt.execute
 index = 0
