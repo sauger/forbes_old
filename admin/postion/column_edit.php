@@ -1,0 +1,66 @@
+<?php
+	$db = get_db();
+	$records = $db->query("select * from fb_user where role_name='author'");
+	$count = count($records);
+	
+	$column = $db->query("select * from fb_position_relation where type='column' and position_id=$id");
+	$column_count = count($column);
+	$ids = $column[0]->news_id;
+	for($i=1;$i<$column_count;$i++){
+		$ids.=','.$column[$i]->news_id;
+	}
+?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+	<meta http-equiv=Content-Language content=zh-CN>
+	<title>迅傲信息</title>
+	<?php 
+		css_include_tag('admin');
+		use_jquery();
+		js_include_tag('admin/position/column_list');
+	?>
+</head>
+<body style="background:#E1F0F7">
+	<table width="795" border="0">
+		<tr class="tr1">
+			<td colspan="5" width="795">　自定义专栏<a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
+		</tr>
+		<tr class="tr2">
+			<td width="205">用户名</td><td width="200">用户昵称</td><td width="180">用户身份</td><td width="250">操作</td>
+		</tr>
+		<?php for($i=0;$i<$count;$i++){?>
+		<tr class="tr3" id="<?php echo $records[$i]->id;?>">
+			<td><?php echo $records[$i]->name;?></td>
+			<td><?php echo $records[$i]->nick_name;?></td>
+			<td>专栏作者</td>
+			<td>
+				<?php 
+					$rate_flag = false;
+					for($j=0;$j<$column_count;$j++){
+						if($record[$i]->id==$column[$j]->news_id){ $rate_flag=true;?>
+						<span style="cursor:pointer" class="revocation" name="<?php echo $column[$j]->id;?>" title="删除"><img src='/images/btn_delete.png' border='0'></span>
+						<input type="text" class="priority"  name="<?php echo $column[$j]->id;?>"  value="<?php echo $column[$j]->priority;?>" style="width:40px;">
+						<?php break;}?>
+				<?php }
+					if(!$rate_flag){
+				?>
+				<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="加入"><img src='/images/btn_add.png' border='0'></span>
+				<?php }?>
+			</td>
+		</tr>
+		<? }?>
+	</table>
+	<input type="hidden" id="db_table" value="<?php echo $user_table;?>">
+	<div class="div_box">
+		<table width="795" border="0">
+			<tr colspan="5" class=tr3>
+				<td><?php paginate();?></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
+

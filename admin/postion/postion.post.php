@@ -3,13 +3,14 @@
 	$nid = intval($_POST['nid']);
 	$pid = intval($_POST['pid']);
 	$type = $_POST['type'];
+	$p_type = $_POST['p_type'];
 	$db = get_db();
 	
 	
 	$position = new table_class("fb_position");
 	$position->find($pid);
 	if($type=='publish'){
-		$count = $db->query("select count(*) as num from fb_position_relation where position_id=$pid");
+		$count = $db->query("select count(*) as num from fb_position_relation where type='news' and position_id=$pid");
 		if($count[0]->num==$position->position_limit){
 			echo "full";
 			die();
@@ -17,9 +18,8 @@
 		$pos = new table_class("fb_position_relation");
 		$pos->position_id = $pid;
 		$pos->news_id = $nid;
+		$pos->type = 'news';
 		$pos->save();
-		$position->type='news';
-		$position->save();
 	}
 	elseif($type=='revocation'){
 		$pos = new table_class("fb_position_relation");
@@ -38,7 +38,5 @@
 			$sql="update fb_position_relation set ".$priority."=".$priority_str[$i]." where id=".$id_str[$i];
 			$db->execute($sql);
 		}
-		$position->type='news';
-		$position->save();
 	}
 ?>
