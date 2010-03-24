@@ -85,7 +85,9 @@
 							$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_news t2 join fb_user t1 on t2.author_id=t1.id where t2.author_type=2 and t1.id not in ($author_id) group by  t2.author_id  order by t2.created_at desc limit 4";
 							$author = $db->query($sql);
 							$author_count2 = count($author);
-						for($i=0;$i<(4-$author_count);$i++){
+							$count_new = 4-$author_count;
+							if($count_new>$author_count2)$count_new=$author_count2;
+							for($i=0;$i<$count_new;$i++){
 							$news = $db->query("select id,title,short_title,description from fb_news where is_adopt=1 and author_id={$author[$i]->id} and author_type=2 order by created_at desc,priority asc limit 3");
 					?>
 					<div class=l_t_l_m>
@@ -237,10 +239,12 @@
 					<?php }?>
 					<?php
 						if($author_count<4){
-							$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_news t2 join fb_user t1 on t2.author_id=t1.id where t2.author_type=1 and t1.id not in ($author_id) group by  t2.author_id  order by t2.created_at desc limit 4";
+							$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_news t2 join fb_user t1 on t2.author_id=t1.id where t2.author_type=1 and t1.role_name='journalist' and t1.id not in ($author_id) group by  t2.author_id  order by t2.created_at desc limit 4";
 							$author = $db->query($sql);
 							$author_count2 = count($author);
-						for($i=0;$i<(4-$author_count);$i++){
+							$count_new = 4-$author_count;
+							if($count_new>$author_count2)$count_new=$author_count2;
+							for($i=0;$i<$count_new;$i++){
 							$news = $db->query("select id,title,short_title,description from fb_news where is_adopt=1 and author_id={$author[$i]->id} and author_type=1 order by created_at desc,priority asc limit 3");
 					?>
 					<div class=l_t_l_m>
