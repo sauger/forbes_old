@@ -95,10 +95,10 @@ ul{padding:0; margin:0}
 .forbes_l .list3 a{color:#003399; font-size:14px; text-decoration:none;}
 
 
-.forbes_l .writer{width:59px; height:93px; margin-top:10px; margin-left:15px; float:left; display:inline;}
+.forbes_l .writer{width:59px; height:103px; margin-top:10px; margin-left:15px; float:left; display:inline;}
 .forbes_l .writer_pic{width:57px; height:57px; border:1px solid #cccccc; float:left; display:inline;}
 .forbes_l .writer_pic img{width:55px; height:55px; margin:1px;}
-.forbes_l .writer_name{width:59px; height:35px; text-align:center; line-height:17px; overflow:hidden; float:left; display:inline;}
+.forbes_l .writer_name{width:59px; height:35px; text-align:center; line-height:20px; overflow:hidden; float:left; display:inline;}
 .forbes_l .writer_name a{color:#003399; text-decoration:none;}
 
 
