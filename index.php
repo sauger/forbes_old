@@ -12,33 +12,31 @@
 	<?php
 		use_jquery();
 		js_include_tag('top','select2css','index');
-		css_include_tag('index','top','bottom');
+		css_include_tag('public','index');
 	?>
 </head>
 <body>
 	<div id=ibody>
-		<? require_once('inc/top.inc.php');?>
-		<div id=t_l_t>
-			<?php
-				$record_show = get_news_by_pos('每日头条');
-  		?>
-			<div id=t_l_t_t>
-				<div class=head_pic id=head_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[0]->video_photo_src; ?>"></a></div>
-				<div class=head_pic id=head_pic_1 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[1]->video_photo_src; ?>"></a></div>
-				<div class=head_pic id=head_pic_2 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[2]->video_photo_src; ?>"></a></div>
-				<div class=head_pic id=head_pic_3 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[3]->video_photo_src; ?>"></a></div>
-				<div id=t_l_t_t_r>
-					<div class=head_title id=head_title_0><a href=""><?php echo $record_show[0]->short_title; ?></a></div>
-					<div class=head_title id=head_title_1 style="display:none;"><a href=""><?php echo $record_show[1]->short_title; ?></a></div>
-					<div class=head_title id=head_title_2 style="display:none;"><a href=""><?php echo $record_show[2]->short_title; ?></a></div>
-					<div class=head_title id=head_title_3 style="display:none;"><a href=""><?php echo $record_show[3]->short_title; ?></a></div>
-					<div class=head_content id=head_content_0><?php echo $record_show[0]->description; ?></div>
-					<div class=head_content id=head_content_1 style="display:none;"><?php echo strip_tags($record_show[1]->description); ?></div>
-					<div class=head_content id=head_content_2 style="display:none;"><?php echo strip_tags($record_show[2]->description); ?></div>
-					<div class=head_content id=head_content_3 style="display:none;"><?php echo strip_tags($record_show[3]->description); ?></div>
+	<? require_once('inc/top.inc.php');?>
+		<div id=forbes_tlt>
+			<?php $record_show = get_news_by_pos('每日头条');	?>
+  		<div id=headline>
+				<div class=headline_pic id=headline_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[0]->video_photo_src; ?>"></a></div>
+				<div class=headline_pic id=headline_pic_1 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[1]->video_photo_src; ?>"></a></div>
+				<div class=headline_pic id=headline_pic_2 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[2]->video_photo_src; ?>"></a></div>
+				<div class=headline_pic id=headline_pic_3 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[3]->video_photo_src; ?>"></a></div>
+				<div id=headline_content>
+					<div class=headline_title id=headline_title_0><a href=""><?php echo $record_show[0]->short_title; ?></a></div>
+					<div class=headline_title id=headline_title_1 style="display:none;"><a href=""><?php echo $record_show[1]->short_title; ?></a></div>
+					<div class=headline_title id=headline_title_2 style="display:none;"><a href=""><?php echo $record_show[2]->short_title; ?></a></div>
+					<div class=headline_title id=headline_title_3 style="display:none;"><a href=""><?php echo $record_show[3]->short_title; ?></a></div>
+					<div class=headline_description id=headline_description_0><?php echo $record_show[0]->description; ?></div>
+					<div class=headline_description id=headline_description_1 style="display:none;"><?php echo strip_tags($record_show[1]->description); ?></div>
+					<div class=headline_description id=headline_description_2 style="display:none;"><?php echo strip_tags($record_show[2]->description); ?></div>
+					<div class=headline_description id=headline_description_3 style="display:none;"><?php echo strip_tags($record_show[3]->description); ?></div>
 					
-				<?php for($j=0;$j<=3;$j++){?>	
-					<div class=head_related id=head_related_<?php echo $j?> <?php if($j<>0){echo "style='display:none'";}?> >
+			    <?php for($j=0;$j<=3;$j++){?>	
+					<div class=headline_related id=headline_related_<?php echo $j?> <?php if($j<>0){echo "style='display:none'";}?> >
 					<?php				
 					 		$sub_news_str=explode(",",$record_show[$j]->sub_headline); 
 				  		$sub_news_str_num=sizeof($sub_news_str)-1;
@@ -48,49 +46,59 @@
 								  if($sub_news_str_num<1){break;}
 									$sql="select n.short_title from fb_news n where n.id=".$sub_news_str[$i];
 									$record_sub_news = $db -> query($sql);
-									echo '<div class=cl><a href="">'.strip_tags($record_sub_news[0]->short_title).'</a></div>';
+									echo '<div class=list><a href="">'.strip_tags($record_sub_news[0]->short_title).'</a></div>';
 							}
 					?>				
 					</div>
-				<? }?>	
+				  <? }?>	
 	
 					<div id=more><a href="">查看更多</a></div>
 					<div id=btn>
-						<div class=head_btn1 id=l style="background:url(images/index/slideshow_back.gif) no-repeat;"></div>
-						<div class=head_btn2 id=0 style="background:url(images/index/slideshow_active.gif) no-repeat"></div>
-						<div class=head_btn2 id=1 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
-						<div class=head_btn2 id=2 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
-						<div class=head_btn2 id=3 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
-						<div class=head_btn1 id=r style="background:url(images/index/slideshow_next.gif) no-repeat"></div>
+						<div class=headline_btn1 id=l style="background:url(images/index/slideshow_back.gif) no-repeat;"></div>
+						<div class=headline_btn2 id=0 style="background:url(images/index/slideshow_active.gif) no-repeat"></div>
+						<div class=headline_btn2 id=1 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
+						<div class=headline_btn2 id=2 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
+						<div class=headline_btn2 id=3 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
+						<div class=headline_btn1 id=r style="background:url(images/index/slideshow_next.gif) no-repeat"></div>
 					</div>
 				</div>
 			</div>
-		 <div id=t_l_t_b>	
-			<div id=t_l_t_l>
-			<?php
-				$record_show = get_news_by_pos('陆家嘴早餐');
-  		?>
-  		
-				<div id=title><a href="">陆家嘴早餐</a></div>
-					<div class=content><a href="" title="<?php echo $record_show[0]->title; ?>"><?php echo $record_show[0]->short_title; ?></a></div>
-					<div class=content><a href="" title="<?php echo $record_show[1]->title; ?>"><?php echo $record_show[1]->short_title; ?></a></div>
-					<div class=content><a href="" title="<?php echo $record_show[2]->title; ?>"><?php echo $record_show[2]->short_title; ?></a></div>
-					<div id=coffee></div>
-			</div>
-			<div id=t_l_t_r>
-				<div id=left><img style="cursor:pointer;" border=0 src="images/index/t_l_t_r_left.jpg"></div>
-				<?php for($i=0;$i<3;$i++){ ?>
-					<div class=content>
-						<div class=pic><a href=""><img border=0 src="images/index/one.jpg"></a></div>
-						<div class=cl><a href="">后危机时更</a></div>
-					</div>
-				<?php } ?>
-				<div id=right><img style="cursor:pointer;" border=0 src="images/index/t_l_t_r_right.jpg"></div>
-			</div>
-		  </div>
-		 </div> 
-		<div id=t_r_t>
-			<div class=title style="background:url('images/index/t_r_t_title1.jpg') no-repeat; font-weight:bold; color:#000000;">实时财富</div>
+			<? /* headline-end */?>
+			
+		 <div id=forbes_tltb>	
+			 <?php
+				 $record_show = get_news_by_pos('陆家嘴早餐');
+  		 ?>
+			 <div id=lujiazui>
+  		 	 <div id=lujiazui_caption><a href="">陆家嘴早餐</a></div>
+			 	 <div class=lujiazui_list><a href="" title="<?php echo $record_show[0]->title; ?>"><?php echo $record_show[0]->short_title; ?></a></div>
+			 	 <div class=lujiazui_list><a href="" title="<?php echo $record_show[1]->title; ?>"><?php echo $record_show[1]->short_title; ?></a></div>
+			 	 <div class=lujiazui_list><a href="" title="<?php echo $record_show[2]->title; ?>"><?php echo $record_show[2]->short_title; ?></a></div>
+			 	 <div id=lujiazui_coffee></div>
+			 </div>
+			 <? /* lujiazui-end */?>
+						 
+			 <?php
+				 $record_show = get_news_by_pos('专题');
+  		 ?>
+			 <div id=subject>
+			 	 <div id=subject_btnl></div>
+			 	 <?php for($i=0;$i<8;$i++){ ?>
+			 	 <div class=subject_content id=subject_content_<?php echo $i?> <?php if($i>2){echo "style='display:none'";}?>>
+			 			<div class=subject_pic><a href=""><img border=0 src="<?php echo $record_show[$i]->video_photo_src;?>"></a></div>
+			 			<div class=subject_list><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+			 	 </div>
+			 	 <?php } ?>
+			 	 <div id=subject_btnr></div>
+			 </div>
+			 <? /* subject-end */?>
+			 		
+		 </div>
+		</div> 
+		 
+		 
+		<div id=forbes_trt>
+			<div class=title style="background:url('images/index/block2.jpg') no-repeat; font-weight:bold; color:#000000;">实时财富</div>
 			<div class=title>财富过山车</div>	
 			<div class=title>名人榜</div>	
 			<div class=title>城市榜</div>
@@ -111,97 +119,101 @@
 				<div id=bottom>
 					<div id=title>实时财富动态</div>
 					<?php for($i=0;$i<2;$i++){ ?>
-						<div class=content><img border=0 src="images/index/t_l_t_l_content.jpg"> 瑞银与高盛领跑AIG香港上市业务</div>
+						<div class=bottom_list>瑞银与高盛领跑AIG香港上市业务</div>
 					<?php } ?>
 				</div>
 			</div>
 		</div>
-		<div class=c_l>
-			<div class=title>
-				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>创业</div>
+		
+	
+		<div class=forbes_l>
+			<?php $record_show = get_news_by_pos('创业');	?>
+			<div class=caption>
+				<div class=captions>创业</div>
 				<div class=line>|</div>
-				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
+				<a href="" class=more></a>
 			</div>
-			<?php
-				$record_show = get_news_by_pos('创业');
-  		?>
-			<div class=content1>
-				<div class=piccontent>
-					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
-					<div class=p_content><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
+			<div class=forbes_l_content>
+				<div class=list1>
+					<div class=list1_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+					<div class=list1_description><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
 				<?php for($i=1;$i<4;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
 			</div>
-			<div class=dash></div>
-			<div class=title>
-				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>商业　</div>
+			<div class=dashed></div>
+			
+			
+			<?php $record_show = get_news_by_pos('商业');	?>
+			<div class=caption>
+				<div class=captions>商业</div>
 				<div class=line>|</div>
-				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
+				<a href="" class=more></a>
 			</div>
-			<?php
-				$record_show = get_news_by_pos('商业');
-  		?>
-			<div class=content1>
-				<div class=piccontent>
-					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
-					<div class=p_content><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
+			<div class=forbes_l_content>
+				<div class=list1>
+					<div class=list1_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+					<div class=list1_description><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
 				<?php for($i=1;$i<5;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
-			</div>		
-			<div class=dash></div>
-			<div class=title>
-				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>科技　</div>
-				<div class=line>|</div>
-				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
 			</div>
-			<?php
-				$record_show = get_news_by_pos('科技');
-  		?>
-			<div class=content1>
-				<div class=piccontent>
-					<div class=p_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
-					<div class=p_content><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
+			<div class=dashed></div>
+						
+			
+			<?php $record_show = get_news_by_pos('科技');	?>
+			<div class=caption>
+				<div class=captions>科技</div>
+				<div class=line>|</div>
+				<a href="" class=more></a>
+			</div>
+			<div class=forbes_l_content>
+				<div class=list1>
+					<div class=list1_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+					<div class=list1_description><a href=""><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
 				<?php for($i=1;$i<5;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
 			</div>
-			<div class=dash></div>
-			<div class=title>
-				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>专栏　</div>
+			<div class=dashed></div>
+						
+			
+			<div class=caption>
+				<div class=captions>专栏</div>
 				<div class=line>|</div>
-				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
+				<a href="" class=more></a>
 			</div>
-			<div class=content1>
-				<div id=left><img style="cursor:pointer;" border=0 src="images/index/t_l_t_r_left.jpg"></div>
+			<div class=forbes_l_content>
+				<div id=column_btnl></div>
 				<?php for($i=0;$i<3;$i++){ ?>
 					<div class=content>
-						<div class=cpic><a href=""><img border=0 src="images/index/one.jpg"></a></div>
+						<div class=cpic><a href=""><img border=0 src="/images/other/one.jpg"></a></div>
 						<div class=ccl><a href="">后危机时更</a></div>
 					</div>
 				<?php } ?>
-				<div id=right><img style="cursor:pointer;" border=0 src="images/index/t_l_t_r_right.jpg"></div>
-				<div class=cltitle><a href="">送没摸的专栏</a></div>
-				<?php for($i=0;$i<5;$i++){ ?>
-					<div class=cl <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href=""><img border=0 src="images/index/point1.jpg">　创业投资中国经济的泡沫有多大？</a></div>
+				<div id=column_btnr></div>
+
+
+				<div class=list1>
+					<div class=list1_title><a href="" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+				</div>
+				<?php for($i=1;$i<5;$i++){ ?>
+					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
-				<div id=ck><a href="">查看更多此人专栏>></a></div>
 			</div>
-			<div class=dash></div>
-			<div class=title>
-				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>读者高见</div>
+			<div class=dashed></div>
+			
+			
+			<div class=caption>
+				<div class=captions style="width:60px">读者高见</div>
 				<div class=line>|</div>
-				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>
+				<a href="" class=more></a>
 			</div>
+			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
+			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
 			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
 			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
 			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
@@ -210,164 +222,174 @@
 			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
 		</div>
 		
-		<div class=c_l style="margin-left:15px;">
-			<div class=title>
-				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>投资</div>
+		<div class=forbes_l style="margin-left:25px;">
+			<?php $record_show = get_news_by_pos('投资');	?>
+			<div class=caption>
+				<div class=captions>投资</div>
 				<div class=line>|</div>
-				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>	
+				<a href="" class=more></a>
 			</div>
-			<?php
-				$record_show = get_news_by_pos('投资');
-  		?>
-			
-			<div class=content3>
-				<div id=content3_title><a href=""><?php echo $record_show[0]->short_title ?></a></div>
-				<div class=piccontent1>
-					<a class=pic href=""><img border=0 width=70 height=70 src="<?php echo $record_show[0]->video_photo_src ?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href=""><?php echo strip_tags($record_show[0]->description);?></a>
+			<div id=forbes_l_content>
+			 	<div class=list1 >
+					<div class=list1_title><a href=""><?php echo $record_show[0]->short_title ?></a></div>
+					<div class=list1_description2>
+						<a class=list1_pic href=""><img border=0 width=70 height=70 src="<?php echo $record_show[0]->video_photo_src ?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href=""><?php echo strip_tags($record_show[0]->description);?></a>
+					</div>
+
+					<?php for($i=1;$i<6;$i++){ ?>
+						<div class=list2 style="margin-left:3px;"><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+					<?php } ?>
 				</div>
-				<?php for($i=1;$i<6;$i++){ ?>
-					<div class=cl style="margin-left:0px;"><a href="" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
-				<?php } ?>
-			</div>
-			<div class=dash style="margin-top:20px;"></div>
-			<div class=title>
-				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>奢华</div>
+			</div>	
+			<div class=dashed style="height:10px;"></div>
+
+			<?php $record_show = get_news_by_pos('奢华');	?>
+	  	<div class=caption>
+				<div class=captions>奢华</div>
 				<div class=line>|</div>
-				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>	
+				<a href="" class=more></a>
 			</div>
-			<div class=content3>
-					<div class=image><a href=""><img border=0 src="images/index/car.jpg"></a></div>
-					<div class=image_content>
-						<div class=image_title><a href="">2011款R8敞篷车</a></div>
-						<div class=image_context><a href="">奥迪汽车在09年的美国洛杉基国际车将他</a></div>
+			<div class=list1>
+					<div class=image><a href=""><img border=0 src="<?php echo $record_show[0]->video_photo_src ?>" width=150 height=130></a></div>
+					<div class=image_content style="margin-left:15px;">
+						<div class=image_list><a href=""><?php echo $record_show[0]->short_title ?></a></div>
+						<div class=image_description><a href=""><?php echo $record_show[0]->description ?></a></div>
 					</div>
 					<div class=image_content style="margin-top:20px;">
-						<div class=image_title><a href="">2011款R8敞篷车</a></div>
-						<div class=image_context><a href="">奥迪汽车在09年的美国洛杉基国际车将他</a></div>
+						<div class=image_list><a href=""><?php echo $record_show[1]->short_title ?></a></div>
+						<div class=image_description><a href=""><?php echo $record_show[1]->description ?></a></div>
 					</div>
-					<div class=image style="margin-top:20px; margin-left:5px;"><a href=""><img border=0 src="images/index/car.jpg"></a></div>
+					<div class=image style="margin-top:20px; margin-left:5px;"><a href=""><img border=0 src="<?php echo $record_show[1]->video_photo_src ?>"></a></div>
 			</div>
 		</div>
-		<div id=c_r>
-			<div id=gg>
-				<div id=gg_t>
-					<div id=gg_t_l><a href="">财经魔鬼词典</a></div>
-					<div id=gg_t_r><a href="">实用商业词汇</a>  |  <a href="">实用财经词汇</a></div>
+		
+		
+		<div id=forbes_r>
+			<div id=dictionary>
+				<div id=dictionary_t>
+					<div id=dictionary_tl><a href="">财经魔鬼词典</a></div>
+					<div id=dictionary_tr><a href="">实用商业词汇</a>  |  <a href="">实用财经词汇</a></div>
 				</div>
-				<div id=gg_b_l><a href="">股指期货</a></div>
-				<div id=gg_b_r><a href="">future 	index</a></div>
+				<div id=dictionary_bl><a href="">股指期货</a></div>
+				<div id=dictionary_br><a href="">future 	index</a></div>
 			</div>
-			<div id=c_r_t>
-				<div id=title>
-					<div id=wz>论坛活动</div>
-					<div id=more><a href=""><img border=0 src="images/index/c_r_t_more.gif"></a></div>
+
+			<div id=activity>
+				<div class=public_top1>
+					<div class=public_caption1>论坛活动</div>
+					<a href="" class=public_more1></a>
 				</div>
-				<div id=c_r_t_left></div>
-				<div id=c_r_t_content>
-					<div id=images><img src="images/index/three.jpg"></div>
+				<div class=public_box1>
+					<div id=images><img src="/images/other/three.jpg"></div>
 					<div id=context>
-						<span style="font-size:13px; color:#333333">2010福布斯中国经济发展论坛</span><br>举办日期：3月18日
-					</div>
-					<div id=address>地点：上海</div><div id=info><a href="">查看详细</a></div>	
+						<span style="font-size:13px; font-weight:bold; color:#333385">2010福布斯中国经济发展论坛</span><br>举办日期：3月18日<br>地点：上海</div>
+						<div id=info><a href="">查看详细</a></div>	
 				</div>
-				<div id=c_r_t_right></div>
+				<div class=public_bottom1></div>
 			</div>
-			<div class=c_r_m>
-				<div class=c_r_m_left></div>
-				<div class=c_r_m_content>
-					<div class=c_r_m_t>
-						<div class=title>增长俱乐部</div>
-						<div class=content>
-							<div class=pic>
-								<a href=""><img border=0 src="images/index/one.jpg"></a>	
-							</div>	
-							<div class=pictitle>
-								<a href="">沪二手房议价空间议价</a>
-							</div>
-							<div class=piccontent>
-								<a href="">　2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
-							</div>
-						</div>
-					</div>
-					<div class=c_r_m_b>
-						<div class=c_r_m_b_l><a href="">我要报名</a></div><div class=c_r_m_b_r><a style="color:#000000;" href="">VC/PE/天使人投资人数据库</a></div>	
-					</div>
-				</div>
-				<div class=c_r_m_right></div>
-			</div>
-			<div class=c_r_m>
-				<div class=c_r_m_left></div>
-				<div class=c_r_m_content>
-					<div class=c_r_m_t>
-						<div class=title>城市</div>
-						<div class=content>
-							<div class=pic>
-								<a href=""><img border=0 src="images/index/one.jpg"></a>	
-							</div>	
-							<div class=pictitle>
-								<a href="">沪二手房议价空间议价</a>
-							</div>
-							<div class=piccontent>
-								<a href="">　2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
-							</div>
-						</div>
-					</div>
-					<div class=c_r_m_b>
-						<div class=c_r_m_b_l><img class=image src="images/index/c_r_m_t.gif"><a href="">城市榜</a></div><div class=c_r_m_b_r><a style="color:#000000;" href="">太仓：被低估的商业城市</a></div>	
-					</div>
-				</div>
-				<div class=c_r_m_right></div>
-			</div>
-		</div>
-		<div class=c_r_img>
-			<a href=""><img border=0 src="images/index/bannwe-for.jpg"></a>
-		</div>
-		<div class=c_b_t>
-			<div class=title>
-				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>最受欢迎　</div>
-				<div class=line>|</div>
-				<div class=more><a href="">编辑推荐</a></div>
-			</div>
-			<div class=content>
-				<div class=cl style="margin-top:20px;"><a href=""><img border=0 src="images/index/point.jpg">　创业投资中国经济的泡沫有多大？</a></div>
-				<?php for($i=1;$i<6;$i++){ ?>
-					<div class=cl><a href=""><img border=0 src="images/index/point.jpg">　创业投资中国经济的泡沫有多大？</a></div>
-				<?php } ?>
-			</div>
-			<div class=dash></div>
 			
-		</div>
-		<div id=r_b_t>
-			<div class=title><div id=wz>在线调查</div><div id=more><a href=""><img border=0 src="images/index/c_r_t_more.gif"></a></div></div>
-			<div id=r_b_t_left></div>
-			<div id=r_b_t_content>
-				<div class=r_b_t_context>
-					<a href=""><img border=0 src="images/index/jiantou.jpg">　<span style="font-weight:bold">中国顶尖的NBA问卷调查</span><br>参与调查者有机会获得全年《福布斯》杂志<br>参与调查者有机会获得全年《福布斯》杂志<br><button>进入调查</button></a>	
-				</div>
-				<div id=r_b_t_dash></div>
-				<div class=r_b_t_context>
-					<a href=""><img border=0 src="images/index/jiantou.jpg">　<span style="font-weight:bold">中国顶尖的NBA问卷调查</span><br>参与调查者有机会获得全年《福布斯》杂志<br>参与调查者有机会获得全年《福布斯》杂志<br><button>进入调查</button></a>	
-				</div>
+			<div id=club>
+					<div class=club_caption1>增长俱乐部</div>
+					<a href="" class=club_more1></a>
+					<div class=content>
+							<div class=pic>
+								<a href=""><img border=0 src="images/other/one.jpg"></a>	
+							</div>	
+							<div class=pictitle>
+								<a href="">沪二手房议价空间议价</a>
+							</div>
+							<div class=piccontent>
+								<a href="">2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
+							</div>
+					</div>
+					<div class=bottom>
+						<div class=bottom_l><a href="">我要报名</a></div>
+						<div class=bottom_r><a style="color:#000000;" href="">VC/PE/天使人投资人数据库</a></div>	
+					</div>
 			</div>
-			<div id=r_b_t_right></div>
+			
+			
+			
+			<div id=city>
+					<div class=city_caption1>城市</div>
+					<a href="" class=city_more1></a>
+					<div class=content>
+							<div class=pic>
+								<a href=""><img border=0 src="images/other/one.jpg"></a>	
+							</div>	
+							<div class=pictitle>
+								<a href="">沪二手房议价空间议价</a>
+							</div>
+							<div class=piccontent>
+								<a href="">2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
+							</div>
+					</div>
+					<div class=bottom>
+						<div class=bottom_l><a href="">城市榜</a></div>
+						<div class=bottom_r><a style="color:#000000;" href="">太仓：被低估的商业城市</a></div>	
+					</div>
+			</div>
 		</div>
-		<div class=c_l style="margin-left:15px;">
-			<div class=title>
-				<div class=t_pic><img border=0 src="images/index/square.jpg"></div>
-				<div class=wz>采编智库　</div>
+		
+		
+		<div class=c_r_img>
+			<a href=""><img border=0 src="images/other/bannwe-for.jpg"></a>
+		</div>
+		
+		
+		<div class=forbes_l style="margin-left:25px;">
+    	<div class=caption>
+				<div class=caption1>最受欢迎</div>
 				<div class=line>|</div>
-				<div class=more><a href=""><img border=0 src="images/index/more.jpg"></a></div>	
+				<div class=caption2>编辑推荐</div>
 			</div>
-			<div class=content1>
+			<?php for($i=0;$i<6;$i++){ ?>
+					<div class=list3><a href="">创业投资中国经济的泡沫有多大？</a></div>
+			<?php } ?>
+			<div class=dashed></div>
+		</div>
+		
+		<div class=forbes_r>
+			
+			<div id=inventory>
+				<div class=public_top1>
+					<div class=public_caption1 style="color:#4990B9">在线调查</div>
+					<a href="" class=public_more1></a>
+				</div>
+
+				<div class=inventory_content>
+					<div class=inventory_title><a href="">中国顶尖的NBA问卷调查</a></div>
+					<div class=inventory_list>
+							参与调查者有机会获得全年《福布斯》杂志
+							<br>参与调查者有机会获得全年《福布斯》杂志
+					</div>
+					<a href="" class=inventory_button></a>
+					<div class=inventory_dash></div>
+
+					<div class=inventory_title><a href="">中国顶尖的NBA问卷调查</a></div>
+					<div class=inventory_list>
+							参与调查者有机会获得全年《福布斯》杂志
+							<br>参与调查者有机会获得全年《福布斯》杂志
+					</div>
+					<a href="" class=inventory_button></a>
+   			</div>
+
+
+
+				<div class=public_bottom1></div>
+			</div>
+		</div>	
+			
+		<div class=forbes_l style="margin-left:25px;">
+	  	<div class=caption>
+				<div class=captions style="width:60px;">采编智库</div>
+				<div class=line>|</div>
+				<a href="" class=more></a>
+			</div>
 				<?php for($i=0;$i<8;$i++){ ?>
-					<div class=context2>
-						<div class=c_context_t>
-							<a href=""><img border=0 src="images/index/seven.jpg"></a>	
-						</div>
-						<div class=c_context_b>
+					<div class=writer>
+						<div class=writer_pic><a href=""><img border=0 src="images/index/seven.jpg"></a></div>
+						<div class=writer_name>
 							<a href="">
 								<span style="font-weight:bold;">康健</span><br>
 								康桥健笔
@@ -375,24 +397,33 @@
 						</div>	
 					</div>
 				<?php } ?>
-			</div>
 		</div>
-		<div id=r_b_b>
-			<div class=title><div id=wz>福布斯杂志</div><div id=more><a href=""><img border=0 src="images/index/c_r_t_more.gif"></a></div></div>
-			<div class=content>
-				<div class=pic><a href=""><img border=0 src="images/index/five.jpg"></a></div>
-				<div class=piccontent>
-					<div class=pictitle>福布斯2010/1</div>
-					<div class=context>在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</div>	
+		
+
+		<div class=forbes_r>
+			
+			<div id=mag>
+				<div class=public_top1>
+					<div class=public_caption1 style="color:#4990B9">福布斯杂志</div>
+					<a href="" class=public_more1></a>
 				</div>
+				<div id=mag_content>
+						<div class=pic><a href=""><img border=0 src="images/other/five.jpg"></a></div>
+						<div class=pictitle>福布斯2010/1</div>
+						<div class=context>在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</div>	
+
+			 			 <div id=mag_dash></div>
+
+						<div id=search>往期杂志查阅</div>
+						<div id=sel><select></select>　<select></select></div>
+						<button id="btnonline"></button><button id="sq"></button>
+						<div id=ck><a href="">查看杂志列表>></a></div>
+
+				</div>
+				<div class=public_bottom1></div>
 			</div>
-			<div id=r_b_b_dash></div>
-			<div id=search>往期杂志查阅</div>
-			<div id=sel><select></select>　<select></select></div>
-			<button id="btnonline"></button><button id="sq"></button>
-			<div id=ck><a href="">查看杂志列表>></a></div>
-		</div>
-		<? require_once('inc/bottom.inc.php');?>
+		</div>	
+	<? require_once('inc/bottom.inc.php');?>
 	</div>
 </body>
 </html>

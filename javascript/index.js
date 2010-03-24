@@ -1,80 +1,118 @@
-var head_id=0;
+var headline_id=0;
 var is_changed=0;
-function head(now_id)
+var subject_id=0;
+
+function head_line(now_id)
 {
-		$(".head_btn2").css('background','url(/images/index/slideshow_unactive.gif) no-repeat');
+		$(".headline_btn2").css('background','url(/images/index/slideshow_unactive.gif) no-repeat');
 		$("#"+now_id).css('background','url(/images/index/slideshow_active.gif) no-repeat');
 	
-		$(".head_pic").hide();
-		$("#head_pic_"+now_id).show();
+		$(".headline_pic").hide();
+		$("#headline_pic_"+now_id).show();
 
-		$(".head_title").hide();
-		$("#head_title_"+now_id).show();		
+		$(".headline_title").hide();
+		$("#headline_title_"+now_id).show();		
 
-		$(".head_content").hide();
-		$("#head_content_"+now_id).show();		
+		$(".headline_description").hide();
+		$("#headline_description_"+now_id).show();		
 
-		$(".head_related").hide();
-		$("#head_related_"+now_id).show();		
+		$(".headline_related").hide();
+		$("#headline_related_"+now_id).show();		
 		
-		head_id=now_id;
+		headline_id=now_id;
 		is_changed=1;
 }
 
-function head2()
+function head_line2()
 {
 	  if(is_changed=="1")
 	  {
 	  	is_changed=0;
-			setTimeout("head2()",7000);
+			setTimeout("head_line2()",7000);
 	  	return false;
 	  }
-		var now_id=head_id;	
-		now_id=parseInt(head_id)+1;
+		var now_id=headline_id;	
+		now_id=parseInt(headline_id)+1;
     if(now_id>3){now_id=0;}
 
-		$(".head_btn2").css('background','url(/images/index/slideshow_unactive.gif) no-repeat');
+		$(".headline_btn2").css('background','url(/images/index/slideshow_unactive.gif) no-repeat');
 		$("#"+now_id).css('background','url(/images/index/slideshow_active.gif) no-repeat');
 	
-		$(".head_pic").hide();
-		$("#head_pic_"+now_id).show();
+		$(".headline_pic").hide();
+		$("#headline_pic_"+now_id).show();
 
-		$(".head_title").hide();
-		$("#head_title_"+now_id).show();		
+		$(".headline_title").hide();
+		$("#headline_title_"+now_id).show();		
 
-		$(".head_content").hide();
-		$("#head_content_"+now_id).show();		
+		$(".headline_description").hide();
+		$("#headline_description_"+now_id).show();		
 
-		$(".head_related").hide();
-		$("#head_related_"+now_id).show();		
+		$(".headline_related").hide();
+		$("#headline_related_"+now_id).show();		
 		
-		head_id=now_id;
-		setTimeout("head2()",7000);
+		headline_id=now_id;
+		setTimeout("head_line2()",7000);
 }		
 
-
-
 $(function(){
-	$(".head_btn2").click(function()
-	{
-		var now_id=$(this).attr('id');	
-		head(now_id);
-	})
+		$(".headline_btn2").click(function()
+		{
+			var now_id=$(this).attr('id');	
+			head_line(now_id);
+		})
 	
-	$(".head_btn1").click(function()
-	{
-		var now_id=$(this).attr('id');	
-		if(now_id=="l"){now_id=parseInt(head_id)-1;}
-		else{now_id=parseInt(head_id)+1;}
-    if(now_id>3){now_id=0;}
-    if(now_id<0){now_id=3;}
+		$(".headline_btn1").click(function()
+		{
+			var now_id=$(this).attr('id');	
+			if(now_id=="l"){now_id=parseInt(headline_id)-1;}
+			else{now_id=parseInt(headline_id)+1;}
+ 	    if(now_id>3){now_id=0;}
+ 	    if(now_id<0){now_id=3;}
 
-		head(now_id);
-	})	
+			head_line(now_id);
+		})	
+		
+		
+		$("#subject_btnl").click(function()
+		{
+
+			if(subject_id==0){return false;}
+			
+			$(".subject_content").hide();
+			var subject_id1=parseInt(subject_id)-1;
+			var subject_id2=parseInt(subject_id);
+			var subject_id3=parseInt(subject_id)+1;
+
+			$("#subject_content_"+subject_id1).show();
+			$("#subject_content_"+subject_id2).show();
+			$("#subject_content_"+subject_id3).show();
+			subject_id=parseInt(subject_id)-1;
 
 
+		})		
+		
+		$("#subject_btnr").click(function()
+		{
+			if(subject_id>=5){return false;}
+			
+			$(".subject_content").hide();
+			var subject_id1=parseInt(subject_id)+1;
+			var subject_id2=parseInt(subject_id)+2;
+			var subject_id3=parseInt(subject_id)+3;
+			
+			$("#subject_content_"+subject_id1).show();
+			$("#subject_content_"+subject_id2).show();
+			$("#subject_content_"+subject_id3).show();
+			subject_id=parseInt(subject_id)+1;
 
+		})				
+		
+		
+		
 });
 
 
-setTimeout("head2()",7000);
+
+
+
+setTimeout("head_line2()",7000);
