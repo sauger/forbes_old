@@ -15,6 +15,7 @@
 	
 	$position->name = $_POST['name'];
 	$position->position_limit = $_POST['position_limit'];
+	$position->type = $_POST['type'];
 	
 	$position->save();
 	redirect('index.php');
