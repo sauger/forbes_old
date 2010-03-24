@@ -1,32 +1,38 @@
-function send_search(){
-	var s_text = $('#s_text').val();
-	var url = "list_edit.php?s_text=" + encodeURI(s_text)+"&id="+$("#list_id").val();
-	if ($('#s_list_type').val() >=0){
-		url = url + '&s_list_type=' + $('#s_list_type').val();
-	}
-	if ($('#adopt').val()!=''){
-		url = url + '&adopt=' + $('#adopt').val();
-	}
-	location.href = url;
+function search_news(){
+    if(arguments.length   ==   0)  
+    	class_name   =   'sau_search';  
+    else
+    	class_name = arguments[0];
+	var url = new Array();
+	var id = 'id='+$("#list_id").val();
+	url.push(id);
+	$('.'+class_name).each(function(){
+		url.push($(this).attr('name') + '=' + encodeURI($(this).val()));
+	});
+	
+	url = "?" + url.join('&');
+	//var url = "?title="+encodeURI($("#title").attr('value'))+"&category="+$("#category").attr('value')+"&adopt="+$("#adopt").attr('value');
+	//url += "&language_tag=" + $('#language_tag').val();
+	window.location.href=url;
 }
 
 
 $(function(){
-	$('#search_b').click(function(){
-		send_search();
+	$('#search_button').click(function(){
+		search_news();
 	});
-	$('#s_text').keypress(function(e){
+	$('select.sau_search').change(function(){
+		search_news();
+	});
+	$('input[name=title]').keypress(function(e){
 		if(e.keyCode == 13){
-			send_search();
+			search_news();
 		}
-	});
-	$('#adopt').change(function(){
-		send_search();
 	});
 	
 	$(".publish").live('click',function(){
 		var ob = $(this);
-		$.post('postion.post.php',{'type':'publish','pid':$("#list_id").val(),'nid':$(this).attr("name"),'p_type':'list'},function(data){
+		$.post('postion.post.php',{'type':'publish','pid':$("#list_id").val(),'nid':$(this).attr("name"),'p_type':'image'},function(data){
 			if(data=='full'){
 				alert('已经达到限制条目，请先删除后再添加');
 			}else{

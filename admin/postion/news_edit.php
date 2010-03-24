@@ -22,7 +22,11 @@
 	}
 	
 	if($is_adopt==1){
-		$sql .= " and id in ($ids)";
+		if($ids!=''){
+			$sql .= " and id in ($ids)";
+		}else{
+			$sql .= " and id is null";
+		}
 	}elseif($is_adopt=='0'){
 		if($ids!=''){
 			$sql .= " and id not in ($ids)";
