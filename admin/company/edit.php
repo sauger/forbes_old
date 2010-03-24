@@ -17,7 +17,7 @@
 <?php
 	$id = $_REQUEST['id'];
 	if($id!=''){
-		$record = new table_class('fb_gs');
+		$record = new table_class('fb_company');
 		$record->find($id);
 	}
 	$db = get_db();
@@ -33,7 +33,7 @@
 		</tr>
 		<tr class="tr4">
 			<td width="130">公司名称</td>
-			<td width="695" align="left"><input id="gs_mc" type="text" name="gs[mc]" class="required "value="<?php echo $record->mc;?>">
+			<td width="695" align="left"><input id="gs_mc" type="text" name="gs[name]" class="required "value="<?php echo $record->name;?>">
 		</tr>
 		<tr class=tr4 id="a_com">
 			<td width="130">行业</td>
@@ -66,45 +66,45 @@
 		<?php }}?>
 		<tr class="tr4">
 			<td>国家</td>
-			<td width="695" align="left"><input id="gs_gj" type="text" name="gs[gj]" value="<?php echo $record->gj;?>">
+			<td width="695" align="left"><input id="gs_gj" type="text" name="gs[country]" value="<?php echo $record->country;?>">
 		</tr>
 		<tr class="tr4">
 			<td>省份</td>
-			<td width="695" align="left"><input id="gs_sf" type="text" name="gs[sf]" value="<?php echo $record->sf;?>">
+			<td width="695" align="left"><input id="gs_sf" type="text" name="gs[province]" value="<?php echo $record->province;?>">
 		</tr>
 		<tr class="tr4">
 			<td>城市</td>
-			<td width="695" align="left"><input id="gs_cs" type="text" name="gs[cs]" value="<?php echo $record->cs;?>">
+			<td width="695" align="left"><input id="gs_cs" type="text" name="gs[city]" value="<?php echo $record->city;?>">
 		</tr>
 		<tr class="tr4">
 			<td>地址</td>
-			<td width="695" align="left"><input id="gs_dz" type="text" name="gs[dz]" value="<?php echo $record->dz;?>">
+			<td width="695" align="left"><input id="gs_dz" type="text" name="gs[address]" value="<?php echo $record->address;?>">
 		</tr>
 		<tr class="tr4">
 			<td>网址</td>
-			<td width="695" align="left"><input id="gs_wz" type="text" name="gs[wz]" value="<?php echo $record->wz;?>">
+			<td width="695" align="left"><input id="gs_wz" type="text" name="gs[website]" value="<?php echo $record->website;?>">
 		</tr>
 		<tr id="newsshow1" class="normal_news tr4">
-			<td height=265>介绍</td><td><?php show_fckeditor('gs[js]','Admin',true,"265",$record->js);?></td>
+			<td height=265>介绍</td><td><?php show_fckeditor('gs[comment]','Admin',true,"265",$record->comment);?></td>
 		</tr>
 		<tr class="tr4">
 			<td>上市公司代码</td>
-			<td width="695" align="left"><input id="gs_ssdm" type="text" name="gs[ssdm]" value="<?php echo $record->ssdm;?>">
+			<td width="695" align="left"><input id="gs_ssdm" type="text" name="gs[stock_code]" value="<?php echo $record->stock_code;?>">
 		</tr>
 		<tr class="tr4">
 			<td>交易所</td>
 			<td width="695" align="left">
-				<select id="gs_jys" name="gs[jys]" value="<?php echo $record->jys;?>" style="width:90px" class="">
+				<select id="gs_jys" name="gs[stock_place_code]" value="<?php echo $record->stock_place_code;?>" style="width:90px" class="">
 					<option value="">交易所</option>
-					<option value="SS" <? if($record->jys=="SS"){?>selected="selected"<? }?> >上海</option>
-					<option value="SZ" <? if($record->jys=="SZ"){?>selected="selected"<? }?> >深圳</option>
-					<option value="HK" <? if($record->jys=="HK"){?>selected="selected"<? }?> >香港</option>
-					<option value="SI" <? if($record->jys=="SI"){?>selected="selected"<? }?> >新加坡</option>
-					<option value="KS" <? if($record->jys=="KS"){?>selected="selected"<? }?> >韩国</option>
-					<option value="PA" <? if($record->jys=="PA"){?>selected="selected"<? }?> >法国</option>
-					<option value="L" <? if($record->jys=="L"){?>selected="selected"<? }?> >英国</option>
-					<option value="DE" <? if($record->jys=="DE"){?>selected="selected"<? }?> >德国</option>
-					<option value="JP" <? if($record->jys=="JP"){?>selected="selected"<? }?> >日本</option>
+					<option value="SS" <? if($record->stock_place_code=="SS"){?>selected="selected"<? }?> >上海</option>
+					<option value="SZ" <? if($record->stock_place_code=="SZ"){?>selected="selected"<? }?> >深圳</option>
+					<option value="HK" <? if($record->stock_place_code=="HK"){?>selected="selected"<? }?> >香港</option>
+					<option value="SI" <? if($record->stock_place_code=="SI"){?>selected="selected"<? }?> >新加坡</option>
+					<option value="KS" <? if($record->stock_place_code=="KS"){?>selected="selected"<? }?> >韩国</option>
+					<option value="PA" <? if($record->stock_place_code=="PA"){?>selected="selected"<? }?> >法国</option>
+					<option value="L" <? if($record->stock_place_code=="L"){?>selected="selected"<? }?> >英国</option>
+					<option value="DE" <? if($record->stock_place_code=="DE"){?>selected="selected"<? }?> >德国</option>
+					<option value="JP" <? if($record->stock_place_code=="JP"){?>selected="selected"<? }?> >日本</option>
 				</select>
 		</tr>
 		<tr class="tr4">
