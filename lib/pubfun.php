@@ -26,7 +26,12 @@ function display_error($msg) {
 	echo '<font style="color:red;">' .$msg .'</font>';;
 }
 
-function dir_files($path,$include_path=true){
+
+function dir_files($path){
+	function DateCmp($a, $b)
+	{
+	  return ($a[1] < $b[1]) ? -1: 1;
+	}
 	$dir = opendir(ROOT_DIR .$path);
 	if(substr($path,-1)!='/') $path .= '/';
 	if($dir === false) return false;
@@ -34,10 +39,14 @@ function dir_files($path,$include_path=true){
 	while (($file = readdir($dir)) !== false)
 	{
 		if ($file == '.' || $file == '..') continue;
-		if($include_path) $file = $path . $file;
-		$result[] = $file;
+		$LastModified = filectime(ROOT_DIR.$path . $file);
+    	$Files[] = array($file, $LastModified);
 	}
 	closedir($dir);
+	usort($Files, 'DateCmp');
+	foreach ($Files as $file) {
+		$result[] = $file[0];
+	}
 	return $result;
 }
 	
@@ -160,31 +169,30 @@ function strfck($str)
 //获取FCK字符串内容
 function get_fck_content($str,$symbol='fck_pageindex')
 {
-	$ies = '<div style="page-break-after: always;">
-	<span style="display: none;">&nbsp;</span></div>';	
-	$ffs = '<div style="page-break-after: always">
-		<span style="display: none">&nbsp;</span></div>';
-	$ffs2 = '<div style="page-break-after: always;">
-		<span style="display: none;">&nbsp;</span></div>
-';
-	$contents = split($ies,$str);
+	$start = strpos($str, '<div style="page-break-after');
+	if($start===false){
+		return $str;
+	}
+	$end = strpos($str,"</div>",$start);
+	$length = $end-$start+6;
+	$page_flag = substr($str, $start, $length);
+	
+	$contents = split($page_flag,$str);
 	$record_count_token = $symbol . "_record_count";	
 	$pagecounttoken = $symbol . "_count";
 	global $$pagecounttoken;
 	global $$record_count_token;
-	if (count($contents) < 2 ) {
-		$contents = split($ffs,$str);
-	}
-	if (count($contents) < 2 ) {
-		$contents = split($ffs2,$str);
-	}
 	$$record_count_token = count($contents);
 	$$pagecounttoken = $$record_count_token;
 	$index = isset($_REQUEST[$symbol]) ? $_REQUEST[$symbol] : 1;
 	return strfck($contents[$index-1]);
 }
 
-function print_fck_pages2($url="",$symbol='fck_pageindex'){
+function print_fck_pages2($str,$url="",$symbol='fck_pageindex'){
+	$start = strpos($str, '<div style="page-break-after');
+	if($start===false){
+		return $str;
+	}
 	if(empty($url))$url = 'news.php?id='.$_REQUEST['id'];
 	$str = $symbol."_count";
 	global $$str;

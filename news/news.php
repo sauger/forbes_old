@@ -102,9 +102,7 @@
 						<div id="l_b_center">
 							<div id="resource">来源于：福布斯中文网</div>
 							<?php if($news->top_info!=''){?>
-								<div id=text4>
-									<?php echo $news->top_info?>
-								</div>
+								<div id="text4"><?php echo $news->top_info;?></div>
 							<?php }?>
 							<?php
 								if($news->author!=''){
@@ -189,7 +187,7 @@
 						<?php echo get_fck_content($content);?>
 					</div>
 					<div id="paginate">
-						<?php print_fck_pages2();?>
+						<?php print_fck_pages2($content);?>
 					</div>
 				</div>
 				<div class="dash"></div>

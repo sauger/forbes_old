@@ -6,6 +6,7 @@
 #top_function .user_btn a{font-size:12px; color:#ffffff; text-decoration:none;}
 #top_function #magazine_title{width:180px; height:14px; margin-top:6px; margin-left:13px; color:#ffffff; font-size:14px; font-weight:bold; float:left; display:inline;}
 #top_function #magazine_pic{width:72px; height:93px; margin-top:14px; margin-left:10px; float:left; display:inline;}
+#top_function #magazine_pic img{width:72px; height:93px;}
 #top_function #magazine_description{width:122px; height:60px; margin-top:15px; margin-left:5px; color:#666666; line-height:20px; overflow:hidden; float:left; display:inline;}
 #top_function #magazine_description .font1{color:#333333; font-weight:bold;}
 #top_function #magazine_btn{width:122px; height:23px; margin-top:5px; margin-left:5px; float:left; display:inline;}

@@ -13,36 +13,12 @@
 	?>
 </head>
 <?php
-	$content = $_REQUEST['content'];
+	$content = trim($_REQUEST['content']);
 	$type = $_REQUEST['type'];
 	$db = get_db();
-	if($content!= '')
-	{
-		if($type == '1')
-		{
-			$sql = "select * from fb_fh where name like '%".trim($content)."%'";
-			
-		}
-		else if ($type == '0')
-		{
-			if ($content == '男')
-			{
-				$sql = "select * from fb_fh where xb = '1'";
-			}
-			else if ($content == '女')
-			{
-				$sql = "select * from fb_fh where xb = '0'";
-			}
-			else
-			{
-				$sql = "select * from fb_fh where 1=2";
-			}
-			
-		}
-	}
-	else
-	{
-		$sql = "select * from fb_fh";
+	$sql = "select a.* from fb_rich a";
+	if($content){
+		$sql .= " where name like '%{$content}%'";
 	}
 
   $record = $db->paginate($sql,30);
@@ -61,7 +37,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="200">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="100">出生年份</td><td width="100">今日排名</td><td width="100">个人财富</td><td width="100">拥有公司</td><td width="150">操作</td>
+			<td width="200">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="100">今日排名</td><td width="150">操作</td>
 		</tr>
 
 
@@ -74,38 +50,22 @@
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->name);?></a></td>
 					<td>
-						<?php if($record[$i]->xb==0) {echo '女';} else if($record[$i]->xb==1) {echo '男';} else {echo '未知';}?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->nl);?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->gj);?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->birthday);?>
-					</td>
-					<td>
-						<?php echo strip_tags($record[$i]->jrpm);?>
+						<?php if($record[$i]->gender==0) {echo '女';} else if($record[$i]->gender==1) {echo '男';} else {echo '未知';}?>
 					</td>
 					<td>
 						<?php
-								  $sql1 = "select * from fb_fh_grcf where fh_id = '".$record[$i]->id."' order by jzrq desc";
-  								$record1 = $db->query($sql1);
-									echo strip_tags($record1[0]->zc);
+						if(!$record[$i]->birthday){
+							echo "未知";
+						}else{
+							echo intval(date('Y')) - $record[$i]->birthday;	
+						}
 						?>
 					</td>
 					<td>
-						<?php 
-									$sql2 = "select * from fb_fh_gs a,fb_gs b where a.gs_id= b.id and a.fh_id = '".$record[$i]->id."'";
-									$record2 = $db->query($sql2);
-									$len1 = count($record2);
-									echo strip_tags($record2[0]->mc);
-									for ($k=1;$k< $len1;$k++)
-									{
-										echo ",".strip_tags($record2[$k]->mc);
-									}
-						?>
+						<?php echo strip_tags($record[$i]->country);?>
+					</td>
+					<td>
+						<?php echo strip_tags($record[$i]->current_fortune_order);?>
 					</td>
 					<td>
 						<a href="/admin/rich_list/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="加入榜单"><img src="/images/btn_add.png" border="0"></a>

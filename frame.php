@@ -174,7 +174,7 @@
 	}
 
 	function judge_role(){
-		return true;
+		return require_role('admin');
 	}
 	
 	function show_fckeditor($name,$toolbarset='Admin',$expand_toolbar=true,$height="200",$value="",$width = null) {
@@ -299,6 +299,7 @@ function redirect_login($type='js',$referer=true){
 function require_role($role='member'){
 	if(empty($_SESSION[role_name])){
 		redirect_login();
+		die();
 	}	
 }
 
