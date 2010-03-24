@@ -1,4 +1,4 @@
-﻿body {font-size:12px;line-height:0; font-size:0;   font-family:Arial,SimSun; color:#000;  margin:0 auto; padding:0;}
+﻿body {font-size:12px; line-height:0px; font-family:Arial,SimSun; color:#000;  margin:0 auto; padding:0;}
 #ibody{width:1000px; margin:0 auto;}
 p{margin:0; padding:0}
 
@@ -27,7 +27,7 @@ p{margin:0; padding:0}
 #l_t_l a{color:#333385; text-decoration:none;}
 #l_t_l_t{width:273px; height:73px; margin-left:15px; margin-top:11px; float:left; display:inline;}
 #l_t_l_t .t1{width:270px; height:28px; overflow:hidden; font-size:20px; font-family:SimHei; color:#333385; line-height:28px; float:left; display:inline;}
-#l_t_l_t .t2{width:270px; height:40px; color:#666666; overflow:hidden; line-height:20px; float:left; display:inline;}
+#l_t_l_t .t2{width:270px; height:40px; color:#666666; overflow:hidden; font-size:12px; line-height:20px; float:left; display:inline;}
 .l_t_l_m{width:300px;  margin-top:40px; float:left; display:inline;}
 .l_t_l_m_t{width:300px; margin-bottom:10px; float:left; display:inline;}
 .l_t_l_m_t_l{width:89px; float:left; display:inline;}
