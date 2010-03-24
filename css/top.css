@@ -14,12 +14,12 @@
 #top_logo #border{width:2px; height:90px; background:url(/images/top/border.jpg) no-repeat; float:left; display:inline;}
 #top_logo #logo{width:170px; height:75px; margin-top:7px; margin-left:15px; background:url(/images/forbes_logo.png) no-repeat; float:left; display:inline;}
 #top_logo .input{width:160px; height:22px; border:1px solid #99CCFF; margin-top:37px; float:left; display:inline;}
-#top_logo .search{width:83px; height:26px; margin-top:38px; margin-left:5px; border:0px; color:#ffffff; line-height:26px; background:url(/images/index/search_bg.jpg) no-repeat; float:left; display:inline;}
+#top_logo .search{width:83px; height:26px; margin-top:38px; margin-left:5px; border:0px; color:#ffffff; line-height:26px; background:url(/images/top/search_bg.jpg) no-repeat; float:left; display:inline;}
 
 #navigation{width:1000px; height:35px; margin-top:1px; background:url(/images/top/bg2.jpg) repeat-x; float:left; display:inline;}
 #navigation .menu{width:75px; height:35px; text-align:center; overflow:hidden; float:left; display:inline;}
 
-#navigation .vertical{width:2px; height:25px; margin-top:5px; background:url(/images/index/vertical.jpg); float:left; display:inline;}
+#navigation .vertical{width:2px; height:25px; margin-top:5px; background:url(/images/top/vertical.jpg); float:left; display:inline;}
 #navigation .nav{width:31px; height:15px; cursor:pointer;  background-image:none; margin:0 auto; margin-top:10px;}
 
 #navigation .menu #picindex{background-image:url(/images/top/m_index.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/index.png);}
@@ -34,8 +34,8 @@
 #navigation .menu #piczhuanlan{background-image:url(/images/top/m_zhuanlan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/zhuanlan.png);}
 
 #navigation #top_function2{width:214px; height:29px; margin-top:3px; background:url(/images/top/bg3.jpg) no-repeat; background-position:bottom; float:right; display:inline;}
-#navigation #member{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background-image:url(/images/index/hyzq_a.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/hyzq_a.png); float:left; display:inline;}
-#navigation #magazine{width:52px; height:12px; margin-top:12px; margin-right:10px; cursor:pointer; background-image:url(/images/index/zszz.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/zszz.png); float:right; display:inline;}
+#navigation #member{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background-image:url(/images/top/hyzq_a.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/hyzq_a.png); float:left; display:inline;}
+#navigation #magazine{width:52px; height:12px; margin-top:12px; margin-right:10px; cursor:pointer; background-image:url(/images/top/magazine.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/zszz.png); float:right; display:inline;}
 
 
 #navigation2{width:1000px; height:27px; background:#C1E1EE; float:left; display:inline;}

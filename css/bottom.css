@@ -1,6 +1,7 @@
-#ibottom{width:1000px; height:184px; margin-top:10px; background:url('/images/index/bottom_bg.jpg') repeat-x; float:left; display:inline;}
+#all_bottom{width:1000px; height:184px; margin:0 auto;  margin-top:20px; }
+#ibottom{width:1000px; height:184px; background:url('/images/public/bottom_bg.jpg') repeat-x; float:left; display:inline;}
 #ibottom a{color:#ffffff; text-decoration:none;}
-#ibottom .b_v{width:2px; height:133px; margin-top:5px; background:url('/images/index/bottom_vertical.jpg') no-repeat; filter: Alpha(Opacity=50); float:left; display:inline;}
+#ibottom .b_v{width:2px; height:133px; margin-top:5px; background:url('/images/public/bottom_vertical.jpg') no-repeat; filter: Alpha(Opacity=50); float:left; display:inline;}
 #ibottom #b_top{width:1000px; height:138px; margin-top:5px; overflow:hidden; float:left; display:inline;}
 #ibottom .td1{width:74px; height:138px; margin-left:8px; line-height:20px;  text-align:left; overflow:hidden; float:left; display:inline;}
 #ibottom .td2{width:115px; height:138px; margin-left:5px; line-height:20px; text-align:left; overflow:hidden; float:left; display:inline;}
