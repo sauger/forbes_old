@@ -1,6 +1,6 @@
 <?php
 	$db = get_db();
-	$records = $db->query("select * from fb_user where role_name='author'");
+	$records = $db->query("select * from fb_user where role_name='author' or role_name='journalist'");
 	$count = count($records);
 	
 	$column = $db->query("select * from fb_position_relation where type='column' and position_id=$id");
@@ -35,7 +35,7 @@
 		<tr class="tr3" id="<?php echo $records[$i]->id;?>">
 			<td><?php echo $records[$i]->nick_name;?></td>
 			<td><?php echo $records[$i]->column_name;?></td>
-			<td>专栏作者</td>
+			<td><?php if($records[$i]->role_name=='author')echo "专栏作者";else echo "记者";?></td>
 			<td>
 				<?php 
 					$rate_flag = false;

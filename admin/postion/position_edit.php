@@ -42,7 +42,7 @@
 				<select name="type">
 					<option <?php if($record->type=='news')echo 'selected="selected"'?> value="news">新闻</option>
 					<option <?php if($record->type=='category')echo 'selected="selected"'?> value="category">新闻类别</option>
-					<option <?php if($record->type=='column')echo 'selected="selected"'?> value="column">专栏</option>
+					<option <?php if($record->type=='column')echo 'selected="selected"'?> value="column">专栏记者</option>
 					<option <?php if($record->type=='image')echo 'selected="selected"'?> value="image">图片</option>
 					<option <?php if($record->type=='list')echo 'selected="selected"'?> value="list">榜单</option>
 				</select>

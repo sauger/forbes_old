@@ -36,6 +36,7 @@
 				break;
 			}
 		}
+		$is_adopt = $_REQUEST['adopt'];
 		$list= new table_class('fb_custom_list_type');
 		$conditions = array();
 		if($_REQUEST['s_text']){
@@ -44,8 +45,28 @@
 		if($_REQUEST['s_list_type']){
 			$conditions[]= "list_type={$_REQUEST['s_list_type']}";			
 		}
+		$db = get_db();
+		$news = $db->query("select * from fb_position_relation where type='list' and position_id=$id");
+		$news_count = count($news);
+		$ids = $news[0]->news_id;
+		for($i=1;$i<$news_count;$i++){
+			$ids.=','.$news[$i]->news_id;
+		}
+		
+		if($is_adopt==1){
+			if($ids!=''){
+				$conditions[]= "id in ($ids)";
+			}else{
+				$conditions[]= "id is null";
+			}
+			
+		}elseif($is_adopt=='0'){
+			if($ids!=''){
+				$conditions[]= "id not in ($ids)";
+			}
+		}
 		if($_REQUEST['s_list_position']){
-			$conditions[]= "position={$_REQUEST['s_list_position']}";		
+			$conditions[]= "position={$_REQUEST['s_list_position']}";
 		}
 		if($conditions){
 			$conditions = array('conditions' => implode(' and ', $conditions));
