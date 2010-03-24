@@ -10,7 +10,7 @@
 	$position = new table_class("fb_position");
 	$position->find($pid);
 	if($type=='publish'){
-		$count = $db->query("select count(*) as num from fb_position_relation where type='news' and position_id=$pid");
+		$count = $db->query("select count(*) as num from fb_position_relation where type='$p_type' and position_id=$pid");
 		if($count[0]->num==$position->position_limit){
 			echo "full";
 			die();
@@ -18,7 +18,7 @@
 		$pos = new table_class("fb_position_relation");
 		$pos->position_id = $pid;
 		$pos->news_id = $nid;
-		$pos->type = 'news';
+		$pos->type = $p_type;
 		$pos->save();
 	}
 	elseif($type=='revocation'){
