@@ -187,7 +187,7 @@
 						<?php echo get_fck_content($content);?>
 					</div>
 					<div id="paginate">
-						<?php print_fck_pages2();?>
+						<?php print_fck_pages2($content);?>
 					</div>
 				</div>
 				<div class="dash"></div>

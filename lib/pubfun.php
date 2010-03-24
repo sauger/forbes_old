@@ -188,7 +188,11 @@ function get_fck_content($str,$symbol='fck_pageindex')
 	return strfck($contents[$index-1]);
 }
 
-function print_fck_pages2($url="",$symbol='fck_pageindex'){
+function print_fck_pages2($str,$url="",$symbol='fck_pageindex'){
+	$start = strpos($str, '<div style="page-break-after');
+	if($start===false){
+		return $str;
+	}
 	if(empty($url))$url = 'news.php?id='.$_REQUEST['id'];
 	$str = $symbol."_count";
 	global $$str;
