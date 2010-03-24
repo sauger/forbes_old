@@ -19,11 +19,11 @@
 	$db = get_db();
 	if($content!= '')
 	{
-		$sql = "select * from fb_gs where ".$type." like '%".trim($content)."%'";
+		$sql = "select * from fb_company where ".$type." like '%".trim($content)."%'";
 	}
 	else
 	{
-		$sql = "select * from fb_gs";
+		$sql = "select * from fb_company";
 	}
 	$record = $db->paginate($sql,15);
 ?>
@@ -34,12 +34,12 @@
 			<td colspan="11">
 				　<a href="edit.php">添加公司</a>　　　搜索　
 				<input id="content" type="text" value="<? echo $_REQUEST['content']?>"><select id="type" style="width:90px" class="">
-					<option value="mc" <? if($_REQUEST['type']=="mc"){?>selected="selected"<? }?> >名称</option>
-					<option value="sf" <? if($_REQUEST['type']=="sf"){?>selected="selected"<? }?> >省份</option>
-					<option value="cs" <? if($_REQUEST['type']=="cs"){?>selected="selected"<? }?> >城市</option>
-					<option value="dz" <? if($_REQUEST['type']=="dz"){?>selected="selected"<? }?> >地址</option>
-					<option value="wz" <? if($_REQUEST['type']=="wz"){?>selected="selected"<? }?> >网址</option>
-					<option value="ssdm" <? if($_REQUEST['type']=="ssdm"){?>selected="selected"<? }?> >上市公司代码</option>
+					<option value="name" <? if($_REQUEST['type']=="name"){?>selected="selected"<? }?> >名称</option>
+					<option value="province" <? if($_REQUEST['type']=="province"){?>selected="selected"<? }?> >省份</option>
+					<option value="city" <? if($_REQUEST['type']=="city"){?>selected="selected"<? }?> >城市</option>
+					<option value="address" <? if($_REQUEST['type']=="address"){?>selected="selected"<? }?> >地址</option>
+					<option value="website" <? if($_REQUEST['type']=="website"){?>selected="selected"<? }?> >网址</option>
+					<option value="stock_code" <? if($_REQUEST['type']=="stock_code"){?>selected="selected"<? }?> >上市公司代码</option>
 				</select>
 				<input type="button" value="搜索" id="search" style="border:1px solid #0000ff; height:21px">
 			</td>
@@ -52,16 +52,16 @@
 			for($i=0;$i< $len;$i++){
 		?>
 				<tr class="tr3" id=<?php echo $record[$i]->id;?> >
-					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->mc);?></a></td>
+					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->name);?></a></td>
 					<td align="center">
-						<?php echo strip_tags($record[$i]->gj);?>
+						<?php echo strip_tags($record[$i]->country);?>
 					</td>
 					<td align="center">
-						<?php echo strip_tags($record[$i]->ssdm);?>
+						<?php echo strip_tags($record[$i]->stock_code);?>
 					</td>
 					<td align="center">
 						<?php
-								switch ($record[$i]->jys)
+								switch ($record[$i]->stock_place_code)
 									{
 										case SS:
   										echo "上海";

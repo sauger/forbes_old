@@ -1,7 +1,7 @@
 <?php 
 	require "../../frame.php";
 	$gs_id = $_POST['id'] ? $_POST['id'] : 0;
-	$record = new table_class('fb_gs');
+	$record = new table_class('fb_company');
 	if($gs_id!=0){
 		$record->find($gs_id);
 	}
