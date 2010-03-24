@@ -174,7 +174,7 @@
 	}
 
 	function judge_role(){
-		return true;
+		return require_role('admin');
 	}
 	
 	function show_fckeditor($name,$toolbarset='Admin',$expand_toolbar=true,$height="200",$value="",$width = null) {

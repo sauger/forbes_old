@@ -163,7 +163,7 @@ class table_class{
 		}
 		if ($argsnum >= 2) {
 			$arg = func_get_arg(1);
-			if (!is_array($arg)) return ;
+			if (!empty($arg) && !is_array($arg)) return ;
 			if (!empty($arg["conditions"])) {
 				$sqlstr .= " and " .$arg["conditions"];
 			}			
