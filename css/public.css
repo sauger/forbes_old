@@ -22,20 +22,20 @@
 #navigation .vertical{width:2px; height:25px; margin-top:5px; background:url(/images/public/vertical.jpg); float:left; display:inline;}
 #navigation .nav{width:31px; height:15px; cursor:pointer;  background-image:none; margin:0 auto; margin-top:10px;}
 
-#navigation .menu #picindex{background-image:url(/images/public/m_index.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/index.png);}
-#navigation .menu #picbangdan{background-image:url(/images/public/m_bangdan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/bangdan.png);}
-#navigation .menu #picfuhao{background-image:url(/images/public/m_fuhao.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/fuhao.png);}
-#navigation .menu #pictouzi{background-image:url(/images/public/m_touzi.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/touzi.png);}
-#navigation .menu #picchuangye{background-image:url(/images/public/m_chuangye.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/chuangye.png);}
-#navigation .menu #picshangye{background-image:url(/images/public/m_shangye.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/shangye.png);}
-#navigation .menu #pickeji{background-image:url(/images/public/m_keji.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/keji.png); margin:0 auto; margin-top:11px;}
-#navigation .menu #picchengshi{background-image:url(/images/public/m_chengshi.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/chengshi.png);}
-#navigation .menu #picshehua{background-image:url(/images/public/m_shehua.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/shehua.png);}
-#navigation .menu #piczhuanlan{background-image:url(/images/public/m_zhuanlan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/zhuanlan.png);}
+#navigation .menu #picindex{background-image:url(/images/public/m_index.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/index.png);}
+#navigation .menu #picbangdan{background-image:url(/images/public/m_bangdan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/bangdan.png);}
+#navigation .menu #picfuhao{background-image:url(/images/public/m_fuhao.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/fuhao.png);}
+#navigation .menu #pictouzi{background-image:url(/images/public/m_touzi.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/touzi.png);}
+#navigation .menu #picchuangye{background-image:url(/images/public/m_chuangye.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/chuangye.png);}
+#navigation .menu #picshangye{background-image:url(/images/public/m_shangye.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/shangye.png);}
+#navigation .menu #pickeji{background-image:url(/images/public/m_keji.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/keji.png); margin:0 auto; margin-top:11px;}
+#navigation .menu #picchengshi{background-image:url(/images/public/m_chengshi.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/chengshi.png);}
+#navigation .menu #picshehua{background-image:url(/images/public/m_shehua.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/shehua.png);}
+#navigation .menu #piczhuanlan{background-image:url(/images/public/m_zhuanlan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/zhuanlan.png);}
 
 #navigation #top_function2{width:214px; height:29px; margin-top:3px; background:url(/images/public/bg3.jpg) no-repeat; background-position:bottom; float:right; display:inline;}
-#navigation #member{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background-image:url(/images/public/member.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/hyzq_a.png); float:left; display:inline;}
-#navigation #magazine{width:52px; height:12px; margin-top:12px; margin-right:10px; cursor:pointer; background-image:url(/images/public/magazine.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/zszz.png); float:right; display:inline;}
+#navigation #member{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background:url(/images/public/member.png) no-repeat; float:left; display:inline;}
+#navigation #magazine{width:52px; height:12px; margin-top:12px; margin-right:10px; cursor:pointer; background:url(/images/public/magazine.png); float:right; display:inline;}
 
 
 #navigation2{width:1000px; height:27px; background:#C1E1EE; float:left; display:inline;}
