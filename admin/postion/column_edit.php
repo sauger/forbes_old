@@ -29,25 +29,25 @@
 			<td colspan="5" width="795">　自定义专栏<a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class="tr2">
-			<td width="205">用户名</td><td width="200">用户昵称</td><td width="180">用户身份</td><td width="250">操作</td>
+			<td width="205">作者名</td><td width="200">专栏名</td><td width="180">用户身份</td><td width="250">操作</td>
 		</tr>
 		<?php for($i=0;$i<$count;$i++){?>
 		<tr class="tr3" id="<?php echo $records[$i]->id;?>">
-			<td><?php echo $records[$i]->name;?></td>
 			<td><?php echo $records[$i]->nick_name;?></td>
+			<td><?php echo $records[$i]->column_name;?></td>
 			<td>专栏作者</td>
 			<td>
 				<?php 
 					$rate_flag = false;
 					for($j=0;$j<$column_count;$j++){
-						if($record[$i]->id==$column[$j]->news_id){ $rate_flag=true;?>
+						if($records[$i]->id==$column[$j]->news_id){ $rate_flag=true;?>
 						<span style="cursor:pointer" class="revocation" name="<?php echo $column[$j]->id;?>" title="删除"><img src='/images/btn_delete.png' border='0'></span>
 						<input type="text" class="priority"  name="<?php echo $column[$j]->id;?>"  value="<?php echo $column[$j]->priority;?>" style="width:40px;">
 						<?php break;}?>
 				<?php }
 					if(!$rate_flag){
 				?>
-				<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="加入"><img src='/images/btn_add.png' border='0'></span>
+				<span style="cursor:pointer" class="publish" name="<?php echo $records[$i]->id;?>" title="加入"><img src='/images/btn_add.png' border='0'></span>
 				<?php }?>
 			</td>
 		</tr>
@@ -57,7 +57,7 @@
 	<div class="div_box">
 		<table width="795" border="0">
 			<tr colspan="5" class=tr3>
-				<td><?php paginate();?></td>
+				<td><button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"></td>
 			</tr>
 		</table>
 	</div>

@@ -1,5 +1,6 @@
 ﻿body {font-size:12px;line-height:0; font-size:0;   font-family:Arial,SimSun; color:#000;  margin:0 auto; padding:0;}
 #ibody{width:1000px; margin:0 auto;}
+p{margin:0; padding:0}
 
 #title1 a:link{text-decoration:none;}
 #title1 a:visited{text-decoration:none;}

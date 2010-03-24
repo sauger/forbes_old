@@ -12,7 +12,7 @@ $(function(){
 	
 	$(".revocation").live('click',function(){
 		var ob = $(this);
-		$.post('postion.post.php',{'type':'revocation','nid':$(this).attr("name"),'p_type':'column'},function(data){
+		$.post('postion.post.php',{'type':'revocation','nid':$(this).attr("name")},function(data){
 			window.location.reload();
 		});
 	})
@@ -26,7 +26,7 @@ $(function(){
 			id_str=id_str+$(this).attr("name")+"|";
 			priority_str=priority_str+$(this).attr("value")+"|";
 		});
-		$.post("postion.post.php",{'id_str':id_str,'priority_str':priority_str,'pid':$("#list_id").val(),'type':'edit_priority','p_type':'column'},function(data){
+		$.post("postion.post.php",{'id_str':id_str,'priority_str':priority_str,'pid':$("#list_id").val(),'type':'edit_priority'},function(data){
 			window.location.reload();
 		});		
 	});
