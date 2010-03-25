@@ -114,7 +114,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td>榜单名称</td><td width="115">榜单类型</td><td width="85">发布位置</td><td width="100">推荐优先级</td><td width="240">操作</td>
+			<td>榜单名称</td><td width="115">榜单类型</td><td width="85">发布位置</td><td width="100">推荐优先级</td><td width="260">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -131,6 +131,7 @@
 						<?php echo $record[$i]->recommend_priority;?>
 					</td>
 					<td>
+						<a href="relation_list.php?id=<?php echo $record[$i]->id;?>" >关联</a>
 						<a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<a href="data_upload.php?id=<?php echo $record[$i]->id;?>">数据导入</a>
 						<?php if($record[$i]->list_type == 1){?>

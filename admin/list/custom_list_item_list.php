@@ -36,7 +36,7 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="6">
+			<td colspan="20">
 				<span style="color:red;"><?php echo $list_name;?></span>
 				<a href="custom_list_item_edit.php?list_id=<?php echo $id;?>">添加榜单项</a>
 				  搜索　
@@ -86,7 +86,7 @@
 			}
 		?>
 		<tr class="tr3">
-			<td colspan=6><?php paginate();?></td>
+			<td colspan=20><?php paginate();?></td>
 		</tr>
 		<input type="hidden" id="id" value="<?php echo $id;?>"> 
 	</table>
