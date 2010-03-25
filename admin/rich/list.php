@@ -34,6 +34,7 @@
 					<option value="0" <?php if($_REQUEST['type']=="0"){?>selected="selected"<? }?> >性别</option>
 				</select>
 				<input type="button" value="搜索" id="search" style="height:20px; border:2px solid #999999;">
+				<a href="upload_data.php">数据导入</a>
 			</td>
 		</tr>
 		<tr class="tr2">
