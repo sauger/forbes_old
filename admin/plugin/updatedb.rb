@@ -4,7 +4,7 @@ my = Mysql.connect('192.168.1.4', 'forbes_db','xunao','forbes')
 stmt = my.prepare("delete from fb_dynamic_fortune_list")
 stmt.execute
 index = 0
-my.query("select d.id,d.name,sum(a.dqgj*c.rate*b.stock_count*100) as fortune from fb_gs a right join fb_fh_gs b on a.id = b.gs_id left join fb_currency c on a.hbid= c.id left join fb_fh d on b.fh_id = d.id group by b.fh_id order by fortune desc").each do |id, name, count| 
+my.query("select d.id,d.name,sum(a.stock_value*c.rate*b.stock_count*100) as fortune from fb_company a right join fb_rich_company b on a.id = b.company_id left join fb_currency c on a.hbid= c.id left join fb_rich d on b.rich_id = d.id group by b.rich_id order by fortune desc").each do |id, name, count| 
 	index += 1	
 	last_index = 0	
 	if index <= 100
@@ -16,7 +16,7 @@ my.query("select d.id,d.name,sum(a.dqgj*c.rate*b.stock_count*100) as fortune fro
 	end
 	stmt = my.prepare("insert into fb_dynamic_fortune_history (richer_id,current_index,name,fortune,regdate) values (?,?,?,?,NOW())")
 	stmt.execute id,index,name,count
-	stmt = my.prepare("update fb_fh set jrpm=? where id=?")
+	stmt = my.prepare("update fb_rich set current_fortune_order=? where id=?")
 	stmt.execute index,id
 end
 p "finish the update! totle count: #{index}"
