@@ -805,7 +805,7 @@ class image_handler_class
                         {
                             $src_x = round($this->src_w-$this->src_h)/2;
                             $this->setSrcCutPosition($src_x, 0);
-                            $this->setRectangleCut($fill_h, $fill_h);
+                            $this->setRectangleCut($fill_w, $fill_h);
  
                             $this->copy_w = $this->src_h;
                             $this->copy_h = $this->src_h;
