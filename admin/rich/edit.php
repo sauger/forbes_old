@@ -101,8 +101,8 @@
 				<td><?php echo $v->stock_code?></td>
 				<td><input type="text"  value="<?php echo $v->stock_count;?>"></input></td>
 				<td>
-					<a href="<?php echo $v->id?>" class="a_delete"><img src="/images/btn_delete.png" border="0"></a>
-					<input type="hidden" value="<?php echo $v->id;?>"></input>
+					<a style="cursor:pointer;" class="a_delete"><img src="/images/btn_delete.png" border="0"></a>
+					<input type="hidden" class="c_hidden" value="<?php echo $v->id;?>"></input>
 					<input type="hidden" value="<?php echo $v->company_id;?>"></input>
 				</td>
 			</tr>	
@@ -119,7 +119,42 @@
 		</div>		
 		<?php }?>
 		</div>
-		<div id="tabs-3">table3</div>
+		<div id="tabs-3">
+			<?php 
+			  if(!$id){
+			?>
+			请先保存富豪基本信息
+			<?php }else{
+				$sql = "select * from fb_rich_fortune where rich_id={$id}";
+				$fortune = $db->query($sql);
+				if(empty($fortune)) $fortune = array();
+			?>
+			<table width="775" border="0" id="table_fortune">
+				<tr class="tr2" id="fortune_box">
+					<td width="130">个人财富</td><td>所属年份</td><td>财富排名</td><td>操作</td>
+				</tr>
+				<?php foreach ($fortune as $v) {?>
+				<tr class="tr4">
+					<td><input type="text" class="fortune" value="<?php echo $v->fortune;?>"></input></td>
+					<td><input type="text" class="fortune_class" value="<?php echo $v->fortune_year;?>"></input></td>
+					<td><input type="text" class="fortune_order" value="<?php echo $v->fortune_order;?>"></input></td>
+					<td>
+						<a style="cursor:pointer;" class="f_delete"><img src="/images/btn_delete.png" border="0"></a>
+						<input type="hidden" value="<?php echo $v->id;?>"></input>
+					</td>
+				</tr>	
+				<?php }?>
+				<tr class="tr3">
+					<td colspan="4" align="center">
+					<button id="fortune_add">添　　加</button>
+					<button id="fortune_save">保　　存</button>
+					</td>
+				</tr>
+			</table> 
+			<?php
+			}
+			?>
+		</div>
 	</div>
 	
 </body>
