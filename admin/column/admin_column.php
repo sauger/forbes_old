@@ -28,6 +28,9 @@
 				<a href="/admin/image/image_list.php" target="admin_iframe">图片管理</a>
 			</div>
 			<div class="menu1">
+				<a href="/admin/list" target="admin_iframe">榜单管理</a>
+			</div>
+			<div class="menu1">
 				<a href="/admin/user/modify_user_info.php" target="admin_iframe">个人信息维护</a>
 			</div>
 		</div>
