@@ -88,6 +88,7 @@
 		</table>
 	</div>
 	<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
+	<input type="hidden" id="relation" value="image">
 </body>
 </html>
 

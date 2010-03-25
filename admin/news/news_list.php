@@ -108,7 +108,7 @@
 			//--------------------
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority style="display:none">清空优先级</button>　<button id=edit_priority  style="display:none">编辑优先级</button>		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>"></td>
+			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority style="display:none">清空优先级</button>　<button id=edit_priority  style="display:none">编辑优先级</button><input type="hidden" id="relation" value="news"><input type="hidden" id="db_table" value="<?php echo $tb_news;?>"></td>
 		</tr>
 	</table>
 </body>

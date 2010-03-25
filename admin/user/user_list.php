@@ -52,6 +52,7 @@
 		<? }?>
 	</table>
 	<input type="hidden" id="db_table" value="<?php echo $user_table;?>">
+	<input type="hidden" id="relation" value="column">
 	<div class="div_box">
 		<table width="795" border="0">
 			<tr colspan="5" class=tr3>
