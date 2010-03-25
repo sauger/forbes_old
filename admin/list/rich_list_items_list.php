@@ -58,7 +58,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="115">姓名</td><td width="110">排名</td><td>年龄</td><td>公司</td><td>资产来源</td><td>地区</td><td width="130">个人财富</td><td width="210">操作</td>
+			<td width="50">姓名</td><td width="50">排名</td><td width="50">年龄</td><td>公司</td><td>资产来源</td><td>地区</td><td width="100">个人财富</td><td width="70">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
