@@ -380,7 +380,7 @@
 			</div>
 		</div>	
 			
-		<div class=forbes_l style="margin-left:25px;">
+		<div class=forbes_l style="margin-top:0px; margin-left:25px;">
 	  	<div class=caption>
 				<div class=captions style="width:60px;">采编智库</div>
 				<div class=line>|</div>

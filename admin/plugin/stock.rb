@@ -3,7 +3,7 @@ require 'uri'
 require 'mysql'
 #get the compay code need to query
 p 'Starting the task'
-my = Mysql.connect('localhost', 'root', 'xunao', 'forbes')
+my = Mysql.connect('192.168.1.4', 'forbes_db', 'xunao', 'forbes')
 my.query('select id, ssdm,jys from fb_gs').each do |id,ssdm,jys|
 	#puts id.to_s + ';' + ssdm +';' + jys
 	url = URI.parse('http://download.finance.yahoo.com/d/quotes.csv?s='+ssdm+'.'+jys+'&f=sl1d1t1c1ohgv&e=.csv');
