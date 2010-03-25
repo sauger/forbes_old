@@ -20,6 +20,9 @@
 			}
 			$record = $db->query($sql);		
 			if(count($record)==1){
+				$db->execute("insert into fb_user_log (user_id,datetime) values ({$record[0]->id},'".date("Y-m-d H:i:s")."')");
+				
+				
 				$_SESSION["admin_user_name"] = $record[0]->name;
 				$_SESSION["admin_user_id"] = $record[0]->id;
 				$_SESSION["admin_nick_name"] = $record[0]->nick_name;
