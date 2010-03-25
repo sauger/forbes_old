@@ -30,15 +30,13 @@
     $data->setOutputEncoding('utf-8');
     $data->read($file);
 	
-	var_dump($data->sheets);
-	die();
 	
 	$success = 0;
 	$fail = 0;
 	$fail_info = array();
 	if($table_name=='fb_rich_list_items'||$table_name=='fb_famous_list_items'){
 		if($table_name=='fb_rich_list_items'){
-			$list_name = "fb_fh";
+			$list_name = "fb_rich";
 			$item_name = "rich_id";
 			$index = 7;
 		}else{

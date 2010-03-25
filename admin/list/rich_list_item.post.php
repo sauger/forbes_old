@@ -14,7 +14,7 @@ if($id){
 $item->update_attributes($_POST['item'],false);
 $item->list_id = $list_id;
 $db = get_db();
-$db->query("select id from fb_fh where name='{$item->name}'");
+$db->query("select id from fb_rich where name='{$item->name}'");
 if($db->move_first()){
 	$item->rich_id = $db->field_by_name('id');
 }
