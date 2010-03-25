@@ -1,4 +1,6 @@
 <?php
+	require_once('../../frame.php');
+	$db = get_db();
 	$title = $_REQUEST['title'];
 	$category_id = $_REQUEST['category'] ? $_REQUEST['category'] : -1;
 	$is_adopt = $_REQUEST['adopt'];
@@ -10,7 +12,7 @@
 	if($category_id > 0){
 		array_push($c, "category_id=$category_id");
 	}
-	$news = $db->query("select * from fb_position_relation where type='image' and position_id=$id");
+	$news = $db->query("select * from fb_position_relation where type='middle_flash'");
 	$news_count = count($news);
 	$ids = $news[0]->news_id;
 	for($i=1;$i<$news_count;$i++){
@@ -60,6 +62,7 @@
 				</select>
 				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
+				<a href="write_flash.php?type=middle">生成flash数据</a>
 			</td>
 		</tr>
 	</table>
@@ -100,12 +103,12 @@
 	<div class="div_box">
 		<table width="795" border="0">
 			<tr colspan="5" class=tr3>
-				<td><?php paginate();?>　<button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"></td>
+				<td><?php paginate();?>　<button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="0"></td>
 			</tr>
 		</table>
 	</div>
 	<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
-	<input type="hidden" id="p_type" value="image">
+	<input type="hidden" id="p_type" value="middle_flash">
 </body>
 </html>
 
