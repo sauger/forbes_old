@@ -47,7 +47,7 @@
 		<tr class=tr4>
 			<td width="130">图片</td>
 			<td align="left">
-				<input type="file" name="item[image]" class="required">（请上传小于2M的照片）<?php if($item->image){?><a target="_blank" href="<?php echo $item->image?>">点击查看照片</a><?php }?>
+				<input type="file" name="item[image]" <?php if(!$item->image){?> class="required" <?php }?>>（请上传小于2M的照片）<?php if($item->image){?><a target="_blank" href="<?php echo $item->image?>">点击查看照片</a><?php }?>
 			</td>
 		</tr>
 		<tr class="tr4">

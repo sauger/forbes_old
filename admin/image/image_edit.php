@@ -56,7 +56,10 @@
 			<td>图片链接</td><td align="left"><input type="text" size="50" name="image[url]" id="online" value="<?php echo $image->url;?>"></td>
 		</tr>
 		<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
-			<td>选择图片</td><td align="left"><input type="hidden" name="MAX_FILE_SIZE1" value="2097152"><input name="image" id="upfile" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src!=''){?><a href="<?php echo $image->src;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
+			<td>选择图片</td><td align="left"><input type="hidden" name="MAX_FILE_SIZE1" value="2097152"><input name="image[src]" id="upfile" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src!=''){?><a href="<?php echo $image->src;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
+		</tr>
+		<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
+			<td>选择缩略图片</td><td align="left"><input name="image[src2]" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src2!=''){?><a href="<?php echo $image->src2;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
 		</tr>
 		<tr align="center" bgcolor="#f9f9f9" height="150px;" id=newsshow1>
 			<td>简短描述</td><td align="left"><textarea cols="80" rows="8" name="image[description]" class="required" ><?php echo $image->description;?></textarea></td>

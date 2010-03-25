@@ -17,7 +17,9 @@
 				$image->created_at = date("Y-m-d H:i:s");
 				$image->publisher = $_SESSION["user_name"];
 			}
+			
 			//var_dump($_POST);
+			/*
 			if($_FILES['image']['name']!=null){
 				$upload = new upload_file_class();
 				$upload->save_dir = "/upload/images/";
@@ -28,9 +30,11 @@
 					redirect($_SERVER['HTTP_REFERER']);
 				}
 				$image->src = "/upload/images/{$img}";
-				$image->create_thumb('middle',50);
-				$image->create_thumb('small',170,70);
+				//$image->create_thumb('middle',50);
+				//$image->create_thumb('small',170,70);
 			}
+			*/
+			$image->update_file_attributes('image');
 			if($_POST['image']["priority"]==null){$image->update_attribute("priority","100");}
 			$image->update_attributes($_POST['image']);
 			if($image->category_id!=''){

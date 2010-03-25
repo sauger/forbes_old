@@ -30,6 +30,8 @@
 	$user = new table_class('fb_yh');
 	$user->update_attributes($_POST['user'],false);
 	$user->password = md5($user->password);
+	$user->authenticate_string = rand_str(10);
+	$user->authenticated = 0;
 	$user->save();
 	//echo $user->id;
 	
@@ -72,7 +74,11 @@
 	}else{
 		$order->sh=0;
 	}
-	$order->save();
+	if($order->save()){
+		$content = "感谢您注册福布斯中文网<br/>您的账号是：<b>{$user->name}</b><br/>密码是<b>{$_POST['user']['password']}</b><br/>请妥善管理您的账号!<br/>请点击<a href=\"http://61.129.115.239/register/active.php?name={$user->name}&key={$user->authenticate_string}\">这里</a>激活您的账号。";
+		send_mail('smtp.163.com','sauger','auden6666','sauger@163.com','sauger@163.com','福布斯中文网',$content);
+		alert('注册成功，系统已经将激活链接发送到您的注册邮箱中，请查收邮件并激活您的账号');
+	};
 	//redirect('index.php');
 ?>
 </html>
