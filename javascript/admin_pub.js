@@ -6,9 +6,16 @@ $(function(){
 			}
 			else
 			{
-				$.post("/pub/pub.post.php",{'del_id':$(this).attr('name'),'db_table':$('#db_table').attr('value'),'post_type':'del'},function(data){
-					$("#"+data).remove();
-				});
+				if($("#relation").val()!=undefined){
+					$.post("/pub/pub.post.php",{'del_id':$(this).attr('name'),'db_table':$('#db_table').attr('value'),'post_type':'del','rela':$("#ratetion").val()},function(data){
+						$("#"+data).remove();
+					});
+				}else{
+					$.post("/pub/pub.post.php",{'del_id':$(this).attr('name'),'db_table':$('#db_table').attr('value'),'post_type':'del'},function(data){
+						$("#"+data).remove();
+					});
+				}
+				
 			}
 		});
 		

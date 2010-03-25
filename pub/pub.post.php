@@ -23,6 +23,10 @@
 				$db = get_db();
 				$db->execute("delete from fb_company_industry where company_id = {$_POST['del_id']}");
 			}
+			if(isset($_POST['rela'])){
+				$db = get_db();
+				$db->execute("delete from fb_position_relation where type='{$_POST['rela']}' and news_id={$_POST['del_id']}");
+			}
 			$post -> delete($_POST['del_id']);
 			echo $_POST['del_id'];
 		

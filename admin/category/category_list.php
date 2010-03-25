@@ -89,7 +89,7 @@
 	</table>
 	<table width="795" border="0">
 		<tr colspan="5" class=tr3>
-			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button> 		<input type="hidden" id="db_table" value="<?php echo $tb_category?>"></td>
+			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><input type="hidden" id="relation" value="category"><input type="hidden" id="db_table" value="<?php echo $tb_category?>"></td>
 		</tr>
 	</table>
 </body>
