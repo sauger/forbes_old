@@ -1,3 +1,7 @@
+<?php
+	require_once('../../frame.php');
+	$id = $_GET['id'];
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,7 +11,7 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin/position/list_list');
+		js_include_tag('admin/list/relation');
 	?>
 </head>
 
@@ -39,6 +43,7 @@
 		$is_adopt = $_REQUEST['adopt'];
 		$list= new table_class('fb_custom_list_type');
 		$conditions = array();
+		$conditions[] = "id<>$id";
 		if($_REQUEST['s_text']){
 			$conditions[] = "name like '%{$_REQUEST['s_text']}%'";
 		} 
@@ -46,11 +51,11 @@
 			$conditions[]= "list_type={$_REQUEST['s_list_type']}";			
 		}
 		$db = get_db();
-		$news = $db->query("select * from fb_position_relation where type='list' and position_id=$id");
+		$news = $db->query("select * from fb_list_relation where list_id=$id");
 		$news_count = count($news);
-		$ids = $news[0]->news_id;
+		$ids = $news[0]->rela_id;
 		for($i=1;$i<$news_count;$i++){
-			$ids.=','.$news[$i]->news_id;
+			$ids.=','.$news[$i]->rela_id;
 		}
 		
 		if($is_adopt==1){
@@ -65,9 +70,6 @@
 				$conditions[]= "id not in ($ids)";
 			}
 		}
-		if($_REQUEST['s_list_position']){
-			$conditions[]= "position={$_REQUEST['s_list_position']}";
-		}
 		if($conditions){
 			$conditions = array('conditions' => implode(' and ', $conditions));
 		}
@@ -79,7 +81,7 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">
-				　自定义榜单<a href="index.php"><img src="/images/btn_back.png" border=0></a>   搜索　
+				　关联榜单<a href="index.php"><img src="/images/btn_back.png" border=0></a>   搜索　
 				 <input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
 				 <select id="s_list_type">
 				 	<option value="-1">榜单类型</option>
@@ -93,9 +95,9 @@
 				 	<script type="text/javascript">$('#s_list_type').val('<?php echo $_REQUEST['s_list_type'];?>');</script>
 				 <?php ?>
 				 <select id=adopt name="adopt" style="width:90px" class="sau_search">
-					<option value="">加入状况</option>
-					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已加入</option>
-					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未加入</option>
+					<option value="">关联情况</option>
+					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已关联</option>
+					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未关联</option>
 				</select>
 				 <input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
 			</td>
@@ -115,7 +117,7 @@
 						<?php 
 							$rate_flag = false;
 							for($j=0;$j<$news_count;$j++){
-								if($record[$i]->id==$news[$j]->news_id){ $rate_flag=true;?>
+								if($record[$i]->id==$news[$j]->rela_id){ $rate_flag=true;?>
 								<span style="cursor:pointer" class="revocation" name="<?php echo $news[$j]->id;?>" title="删除"><img src='/images/btn_delete.png' border='0'></span>
 								<input type="text" class="priority"  name="<?php echo $news[$j]->id;?>"  value="<?php echo $news[$j]->priority;?>" style="width:40px;">
 								<?php break;}?>
