@@ -84,7 +84,6 @@
 			<td width="130">上传照片</td>
 			<td align="left">
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
-				<span id="use_mr" style="cursor:pointer;">使用富豪照片</span>
 				<input type="file" name="item[image]">（请上传小于2M的照片）<?php if($item->image){?><a target="_blank" href="<?php echo $item->image?>">点击查看照片</a><?php }?>
 			</td>
 		</tr>
