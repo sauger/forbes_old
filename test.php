@@ -7,7 +7,8 @@
 		//echo substr('dbscript',-1);;
 		//$script = file_get_contents('dbscript/test.sql');
 		dir_files('dbscript/');
-		
+		send_mail('smtp.163.com','sauger','auden6666','sauger@163.com','sauger@163.com','test','<a href="www.xun-ao.com">xunao</a>');
+		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));
 				
