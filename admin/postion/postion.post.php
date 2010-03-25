@@ -6,14 +6,17 @@
 	$p_type = $_POST['p_type'];
 	$db = get_db();
 	
-	
-	$position = new table_class("fb_position");
-	$position->find($pid);
+	if($pid!='0'){
+		$position = new table_class("fb_position");
+		$position->find($pid);
+	}
 	if($type=='publish'){
-		$count = $db->query("select count(*) as num from fb_position_relation where type='$p_type' and position_id=$pid");
-		if($count[0]->num==$position->position_limit){
-			echo "full";
-			die();
+		if(isset($position)){
+			$count = $db->query("select count(*) as num from fb_position_relation where type='$p_type' and position_id=$pid");
+			if($count[0]->num==$position->position_limit){
+				echo "full";
+				die();
+			}
 		}
 		$pos = new table_class("fb_position_relation");
 		$pos->position_id = $pid;
