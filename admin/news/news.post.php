@@ -61,7 +61,6 @@
 	$news->title = strtr($news->title,$table_change);
 	$news->short_title = strtr($news->short_title,$table_change);	
 	$news->news_type= 1;
-	$news->echo_sql = true;
 	if($news_id == ''){
 		//insert news
 		$news->created_at = date("Y-m-d H:i:s");
@@ -105,7 +104,7 @@
 		$news->save();
 	}
 	if($_SESSION["role_name"]=='author'||$_SESSION["role_name"]=='journalist')$href="/admin/column/news_list.php";else $href="news_list.php";
-	//redirect($href.'?category='.$_POST['news']['category_id']);
+	redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	
 ?>
