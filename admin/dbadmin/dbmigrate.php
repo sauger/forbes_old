@@ -6,6 +6,7 @@
 	<title>迅傲信息</title>
 	<?php
 		require_once('../../frame.php');
+		$debug_tag = false;
 		use_jquery();
 		require_role();
 	?>
@@ -33,7 +34,6 @@
 			$script = str_replace(chr(10),'',$script);
 			if(empty($script)) continue;
 			if(!$db->execute($script)){
-				var_dump($script);
 				$fail_scripts[] = $script;
 				$done = false;
 			}
@@ -63,6 +63,8 @@
 			 <span style="color:red;"><?php echo count($fail_scripts);?></span>条语句执行失败 <a href="#" id="fail_scripts">查看</a>
 		</p>
 	</div>
+	<div><button id="execute">执行</button></div>
+	<textarea rows="10" cols="65" id="sql_text"><?php echo implode(';',$fail_scripts);?></textarea>
 	<div id="done_list" style="display:none">
 		<?php foreach ($done_files as $file) {
 			echo "<p>{$file}</p>";
@@ -90,6 +92,19 @@
 			}else{
 				$(div).hide();
 			}
+		});
+		$('#execute').click(function(){
+			var s = $('#sql_text').val();
+			if(!s){
+				alert('没有可执行的脚本');
+				return false;
+			}
+			$.post('execute_script.php',{'scripts' : s},function(data){
+				if(data){
+					alert('部分脚本执行失败');
+				}
+				$('#sql_text').val(data);
+			});
 		});
 		$('#reload').click(function(){
 			location.href = 'dbmigrate.php';

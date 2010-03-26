@@ -72,7 +72,10 @@
 					</td>
 				</tr>
 				<tr id=newsshow1 class="normal_news tr4">
-					<td height=265>个人经历</td><td><?php show_fckeditor('fh[comment]','Admin',true,"265",$record->comment);?></td>
+					<td height=265>个人经历</td><td><?php show_fckeditor('fh[comment]','Admin',true,"200",$record->comment);?></td>
+				</tr>
+				<tr id=newsshow1 class="normal_news tr4">
+					<td height=265>慈善事业</td><td><?php show_fckeditor('fh[philanth]','Admin',true,"200",$record->philanth);?></td>
 				</tr>
 				<tr class="tr3">
 					<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>

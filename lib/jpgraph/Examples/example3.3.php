@@ -3,7 +3,7 @@ require_once ('jpgraph/jpgraph.php');
 require_once ('jpgraph/jpgraph_line.php');
 
 // Some (random) data
-$ydata = array(11,3,8,12,5,1,9,13,5,7);
+$ydata = array(11,3,8,12,5,1,9,13,5,7,10,13,12,13,20,25);
 
 // Size of the overall graph
 $width=350;
@@ -13,19 +13,21 @@ $height=250;
 // These two calls are always required
 $graph = new Graph($width,$height);
 $graph->SetScale('intlin');
-$graph->SetShadow();
+$graph->SetMarginColor('white');
 
 // Setup margin and titles
-$graph->SetMargin(40,20,20,40);
+$graph->SetMargin(20,10,10,0);
+//$graph->SetMargin(40,20,20,40);
+/*
 $graph->title->Set('Calls per operator');
 $graph->subtitle->Set('(March 12, 2008)');
 $graph->xaxis->title->Set('Operator');
 $graph->yaxis->title->Set('# of calls');
-
+*/
 $graph->yaxis->title->SetFont( FF_FONT1 , FS_BOLD );
 $graph->xaxis->title->SetFont( FF_FONT1 , FS_BOLD );
 
-$graph->yaxis->SetColor('blue');
+$graph->yaxis->SetColor('red');
 
 // Create the linear plot
 $lineplot=new LinePlot($ydata);
