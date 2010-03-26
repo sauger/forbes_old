@@ -10,7 +10,7 @@
 	<title>福布斯-榜单首页</title>
 	<?php
 		use_jquery();
-		js_include_tag('select2css');
+		js_include_tag('select2css','index');
 		css_include_tag('charts_index','public','index');
 	?>
 </head>
@@ -18,346 +18,182 @@
 	<div id=ibody>
 		<? require_once('../inc/top.inc.php');?>
 		<div id=top>
-			<div id=title>福布斯新闻</div>
-			<div id=title1><a href="">福布斯中文网</a> > <a href="" style="color:#246BB0;">榜单首页</a> </div>
-			<div id=line></div>
+			<div id=cyindex><img src="/images/html/list/title.gif"></div>
+			<div id=cytitle><a style="color:#666666;" href="/">福布斯中文网　＞　</a><a >榜单首页</a></div>
+			<div id=cyline></div>
 		</div>
-		<div id=t_l_t>
-			<div id=t_l_t_t>
-				<div class=head_pic id=head_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[0]->video_photo_src; ?>"></a></div>
-				<div class=head_pic id=head_pic_1 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[1]->video_photo_src; ?>"></a></div>
-				<div class=head_pic id=head_pic_2 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[2]->video_photo_src; ?>"></a></div>
-				<div class=head_pic id=head_pic_3 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[3]->video_photo_src; ?>"></a></div>
-				<div id=t_l_t_t_r>
-					<div class=head_title id=head_title_0><a href=""><?php echo $record_show[0]->short_title; ?></a></div>
-					<div class=head_title id=head_title_1 style="display:none;"><a href=""><?php echo $record_show[1]->short_title; ?></a></div>
-					<div class=head_title id=head_title_2 style="display:none;"><a href=""><?php echo $record_show[2]->short_title; ?></a></div>
-					<div class=head_title id=head_title_3 style="display:none;"><a href=""><?php echo $record_show[3]->short_title; ?></a></div>
-					<div class=head_content id=head_content_0><?php echo $record_show[0]->description; ?></div>
-					<div class=head_content id=head_content_1 style="display:none;"><?php echo strip_tags($record_show[1]->description); ?></div>
-					<div class=head_content id=head_content_2 style="display:none;"><?php echo strip_tags($record_show[2]->description); ?></div>
-					<div class=head_content id=head_content_3 style="display:none;"><?php echo strip_tags($record_show[3]->description); ?></div>
-					
-				<?php for($j=0;$j<=3;$j++){?>	
-					<div class=head_related id=head_related_<?php echo $j?> <?php if($j<>0){echo "style='display:none'";}?> >
-					<?php				
-					 		$sub_news_str=explode(",",$record_show[$j]->sub_headline); 
-				  		$sub_news_str_num=sizeof($sub_news_str)-1;
-
-							for($i=0;$i<=$sub_news_str_num;$i++)
-							{
-								  if($sub_news_str_num<1){break;}
-									$sql="select n.short_title from fb_news n where n.id=".$sub_news_str[$i];
-									$record_sub_news = $db -> query($sql);
-									echo '<div class=cl><a href="">'.strip_tags($record_sub_news[0]->short_title).'</a></div>';
-							}
-					?>				
-					</div>
-				<? }?>	
-	
-					<div id=more><a href="">查看更多</a></div>
-					<div id=btn>
-						<div class=head_btn1 id=l style="background:url(images/index/slideshow_back.gif) no-repeat;"></div>
-						<div class=head_btn2 id=0 style="background:url(images/index/slideshow_active.gif) no-repeat"></div>
-						<div class=head_btn2 id=1 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
-						<div class=head_btn2 id=2 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
-						<div class=head_btn2 id=3 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
-						<div class=head_btn1 id=r style="background:url(images/index/slideshow_next.gif) no-repeat"></div>
-					</div>
-				</div>
-			</div>
-				
-			</div>
-			<div style="width:293px; float:right; display:inline;">
-				<div id=ad2>
-				</div>
-				<div id=right-div2>
-				<div class=right-title1>
-					生活和专题榜
-				</div>
-				<div class=right-title2>
-					餐饮
-				</div>
-				<div class=right-title3>
-					健康
-				</div>
-				<div id=right-text3>
-					<li><a href="">2010中国最最佳商业城市最佳商业城市佳商</a></li>
-					<li><a href="">2010中国最最佳商业城市最佳商业城市佳商</a></li>
-					<li><a href="">2010中国最最佳商业城市最佳商业城市佳商</a></li>
-					<li><a href="">2010中国最最佳商业城市最佳商业城市佳商</a></li>
-				</div>
-				<div id=right-title4>
-					固定不动产
-				</div>
-				<div class=right-title2>
-					时尚
-				</div>
-				<div class=right-title2>
-					旅游
-				</div>
-				<div class=right-title2>
-					汽车
-				</div>
-				<div class=right-title2>
-					腕表
-				</div>
-			</div>
-			<div id=right-div3>
-				<div id=right-title5>
-					<div id=tar1></div>评论定制
-				</div>
-				<div class=right-text4>
-					<div style="width:100px; float:left; display:inline;"><b>订阅福布斯快闻</b></div><div id=radio><input type="radio" name="" value="">我要定制</div><div style="margin-left:27px; float:left; display:inline;"><input type="button" id=button></div>
-				</div>
-				<div class=right-text4>
-					<b>订阅分类文章</b>
-				</div>
-				<div id=right-text5>
-					<div class=radio1><input type="radio" name="" value="我要订">富豪</div>
-					<div class=radio1><input type="radio" name="" value="我要订">创业</div>
-					<div class=radio1><input type="radio" name="" value="我要订">商业</div>
-					<div class=radio1><input type="radio" name="" value="我要订">投资</div>
-					<div class=radio1><input type="radio" name="" value="我要订">生活</div>
-				</div>
-				<div style="margin-left:34px; margin-top:10px; float:left; display:inline;"><input type="button" id=button></div>
-			</div>
-			</div>
-			<div id=left-div3>
-				<div id=left-title3>
-					<div style="float:left; display:inline;">榜单推荐</div><div class=more2><a href=""><img border=0 src="/images/more.jpg"></a></div>	
-				</div>
-				<div class=left-div3-1>
-					<div class=picture3>
-					</div>
-					<div class=left-div3-text>
-						后危机时更
-					</div>
-				</div>
-				<div class=left-div3-1>
-					<div class=picture3>
-					</div>
-					<div class=left-div3-text>
-						后危机时更
-					</div>
-				</div>
-				<div class=left-div3-1>
-					<div class=picture3>
-					</div>
-					<div class=left-div3-text>
-						后危机时更
-					</div>
-				</div>
-				<div class=left-div3-1>
-					<div class=picture3>
-					</div>
-					<div class=left-div3-text>
-						后危机时更
-					</div>
-				</div>
-				<div class=left-div3-1>
-					<div class=picture3>
-					</div>
-					<div class=left-div3-text>
-						后危机时更
-					</div>
-				</div>
-				
-			</div>
-			
-			<div id=left-div4>
-				<div id=left-title3>
-					<div style="float:left; display:inline;">常规榜单</div><div class=more2><a href="list.php"><img border=0 src="/images/more.jpg"></a></div>	
-				</div>
-				<div style="width:309px; float:left; display:inline;">
-					<div class=left-div4-1>
-						<div class=left-title4>
-							<div style="float:left; display:inline;">富豪</div><div id=line1></div>
-						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position="1" order by priority asc,created_at desc limit 4'); ?>
-						<div class=picture4>
-							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
-						</div>
+		<div id="left">
+			<div id=t_l_t>
+				<?php $record_show = get_news_by_pos('榜单头条','榜单首页');?>
+				<div id=t_l_t_t>
+					<div class=headline_pic id=headline_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[0]->image_src; ?>"></a></div>
+					<div class=headline_pic id=headline_pic_1 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[1]->image_src; ?>"></a></div>
+					<div class=headline_pic id=headline_pic_2 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[2]->image_src; ?>"></a></div>
+					<div class=headline_pic id=headline_pic_3 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[3]->image_src; ?>"></a></div>
+					<div id=t_l_t_t_r>
+						<div class=headline_title id=headline_title_0><a href=""><?php echo $record_show[0]->name; ?></a></div>
+						<div class=headline_title id=headline_title_1 style="display:none;"><a href=""><?php echo $record_show[1]->name; ?></a></div>
+						<div class=headline_title id=headline_title_2 style="display:none;"><a href=""><?php echo $record_show[2]->name; ?></a></div>
+						<div class=headline_title id=headline_title_3 style="display:none;"><a href=""><?php echo $record_show[3]->name; ?></a></div>
+						<div class=headline_description id=headline_description_0><?php echo $record_show[0]->comment; ?></div>
+						<div class=headline_description id=headline_description_1 style="display:none;"><?php echo strip_tags($record_show[1]->comment); ?></div>
+						<div class=headline_description id=headline_description_2 style="display:none;"><?php echo strip_tags($record_show[2]->comment); ?></div>
+						<div class=headline_description id=headline_description_3 style="display:none;"><?php echo strip_tags($record_show[3]->comment); ?></div>
 						
-						<div class=left-div4-text1>
-							<div class=left-div4-text1-1>
-								<?php echo $bd[0]->name;?>
-							</div>
-							<div class=left-div4-text1-2>
-								<?php echo strip_tags($bd[0]->comment);?>
-							</div>
+					<?php for($j=0;$j<=3;$j++){?>	
+						<div class="headline_related" id="headline_related_<?php echo $j?>" <?php if($j<>0){echo "style='display:none'";}?> >
+						<?php				
+							if($record_show[$j]->id!=''){
+								$rela_list = $db->query("select t1.* from fb_custom_list_type t1 join fb_list_relation t2 on t1.id=t2.rela_id where t2.list_id={$record_show[$j]->id} order by t2.priority limit 3");
+								for($i=0;$i<count($rela_list);$i++)
+								{
+									  if(count($rela_list)<1){break;}
+									echo '<div class=cl><a href="">'.strip_tags($rela_list[$i]->name).'</a></div>';
+								}
+							}
+						?>				
 						</div>
-						<div class=left-div4-text>
-							<?php for($i=1;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
-					<div class=left-div4-1>
-						<div class=left-title4>
-							<div style="float:left; display:inline;">公司</div><div id=line1></div>
-						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position="3" order by priority asc,created_at desc limit 4'); ?>
-						<div class=picture4>
-							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
-						</div>
-						<div class=left-div4-text1>
-							<div class=left-div4-text1-1>
-								<?php echo $bd[0]->name;?>
-							</div>
-							<div class=left-div4-text1-2>
-								<?php echo strip_tags($bd[0]->comment);?>
-							</div>
-						</div>
-						<div class=left-div4-text>
-							<?php for($i=1;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
+					<? }?>	
+		
+						<div id=more><a href="">查看更多</a></div>
+						<div id=btn>
+							<div class=headline_btn1 id=l style="background:url(/images/index/slideshow_back.gif) no-repeat;"></div>
+							<div class=headline_btn2 id=0 style="background:url(/images/index/slideshow_active.gif) no-repeat"></div>
+							<div class=headline_btn2 id=1 style="background:url(/images/index/slideshow_unactive.gif) no-repeat"></div>
+							<div class=headline_btn2 id=2 style="background:url(/images/index/slideshow_unactive.gif) no-repeat"></div>
+							<div class=headline_btn2 id=3 style="background:url(/images/index/slideshow_unactive.gif) no-repeat"></div>
+							<div class=headline_btn1 id=r style="background:url(/images/index/slideshow_next.gif) no-repeat"></div>
 						</div>
 					</div>
-					<div class=left-div4-1>
-						<div class=left-title4>
-							<div style="float:left; display:inline;">名人</div><div id=line1></div>
-						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position="5" order by priority asc,created_at desc limit 4'); ?>
-						<div class=picture4>
-							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
-						</div>
-						<div class=left-div4-text1>
-							<div class=left-div4-text1-1>
-								<?php echo $bd[0]->name;?>
-							</div>
-							<div class=left-div4-text1-2>
-								<?php echo strip_tags($bd[0]->comment);?>
-							</div>
-						</div>
-						<div class=left-div4-text>
-							<?php for($i=1;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
-					
-					<div class=left-div4-1>
-						<div class=left-title4>
-							<div style="float:left; display:inline;">科技</div><div id=line1></div>
-						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position="7" order by priority asc,created_at desc limit 4'); ?>
-						<div class=picture4>
-							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
-						</div>
-						<div class=left-div4-text1>
-							<div class=left-div4-text1-1>
-								<?php echo $bd[0]->name;?>
-							</div>
-							<div class=left-div4-text1-2>
-								<?php echo strip_tags($bd[0]->comment);?>
-							</div>
-						</div>
-						<div class=left-div4-text>
-							<?php for($i=1;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
-					
 				</div>
-				<div id=line2>
+			</div>
+			<div id="left_box">
+				<div class=left_title>
+					<div class="title_name">榜单推荐</div>
+					<div class=more2><a href=""><img border=0 src="/images/more.gif"></a></div>	
 				</div>
-				<div style="width:309px; float:left; display:inline;">
-					<div class=left-div4-2>
-						<div class=left-title4>
-							<div style="float:left; display:inline;">科技</div><div id=line1></div>
-						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position="2" order by priority asc,created_at desc limit 4'); ?>
-						<div class=picture4>
-							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
-						</div>
-						<div class=left-div4-text1>
-							<div class=left-div4-text1-1>
-								<?php echo $bd[0]->name;?>
-							</div>
-							<div class=left-div4-text1-2>
-								<?php echo strip_tags($bd[0]->comment);?>
-							</div>
-						</div>
-						<div class=left-div4-text>
-							<?php for($i=1;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
+				<?php $record_show = get_news_by_pos('榜单推荐','榜单首页');
+					for($i=0;$i<count($record_show);$i++){
+				?>
+				<div class="left_pbox">
+					<div class=picture3>
+						<img width="94" height="94" src="<?php echo $record_show[$i]->image_src;?>">
 					</div>
-					<div class=left-div4-2>
-						<div class=left-title4>
-							<div style="float:left; display:inline;">投资</div><div id=line1></div>
-						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position="4" order by priority asc,created_at desc limit 4'); ?>
-						<div class=picture4>
-							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
-						</div>
-						<div class=left-div4-text1>
-							<div class=left-div4-text1-1>
-								<?php echo $bd[0]->name;?>
-							</div>
-							<div class=left-div4-text1-2>
-								<?php echo strip_tags($bd[0]->comment);?>
-							</div>
-						</div>
-						<div class=left-div4-text>
-							<?php for($i=1;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
+					<div class="left_ptitle">
+						<a href=""><?php echo $record_show[$i]->name;?></a>
 					</div>
-					
-					<div class=left-div4-2>
-						<div class=left-title4>
-							<div style="float:left; display:inline;">城市</div><div id=line1></div>
-						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position="6" order by priority asc,created_at desc limit 4'); ?>
-						<div class=picture4>
-							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
-						</div>
-						<div class=left-div4-text1>
-							<div class=left-div4-text1-1>
-								<?php echo $bd[0]->name;?>
-							</div>
-							<div class=left-div4-text1-2>
-								<?php echo strip_tags($bd[0]->comment);?>
-							</div>
-						</div>
-						<div class=left-div4-text>
-							<?php for($i=1;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
-					
-					<div class=left-div4-2>
-						<div class=left-title4>
-							<div style="float:left; display:inline;">教育</div><div id=line1></div>
-						</div>
-						<?php $bd=$db->query('select * from fb_custom_list_type where position="8" order by priority asc,created_at desc limit 4'); ?>
-						<div class=picture4>
-							<a href=""><img border=0 src="<?php echo $bd[0]->image_src; ?>"></a>
-						</div>
-						<div class=left-div4-text1>
-							<div class=left-div4-text1-1>
-								<?php echo $bd[0]->name;?>
-							</div>
-							<div class=left-div4-text1-2>
-								<?php echo strip_tags($bd[0]->comment);?>
-							</div>
-						</div>
-						<div class=left-div4-text>
-							<?php for($i=1;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
-					
 				</div>
+				<?php }?>
+			</div>
+			<div class="dash"></div>
 			
+			<div id="left_list">
+				<div class=left_title>
+					<div class="title_name">常规榜单</div>
+					<div class=more2><a href=""><img border=0 src="/images/more.gif"></a></div>	
+				</div>
+				<div class="list_list">
+					<div class="list_box">
+						<div class="list_title">
+							<div class="title">富豪</div>
+							<div class="title_line"></div>
+						</div>
+						<?php $bd=get_news_by_pos('常规榜单-富豪','榜单首页');?>
+						<div class="list_li_box">
+							<?php for($i=0;$i<count($bd);$i++){ ?>
+								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="list_box">
+						<div class="list_title">
+							<div class="title">公司</div>
+							<div class="title_line"></div>
+						</div>
+						<?php $bd=get_news_by_pos('常规榜单-公司','榜单首页');?>
+						<div class="list_li_box">
+							<?php for($i=0;$i<count($bd);$i++){ ?>
+								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="list_box">
+						<div class="list_title">
+							<div class="title">名人</div>
+							<div class="title_line"></div>
+						</div>
+						<?php $bd=get_news_by_pos('常规榜单-名人','榜单首页');?>
+s						<div class="list_li_box">
+							<?php for($i=0;$i<count($bd);$i++){ ?>
+								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="list_box">
+						<div class="list_title">
+							<div class="title">科技</div>
+							<div class="title_line"></div>
+						</div>
+						<?php $bd=get_news_by_pos('常规榜单-科技','榜单首页');?>
+						<div class="list_li_box">
+							<?php for($i=0;$i<count($bd);$i++){ ?>
+								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php } ?>
+						</div>
+					</div>
+				</div>
+				<div id=line2></div>
+				<div class="list_list">
+					<div class="list_box">
+						<div class="list_title">
+							<div class="title">投资</div>
+							<div class="title_line"></div>
+						</div>
+						<?php $bd=get_news_by_pos('常规榜单-投资','榜单首页');?>
+						<div class="list_li_box">
+							<?php for($i=0;$i<count($bd);$i++){ ?>
+								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="list_box">
+						<div class="list_title">
+							<div class="title">城市</div>
+							<div class="title_line"></div>
+						</div>
+						<?php $bd=get_news_by_pos('常规榜单-城市','榜单首页');?>
+						<div class="list_li_box">
+							<?php for($i=0;$i<count($bd);$i++){ ?>
+								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="list_box">
+						<div class="list_title">
+							<div class="title">体育</div>
+							<div class="title_line"></div>
+						</div>
+						<?php $bd=get_news_by_pos('常规榜单-体育','榜单首页');?>
+						<div class="list_li_box">
+							<?php for($i=0;$i<count($bd);$i++){ ?>
+								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="list_box">
+						<div class="list_title">
+							<div class="title">教育</div>
+							<div class="title_line"></div>
+						</div>
+						<?php $bd=get_news_by_pos('常规榜单-教育','榜单首页');?>
+						<div class="list_li_box">
+							<?php for($i=0;$i<count($bd);$i++){ ?>
+								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php } ?>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<? require_once('../inc/bottom.inc.php');?>
 	</div>

@@ -11,7 +11,7 @@
 			<?php 
 				$magazine = $db->query("select * from fb_magazine where is_adopt=1 order by publish_data");
 			?>
-			<div id=magazine_pic><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img border=0 src="<?php echo $magazine[0]->img_src3?>"></a></div>
+			<div id=magazine_pic><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img border=0 width="75" height="95" src="<?php echo $magazine[0]->img_src3?>"></a></div>
 			<div id=magazine_description><span class=font1><?php echo $magazine[0]->name;?></span><br><?php echo $magazine[0]->short_title;?></div>
 			<div id=magazine_btn><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img src="/images/top/magazine_btn.jpg" border=0></a></div>
 
