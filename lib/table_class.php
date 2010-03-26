@@ -460,7 +460,7 @@ class table_class{
 			 if(is_null($this->$key)){
 			 	$tmp[] = $key ."=NULL";
 			 }else{
-			 	$tmp[] = $key ."='" .str_replace("'","''",$this->$key) ."'";
+			 	$tmp[] = $key ."='" .$this->$key ."'";
 			 }
 		}
 		$sqlstr .= implode(',',$tmp);
