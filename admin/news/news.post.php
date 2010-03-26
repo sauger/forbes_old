@@ -9,6 +9,7 @@
 	$old_video_photo_src = $news->video_photo_src;
 	$news->update_attributes($_POST['news'],false);
 	$news->is_adopt = 1;
+	
 	#var_dump($news);	
 	/*
 	$news->content = str_replace("'",'\"',$news->content); //mysql_escape_string($news->content);
