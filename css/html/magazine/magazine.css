@@ -13,6 +13,7 @@ p{margin:0; padding:0}
 
 #title{height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
 #title1{height:20px; font-size:12px; line-height:20px; margin-top:6px; margin-left:19px; float:left; display:inline;}
+
 #line{width:1000px; height:10px; background-image:url(/images/html/news/line.jpg); float:left; display:inline;}
 
 #ibody{width:1000px; margin:0 auto;}
