@@ -2,6 +2,8 @@
 include '../../frame.php';
 $db = get_db();
 $scripts = $_POST['scripts'];
+//$scripts = stripslashes($scripts);
+$scripts = stripslashes($scripts);
 $scripts = explode(';',$scripts);
 $debug_tag = false;
 $done = true;
