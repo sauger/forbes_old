@@ -10,8 +10,8 @@
 	<title>福布斯-专栏</title>
 	<?php
 		use_jquery();
-		js_include_tag('select2css');
-		css_include_tag('html/column/column','top','bottom','select2css');
+		js_include_tag('public');
+		css_include_tag('html/column/column','public');
 	?>
 </head>
 <body>
