@@ -11,7 +11,7 @@
 	<title>福布斯首页</title>
 	<?php
 		use_jquery();
-		js_include_tag('top','select2css','index');
+		js_include_tag('public','index');
 		css_include_tag('public','index');
 	?>
 </head>
