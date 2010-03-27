@@ -1,5 +1,4 @@
 <?php 
-	session_start();
 	require_once('../frame.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -10,8 +9,8 @@
 	<title>福布斯-奢侈品</title>
 	<?php
 		use_jquery();
-		js_include_tag('select2css');
-		css_include_tag('scp','top','bottom','right','html/luxury/luxury.css');
+		js_include_tag('public');
+		css_include_tag('scp','public','right','html/luxury/luxury.css');
 	?>
 </head>
 <body>
