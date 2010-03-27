@@ -20,16 +20,20 @@ function get_news_by_pos($pos,$page='') {
 		$all_category_ids = implode(',',$all_category_ids);
 		$sql = 'select n.id as news_id,n.title,n.short_title,n.video_photo_src,n.description,n.sub_headline,n.category_id from fb_news n left join fb_category c on n.category_id=c.id where n.is_adopt=1 and n.language_tag=0 and c.id in('.$all_category_ids.') and c.category_type="news" order by n.created_at desc limit '.$record[0]->position_limit;
 	}
-	if($record[0]->type=="news")
+	elseif($record[0]->type=="news")
 	 {
 	 	$sql='select f.*,n.id as news_id,n.title,n.short_title,n.video_photo_src,n.description,n.sub_headline,n.author_id from fb_position_relation f left join fb_news n on f.news_id=n.id where  n.is_adopt=1 and f.type="news" and f.position_id='.$record[0]->id.' order by f.priority limit '.$record[0]->position_limit;
 	 }
-	 if($record[0]->type=="list"){
+	 elseif($record[0]->type=="list"){
 	 	$sql = "select n.id,n.name,n.image_src,n.comment from fb_position_relation f join fb_custom_list_type n on f.news_id=n.id where f.position_id={$record[0]->id} and f.type='list' order by f.priority limit {$record[0]->position_limit}";
 	 }
-	 if($record[0]->type=="image"){
+	 elseif($record[0]->type=="image"){
 	 	$sql = "select n.* from fb_position_relation f join fb_images n on f.news_id=n.id where f.position_id={$record[0]->id} and f.type='image' and n.is_adopt=1 order by f.priority limit {$record[0]->position_limit}";
 	 }
+	 else{
+	 	return false;
+	 }
+	 
 	return $db->query($sql); 
 	
 } 
