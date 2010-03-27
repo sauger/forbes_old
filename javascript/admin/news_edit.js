@@ -26,6 +26,46 @@
 		$('#a_sub_headline').colorbox({href:'news_filter.php?show_div=1&selected_news=' + $('#hidden_sub_headline').val()+'&call_back=save_sub_headlines'});
 	}	
 $(function(){
+	var filte_words;
+	var filte_len;
+	$.post('/admin/filte_words/words.php',function(data){
+		filte_words = data.split('|');
+		filte_len = filte_words.length;
+	});
+	$('#publish_schedule').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+		dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+		dayNamesMin:["日","一","二","三","四","五","六"],
+		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+		dateFormat: 'yy-mm-dd',
+		onSelect: function(date){
+			var time;
+			if($(this).data('endtime')){
+				time = $(this).data('endtime');
+			}else{
+				time = "00:00:00";
+			}
+			$(this).val(date + " " + time);
+		},
+		beforeShow: function(input){
+			var time = $(this).val();
+			time = time.split(' ');
+			time = time[time.length-1];
+			$(this).data('endtime',time);
+		}
+	});
+	$('#publish_schedule_select').change(function(){
+		if(false === $(this).attr('checked')){
+			$(this).data('save_time',$('#publish_schedule').val());
+			$('#publish_schedule').val('');
+			$('#publish_schedule').attr('disabled',true);
+		}else{
+			$('#publish_schedule').attr('disabled',false);
+			$('#publish_schedule').val($(this).data('save_time'));
+		}
+	});
 	$('#news_edit').submit(function(){		
 		var video_array = new Array('flv','wmv','wav','mp3','mp4','avi','rm');
 		var pic_array = new Array('jpg','png','bmp','gif','icon');
@@ -49,6 +89,8 @@ $(function(){
 			alert("请输入新闻内容！");
 			return false;
 		}
+		var editor = CKEDITOR.instances['news[description]'];
+		var description = editor.getData();
 		priority = $('#priority').attr('value');
 		if(priority == '') priority = 100;
 		
@@ -63,6 +105,31 @@ $(function(){
 				category_id = $('.category_select:eq('+ (category_count - 2) + ')').val();
 			}
 		}
+		/* fitler words
+		 */
+		
+		for(i=0;i< filte_len; i++){
+			if(title.indexOf(filte_words[i])!=-1){
+				alert('标题中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				return false;
+			}
+			if(short_title.indexOf(filte_words[i])!=-1){
+				alert('短标题中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				return false;
+			}
+			if($('#news_wap_title').val().indexOf(filte_words[i])!=-1){
+				alert('wap标题中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				return false;
+			}
+			if(description.indexOf(filte_words[i])!=-1){
+				alert('简短描述中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				return false;
+			}
+			if(content.indexOf(filte_words[i])!=-1){
+				alert('内容中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				return false;
+			}
+		};
 		$('#category_id').val(category_id);
 		//handle the news_copy
 		if($('#tr_copy_news').css('display') != 'none'){
