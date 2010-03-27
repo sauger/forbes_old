@@ -8,8 +8,6 @@
 	$old_pdf_src = $news->pdf_src;
 	$old_video_photo_src = $news->video_photo_src;
 	$news->update_attributes($_POST['news'],false);
-	$news->is_adopt = 1;
-	
 	#var_dump($news);	
 	/*
 	$news->content = str_replace("'",'\"',$news->content); //mysql_escape_string($news->content);
@@ -67,7 +65,6 @@
 		$news->last_edited_at = date("Y-m-d H:i:s");
 		$news->publisher = $_SESSION['admin_user_id'];
 		$news->click_count = 0;					
-		$news->is_adopt = 1;
 		$news->save();
 	}else{
 		//update news
@@ -95,6 +92,22 @@
 			$english_news->category_id = $news->category_id;
 			$english_news->news_type = $news->news_type;
 			$english_news->save();
+		}
+	}
+	if(isset($_POST['publish_schedule_date'])){
+		$schedule = new table_class('fb_publish_schedule');
+		if($id){
+			$schedule->find_by_resource_id($id);
+		}
+		if($_POST['publish_schedule_date']){
+			$schedule->publish_date = $_POST['publish_schedule_date'];
+			$schedule->resource_id = $news->id;
+			$schedule->resource_type= 'news';
+			$schedule->save();
+		}else{
+			if($schedule->id){
+				$schedule->delete();
+			}
 		}
 	}
 	
