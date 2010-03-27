@@ -57,9 +57,9 @@ ul{padding:0; margin:0}
 
 .forbes_l{width:330px; margin-top:10px; margin-left:5px; overflow:hidden; float:left; display:inline;}
 .forbes_l .caption{width:320px; height:28px; margin-top:5px;  float:left; display:inline;}
-.forbes_l .caption .captions{width:30px; height:18px; margin-top:5px; padding-left:18px; line-height:18px; font-size:14px; color:#666666; font-weight:bold;  background:url(/images/index/square.jpg) no-repeat 0 5px; float:left; display:inline;}
+.forbes_l .caption .captions{width:30px; height:18px; margin-top:5px; padding-left:18px; line-height:18px; font-size:14px; color:#666666; font-weight:bold;  background:url(/images/public/square.jpg) no-repeat 0 5px; float:left; display:inline;}
 .forbes_l .caption .line{width:1px; height:10px; margin-top:9px; margin-left:10px; font-size:10px; line-height:10px; float:left; display:inline;}
-.forbes_l .caption .more{width:38px; height:8px; margin-top:10px; margin-left:15px; background:url(/images/index/more.jpg) no-repeat; float:left; display:inline;}
+.forbes_l .caption .more{width:38px; height:8px; margin-top:10px; margin-left:15px; background:url(/images/public/more.jpg) no-repeat; float:left; display:inline;}
 
 .forbes_l_content{width:320px; padding-bottom:10px; float:left; display:inline;}
 .forbes_l .list1{width:320px; margin-top:10px; margin-left:10px; float:left; display:inline;}
