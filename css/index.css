@@ -14,7 +14,7 @@ ul{padding:0; margin:0}
 .headline_title a:hover{color:#94000B;}
 .headline_description{width:351px; height:45px; margin-top:10px; margin-left:2px; margin-bottom:8px; line-height:24px; font-size:14px; overflow:hidden; float:left; display:inline;}
 .headline_related{width:230px; height:80px; overflow:hidden; float:left; display:inline;}
-#headline .list{width:224px; height:24px; padding-left:13px; line-height:22px; background:url(/images/index/circle1.jpg) no-repeat 0 8px; overflow:hidden; float:left; display:inline;}
+#headline .list{width:224px; height:24px; padding-left:13px; line-height:22px; background:url(/images/public/circle1.jpg) no-repeat 0 8px; overflow:hidden; float:left; display:inline;}
 #headline .list a{color:#003399; font-size:14px; text-decoration:none;}
 #headline .list a:hover{color:#94000B;}
 #headline #more{width:60px; height:20px; margin-top:50px; float:right; display:inline;}
@@ -67,7 +67,7 @@ ul{padding:0; margin:0}
 .forbes_l .list1_title a{font-size:20px; color:#003899; font-weight:bold; font-family:黑体; text-decoration:none;}
 .forbes_l .list1_description{width:294px; height:40px; margin-top:10px; font-size:14px; line-height:20px; overflow:hidden; float:left; display:inline;}
 .forbes_l .list1_description a{color:#666666; text-decoration:none;}
-.forbes_l .list2{width:300px; height:16px; margin-top:7px; margin-left:12px; padding-left:15px; background:url(/images/index/circle1.jpg) no-repeat 0 5px; line-height:16px; float:left; display:inline;}
+.forbes_l .list2{width:300px; height:16px; margin-top:7px; margin-left:12px; padding-left:15px; background:url(/images/public/circle1.jpg) no-repeat 0 5px; line-height:16px; float:left; display:inline;}
 .forbes_l .list2 a{font-size:14px; color:#003899; text-decoration:none;}
 .forbes_l .dashed{width:320px; height:2px; margin-top:10px; background:url('/images/index/dashed.jpg') no-repeat bottom; float:left; display:inline;}
 
@@ -86,8 +86,7 @@ ul{padding:0; margin:0}
 #column_btnl{width:8px; height:99px; margin-top:45px; background:url(/images/index/column_btnl.jpg) no-repeat; cursor:pointer; float:left; display:inline;}
 #column_btnr{width:8px; height:99px; margin-top:45px; margin-left:10px; background:url(/images/index/column_btnr.jpg) no-repeat; cursor:pointer; float:left; display:inline;}
 
-.forbes_l{width:320px; margin-top:20px; margin-left:15px; float:left; display:inline;}
-.forbes_l .caption{width:320px; height:28px; margin-top:5px;  float:left; display:inline;}
+
 .forbes_l .caption .caption1{width:60px; height:18px; margin-top:5px; padding-left:18px; line-height:18px; font-size:14px; color:#666666; cursor:pointer; font-weight:bold;  background:url(/images/index/square.jpg) no-repeat 0 5px; float:left; display:inline;}
 .forbes_l .caption .caption2{width:60px; height:18px; margin-top:5px; padding-left:18px; line-height:18px; font-size:12px; color:#666666; cursor:pointer; float:left; display:inline;}
 .forbes_l .caption .line{width:1px; height:10px; margin-top:9px; margin-left:10px; font-size:10px; line-height:10px; float:left; display:inline;}
