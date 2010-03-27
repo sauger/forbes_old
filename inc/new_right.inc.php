@@ -6,7 +6,7 @@
 	css_include_tag('right_inc');
 ?>
 <div id="right_inc">
-	<div id="right_ad"></div>
+	<div id="right_ad"><img border=0 width=317 height=265 src="/images/right/one.jpg"></div>
 	<div class="left_div">
 		<div id="left_title">
 			<div style="background:url(/images/html/news/background1.jpg); color:#000000;" name="favor" class="left_top_title">最受欢迎</div>

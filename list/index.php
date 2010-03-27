@@ -123,7 +123,7 @@
 							<div class="title_line"></div>
 						</div>
 						<?php $bd=get_news_by_pos('常规榜单-名人','榜单首页');?>
-s						<div class="list_li_box">
+						<div class="list_li_box">
 							<?php for($i=0;$i<count($bd);$i++){ ?>
 								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
 							<?php } ?>
