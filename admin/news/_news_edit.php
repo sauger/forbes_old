@@ -6,6 +6,10 @@
 		if ($db->move_first()){
 			$english_id = $db->field_by_index(0);		
 		}
+		$db->query("select publish_date,resource_id from fb_publish_schedule where resource_id = {$id} and resource_type='news'");
+		if ($db->move_first()){
+			$publish_date = $db->field_by_name('publish_date');
+		}
 	}else{
 		$category_id = -1;
 	}
@@ -19,7 +23,12 @@
 	<form id="news_edit" enctype="multipart/form-data" action="news.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　发布新闻 <a href="<?php echo $href;?>"><img src="/images/btn_back.png" border=0></a></td>
+			<td colspan="2" width="795">
+				发布新闻 <a href="<?php echo $href;?>"><img src="/images/btn_back.png" border=0></a>
+				<?php if($_SESSION['role_name'] == 'admin' || $_SESSION['role_name'] == 'sys_admin'){?>
+				定时发布 <input type="checkbox" id="publish_schedule_select" <?php if($publish_date) echo "checked='checked'"?>></input> <input type="text" name="publish_schedule_date" id="publish_schedule" style="width:160px;" <?php if(!$publish_date) echo "disabled=true;";?> value="<?php echo $publish_date;?>"></input>(格式：2010-03-03 16:00:00)
+				<?php }?>
+			</td>
 		</tr>
 		<tr class=tr4>
 			<td width="130">标题</td>
@@ -166,7 +175,8 @@
 		<input type="hidden" name="id" id="hidden_news_id" value="<?php echo $news->id; ?>">
 		<input type="hidden" name="news[related_news]" id="hidden_related_news" value="<?php echo $news->related_news ? $news->related_news : "";?>"></input>
 		<input type="hidden" name="news[sub_headline]" id="hidden_sub_headline" value="<?php echo $news->sub_headline ? $news->sub_headline : "";?>"></input>
-	</form>
+		<input type="hidden" name="news[is_adopt] value="<?php $news->is_adopt;?>"></input>	
+		</form>
 
 <script>
 $(function(){
