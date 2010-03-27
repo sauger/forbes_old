@@ -11,8 +11,8 @@
 	<title>福布斯-科技首页</title>
 	<?php
 		use_jquery();
-		js_include_tag('select2css');
-		css_include_tag('tz','top','bottom');
+		js_include_tag('top');
+		css_include_tag('tz','public');
 	?>
 </head>
 <body>
