@@ -6,16 +6,6 @@ $(function(){
 		$(".nav").parent().parent().css("background","none");
 		$(this).parent().parent().css('background',"url('/images/top/bg_menu.jpg') repeat-x");
 	});
-
-	$(".nav2 a").hover(function(){
-		$(this).css('color','#ff0000');
-
-	});	
-	
-	$(".nav2 a").mouseleave(function(){
-		$(".nav2 a").css('color','#000000');
-	});	
-
 });
 
 
