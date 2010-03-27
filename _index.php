@@ -1,34 +1,36 @@
-﻿<? 
+<? 
 		$catename=$db->query('SELECT name FROM fb_category where id='.$cid); ?>
-		<div id=cyindex></div>
-		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　<a href="#"><?php echo $catename[0]->name; ?>首页</a></div>
-		<div id=cyline></div>
+		<div id=bread><a href="#"><?php echo $catename[0]->name; ?></div>
+		<div id=bread_line></div>
 		<?php
 			$news = get_news_by_pos($catename[0]->name.'首页头条');
 		?>
-		<div id=tz_left>
-			<div id=tz_l_t_title><a href="/news/news.php?id=<?php echo $news[0]->news_id; ?>"><?php echo $news[0]->title;?></a></div>
-			<div id=tz_l_t_pic>
+		<div id=l>
+			<div id=common_head_title><a href="/news/news.php?id=<?php echo $news[0]->news_id; ?>"><?php echo $news[0]->title;?></a></div>
+			<div id=common_head_title_pic>
 				<a href="/news/news.php?id=<?php echo $news[0]->news_id; ?>"><img border=0 src="<?php echo $news[0]->photo_src;?>"></a>	
 			</div>
-			<div id=tz_l_t_r>
-				<div id=tz_l_t_r_t><a href="/news/news.php?id=<?php echo $news[0]->news_id; ?>"><?php echo strip_tags($news[0]->description);?></a></div>
-				<div id=tz_l_t_r_b>
+			<div id=common_head_r>
+				<div id=common_head_description><a href="/news/news.php?id=<?php echo $news[0]->news_id; ?>"><?php echo strip_tags($news[0]->description);?></a></div>
+				<div id=common_head_list>
 					<?php for($i=1; $i<count($news);$i++){ ?>
-						<div class=cl><a href="/news/news.php?id=<?php echo $news[$i]->news_id; ?>"><?php echo $news[$i]->short_title; ?></a></div>
+						<div class=common_head_list><a href="/news/news.php?id=<?php echo $news[$i]->news_id; ?>"><?php echo $news[$i]->short_title; ?></a></div>
 					<?php } ?>
 				</div>
 			</div>
+			
+			
 			<?php 
 				$news = get_news_by_pos($catename[0]->name.'首页'.$catename[0]->name.'文章');
 			?>
-			<div id=tz_l_b_l>
-				<div class=l_b_l_title>
-					<div class=pic></div>
-					<div class=wz><?php echo $catename[0]->name; ?>文章</div>
-					<div class=l_b_sx>|</div>
-					<div class=more><a href="/news/news_list.php?cid=<?php echo $news[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
+			
+			<div class=common_box>
+				<div class=caption>
+					<div class=captions><?php echo $catename[0]->name; ?>文章</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
 				</div>
+					
 				<?php 
 				for($i=0;$i<count($news);$i++){ ?>
 					<div class=tz_l_b_l_t_title><a href="/news/news.php?id=<?php echo $news[$i]->news_id; ?>"><?php echo $news[$i]->title; ?></a></div>
@@ -36,12 +38,14 @@
 				<?php }
 				$news = get_news_by_pos($catename[0]->name.'首页文章');
 				?>
-				<div class=l_b_l_title>
-					<div class=pic></div>
-					<div class=wz>文章</div>
-					<div class=l_b_sx>|</div>
-					<div class=more><a href="/news/news_list.php?cid=<?php echo $news[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
+
+				<div class=caption>
+					<div class=captions style="width:30px;">文章</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
 				</div>
+
+
 				<?php 
 		 		 for($i=0;$i<count($news);$i++){ ?>
 					<div class=tz_l_b_l_b_content><a href="/news/news.php?id=<?php echo $news[$i]->news_id; ?>"><?php echo $news[$i]->short_title; ?></a></div>
@@ -52,11 +56,10 @@
 				<?php 
 					$news = get_news_by_pos($catename[0]->name.'首页'.$catename[0]->name.'专题');
 				?>
-				<div class=l_b_l_title>
-					<div class=pic></div>
-					<div class=wz><?php echo $catename[0]->name; ?>专题</div>
-					<div class=l_b_sx>|</div>
-					<div class=more><a href="/news/news_list.php?cid=<?php echo $news[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
+				<div class=caption>
+					<div class=captions><?php echo $catename[0]->name; ?>专题</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
 				</div>
 				<div class="tz_l_b_r_content">
 					<div class=tz_l_b_r_pic><a href="/news/news.php?id=<?php echo $news[0]->news_id; ?>"><img border=0 src="<?php echo $news[0]->photo_src; ?>"></a></div>
@@ -73,11 +76,10 @@
 				<?php }
 				$news = get_news_by_pos($catename[0]->name.'首页'.$catename[0]->name.'专栏');
 				?>
-				<div class=l_b_l_title style="margin-bottom:5px;">
-					<div class=pic></div>
-					<div class=wz><?php echo $catename[0]->name; ?>专栏</div>
-					<div class=l_b_sx>|</div>
-					<div class=more><a href="/news/news_list.php?cid=<?php echo $news[0]->category_id; ?>"><img border=0 src="/images/index/more.jpg"></a></div>
+				<div class=caption>
+					<div class=captions><?php echo $catename[0]->name; ?>专栏</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
 				</div>
 				<?php for($i=0;$i<count($news);$i++){ ?>
 				<div class=tz_l_b_r_b>
@@ -87,6 +89,12 @@
 				<?php } ?>
 			</div>
 		</div>
+		
+		
+		
+		
+		
+		
 		<div id=right>
 			<a style="margin:0px; float:right; display:inline;" href=""><img border=0 width=317 height=265 src="/images/right/one.jpg"></a>
 			<div id=r_t_title>

@@ -10,7 +10,7 @@
 	<title>福布斯-榜单首页</title>
 	<?php
 		use_jquery();
-		js_include_tag('select2css','index');
+		js_include_tag('public','index');
 		css_include_tag('charts_index','public','index');
 	?>
 </head>
