@@ -1,5 +1,4 @@
 ﻿<?php 
-	session_start();
 	require_once('../frame.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -7,26 +6,25 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	
 	<title>福布斯-科技首页</title>
 	<?php
 		use_jquery();
-		js_include_tag('top');
-		css_include_tag('tz','public');
+		js_include_tag('public');
+		css_include_tag('public','common');
 	?>
 </head>
 <body>
 	<div id=ibody>
-		<? 
-			$db=get_db();
-			$cid=$db->query('select id from fb_category where name="科技" and parent_id=0');
-			$cid=$cid[0]->id;
-			$nav=$db->query('select id from fb_navigation where name="科技"');
-			$nav=$nav[0]->id;
-			require_once('../inc/top.inc.php');
-			include('../_index.php');
-		 	require_once('../inc/bottom.inc.php');
-		?>
+	<? 
+		$db=get_db();
+		$cid=$db->query('select id from fb_category where name="科技" and parent_id=0');
+		$cid=$cid[0]->id;
+		$nav=$db->query('select id from fb_navigation where name="科技"');
+		$nav=$nav[0]->id;
+		require_once('../inc/top.inc.php');
+		include('../_index.php');
+	 	require_once('../inc/bottom.inc.php');
+	?>
 	</div>
 </body>
 </html>

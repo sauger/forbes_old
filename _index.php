@@ -1,8 +1,7 @@
 ﻿<? 
 		$catename=$db->query('SELECT name FROM fb_category where id='.$cid); ?>
-		<div id=cyindex></div>
-		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　<a href="#"><?php echo $catename[0]->name; ?>首页</a></div>
-		<div id=cyline></div>
+		<div id=bread><a href="#"><?php echo $catename[0]->name; ?>福布斯中文网 > 投资首页</a></div>
+		<div id=bread_line></div>
 		<?php
 			$news = get_news_by_pos($catename[0]->name.'首页头条');
 		?>
