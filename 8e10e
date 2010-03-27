@@ -1,0 +1,4605 @@
+[33mcommit 4ac4fb4d98dfc4a6b6547304534f6161ad799ee9[m
+Merge: 1187905... 8e10e78...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 27 11:03:49 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 1187905d2fc43e1731979f01e2454fb3e9a41914[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 27 11:03:29 2010 +0800
+
+    shelby1982
+
+[33mcommit 8e10e78546115091961ab33026a7731fc3415d48[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Mar 27 10:59:20 2010 +0800
+
+    robbin
+
+[33mcommit 96a0ece4e8b5dce082f99edd54432bfcd81d2ce8[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Mar 27 10:43:19 2010 +0800
+
+    robbin
+
+[33mcommit 6aa4190fcedbe2479501c6a6f6b24ba3188f806b[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 26 16:37:22 2010 +0800
+
+    fix bugs
+
+[33mcommit bf7e79d29487a518e6cd3e1521790e72cc6be01b[m
+Merge: f2bec10... c720d24...
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 26 15:53:47 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit f2bec100946029ab68c4bc45866327dce773248d[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 26 15:53:37 2010 +0800
+
+    fix bugs
+
+[33mcommit c720d24b476e82e374dfa3ca06767a2882fbed99[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 26 15:32:18 2010 +0800
+
+    fix rich
+
+[33mcommit 09057807b65b5c6e59cebf94d2c808c4b58eff15[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 26 15:29:40 2010 +0800
+
+    fix db
+
+[33mcommit e2f7080ea12377f912d1748d2198c109f7fe589b[m
+Merge: ca3b94e... 97cc23c...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 26 15:24:45 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit ca3b94ef0e9cc7f73ed613a9d50edd1c8dc62ce2[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 26 15:23:36 2010 +0800
+
+    charts list
+
+[33mcommit 97cc23c9ad3bf90902bcf8af71e48334328cba1d[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 26 14:53:15 2010 +0800
+
+    fix bugs
+
+[33mcommit 79c2fc014a11a5bf82262e11b19e85c16a0baa91[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 26 14:52:25 2010 +0800
+
+    fix bugs
+
+[33mcommit a401c4ba801b018910ec419cbb8bba67cc1f4e01[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 26 14:48:55 2010 +0800
+
+    fix bugs
+
+[33mcommit aace367dc7a4de14a3ef17d4ee70b762ca4c5ebf[m
+Merge: 2a74551... b81e729...
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 26 10:57:24 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 2a7455178f74542d217de36fc8124bf76ed558fd[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 26 10:57:03 2010 +0800
+
+    fix bugs in charts
+
+[33mcommit b81e72945ffeacedbbc5b346be08b1e630c593bf[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 18:20:07 2010 +0800
+
+    fix column_amin
+
+[33mcommit 570ace4494b327418399c4e76a6f2f5bb584197d[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 18:01:22 2010 +0800
+
+    fix
+
+[33mcommit 9e81d83439a4180d56da4104d835845c68c486a1[m
+Merge: 688d2a1... cce14a9...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 17:53:15 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 688d2a103880d117ae13be68f9da09401a1e66fe[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 17:53:03 2010 +0800
+
+    flahs
+
+[33mcommit cce14a9f38a90829df1ff50ba4e4d3dc94316752[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 17:38:06 2010 +0800
+
+    fix image upload
+
+[33mcommit 034217c4fc9f9c89b4e56ababecff1834323b2f7[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 17:02:56 2010 +0800
+
+    fix bugs
+
+[33mcommit 73fa5e2322955e7b87fc70f31c5067d7abffb032[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 16:43:27 2010 +0800
+
+    adjust the width in rich list items list
+
+[33mcommit 0efbd5438dde78a5cb724dc99ad4922d8bc7c1d4[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 16:40:26 2010 +0800
+
+    fix bugs
+
+[33mcommit ee78a40c89e98d3b8bf5676b356132ff278d89c9[m
+Merge: 871ae89... da0eff8...
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 16:10:54 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 871ae8933070ace1f733cee167c0916e8077ea9d[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 16:10:35 2010 +0800
+
+    add email authentication
+
+[33mcommit da0eff84367d8b1af0a7c03da4d18d9a6ab561ea[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 15:00:37 2010 +0800
+
+    fix list upload
+
+[33mcommit 39a03850f5d72801d101fae6fc00111e5d8c114c[m
+Merge: bf545d2... 543ec80...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 13:39:31 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit bf545d20835bb477509ce553989c2d6b3e5e27d7[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 13:39:21 2010 +0800
+
+    list_relation
+
+[33mcommit 543ec8063a206cc52fbde0b9b415cd89b1b490fa[m
+Merge: 83004d7... b7759f0...
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 12:55:11 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 83004d7aba44c4b25290fe44854764c8a0cd4c42[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 12:55:04 2010 +0800
+
+    adjust plugin script
+
+[33mcommit b7759f0849858c1b1b3e16ae1824ac9eb0e9a764[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 12:51:32 2010 +0800
+
+    user_lo
+
+[33mcommit d3a38560ad710746212d8dbfd32ab210ee1f3514[m
+Merge: e8cee43... 0441c8d...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 12:43:24 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit e8cee43cf07ba4915c33f3c67eac23609cadf07a[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 12:43:12 2010 +0800
+
+    rich upload
+
+[33mcommit 0441c8dc26b6f78a707f999f043b96151db4bc15[m
+Merge: a4cfd87... 829cb6e...
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 11:38:15 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit a4cfd876b4499d8fbadfaee28222cf1b1dc29b83[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 11:37:59 2010 +0800
+
+    fix bugs
+
+[33mcommit 829cb6eed608a69e220b24551c6ed4eba0ff3e4c[m
+Merge: 8b40b22... 96f58db...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 11:21:54 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 8b40b22455cb22c5e52d9a78d1f939f40438a6ec[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 11:21:45 2010 +0800
+
+    position
+
+[33mcommit 96f58db5b8083c6f2352dbcc259cc73714d41093[m
+Merge: 42b3e28... e1f2aaa...
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 11:05:32 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 42b3e281726a8d31b9cd67594508eca1f273de16[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 25 11:05:19 2010 +0800
+
+    fix bugs
+
+[33mcommit e1f2aaa0778745227f55355f26e7c2adc5ad44dc[m
+Merge: 7c900db... 4d70b44...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 10:53:34 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 7c900db153a96f52d5af97ce99fec5ff3ef4c681[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 25 10:53:01 2010 +0800
+
+    rich fortune
+
+[33mcommit 4d70b446eb546c76e29e72e51fdc0f2cdaae6362[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 18:51:01 2010 +0800
+
+    shelby1982
+
+[33mcommit 927dbfa003970fddf283fea40499383f0894b81f[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 18:46:17 2010 +0800
+
+    shelby1982
+
+[33mcommit 1fec5920d151b4915a6299fe518d95b98d3d44b8[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 18:37:58 2010 +0800
+
+    shelby1982
+
+[33mcommit acd62a5dad78f8d4dab1ba2e84c2827907f47cd3[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 18:33:33 2010 +0800
+
+    shelby1982
+
+[33mcommit b9bde1483f458807bd47299616f5c7dfd27719b5[m
+Merge: e419332... faad4da...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 18:23:30 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit e41933262e88834de75f8e489458cd8968f326bd[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 18:23:11 2010 +0800
+
+    shelby1982
+
+[33mcommit faad4da231526edafd333ae46eb270358211a2bc[m
+Merge: c069584... 57b09d3...
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 24 18:02:23 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit c069584fab74e3e536db56f6d0268ce43c3aa98e[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 24 18:02:05 2010 +0800
+
+    change thd db connection in plugin
+
+[33mcommit 57b09d302f85ab4476e94c47a8f33d7f3b2aea64[m
+Merge: 20839aa... 9d228e2...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 18:01:10 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 20839aa667dc6ca1d0a4e6f048f8adcd08866a87[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 18:00:54 2010 +0800
+
+    shelby1982
+
+[33mcommit 9d228e2ce0e1fb084e6c099b34d0e50dbf080ba2[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 24 17:49:44 2010 +0800
+
+    fix bugs
+
+[33mcommit 13db9685b222628127e13ead6c05189367aea0cb[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 24 17:49:25 2010 +0800
+
+    fix bugs
+
+[33mcommit 5f8193c6ebebcca58238b6d5eeefaae345af892b[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 24 17:13:00 2010 +0800
+
+    fix bugs
+
+[33mcommit 74a33866e3e0a0c2ea33e2dd8a839ef0f3ab1bc2[m
+Merge: 34b69cc... 56ce2a4...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 16:53:11 2010 +0800
+
+    shelby1982
+
+[33mcommit 34b69cc17f009a24c6cc8702d5148cbbd7db9102[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 24 16:50:56 2010 +0800
+
+    shelby1982
+
+[33mcommit 56ce2a4f62ad192212054f0a52b99f82920a3a46[m
+Merge: cbdafa4... a991002...
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 24 16:39:53 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit cbdafa474936f5e502a14f26d3fba5088542b9c5[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 24 16:39:29 2010 +0800
+
+    fix bugs
+
+[33mcommit a9910023755dc3c3866031ff5870fac3d6b30733[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 16:21:57 2010 +0800
+
+    1
+
+[33mcommit 9ed29f545a8d9cf3bc975b18ca22086a10efdcad[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 16:18:03 2010 +0800
+
+    fix column
+
+[33mcommit 238d1a3d3d6eec2349fa4dda5780e68b2b17543d[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 16:12:21 2010 +0800
+
+    fix column
+
+[33mcommit 55d2bb966fd641ce959e82ed385f62bdcc5262a9[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 15:08:02 2010 +0800
+
+    fix postion
+
+[33mcommit 2f11db02269a4d1bc35dbccba5a53b8921d3c2d1[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 15:03:30 2010 +0800
+
+    fix position
+
+[33mcommit c7655415bf7ea8b6c04e3de2e7e15bb48922d20a[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 14:13:33 2010 +0800
+
+    fix column
+
+[33mcommit 68f5dd189cc1f2e82ea101ec0941df84ee370c32[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 13:54:50 2010 +0800
+
+    1
+
+[33mcommit 6fc3cc4953499c6d8544dfdf613c8b692b9792fa[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 13:53:06 2010 +0800
+
+    1
+
+[33mcommit 59e950f10cc61b226e4bf25b74e47620b66a6f18[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 13:52:29 2010 +0800
+
+    fix sql
+
+[33mcommit e3eb45683728c823562352c6e7a792cc5f8bf4d4[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 13:45:49 2010 +0800
+
+    fix column
+
+[33mcommit f5dd52f189e5f14ba7983525b8d9dd7e56cc052b[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 12:53:20 2010 +0800
+
+    fix news
+
+[33mcommit 2414aeb0a82c8d6d87afd134ce2e3bec8845da6c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 24 12:36:15 2010 +0800
+
+    fix news
+
+[33mcommit d24a65c4c27f546a21f38f2fb12c2f1c1824ac08[m
+Merge: 9c5117b... 61b124c...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 23 17:48:29 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 9c5117b522344e045f3bcff030a863950016ed61[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 23 17:48:06 2010 +0800
+
+    magazine
+
+[33mcommit 61b124c41abf4c44d1b8397a41f5c5d0ddb7237c[m
+Merge: ebcbc03... ab1878f...
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 23 17:47:09 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit ebcbc0332295e08b800023fca5b4a79ba4adc3ce[m
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 23 17:46:51 2010 +0800
+
+    fix bugs
+
+[33mcommit ab1878f7437735d7be94c6e9c7fec162765522b8[m
+Merge: 1857882... f74a282...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 23 17:33:01 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 1857882a2ab53319ce56e26c3aa9b137a67e5fa5[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 23 17:32:40 2010 +0800
+
+    fix news
+
+[33mcommit f74a2826cebb06c09c97428a8e88563fb45a9cd3[m
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 23 17:31:38 2010 +0800
+
+    fix bugs
+
+[33mcommit 05bd7e2558ddd3212efdca80c82cdeb5d61432f9[m
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 23 14:43:25 2010 +0800
+
+    fix bugs
+
+[33mcommit e9ad0f012f4cabcc56cb31f1d3a85350001eac8a[m
+Merge: 44fa9b2... aa57d3e...
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 23 12:13:55 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 44fa9b28de317def2a61138701ea94d55b998d82[m
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 23 12:13:35 2010 +0800
+
+    fix bugs
+
+[33mcommit aa57d3ead88b003e49ffc4488b382705fe095ba2[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 23 10:35:39 2010 +0800
+
+    fix column and menu
+
+[33mcommit 53d6697022f15f8a6a7bb09ebd122b52d202a495[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 23 10:31:54 2010 +0800
+
+    navigation
+
+[33mcommit 07309abc6bb8687fce4616c1b7af4088a3833175[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 23 10:25:34 2010 +0800
+
+    1
+
+[33mcommit 81bca7d0ff87cd2bdc1d6b77565b77948790eb6e[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 23 09:56:04 2010 +0800
+
+    upload xls
+
+[33mcommit 0bb6ab75ccca471779e235a905e592a12ec0919a[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 22 17:37:52 2010 +0800
+
+    fix bugs
+
+[33mcommit ca980593ecdab40b80bc390f1c8d4649b7a424ba[m
+Merge: 52d0025... 135d64f...
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 22 17:12:58 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 52d0025de0746125746bfc1571b90be9402a2855[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 22 17:12:37 2010 +0800
+
+    fix bugs
+
+[33mcommit 135d64f155153d86b80e1b7d45dcb0b0638bf932[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 22 16:42:51 2010 +0800
+
+    magazine
+
+[33mcommit 23252afda9b96697b3084615b452c3231cad0102[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 22 14:53:13 2010 +0800
+
+    fix bugs
+
+[33mcommit d1f0fb5b97526fee613815669835770dbb969aa3[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 22 11:14:23 2010 +0800
+
+    test
+
+[33mcommit 5423a1602bb31e60f2549a15614b634b91441f53[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 22 11:04:23 2010 +0800
+
+    fix bugs
+
+[33mcommit 0d80f1cf72a11ffc74df23362076226f5ffc0ee6[m
+Merge: 85c8d37... 5430406...
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 22 10:05:31 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 85c8d37254ea73bb30546987394ac8ad659bb2de[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 22 10:05:19 2010 +0800
+
+    fix bugs in dbmigrate
+
+[33mcommit 5430406ff703a9ebdd4cfda01dd083165fb442cd[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 21:56:24 2010 +0800
+
+    shelby1982
+
+[33mcommit 8c5883065a1b4f2aab5937aa6812bb1468e512fa[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 21:43:00 2010 +0800
+
+    shelby1982
+
+[33mcommit fe11de5a0cd1a1bde4896aabacf40d18a8d53344[m
+Merge: 8083c7c... f022fd8...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 17:43:27 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 8083c7cf365d0d06fc2b39eeb2df667a72ed6f41[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 17:43:05 2010 +0800
+
+    fix jz
+
+[33mcommit f022fd8a12465bb4dc5770e7fe5a3165d9ef9805[m
+Merge: 199db9e... 7d9c9e9...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 17:41:44 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 199db9e6a69589d552661bf6c7306d238cb6c174[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 17:41:24 2010 +0800
+
+    robbin
+
+[33mcommit 7d9c9e9e1f2a1a9b9e0202368cc07d8c4f0203fa[m
+Merge: 28e29b1... 79e9556...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 17:28:26 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 28e29b1ab459192845a04aa000ad0602ced47ada[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 17:28:15 2010 +0800
+
+    column
+
+[33mcommit 79e95566690b032a8e15ff6040c3c4d146a7ad65[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 17:21:09 2010 +0800
+
+    remove debugs infos
+
+[33mcommit 093a7deed226e7967633f15efa51700539c5d51b[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 17:18:22 2010 +0800
+
+    fix bugs
+
+[33mcommit 437a41bae52fa6739085b50de7180155d6b1bb23[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 17:16:22 2010 +0800
+
+    fix bugs
+
+[33mcommit 623353ef1f93083ddf0fec7a80d3747b3ee8b0db[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 17:13:39 2010 +0800
+
+    fix bugs
+
+[33mcommit d4faa78c77ce8fdb71b03d53a4f3895ac30a3e72[m
+Merge: 28001cb... 6f2ea59...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 16:49:12 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 6f2ea598bbb4e1733c646f280ec8779cc29a6033[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 16:47:26 2010 +0800
+
+    delete unuse files
+
+[33mcommit 28001cb1d372214039ded0b22a74f326a903c292[m
+Merge: e5ebb5f... 01800ce...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 16:38:07 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit e5ebb5f95c552f6462eddb385773067ed1b8f4f8[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 16:37:54 2010 +0800
+
+    1
+
+[33mcommit 01800cee7cd27ac3e10828619e992a70ab8a8cfb[m
+Merge: 95665f6... 398aed7...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 16:37:30 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 95665f6b4b3c55724972fd1c06f0a10fb399618c[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 16:37:19 2010 +0800
+
+    fix bugs
+
+[33mcommit 398aed7861e96019ac6e26194bd8ccdba9c3e914[m
+Merge: f7334e5... bcdc65d...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 16:21:48 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit f7334e5988792bbaf5d424cdc626688f12e6c0f1[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 16:21:29 2010 +0800
+
+    shelby1982
+
+[33mcommit bcdc65d35ae428055f0fe2343c21c93e6138310b[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 16:02:33 2010 +0800
+
+    1
+
+[33mcommit 39b839a1c5e2463bc147b0627b92fbea9f57edb0[m
+Merge: 68ac2c3... 2234fc9...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 15:53:18 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 68ac2c3979215cba4c7a274a5ebc553d83c45ca3[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 15:52:57 2010 +0800
+
+    fix table
+
+[33mcommit 2234fc904f49d5d023e14420548c7a6597bb6d21[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 15:51:27 2010 +0800
+
+    shelby1982
+
+[33mcommit eb4c08f71f1e3c7e5448562f4303911a0e37d50a[m
+Merge: 9ccc0fe... fd80086...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 15:46:43 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 9ccc0fe03321df29dfb3160eb4775b82a1465307[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 15:46:23 2010 +0800
+
+    fix bugs
+
+[33mcommit fd80086eef5d0b59ffd7f1763a4246be8891ecc2[m
+Merge: 632247d... f725f11...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 15:45:33 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 632247d7118816450c7a90f0992ba2fe661f2277[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 15:45:16 2010 +0800
+
+    fix column
+
+[33mcommit f725f11aacae9957c4310404f0a9187a4844bcfb[m
+Merge: 013cd5c... 8d6383c...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 15:43:38 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 013cd5c1739da7938003641d852ebf7c7710c2f2[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 15:43:28 2010 +0800
+
+    fix bugs
+
+[33mcommit 250c84fd318b599fa0a873ec5baec5e87be701c0[m
+Merge: f2d3a3f... 8d6383c...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 15:23:11 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit f2d3a3fc72eab9b99163848642de495c56ce7dc1[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 15:22:59 2010 +0800
+
+    1
+
+[33mcommit 8d6383cc646710c8015b5c039a785dc75457ba08[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 15:22:50 2010 +0800
+
+    shelby1982
+
+[33mcommit e23fc3621efa0f42a89e50eefab0ef00d1dbc2ff[m
+Merge: 750e396... 573d672...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 14:46:01 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 750e396692bb3247d6e0a945b92c77eff52c0a25[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 14:45:29 2010 +0800
+
+    robbin
+
+[33mcommit 573d672510464026cdea3e1bc9ce84065feb2aba[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 14:37:12 2010 +0800
+
+    1
+
+[33mcommit e5e958796fe7bbda8b1be4df65f16e806d7c0888[m
+Merge: ca0895d... 17ca6c4...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 14:33:43 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit ca0895d7085006c2265234a1e75957c91bfecfa8[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 14:33:18 2010 +0800
+
+    1
+
+[33mcommit 17ca6c42419a708dba150f23c6986a33407ece34[m
+Merge: 157bd43... 4afa9dd...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 14:09:28 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 157bd43b8442469db9375174f5bf4c34a82f5257[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 14:09:17 2010 +0800
+
+    fix bugs
+
+[33mcommit 4afa9dd5107fa1e7bd0c6d0c02d22e43137a6bfb[m
+Merge: b7fd75f... 746637b...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 14:07:40 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit dcedd8c75b68ca7677a385a25e946f3af1f90145[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 13:44:04 2010 +0800
+
+    fix bugs
+
+[33mcommit b7fd75fe2d85f72ae4302a04006b5437fc63f937[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 13:23:52 2010 +0800
+
+    robbin
+
+[33mcommit 746637b8c2093b58048e786320dd37058aaa34cb[m
+Merge: e602fcb... 2177f7d...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 12:46:27 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit e602fcb463cef8171f31db71a0608cf4c9579338[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 12:45:32 2010 +0800
+
+    fix login
+
+[33mcommit 2177f7d50108463a5cd3d5e23cf63fcf53fc84bb[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 12:40:46 2010 +0800
+
+    shelby1982
+
+[33mcommit bc528218e75fa1daca61da1e91d6bc6bdea0be0f[m
+Merge: b2c2d6d... 7b32032...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 12:36:42 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit b2c2d6d22de3ff1f7a21f648af97d6cb580c48b8[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 12:36:21 2010 +0800
+
+    shelby1982
+
+[33mcommit 7b3203245c962c8cbfc8d0107a1e91c0bcf158a4[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 12:35:02 2010 +0800
+
+    fix category
+
+[33mcommit 02a5d2655b94758dabd8710d7c35316e4b25ce90[m
+Merge: a4bfb28... 60e3ae8...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 12:21:37 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit a4bfb285b684eea194433b77dabfe83e86e88317[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 12:19:57 2010 +0800
+
+    1
+
+[33mcommit 60e3ae8e16957a97ac49b1eff6c086b9f053df52[m
+Merge: d7f0ae1... eac32b1...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 11:36:25 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit d7f0ae1995dc07d3c119f441cfae4458ca48a22d[m
+Merge: 1f3d28d... 1e7da5c...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 11:35:52 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit eac32b1e5eee6d2e4d80e5d88044895d2c4c125a[m
+Merge: c96a44a... 1e7da5c...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 11:35:48 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 1f3d28db51649f107f37d10a2c441294df1a4d6a[m
+Merge: 57fabda... 38ea697...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 11:35:30 2010 +0800
+
+    fix conflict in index.php
+
+[33mcommit c96a44ae386c62d2c06cd508976b428248fdd25e[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 11:35:28 2010 +0800
+
+    fix postion
+
+[33mcommit 1e7da5ca6d0dcec2127c54a20472afdcb790ef07[m
+Merge: f9564ca... b33e074...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 11:34:43 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit f9564ca3b5a09eba3043d2c88320309f65eb3517[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 11:34:19 2010 +0800
+
+    shelby1982
+
+[33mcommit b33e074813826f4a07b1b9d6d13de9b003bb1ba0[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 11:33:48 2010 +0800
+
+    1
+
+[33mcommit 57fabdad9868e23d056f8e9713dae86a1533c3ce[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 21 11:33:38 2010 +0800
+
+    fix bugs
+
+[33mcommit 38ea697cfb6c680b70c46e8800589407d3f62dfd[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 11:33:04 2010 +0800
+
+    11
+
+[33mcommit a79bdc7f57ea2f3b70229df10708d21835d43666[m
+Merge: 7901adc... a37570f...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 11:32:29 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 7901adcc4906cf112e18ab96530709e8d37b9585[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 11:32:01 2010 +0800
+
+    fix postion
+
+[33mcommit a37570fe3d681053bbd4c92be59b247e20e5b472[m
+Merge: 7497865... 29860e0...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 10:59:01 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 7497865851633cd435b4394da881c72f07a1f47d[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 10:58:48 2010 +0800
+
+    robbin
+
+[33mcommit 29860e04ffdc1ca3b8da1464597d213d0df84bf9[m
+Merge: 0f9968c... 12e2aca...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 10:58:46 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 0f9968c995702f29a20aa06aca356d450273b585[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 21 10:58:32 2010 +0800
+
+    fix category
+
+[33mcommit 12e2aca70c20cc027574449ca9a63b2a048416fd[m
+Merge: d296477... ce77a01...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 10:52:46 2010 +0800
+
+    robbin
+
+[33mcommit d29647795bca5c87212f18bc3e863ff7450839e5[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 21 10:51:55 2010 +0800
+
+    robbin
+
+[33mcommit ce77a01c7067f77319ce053c39790777be6b10a5[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 10:50:20 2010 +0800
+
+    shelby1982
+
+[33mcommit e012c8fdc40ef4c41c28fee621954b599f0dd8b7[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sun Mar 21 10:47:30 2010 +0800
+
+    shelby1982
+
+[33mcommit 0193a77cfb0b5e705f05e8e8dbf28068c24484b5[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 20 22:51:54 2010 +0800
+
+    shelby1982
+
+[33mcommit f63fc926dba98fe1e5a072d21725b67bb16fe729[m
+Merge: 9481dd4... 1f849cd...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 20 21:27:43 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 9481dd432b781f3389539e96add59f77228b50a8[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 20 21:27:22 2010 +0800
+
+    shelby1982
+
+[33mcommit 1f849cd1b374563e55c37764cc7a55d81932e3a8[m
+Merge: 85b455a... 8ee5beb...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Mar 20 21:23:36 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 85b455a23e142daf6e1fe10a0b993d43999d077f[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Mar 20 21:23:15 2010 +0800
+
+    robbin
+
+[33mcommit b1c80c84f6b944d2c7c76a0e8cdf7e9c5b218231[m
+Merge: ba64a70... 8ee5beb...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 21:21:46 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 8ee5beb89fe1d0fc42a961c6c11aaf561cab44f7[m
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 20 21:21:23 2010 +0800
+
+    fix bug
+
+[33mcommit d53994982a420d5e8a6991b47c357ad8813141de[m
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 20 21:18:21 2010 +0800
+
+    fix bugs
+
+[33mcommit ba64a70d0091f4ce7d9d22b4afc333ef589f69ac[m
+Merge: af7676b... d9b0476...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 21:03:04 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit af7676bc6d5f03425fd72fa2ab35bb3633010ce6[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 21:02:40 2010 +0800
+
+    1
+
+[33mcommit d9b047617a8f13e06fca43788b4057da7cd208aa[m
+Merge: dbb80c8... 3ab7c59...
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 20 20:57:24 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit dbb80c850ca5b3ecfb476a767c403739c26d5cb8[m
+Merge: bcb1adb... 886c225...
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 20 20:57:00 2010 +0800
+
+    fix bugs
+
+[33mcommit 3ab7c594ad3f6da16333eff1e1b734c6489e497c[m
+Merge: e4d10a6... 886c225...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 20:52:19 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit e4d10a68ed3ca30dc495e5d68ccf0b970c6aba8f[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 20:51:59 2010 +0800
+
+    fix
+
+[33mcommit bcb1adb6f9719e5ce5ff96a4ba46884f6e95f859[m
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 20 20:51:22 2010 +0800
+
+    fix bugs
+
+[33mcommit 886c225ffde2171cfc9469bf93aa73f837aa6257[m
+Merge: c3ca2f1... e4a8fdc...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 20 20:50:59 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit c3ca2f12a8c443a1e93fd3dcbb66fd4e06111a3a[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 20 20:50:41 2010 +0800
+
+    shelby1982
+
+[33mcommit e4a8fdc144a84ac61446ee138bd41ef26079e6e2[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 20:48:48 2010 +0800
+
+    1
+
+[33mcommit 3a297db8be29862685d8c51822e8d7f6ffc78a77[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 20:47:03 2010 +0800
+
+    cate
+
+[33mcommit 427898db49ba5596c606b59de067b5bbf6ce80cc[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 20:43:25 2010 +0800
+
+    1
+
+[33mcommit 5cf7632553631a228f4efb3609739ea840c7fc16[m
+Merge: ed009d6... 2e162c8...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 20:41:59 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit ed009d650a6d78e00bea7a6302eb2850d59e76b3[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 20:41:34 2010 +0800
+
+    1
+
+[33mcommit 2e162c839af40e893fdda0800abedd447324b6f4[m
+Merge: b00273a... 7666868...
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 20 20:39:28 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit b00273aeac48fac51a35f7aaaab12bb2502ef566[m
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 20 20:39:14 2010 +0800
+
+    add rich_list manage
+
+[33mcommit 76668685bcb9e19f746da6b2b8c18ab356bcbb0c[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Mar 20 20:23:55 2010 +0800
+
+    robbin
+
+[33mcommit ba618e08958c4df7af2a8cde1cc7a75e9b2090a2[m
+Merge: a8cf92a... 7c8f771...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Mar 20 20:20:24 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit a8cf92a3e69c5fd0569cf8b78f100dc29fb29813[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Mar 20 20:20:09 2010 +0800
+
+    robbin
+
+[33mcommit 7c8f771b2502cf692542ea02ac7be6d832436cd5[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 20 19:36:33 2010 +0800
+
+    shelby
+
+[33mcommit d7e962bd1e47bd186ee8bc6e4990ef80127096b1[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 17:49:26 2010 +0800
+
+    complete user
+
+[33mcommit 40856dd6742cc97f6f329ada6de255ac849a0104[m
+Merge: a7652fc... c84c042...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 15:35:34 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit a7652fc85f92f18902d2aa5400c1383a5e3cdf2b[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 15:35:22 2010 +0800
+
+    navigation
+
+[33mcommit c84c04219cae5861103cad5ff06080e45b34b7c6[m
+Merge: 092e5f1... 096d034...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Mar 20 13:44:21 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 092e5f1883b07e442ca0a0e09da0875eb49db662[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Mar 20 13:43:57 2010 +0800
+
+    robbin
+
+[33mcommit 096d03498de4d1856e4b0893d328f1a31c5f8be8[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 12:01:07 2010 +0800
+
+    1
+
+[33mcommit 9be2bc2d6f9954ad98e91630aecebc2d08f8e1fc[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 11:58:32 2010 +0800
+
+    1
+
+[33mcommit 70c203f50f18c07c1548adae612a1f9012ee3053[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 11:56:14 2010 +0800
+
+    1
+
+[33mcommit b6fb1fcd892bfeec0275d49ad26e080a425d5102[m
+Merge: 16b9585... 905286f...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 11:53:05 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 16b958520ca459861b1064e4a30fa774b5ddeae3[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 11:52:55 2010 +0800
+
+    1
+
+[33mcommit 905286f670dd85144aae04342ef88e1a6adbc1c8[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 20 11:29:22 2010 +0800
+
+    shelby1982
+
+[33mcommit bc23ca23a0592f35d3613b5686ddd6b12168734c[m
+Merge: 1bb8545... 81e2187...
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 20 11:01:18 2010 +0800
+
+    fix conflict
+
+[33mcommit 1bb85457a566b3aa031fdd294ef900249ddf6c14[m
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 20 11:00:20 2010 +0800
+
+    fix ckeditor
+
+[33mcommit 81e2187f329c1f62d7c2b164dd6911901f9065b7[m
+Merge: 7df17e4... 9817f82...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 10:48:19 2010 +0800
+
+    fix position
+
+[33mcommit 9817f82e35c5162bb24ab409b3fe0065e88b5410[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 20 10:34:01 2010 +0800
+
+    shelby
+
+[33mcommit 7df17e4ebff782ed041c67af1692442da5c0c90c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 20 10:33:42 2010 +0800
+
+    fix postion
+
+[33mcommit 4b5768f2b21f64eeaedd5e03cdffb4b61ad4c487[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Sat Mar 20 10:04:55 2010 +0800
+
+    shelby
+
+[33mcommit 53b2fa3f95d9aba0e01e00b78192bcf622fd7e6f[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 19 19:49:21 2010 +0800
+
+    add create table sql
+
+[33mcommit 26470a593052a6dfe05de4e52615c755657d999a[m
+Merge: 6172119... 2f086d2...
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 19 19:43:41 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 617211947eb0c3c104fce6ec09ebef4f57d40c07[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 19 19:43:21 2010 +0800
+
+    add sql
+
+[33mcommit 2f086d280ae17174582ac514e6503501ebb4c7a9[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 19:21:35 2010 +0800
+
+    postion
+
+[33mcommit d2ca2c7d5ea720cbf3b74e6de2b5fbec31ab53ef[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 19:00:12 2010 +0800
+
+    postion
+
+[33mcommit 2fda34ada1b4d88c89a339123be415d48deea34a[m
+Merge: aeaf5ee... a870e8e...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 18:41:51 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit aeaf5ee5193d70ef261b25f06e22e8d308810615[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 18:41:32 2010 +0800
+
+    postion
+
+[33mcommit a870e8e94f3019932815d92fad711d85df14f08f[m
+Merge: b617595... f02e100...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 18:15:39 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit b617595fd504470d799c1b82bfcd6b372dd53b5d[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 18:15:14 2010 +0800
+
+    shelby1982
+
+[33mcommit f02e100d7a4b1ddbe0eb479fdb30b7f0a325e626[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 19 18:01:13 2010 +0800
+
+    fix category children
+
+[33mcommit 6d70a919cc1a3aca47f28c01fc26e44466406cc3[m
+Merge: b1ba464... 0dd9608...
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 19 17:46:35 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit b1ba46428cb6cabae8ce58bd77e93ccbac71e623[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 19 17:46:22 2010 +0800
+
+    adjust news_edit for category
+
+[33mcommit 0dd9608d0627bb634239b38403d6ad292f399dca[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 17:45:49 2010 +0800
+
+    1
+
+[33mcommit 1f48ecd4dc03d1e9c6e7545dad79f19444575ec8[m
+Merge: b540760... 4164658...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 17:06:43 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit b5407607f1d152d1565912aced5f13f9a3e354d8[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 17:06:16 2010 +0800
+
+    postion
+
+[33mcommit 4164658fcc3d4e2c18b63ae33eb87ffeb33c9a82[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 16:59:21 2010 +0800
+
+    shelby1982
+
+[33mcommit 09b79851c062cd13eed0daa00fe0a4dd0d98e911[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 16:56:05 2010 +0800
+
+    shelby1982
+
+[33mcommit 3f26f6d83f3e432513aca66b79dbab826fff77e5[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 16:54:34 2010 +0800
+
+    shelby1982
+
+[33mcommit e95fa77ef1983b26312f6958074887be424fd762[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 16:53:17 2010 +0800
+
+    shelby1982
+
+[33mcommit 34cea48938843de494afe9820a09ba5b33339917[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 16:45:18 2010 +0800
+
+    shelby1982
+
+[33mcommit 982565a7d6f0f48d5ac7f17e7177f3abe008b8d1[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 16:42:41 2010 +0800
+
+    shelby1982
+
+[33mcommit 2f8f1081d0126e094835850485db36057ddcce80[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 16:23:15 2010 +0800
+
+    shelby1982
+
+[33mcommit f7dcea76291a0d279c18b0b0ce999c559b2a0257[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 14:53:45 2010 +0800
+
+    shelby1982
+
+[33mcommit 2f593c400c89a8e1b905631ec5bd85134ea811a1[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 14:49:35 2010 +0800
+
+    shelby1982
+
+[33mcommit f16e1d7952751e3b2af6dffba239ebf6352e4441[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 14:45:09 2010 +0800
+
+    shelby1982
+
+[33mcommit 58acacda2d96d1e044d82196280a44a0daecde37[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 14:35:28 2010 +0800
+
+    shelby1982
+
+[33mcommit d4a801f653dd4728fe375b31d2d416b53b726259[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 13:58:34 2010 +0800
+
+    shelby
+
+[33mcommit 0109ea07d628c7b31a78a520e806a50f08744684[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 13:35:41 2010 +0800
+
+    shelby
+
+[33mcommit 6878b44e4e9b7af08faca9bdc62b44fcb27df742[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 13:17:31 2010 +0800
+
+    shelby
+
+[33mcommit 45fb96e321578943ec3fc94990653f5bb3b09933[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 13:12:50 2010 +0800
+
+    shelby
+
+[33mcommit 350c96fc86964537f093eea4afeba1d918a86aa3[m
+Merge: 0894008... e5478ee...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 13:06:23 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 08940083d1f68a9efd8c34b5e2c12a7510ea7975[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 13:06:06 2010 +0800
+
+    shelby
+
+[33mcommit e5478eea0931807bf0be3b954e1d218c9cb83a28[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 12:52:12 2010 +0800
+
+    fix paginate
+
+[33mcommit a17f5776129df4d9d484474874a07402aa9a2a1e[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 12:41:37 2010 +0800
+
+    fix paginate
+
+[33mcommit 8fa9dc70057610ef65b3ddc7f087a3c37d181ae3[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 12:38:14 2010 +0800
+
+    fix paginate
+
+[33mcommit 0992dfcb67d9edb4f35a308f039d62b48618773c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 12:32:25 2010 +0800
+
+    fix paginate
+
+[33mcommit b4f3b3e0273dc48f10d2721794f9dfc316000547[m
+Merge: 3427a6b... 2bd5bcc...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 12:30:28 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 3427a6bde77dbda6cd47b89f90c693dd84e93e77[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 19 12:29:48 2010 +0800
+
+    fix paginate
+
+[33mcommit 2bd5bcc4763ad659288c2a0736ebeaaec77ace83[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Fri Mar 19 10:40:49 2010 +0800
+
+    shelby1982
+
+[33mcommit 9745ec6e5b6792959512b5f9f78b4a460b9d923f[m
+Merge: 3ff1209... 1445f2d...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Thu Mar 18 23:39:06 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 3ff12091eed5ac1370f02be5ce2f1ebbc1b6f126[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Thu Mar 18 23:34:46 2010 +0800
+
+    robbin
+
+[33mcommit 1445f2db40b0b545e481e081ee4d3ce3ed73710a[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 18:04:52 2010 +0800
+
+    news
+
+[33mcommit 6d29ff2deb6cedfacbfb7ccd2478ee5646abc8cb[m
+Merge: 2267446... 5fdd7c7...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 17:56:50 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 2267446ca38bf3e183f67db62668579db71bf51b[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 17:56:30 2010 +0800
+
+    1
+
+[33mcommit 5fdd7c7e2132e4b72a86c63f1c416d5cccd562a3[m
+Merge: 78f02ea... 781bc95...
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 18 17:38:03 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 78f02ea19043387e393ac72de57cea56ec0609b8[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 18 17:37:13 2010 +0800
+
+    we
+
+[33mcommit 781bc950b8dcb7d7c4a38ee257b28bad79f76418[m
+Merge: a7363a5... c153945...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Thu Mar 18 16:37:22 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit a7363a58228791edbb5f279ebef4b86ec632dbee[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Thu Mar 18 16:36:36 2010 +0800
+
+    shelby
+
+[33mcommit c153945b8e0fd83c6042ee8da6f36995c86b0940[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 16:27:15 2010 +0800
+
+    fix bugs in favorites user rich
+
+[33mcommit 93d12ad549818f3b4fdc3b99752df8c05a2ac1f8[m
+Merge: 412a8f0... a7e46f0...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 16:23:30 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 412a8f0527e839f9278761c6fc6131c69f368f75[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 16:23:12 2010 +0800
+
+    user_famous
+
+[33mcommit a7e46f0f3eb0778f417283620e7dd2a98779a1cd[m
+Merge: 11cdd26... d735ca3...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Thu Mar 18 15:13:10 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 11cdd26a8df62af0f7285b677c4f0370385e5c71[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Thu Mar 18 15:12:11 2010 +0800
+
+    shelby
+
+[33mcommit d735ca36025e1c3dcfc91abe09622dc1d4f93c9b[m
+Merge: 7355e69... b90a720...
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 18 14:16:23 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 7355e692429e9939afd08a450b03d05eb2255c40[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 18 14:16:06 2010 +0800
+
+    column
+
+[33mcommit b90a720310b0db2bc30ea4d783e13ac531a538b6[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 18 13:57:14 2010 +0800
+
+    fix bugs
+
+[33mcommit f4fb76410c32ed038dd9462b5e6d2d10d0c575d8[m
+Merge: 64c07d2... bb63473...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 13:40:12 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 64c07d21273b75cd9aa25ea6e2e184926bc4ba13[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 13:40:04 2010 +0800
+
+    user
+
+[33mcommit bb63473b7ac5ce8d05d666438ff779e9f4f9c846[m
+Merge: beb4579... 07f8f1b...
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 18 13:39:46 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit beb4579065f8b50cac140d3f3e888136d4c47d57[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 18 13:39:35 2010 +0800
+
+    fix bugs
+
+[33mcommit 07f8f1be1bc3a30266b64cd64d35b77c04dcdc68[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 13:25:55 2010 +0800
+
+    user
+
+[33mcommit 5c709cf500dcaccea51321af6a064ed9375ecd81[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 12:43:52 2010 +0800
+
+    newstoggle
+
+[33mcommit 62fae6d88b5b09eeb10e967e1cb9a22c279743ef[m
+Merge: 3e1d815... 8f8be00...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 12:21:58 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 3e1d81592a1613b8c28c2521cf607d66cd48feef[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 12:21:39 2010 +0800
+
+    set_up
+
+[33mcommit 8f8be00a80de9ae9bf277224dfe7111dac0cbedb[m
+Merge: 82614a9... 338bd9a...
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 18 12:09:25 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 82614a952104bfe29c89feb471c3da4b6b6a7ca4[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 18 12:09:07 2010 +0800
+
+    column
+
+[33mcommit 338bd9a6e2037449c8697f584e7cc205d51d7789[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 11:10:55 2010 +0800
+
+    user_favorate
+
+[33mcommit 5f98c10d4e2f5f869da92853a8ac95952db2e554[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 10:16:42 2010 +0800
+
+    user css
+
+[33mcommit 3ebc4421fd5c47e4e7725e29f4f5941f44115d3e[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 18 09:54:05 2010 +0800
+
+    news
+
+[33mcommit e4b1fb7586223b50315f58fb246793437e879ecc[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 21:18:47 2010 +0800
+
+    list
+
+[33mcommit 6fa840e59037484518d41050d4646074a877d755[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 21:14:55 2010 +0800
+
+    1
+
+[33mcommit 33a02a3728d800b0bdf39130e505744ff86ff56f[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 21:12:25 2010 +0800
+
+    news_list
+
+[33mcommit f7576e8a8ff982895a62438d85f5fad5ec34574f[m
+Merge: c612e13... 6a4d247...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 19:51:34 2010 +0800
+
+    1
+
+[33mcommit c612e1314ddf16e6cda405e05f0b4aa003ae446c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 19:51:02 2010 +0800
+
+    1
+
+[33mcommit ed78414807aca6b9b8860f28f5db251522cfb5bb[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 19:49:12 2010 +0800
+
+    category
+
+[33mcommit 6a4d2472293f4231e95e7ae4223fced7dbae2955[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 19:32:00 2010 +0800
+
+    fix table_class
+
+[33mcommit 8ce179218a586528c3ef41528f087dd71277151c[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 19:27:17 2010 +0800
+
+    fix news admin
+
+[33mcommit 9871657a7691eec0f11d29ec7072f0ef6fd8db85[m
+Merge: 4781295... 2fe9732...
+Author: labalan <labalan@qq.com>
+Date:   Wed Mar 17 18:07:28 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 478129582bc280a341ac0c066e6de047f5ef2c7f[m
+Author: labalan <labalan@qq.com>
+Date:   Wed Mar 17 18:07:11 2010 +0800
+
+    luxury
+
+[33mcommit 2fe9732168aeb8a4057f9be8350da64a1770eaf6[m
+Merge: 9ce15b6... b2bd7ab...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 17:09:56 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 9ce15b6ca3807f30ff8b9449f038f4e04f3d3f63[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 17:09:43 2010 +0800
+
+    news paginate
+
+[33mcommit b2bd7ab1abfe32f443f0d84da778654db84b3d5a[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 16:42:15 2010 +0800
+
+    shelby1982
+
+[33mcommit e29285902e61a25418e3a1d5c74514c7d8d35e1a[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 16:00:14 2010 +0800
+
+    shelby1982
+
+[33mcommit dcbb75e50c51ce333fc3d6ddca6006fb60a0c8fc[m
+Merge: 6558206... 54ffbf1...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 15:16:38 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 655820648c3aac180051ad8fc6e2b4e98bf597c7[m
+Merge: 3b39ae1... 884eff9...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 15:09:47 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 54ffbf11c18f2f3c7a3729022bd360c335df41af[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 15:07:44 2010 +0800
+
+    yh
+
+[33mcommit 3f9cb8da9c6d57daae17c16e05f59ac181bcd6fc[m
+Merge: bfdb525... 884eff9...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 15:05:31 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 3b39ae10fa5bce86936042d497298205ed4eb410[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 15:04:41 2010 +0800
+
+    shelby1982
+
+[33mcommit bfdb52509269bef7520500163dcf8699deb3c930[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:59:08 2010 +0800
+
+    1
+
+[33mcommit 884eff953f9db022199f983f87f2551d5bde3b1d[m
+Merge: f477ca3... 57f0375...
+Author: labalan <labalan@qq.com>
+Date:   Wed Mar 17 14:55:01 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit f477ca3f7b82ff88690084f4637be53b9883f319[m
+Author: labalan <labalan@qq.com>
+Date:   Wed Mar 17 14:54:47 2010 +0800
+
+    luxury
+
+[33mcommit 9a3e5babb414a3f8d72739b1c2941e3a1b031794[m
+Merge: 0b4c224... 3684c52...
+Author: labalan <labalan@qq.com>
+Date:   Wed Mar 17 14:53:55 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 57f0375f4b0087b073df21e1a57c30d26c45eda6[m
+Merge: e0ef3b2... b2d864c...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:45:59 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit e0ef3b29058d813974c59432b8e2ebb8ce983a2e[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:45:40 2010 +0800
+
+    mews
+
+[33mcommit b2d864ce027b7a5951cc803ac8998e7f2dfddd73[m
+Merge: ac52870... a04345c...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 14:42:09 2010 +0800
+
+    shelby1982
+
+[33mcommit ac5287035256c9004d16a82a037419721adfc279[m
+Merge: 7b6fbac... 877039b...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 14:40:43 2010 +0800
+
+    shelby1982
+
+[33mcommit a04345c428c82483edafe699255cc20c928a4519[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:40:17 2010 +0800
+
+    news
+
+[33mcommit a5daaf30f96a7dc43ea9c2b3d532f983923efc0c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:37:01 2010 +0800
+
+    news
+
+[33mcommit 3684c527bbd65cf5dc9eb2681733bb71ffe3fdef[m
+Merge: 5a9456b... a71e85e...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:33:48 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 5a9456b43eff3fd1c5553daa0d640a8b310eeb00[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:33:30 2010 +0800
+
+    news
+
+[33mcommit a71e85e7670cac6a10fc29d55dc06999bbf8577d[m
+Merge: eae4867... cc4e943...
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 14:28:15 2010 +0800
+
+    I
+
+[33mcommit eae486754ef49f87a2816eff05f6b2c6a656c329[m
+Merge: cc05c02... 1c0eb34...
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 14:27:07 2010 +0800
+
+    fix bugs
+
+[33mcommit cc4e943b7a4edb9f355a865a3d5bff80b852cd91[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:20:18 2010 +0800
+
+    news
+
+[33mcommit 0b4c2243e7f786b1b1ae12600af13ee22c67823e[m
+Author: labalan <labalan@qq.com>
+Date:   Wed Mar 17 14:20:01 2010 +0800
+
+    luxury
+
+[33mcommit 91f0ce504d2054d3bc009d28e5799e747eca194d[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:18:29 2010 +0800
+
+    1
+
+[33mcommit 877039bd647c1c6e85a6dd5f7c0964fb1851fd5c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:07:41 2010 +0800
+
+    news
+
+[33mcommit 7b6fbac3d8447db83c99a7c7105bf6179bfebb41[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 14:03:49 2010 +0800
+
+    shelby1982
+
+[33mcommit 49691c0285c7a62dc181037821925af98e3de5c2[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 14:01:58 2010 +0800
+
+    news
+
+[33mcommit 4845cd32e61bccb0b979536077d30f196c6dad12[m
+Merge: 9a9e6c1... 1c0eb34...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 13:57:23 2010 +0800
+
+    admin
+
+[33mcommit 9a9e6c1dab93d99313d1b9126ed538ae627667f4[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 13:56:25 2010 +0800
+
+    news
+
+[33mcommit cc05c02d9308edf56d222f2ad060eab3f1b29740[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 13:55:31 2010 +0800
+
+    fix bugs
+
+[33mcommit 1c0eb34711985f0eead6810c3e7d3036e727a531[m
+Merge: 9f592ee... c89a370...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 13:55:07 2010 +0800
+
+    shelby
+
+[33mcommit 9f592ee47ec5fb4f27939db9d28f93a53ed9da2a[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 13:46:10 2010 +0800
+
+    shelby
+
+[33mcommit c12295219844148192b9462a120efbdf183b286a[m
+Merge: fd51e3c... c89a370...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 13:36:35 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit fd51e3c69bfbacaed4f2e75698150540310d0227[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 13:36:24 2010 +0800
+
+    fixbug
+
+[33mcommit c89a3706d19b92077358c2b91c00e394fd46bacc[m
+Merge: 4be589e... c305d0b...
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 13:35:32 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 4be589e691aaf185a3c59a00ae9d1c231249db51[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 13:34:43 2010 +0800
+
+    fix bugs
+
+[33mcommit c305d0bd543ba80f5fbcc3ffa4a7d3e1cec0aa9a[m
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 13:34:27 2010 +0800
+
+    shelby
+
+[33mcommit edb3512383e85d874f23c2cced93ead36ba0233f[m
+Merge: bc079d3... 560f1e6...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 13:31:15 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 560f1e658a610633fbddb2dbb61cdd331b149dd7[m
+Merge: 515d8dc... 1a47637...
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 13:29:45 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 515d8dcc46f9af221db74eec1dfaf25396e31afd[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 13:29:27 2010 +0800
+
+    fix bugs
+
+[33mcommit bc079d37f81e016e0a87d6333ad6097a8fbf5d4e[m
+Merge: 030ad8a... 1a47637...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 12:35:35 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 1a476372758799d260902e70063db2b1c364f1f7[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 12:35:14 2010 +0800
+
+    news
+
+[33mcommit 030ad8a18259b66bde2726572fbb52c1c9c66e78[m
+Merge: cd42d52... 932e2e8...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 12:33:45 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit cd42d52d701e11222acd18f7c149bda53e62a969[m
+Merge: ccc37d2... 84755f0...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 12:33:34 2010 +0800
+
+    fix conflicted
+
+[33mcommit 932e2e8687aacee617a870c37ff59e3e66452c2e[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 12:33:07 2010 +0800
+
+    nes
+
+[33mcommit 84755f0abe076922737f5c9135f1c0777ba1233d[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 12:29:52 2010 +0800
+
+    news
+
+[33mcommit ccc37d2e21384488bc1163f10f2af18958d6bb63[m
+Merge: d69ed35... dac499d...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 12:26:06 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit dac499db99fe5686b31343e0c96cd57fa958d682[m
+Merge: 4b1ead3... f3de240...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 12:25:06 2010 +0800
+
+    login
+
+[33mcommit 4b1ead3fd4beb276818f1092878a43384e11fd12[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 12:23:33 2010 +0800
+
+    admin
+
+[33mcommit d69ed35977b244d5fab3973eb2bcd518614bfcb8[m
+Merge: 9297c8b... f3de240...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 12:02:26 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 9297c8bae64ccdead7b37b319ae996e6f7803448[m
+Merge: 3889ae7... a94873e...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 12:02:15 2010 +0800
+
+    fix bugs
+
+[33mcommit f3de240f69b319e91019d82d79a21a2a05c20943[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 12:01:44 2010 +0800
+
+    fix conlict
+
+[33mcommit 3889ae7d11718c172f17b5badd9cc67adf2a09fd[m
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 12:00:13 2010 +0800
+
+    fix bugs
+
+[33mcommit a94873e51fd903f815bbbb5b6fa0d31d88859461[m
+Merge: d7f545d... 10fe0b6...
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 11:59:32 2010 +0800
+
+    fix bugs
+
+[33mcommit d7f545da29a0cbd8b124cd995ea2d55beb1cb89a[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 11:55:12 2010 +0800
+
+    fix bugs
+
+[33mcommit ba8b32a7518353b0b976ff5972ff917271a4fd71[m
+Merge: 36fa225... 10fe0b6...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 11:37:51 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 10fe0b60e79e3dd1304ef3256405ec140bf73368[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 11:37:27 2010 +0800
+
+    news
+
+[33mcommit 0ee8ed31a82bc17d164343684ba4f243880bd5dc[m
+Author: sauger <sauger@163.com>
+Date:   Wed Mar 17 11:30:21 2010 +0800
+
+    fix bugs
+
+[33mcommit 36fa2256d503c3ee0a11cf869622bc05309b9f2a[m
+Merge: e15285c... 6cfbe8e...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 11:10:39 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 6cfbe8e47ecfa9cbca0ba34102e4cdb226ed0caa[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 11:10:02 2010 +0800
+
+    news
+
+[33mcommit e15285c04ac5e9d7af0641a787fba93fd0f23d1f[m
+Merge: 7675b27... 9ccb5c3...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 11:09:30 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 7675b27290fdebf6c7574a059a81f1dcc45afb3d[m
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 11:09:21 2010 +0800
+
+    1
+
+[33mcommit 9ccb5c36a2e57218a72703f2a63c79995abd8989[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 11:08:48 2010 +0800
+
+    news.css
+
+[33mcommit 9838964cad83a5c6d3769f3949bdee4e3e21a595[m
+Merge: 04f01fc... 393ea8c...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:55:49 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 04f01fc2d0292f349f8da635cb9a94c81a4c9e00[m
+Merge: abb7c29... 06b33f5...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:55:38 2010 +0800
+
+    1
+
+[33mcommit 393ea8cd1cd37c0d38168f8f3d921e29ea27f802[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:55:17 2010 +0800
+
+    news
+
+[33mcommit abb7c29e07c3b3184eed9da6c539950e8da4247c[m
+Merge: 9eb4e08... 5a145fb...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:52:16 2010 +0800
+
+    1
+
+[33mcommit 06b33f502d86c67c5a67d83ee5e5033fcfc5a520[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:51:52 2010 +0800
+
+    news
+
+[33mcommit 5a145fbdcdfd683beebb1f134b37d1c8000ed535[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:45:57 2010 +0800
+
+    nes
+
+[33mcommit 9eb4e083f5a90b7f0335af1fe7bc78484267a180[m
+Merge: fdc0ffc... 833432e...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:41:29 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit fdc0ffc1825522437e29daf4f30e5258615f6a07[m
+Merge: 9f0a893... 76cab95...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:41:19 2010 +0800
+
+    1
+
+[33mcommit 833432eadf39e6894584a2260ae7a7067f88ca57[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:40:55 2010 +0800
+
+    news
+
+[33mcommit 76cab950276bb15d2bcbb31191376a60fa703fdf[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:37:38 2010 +0800
+
+    1
+
+[33mcommit 4b7f1324b8b58ea37ff12ebb51acf925c407a34d[m
+Merge: 75e9201... 443307e...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:36:31 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 75e9201b67e904e3f49e892ad0a65cea35906b5d[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:36:02 2010 +0800
+
+    1
+
+[33mcommit 443307e0e2d839bd4e6fb42edb0c3ea8a521a4cf[m
+Merge: cf8f579... 2a5410c...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 10:35:41 2010 +0800
+
+    shelby
+
+[33mcommit cf8f579c3620974870cf4a97c2055d778b53f06b[m
+Merge: 995e848... d400966...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 10:35:07 2010 +0800
+
+    shelby
+
+[33mcommit 9f0a89371fb338986e11bcb2968f7849c7c2160a[m
+Merge: 4469f9f... 2a5410c...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:32:49 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 2a5410cda07947021a72c0377150c28002157b23[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:32:28 2010 +0800
+
+    news
+
+[33mcommit 4469f9f6c9540fc3fa401abd300a1523f9d17ba8[m
+Merge: f2708af... 33daa62...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:29:52 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 33daa62d3ea2aade6240e29db872cd65b2e80511[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:29:27 2010 +0800
+
+    new css
+
+[33mcommit f2708af53d8bef10c9708284615d9e60b8343da3[m
+Merge: 8fe6a2e... 3f8030d...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:28:39 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 3f8030d02b64d6eaac6343fe9f9ef0fe12b8e7b7[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:28:20 2010 +0800
+
+    1
+
+[33mcommit 8fe6a2ece66ab6be389d054477bda98a7b0d538a[m
+Merge: fa9cce9... cee1440...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:25:43 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit cee14404eaa7f1bc2b25bd9f221fb7be6d9a64c6[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:25:10 2010 +0800
+
+    1
+
+[33mcommit fa9cce9d16d2930abcc1100941ee4929ff8bbf7a[m
+Merge: 59a08a4... 49b3c26...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:21:33 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 49b3c26b7533c255b02d48d1be0b65e8a3931946[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:20:54 2010 +0800
+
+    testhr
+
+[33mcommit 59a08a486dec2022f111b22f66cf17ce2cb96411[m
+Merge: 4fef853... d400966...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:13:26 2010 +0800
+
+    fix bugs
+
+[33mcommit 4fef85382c1923d1b11ec223937bd0f52fab081c[m
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Mar 17 10:12:16 2010 +0800
+
+    fix bugs
+
+[33mcommit 995e848cbded7af6c83aeb2cff4238166c169e17[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Wed Mar 17 10:12:01 2010 +0800
+
+    shelby
+
+[33mcommit d4009668675ad066c0503391cb684da16a76907e[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 10:09:56 2010 +0800
+
+    news
+
+[33mcommit 384add64db9200ea926c609e2e86873d7b873c48[m
+Merge: 0154d75... d6cfbc6...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 09:53:44 2010 +0800
+
+    fix conflicts
+
+[33mcommit 0154d75a2bb854bbf422e5ed6dda7a4bc78210ab[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Mar 17 09:47:57 2010 +0800
+
+    news
+
+[33mcommit d6cfbc6e2d59c377d524bacd2ea44f733f0e9f5b[m
+Merge: 103179c... 29b09e7...
+Author: zhanghao <411192132@qq.com>
+Date:   Tue Mar 16 21:17:28 2010 +0800
+
+    fix
+
+[33mcommit 103179c97af5ee950d6e0f0548e76389f432c340[m
+Author: zhanghao <411192132@qq.com>
+Date:   Tue Mar 16 21:15:30 2010 +0800
+
+    fix
+
+[33mcommit 29b09e782dc345a5d95930bc6c08e62ace7529ca[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Tue Mar 16 21:15:10 2010 +0800
+
+    shelby
+
+[33mcommit d31a58f251538793f058dcd3ce9acc3af26955e3[m
+Merge: 298cf61... 3111798...
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Tue Mar 16 20:58:00 2010 +0800
+
+    shelby
+
+[33mcommit 298cf61e101ba463fd32d0397b76f88631e749ea[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Tue Mar 16 20:56:57 2010 +0800
+
+    shelby
+
+[33mcommit 77ff197c1b0fec205c3179b3e0fec55b73f83353[m
+Author: shelby <sunyoujie@xun-ao.com>
+Date:   Tue Mar 16 20:55:25 2010 +0800
+
+    shelby
+
+[33mcommit 31117988e98f765162011e0404e68d9e6c40115a[m
+Merge: 471f7de... 6f0aeb5...
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 16 15:58:30 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 9eecc668ea032fdc1f078cab82bdeef8ce83fed6[m
+Merge: 2de57b9... 6f0aeb5...
+Author: zhanghao <411192132@qq.com>
+Date:   Tue Mar 16 13:08:40 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 2de57b90103df673d32a2f25e610f397a7e023a4[m
+Merge: 5c00bd7... 96316f6...
+Author: zhanghao <411192132@qq.com>
+Date:   Tue Mar 16 13:08:33 2010 +0800
+
+    fixbug
+
+[33mcommit 6f0aeb5142dcc1e1ae336664be016e6069c94c58[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 16 13:07:13 2010 +0800
+
+    news
+
+[33mcommit 5c00bd799b1a2363c4176994ae20bf52fccccc41[m
+Author: zhanghao <411192132@qq.com>
+Date:   Tue Mar 16 11:58:17 2010 +0800
+
+    fix bugs
+
+[33mcommit 471f7deb1456eb9d054672b2a871da24ea4e761b[m
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 16 11:57:24 2010 +0800
+
+    fix bugs
+
+[33mcommit a65b6cfb0c07e2a7ee907be3b2103db4d161326b[m
+Merge: 902d210... 965cdf7...
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 16 11:54:19 2010 +0800
+
+    fix news admin bug
+
+[33mcommit 96316f6be182cbebef708340d66dd6507ac87821[m
+Merge: c994479... 965cdf7...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 16 11:52:33 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit c9944791715e86e1f00be66dcd338bbb7788e5e4[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 16 11:52:21 2010 +0800
+
+    news
+
+[33mcommit 902d2102d9926baf2e1de4e95b6b9e0f4e7d071d[m
+Author: sauger <sauger@163.com>
+Date:   Tue Mar 16 11:31:51 2010 +0800
+
+    fix news admin
+
+[33mcommit 965cdf7b0faa04f31c828e3c1b08bf6e93b1108d[m
+Merge: 9c96f6c... 0d639ed...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 16 11:29:43 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 9c96f6cc877b4af3dca52549bdb33151c93cf3b5[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 16 11:13:56 2010 +0800
+
+    robbin
+
+[33mcommit 7b3e884dffa1489e9bd684efd9a6b7ea0aedf5b7[m
+Author: zhanghao <411192132@qq.com>
+Date:   Tue Mar 16 11:01:54 2010 +0800
+
+    news
+
+[33mcommit 0d639ed257264c6eb411f0ebedf1e7c538c0db55[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 16 10:57:13 2010 +0800
+
+    news
+
+[33mcommit 01e5277a272b381aef3822d625a1885f7c4a977e[m
+Merge: 6665975... 9740ea2...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 16 09:44:44 2010 +0800
+
+    fix
+
+[33mcommit 66659754da4a496181f7c5f4f02bd0e7caf249aa[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Mar 16 09:40:02 2010 +0800
+
+    fix
+
+[33mcommit 9740ea29431cb44e589c88f9eecd5a09b6b45078[m
+Merge: b64bfc3... e1f5b18...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 16 01:05:06 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit b64bfc36d24da610e4817d2b555be536d5c582f5[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 16 01:03:43 2010 +0800
+
+    robbin
+
+[33mcommit e1f5b185412e562f61cf031e7538c002e143ed67[m
+Merge: 1a9d19e... b536408...
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 15 20:57:20 2010 +0800
+
+    modify the gitignore
+
+[33mcommit 1a9d19efe9511438498825194585eff793ebe7d3[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 15 20:52:50 2010 +0800
+
+    fix news admin
+
+[33mcommit b536408caaadc07e2d8bda935860559db91a46fd[m
+Merge: aaf06c2... 7c81ede...
+Author: zhanghao <411192132@qq.com>
+Date:   Mon Mar 15 20:20:06 2010 +0800
+
+    shelby
+
+[33mcommit aaf06c254e4cbf16de554f1db69e7293b8fdd617[m
+Author: zhanghao <411192132@qq.com>
+Date:   Mon Mar 15 20:19:16 2010 +0800
+
+    shelby
+
+[33mcommit 7c81ede1269d41f0b05d78f50dfb91ffe2ae75b3[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 15 19:17:14 2010 +0800
+
+    news
+
+[33mcommit d4e1322268d3389d08b4808a3e535f4a37b2903c[m
+Merge: 62889ee... 568eb73...
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 15 17:44:10 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 62889eefeca14d63a9b743d13357a95269def425[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 15 17:37:18 2010 +0800
+
+    fix bugs
+
+[33mcommit 568eb73f137802ff85808b5443cda5165a9d8301[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 15 17:24:26 2010 +0800
+
+    user_info
+
+[33mcommit 60cba09acfda286fa355efe8ca22a34b07024095[m
+Merge: 93f1959... ff2fc47...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 15 17:21:05 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 93f19599ec66df4cf87d202c92bfa0a2897ab983[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 15 16:47:03 2010 +0800
+
+    user_info
+
+[33mcommit ff2fc471fb6871da5fbead7c7225f4f47182abb1[m
+Merge: 003092a... e6070df...
+Author: labalan <labalan@qq.com>
+Date:   Mon Mar 15 16:24:22 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 003092a1f12cddea480c32a281e210e1ed121f8f[m
+Author: labalan <labalan@qq.com>
+Date:   Mon Mar 15 16:11:57 2010 +0800
+
+    magazine
+
+[33mcommit e6070dfa2cfa08475214a736c07a8c98aa8313b7[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Mon Mar 15 15:09:52 2010 +0800
+
+    robbin
+
+[33mcommit 0f94320e8312a5f07aebb58f94ff491291ccf17e[m
+Merge: 98f8ed3... 195f530...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Mon Mar 15 15:09:20 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 98f8ed3f6b061bda653a64182a3c70119158b588[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Mon Mar 15 15:08:57 2010 +0800
+
+    robbin
+
+[33mcommit 195f530a634e03b8cfbe15edb7333f5dbec1a558[m
+Author: labalan <labalan@qq.com>
+Date:   Mon Mar 15 11:18:44 2010 +0800
+
+    list
+
+[33mcommit 74284d52a1dc9f5fda9e84ea1b586221c7c884bb[m
+Merge: 4586522... 32e60e0...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 14 17:56:37 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 45865222f4cf3ae282e4904810be4aa2f197fb9c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 14 17:56:17 2010 +0800
+
+    user
+
+[33mcommit 32e60e0691f6b51fbc78360566a80eb902091119[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 14 17:16:59 2010 +0800
+
+    robbin
+
+[33mcommit 3a8f5b49c0802240dd58938595e6efd953c52666[m
+Merge: f6b5101... 66f4489...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 14 17:14:38 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit f6b510128de143d9a35d481351b4e9f21e7adbd1[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sun Mar 14 17:14:10 2010 +0800
+
+    robbin
+
+[33mcommit 66f44899864721e8bb839b5a3c3fe781b6f05fa9[m
+Merge: 327f7a0... c4f41f4...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 14 14:04:26 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 327f7a084b507897c010435c251afeb648a1ab0b[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 14 14:04:14 2010 +0800
+
+    fix news
+
+[33mcommit c4f41f49ca2d9204251080ba767cd7b282dffbfc[m
+Merge: 53335bf... f3599d7...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 14 13:28:20 2010 +0800
+
+    confilicted
+
+[33mcommit 53335bf12165782e71416977b55df8a6a91c8b29[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 14 12:48:39 2010 +0800
+
+    fix
+
+[33mcommit ef5124a0a36dc18624c3e74136c27000d7da644c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 14 12:41:24 2010 +0800
+
+    fixbug
+
+[33mcommit f3599d78ce1e69c1e8febdd76e43fd6de1f1b8e8[m
+Merge: 74e6df2... b344ae1...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 14 12:40:17 2010 +0800
+
+    fix bugs
+
+[33mcommit 74e6df2e9ddcadad4ca4752db806a1c0c0e9af2c[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 14 11:09:36 2010 +0800
+
+    fix news
+
+[33mcommit b344ae1af9fbc7a64732162cf25014e9c9ca6667[m
+Merge: dc26ae5... c6bbca4...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 14 11:08:04 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit dc26ae5b41486f357a7e1ed55ea7085150735908[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Mar 14 11:07:07 2010 +0800
+
+    sc
+
+[33mcommit dbf4a37aa1d528d15498eedb1d6d596c658d54c4[m
+Merge: 8ddaf49... c6bbca4...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 14 10:02:47 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit c6bbca420c347b3b8d134e5c8b78022ccb0419dd[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Fri Mar 12 18:37:11 2010 +0800
+
+    robbin
+
+[33mcommit 8ddaf49efd503b2da7ca0de90a1e3dc9c7113eb7[m
+Merge: 52eb1b4... b712ddb...
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 12 17:00:22 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 52eb1b4d7a9ddfcd7e3a9157b6d46dc5e2850c8d[m
+Merge: 29ecfa1... b48989b...
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 12 17:00:01 2010 +0800
+
+    fix bugs
+
+[33mcommit b712ddb0109afd470b337e5091d0b96408aed6f7[m
+Merge: 8566092... 6753e5e...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Fri Mar 12 16:44:47 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 8566092d1dc90786d2f29d1dd95da53ea0b74380[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Fri Mar 12 16:44:25 2010 +0800
+
+    robbin
+
+[33mcommit 6753e5ec8ad683912f07c3e901bb58ba39028039[m
+Merge: 8991753... b48989b...
+Author: labalan <labalan@qq.com>
+Date:   Fri Mar 12 16:17:23 2010 +0800
+
+    sort_culture
+
+[33mcommit 29ecfa122d532bda00897d888c5a52ebf9c4a30c[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 12 16:08:08 2010 +0800
+
+    delete unuse files
+
+[33mcommit 89917530920271aa67a28c121fb06f09a5f8f4b0[m
+Author: labalan <labalan@qq.com>
+Date:   Fri Mar 12 16:01:04 2010 +0800
+
+    sort_culture
+
+[33mcommit 9547e2892f7df9582f0e61612f3dcf60b20241d7[m
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 12 15:56:26 2010 +0800
+
+    moddify the login
+
+[33mcommit b48989b9411ee8f8aa669e2e3d4aaf2bd2c05ce1[m
+Merge: 1539f36... b1535d5...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 12 13:41:39 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 1539f36b6762145a620c0b0de34d1de7ed14b67f[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 12 13:41:24 2010 +0800
+
+    news
+
+[33mcommit b1535d54d603049d30a2126f18552238645429e9[m
+Merge: 59f3fe7... 4977370...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Fri Mar 12 13:24:52 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 59f3fe7a76e80d06b8c6fd5bf5f9d8fbfd339c4d[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Fri Mar 12 13:24:32 2010 +0800
+
+    robbin
+
+[33mcommit 646167be2b8d92917e982a59560e7342a4df6ac4[m
+Author: labalan <labalan@qq.com>
+Date:   Fri Mar 12 12:51:49 2010 +0800
+
+    fenlei
+
+[33mcommit a9dd54f0a18701d8838e915d6bce6668061382ba[m
+Merge: e23aac4... 4977370...
+Author: sauger <sauger@163.com>
+Date:   Fri Mar 12 09:45:07 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 49773700bbb975e0000119f51e903ba6e3717c85[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 11 17:45:37 2010 +0800
+
+    news
+
+[33mcommit e23aac4e3da7f65457b8ff2c9d9fc11e82f0772e[m
+Merge: 2095bd7... 8f73487...
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 11 17:15:23 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 2095bd7ec7dc3b471ebdceadcc9fe04b0d7dd078[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 11 17:15:14 2010 +0800
+
+    fix bugs
+
+[33mcommit 8f734871d6d0e53c0399c50213970ae5a8fd852a[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 11 16:45:43 2010 +0800
+
+    category
+
+[33mcommit 7a28229016c3f7eeb510171c51aa31513ecc1417[m
+Merge: e1a7e8d... 28a088d...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 11 16:37:29 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit e1a7e8d09503db5b47ceeecf53474fa2e43abafc[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 11 16:29:17 2010 +0800
+
+    news
+
+[33mcommit 28a088d7208389f28efdce044bb366af0c9a666d[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 11 14:09:19 2010 +0800
+
+    list
+
+[33mcommit 04087311d42df14f2cfff2cc8eb20a8eac8a8b8f[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 11 13:52:18 2010 +0800
+
+    list
+
+[33mcommit 02627c738e1a807690b621a6133749465a73ba2a[m
+Merge: bc9b1fd... 0d9f124...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Thu Mar 11 10:42:08 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit bc9b1fd47c90a21ed71e16b8afaf58d9bb10cc60[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Thu Mar 11 10:41:51 2010 +0800
+
+    robbin
+
+[33mcommit 0d9f124b13f4f4fb4e95202258fc52ae2045f53b[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 11 10:39:50 2010 +0800
+
+    news.css
+
+[33mcommit 199d487d44a5efebda3abe8387a1340b8b158756[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 11 10:22:24 2010 +0800
+
+    news
+
+[33mcommit f78bb7eda98c36e6206ac1e5dfc5beecbe334d0a[m
+Merge: 2969c90... 49e9ba5...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 11 10:04:31 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 49e9ba5c041c58e89a89320c30d682aae8cfb9d7[m
+Merge: 115149b... c5ca9f9...
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 11 09:59:23 2010 +0800
+
+    add dbcache to ignore
+
+[33mcommit 115149b4cb4559bae1bfb3b43f81ee0a5d15991e[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 11 09:52:17 2010 +0800
+
+    fix
+
+[33mcommit c5ca9f9d97a325332ff1d7ba1fad15c64b419489[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 16:42:25 2010 +0800
+
+    robbin
+
+[33mcommit a991ad6a90994874d80e7fda1b615f938bbae663[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 16:39:44 2010 +0800
+
+    robbin
+
+[33mcommit dea845928186d0e2c4309a63c608cfb805a571c2[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 16:32:10 2010 +0800
+
+    robbin
+
+[33mcommit 6265899c04789a6ea5b07d530a794682eb5f5786[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 16:26:54 2010 +0800
+
+    robbin
+
+[33mcommit 4078d80dff561fe14bab7bf4b9345b1a70b05fca[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 16:25:21 2010 +0800
+
+    robbin
+
+[33mcommit 3843980e4ee2ba21b4a8cbbd3e7d49db27518834[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 16:23:32 2010 +0800
+
+    robbin
+
+[33mcommit 435c167716d28224062a81944b48a4eb95f40a52[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 16:21:30 2010 +0800
+
+    robbin
+
+[33mcommit 23ccafa2f510b96bf1ef2afe1d96cdc7b7032c22[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 16:19:12 2010 +0800
+
+    robbin
+
+[33mcommit 656f60d866a06bbd79874a9054cd840f84f1a25e[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 16:16:46 2010 +0800
+
+    robbin
+
+[33mcommit e1f7b3b3a476f4b0ca46b755563bcfec38ed5a24[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 15:57:27 2010 +0800
+
+    robbin
+
+[33mcommit 1530ccc987574969c024522c0d36906de02f6504[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 15:55:39 2010 +0800
+
+    robbin
+
+[33mcommit a253863b60abb87bbb9e7a2c53b0981021e44570[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 15:54:31 2010 +0800
+
+    robbin
+
+[33mcommit 9dc86f065a4c117d73b9b32bb406639fe3fbf824[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 15:53:17 2010 +0800
+
+    robbin
+
+[33mcommit 8be5404d821e53ad4d416219fd78550185a0222a[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 15:49:36 2010 +0800
+
+    robbin
+
+[33mcommit 896a34c5e8544cc36d946c013e6d48b2f8597ba2[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 15:46:51 2010 +0800
+
+    robbin
+
+[33mcommit 045820067c76b3cd81d2ac4ae59607f73699032c[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 15:44:54 2010 +0800
+
+    robbin
+
+[33mcommit a1a7b62cdd0a3a5780676f73510be3a02f0fe2ef[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 15:07:58 2010 +0800
+
+    robbin
+
+[33mcommit aacc6b07334383c7ca1985d8e0b72a11086a1645[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 14:23:18 2010 +0800
+
+    robbin
+
+[33mcommit ebef9e3e380d6ad20ea348c8900048bde60a7c7c[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 10 09:59:32 2010 +0800
+
+    robbin
+
+[33mcommit 5a8c821d5edc5dec1c8c494dce01426c54eef4b5[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 9 18:08:04 2010 +0800
+
+    robbin
+
+[33mcommit 1b252a01d489abd593e11b2eec284068638bf2a7[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 9 17:39:21 2010 +0800
+
+    robbin
+
+[33mcommit cee52116c8734fe6a76093fc453365ab86780136[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 9 17:35:01 2010 +0800
+
+    robbin
+
+[33mcommit 290dc43e67f325c0f5117b24c86073c3a6a8ffa9[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 9 17:30:52 2010 +0800
+
+    robbin
+
+[33mcommit cba5f33439f162596f0ae532902e20e0cb160de5[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 9 12:31:55 2010 +0800
+
+    robbin
+
+[33mcommit 8a81f99f3296097f0169154e08a3246e5126a2d2[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 9 11:19:10 2010 +0800
+
+    robbin
+
+[33mcommit c0b4a055b9ec300de63621759ddb623e6a5295b8[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Mar 9 10:26:58 2010 +0800
+
+    robbin
+
+[33mcommit 323144fc9d33a049c96b2f79d202b18aea0743f6[m
+Merge: 426562c... 5ee8411...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Mon Mar 8 19:19:17 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 5ee841127b19b4c91b73ea91097e106b1e0956a0[m
+Merge: 084712e... c381e86...
+Author: zhanghao <411192132@qq.com>
+Date:   Mon Mar 8 19:19:45 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 084712ebf0977f00d243e41ab19fee1f0bb72857[m
+Author: zhanghao <411192132@qq.com>
+Date:   Mon Mar 8 19:19:11 2010 +0800
+
+    1
+
+[33mcommit 426562c232ad3e3a19c1748a17853731ce371f3b[m
+Merge: 44f1ba1... c381e86...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Mon Mar 8 19:18:55 2010 +0800
+
+    robbin
+
+[33mcommit 44f1ba156c4a95327e1de5921b593f1f5b183ad0[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Mon Mar 8 19:08:57 2010 +0800
+
+    robbin
+
+[33mcommit 2969c90eefe7478f3d97a9fc691fdb6420f45264[m
+Merge: c6cf8e6... c381e86...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 8 17:12:18 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit c6cf8e65243bfc61faf232560835b877e8e9301f[m
+Merge: 55e3f76... 8c6b9fb...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 8 17:12:06 2010 +0800
+
+    news
+
+[33mcommit c381e86f11f09bf385b5fa38724bb6a51c8a6a37[m
+Author: labalan <labalan@qq.com>
+Date:   Mon Mar 8 16:54:04 2010 +0800
+
+    news
+
+[33mcommit c42eb33171a1cb30498d40a4dc58d96de5dccf9c[m
+Author: labalan <labalan@qq.com>
+Date:   Mon Mar 8 16:17:53 2010 +0800
+
+    investor
+
+[33mcommit 5c6e1fb4289c2c9391a20341b8d4ebefeb147f8f[m
+Author: labalan <labalan@qq.com>
+Date:   Mon Mar 8 15:21:34 2010 +0800
+
+    news-2
+
+[33mcommit 55e3f769fef9e1a9bf0bd9257250d83720bfac43[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 8 14:56:40 2010 +0800
+
+    fixbug
+
+[33mcommit 6a6f5998f64a7dbcf9eb7f312deb3f12c17e9613[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 8 14:56:20 2010 +0800
+
+    fixbug
+
+[33mcommit d0ce5e36a75b57e968d4a7c80b4c8604abcc7281[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 8 14:55:56 2010 +0800
+
+    fixbug
+
+[33mcommit 92d5c0259aa9053a78eb1150c7f57838368f8ab5[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 8 14:55:17 2010 +0800
+
+    log
+
+[33mcommit 8c6b9fbed28c825c42b9ffdde574963d5baf01cb[m
+Author: labalan <labalan@qq.com>
+Date:   Mon Mar 8 13:40:44 2010 +0800
+
+    news-1
+
+[33mcommit 30c9ecbaeb554f7623de365d09b358e3c5c1a2c5[m
+Merge: d4ea0f5... 24ce1b8...
+Author: labalan <labalan@qq.com>
+Date:   Mon Mar 8 13:30:28 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit d4ea0f59b9a5bfb1b6a54df546d8dbe61aa10304[m
+Author: labalan <labalan@qq.com>
+Date:   Mon Mar 8 13:29:43 2010 +0800
+
+    news
+
+[33mcommit 155d607f7180ba189a4fddd597ab9efd0eff5422[m
+Merge: cd18a3e... 24ce1b8...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 8 13:17:02 2010 +0800
+
+    news css
+
+[33mcommit cd18a3e9e671afeb0b10bf4808fb9f2197a734f4[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 8 11:46:44 2010 +0800
+
+    news
+
+[33mcommit 5dbdfbbaa3684e3294bce7988451f93e8beef629[m
+Merge: 5f1b308... 24ce1b8...
+Author: zhanghao <411192132@qq.com>
+Date:   Mon Mar 8 09:59:49 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 24ce1b83a2b79db95256a06a0da56427a744f71c[m
+Merge: 46aac29... 8893676...
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 7 18:53:45 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 46aac2987bc38ab5d47054f42bbca9ac6d22943d[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 7 18:53:13 2010 +0800
+
+    fix gugs
+
+[33mcommit 3a6baf2c0c959a47fbb8c05ac582a5685a677e4a[m
+Author: sauger <sauger@163.com>
+Date:   Sun Mar 7 18:49:08 2010 +0800
+
+    fix bugs
+
+[33mcommit 88936762ebafb3c94448bf643f66282d052db307[m
+Merge: 6cad568... 941c2f9...
+Author: labalan <labalan@qq.com>
+Date:   Sat Mar 6 17:31:34 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 6cad5680bdad58af8dff22118e0a67f96cc1d800[m
+Author: labalan <labalan@qq.com>
+Date:   Sat Mar 6 17:31:09 2010 +0800
+
+    news
+
+[33mcommit 5f1b3089f0f2854125f6c65c644ddaa55b38ffdd[m
+Merge: 1a5f477... 941c2f9...
+Author: zhanghao <411192132@qq.com>
+Date:   Sat Mar 6 17:04:34 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 941c2f94e07de5b5b59166ac6ac878fc74f392db[m
+Merge: ccdff5a... 13496cb...
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 6 17:03:25 2010 +0800
+
+    fix paginate and conflict
+
+[33mcommit ccdff5ae357c041f35af5a0d22e89339663e260f[m
+Author: sauger <sauger@163.com>
+Date:   Sat Mar 6 16:44:19 2010 +0800
+
+    add custom list admin
+
+[33mcommit 13496cbb012318ad7021f5ed8baafcea21f10183[m
+Author: labalan <labalan@qq.com>
+Date:   Sat Mar 6 16:23:00 2010 +0800
+
+    news
+
+[33mcommit a678149d336cecf751f92c0c3c6c2c7a933446ae[m
+Merge: 5348a55... ee62818...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sat Mar 6 13:06:08 2010 +0800
+
+    fixbug
+
+[33mcommit ee628189176fbf9dbb0cf4eaee515dbb5c7b9bf4[m
+Author: labalan <labalan@qq.com>
+Date:   Sat Mar 6 13:00:35 2010 +0800
+
+    userhtml
+
+[33mcommit 5348a55d6b9590ef21ad01c95ffc787658c15146[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Mar 5 17:56:06 2010 +0800
+
+    fixbug
+
+[33mcommit ef0ada191e71051f1605f6d6950956b2943d31d6[m
+Author: labalan <labalan@qq.com>
+Date:   Fri Mar 5 17:41:09 2010 +0800
+
+    commit
+
+[33mcommit c26d74f14cc48e672150529178449f4b66fe8872[m
+Author: labalan <labalan@qq.com>
+Date:   Fri Mar 5 14:56:29 2010 +0800
+
+    listhtml-3
+
+[33mcommit 05e76fd6b7dc72eea94e9ac8d706a6e7554babca[m
+Author: labalan <labalan@qq.com>
+Date:   Fri Mar 5 14:39:00 2010 +0800
+
+    listhtml-2
+
+[33mcommit 53de5190560cb9377c5a8a3c62d0d2e5d4f49243[m
+Author: labalan <labalan@qq.com>
+Date:   Fri Mar 5 14:19:13 2010 +0800
+
+    listhtml-1
+
+[33mcommit 73a5ef054d9ffbdbdf5ec656c8fd67644c7528aa[m
+Author: labalan <labalan@qq.com>
+Date:   Fri Mar 5 12:17:44 2010 +0800
+
+    listhtml
+
+[33mcommit c2c0d7cc87591c93a230db1aaafc3527dcd57e23[m
+Author: labalan <labalan@qq.com>
+Date:   Fri Mar 5 10:26:26 2010 +0800
+
+    newshtml
+
+[33mcommit 4530f6cf9885b3130cd61a24ad0abba0b4307b3c[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 4 17:47:44 2010 +0800
+
+    newslisthtml
+
+[33mcommit 1a5f47799bdb0937d4c772a78b7624d8c520ee8b[m
+Merge: fc0e486... 96e8287...
+Author: zhanghao <411192132@qq.com>
+Date:   Thu Mar 4 16:32:30 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 96e82871931c2759000e26bf31da72a10ba1dc28[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 4 15:03:30 2010 +0800
+
+    newshtml-3
+
+[33mcommit 7c18a1a402010acbfa2ceeadfe1d7dd2b3d9981c[m
+Merge: 6e72e62... 78f284c...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 4 14:06:55 2010 +0800
+
+    jpg
+
+[33mcommit 6e72e629c0a7b28594e2db7bfe6f07ff7039da05[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 4 14:05:27 2010 +0800
+
+    news
+
+[33mcommit 78f284cf87ee30e7658fbcf71f6d55e12d80739c[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 4 13:37:59 2010 +0800
+
+    newshtml-2
+
+[33mcommit 73d0171eecf4be2c930c1de29a9b837b6749c468[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 4 13:29:04 2010 +0800
+
+    newshtml-1
+
+[33mcommit c55b71638db270b589a3214f6a5f8d869eda7a71[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Mar 4 11:55:11 2010 +0800
+
+    newshtml
+
+[33mcommit 4ec2be7232127948d366adf1ba54492af6ed7d39[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 4 10:52:31 2010 +0800
+
+    index
+
+[33mcommit ac58b24961794c9448b220bfbc9243fecb52ce36[m
+Merge: e9a0b28... ca145b4...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 4 10:19:11 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit e9a0b289f173b2747897c5c0190a9a07414b275f[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Mar 4 10:18:54 2010 +0800
+
+    ad
+
+[33mcommit ca145b4c7a4b2401d893f396d2e3048954c6ed3e[m
+Author: sauger <sauger@163.com>
+Date:   Thu Mar 4 10:18:21 2010 +0800
+
+    add fix
+
+[33mcommit 99cd05888b321a0ed82aed5702b49095f101ec50[m
+Merge: 103782f... ff0a222...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 3 17:54:33 2010 +0800
+
+    robbin
+
+[33mcommit 103782f32ec35f6827feb4591053b05d2300664c[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Mar 3 17:08:18 2010 +0800
+
+    robbin
+
+[33mcommit ff0a222070d157174f040d1551c59f06cbfbce96[m
+Merge: 5130d5d... 9cb62e9...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 18:01:53 2010 +0800
+
+    upload
+
+[33mcommit 5130d5d2b14693f0e08666f1d204deca64217d80[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 18:01:15 2010 +0800
+
+    upload
+
+[33mcommit 9cb62e96d651a6003f86601602bfe91a41cc2c00[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 1 18:00:47 2010 +0800
+
+    fix bugs
+
+[33mcommit cafe5b6c3de368e1ef59cf59cd5a437f2e38a63a[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 17:44:03 2010 +0800
+
+    debug
+
+[33mcommit d23ee8944e2f9baacf8f8a34890d1920319ccd39[m
+Merge: 5f0cbd5... 20d07ec...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 17:28:23 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 5f0cbd5b232f85fa5e4210562dcbbbe22ed8ebe0[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 17:28:10 2010 +0800
+
+    test
+
+[33mcommit fc0e4865d2d83f72ef2d318595e17f4e34fc946a[m
+Merge: 0447ae9... 20d07ec...
+Author: zhanghao <411192132@qq.com>
+Date:   Mon Mar 1 17:12:34 2010 +0800
+
+    fix conflict
+
+[33mcommit 20d07ec8b9492c880dcff67fbd008f8074df93ab[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 1 17:10:18 2010 +0800
+
+    edit conflict
+
+[33mcommit 0447ae948f5cd1f37cd6ca640f4e814e9003d922[m
+Merge: e039561... 2c22f45...
+Author: zhanghao <411192132@qq.com>
+Date:   Mon Mar 1 16:52:11 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit e0395619d277ba88256de28c737d1f57f72844fc[m
+Merge: 49f2b4b... 7571baa...
+Author: zhanghao <411192132@qq.com>
+Date:   Mon Mar 1 16:50:36 2010 +0800
+
+    fix bugs
+
+[33mcommit 49f2b4b157dc3d2e257ebc9971257f410fb7604c[m
+Author: zhanghao <411192132@qq.com>
+Date:   Mon Mar 1 16:47:01 2010 +0800
+
+    fix bugs
+
+[33mcommit 2c22f4526dc96fb21d8ac550f2548b70bd80a3fb[m
+Merge: 887ddc6... 7571baa...
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 1 16:39:22 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 887ddc6230cb711239f6ab15ae13fae2f1722e49[m
+Author: sauger <sauger@163.com>
+Date:   Mon Mar 1 16:39:15 2010 +0800
+
+    fix bugs
+
+[33mcommit 7571baa7f0dc1478b9d4eac14f76ecf344bc1633[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 15:11:20 2010 +0800
+
+    sql
+
+[33mcommit 845ec8ec215712b9b8550324f1fba0fde9453fc3[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 15:09:41 2010 +0800
+
+    data_upload_xls
+
+[33mcommit 2262af7f7d1427517b9edf652da560a434448849[m
+Merge: 07fe4fb... 4a0021a...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 10:16:27 2010 +0800
+
+    png
+
+[33mcommit 07fe4fb08f8dd72914ce9cc2251d9b0eb989b645[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 10:15:50 2010 +0800
+
+    png
+
+[33mcommit 93fb4e1208be08c8a76a717beaa035ca3257ff05[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 10:12:55 2010 +0800
+
+    png
+
+[33mcommit 3fae505c477cdb0d8ee5c16dd8af5683e0ffcd9a[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Mar 1 10:10:47 2010 +0800
+
+    news
+
+[33mcommit 25953ca898f171b2322e21c1434e90322b98f0e5[m
+Merge: 4413a4f... 4a0021a...
+Author: zhanghao <411192132@qq.com>
+Date:   Fri Feb 26 16:45:23 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 4a0021a96b26bf48ee1706243817a8a530086708[m
+Author: sauger <sauger@163.com>
+Date:   Fri Feb 26 16:45:04 2010 +0800
+
+    fix bugs
+
+[33mcommit 4413a4f169efe2e5bfe31271878b57a6501f793f[m
+Merge: c757ee0... e80f94c...
+Author: zhanghao <411192132@qq.com>
+Date:   Fri Feb 26 15:54:41 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit e80f94ceeb6418bc5aeea3956d03b9d37d768691[m
+Author: sauger <sauger@163.com>
+Date:   Fri Feb 26 15:53:55 2010 +0800
+
+    add publish year to mr&fb_bd
+
+[33mcommit c757ee0dad7ac3abea6fab2549f36bca2beccd37[m
+Merge: 67b6909... 5e99a7c...
+Author: zhanghao <411192132@qq.com>
+Date:   Fri Feb 26 15:34:05 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 5e99a7c5fb4d9d1cb25915bbade5c04329ad95f2[m
+Author: sauger <sauger@163.com>
+Date:   Fri Feb 26 15:33:42 2010 +0800
+
+    fix bugs
+
+[33mcommit 67b69096ba6334259fd2609e98a03af6422a9e2d[m
+Merge: 5ad5e7d... e8a5c84...
+Author: zhanghao <411192132@qq.com>
+Date:   Fri Feb 26 15:15:16 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit e8a5c84c000346865951c7e416fd3a5b928df66a[m
+Author: sauger <sauger@163.com>
+Date:   Fri Feb 26 15:14:51 2010 +0800
+
+    edit rich_list
+
+[33mcommit 5ad5e7d0e7d6c216f724906b03f3f2b7f87a38d2[m
+Merge: e848f10... dffd643...
+Author: zhanghao <411192132@qq.com>
+Date:   Fri Feb 26 15:00:28 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit dffd6438d43a30dd422f96e8090911367eff0949[m
+Author: sauger <sauger@163.com>
+Date:   Fri Feb 26 15:00:10 2010 +0800
+
+    fix bugs
+
+[33mcommit e848f1048040fa80183ec9550df8e9296b80d119[m
+Merge: ba7d156... 1129034...
+Author: zhanghao <411192132@qq.com>
+Date:   Fri Feb 26 14:58:08 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 11290346a45cbf468fcd235826c866946cef42db[m
+Author: sauger <sauger@163.com>
+Date:   Fri Feb 26 14:57:44 2010 +0800
+
+    fix bugs
+
+[33mcommit ba7d156d49d071dfae83911699c5763ac39f61b7[m
+Merge: edbb73a... a30dadb...
+Author: zhanghao <411192132@qq.com>
+Date:   Fri Feb 26 10:40:09 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit a30dadb5bee43c08f007ad9213a613f8180dc856[m
+Merge: 62a9a4f... 28142d1...
+Author: sauger <sauger@163.com>
+Date:   Fri Feb 26 10:20:53 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 62a9a4feb431d9be2da8e16296fdb601a14aef19[m
+Author: sauger <sauger@163.com>
+Date:   Fri Feb 26 10:20:10 2010 +0800
+
+    remove the *.png from the ignore list
+
+[33mcommit 28142d1599b0433c8565baf18970508e28496d6c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Feb 26 10:16:10 2010 +0800
+
+    city debug
+
+[33mcommit 77508f6a6a6d1d17e84723777b3a5a0002786ea5[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Fri Feb 26 10:01:29 2010 +0800
+
+    city autocomplete
+
+[33mcommit 3c40c0ba11d375b8e215061ec3ebddcb5b5d6cdc[m
+Merge: 1601da8... 520114a...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 25 18:03:02 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 1601da8314ab4139085845a1b1ec2a913094d5a2[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 25 18:02:53 2010 +0800
+
+    rich autocomplete
+
+[33mcommit edbb73a23b2f2a944202a4d562c3dc49e6c1edb7[m
+Merge: acdc062... 520114a...
+Author: zhanghao <411192132@qq.com>
+Date:   Thu Feb 25 17:27:07 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 520114aefa464080d26fc8f897efff8e166cb78a[m
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 25 17:26:48 2010 +0800
+
+    fix bugs
+
+[33mcommit 1be52236e72d10f547b535cba0126030cadebcac[m
+Merge: e67ad79... f170965...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 25 17:04:02 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit e67ad792e9c7f0ee444294af0ab3db0ccdd7c41b[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 25 17:03:47 2010 +0800
+
+    rich
+
+[33mcommit f1709650f3639f8b77a4624697b42455b7fd891f[m
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 25 16:58:38 2010 +0800
+
+    fix bugs
+
+[33mcommit acdc062fdb6094a18f5c5604755fd108b1e7e462[m
+Merge: 8b7995b... 3173cdf...
+Author: zhanghao <411192132@qq.com>
+Date:   Thu Feb 25 16:47:23 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 3173cdf53939ecd2a0480c32bba0807f31fdb91b[m
+Merge: 917c50f... bce6e68...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 25 16:36:17 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 917c50f76876b8db1ba4152af87ccc8751a13224[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 25 16:35:59 2010 +0800
+
+    famous autocom
+
+[33mcommit 8b7995b500411c9b95e4b10737b03042c6be5ef1[m
+Merge: 3c75f68... bce6e68...
+Author: zhanghao <411192132@qq.com>
+Date:   Thu Feb 25 16:12:21 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 3c75f685c2ff6736bacbf7f40acce829ec9b1382[m
+Author: zhanghao <411192132@qq.com>
+Date:   Thu Feb 25 16:12:13 2010 +0800
+
+    fix bugs
+
+[33mcommit bce6e689ac56b364dca5398562fd70852f5ae6b4[m
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 25 16:00:48 2010 +0800
+
+    direcit the index to admin/admin
+
+[33mcommit 10f6559c7a250bc8f96aa218832eda0814b3a36c[m
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 25 15:57:14 2010 +0800
+
+    delete the unuseless files
+
+[33mcommit c9cf04867cd36fc7875542c93d5fc99436cc4953[m
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 25 15:55:11 2010 +0800
+
+    fix bugs
+
+[33mcommit c4d6894b5a2191794d0399752e50ced8bb635693[m
+Merge: 31d615c... c4790a7...
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 25 14:10:11 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 31d615c022d685c960712cb3b2a38510415fbf92[m
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 25 14:10:00 2010 +0800
+
+    autocomplete company
+
+[33mcommit c4790a7855b2b9802369c472d693791e15b1ac0b[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 25 13:59:12 2010 +0800
+
+    comment
+
+[33mcommit d825633209521947d2e261588e1d73cca9aa0c6a[m
+Merge: 18fc3d4... e5085da...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 25 13:25:05 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 18fc3d4cba0e079f91f1c9ecfa31862cfa9a4997[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 25 13:24:38 2010 +0800
+
+    city
+
+[33mcommit 2ff9de5c95dfd9344f899322c91b7324453ad5c7[m
+Merge: a0ecb96... e5085da...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Feb 24 18:00:39 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit e5085da508529571b81b6eb51317def621f2c81c[m
+Merge: c63e267... 4c411c2...
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 24 18:00:20 2010 +0800
+
+    edit ignore
+
+[33mcommit c63e26779c93265f762d365538cc7a5b50e6c209[m
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 24 17:59:00 2010 +0800
+
+    test autocomplete
+
+[33mcommit 4c411c25b7410633ab3e452217eb559c11667aaf[m
+Merge: dc9da9c... 3ea5f81...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Feb 24 17:57:57 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit dc9da9c2393ec9266a800e6c63f9d9d26a088120[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Feb 24 17:57:41 2010 +0800
+
+    city
+
+[33mcommit 3ea5f8176720e3f6f96011528374447546efae28[m
+Merge: a12dc2d... 139e0cb...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Feb 24 14:00:18 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit a12dc2d18b9a7db4d5eaf7f87bc3fdd8acb4b5fe[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Wed Feb 24 13:59:51 2010 +0800
+
+    robbin
+
+[33mcommit 139e0cba70175b288776cd00570d9a6b2b020dec[m
+Merge: 41ab6e1... defb8a4...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Feb 24 11:31:38 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 41ab6e1a6992f087cfdcadac62c66d7a64f0d5b3[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Feb 24 11:31:27 2010 +0800
+
+    city
+
+[33mcommit defb8a4cc3b165191cc329b9fe00c72e30e9d252[m
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 24 10:53:09 2010 +0800
+
+    add ~file to the ignore file
+
+[33mcommit a0ecb966623b5ec206868478ba572b523a1f8c5b[m
+Merge: dfebdab... 0a2d2b1...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Feb 24 10:41:29 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 0a2d2b1f3c4335b42b304acad1a05aeb7ce986b5[m
+Merge: 6449787... 7e3e298...
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 24 10:41:05 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit dfebdabdb128167412544c1abdda22a69609d320[m
+Merge: 3770e33... 7e3e298...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Feb 24 10:36:27 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 64497878b99f70c33244aff30104eb170c981076[m
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 24 10:34:39 2010 +0800
+
+    adjust
+
+[33mcommit 7e3e29807537f20b92dfe3437595921835d8bc14[m
+Merge: dee5d3a... 67dda67...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Feb 24 10:33:36 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit dee5d3ae8d294a159a6f74fdbd800a98b5ce8183[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Feb 24 10:33:21 2010 +0800
+
+    industry
+
+[33mcommit 3770e331c530adacc0d0f6cc2f338bf1369e55b3[m
+Merge: 11c902a... 67dda67...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Feb 24 10:29:10 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 67dda67437a96e2d8943f9215b81f2d5f69cd7a8[m
+Merge: 55e2051... fa06663...
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 24 10:28:15 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 55e2051da6aaeadea61ee7bc96b9f73b05314a61[m
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 24 10:28:02 2010 +0800
+
+    alter the fb_gs
+
+[33mcommit 11c902a5382e24976694672ea5314283e7e51023[m
+Merge: b095095... fa06663...
+Author: zhanghao <411192132@qq.com>
+Date:   Wed Feb 24 09:47:11 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit fa066636c11471db304b7f080e0b6b088849899b[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Feb 23 18:06:11 2010 +0800
+
+    industry
+
+[33mcommit 6a2b37ac5b47910e0a7fb6fd890c22de0533f0b5[m
+Merge: f214e7a... 0db9722...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Feb 23 15:55:57 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit f214e7a1b642c58509a3e9b954534f559c5a7b4c[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Feb 23 15:55:44 2010 +0800
+
+    mrbd
+
+[33mcommit 0db972293f69f4c2df927e3d6f06b6e29ab9ded2[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Feb 23 15:42:14 2010 +0800
+
+    robbin
+
+[33mcommit 619e91e583ba26207239b3b679e8c35903f38647[m
+Merge: e102336... 1c69032...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Feb 23 15:31:33 2010 +0800
+
+    robbin
+
+[33mcommit e102336084c7954d2553cae939f6dd2966121589[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Tue Feb 23 15:24:14 2010 +0800
+
+    robbin
+
+[33mcommit 1c6903288a6a16b74fb16db68180aabd2c1c0983[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Feb 23 13:44:38 2010 +0800
+
+    ad
+
+[33mcommit f23918e1889be676bd42029fcc4db6ed2788e34f[m
+Merge: 2d74f1c... fd7b904...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Feb 23 13:35:26 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 2d74f1ce19be698318b28df5910aa709f6b70b2b[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Feb 23 13:35:15 2010 +0800
+
+    famous_ad
+
+[33mcommit fd7b9044507fe708ad47a511c56c80a227266866[m
+Merge: e5ccbdb... ebda193...
+Author: sauger <sauger@163.com>
+Date:   Tue Feb 23 12:13:20 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit e5ccbdb8ffb829ec67e839eaf70495ad26b36747[m
+Author: sauger <sauger@163.com>
+Date:   Tue Feb 23 12:12:55 2010 +0800
+
+    change the currency plugin
+
+[33mcommit aa2ae8cf10cad5986432700650a492ce3b587a03[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Tue Feb 23 10:01:52 2010 +0800
+
+    fh_gl
+
+[33mcommit ebda1935c824e26f0c68ca53d11367c159815de5[m
+Merge: 97f37f1... 119624a...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Feb 22 18:05:17 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 97f37f19f1bb5c39d9fe102894a14962de472b39[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Feb 22 18:05:00 2010 +0800
+
+    fh
+
+[33mcommit 119624a43d7b1461a35ea4d440b5ca1ae3b02fcd[m
+Merge: ff01c0a... dd110b7...
+Author: labalan <labalan@qq.com>
+Date:   Mon Feb 22 17:30:51 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit ff01c0a5f9c2f447df19cd7a6495bef95c27ddcc[m
+Author: labalan <labalan@qq.com>
+Date:   Mon Feb 22 17:30:20 2010 +0800
+
+    comlogin
+
+[33mcommit dd110b7e1a21d3ce0d714b20bd0c0222c1224885[m
+Author: sauger <sauger@163.com>
+Date:   Mon Feb 22 17:14:34 2010 +0800
+
+    finish the stock plugin
+
+[33mcommit c37d4a694decef69092efce86b3aa37afe49bdf8[m
+Author: sauger <sauger@163.com>
+Date:   Mon Feb 22 15:02:05 2010 +0800
+
+    alter fb_fh_gs
+
+[33mcommit 2d2f97f2f01c9fd01ca963c3ae766eb1ffbe56ab[m
+Merge: efa49d3... f351e5d...
+Author: sauger <sauger@163.com>
+Date:   Mon Feb 22 13:54:44 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit f351e5d021605d154ee90e8bb42ab1dcb999e7b3[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Feb 22 13:54:02 2010 +0800
+
+    re
+
+[33mcommit efa49d3c00b2bff289ed1666a60faaab3479cb55[m
+Merge: e5dcea8... dc70603...
+Author: sauger <sauger@163.com>
+Date:   Mon Feb 22 13:39:35 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit dc70603b6ce79cb94e0403fc799262bad3e6d537[m
+Merge: 8ccdb5f... a7bba6e...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Feb 22 13:34:02 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 8ccdb5f7cd6acc018eb462c4caea6206fc755b79[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Feb 22 13:33:49 2010 +0800
+
+    register
+
+[33mcommit 093401fd156aad8bfa94a3846ac08c1a9c302fe6[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Mon Feb 22 13:04:34 2010 +0800
+
+    re
+
+[33mcommit e5dcea817583d3635b429a03798efe146e08cddf[m
+Merge: f57066b... a7bba6e...
+Author: sauger <sauger@163.com>
+Date:   Mon Feb 22 13:04:33 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit a7bba6edcbb3001b5e19ade31cc79b91b20c9d78[m
+Merge: c4e0871... e8bd7d0...
+Author: labalan <labalan@qq.com>
+Date:   Mon Feb 22 10:57:05 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit c4e087155794f065b817e9bc925be390045757b5[m
+Author: labalan <labalan@qq.com>
+Date:   Mon Feb 22 10:56:48 2010 +0800
+
+    patch
+
+[33mcommit 46f0e03dfb7612a16b4627ff1da2156235261332[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Feb 21 18:00:00 2010 +0800
+
+    re
+
+[33mcommit f57066bbc6f3d2c2ae03bb99489fa709047a4550[m
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 17:59:31 2010 +0800
+
+    remove the enter
+
+[33mcommit e8bd7d0437048f047402ee382252ebce748a5734[m
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 17:58:18 2010 +0800
+
+    test commit -a
+
+[33mcommit 4e533074c315448e2402b406ed4a677ff5a30451[m
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 16:52:51 2010 +0800
+
+    sql
+
+[33mcommit 5349324a60bea113f984e3829316b6d1ad64246e[m
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 16:26:12 2010 +0800
+
+    currency
+
+[33mcommit 21b156558a178a76594cadeebd37b61270c48e95[m
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 15:50:39 2010 +0800
+
+    listchange-1
+
+[33mcommit b900b85df23e017e240baf4db5ebdda939d5d057[m
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 15:46:59 2010 +0800
+
+    listchange
+
+[33mcommit 97763e6c7af1a00fcf5d6a37a31434da88553f38[m
+Merge: 997af3c... 1fbd9c9...
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 15:43:18 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 997af3c3918cc53d6471ff2951b014f6a2b78454[m
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 15:43:01 2010 +0800
+
+    listchange
+
+[33mcommit b09509562ef68de66f731bd1e587fa4568cc2f41[m
+Merge: 03a329a... 1fbd9c9...
+Author: zhanghao <411192132@qq.com>
+Date:   Sun Feb 21 14:56:23 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 1fbd9c94d04f5e17a2e1da4db1d69f0c3f7d3bd3[m
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 14:55:58 2010 +0800
+
+    add alter news table sql
+
+[33mcommit 03a329a89cd9c18926f16233af078332c2473843[m
+Merge: eda9e49... c909222...
+Author: zhanghao <411192132@qq.com>
+Date:   Sun Feb 21 14:50:02 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit c90922229d39539fedcfd0bda2e7416d6a8b429d[m
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 14:49:29 2010 +0800
+
+    dump the admin_menu sql
+
+[33mcommit eda9e49bc4f5368f7964a49536e68ed0daab8308[m
+Merge: 786edd8... d55004d...
+Author: zhanghao <411192132@qq.com>
+Date:   Sun Feb 21 14:43:49 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit d55004dfc36522183f0c7c0240eb408dadf6dd19[m
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 14:42:02 2010 +0800
+
+    add currency sql statement and remove useless files
+
+[33mcommit ac6ae0e006a0a95cdfd05f5b3a2d14a2f8295feb[m
+Merge: ed37433... 00067c7...
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 14:32:04 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit ed37433a2ed95d0a3fef721ec17a10d14061b178[m
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 14:31:40 2010 +0800
+
+    adjust currency admin
+
+[33mcommit 00067c75f4ea31722877f702a59ceb8cbc0a0fc2[m
+Merge: 1f8c156... babb488...
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 14:16:08 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 1f8c1562b2b76993e596327158d0778677a639b0[m
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 14:15:48 2010 +0800
+
+    richpatch
+
+[33mcommit 2c383fc1478497a747edb11d5c1551de5bcf0c54[m
+Merge: 1b0b211... babb488...
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 13:52:14 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 1b0b2116042d92303f8d6e1cadd6a993822c81de[m
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 13:51:59 2010 +0800
+
+    adjust the currency admin
+
+[33mcommit babb488be8c76660e83be372d16ce11628d13745[m
+Merge: 311104a... 159fc82...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Feb 21 13:40:17 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 311104a10717c929f0cc2eece77eba4ef7c9ffd1[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Sun Feb 21 13:40:05 2010 +0800
+
+    user
+
+[33mcommit 159fc82c8c95cb759fdaf981fe444782bbdd15a4[m
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 12:32:55 2010 +0800
+
+    richlist
+
+[33mcommit de9df5297ac02e0114407e7357151df0db02dd94[m
+Merge: 50ebd68... a33e96a...
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 10:10:53 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 50ebd680f17dd25368140277e4055e19ad9c6768[m
+Author: labalan <labalan@qq.com>
+Date:   Sun Feb 21 10:10:33 2010 +0800
+
+    famous
+
+[33mcommit a33e96a667d999aa6f424410753d6c8760eaad0c[m
+Author: sauger <sauger@163.com>
+Date:   Sun Feb 21 09:39:51 2010 +0800
+
+    fix login html
+
+[33mcommit f5d61c851dbe7417c80a8397517b2f17d2bf0b9f[m
+Merge: 9bc787c... ffaa07f...
+Author: Acheron <itachi311948@vip.qq.com>
+Date:   Sat Feb 20 18:04:14 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 9bc787cf1c925f20b27f6cc736312cd6dfef0631[m
+Author: Acheron <itachi311948@vip.qq.com>
+Date:   Sat Feb 20 18:03:41 2010 +0800
+
+    denglu
+
+[33mcommit ffaa07f19f0bdd42116d4a2337507b2e871b1489[m
+Merge: d03bb3a... ff4e255...
+Author: sauger <sauger@163.com>
+Date:   Sat Feb 20 18:00:38 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit d03bb3ad9e595d8600976690887c596b2d2ed56b[m
+Merge: 69bdd20... 5bf74e3...
+Author: sauger <sauger@163.com>
+Date:   Sat Feb 20 18:00:23 2010 +0800
+
+    adjust news admin for the English content
+
+[33mcommit ff4e255e0bb004917d273546fe25597c1387028b[m
+Merge: df220b6... 9e54760...
+Author: labalan <labalan@qq.com>
+Date:   Sat Feb 20 17:58:59 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit df220b6662c68a4727d12125f9e9433286e55cc8[m
+Author: labalan <labalan@qq.com>
+Date:   Sat Feb 20 17:58:37 2010 +0800
+
+    famousmanage_patch
+
+[33mcommit 9e5476031a855967b70e68fa08371970d0d18bff[m
+Merge: 06e3024... 7034f1c...
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Feb 20 17:54:28 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 06e3024655fb37dd9a27252112bf4ee86748ee85[m
+Author: robbin17 <robbin_szf@hotmail.com>
+Date:   Sat Feb 20 17:54:07 2010 +0800
+
+    robbin
+
+[33mcommit 7034f1ceae89da1bf6d726075bababf9022eb763[m
+Author: labalan <labalan@qq.com>
+Date:   Sat Feb 20 16:01:54 2010 +0800
+
+    famousmanage
+
+[33mcommit 69bdd205a2721f6f25f563702715abf9b5c61865[m
+Author: sauger <sauger@163.com>
+Date:   Sat Feb 20 14:16:21 2010 +0800
+
+    fix some bugs
+
+[33mcommit 5bf74e30f6944a8b6efce2315cd2430cf56b756f[m
+Author: labalan <labalan@qq.com>
+Date:   Sat Feb 20 14:07:49 2010 +0800
+
+    dbscript
+
+[33mcommit d764da098e95678f42b2de7cf82b63179d99e394[m
+Author: labalan <labalan@qq.com>
+Date:   Sat Feb 20 14:05:17 2010 +0800
+
+    famousmanage
+
+[33mcommit 24decc795ddac05d59f2733e2656349a66ec944c[m
+Author: labalan <labalan@qq.com>
+Date:   Sat Feb 20 10:24:50 2010 +0800
+
+    richmanage
+
+[33mcommit 59c54f62596bf04462b0ce2811d66bbcaed43040[m
+Merge: 605b104... 74a1933...
+Author: labalan <labalan@qq.com>
+Date:   Fri Feb 12 13:24:39 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 605b1048a552672c0660af3a70f31e0999dfdda1[m
+Author: labalan <labalan@qq.com>
+Date:   Fri Feb 12 13:24:16 2010 +0800
+
+    richmanage
+
+[33mcommit 74a19333cc187c95ea06f074c472d691b6abb99a[m
+Merge: f0e250d... abf1297...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 11 17:59:08 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit abf12975edabcd15778a4d4ba1c60fe41e0d7ea7[m
+Merge: cb2b235... b367a9f...
+Author: labalan <labalan@qq.com>
+Date:   Thu Feb 11 17:51:06 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit cb2b235e8e2874d358673c0187363c9d79b6ecb7[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Feb 11 17:50:46 2010 +0800
+
+    richmanage-1
+
+[33mcommit f0e250dad10bfbb792fd42582596c44c5c8ed4ad[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 11 16:23:32 2010 +0800
+
+    coin
+
+[33mcommit b367a9f3eb0d08c56c71698afdd2d2d11e1fefb8[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 11 15:08:36 2010 +0800
+
+    db
+
+[33mcommit 58ecb2a7ff1d730e1245f8e543bba2899b8cc860[m
+Merge: 0c34a29... e6047f8...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 11 15:03:37 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 0c34a2983c55f56e28b3728677a187af91e98958[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 11 15:03:15 2010 +0800
+
+    mrbd
+
+[33mcommit e6047f8d99f0c3c4694510e955d2733cd82b399e[m
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 11 14:53:30 2010 +0800
+
+    rm useless files
+
+[33mcommit a15c03279c67e2b838b3adcdf62f498e33af34ea[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Feb 11 14:50:44 2010 +0800
+
+    dirname
+
+[33mcommit 07af9033cecaea2d8e6ff484d7c11628103cf39b[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Feb 11 14:06:02 2010 +0800
+
+    jys-hbzl
+
+[33mcommit 0e6e29581d8084ab7415c7e3ef84a3b6c67efd1f[m
+Merge: 35ee070... 2791a09...
+Author: labalan <labalan@qq.com>
+Date:   Thu Feb 11 12:23:37 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 35ee070836241e23399feeb46c40977b4d09b9db[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Feb 11 12:21:27 2010 +0800
+
+    gsmc-check
+
+[33mcommit 2791a0928856a7be55dac98d6515cf7d8383c20d[m
+Merge: 1de8ff9... 7220641...
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 11 11:42:04 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit 1de8ff9e0512c44243326babe7d59eceb387a450[m
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 11 11:41:39 2010 +0800
+
+    delete rm directory
+
+[33mcommit 72206410fc788ec70c6b6969aa33aa6ce6f5520a[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 11 11:40:24 2010 +0800
+
+    hb
+
+[33mcommit 326ef7ecdf2513631966e554f70ac65108c2a763[m
+Merge: 1d117d9... 2697199...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 11 11:30:54 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 1d117d98ad0de5f89e719bd63678a8c38290dcb0[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 11 11:25:33 2010 +0800
+
+    mr
+
+[33mcommit c5882a1944a66112e161d1ebd5071a8ef9fb2799[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Thu Feb 11 11:16:05 2010 +0800
+
+    mr
+
+[33mcommit 2697199ae142c5fd743d4c8657288a596b4627d9[m
+Author: sauger <sauger@163.com>
+Date:   Thu Feb 11 11:13:29 2010 +0800
+
+    delete useless files
+
+[33mcommit 59afa24dd17add7a90b36a1595c77c2e58133d2d[m
+Merge: 06d7292... 4598c03...
+Author: labalan <labalan@qq.com>
+Date:   Thu Feb 11 10:57:43 2010 +0800
+
+    Merge branch 'master' of git@github.com:sauger/forbes
+
+[33mcommit 06d7292c189202f28b3fde457f66c0341c3e3589[m
+Author: labalan <labalan@qq.com>
+Date:   Thu Feb 11 10:57:25 2010 +0800
+
+    search-1
+
+[33mcommit 786edd8f131b57d3c9e20743a580b4ff77cae095[m
+Merge: ded2791... 4598c03...
+Author: zhanghao <411192132@qq.com>
+Date:   Thu Feb 11 10:07:58 2010 +0800
+
+    Merge branch 'master' of github.com:sauger/forbes
+
+[33mcommit ded27911a3fb5380ae2292b42b98dc3ecff75cfb[m
+Author: zhanghao <411192132@qq.com>
+Date:   Thu Feb 11 10:07:47 2010 +0800
+
+    modify fckadobeair.js
+
+[33mcommit 4598c03f3aef0756f018ea47aea3e02632cde58f[m
+Merge: 6320855... 702c1c4...
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 10 18:32:58 2010 +0800
+
+    fix conflict
+
+[33mcommit 63208551249c70d44063a5c9e5d696ece96ebbd3[m
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 10 18:20:52 2010 +0800
+
+    fix the login bug
+
+[33mcommit 702c1c4c89ccad1f5731984f24f9f1c3202c9956[m
+Merge: 5b62c1c... cb99195...
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Feb 10 17:57:21 2010 +0800
+
+    db
+
+[33mcommit 5b62c1cc5166f268e4dd65710180301f94f23d4a[m
+Author: justin1986 <zhanghao@xun-ao.com>
+Date:   Wed Feb 10 17:29:51 2010 +0800
+
+    init
+
+[33mcommit cb99195ea38099356a65be5828502838083b187a[m
+Author: sauger <sauger@163.com>
+Date:   Wed Feb 10 17:14:58 2010 +0800
+
+    add dbscript
+
+[33mcommit 70aadd5b1ff6f2a8f3c6eb5cd61c3af101260ad2[m
+Author: labalan <labalan@qq.com>
+Date:   Wed Feb 10 15:27:21 2010 +0800
+
+    search
+
+[33mcommit ed0a0eb74eb3e7e6bc9739414a81f1c4b7bf3d9a[m
+Merge: bb640b9... d997a20...
+Author: labalan <labalan@qq.com>
+Date:   Tue Feb 9 17:09:24 2010 +0800
+
+    fhgl
+
+[33mcommit bb640b9cc6c5fa5647924dc9f61654a83d93bd48[m
+Author: labalan <labalan@qq.com>
+Date:   Tue Feb 9 17:05:22 2010 +0800
+
+    fhgl
+
+[33mcommit d997a205b695f9750d5ef4ee7cb43933b3ebe9a6[m
+Author: sauger <sauger@163.com>
+Date:   Tue Feb 9 10:28:05 2010 +0800
+
+    add sql
+
+[33mcommit 7e7376bbe339a994777de6ecfd9076e09485b4a4[m
+Author: sauger <sauger@163.com>
+Date:   Tue Feb 9 10:04:03 2010 +0800
+
+    create the project

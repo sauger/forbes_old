@@ -41,39 +41,39 @@
 			</div>
 			<div class=vertical></div>
 			<div class="menu"  <?php if($navigation[0]->name=="榜单"){?>style="background:url('/images/public/bg_menu.jpg') repeat-x;"<?php } ?>>
-				<a href="<?php echo $countnav[1]->href; ?>"><div class="nav" param1="<?php echo $countnav[1]->id; ?>" id=picbangdan></div></a>
+				<a href="<?php echo $countnav[1]->href; ?>"><div class="nav" param1="<?php echo $countnav[1]->id; ?>" id=piclist></div></a>
 			</div>
 			<div class=vertical></div>
 			<div class="menu"  <?php if($navigation[0]->name=="富豪"){?>style="background:url('/images/public/bg_menu.jpg') repeat-x;"<?php } ?>>
-				<a href="<?php echo $countnav[2]->href; ?>"><div class="nav" param1="<?php echo $countnav[2]->id; ?>" id=picfuhao></div></a>
+				<a href="<?php echo $countnav[2]->href; ?>"><div class="nav" param1="<?php echo $countnav[2]->id; ?>" id=picbillinaires></div></a>
 			</div>
 			<div class=vertical></div>
 			<div class="menu" <?php if($navigation[0]->name=="投资"){?>style="background:url('/images/public/bg_menu.jpg') repeat-x;"<?php } ?>>
-				<a href="<?php echo $countnav[3]->href; ?>"><div class="nav" param1="<?php echo $countnav[3]->id; ?>" id=pictouzi></div></a>
+				<a href="<?php echo $countnav[3]->href; ?>"><div class="nav" param1="<?php echo $countnav[3]->id; ?>" id=picinvestment></div></a>
 			</div>
 			<div class=vertical></div>
 			<div class="menu"  <?php if($navigation[0]->name=="创业"){?>style="background:url('/images/public/bg_menu.jpg') repeat-x;"<?php } ?>>
-				<a href="<?php echo $countnav[4]->href; ?>"><div class="nav" param1="<?php echo $countnav[4]->id; ?>" id=picchuangye></div></a>
+				<a href="<?php echo $countnav[4]->href; ?>"><div class="nav" param1="<?php echo $countnav[4]->id; ?>" id=picinitiate></div></a>
 			</div>
 			<div class=vertical></div>
 			<div class="menu"  <?php if($navigation[0]->name=="商业"){?>style="background:url('/images/public/bg_menu.jpg') repeat-x;"<?php } ?>>
-				<a href="<?php echo $countnav[5]->href; ?>"><div class="nav" param1="<?php echo $countnav[5]->id; ?>" id=picshangye></div></a>
+				<a href="<?php echo $countnav[5]->href; ?>"><div class="nav" param1="<?php echo $countnav[5]->id; ?>" id=picbusiness></div></a>
 			</div>
 			<div class=vertical></div>
 			<div class="menu"  <?php if($navigation[0]->name=="科技"){?>style="background:url('/images/public/bg_menu.jpg') repeat-x;"<?php } ?>>
-				<a href="<?php echo $countnav[6]->href; ?>"><div class="nav" param1="<?php echo $countnav[6]->id; ?>" id=pickeji></div></a>
+				<a href="<?php echo $countnav[6]->href; ?>"><div class="nav" param1="<?php echo $countnav[6]->id; ?>" id=pictech></div></a>
 			</div>
 			<div class=vertical></div>
 			<div class="menu"  <?php if($navigation[0]->name=="城市"){?>style="background:url('/images/public/bg_menu.jpg') repeat-x;"<?php } ?>>
-				<a href="<?php echo $countnav[7]->href; ?>"><div class="nav" param1="<?php echo $countnav[7]->id; ?>" id=picchengshi></div></a>
+				<a href="<?php echo $countnav[7]->href; ?>"><div class="nav" param1="<?php echo $countnav[7]->id; ?>" id=piccity></div></a>
 			</div>
 			<div class=vertical></div>
 			<div class="menu"  <?php if($navigation[0]->name=="奢华"){?>style="background:url('/images/public/bg_menu.jpg') repeat-x;"<?php } ?>>
-				<a href="<?php echo $countnav[8]->href; ?>"><div class="nav" param1="<?php echo $countnav[8]->id; ?>" id=picshehua></div></a>
+				<a href="<?php echo $countnav[8]->href; ?>"><div class="nav" param1="<?php echo $countnav[8]->id; ?>" id=piclife></div></a>
 			</div>
 			<div class=vertical></div>
 			<div class="menu"  <?php if($navigation[0]->name=="专栏"){?>style="background:url('/images/public/bg_menu.jpg') repeat-x;"<?php } ?>>
-				<a href="<?php echo $countnav[9]->href; ?>"><div class="nav" param1="<?php echo $countnav[9]->id; ?>" id=piczhuanlan></div></a>
+				<a href="<?php echo $countnav[9]->href; ?>"><div class="nav" param1="<?php echo $countnav[9]->id; ?>" id=piccolumn></div></a>
 			</div>
 			<div id=top_function2>
 				<div id=member></div>
