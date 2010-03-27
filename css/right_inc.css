@@ -1,0 +1,14 @@
+ul{list-style:none; padding:0; margin:0; margin-left:10px;}
+
+#right_inc{width:320px;  float:right; display:inline;}
+
+
+#right_inc #right_ad{width:320px; height:265px; float:left; display:inline;}
+#right_inc .left_div{width:317px; height:227px; font-size:13px;  margin-top:20px; background:url(/images/right/border.jpg) no-repeat; float:left; display:inline;}
+#right_inc #left_title{width:316px; height:36px; padding-left:1px; padding-top:3px; background:url("/images/right/left_title.jpg") no-repeat; float:left; display:inline;}
+#right_inc .left_top_title{width:157px; height:36px; font-size:15px; color:#999999; font-weight:bold; text-align:center; line-height:25px; float:left; display:inline;}
+#right_inc .list{width:280px; height:170px; float:left; display:inline;}
+#right_inc .list li{width:260px; height:19px; margin-top:6px; padding-left:14px; font-size:13px; background:url(/images/right/tar3.gif) no-repeat 0 6px; overflow:hidden; line-height:19px; float:left; display:inline;}
+#right_inc .list a{color:#003899; text-decoration:none;}
+#right_inc #left_title2{width:316px; height:36px; padding-top:3px; background:url("/images/right/left_title2.jpg") no-repeat; float:left; display:inline;}
+#right_inc .left_bottom_title{width:78px; margin-left:1px; height:36px; color:#999999; font-size:15px; font-weight:bold; text-align:center; line-height:25px;  float:left; display:inline;}

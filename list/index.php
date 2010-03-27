@@ -11,7 +11,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('select2css','index');
-		css_include_tag('charts_index','public','index');
+		css_include_tag('charts_index','public');
 	?>
 </head>
 <body>

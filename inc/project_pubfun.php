@@ -8,7 +8,7 @@ function get_news_by_pos($pos,$page='') {
 		$page_id = $page[0]->id;
 		$sql .= " and page_id=$page_id";
 	}
-	
+	if($page === false) return false;
 	$record = $db->query($sql);
 	if($record === false) return false;
 	
