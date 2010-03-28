@@ -40,24 +40,24 @@
 		<tr class=tr1>
 			<?php 
 				if($menu->id){ ?>									
-			<td colspan="2">　 修改菜单 <a href="menu_list.php"><img src="/images/btn_back.png" border=0></a> <?php if($parent_menu){echo '<span style="color:red;font-size:12px;">上级菜单--'. $parent_menu->name .'</span>';}?></td>
+			<td colspan="2">　 修改菜单 <a href="menu_list.php"><img src="/images/btn_back.png" border=0></a>　<?php if($parent_menu){echo '<span style="color:red;">上级菜单：'. $parent_menu->name .'</span>';}?></td>
 			<?php
 				}else{ ?>
-			<td colspan="2">　 添加菜单 <a href="menu_list.php"><img src="/images/btn_back.png" border=0></a> <?php if($parent_menu){echo '<span style="color:red;font-size:12px;">上级菜单--'. $parent_menu->name .'</span>';}?></td>		
+			<td colspan="2">　 添加菜单 <a href="menu_list.php"><img src="/images/btn_back.png" border=0></a>　<?php if($parent_menu){echo '<span style="color:red;">上级菜单：'. $parent_menu->name .'</span>';}?></td>		
 			<?php
 				}
 			?>
 		</tr>		
 		<tr class=tr4>
-			<td width=150>名称：</td>
-			<td width=645 align="left"><input type="text" name="post[name]" value="<?php echo $menu->name;?>" class="required"></td>
+			<td class=td1>名称</td>
+			<td width=665><input type="text" name="post[name]" value="<?php echo $menu->name;?>" class="required"></td>
 		</tr>
 		<?php
 		if ($menu->parent_id == 0){ ?>
 		<tr class=tr4>
-			<td width=150>类型：</td>
-			<td width=645 align="left">
-				<select id="select_is_root" name="post[is_root]">
+			<td class=td1>类型</td>
+			<td width=665>
+				<select id="select_is_root" name="post[is_root]" style="width:155px;">
 					<option value="1">根目录</option>
 					<option value="0" <?php if($menu->is_root == 0) echo "selected='selected'"; ?>>菜单项</option>
 				</select>				
@@ -66,13 +66,13 @@
 		<?php	}
 		?>				
 		<tr class="tr4 menu_item">
-			<td>链接：</td>
-			<td align="left"><input type="text" name="post[href]" value="<?php echo $menu->href;?>"></td>
+			<td class=td1>链接</td>
+			<td><input type="text" name="post[href]" value="<?php echo $menu->href;?>"></td>
 		</tr>
 		<tr class="tr4 menu_item">
-			<td>链接方式:</td>
-			<td align="left">
-				<select id="sel_target" name="post[target]">
+			<td class=td1>链接方式</td>
+			<td>
+				<select id="sel_target" name="post[target]" style="width:155px;">
 					<option value="admin_iframe" <?php if($menu->target == 'admin_iframe') echo 'selected="selected"'; ?>>右侧窗口</option>
 					<option value="_self" <?php if($menu->target == '_self') echo 'selected="selected"'; ?>>当前窗口</option>
 					<option value="_blank" <?php if($menu->target == '_blank') echo 'selected="selected"'; ?>>新建窗口</option>
@@ -82,11 +82,9 @@
 		<?php
 		if ($menu->parent_id == 0){ ?>
 		<tr class="tr4">
+			<td class=td1>要求权限</td>
 			<td>
-				要求权限:
-			</td>
-			<td align="left">
-				<select id="sel_role_level" name="post[role_level]">
+				<select id="sel_role_level" name="post[role_level]" style="width:155px;">
 					<option value="1" <?php if ($menu->role_level == 1) echo 'selected="selected"' ?>>管理员</option>
 					<option value="2" <?php if ($menu->role_level == 2) echo 'selected="selected"' ?>>超级管理员</option>
 				</select>				
@@ -95,12 +93,12 @@
 		<?php	}
 		?>	
 		<tr class=tr4>
-			<td>描述：</td>
-			<td align="left"><input type="text" name="post[description]" value="<?php echo $menu->description;?>"></td>
+			<td class=td1>描述</td>
+			<td><input type="text" name="post[description]" value="<?php echo $menu->description;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td>优先级：</td>
-			<td align="left"><input type="text" name="post[priority]" id="priority" value="<?php echo $menu->priority;?>" class="number"></td>
+			<td class=td1>优先级</td>
+			<td><input type="text" name="post[priority]" id="priority" value="<?php echo $menu->priority;?>" class="number"></td>
 		</tr>
 		<tr class=tr3>
 			<td colspan="2"><button type="submit" id="btn_submit">提 交</button>

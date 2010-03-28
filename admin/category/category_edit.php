@@ -33,16 +33,16 @@
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width=150>名称：</td>
-			<td width=645 align="left"><input style="width:400px" type="text" name="post[name]" value="<?php echo $cate->name;?>" class="required"></td>
+			<td class=td1>名称</td>
+			<td width=665><input style="width:400px" type="text" name="post[name]" value="<?php echo $cate->name;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
-			<td>描述：</td>
-			<td align="left"><input type="text" style="width:400px" name="post[description]" value="<?php echo $cate->description;?>"></td>
+			<td class=td1>描述</td>
+			<td><input type="text" style="width:400px" name="post[description]" value="<?php echo $cate->description;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td>优先级：</td>
-			<td align="left"><input type="text" style="width:400px" name="post[priority]" id="priority" class="number" value="<?php echo $cate->priority;?>"></td>
+			<td class=td1>优先级</td>
+			<td><input type="text" style="width:400px" name="post[priority]" id="priority" class="number" value="<?php echo $cate->priority;?>"></td>
 		</tr>
 		<tr class=tr3>
 			<td colspan="2"><button type="submit">提 交</button> 		

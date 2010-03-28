@@ -32,9 +32,9 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="4">
-				　城市管理 <a href="edit.php">添加城市</a>   搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">　
-				 <select id="level">
+				　 <a href="edit.php">发布城市</a>
+				<input id="search" type="text" value="<? echo $_REQUEST['search']?>" style="margin-left:20px;">
+				<select id="level">
 				 	<option value=""></option>
 					<option <?php if($level==1)echo 'selected="selected"';?> value="1">直辖市</option>
 					<option <?php if($level==2)echo 'selected="selected"';?> value="2">省会城市</option>
@@ -42,11 +42,11 @@
 					<option <?php if($level==4)echo 'selected="selected"';?> value="4">地级市</option>
 					<option <?php if($level==5)echo 'selected="selected"';?> value="5">县级市</option>
 				 </select>
-				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
+				<input type="button" value="搜索" id="search_b" style="border:2px solid #999999; height:20px">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="200">城市名称</td><td width="200">所属省份</td><td width="150">行政级别</td><td width="200">操作</td>
+			<td width="200">城市名称</td><td width="200">所属省份</td><td width="200">行政级别</td><td width="195">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -67,19 +67,17 @@
 						?>
 					</td>
 					<td>
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
-						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=city" style="color:#000000; text-decoration:none">查看评论</a>
+						<a href="edit.php?id=<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border=0></a>
+						<span style="cursor:pointer;" class="del" name="<?php echo $record[$i]->id;?>" title="删除"><img src="/images/btn_delete.png" border=0></span>
+						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=city" title="查看评论"><img src="/images/btn_comment.png" border=0></a>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_city">
 		<?php
 			}
 		?>
 			<tr class="tr3">
-				<td colspan=4><?php paginate();?></td>
+				<td colspan=4><?php paginate();?>				<input type="hidden" id="db_table" value="fb_city"></td>
 			</tr>
 		</table>	
-
 	</body>
 </html>

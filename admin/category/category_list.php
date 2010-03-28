@@ -24,12 +24,12 @@
 			for($i=0;$i<$count;$i++){
 				$record = $category->find($cate[$i]);
 				if(!$pname){
-					$str = "<tr class='tr4' id='{$record->id}'>";
+					$str = "<tr class='tr3' id='{$record->id}'>";
 				}else{
-					$str = "<tr class='tr4' style='display:none' name='{$pname}' img_name='{$record->id}' id='{$record->id}'>";
+					$str = "<tr class='tr3' style='display:none' name='{$pname}' img_name='{$record->id}' id='{$record->id}'>";
 				}
 				
-				$str .= "<td style='text-align:left; text-indent:80px;'>";
+				$str .= "<td style='text-align:left; text-indent:120px;'>";
 				for($j=0;$j<$num2;$j++){
 					$str .= "　";
 				}

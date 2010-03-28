@@ -38,7 +38,7 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="200">姓名</td><td width="50">性别</td><td width="50">年龄</td><td width="85">国籍</td><td width="100">今日排名</td><td width="150">操作</td>
+			<td width="295">姓名</td><td width="100">性别</td><td width="100">年龄</td><td width="100">国籍</td><td width="100">今日排名</td><td width="100">操作</td>
 		</tr>
 
 

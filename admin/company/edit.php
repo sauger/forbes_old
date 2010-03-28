@@ -29,16 +29,16 @@
 	<form id="gsgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class="tr1">
-			<td colspan="2" width="795">　　编辑公司 <a href="list.php" style="cursor:pointer">返回列表</a></td>
+			<td colspan="2" width="795">　 发布公司 <a href="list.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class="tr4">
-			<td width="130">公司名称</td>
-			<td width="695" align="left"><input id="gs_mc" type="text" name="gs[name]" class="required "value="<?php echo $record->name;?>">
+			<td class=td1>公司名称</td>
+			<td width=665><input id="gs_mc" type="text" name="gs[name]" class="required "value="<?php echo $record->name;?>"></td>
 		</tr>
 		<tr class=tr4 id="a_com">
-			<td width="130">行业</td>
-			<td align="left">
-				<select id="ind_id" style="width:90px">
+			<td class=td1>行业</td>
+			<td>
+				<select id="ind_id" style="width:155px">
 					<option value="">请选择</option>
 					<?php 
 						$records = $db->query("select * from fb_industry");
@@ -55,8 +55,8 @@
 				for ($i=0;$i<$count;$i++) { 
 		?>
 		<tr class=tr4>	
-			<td width="130">关联行业</td>
-			<td width="200" align="left">
+			<td class=td1>关联行业</td>
+			<td width="200">
 				<?php echo $records[$i]->name;?>
 				<button class="del_old" type="button">删除</button>
 				<input type="hidden" value="<?php echo $records[$i]->t2_id;?>">
@@ -65,36 +65,37 @@
 		</tr>
 		<?php }}?>
 		<tr class="tr4">
-			<td>国家</td>
-			<td width="695" align="left"><input id="gs_gj" type="text" name="gs[country]" value="<?php echo $record->country;?>">
+			<td class=td1>国家</td>
+			<td><input id="gs_gj" type="text" name="gs[country]" value="<?php echo $record->country;?>">
 		</tr>
 		<tr class="tr4">
-			<td>省份</td>
-			<td width="695" align="left"><input id="gs_sf" type="text" name="gs[province]" value="<?php echo $record->province;?>">
+			<td class=td1>省份</td>
+			<td><input id="gs_sf" type="text" name="gs[province]" value="<?php echo $record->province;?>">
 		</tr>
 		<tr class="tr4">
-			<td>城市</td>
-			<td width="695" align="left"><input id="gs_cs" type="text" name="gs[city]" value="<?php echo $record->city;?>">
+			<td class=td1>城市</td>
+			<td><input id="gs_cs" type="text" name="gs[city]" value="<?php echo $record->city;?>">
 		</tr>
 		<tr class="tr4">
-			<td>地址</td>
-			<td width="695" align="left"><input id="gs_dz" type="text" name="gs[address]" value="<?php echo $record->address;?>">
+			<td class=td1>地址</td>
+			<td><input id="gs_dz" type="text" name="gs[address]" value="<?php echo $record->address;?>">
 		</tr>
 		<tr class="tr4">
-			<td>网址</td>
-			<td width="695" align="left"><input id="gs_wz" type="text" name="gs[website]" value="<?php echo $record->website;?>">
+			<td class=td1>网址</td>
+			<td><input id="gs_wz" type="text" name="gs[website]" value="<?php echo $record->website;?>">
 		</tr>
 		<tr id="newsshow1" class="normal_news tr4">
-			<td height=265>介绍</td><td><?php show_fckeditor('gs[comment]','Admin',true,"265",$record->comment);?></td>
+			<td class=td1>介绍</td>
+			<td><?php show_fckeditor('gs[comment]','Admin',true,"265",$record->comment);?></td>
 		</tr>
 		<tr class="tr4">
-			<td>上市公司代码</td>
-			<td width="695" align="left"><input id="gs_ssdm" type="text" name="gs[stock_code]" value="<?php echo $record->stock_code;?>">
+			<td class=td1>上市公司代码</td>
+			<td><input id="gs_ssdm" type="text" name="gs[stock_code]" value="<?php echo $record->stock_code;?>">
 		</tr>
 		<tr class="tr4">
-			<td>交易所</td>
-			<td width="695" align="left">
-				<select id="gs_jys" name="gs[stock_place_code]" value="<?php echo $record->stock_place_code;?>" style="width:90px" class="">
+			<td class=td1>交易所</td>
+			<td>
+				<select id="gs_jys" name="gs[stock_place_code]" value="<?php echo $record->stock_place_code;?>" style="width:155px">
 					<option value="">交易所</option>
 					<option value="SS" <? if($record->stock_place_code=="SS"){?>selected="selected"<? }?> >上海</option>
 					<option value="SZ" <? if($record->stock_place_code=="SZ"){?>selected="selected"<? }?> >深圳</option>
@@ -108,9 +109,9 @@
 				</select>
 		</tr>
 		<tr class="tr4">
-			<td>货币种类</td>
-			<td width="695" align="left">
-				<select id="gs_hbid" name="gs[hbid]" value="<?php echo $record->hbid;?>" style="width:90px" class="">
+			<td class=td1>货币种类</td>
+			<td>
+				<select id="gs_hbid" name="gs[hbid]" value="<?php echo $record->hbid;?>" style="width:155px">
 					<option value="">货币种类</option>
 					<?php $len = count($hbzl); for ($i=0;$i< $len;$i++) { ?>
 					<option value="<?php echo $hbzl[$i]->id; ?>" <? if($record->hbid==$hbzl[$i]->id){?>selected="selected"<? }?>><?php echo $hbzl[$i]->name; ?></option>
@@ -118,10 +119,12 @@
 				</select>
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+			<td colspan="2" width="795" align="center">
+				<input id="submit" type="submit" value="完成">
+				<input type="hidden" name="id"  value="<?php echo $record->id; ?>">
+			</td>
 		</tr>	
 	</table>
-		<input type="hidden" name="id"  value="<?php echo $record->id; ?>">
 	</form>
 </body>
 </html>

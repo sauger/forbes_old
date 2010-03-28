@@ -8,16 +8,15 @@ $db = get_db();
 $table = new table_class('fb_company');
 $record = $table->find('all',$conditons); 
 ?>
-	<table width="770" border="0" id="list">
+	<table width="795" border="0" id="list" >
 		<tr class="tr1">
 			<td colspan="11">
-				　搜索　
-				<input id="s_text" type="text" value="<? echo $_REQUEST['s_text']?>">
-				<input type="button" value="搜索" id="btn_search" style="border:1px solid #0000ff; height:21px">
+				<input id="s_text" type="text" value="<? echo $_REQUEST['s_text']?>" style="margin-left:20px;">
+				<input type="button" value="搜索" id="btn_search" style="border:2px solid #999999; height:20px">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="100">名称</td><td width="100">股票代码</td><td width="70">操作</td>
+			<td width="300">名称</td><td width="300">股票代码</td><td width="195">操作</td>
 		</tr>
 		<?php
 			$len = count($record);
@@ -25,17 +24,16 @@ $record = $table->find('all',$conditons);
 		?>
 				<tr class="tr3" id=<?php echo $record[$i]->id;?> >
 					<td><?php echo strip_tags($record[$i]->name);?></td>
-					<td align="center">
+					<td>
 						<?php echo strip_tags($record[$i]->stock_code);?>
 					</td>
 					
-					<td align="center">
+					<td>
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="add_compay_info" name="<?php echo $record[$i]->id;?>" style="cursor:pointer"><img src="/images/btn_add.png" border="0" title="添加"></img></a>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_gs">
 		<?php
 			}
 		?>
-		<tr><td colspan="8" align="right"><?php paginate('','company_filter'); ?></td></tr>
+		<tr><td colspan="8" align="right"><?php paginate('','company_filter'); ?><input type="hidden" id="db_table" value="fb_gs"></td></tr>
 	</table>

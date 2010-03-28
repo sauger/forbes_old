@@ -40,8 +40,8 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1>内容类型</td>
-			<td width="695" align="left">
-				<select name="type">
+			<td>
+				<select name="type" style="width:155px;">
 					<option <?php if($record->type=='news')echo 'selected="selected"'?> value="news">新闻</option>
 					<option <?php if($record->type=='category')echo 'selected="selected"'?> value="category">新闻类别</option>
 					<option <?php if($record->type=='column')echo 'selected="selected"'?> value="column">专栏记者</option>
