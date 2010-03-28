@@ -43,8 +43,8 @@ $(function(){
 	$('#add_attribute').click(function(){
 		field_index = field_index + 1;
 		var str = '		<tr class="tr4 custom_list_tr">'
-			+'<td width="130">列名</td>'
-			+'<td width="695" align="left">'
+			+'<td class=td1>列名</td>'
+			+'<td width="665">'
 			+'	<input type="text" name="new_columns[' + field_index +'][comment]"  class="required">'
 			+'	<select name="new_columns[' + field_index +'][type]">'
 			+'		<option value="varchar(255)">字符串</option>'

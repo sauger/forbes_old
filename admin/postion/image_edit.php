@@ -100,12 +100,15 @@
 	<div class="div_box">
 		<table width="795" border="0">
 			<tr colspan="5" class=tr3>
-				<td><?php paginate();?>　<button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"></td>
+				<td><?php paginate();?>　<button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>">
+						<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
+						<input type="hidden" id="p_type" value="image">
+					
+				</td>
 			</tr>
 		</table>
 	</div>
-	<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
-	<input type="hidden" id="p_type" value="image">
+
 </body>
 </html>
 

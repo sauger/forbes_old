@@ -28,22 +28,22 @@
 	<form id="list_edit" action="edit.post.php" enctype="multipart/form-data"  method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?>　<button type="button" id="add_attribute" <?php if($record->list_type != 1) echo "style='display:none;'"?>>添加一列</button></td>
+			<td colspan="2" width="795">　 <?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?> <a href="index.php"><img src="/images/btn_back.png" border=0></a> <span style="cursor:pointer" id="add_attribute" <?php if($record->list_type != 1) echo "style='display:none;'"?> title="添加一列"><img src="/images/btn_add.png" border=0></span></td>
 		</tr>
 		<tr class=tr4 id="list_name">
-			<td width="130">榜单名称</td>
-			<td width="695" align="left">
+			<td class=td1>榜单名称</td>
+			<td width="665">
 				<input type="text" name="mlist[name]" value="<?php echo $record->name;?>" class="required">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">榜单年份</td><td width="695" align="left"><input type="text" name="mlist[year]" value="<?php echo $record->year?>"></input>(四位年，如：2010,可选)</td>
+			<td class=td1>榜单年份</td>
+			<td><input type="text" name="mlist[year]" value="<?php echo $record->year?>"></input>(四位年，如：2010,可选)</td>
 		</tr>
 		<tr class="tr4">
-			<td width="130">榜单类型</td>
-			<td align="left">
-			
-				<select name="mlist[list_type]" id="list_type"  <?php if($id) echo "disabled=true";?>>
+			<td class=td1>榜单类型</td>
+			<td>			
+				<select name="mlist[list_type]" id="list_type"  <?php if($id) echo "disabled=true";?> style="width:155px;">
 					<option value="1">自定义榜单</option>
 					<option value="2">年度富豪榜</option>
 					<option value="3">年度名人榜</option>
@@ -55,16 +55,17 @@
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">推荐优先级</td><td width="695" align="left"><input type="text" name="mlist[recommend_priority]"></input></td>
+			<td class=td1>推荐优先级</td>
+			<td><input type="text" name="mlist[recommend_priority]"></input></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">榜单图片</td>
-			<td width="695" align="left"><input type="file" name="image_src"></input><?php if($record->image_src){?> <a href="<?php echo $record->image_src;?>" target="_blank" style="color:blue;">查看</a><?php }?></td>
+			<td class=td1>榜单图片</td>
+			<td><input type="file" name="image_src"></input><?php if($record->image_src){?> <a href="<?php echo $record->image_src;?>" target="_blank" style="color:blue;">查看</a><?php }?></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">榜单位置</td>
-			<td width="695" align="left">
-				<select name="mlist[position]" id="list_position" value="<?php echo $record->position;?>">
+			<td class=td1>榜单位置</td>
+			<td>
+				<select name="mlist[position]" id="list_position" value="<?php echo $record->position;?>" style="width:155px;">
 					<option value="1">富豪</option>
 					<option value="2">投资</option>
 					<option value="3">公司</option>
@@ -78,19 +79,20 @@
 			</td>
 		</tr>
 		<tr class=tr4 <?php if($record->list_type=='1') echo "style='display:none;'"?>>
-			<td width="130">财富单位</td><td width="695" align="left"><select name="mlist[unit]"><option value="亿人民币">亿人民币</option><option value="亿美元"<?php if($record->unit == '亿美元') echo " selected='selected'"?> >亿美元</option></select></td>
+			<td class=td1>财富单位</td>
+			<td><select name="mlist[unit]" style="width:155px;"><option value="亿人民币">亿人民币</option><option value="亿美元"<?php if($record->unit == '亿美元') echo " selected='selected'"?> >亿美元</option></select></td>
 		</tr>
 		<?php if($record->list_type==1){
 			include_once '_custom_list_edit.php';
 		}?>
-		<tr class=tr3>
-			<td width="130">说明</td><td width="695" align="left"><textarea rows="10" cols="60" name="mlist[comment]"><?php echo $record->comment;?></textarea> </td>
+		<tr class=tr4>
+			<td class=td1>说明</td>
+			<td><textarea rows="10" cols="60" name="mlist[comment]"><?php echo $record->comment;?></textarea> </td>
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="保　　　存"></td>
+			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="保　　　存"> 		<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>"></td>
 		</tr>
 	</table>
-		<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>">
 	</form>
 </body>
 </html>

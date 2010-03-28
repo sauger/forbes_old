@@ -28,24 +28,28 @@
 	<form id="industry" action="list_edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　选择类别 <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
+			<td colspan="2" width="795">　  选择类别 <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">位置名称</td><td width="695" align="left"><?php echo $record->name;?>
+			<td class=td1>位置名称</td>
+			<td width="665"><?php echo $record->name;?>
 		</tr>
 		<tr class=tr4>
-			<td width="130">选择类别</td>
-			<td width="695" align="left">
+			<td class=td1>选择类别</td>
+			<td>
 				<span id="span_category">
 				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 			</td>	
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+			<td colspan="2" width="795" align="center">
+					<input id="submit" type="submit" value="完成">
+					<input type="hidden" name="id" id="id"  value="<?php echo $record->id;?>">
+					<input type="hidden" name="category" id="category"  value="<?php echo $category_id;?>">
+			</td>
 		</tr>	
 	</table>
-		<input type="hidden" name="id" id="id"  value="<?php echo $record->id;?>">
-		<input type="hidden" name="category" id="category"  value="<?php echo $category_id;?>">
+
 	</form>
 </body>
 </html>

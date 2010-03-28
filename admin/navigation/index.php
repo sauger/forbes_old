@@ -38,7 +38,7 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="7">　<a href="edit.php"><?php echo $menu_title?></a></td>
+			<td colspan="7">　 <a href="edit.php"><?php echo $menu_title?></a></td>
 		</tr>
 		<tr class="tr2">
 			<td width="200">导航名称</td><td width="50">优先级</td><td width="200">链接</td><td width="85">位置</td><td width="80">链接方式</td><td width="175">操作</td>

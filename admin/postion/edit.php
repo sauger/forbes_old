@@ -28,17 +28,21 @@
 	<form id="industry" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!='')echo "编辑页面";else echo "添加页面";?> <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
+			<td colspan="2" width="795">　 <?php if($id!='')echo "编辑页面";else echo "添加页面";?> <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">页面名称</td><td width="695" align="left"><input type="text" name="name" value="<?php echo $record->name;?>">
+			<td class=td1>页面名称</td>
+			<td width="665" align="left"><input type="text" name="name" value="<?php echo $record->name;?>">
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+			<td colspan="2" width="795" align="center">
+				<input id="submit" type="submit" value="完成">
+				<input type="hidden" name="id" id="id"  value="<?php echo $record->id;?>">
+				<input type="hidden" name="pid"  value="<?php echo $pid;?>">
+			</td>
 		</tr>	
 	</table>
-		<input type="hidden" name="id" id="id"  value="<?php echo $record->id;?>">
-		<input type="hidden" name="pid"  value="<?php echo $pid;?>">
+
 	</form>
 </body>
 </html>

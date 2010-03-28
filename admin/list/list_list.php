@@ -85,18 +85,14 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">
-				　<a href="custom_list_edit.php">添加榜单</a>   搜索　
-				 <input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
+				　 <a href="custom_list_edit.php">添加榜单</a>
+				 <input id="s_text" style="margin-left:20px;" type="text" value="<? echo $_REQUEST['s_text'];?>">
 				 <select id="s_list_type">
 				 	<option value="-1">榜单类型</option>
 				 	<option value="1">自定义类型</option>
 				 	<option value="2">年度富豪榜</option>
 				 	<option value="3">年度名人榜</option>
-				 </select>
-				 <?php if($_REQUEST['s_list_type'])?>
-				 	<script type="text/javascript">$('#s_list_type').val('<?php echo $_REQUEST['s_list_type'];?>');</script>
-				 <?php ?>
-				 <select id="s_list_position">
+				 </select><?php if($_REQUEST['s_list_type'])?><script type="text/javascript">$('#s_list_type').val('<?php echo $_REQUEST['s_list_type'];?>');</script><?php ?><select id="s_list_position">
 				 	<option value="-1">发布位置</option>
 				 	<option value="1">富豪</option>
 					<option value="2">投资</option>
@@ -110,7 +106,7 @@
 				 <?php if($_REQUEST['s_list_position'])?>
 				 	<script type="text/javascript">$('#s_list_position').val('<?php echo $_REQUEST['s_list_position'];?>');</script>
 				 <?php ?>
-				 <input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
+				 <input type="button" value="搜索" id="search_b" style="height:20px; border:2px solid #999999;">
 			</td>
 		</tr>
 		<tr class="tr2">
