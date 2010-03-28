@@ -25,24 +25,24 @@
 	<form id="famous_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人代言";}else{echo "添加名人代言";}?> <a href="/admin/famous/index.php" style="cursor:pointer">返回列表</a>　　<button id="add_item" type="button">添加一个项目</button></td>
+			<td colspan="2" width="795">　 <?php if($id!=''){echo "编辑名人代言";}else{echo "添加名人代言";}?> <a href="/admin/famous/index.php"><img src="/images/btn_back.png" border=0></a> <span id="add_item" type="button" title="添加项目" style="cursor:pointer"><img src="/images/btn_add.png" border=0></span></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">姓名</td>
-			<td width="695" align="left">
+			<td class=td1>姓名</td>
+			<td width="665">
 				<?php echo $famous->name;?>
 			</td>
 		</tr>
 		<?php for($i=0;$i<count($record);$i++){?>
 		<tr class=tr4>
-			<td width="130">题目</td>
-			<td width="695" align="left">
+			<td class=td1>题目</td>
+			<td>
 				<input type="text" name="old_title[]" value="<?php echo $record[$i]->title;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">上传照片</td>
-			<td align="left">
+			<td class=td1>上传照片</td>
+			<td>
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
 				<input type="file" name="old_photo[]">（请上传小于2M的照片）<a target="_blank" href="<?php echo $record[$i]->photo;?>">点击查看照片</a>
 				　<button class="remove_old_item" type="button">删除</button>
@@ -51,23 +51,25 @@
 		</tr>
 		<?php }?>
 		<tr class=tr4>
-			<td width="130">题目</td>
-			<td width="695" align="left">
+			<td class=td1>题目</td>
+			<td>
 				<input type="text" name="title[]">
 			</td>
 		</tr>
 		<tr class=tr4 id="first">
-			<td width="130">上传照片</td>
-			<td align="left">
+			<td class=td1>上传照片</td>
+			<td>
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
 				<input type="file" name="photo[]">（请上传小于2M的照片）
 			</td>
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+			<td colspan="2" width="795" align="center">
+				<input id="submit" type="submit" value="完成">
+				<input type="hidden" name="id" value="<?php echo $fid;?>">
+			</td>
 		</tr>	
 	</table>
-		<input type="hidden" name="id" value="<?php echo $fid;?>">
 	</form>
 </body>
 </html>

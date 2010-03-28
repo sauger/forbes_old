@@ -26,29 +26,31 @@
 	<form id="city_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo '编辑城市';}else{echo '添加城市';}?></td>
+			<td colspan="2" width="795">　 <?php if($id!=''){echo '编辑城市';}else{echo '发布城市';}?></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">中文名称</td><td width="695" align="left"><input type="text" class="required" name="city[name]" value="<?php echo $city->name;?>"></td>
+			<td class=td1>中文名称</td>
+			<td width=665><input type="text" class="required" name="city[name]" value="<?php echo $city->name;?>">
+		</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">英文名称</td>
-			<td width="695" align="left">
+			<td class=td1>英文名称</td>
+			<td>
 				<input type="text" name="city[e_name]" value="<?php echo $city->e_name;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">城市别名</td>
-			<td width="695" align="left">
+			<td class=td1>城市别名</td>
+			<td>
 				<input type="text" name="city[name2]" value="<?php echo $city->name2;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">所属省份</td><td width="695" align="left"><input type="text" class="required" name="city[province_name]" value="<?php echo $city->province_name;?>"></td>
+			<td class=td1>所属省份</td><td><input type="text" class="required" name="city[province_name]" value="<?php echo $city->province_name;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">行政级别</td><td width="695" align="left">
-				<select class="required" name="city[level]">
+			<td class=td1>行政级别</td><td>
+				<select class="required" name="city[level]" style="width:155px;">
 				 	<option value=""></option>
 					<option <?php if($city->level==1)echo 'selected="selected"';?> value="1">直辖市</option>
 					<option <?php if($city->level==2)echo 'selected="selected"';?> value="2">省会城市</option>
@@ -59,64 +61,63 @@
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">面积</td>
-			<td width="695" align="left">
+			<td class=td1>面积</td>
+			<td>
 				<input type="text" name="city[area]" value="<?php echo $city->area;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">人口</td>
-			<td width="695" align="left">
+			<td class=td1>人口</td>
+			<td>
 				<input type="text"  name="city[population]" value="<?php echo $city->population;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">机场</td>
-			<td width="695" align="left">
+			<td class=td1>机场</td>
+			<td>
 				<input type="text"  name="city[airdrome]" value="<?php echo $city->airdrome;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">所属地区</td>
-			<td width="695" align="left">
+			<td class=td1>所属地区</td>
+			<td>
 				<input type="text" name="city[territory]" value="<?php echo $city->territory;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">火车站</td>
-			<td width="695" align="left">
+			<td class=td1>火车站</td>
+			<td>
 				<input type="text"  name="city[railway]" value="<?php echo $city->railway;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">地理位置</td>
-			<td width="695" align="left">
+			<td class=td1>地理位置</td>
+			<td>
 				<input type="text" name="city[position]" value="<?php echo $city->position;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">城市GDF</td>
-			<td width="695" align="left">
+			<td class=td1>城市GDF</td>
+			<td>
 				<input type="text" name="city[gdf]" value="<?php echo $city->gdf;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">城市照片</td>
-			<td width="695" align="left">
+			<td class=td1>城市照片</td>
+			<td>
 				<input type="file" name="city_photo" <?php if($id==''){?>class=""<?php }?>><?php if($id!=''){?><a href="<?php echo $city->photo?>" target="_blank">点击查看<?php }?>
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">城市简介</td>
-			<td width="695" align="left">
+			<td class=td1>城市简介</td>
+			<td>
 				<?php show_fckeditor('city[description]','Admin',false,"265",$city->description);?>
 			</td>
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成">		<input type="hidden" name="id" value="<?php echo $city->id; ?>"></td>
 		</tr>	
 	</table>
-		<input type="hidden" name="id" value="<?php echo $city->id; ?>">
 	</form>
 </body>
 </html>

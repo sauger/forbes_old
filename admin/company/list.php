@@ -31,9 +31,9 @@
 <body>
 	<table width="800" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="11">
-				　<a href="edit.php">添加公司</a>　　　搜索　
-				<input id="content" type="text" value="<? echo $_REQUEST['content']?>"><select id="type" style="width:90px" class="">
+			<td colspan="6">
+				　 <a href="edit.php">发布公司</a>
+				<input id="content" type="text" value="<? echo $_REQUEST['content']?>" style="margin-left:20px;"><select id="type" style="width:90px" class="">
 					<option value="name" <? if($_REQUEST['type']=="name"){?>selected="selected"<? }?> >名称</option>
 					<option value="province" <? if($_REQUEST['type']=="province"){?>selected="selected"<? }?> >省份</option>
 					<option value="city" <? if($_REQUEST['type']=="city"){?>selected="selected"<? }?> >城市</option>
@@ -41,11 +41,11 @@
 					<option value="website" <? if($_REQUEST['type']=="website"){?>selected="selected"<? }?> >网址</option>
 					<option value="stock_code" <? if($_REQUEST['type']=="stock_code"){?>selected="selected"<? }?> >上市公司代码</option>
 				</select>
-				<input type="button" value="搜索" id="search" style="border:1px solid #0000ff; height:21px">
+				<input type="button" value="搜索" id="search" style="height:20px; border:2px solid #999999;">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td width="100">名称</td><td width="40">国家</td><td width="100">股票代码</td><td width="50">交易所</td><td width="60">货币种类</td><td width="70">操作</td>
+			<td width="295">名称</td><td width="100">国家</td><td width="100">股票代码</td><td width="100">交易所</td><td width="100">货币种类</td><td width="100">操作</td>
 		</tr>
 		<?php
 			$len = count($record);
@@ -106,15 +106,16 @@
 						?>
 					</td>
 					<td align="center">
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
+						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>"  title="编辑"><img src="/images/btn_edit.png" border="0"></a>
+						<span style="cursor:pointer;" class="del" name="<?php echo $record[$i]->id;?>" title="删除"><img src="/images/btn_delete.png" border="0"></span>
 					</td>
 				</tr>
-				<input type="hidden" id="db_table" value="fb_gs">
 		<?php
 			}
 		?>
-		<tr><td colspan="8" align="right"><?php paginate(); ?></td></tr>
+		<tr>
+			<td colspan="8" align="right"><?php paginate(); ?>				<input type="hidden" id="db_table" value="fb_gs"></td>
+		</tr>
 	</table>
 </body>
 </html>

@@ -13,7 +13,6 @@
 		validate_form("fhgl_edit");
 	?>
 </head>
-
 <?php
 	$db = get_db();
 	$id = $_REQUEST['id'];
@@ -22,70 +21,69 @@
 		$record->find($id);
 	}
 ?>
-
-<body style="background:#E1F0F7">
-	<div id="div_tab">
-		<ul>
-			<li><a href="#tabs-1">基本信息管理</a></li>
-			<li><a href="#tabs-2">富豪公司管理</a></li>
-			<li><a href="#tabs-3">富豪财富管理</a></li>
-		</ul>
-		<div id="tabs-1">
+<body style="background:#C8E4F0">
+	<div id="div_tab" style="margin:0px;padding:0px; border:0;">
+			<ul style="margin:0;padding:0; border:0;">
+				<li><a href="#tabs-1">基本信息管理</a></li>
+				<li><a href="#tabs-2">富豪公司管理</a></li>
+				<li><a href="#tabs-3">富豪财富管理</a></li>
+			</ul>
+		<div id="tabs-1" style="margin:0px; padding:0px; background:#C8E4F0; border:0;">
 			<form id="fhgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
-			<table width="775" border="0">
+			<table width="795" border="0">
 				<tr class=tr1>
-					<td colspan="2" width="795">　　编辑富豪 <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a></td>
+					<td colspan="2" width="795">　 编辑富豪 <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a></td>
 				</tr>
 				<tr class=tr4>
-					<td width="130">姓名</td><td width="695" align="left"><input type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
+					<td class=td1>姓名</td>
+					<td width=665><input type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
 				</tr>
 				<tr class=tr4>
-					<td width="130">拼音</td><td width="695" align="left"><input type="text" name="fh[chinese_name]" value="<?php echo $record->chinese_name;?>">
+					<td class=td1>拼音</td><td width=665><input type="text" name="fh[chinese_name]" value="<?php echo $record->chinese_name;?>">
 				</tr>
 				<tr class=tr4>
-					<td>性别</td>
-					<td align="left" id="fh_xb">
+					<td class=td1>性别</td>
+					<td id="fh_xb">
 						<input type="radio" name="fh[gender]" value="0" <?php if($record->gender==0){ ?>checked="checked"<?php } ?>>女
 						<input type="radio" name="fh[gender]" value="1" <?php if($record->gender==1){ ?>checked="checked"<?php } ?>>男
 					</td>
 				</tr>
 				<tr class=tr4>
-					<td>国籍</td>
-					<td align="left">
+					<td class=td1>国籍</td>
+					<td>
 						<input type="text" size="20" name="fh[country]" value="<?php echo $record->country;?>">
 				</tr>
 				<tr class=tr4>
-					<td>出生年份</td>
-					<td align="left">
+					<td class=td1>出生年份</td>
+					<td>
 						<input type="text" size="20" name="fh[birthday]"  id="fh_birthday"  value="<?php echo $record->birthday;?>">
 				</tr>
 				<tr class=tr4>
-					<td>今日排名</td>
-					<td align="left">
+					<td class=td1>今日排名</td>
+					<td>
 						<?php echo $record->jrpm;?>
 				</tr>
 				<tr class=tr4>
-					<td width="130">上传照片</td>
-					<td align="left">
+					<td class=td1>上传照片</td>
+					<td>
 						<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
 						<input type="file" name="fh[image]" id="photo" >（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $record->fh_zp?>">点击查看照片</a><?php }?>
 					</td>
 				</tr>
 				<tr id=newsshow1 class="normal_news tr4">
-					<td height=265>个人经历</td><td><?php show_fckeditor('fh[comment]','Admin',true,"200",$record->comment);?></td>
+					<td  class=td1 height=265>个人经历</td><td><?php show_fckeditor('fh[comment]','Admin',false,"200",$record->comment);?></td>
 				</tr>
 				<tr id=newsshow1 class="normal_news tr4">
-					<td height=265>慈善事业</td><td><?php show_fckeditor('fh[philanth]','Admin',true,"200",$record->philanth);?></td>
+					<td class=td1 height=265>慈善事业</td><td><?php show_fckeditor('fh[philanth]','Admin',false,"200",$record->philanth);?></td>
 				</tr>
 				<tr class="tr3">
-					<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+					<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成">				<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>"></td>
 				</tr>	
 				</table>
-				<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>">
 			</form>
 		</div>
 		
-		<div id="tabs-2">
+		<div id="tabs-2"  style="margin:0px; padding:0px; background:#C8E4F0;">
 		<?php 
 		  if(!$id){
 		?>
@@ -94,12 +92,12 @@
 			$sql = "select a.id,a.company_id,b.name,b.stock_code,a.stock_count from fb_rich_company a left join fb_company b on a.company_id = b.id where a.rich_id = {$id}";
 			$company = $db->query($sql);
 			if(empty($company)) $company = array();?>
-		<table width="775" border="0" id="table_rich">
+		<table width="795" border="0" id="table_rich">
 			<tr class="tr2">
-				<td width="130">公司名称</td><td>上市代码</td><td>持股数</td><td>操作</td>
+				<td width=200>公司名称</td><td width=200>上市代码</td><td width=200>持股数</td><td width=195>操作</td>
 			</tr>
 			<?php foreach ($company as $v) {?>
-			<tr class="tr4">
+			<tr class="tr3">
 				<td><?php echo $v->name;?></td>
 				<td><?php echo $v->stock_code?></td>
 				<td><input type="text"  value="<?php echo $v->stock_count;?>"></input></td>
@@ -117,12 +115,12 @@
 				</td>
 			</tr>
 		</table> 
-		<div id="company_filter" style="margin-top:10px; border:1px dotted;display:none;">
+		<div id="company_filter" style="margin-top:10px; display:none;">
 			<?php include 'filter_company.php';?>
 		</div>		
 		<?php }?>
 		</div>
-		<div id="tabs-3">
+		<div id="tabs-3"  style="margin:0px; padding:0px; background:#C8E4F0;">
 			<?php 
 			  if(!$id){
 			?>
@@ -132,9 +130,9 @@
 				$fortune = $db->query($sql);
 				if(empty($fortune)) $fortune = array();
 			?>
-			<table width="775" border="0" id="table_fortune">
+			<table width="795" border="0" id="table_fortune">
 				<tr class="tr2" id="fortune_box">
-					<td width="130">个人财富</td><td>所属年份</td><td>财富排名</td><td>操作</td>
+					<td width=252>个人财富</td><td width=252>所属年份</td><td width=252>财富排名</td><td width=41>操作</td>
 				</tr>
 				<?php foreach ($fortune as $v) {?>
 				<tr class="tr4">

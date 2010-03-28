@@ -34,7 +34,7 @@
 <body style="background:#E1F0F7">
 	<table width="795" border="0">
 		<tr class="tr1">
-			<td colspan="5" width="795">　用户管理　<a href="user_edit.php" style="color:#0000FF"><?php echo $user_title;?></a></td>
+			<td colspan="5" width="795">　 <a href="user_edit.php" style="color:#0000FF"><?php echo $user_title;?></a></td>
 		</tr>
 		<tr class="tr2">
 			<td width="205">用户名</td><td width="200">用户昵称</td><td width="180">用户身份</td><td width="250">操作</td>

@@ -25,36 +25,36 @@
 	<form id="famous_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人资料";}else{echo "添加名人资料";}?> <a href="index.php" style="cursor:pointer">返回列表</a></td>
+			<td colspan="2" width="795">　 <?php if($id!=''){echo "编辑名人";}else{echo "添加名人";}?> <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">姓名</td>
-			<td width="695" align="left">
+			<td class=td1>姓名</td>
+			<td width="665">
 				<input type="text" name="mr[name]" value="<?php echo $famous->name;?>" class="required">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td>性别</td>
-			<td align="left">
+			<td class=td1>性别</td>
+			<td>
 				<input type="radio" name="mr[xb]" value="女" <?php if($famous->xb=='女'){ ?>checked="checked"<?php } ?> class="required">女
 				<input type="radio" name="mr[xb]" value="男" <?php if($famous->xb=='男'){ ?>checked="checked"<?php } ?> class="required">男
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">职业</td>
-			<td align="left">
+			<td class=td1>职业</td>
+			<td>
 				<input type="text" name="mr[zy]" value="<?php echo $famous->zy;?>" class="required">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">上传照片</td>
-			<td align="left">
+			<td class=td1>上传照片</td>
+			<td>
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
 				<input type="file" name="photo" id="photo" >（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $famous->mr_zp?>">点击查看照片</a><?php }?>
 			</td>
 		</tr>
 		<tr class="tr4">
-			<td height=265>个人简介</td><td><?php show_fckeditor('mr[mr_jj]','Admin',true,"265",$famous->mr_jj);?></td>
+			<td class=td1>个人简介</td><td><?php show_fckeditor('mr[mr_jj]','Admin',true,"265",$famous->mr_jj);?></td>
 		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>

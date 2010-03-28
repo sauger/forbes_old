@@ -49,9 +49,11 @@
 			</td>
 		</tr>
 		<tr class=tr3>
-			<td colspan="2"><button type="submit">提 交</button></td>
+			<td colspan="2">
+				<button type="submit">提 交</button>
+				<input type="hidden" name="id" value="<?php echo $id;?>">
+			</td>
 		</tr>
-		<input type="hidden" name="id" value="<?php echo $id;?>">
 	</form>
 	</table>
 </body>

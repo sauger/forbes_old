@@ -40,15 +40,15 @@
 	<form id="fbd_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!=''){echo "编辑名人榜单";}else{echo "添加名人榜单";}?>
-			<?php if ($f_id != ''){?><a href="/admin/famous/index.php" style="cursor:pointer">返回列表</a>	<?php }?>
-			<?php if ($year != ''){?><a href="detail.php?year=<?php echo $year; ?>" style="cursor:pointer">返回<?php echo $list->year?></a>	<?php }?>		
-			<?php if ($id != ''){?><a href="index.php" style="cursor:pointer">返回榜单列表</a>	<?php }?>
+			<td colspan="2" width="795">　 <?php if($id!=''){echo "编辑名人榜单";}else{echo "添加名人榜单";}?>
+			<?php if ($f_id != ''){?><a href="/admin/famous/index.php"><img src="/images/btn_back.png" border=0></a>	<?php }?>
+			<?php if ($year != ''){?><a href="detail.php?year=<?php echo $year; ?>">返回<?php echo $list->year?></a>	<?php }?>		
+			<?php if ($id != ''){?><a href="index.php">返回榜单列表</a>	<?php }?>
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">姓名</td>
-			<td width="695" align="left">
+			<td class=td1>姓名</td>
+			<td width=665>
 				<?php if ($year == ''){ echo $famous->name; ?>
 				<input type="hidden" name="bd[mr_id]" id="mr_id" value="<?php echo $famous->id;?>">
 				<?php } else { ?>
@@ -71,8 +71,8 @@
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td>榜单名称</td>
-			<td align="left">
+			<td class=td1>榜单名称</td>
+			<td>
 				<?php if ($year == '') { ?>
 				<!-- 
 				<select name="bd[bd_id]" id="bd[bd_id]">
@@ -102,26 +102,26 @@
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td>综合排名</td>
-			<td align="left">
+			<td class=td1>综合排名</td>
+			<td>
 				<input type="text" name="bd[pm]" value="<?php echo $f_bd->pm;?>" class="number required">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">收入(万人民币)</td>
-			<td align="left">
+			<td class=td1>收入(万人民币)</td>
+			<td>
 				<input type="text" name="bd[sr]" value="<?php echo $f_bd->sr;?>" class="number required">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">曝光率</td>
-			<td align="left">
+			<td class=td1>曝光率</td>
+			<td>
 				<input type="text" name="bd[bgl]" value="<?php echo $f_bd->bgl;?>" class="number">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">上传照片</td>
-			<td align="left">
+			<td class=td1>上传照片</td>
+			<td>
 				<input type="hidden" name="MAX_FILE_SIZE1" value="2097152">
 				<span id="use_mr" style="cursor:pointer;">使用名人照片</span>
 				<input type="file" name="photo" id="photo"  >（请上传小于2M的照片）<?php if($id!=''){?><a target="_blank" href="<?php echo $f_bd->zp?>">点击查看照片</a><?php }?>
@@ -129,7 +129,7 @@
 			</td>
 		</tr>
 		<tr class="tr4">
-			<td height=265>上榜理由</td><td><?php show_fckeditor('bd[sbly]','Admin',true,"265",$f_bd->sbly);?></td>
+			<td  class=td1 height=265>上榜理由</td><td><?php show_fckeditor('bd[sbly]','Admin',true,"265",$f_bd->sbly);?></td>
 		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center"><input id="finish" type="button" value="完成"></td>
