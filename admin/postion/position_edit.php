@@ -28,16 +28,18 @@
 	<form id="industry" action="edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!='')echo "编辑位置";else echo "添加位置";?> <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
+			<td colspan="2" width="795">　 <?php if($id!='')echo "编辑位置";else echo "添加位置";?> <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">位置名称</td><td width="695" align="left"><input type="text" name="name" value="<?php echo $record->name;?>"></td>
+			<td class=td1>位置名称</td>
+			<td width="665"><input type="text" name="name" value="<?php echo $record->name;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">限制</td><td width="695" align="left"><input type="text" name="position_limit" <?php if($pid!=''){?>class="number required"<?php }?> value="<?php echo $record->position_limit;?>"></td>
+			<td class=td1>限制</td>
+			<td><input type="text" name="position_limit" <?php if($pid!=''){?>class="number required"<?php }?> value="<?php echo $record->position_limit;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">内容类型</td>
+			<td class=td1>内容类型</td>
 			<td width="695" align="left">
 				<select name="type">
 					<option <?php if($record->type=='news')echo 'selected="selected"'?> value="news">新闻</option>

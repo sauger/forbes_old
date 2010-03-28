@@ -45,11 +45,13 @@
 			</td>	
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+			<td colspan="2" width="795" align="center">
+				<input id="submit" type="submit" value="完成">
+				<input type="hidden" name="id" id="id"  value="<?php echo $record->id;?>">
+				<input type="hidden" name="category" id="category"  value="<?php echo $category;?>">
+			</td>
 		</tr>	
 	</table>
-		<input type="hidden" name="id" id="id"  value="<?php echo $record->id;?>">
-		<input type="hidden" name="category" id="category"  value="<?php echo $category;?>">
 	</form>
 </body>
 </html>

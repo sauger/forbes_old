@@ -30,9 +30,9 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="3">
-				　杂志管理 <a href="edit.php">添加杂志</a>   搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
+				　 <a href="edit.php">发布杂志</a>
+				<input id="search" style="margin-left:20px" type="text" value="<? echo $_REQUEST['search']?>">
+				<input type="button" value="搜索" id="search_b" style="height:20px; border:2px solid #999999;">
 			</td>
 		</tr>
 		<tr class="tr2">
@@ -60,9 +60,8 @@
 		<?php
 			}
 		?>
-			<input type="hidden" id="db_table" value="fb_magazine">
 			<tr class="tr3">
-				<td colspan=6><?php paginate();?></td>
+				<td colspan=6><?php paginate();?>			<input type="hidden" id="db_table" value="fb_magazine"></td>
 			</tr>
 		</table>	
 	</body>

@@ -103,9 +103,8 @@
 			//--------------------
 		?>
 		<tr class="tr3">
-			<td colspan=5><?php paginate();?>　<button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"></td>
+			<td colspan=5><?php paginate();?>　<button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"> 		<input type="hidden" id="p_type" value="news"></td>
 		</tr>
-		<input type="hidden" id="p_type" value="news">
 	</table>
 </body>
 </html>

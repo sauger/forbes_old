@@ -37,7 +37,9 @@ a{text-decoration:none; color:black;}
 .tr3 td{text-align:center; padding-left:5px;}
 .sub_menu li{margin-left:25px;}
 .tr3 input{width:230px;}
-.tr4{height:22px; text-align:center; font-size:12px;  line-height:15px; background:#f9f9f9;}
+.tr4{height:22px; text-align:left; font-size:12px; line-height:15px; background:#f9f9f9;}
+
+.td1{width:130px; font-size:12px; text-align:left; text-indent:24px;}
 
 .priority{width:50px;}
 

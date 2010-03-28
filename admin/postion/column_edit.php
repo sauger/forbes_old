@@ -53,11 +53,10 @@
 		</tr>
 		<? }?>
 	</table>
-	<input type="hidden" id="db_table" value="<?php echo $user_table;?>">
 	<div class="div_box">
 		<table width="795" border="0">
 			<tr colspan="5" class=tr3>
-				<td><button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"></td>
+				<td><button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>">	<input type="hidden" id="db_table" value="<?php echo $user_table;?>"></td>
 			</tr>
 		</table>
 	</div>
