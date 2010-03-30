@@ -90,7 +90,7 @@
 						</tr>
 						<tr>
 							<td class=td1>性　　别：</td>
-							<td class=td3><div class=td4><input type="radio" name="sex">男</div><div class=td4><input type="radio" name=sex>女</div</td>
+							<td class=td3><div class=td4><input type="radio" name="sex">男</div><div class=td4><input type="radio" name=sex>女</div></td>
 							<td class=td11>学　　历：</td>
 							<td class=td3><select class=sel1></select></td>
 						</tr>

@@ -20,6 +20,7 @@
 				}
 			)
 		});
+		
 		$(".tgdel").click(function(){
 			if(!window.confirm("确定要删除吗")){return false;};
 			$.post('/admin/admin.post.php',{'id':$(this).next().attr('value'),'type':'tgdel'},function(data){

@@ -68,11 +68,18 @@
 	}
 	
 	function use_jquery(){
-		js_include_once_tag('jquery-1.3.2.min');
+		js_include_once_tag('jquery');
+	}
+	
+	function use_jquery_ui(){
+		js_include_once_tag('jquery');
+		js_include_once_tag('jquery-ui');	
+		css_include_tag('jquery_ui');
+	
 	}
 	
 	function validate_form($form_name) {
-		js_include_once_tag('jquery-1.3.2.min');
+		js_include_once_tag('jquery');
 		js_include_once_tag('jquery.validate');
 		?>
 		<script>
@@ -168,10 +175,6 @@
 		}
 	}	
 	
-	function use_jquery_ui(){
-		js_include_once_tag('jquery-1.3.2.min');
-		js_include_once_tag('jquery-ui-1.7.2.custom.min');
-	}
 
 	function judge_role(){
 		return require_role('admin');

@@ -8,6 +8,13 @@
 			$('#span_related_news').html('0');
 		}
 	}
+	function refresh_related_industry(){
+		if($('#hidden_related_industry').val()){
+			$('#span_related_industry').html($('#hidden_related_industry').val().split(',').length);
+		}else{
+			$('#span_related_industry').html('0');
+		}
+	}
 	function save_related_news(ids){
 		$('#hidden_related_news').val(ids);
 		refresh_related_news();
@@ -28,10 +35,12 @@
 $(function(){
 	var filte_words;
 	var filte_len;
+	
 	$.post('/admin/filte_words/words.php',function(data){
 		filte_words = data.split('|');
 		filte_len = filte_words.length;
 	});
+	$('#a_related_industry').colorbox({href:'industry_filter.php?id='});
 	$('#publish_schedule').datepicker({
 		changeMonth: true,
 		changeYear: true,

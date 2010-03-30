@@ -35,7 +35,7 @@
 		</div>
 		<div id=bottom>
 			<div id=btn>
-				<button id="btn_back" <?php if($can_prev === false) echo "disabled=true"; ?>><上一步(<U>B</U>)</button>
+				<button id="btn_back" <?php if($can_prev === false) echo "disabled=true"; ?>> &lt; 上一步(<U>B</U>)</button>
 				<button id="btn_next" <?php if($can_next === false) echo "disabled=true"; ?>>下一步(<U>N</U>)></button>　
 			</div>
 		</div>
