@@ -6,7 +6,9 @@ p 'Starting the task'
 my = Mysql.connect('192.168.1.4','forbes_db','xunao','forbes')
 my.query('select id, stock_code,stock_place_code from fb_company').each do |id,ssdm,jys|
         #puts id.to_s + ';' + ssdm +';' + jys
-        url = URI.parse('http://download.finance.yahoo.com/d/quotes.csv?s='+ssdm+'.'+jys+'&f=sl1d1t1c1ohgv&e=.csv');
+	ssdm = ssdm + '.' + jys if jys
+	p ssdm
+        url = URI.parse('http://download.finance.yahoo.com/d/quotes.csv?s='+ssdm+'&f=sl1d1t1c1ohgv&e=.csv');
         res = Net::HTTP.get(url)
         res = res.split(',')
         puts res[1]
