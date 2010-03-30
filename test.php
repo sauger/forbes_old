@@ -2,12 +2,11 @@
 	<head>
 		<?php
 		require 'frame.php';
-		use_jquery();
+		use_jquery_ui();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
-		//echo substr('dbscript',-1);;
-		//$script = file_get_contents('dbscript/test.sql');
-		echo "sadfas\\'<br>";
-		echo stripslashes("sadfas\\'");
+		css_include_tag('jquery_ui');
+		$content = file_get_contents('http://61.129.115.239');
+		echo $content;
 		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));
@@ -20,6 +19,7 @@
 	?>
 		<form method="post" action="test1.php" enctype="multipart/form-data" >
 		
+			<input id="auto" type="text"></input>
 			<input type="file" name="item[picture]">
 			<input type="file" name="item[image]">
 			<input type="submit" value="send"></input>		
@@ -31,7 +31,8 @@
 
 <script>
 	//$('#editor').val('ok');	
-	var a = ['a','b','c','a','b','c'];
+	var a = ['abc','中国','cadsf','afgdfs','sdfasb','cfasd'];
+	$('#auto').autocomplete({source: a});
 	array_remove(a,'b');
 	$('#test').click(function(e){
 		var editor = CKEDITOR.instances;

@@ -61,7 +61,7 @@
 		</tr>
 		<tr class=tr4>
 			<td>个人简介：</td>
-			<td><?php show_fckeditor('description','Admin',false,"215",$user->description);?></input></td>
+			<td><?php show_fckeditor('description','Admin',false,"215",$user->description);?></td>
 		</tr>
 		<tr class=tr3>
 			<td colspan="2"><button id="btn_submit" type="submit">提 交</button></td>

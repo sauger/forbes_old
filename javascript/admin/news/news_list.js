@@ -14,5 +14,10 @@ $(function(){
 		}
 	});
 	
+	$('.static').click(function(){
+		$.post('http://localhost:84/static.php?type=news&id=' + $(this).attr('news_id'),{},function(data){
+		});
+	});
+	
 });
 	

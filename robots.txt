@@ -1,0 +1,7 @@
+#
+# robots.txt for ADMIN.FORBESCHINA.COM
+#
+
+User-agent: *
+
+Disallow: /
