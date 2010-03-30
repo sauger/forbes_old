@@ -10,6 +10,10 @@
 		if ($db->move_first()){
 			$publish_date = $db->field_by_name('publish_date');
 		}
+		$db->query("select group_concat(a.industry_id SEPARATOR ',') as ids from fb_news_industry a left join fb_industry b on a.industry_id = b.id where a.news_id={$id}");
+		if($db->move_first()){
+			$news_industry = $db->field_by_name('ids');
+		}
 	}else{
 		$category_id = -1;
 	}
@@ -124,7 +128,7 @@
 			<td id="td_related_industry">
 				已关联　<span id="span_related_industry"></span>　个行业
 				<a href="<?php echo $news->id;?>" id="a_related_industry" style="color:blue">编辑</a>
-				<input type="hidden" id="hidden_related_industry" value="<?php echo $related_industry;?>"></input>
+				<input type="hidden" id="hidden_related_industry" name="related_industry" value="<?php echo $news_industry;?>"></input>
 			</td>
 		</tr>
 		<tr class=tr4>

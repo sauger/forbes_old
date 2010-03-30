@@ -90,6 +90,9 @@
   									case JP:
   										echo "日本";
   										break;
+  									case "":
+  										echo "美国";
+  										break;
   									default:
 											echo "";
 									}

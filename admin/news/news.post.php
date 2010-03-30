@@ -110,14 +110,35 @@
 			}
 		}
 	}
-	
+	$db->query("select group_concat(a.industry_id SEPARATOR ',') as ids from fb_news_industry a left join fb_industry b on a.industry_id = b.id where a.news_id={$news->id}");
+	if($db->move_first()){
+		$news_industry = $db->field_by_name('ids');
+	}
+	$news_industry = explode(',',$news_industry);
+	$selected_industry = explode(',',$_POST['related_industry']);
+	$new_in = array_diff($selected_industry,$news_industry);
+	if(!empty($new_in)){
+		foreach ($new_in as $in) {
+			if(!empty($in)){
+				$db->execute("insert into fb_news_industry (news_id,industry_id) values({$news->id},{$in})");				
+			}
+		}
+	}
+	$delete_in = array_diff($news_industry,$selected_industry);
+	if(!empty($delete_in)){
+		$delete_ids = implode(',',$delete_in);
+		if(!empty($delete_ids)){
+			$db->execute("delete from fb_news_industry where industry_id in ({$delete_ids}) and news_id={$news_id}");
+		}
+	}
+		
 	if($_POST['copy_news']){
 		$news->id = 0;
 		$news->category_id = intval($_POST['copy_news']);
 		$news->save();
 	}
 	if($_SESSION["role_name"]=='author'||$_SESSION["role_name"]=='journalist')$href="/admin/column/news_list.php";else $href="news_list.php";
-	redirect($href.'?category='.$_POST['news']['category_id']);
+	//redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	
 ?>
