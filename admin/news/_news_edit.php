@@ -123,7 +123,8 @@
 			<td class=td1>相关行业</td>
 			<td id="td_related_industry">
 				已关联　<span id="span_related_industry"></span>　个行业
-				<a href="#" id="a_related_industry" style="color:blue">编辑</a>
+				<a href="<?php echo $news->id;?>" id="a_related_industry" style="color:blue">编辑</a>
+				<input type="hidden" id="hidden_related_industry" value="<?php echo $related_industry;?>"></input>
 			</td>
 		</tr>
 		<tr class=tr4>
