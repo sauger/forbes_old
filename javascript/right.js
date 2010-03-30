@@ -18,4 +18,15 @@ $(function(){
 		$(".left_bottom").css('display','none');
 		$("#"+$(this).attr('name')).css('display','inline');
 	});
+	
+	
+	$("#r_c_r").click(function(){
+		if($("#r_c_c").find(".content:visible:eq(0)").next().next().attr('class')=='content'){
+			$("#r_c_c").find(".content:visible:eq(0)").hide('slow');
+		}
+	});
+	
+	$("#r_c_l").click(function(){
+		$("#r_c_c").find(".content:visible:eq(0)").prev().show('slow');
+	});
 });
