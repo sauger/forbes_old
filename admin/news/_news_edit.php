@@ -120,6 +120,13 @@
 			</td>
 		</tr>
 		<tr class=tr4>
+			<td class=td1>相关行业</td>
+			<td id="td_related_industry">
+				已关联　<span id="span_related_industry"></span>　个行业
+				<a href="#" id="a_related_industry" style="color:blue">编辑</a>
+			</td>
+		</tr>
+		<tr class=tr4>
 			<td class=td1>上传PDF版</td>
 			<td>
 				<input type="file" name="pdf_src" id="pdf_src">
