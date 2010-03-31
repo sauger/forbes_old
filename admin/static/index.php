@@ -22,7 +22,21 @@ switch ($type) {
 		}else{
 			echo '静态化首页失败!';
 		}
-	break;
+		break;
+	case 'top':
+		if(static_top()){
+			echo '静态化顶部成功!';
+		}else{
+			echo '静态化顶部失败!';
+		}
+		break;
+	case 'bottom':
+		if(static_bottom()){
+			echo '静态化顶部成功!';
+		}else{
+			echo '静态化顶部失败!';
+		}
+		break;
 	default:
 		;
 	break;
