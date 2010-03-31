@@ -5,7 +5,8 @@
 		use_jquery_ui();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
 		css_include_tag('jquery_ui');	
-		var_dump(static_news());
+		 $record_show = get_news_by_pos('首页创业栏目头条');	
+		 var_dump($record_show);
 		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));
