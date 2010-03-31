@@ -58,7 +58,7 @@
 			 <? /* lujiazui-end */?>
 						 
 			 <?php
-				 $record_show = get_news_by_pos('专题');
+				 $record_show = get_news_by_pos('首页专题');
   		 ?>
 			 <div id=subject>
 			 	 <div id=subject_btnl></div>
@@ -106,7 +106,7 @@
 		
 	
 		<div class=forbes_l>
-			<?php $record_show = get_news_by_pos('创业');	?>
+			<?php $record_show = get_news_by_pos('首页创业栏目头条');	?>
 			<div class=caption>
 				<div class=captions>创业</div>
 				<div class=line>|</div>
@@ -117,14 +117,16 @@
 					<div class=list1_title><a href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
 					<div class=list1_description><a href="<?php echo get_news_url($record_show[0]);?>"><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
-				<?php for($i=1;$i<4;$i++){ ?>
+				<?php
+				$record_show = get_news_by_pos('首页创业栏目标题'); 
+				for($i=0;$i<3;$i++){ ?>
 					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="<?php echo get_news_url($record_show[$i]);?>" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
 			</div>
 			<div class=dashed></div>
 			
 			
-			<?php $record_show = get_news_by_pos('商业');	?>
+			<?php $record_show = get_news_by_pos('首页商业栏目头条');	?>
 			<div class=caption>
 				<div class=captions>商业</div>
 				<div class=line>|</div>
@@ -135,14 +137,15 @@
 					<div class=list1_title><a href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
 					<div class=list1_description><a href="<?php echo get_news_url($record_show[0]);?>"><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
-				<?php for($i=1;$i<5;$i++){ ?>
+				<?php $record_show = get_news_by_pos('首页商业栏目标题');	?>
+				<?php for($i=0;$i<4;$i++){ ?>
 					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="<?php echo get_news_url($record_show[$i]);?>" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
 			</div>
 			<div class=dashed></div>
 						
 			
-			<?php $record_show = get_news_by_pos('科技');	?>
+			<?php $record_show = get_news_by_pos('首页科技栏目头条');	?>
 			<div class=caption>
 				<div class=captions>科技</div>
 				<div class=line>|</div>
@@ -153,7 +156,8 @@
 					<div class=list1_title><a href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
 					<div class=list1_description><a href="<?php echo get_news_url($record_show[0]);?>"><?php echo strip_tags($record_show[0]->description);?></a></div>
 				</div>
-				<?php for($i=1;$i<5;$i++){ ?>
+				<?php $record_show = get_news_by_pos('首页科技栏目标题');	?>
+				<?php for($i=0;$i<4;$i++){ ?>
 					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="<?php echo get_news_url($record_show[$i]);?>" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 				<?php } ?>
 			</div>
@@ -202,7 +206,7 @@
 		</div>
 		
 		<div class=forbes_l style="margin-left:25px;">
-			<?php $record_show = get_news_by_pos('投资');	?>
+			<?php $record_show = get_news_by_pos('首页投资栏目头条');	?>
 			<div class=caption>
 				<div class=captions>投资</div>
 				<div class=line>|</div>
@@ -214,15 +218,15 @@
 					<div class=list1_description2>
 						<a class=list1_pic href="<?php echo get_news_url($record_show[0]);?>"><img border=0 width=70 height=70 src="<?php echo $record_show[0]->video_photo_src ?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href=""><?php echo strip_tags($record_show[0]->description);?></a>
 					</div>
-
-					<?php for($i=1;$i<6;$i++){ ?>
+					<?php $record_show = get_news_by_pos('首页投资栏目标题');	?>
+					<?php for($i=0;$i<5;$i++){ ?>
 						<div class=list2 style="margin-left:3px;"><a href="<?php echo get_news_url($record_show[$i]);?>" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
 					<?php } ?>
 				</div>
 			</div>	
 			<div class=dashed style="height:10px;"></div>
 
-			<?php $record_show = get_news_by_pos('奢华');	?>
+			<?php $record_show = get_news_by_pos('首页奢华栏目');	?>
 	  	<div class=caption>
 				<div class=captions>奢华</div>
 				<div class=line>|</div>
