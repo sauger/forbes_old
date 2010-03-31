@@ -205,6 +205,9 @@
 					</div>
 					<div id="publish_comment">
 						<textarea id="comment_text"></textarea>
+						<input type="radio" name="nick_name" value="hidden"><span>匿名</span>
+						<input type="radio" name="nick_name" value="name"><span>昵称</span>
+						<input type="text" checked="checked" value="<?php echo $_SESSION['name']?>" id="nick_name"></input>
 						<button id="tijiao">提交</button>
 					</div>
 					<input id="newsid" type="hidden" value="<?php echo $id;?>">

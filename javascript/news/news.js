@@ -95,7 +95,10 @@ $(function(){
 	});
 	
 	$("#tijiao").click(function(){
-		$.post('/news/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val()},function(data){
+		$("input[name='nick_name']").each(function(){
+			alert($(this).attr('checked'));
+		});
+		$.post('/news/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val(),'nick_name':$("#nick_name").val()},function(data){
 			alert(data);
 		});
 	});
