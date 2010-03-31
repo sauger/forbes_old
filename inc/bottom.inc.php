@@ -1,3 +1,7 @@
+<?php
+		require_once(dirname(__FILE__).'/../frame.php');
+		$db=get_db();
+?>		
 		<div id=ibottom>
 			<div id=b_top >
 				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="榜单" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>

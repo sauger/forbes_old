@@ -16,14 +16,14 @@
 </head>
 <body>
 	<div id=ibody>
-	<!--#include file="/inc/top.inc.html"  -->
+	<!--#include file="inc/top.inc.shtml"  -->
 	<?php 
 		function get_news_url($news){
 			return static_news_url($news);
 		}
 	?>
 	<?php include '_index_content.php'; ?>	
-	<!--#include file="/inc/bottom.inc.html"  -->
+	<!--#include file="inc/bottom.inc.shtml"  -->
 	</div>
 </body>
 </html>
