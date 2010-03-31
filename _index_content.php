@@ -323,18 +323,28 @@
 		
 		<div class=forbes_l style="margin-left:25px;">
     	<div class=caption>
-				<div class=caption1>最受欢迎</div>
+				<div class="caption_base caption1 caption_selected" id="cls_cpt1">最受欢迎</div>
 				<div class=line>|</div>
-				<div class=caption2>编辑推荐</div>
-			</div>
+				<div class="caption_base" id="cls_cpt2">编辑推荐</div>
+		</div>
+		<div id="div_caption1">
 			<?php
-			$db = get_db();
 			$record_show = $db->query("select created_at,id,short_title,title from fb_news where TO_DAYS(NOW()) - TO_DAYS(created_at) >= 7 order by click_count desc, created_at asc limit 6"); 
 			?>
 			<?php for($i=0;$i<6;$i++){ ?>
 					<div class=list3><a href="<?php echo get_news_url($record_show[$i]);?>"><?php echo $record_show[$i]->short_title;?></a></div>
 			<?php } ?>
 			<div class=dashed></div>
+		</div>
+		<div id="div_caption2" style="display:none;">
+			<?php
+			$record_show = get_news_by_pos('首页编辑推荐');
+			?>
+			<?php for($i=0;$i<6;$i++){ ?>
+					<div class=list3><a href="<?php echo get_news_url($record_show[$i]);?>"><?php echo $record_show[$i]->short_title;?></a></div>
+			<?php } ?>
+			<div class=dashed></div>
+		</div>
 		</div>
 		
 		<div class=forbes_r>

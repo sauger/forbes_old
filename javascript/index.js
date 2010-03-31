@@ -105,7 +105,20 @@ $(function(){
 			$("#subject_content_"+subject_id3).show();
 			subject_id=parseInt(subject_id)+1;
 
-		})				
+		})	
+		
+		$('#cls_cpt1,#cls_cpt2').hover(function(){
+			$('div.caption_base').not(this).removeClass('caption_selected');
+			$(this).addClass('caption_selected');
+			var i = $(this).attr('id').substr(-1);
+			$('#div_caption' + i).show();
+			if(i== 1){
+			  i = 2;	
+			}else{
+			  i = 1;
+			}
+			$('#div_caption' + i).hide();
+		});
 		
 		
 		
