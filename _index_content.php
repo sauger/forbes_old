@@ -195,14 +195,15 @@
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
-			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
-			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
-			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
-			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
-			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
-			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
-			<div class=context><a href="">中信保给宏盛的保险依赖于龙长生之妹龙长虹的INT和IRC两家公司（即美国的经销商）在美国口保... ...</a></div>
-			<div class=context1><a href="">孙尤其</a>　|　<a href="">中信保险以来长存</a></div>
+			<?php 
+				$comments = $db->query("select * from fb_comment where resource_type='news' order by created_at desc limit 4");
+				$news = new table_class('fb_news');
+				for($i=0;$i<4;$i++){
+					$news->find($comments[$i]->resource_id);
+			?>
+			<div class=context style="overflow: hidden;"><a href=""><?php echo $comments[$i]->comment?></a></div>
+			<div class=context1><a href=""><?php echo $comments[$i]->nick_name;?></a>　|　<a href="<?php echo get_news_url($news);?>"><?php echo $news->short_title;?></a></div>
+			<?php }?>
 		</div>
 		
 		<div class=forbes_l style="margin-left:25px;">
@@ -322,14 +323,28 @@
 		
 		<div class=forbes_l style="margin-left:25px;">
     	<div class=caption>
-				<div class=caption1>最受欢迎</div>
+				<div class="caption_base caption1 caption_selected" id="cls_cpt1">最受欢迎</div>
 				<div class=line>|</div>
-				<div class=caption2>编辑推荐</div>
-			</div>
+				<div class="caption_base" id="cls_cpt2">编辑推荐</div>
+		</div>
+		<div id="div_caption1">
+			<?php
+			$record_show = $db->query("select created_at,id,short_title,title from fb_news where TO_DAYS(NOW()) - TO_DAYS(created_at) >= 7 order by click_count desc, created_at asc limit 6"); 
+			?>
 			<?php for($i=0;$i<6;$i++){ ?>
-					<div class=list3><a href="">创业投资中国经济的泡沫有多大？</a></div>
+					<div class=list3><a href="<?php echo get_news_url($record_show[$i]);?>"><?php echo $record_show[$i]->short_title;?></a></div>
 			<?php } ?>
 			<div class=dashed></div>
+		</div>
+		<div id="div_caption2" style="display:none;">
+			<?php
+			$record_show = get_news_by_pos('首页编辑推荐');
+			?>
+			<?php for($i=0;$i<6;$i++){ ?>
+					<div class=list3><a href="<?php echo get_news_url($record_show[$i]);?>"><?php echo $record_show[$i]->short_title;?></a></div>
+			<?php } ?>
+			<div class=dashed></div>
+		</div>
 		</div>
 		
 		<div class=forbes_r>
