@@ -1,5 +1,6 @@
 <?php 
 	require "../../frame.php";
+	$db = get_db();
 	$news_id = $_POST['id'] ? $_POST['id'] : 0;
 	$news = new table_class($tb_news);
 	if($news_id!=0){
@@ -82,7 +83,7 @@
 			unlink(ROOT_DIR .$old_video_photo_src);
 		}
 		//if it has english new, should update the english news's category_id, news_type and so on.
-		$db = get_db();
+		
 		$db->query("select english_news_id from fb_news_relationship where chinese_news_id={$news->id}");
 		
 		if($db->move_first()){
