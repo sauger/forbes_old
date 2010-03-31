@@ -106,6 +106,7 @@
 					<option value="L" <? if($record->stock_place_code=="L"){?>selected="selected"<? }?> >英国</option>
 					<option value="DE" <? if($record->stock_place_code=="DE"){?>selected="selected"<? }?> >德国</option>
 					<option value="JP" <? if($record->stock_place_code=="JP"){?>selected="selected"<? }?> >日本</option>
+					<option value="" <? if($record->stock_place_code==""){?>selected="selected"<? }?> >美国</option>
 				</select>
 		</tr>
 		<tr class="tr4">

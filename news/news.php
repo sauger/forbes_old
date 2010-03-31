@@ -37,7 +37,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('news/news','select2css');
-		css_include_tag('html/news/news','top','bottom','select2css','paginate');
+		css_include_tag('html/news/news','public','select2css','paginate');
 	?>
 </head>
 <body <?php if($news->forbbide_copy == 1){ ?> oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="return false" oncopy="return false" onbeforecopy="return false" onmouseup="return false" <?php }?>>

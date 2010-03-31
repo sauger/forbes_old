@@ -9,7 +9,7 @@
 	<div id="right_ad"><img border=0 width=317 height=265 src="/images/right/one.jpg"></div>
 	<div id="r_t_title">
 		<div id=wz>投资榜单</div>
-		<div id=more><a href=""><img border=0 src="/images/index/c_r_t_more.gif"></a></div>	
+		<div id=more><a href=""><img border=0 src="/images/right/c_r_t_more.gif"></a></div>	
 	</div>
 	<div id=r_t_l></div>
 	<div id=r_t_c>
@@ -21,35 +21,34 @@
 		<?php } ?>
 	</div>
 	<div id=r_t_r></div>
-	<div class="left_div">
-		<div id="left_title">
-			<div style="background:url(/images/html/news/background1.jpg); color:#000000;" name="favor" class="left_top_title">最受欢迎</div>
-			<div style="margin-left:1px;" name="comm" class="left_top_title">编辑推荐</div>
-		</div>
-		<div id="favor" class="list left_top">
-			<ul>
-				<?php
-				$record = get_news_by_pos('最受欢迎','公共右侧');
-				for($i=0;$i<count($record);$i++){
-				?>
-				<li><a href="/news/news.php?id=<?php echo $record[$i]->news_id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>
-				<?php }?>
-			</ul>
-		</div>
-		<div id="comm" style="display:none;" class="list left_top">
-			<ul>
-				<?php
-				$record = get_news_by_pos('编辑推荐','公共右侧');
-				for($i=0;$i<count($record);$i++){
-				?>
-				<li><a href="/news/news.php?id=<?php echo $record[$i]->news_id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>
-				<?php }?>
-			</ul>
-		</div>
+	<div class="left_title">
+		<div style="background:url(/images/right/background1.jpg); color:#000000;" name="favor" class="left_top_title">最受欢迎</div>
+		<div style="margin-left:1px;" name="comm" class="left_top_title">编辑推荐</div>
 	</div>
+	<div id="favor" class="right_box left_top">
+		<ul>
+			<?php
+			$record = get_news_by_pos('最受欢迎','公共右侧');
+			for($i=0;$i<count($record);$i++){
+			?>
+			<li><a href="/news/news.php?id=<?php echo $record[$i]->news_id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>
+			<?php }?>
+		</ul>
+	</div>
+	<div id="comm" style="display:none;" class="right_box left_top">
+		<ul>
+			<?php
+			$record = get_news_by_pos('编辑推荐','公共右侧');
+			for($i=0;$i<count($record);$i++){
+			?>
+			<li><a href="/news/news.php?id=<?php echo $record[$i]->news_id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>
+			<?php }?>
+		</ul>
+	</div>
+	<div class="bottom_line"></div>
 	<div class="left_div">
 		<div id="left_title2">
-			<div class="left_bottom_title" name="create" style="background:url(/images/html/news/background2.jpg); color:#000000;">创业</div>
+			<div class="left_bottom_title" name="create" style="background:url(/images/right/background2.jpg); color:#000000;">创业</div>
 			<div name="ology" class="left_bottom_title">科技</div>
 			<div name="business" class="left_bottom_title">商业</div>
 			<div name="invest" class="left_bottom_title">投资</div>
@@ -148,7 +147,7 @@
 	<div id="r_t_title">
 		<div id=wz>行业富豪</div>
 	</div>
-	<div id="rich_box">
+	<div class="right_box">
 		<?php
 			for($i=0;$i<count($rich);$i++){
 				$money = $db->query("select * from fb_rich_fortune where rich_id={$rich[$i]->id} order by fortune_year desc limit 1");
@@ -185,4 +184,54 @@
 	</div>
 	<div class="bottom_line"></div>
 	<?php }?>
+	
+	<div id="r_t_title">
+		<div id=wz>福布斯杂志</div>
+		<div id=more><a href="/magazine/"><img border=0 src="/images/right/c_r_t_more.gif"></a></div>	
+	</div>
+	<div id=mag_content>
+			<?php 
+				$magazine = $db->query("select * from fb_magazine where is_adopt=1 order by publish_data");
+			?>
+			<div class=pic><a href="/magazine/"><img border=0 src="<?php echo $magazine[0]->img_src3;?>"></a></div>
+			<div class=pictitle><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><?php echo $magazine[0]->name;?></a></div>
+			<div class=context><?php echo strip_tags($magazine[0]->description);?></div>	
+ 			<div id=mag_dash></div>
+			<div id=search>往期杂志查阅</div>
+			<div id=sel>
+				<select></select>
+				<select></select>
+			</div>
+			<button id="btnonline"></button><button id="sq"></button>
+			<div id=ck><a href="/magazine/list.php">查看杂志列表>></a></div>
+
+	</div>
+	<div class=bottom_line></div>
+	
+	<div id="r_t_title">
+		<div id=wz>专栏文章文类</div>
+	</div>
+	<?php 
+		$category = $db->query("select  group_concat(category_id separator ',') as ids from fb_news where author_type=2");
+		$cid = explode(',',$category[0]->ids);
+		$cid = array_unique($cid);
+		$cid = implode(',',$cid);
+		if($cid){
+			$category = $db->query("select id,name from fb_category where id in($cid)");
+			$count = count($category);
+		}
+	?>
+	<div class="right_box">
+		<?php 
+			for($i=0;$i<$count;$i++){
+		?>
+		<div class="right_span"><a href="/news/news_list.php?cid=<?php echo $category[$i]->id;?>&type=column"><?php echo $category[$i]->name;?></a></div>
+		<?php }?>
+	</div>
+	<div class=bottom_line></div>
+	
+	<div class="left_title">
+		<div style="background:url(/images/right/background1.jpg); color:#000000;" name="favor" class="left_top_title">最受欢迎专栏</div>
+		<div style="margin-left:1px;" name="comm" class="left_top_title">最受欢迎智库专栏</div>
+	</div>
 </div>

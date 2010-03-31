@@ -8,6 +8,18 @@
 			$('#span_related_news').html('0');
 		}
 	}
+	function refresh_related_industry(){
+		if($('#hidden_related_industry').val()){
+			$('#span_related_industry').html($('#hidden_related_industry').val().split(',').length);
+		}else{
+			$('#span_related_industry').html('0');
+		}
+	}
+	function save_related_industry(ids){
+		$('#hidden_related_industry').val(ids);
+		refresh_related_industry();
+		$('#a_related_industry').colorbox({href:'industry_filter.php?ids='+ $('#hidden_related_industry').val()});
+	}
 	function save_related_news(ids){
 		$('#hidden_related_news').val(ids);
 		refresh_related_news();
@@ -28,10 +40,12 @@
 $(function(){
 	var filte_words;
 	var filte_len;
+	
 	$.post('/admin/filte_words/words.php',function(data){
 		filte_words = data.split('|');
 		filte_len = filte_words.length;
 	});
+	$('#a_related_industry').colorbox({href:'industry_filter.php?ids='+ $('#hidden_related_industry').val()});
 	$('#publish_schedule').datepicker({
 		changeMonth: true,
 		changeYear: true,
@@ -195,6 +209,7 @@ $(function(){
 	$('#a_related_news').colorbox({href:'news_filter.php?selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
 	refresh_sub_headlines();
 	refresh_related_news();
+	refresh_related_industry();
 	var json_options = {
 			script:'/admin/user/_user_autocomplete.php?limit=6&',
 			varname:'auto_name',

@@ -31,6 +31,12 @@
 				<a href="/admin/list" target="admin_iframe">榜单管理</a>
 			</div>
 			<div class="menu1">
+				<a href="/admin/company/list.php" target="admin_iframe">公司管理</a>
+			</div>
+			<div class="menu1">
+				<a href="/admin/rich/list.php" target="admin_iframe">富豪管理</a>
+			</div>
+			<div class="menu1">
 				<a href="/admin/user/modify_user_info.php" target="admin_iframe">个人信息维护</a>
 			</div>
 		</div>
