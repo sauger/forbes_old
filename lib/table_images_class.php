@@ -83,7 +83,7 @@ class table_images_class extends table_class
 
 	}
 	
-	protected function __get($var){
+	public function __get($var){
 		if(in_array($var, $this->thumb_names)){
 			return $this->_thumb_name($this->src, $var);
 			}else{

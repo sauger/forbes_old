@@ -331,7 +331,7 @@ include_once dirname(__FILE__) . '/database_row_item_class.php';
 		return $result;
 	}	
   	
-  	private function __get($var){
+  	public function __get($var){
   		if (strtolower($var) == "affect_count"){
   			return mysql_affected_rows($this->_db);
   		}

@@ -479,7 +479,7 @@ class table_class{
 		}
 	}
 
-	protected function __clone(){
+	public function __clone(){
 		if($this->fields){
 			foreach ($this->fields as $k => $v) {
 				$this->fields[$k] = clone $this->fields[$k];
@@ -487,7 +487,7 @@ class table_class{
 		}
 	}
 
-	protected function __get($var){
+	public function __get($var){
 		if($var == 'echo_sql'){
 			$db = get_db();
 			return $db->echo_sql;
@@ -512,7 +512,7 @@ class table_class{
 		}
 	}
 
-	protected function __set($key, $value){
+	public function __set($key, $value){
 		if (@array_key_exists($key,$this->fields)) {
 			if(empty($key)) return;
 			if($this->fields[$key]->value == $value) return;

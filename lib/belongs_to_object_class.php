@@ -55,10 +55,10 @@ class belongs_to_object_class{
 		$this->item->save();
 	}
 	
-	private function __get($var){
+	public function __get($var){
 		return $this->item->$var;
 	}
-	private function __set($var, $value){
+	public function __set($var, $value){
 		$this->item->$var = $value;
 	}
 	
