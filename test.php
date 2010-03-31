@@ -4,9 +4,8 @@
 		require 'frame.php';
 		use_jquery_ui();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
-		css_include_tag('jquery_ui');
-		$content = file_get_contents('http://61.129.115.239');
-		echo $content;
+		css_include_tag('jquery_ui');	
+		var_dump(static_news());
 		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));

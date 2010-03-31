@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 	require_once('frame.php');
 	$db = get_db();
 ?>
@@ -19,7 +19,7 @@
 	<?php require_once('inc/top.inc.php');?>
 	<?php 
 		function get_news_url($news){
-			return "/news/news.php?id={$news->id}";
+			return static_news_url($news);
 		}
 	?>
 	<?php include '_index_content.php'; ?>	

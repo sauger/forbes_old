@@ -1,9 +1,10 @@
 <?php 
 	require_once('../frame.php');
+	var_dump($_GET);
 	$cid = intval($_REQUEST['cid']);
 	if(empty($cid)){
-		redirect('error.html');
-		die();
+		//redirect('error.html');
+		//die();
 	}
 	$db = get_db();
 ?>
