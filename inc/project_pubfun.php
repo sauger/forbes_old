@@ -42,9 +42,9 @@ function static_news_url($news,$index = 1){
 	$date = date('Ym',strtotime($news->created_at));
 	$dir  = "/review/{$date}";
 	if($index > 1){
-		$file = $dir ."/{$news->id}_{$index}.html";
+		$file = $dir ."/{$news->id}_{$index}.shtml";
 	}else{
-		$file = $dir ."/{$news->id}.html";	
+		$file = $dir ."/{$news->id}.shtml";	
 	}
 	
 	return $file;
@@ -54,7 +54,7 @@ function static_index() {
 	global $static_dir;
 	global $static_url;
 	$content = file_get_contents("{$static_url}/index_static.php");
-	return write_to_file("{$static_dir}/index.html",$content,'w');
+	return write_to_file("{$static_dir}/index.shtml",$content,'w');
 }
 
 function static_news($news,$symbol='fck_pageindex'){
@@ -70,7 +70,7 @@ function static_news($news,$symbol='fck_pageindex'){
 	if(!is_dir($dir)){
 		mkdir($dir);
 	}
-	$file = $dir ."/{$news->id}.html";
+	$file = $dir ."/{$news->id}.shtml";
 	if(!write_to_file($file,$content,'w')){
 		return false;
 	}
@@ -79,7 +79,7 @@ function static_news($news,$symbol='fck_pageindex'){
 		for($i=2;$i<= $page_count;$i++){
 			$url = "{$static_url}/news/static_news.php?id={$news->id}&{$symbol}={$i}";
 			$content = file_get_contents($url);
-			$file = "$dir/{$news->id}_{$i}.html";
+			$file = "$dir/{$news->id}_{$i}.shtml";
 			if(!write_to_file($file,$content,'w')){
 				return false;
 			}
