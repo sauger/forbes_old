@@ -47,17 +47,17 @@
 <body>
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
-			<td colspan="4">　 <a href="edit.php">添加页面</a></td>
+			<td colspan="5">　 <a href="edit.php">添加页面</a></td>
 		</tr>
 		<tr class="tr2">
-			<td width="300">位置名称</td><td width="100">条数限制</td><td width="150">内容类型</td><td width="245">操作</td>
+			<td width="300">位置名称</td><td width="100">条数限制</td><td width="95">已关联数目</td><td width="100">内容类型</td><td width="205">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
 					<td  style="text-align:left; text-indent:120px;"><?php echo $record[$i]->name;?></td>
-					<td></td><td></td>
+					<td></td><td></td><td></td>
 					<td>
 						<a href="position_edit.php?pid=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer" title="添加"><img src="/images/btn_add.png" border="0"></a>　
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer" title="编辑"><img src="/images/btn_edit.png" border="0"></a>　
@@ -65,12 +65,13 @@
 					</td>
 				</tr>
 				<?php
-					$records = $db->query("select * from fb_position where page_id={$record[$i]->id}");
+					$records = $db->query("SELECT count(*) as num,f.* FROM fb_position f  left join fb_position_relation r on f.id=r.position_id  where f.page_id={$record[$i]->id} and f.type=r.type group by f.name   order by f.id");
 					for($j=0;$j<count($records);$j++){
 				?>
 				<tr class="tr3" id=<?php echo $records[$j]->id;?> name="<?php echo $record[$i]->name;?>">
 					<td class="sub_menu"  style="text-align:left;  text-indent:120px; color:#0000ff;">- <?php echo $records[$j]->name;?></td>
 					<td><?php echo $records[$j]->position_limit;?></td>
+					<td><?php echo $records[$j]->num;?></td>
 					<td><?php echo list_type($records[$j]->type);?></td>
 					<td>
 						<a href="list_edit.php?id=<?php echo $records[$j]->id;?>" class="list_edit" name="<?php echo $records[$j]->id;?>" title="配置内容"><img src="/images/btn_config2.png" border="0"></a>　
