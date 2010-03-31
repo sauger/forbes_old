@@ -178,8 +178,11 @@ function is_ajax(){
 
 function write_to_file($filename,$content,$mode='a'){
 	$fp = fopen($filename, $mode);
-	fwrite($fp,$content);
+	if(false === $fp) return false;
+	$r = fwrite($fp,$content);
 	fclose($fp);
+	if(false === $r) return false;
+	return true;
 }
 
 //work only with jquery frame work
@@ -264,6 +267,10 @@ function get_fck_content($str,$symbol='fck_pageindex')
 	$$pagecounttoken = $$record_count_token;
 	$index = isset($_REQUEST[$symbol]) ? $_REQUEST[$symbol] : 1;
 	return strfck($contents[$index-1]);
+}
+
+function get_fck_page_count($content){
+	return substr_count($content,'<div style="page-break-after') + 1;
 }
 
 function print_fck_pages2($str,$url="",$symbol='fck_pageindex'){

@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 	require_once('frame.php');
 	$db = get_db();
 ?>
@@ -16,14 +16,14 @@
 </head>
 <body>
 	<div id=ibody>
-	<?php require_once('inc/top.inc.php');?>
+	<!--#include file="/inc/top.inc.html"  -->
 	<?php 
 		function get_news_url($news){
-			return "/news/news.php?id={$news->id}";
+			return static_news_url($news);
 		}
 	?>
 	<?php include '_index_content.php'; ?>	
-	<?php require_once('inc/bottom.inc.php');?>
+	<!--#include file="/inc/bottom.inc.html"  -->
 	</div>
 </body>
 </html>

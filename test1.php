@@ -1,5 +1,6 @@
 <?php
-
+var_dump($_GET);
+die();
 /*
 note:
 this is just a static test version using a hard-coded countries array.
