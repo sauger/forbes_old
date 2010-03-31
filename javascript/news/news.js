@@ -93,4 +93,10 @@ $(function(){
 			$("#font_down").css('cursor','pointer');
 		}
 	});
+	
+	$("#tijiao").click(function(){
+		$.post('/news/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val()},function(data){
+			alert(data);
+		});
+	});
 });
