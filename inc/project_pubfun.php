@@ -7,8 +7,9 @@ function get_news_by_pos($pos,$page='') {
 		$page = $db->query("select id from fb_position where name='{$page}' and page_id=0");
 		$page_id = $page[0]->id;
 		$sql .= " and page_id=$page_id";
+		if($page === false) return false;
 	}
-	if($page === false) return false;
+	
 	$record = $db->query($sql);
 	if($record === false) return false;
 	
