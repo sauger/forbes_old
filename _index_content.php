@@ -32,7 +32,7 @@
 					</div>
 				  <? }?>	
 	
-					<div id=more><a href="">&nbsp;</a></div>
+					<div id=more></div>
 					<div id=btn>
 						<div class=headline_btn1 id=l style="background:url(images/index/slideshow_back.gif) no-repeat;"></div>
 						<div class=headline_btn2 id=0 style="background:url(images/index/slideshow_active.gif) no-repeat"></div>
