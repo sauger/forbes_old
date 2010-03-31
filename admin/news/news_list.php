@@ -102,7 +102,7 @@
 						<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/btn_unup.png" border="0"></span>
 						<?php }?>
 						<?php if($_SESSION['role_name'] == 'admin' || $_SESSION['role_name'] == "sys_admin"){?>
-						<a  title="静态页面" href="<?php echo static_news_url($record[$i]);?>" target="static_news"><img src="/images/btn_static.png" border="0"></a>
+						<a  title="静态页面" href="<?php echo $static_site .static_news_url($record[$i]);?>" target="static_news"><img src="/images/btn_static.png" border="0"></a>
 						<?php }?>
 						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/btn_comment.png" border="0"></a>
 						<input type="hidden" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
