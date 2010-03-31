@@ -38,7 +38,11 @@
 		{
 			if($priority_str[$i]==""){$priority_str[$i]="";}
 			$db = get_db();
-			$sql="update fb_position_relation set ".$priority."=".$priority_str[$i]." where id=".$id_str[$i];
+			if($priority_str[$i]){
+				$sql="update fb_position_relation set ".$priority."=".$priority_str[$i]." where id=".$id_str[$i];
+			}else{
+				$sql="update fb_position_relation set priority=null where id=".$id_str[$i];
+			}
 			$db->execute($sql);
 		}
 	}
