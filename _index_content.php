@@ -15,7 +15,7 @@
 					<div class=headline_description id=headline_description_2 style="display:none;"><?php echo strip_tags($record_show[2]->description); ?></div>
 					<div class=headline_description id=headline_description_3 style="display:none;"><?php echo strip_tags($record_show[3]->description); ?></div>
 					
-			    <?php for($j=0;$j<=3;$j++){?>	
+			    <?php for($j=0;$j<3;$j++){?>	
 					<div class=headline_related id=headline_related_<?php echo $j?> <?php if($j<>0){echo "style='display:none'";}?> >
 					<?php				
 					 		$sub_news_str=explode(",",$record_show[$j]->sub_headline); 
@@ -32,7 +32,6 @@
 					</div>
 				  <? }?>	
 	
-					<div id=more><a href="">查看更多</a></div>
 					<div id=btn>
 						<div class=headline_btn1 id=l style="background:url(images/index/slideshow_back.gif) no-repeat;"></div>
 						<div class=headline_btn2 id=0 style="background:url(images/index/slideshow_active.gif) no-repeat"></div>
