@@ -57,6 +57,20 @@ function static_index() {
 	return write_to_file("{$static_dir}/index.shtml",$content,'w');
 }
 
+function static_top(){
+	global $static_dir;
+	global $static_url;
+	$content = file_get_contents("{$static_url}/inc/top.inc.static.php");
+	return write_to_file("{$static_dir}/inc/top.inc.shtml",$content,'w');
+}
+
+function static_bottom() {
+	global $static_dir;
+	global $static_url;
+	$content = file_get_contents("{$static_url}/inc/bottom.inc.static.php");
+	return write_to_file("{$static_dir}/inc/bottom.inc.shtml",$content,'w');
+}
+
 function static_news($news,$symbol='fck_pageindex'){
 	if(!$news){
 		return false;
