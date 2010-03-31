@@ -35,6 +35,7 @@ function get_news_by_pos($pos,$page='') {
 	 	return false;
 	 }
 	 
+	 echo $sql;
 	return $db->query($sql); 
 	
 } 
