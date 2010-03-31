@@ -65,13 +65,16 @@
 					</td>
 				</tr>
 				<?php
-					$records = $db->query("SELECT count(*) as num,f.* FROM fb_position f  left join fb_position_relation r on f.id=r.position_id  where f.page_id={$record[$i]->id} and f.type=r.type group by f.name   order by f.id");
+					$records = $db->query("SELECT count(*) as num,f.* FROM fb_position f  left join fb_position_relation r on f.id=r.position_id and f.type=r.type where f.page_id={$record[$i]->id}  group by f.name   order by f.id");
 					for($j=0;$j<count($records);$j++){
 				?>
 				<tr class="tr3" id=<?php echo $records[$j]->id;?> name="<?php echo $record[$i]->name;?>">
 					<td class="sub_menu"  style="text-align:left;  text-indent:120px; color:#0000ff;">- <?php echo $records[$j]->name;?></td>
 					<td><?php echo $records[$j]->position_limit;?></td>
+					<?php if($records[$j]->type!='category'){?>
 					<td><?php echo $records[$j]->num;?></td>
+					<?php }else{?><td></td>
+					<?php }?>
 					<td><?php echo list_type($records[$j]->type);?></td>
 					<td>
 						<a href="list_edit.php?id=<?php echo $records[$j]->id;?>" class="list_edit" name="<?php echo $records[$j]->id;?>" title="配置内容"><img src="/images/btn_config2.png" border="0"></a>　
