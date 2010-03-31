@@ -13,7 +13,7 @@
 	if($type=='publish'){
 		if(isset($position)){
 			$count = $db->query("select count(*) as num from fb_position_relation where type='$p_type' and position_id=$pid");
-			if($count[0]->num==$position->position_limit){
+			if($count[0]->num>=$position->position_limit){
 				echo "full";
 				die();
 			}
