@@ -21,7 +21,7 @@
 					 		$sub_news_str=explode(",",$record_show[$j]->sub_headline); 
 				  		$sub_news_str_num=sizeof($sub_news_str)-1;
 
-							for($i=0;$i<=$sub_news_str_num;$i++)
+							for($i=0;$i<$sub_news_str_num;$i++)
 							{
 								  if($sub_news_str_num<1){break;}
 									$sql="select id,created_at,n.short_title from fb_news n where n.id=".$sub_news_str[$i];
@@ -32,7 +32,7 @@
 					</div>
 				  <? }?>	
 	
-					<div id=more><a href="">查看更多</a></div>
+					<div id=more></div>
 					<div id=btn>
 						<div class=headline_btn1 id=l style="background:url(images/index/slideshow_back.gif) no-repeat;"></div>
 						<div class=headline_btn2 id=0 style="background:url(images/index/slideshow_active.gif) no-repeat"></div>
