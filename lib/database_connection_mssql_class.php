@@ -196,7 +196,7 @@ class database_connection_mssql_class
   		}   		  		
   	}
 	
-	  private function __get($var){
+	  public function __get($var){
   		if (strtolower($var) == "affect_count"){
   			return $this->$affect_count;
   		}  		
