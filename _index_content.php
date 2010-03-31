@@ -242,7 +242,7 @@
 						<div class=image_list><a href="<?php echo get_news_url($record_show[1]);?>"><?php echo $record_show[1]->short_title ?></a></div>
 						<div class=image_description><a href="<?php echo get_news_url($record_show[1]);?>"><?php echo $record_show[1]->description ?></a></div>
 					</div>
-					<div class=image style="margin-top:20px; margin-left:5px;"><a href="<?php echo get_news_url($record_show[1]);?>"><img border=0 src="<?php echo $record_show[1]->video_photo_src ?>"></a></div>
+					<div class=image style="margin-top:20px; margin-left:5px;"><a href="<?php echo get_news_url($record_show[1]);?>"><img border=0 src="<?php echo $record_show[1]->video_photo_src ?>"  width=150 height=130></a></div>
 			</div>
 		</div>
 		
