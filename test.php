@@ -5,8 +5,8 @@
 		use_jquery_ui();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
 		css_include_tag('jquery_ui');	
-		 $record_show = get_news_by_pos('首页创业栏目头条');	
-		 var_dump($record_show);
+		$str = "我是中国人";
+		echo substr($str,0,2);
 		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));
