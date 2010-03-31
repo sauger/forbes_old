@@ -94,11 +94,32 @@ $(function(){
 		}
 	});
 	
+	$("#comment_top #top3").click(function(){
+		$("#publish_comment").show();
+	});
+	
+	$("#denglu").click(function(){
+		$.post('/login/comment_login.php',{'user_name':$("#user_name").val(),'password':$("#password").val()},function(data){
+			if(data=='wrong'){
+				alert("用户名或密码错误");
+			}else if(data=='success'){
+				alert("登录成功");
+			}
+		})
+	});
+	
 	$("#tijiao").click(function(){
+		var nick_name;
 		$("input[name='nick_name']").each(function(){
-			alert($(this).attr('checked'));
+			if($(this).attr('checked')){
+				if($(this).val()=='hidden'){
+					nick_name = '';
+				}else{
+					nick_name = $("#nick_name").val();
+				}
+			}
 		});
-		$.post('/news/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val(),'nick_name':$("#nick_name").val()},function(data){
+		$.post('/news/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val(),'nick_name':nick_name},function(data){
 			alert(data);
 		});
 	});

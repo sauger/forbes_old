@@ -1,10 +1,10 @@
 <?php
 	require_once('../frame.php');
 	
-	var_dump($_POST);die();
 	
 	if(isset($_SESSION['user_id'])){
 		$comment = new table_class('fb_comment');
+		$comment->echo_sql = true;
 		$comment->resource_type = "news";
 		$comment->resource_id = intval($_POST['news_id']);
 		$comment->comment = htmlspecialchars($_POST['content']);
