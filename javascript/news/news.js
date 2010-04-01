@@ -113,7 +113,7 @@ $(function(){
 		$("input[name='nick_name']").each(function(){
 			if($(this).attr('checked')){
 				if($(this).val()=='hidden'){
-					nick_name = '';
+					nick_name = '匿名用户';
 				}else{
 					nick_name = $("#nick_name").val();
 				}

@@ -26,9 +26,15 @@
 	</div>
 	<?php }?>
 	<input id="newsid" type="hidden" value="<?php echo $id;?>">
-	<?php for($i=0;$i<10;$i++){?>
+	<?php 
+		$sql = "select * from fb_comment where resource_id=$id limit 3";
+		$db = get_db();
+		$comment = $db->query($sql);
+		$count = $db->record_count;
+		for($i=0;$i<$count;$i++){
+	?>
 	<div class="comment_box">
-		<div class="name">dasfdasf</div>
+		<div class="name"><?php echo $comment[$i]->nick_name?></div>
 		<div class="time">2009:11;22</div>
 		<div class="support">
 			<div class="up pointor">支持</div><div class="up_count">(0)</div>

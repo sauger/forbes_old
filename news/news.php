@@ -196,7 +196,7 @@
 					</div>
 				</div>
 				<div class="dash"></div>
-				<?php include "news_comment.php";?>
+				<div id="news_comment"></div>
 		  	</div>
 		  	<div id="right_inc">
 		  		<?php include "../right/ad.php";?>
