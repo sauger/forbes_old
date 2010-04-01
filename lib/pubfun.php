@@ -258,7 +258,7 @@ function get_fck_content($str,$symbol='fck_pageindex')
 	$length = $end-$start+6;
 	$page_flag = substr($str, $start, $length);
 	
-	$contents = split($page_flag,$str);
+	$contents = explode($page_flag,$str);
 	$record_count_token = $symbol . "_record_count";	
 	$pagecounttoken = $symbol . "_count";
 	global $$pagecounttoken;

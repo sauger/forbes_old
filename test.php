@@ -5,8 +5,9 @@
 		use_jquery_ui();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
 		css_include_tag('jquery_ui');	
-		$str = "我是中国人";
-		echo substr($str,0,2);
+		$id = 12;
+	
+		echo $news_id;
 		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));
