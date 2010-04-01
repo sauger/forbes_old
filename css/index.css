@@ -109,7 +109,7 @@ ul{padding:0; margin:0}
 .forbes_l .content2{width:320px; float:left; display:inline;}
 
 .forbes_l .content{width:87px; height:110px; margin-top:10px; margin-left:9px; float:left; display:inline;}
-.forbes_l .content .cpic{width:87px; height:87px; border:1px solid #CCCCCC; float:left; display:inline;}
+.forbes_l .content .cpic{width:87px; height:87px; border:1px solid #CCCCCC; filter:alpha(opacity=86); opacity:0.4; float:left; display:inline;}
 .forbes_l .content .cpic img{width:85px; height:85px; margin:1px;}
 .forbes_l .content .ccl{width:87px; height:16px; margin-top:9px; line-height:16px; overflow:hidden; float:left; display:inline;}
 .forbes_l .content .ccl a{color:#003899; text-decoration:none;}

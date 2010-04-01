@@ -123,6 +123,10 @@ $(function(){
 		$("#column_box .content").hover(function(){
 			$(".cloumn_news_box").hide();
 			$(".cloumn_news_box[name="+$(this).attr('name')+"]").show();
+			$('.cpic').css('opacity','0.4');
+			$(this).find(".cpic").css('opacity','1');
+			$('.cpic').css('filter','alpha(opacity=86)');
+			$(this).find(".cpic").css('filter','alpha(opacity=100)');
 		});
 		
 		$("#column_btnr").click(function(){

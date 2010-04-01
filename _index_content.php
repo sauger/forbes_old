@@ -182,7 +182,7 @@
 					for($i=0;$i<$author_count;$i++){ 
 				?>
 					<div class=content name="<?php echo $author[$i]->id;?>">
-						<div class=cpic><a href=""><img border=0 src="<?php echo $author[$i]->image_src;?>"></a></div>
+						<div <?php if($i==0){?>style="filter:alpha(opacity=100); opacity:1;"<?php }?> class=cpic><a href=""><img border=0 src="<?php echo $author[$i]->image_src;?>"></a></div>
 						<div class=ccl><a href=""><?php if(!$author[$i]->column_name){echo $author[$i]->nick_name;}else{echo $author[$i]->column_name;}?>专栏</a></div>
 					</div>
 				<?php } ?>
