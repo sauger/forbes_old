@@ -36,11 +36,7 @@
 	}
 	
 	function get_news_en_url($news){
-		$date = date('Ym',strtotime($news->created_at));
-		$dir  = "/review/{$date}";
-		$file = $dir ."/{$news->id}_en.shtml";	
-		
-		return $file;
+		return get_news_en_static_url($news);
 	}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -59,7 +55,7 @@
 </head>
 <body <?php if($news->forbbide_copy == 1){ ?> oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="return false" oncopy="return false" onbeforecopy="return false" onmouseup="return false" <?php }?>>
 	<div id=ibody>
-		<!--#include file="/inc/top.inc.shtml"  -->
+		<!--#include virtual="/inc/top.inc.shtml"  -->
 		<div id=top>
 			<?php include "_news_top.php"?>
 		</div>
@@ -73,7 +69,7 @@
 		  		<?php include "../right/magazine.php";?>
 		  	</div>
 		</div>
-		<!--#include file="../../inc/bottom.inc.shtml"  -->
+		<!--#include virtual="/inc/bottom.inc.shtml"  -->
 	</div>
 </body>
 <html>

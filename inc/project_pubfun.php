@@ -45,13 +45,27 @@ function get_news_by_pos($pos,$page='') {
 function static_news_url($news,$index = 1){
 	$date = date('Ym',strtotime($news->created_at));
 	$dir  = "/review/{$date}";
+	$news_id = str_pad($news->id,7,'0',STR_PAD_LEFT);
 	if($index > 1){
-		$file = $dir ."/{$news->id}_{$index}.shtml";
+		$file = $dir ."/{$news_id}_{$index}.shtml";
 	}else{
-		$file = $dir ."/{$news->id}.shtml";	
+		$file = $dir ."/{$news_id}.shtml";	
 	}
 	
 	return $file;
+}
+
+function get_news_en_static_url($news,$index = 1) {
+		$news_id = str_pad($news->id,7,'0',STR_PAD_LEFT);
+		$date = date('Ym',strtotime($news->created_at));
+		$dir  = "/review/{$date}";
+		if($index > 1){
+			$file = $dir ."/{$news_id}_en_{$index}.shtml";
+		}else{
+			$file = $dir ."/{$news_id}_en.shtml";	
+		}	
+		
+		return $file;;
 }
 
 function dynamic_news_url($news){
@@ -79,20 +93,24 @@ function static_bottom() {
 	return write_to_file("{$static_dir}/inc/bottom.inc.shtml",$content,'w');
 }
 
-function static_news($news,$symbol='fck_pageindex'){
+function static_news($news,$symbol='fck_pageindex',$en = false){
 	if(!$news){
 		return false;
 	};
 	global $static_dir;
 	global $static_url;
 	$url = "{$static_url}/news/static_news.php?id={$news->id}";
+	if($en) $url .= "&lang=en";
 	$content = file_get_contents($url);
 	$date = date('Ym',strtotime($news->created_at));
 	$dir  = "{$static_dir}/review/{$date}";
 	if(!is_dir($dir)){
 		mkdir($dir);
 	}
-	$file = $dir ."/{$news->id}.shtml";
+	$news_id = str_pad($news->id,7,'0',STR_PAD_LEFT);
+	if($en) $news_id .= "_en";
+	$file = $dir ."/{$news_id}.shtml";
+		echo "alert('{$file}');";
 	if(!write_to_file($file,$content,'w')){
 		return false;
 	}
@@ -100,13 +118,26 @@ function static_news($news,$symbol='fck_pageindex'){
 	if ($page_count > 1){
 		for($i=2;$i<= $page_count;$i++){
 			$url = "{$static_url}/news/static_news.php?id={$news->id}&{$symbol}={$i}";
+			if($en) $url .= "&lang=en";
 			$content = file_get_contents($url);
-			$file = "$dir/{$news->id}_{$i}.shtml";
+			$file = "$dir/{$news_id}_{$i}.shtml";
 			if(!write_to_file($file,$content,'w')){
 				return false;
 			}
 		}
 	}
+	
+	//handle the english article
+	if(!$en){
+		$db = get_db();
+		$db->query("select * from fb_news_relationship where chinese_news_id = {$news->id}");
+		if($db->move_first()){
+			$news->find($news->id);
+			return static_news($news,$symbol,true);
+				
+		}	
+	}
+	
 	return true;
 }
 
