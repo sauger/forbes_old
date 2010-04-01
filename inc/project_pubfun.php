@@ -54,6 +54,10 @@ function static_news_url($news,$index = 1){
 	return $file;
 }
 
+function dynamic_news_url($news){
+	return "/news/news.php?id={$news->id}";
+}
+
 function static_index() {
 	global $static_dir;
 	global $static_url;
