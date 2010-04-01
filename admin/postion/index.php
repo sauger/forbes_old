@@ -65,7 +65,7 @@
 					</td>
 				</tr>
 				<?php
-					$records = $db->query("SELECT count(*) as num,f.* FROM fb_position f  left join fb_position_relation r on f.id=r.position_id and f.type=r.type where f.page_id={$record[$i]->id}  group by f.name   order by f.id");
+					$records = $db->query("SELECT count(r.id) as num,f.* FROM fb_position f  left join fb_position_relation r on f.id=r.position_id and f.type=r.type where f.page_id={$record[$i]->id}  group by f.name   order by f.id");
 					for($j=0;$j<count($records);$j++){
 				?>
 				<tr class="tr3" id=<?php echo $records[$j]->id;?> name="<?php echo $record[$i]->name;?>">
