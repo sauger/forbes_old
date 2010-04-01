@@ -120,7 +120,9 @@ $(function(){
 			$('#div_caption' + i).hide();
 		});
 		
-		
+		$("#column_box .content").hover(function(){
+			$(".cloumn_news_box").hide();
+		});
 		
 });
 
