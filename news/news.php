@@ -205,6 +205,7 @@
 		  		<?php include "../right/rich.php";?>
 		  		<?php include "../right/magazine.php";?>
 		  	</div>
+		  	<input type="hidden" value="<?php echo $id;?>" id="newsid"></input>
 		</div>
 	</div>
 </body>

@@ -23,7 +23,7 @@
 		$_SESSION['user_id']=$record[0]->id;
 		$_SESSION['name']=$name;
 		$db->execute("insert into fb_yh_log (yh_id,time) values ({$_SESSION['user_id']},now())");
-		echo "success";
+		echo $name;
 	}
 	else
 	{
