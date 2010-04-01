@@ -125,4 +125,5 @@
 				</div>
 				<div class="dash"></div>
 				<div id="news_comment"></div>
+				<input type="hidden" value="<?php echo $id;?>" id="newsid"></input>
 		  	</div>
