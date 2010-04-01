@@ -6,7 +6,7 @@
 					<div id="top_info">记者：<?php echo $news->author;?>　　发布于：<?php echo substr($news->created_at,0,10);?></div>
 					<div id=title2>
 						<?php if(isset($english_news)){?>
-							<div style="border-left:0" class="top_title"><img src="/images/html/news/zw.gif"><span class="top_span"><a href="news.php?id=<?php echo $id?>">正文</a></span></div>
+							<div style="border-left:0" class="top_title"><img src="/images/html/news/zw.gif"><span class="top_span"><a href="<?php echo get_news_url($news)?>">正文</a></span></div>
 							<div class="top_title"><img src="/images/html/news/ew.gif"><span class="top_span">English</span></div>
 						<?php }else{?>
 							<div style="border-left:0" class="top_title"><img src="/images/html/news/zw.gif"><span class="top_span">正文</span></div>
@@ -120,7 +120,7 @@
 						<?php echo get_fck_content($content);?>
 					</div>
 					<div id="paginate">
-						<?php print_fck_pages2($content);?>
+						<?php print_fck_pages2($content,'news.php?id='.$news->id."&lang={$_GET['lang']}");?>
 					</div>
 				</div>
 				<div class="dash"></div>

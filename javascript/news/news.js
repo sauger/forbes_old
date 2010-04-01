@@ -31,6 +31,10 @@
       }   
 }
 $(function(){
+	if($("#is_comment").val()!='1'){
+		$("#news_comment").load('news_comment.php',{'id':$("#newsid").val()});
+	}
+	
 	$(".left_top_title").hover(function(){
 		$(".left_top_title").css({background:'none',color:'#999'});
 		$(this).css({
@@ -94,21 +98,44 @@ $(function(){
 		}
 	});
 	
-	$("#comment_top #top3").click(function(){
-		$("#publish_comment").show();
+	$("#comment_top #top3").live('click',function(){
+		$("#show_comment").show();
 	});
 	
-	$("#denglu").click(function(){
-		$.post('/login/comment_login.php',{'user_name':$("#user_name").val(),'password':$("#password").val()},function(data){
-			if(data=='wrong'){
-				alert("用户名或密码错误");
-			}else if(data=='success'){
-				alert("登录成功");
-			}
-		})
+	$("#password").live('keypress',function(e){
+		if(e.keyCode == 13){
+			login();
+		}
 	});
 	
-	$("#tijiao").click(function(){
+	$("#denglu").live('click',function(){
+		login();
+	});
+	
+	$("#hid_name").live('click',function(){
+		$("#nick_name").attr('disabled',true);
+	});
+	
+	$("#has_name").live('click',function(){
+		$("#nick_name").attr('disabled',false);
+	});
+	
+	
+	$(".up").live('click',function(){
+		$.post('comment.php',{'id':$(this).attr('name'),'type':'up'});
+		$(this).attr('class','');
+		$(this).html('已支持(');
+		$(this).next().html(parseInt($(this).next().html())+1);
+	});
+	
+	$(".down").live('click',function(){
+		$.post('comment.php',{'id':$(this).attr('name'),'type':'down'});
+		$(this).attr('class','');
+		$(this).html('已反对(');
+		$(this).next().html(parseInt($(this).next().html())+1);
+	});
+	
+	$("#tijiao").live('click',function(){
 		var nick_name;
 		$("input[name='nick_name']").each(function(){
 			if($(this).attr('checked')){
@@ -119,8 +146,33 @@ $(function(){
 				}
 			}
 		});
-		$.post('/news/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val(),'nick_name':nick_name},function(data){
-			alert(data);
+		$.post('/news/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val(),'nick_name':nick_name,'type':'comment'},function(data){
+			if(data==''){
+				alert('发布成功！请等候管理员审批！');
+				load_comment();
+			}else{
+				alert('发布失败！可能是包含敏感词语，请检查后重新发布!');
+			}
 		});
 	});
 });
+
+function login(){
+	$.post('/login/comment_login.php',{'user_name':$("#user_name").val(),'password':$("#password").val()},function(data){
+		if(data=='wrong'){
+			alert("用户名或密码错误");
+		}else if(data!=''){
+			$("#show_comment").hide();
+			$("#show_comment").prev().show();
+			$("#nick_name").val(data);
+		}
+	});
+}
+
+function load_comment(){
+	if($("#is_comment").val()=='1'){
+		window.location.reload();
+	}else{
+		$("#news_comment").load('news_comment.php',{'id':$("#newsid").val()});
+	}
+}

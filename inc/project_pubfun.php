@@ -110,7 +110,6 @@ function static_news($news,$symbol='fck_pageindex',$en = false){
 	$news_id = str_pad($news->id,7,'0',STR_PAD_LEFT);
 	if($en) $news_id .= "_en";
 	$file = $dir ."/{$news_id}.shtml";
-		echo "alert('{$file}');";
 	if(!write_to_file($file,$content,'w')){
 		return false;
 	}
