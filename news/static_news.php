@@ -59,7 +59,7 @@
 </head>
 <body <?php if($news->forbbide_copy == 1){ ?> oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="return false" oncopy="return false" onbeforecopy="return false" onmouseup="return false" <?php }?>>
 	<div id=ibody>
-		<!--#include file="../inc/top.inc.shtml"  -->
+		<!--#include file="/inc/top.inc.shtml"  -->
 		<div id=top>
 			<?php include "_news_top.php"?>
 		</div>
@@ -73,7 +73,7 @@
 		  		<?php include "../right/magazine.php";?>
 		  	</div>
 		</div>
-		<!--#include file="../inc/bottom.inc.shtml"  -->
+		<!--#include file="../../inc/bottom.inc.shtml"  -->
 	</div>
 </body>
 <html>
