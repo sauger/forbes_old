@@ -69,7 +69,6 @@
 		  		<?php include "../right/rich.php";?>
 		  		<?php include "../right/magazine.php";?>
 		  	</div>
-		  	<input type="hidden" value="<?php echo $id;?>" id="newsid"></input>
 		</div>
 		<?php include "../inc/bottom.inc.php";?>
 	</div>
