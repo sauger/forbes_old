@@ -30,6 +30,15 @@
 		$title = $news->title;
 		$content = $news->content;
 	}
+	
+	function get_news_url($news){
+		return dynamic_news_url($news);
+	}
+	
+	function get_news_en_url($news){
+		return "news.php?id={$news->id}&lang=en";
+	}
+	
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -49,181 +58,10 @@
 	<div id=ibody>
 		<?php include "../inc/top.inc.php";?>
 		<div id=top>
-			<div id=title>福布斯新闻</div>
-			<?php
-				$category = new category_class('news');
-				$parent_ids = $category->tree_map($news->category_id);
-			?>
-			<div id=title1>
-				<a href="/">福布斯中文网</a> > 
-				<?php
-					$len = count($parent_ids);
-					for($i=$len-1;$i>=0;$i--){
-						$item = $category->find($parent_ids[$i]);
-				?>
-				<a href="news_list.php?cid=<?php echo $parent_ids[$i];?>"><?php echo $item->name;?></a> > 
-				<?php
-					}
-				?>
-				<span style="color:#246BB0;"><?php echo strip_tags($news->short_title);?></span>
-			</div>
-			<div id=line></div>
+			<?php include "_news_top.php"?>
 		</div>
 		<div id=news_content>
-			<div id=center-left>
-				<div id=title3>
-					<div id="news_title">
-					<?php echo $title;?>
-					</div>
-					<div id="top_info">记者：<?php echo $news->author;?>　　发布于：<?php echo substr($news->created_at,0,10);?></div>
-					<div id=title2>
-						<?php if(isset($english_news)){?>
-							<div style="border-left:0" class="top_title"><img src="/images/html/news/zw.gif"><span class="top_span"><a href="news.php?id=<?php echo $id?>">正文</a></span></div>
-							<div class="top_title"><img src="/images/html/news/ew.gif"><span class="top_span">English</span></div>
-						<?php }else{?>
-							<div style="border-left:0" class="top_title"><img src="/images/html/news/zw.gif"><span class="top_span">正文</span></div>
-							<?php if(isset($english_id)){?>
-							<div class="top_title"><img src="/images/html/news/ew.gif"><span class="top_span"><a href="news.php?id=<?php echo $id?>&lang=en">English</a></span></div>
-							<?php }?>
-						<?php }?>
-						<div class="top_title"><img src="/images/html/news/fx.gif"><span class="top_span"><a href="">分享</a></span></div>
-						<div class="top_title"><img src="/images/html/news/dy.gif"><span class="top_span"><a href="">打印</a></span></div>
-
-						<div class="top_title"><img id="font_down" src="/images/html/news/font3.gif"><span class="top_span"><a>字体大小</a></span><img id="font_up" src="/images/html/news/font2.gif"></div>
-
-						<div style="border-right:0" class="top_title2">
-							<?php if($news->pdf_src!=''){?>
-							<img src="/images/html/news/coin1.gif">
-							<span class="top_span">
-							<a target="_blank" href="<?php echo $news->pdf_src;?>" class="top_n">下载PDF格式</a>
-							</span>
-							<?php }?>
-							<img style="margin-left:20px;" src="/images/html/news/coin2.gif"><span class="top_span"><a href="<?php echo $news->id;?>" class="top_n" id="a_collect">加入收藏</a></span>
-						</div>
-					</div>
-				</div>
-				<div id="news_text">
-					<div id="left_box">
-						<div id="l_b_center">
-							<div id="resource">来源于：福布斯中文网</div>
-							<?php if($news->top_info!=''){?>
-								<div id="text4"><?php echo $news->top_info;?></div>
-							<?php }?>
-							<?php
-								if($news->author!=''){
-									$record = $db->query("select id,short_title,title from fb_news where author='{$news->author}' and id!=$id limit 3");
-									if(count($record)>0){
-							?>
-							<div class=right-div3>
-								<div class=right-title3>
-									该作者的其他文章
-								</div>
-								<div class=tar1>
-									<a href="news_list.php?news_id=<?php echo $id?>&type=author"><img src="/images/html/news/tar1.gif"></a>
-								</div>
-								<div class=list1>
-									<ul>
-									<?php for($i=0;$i<count($record);$i++){?>
-									<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
-									<?php }?>
-									</ul>
-								</div>
-							</div>
-							<?php
-									}
-								}
-							?>
-								<?php
-									if($news->related_news!=''){
-										$record = $db->query("select id,title,short_title from fb_news where id in({$news->related_news})");
-								?>
-								<div class=right-div3>
-									<div class=right-title3>
-									推荐的 评论文章
-									</div>
-									<div class=tar1>
-										<a href="news_list.php?news_id=<?php echo $id?>&type=related"><img src="/images/html/news/tar1.gif"></a>
-									</div>
-									<div class=list1>
-									<ul>
-										<?php for($i=0;$i<count($record);$i++){?>
-										<li><a href="/news/news.php?id=<?php echo $record[$i]->id?>" title="<?php echo strip_tags($record[$i]->title);?>" class="nor4"><?php echo $record[$i]->short_title?></a></li>	
-										<?php }?>
-									</ul>
-									</div>
-								</div>
-								<?php }?>
-								<div class="dash2"></div>
-								<div class=right-div3>
-									<div class=keywords>
-										<?php 
-											$keywords = explode(' ',$news->keywords);
-											$keywords2 = explode('　',$news->keywords);
-											if(count($keywords)>count($keywords2)){
-												for($i=0;$i<count($keywords);$i++){
-													if($i!=0&&$keywords[$i]!='')echo '、';
-										?>
-										<a href="news_list.php?keyword=<?php echo urlencode($keywords[$i]);?>"><?php echo $keywords[$i];?></a>
-										<?php
-												}
-											}else{
-												for($i=0;$i<count($keywords2);$i++){
-												if($i!=0&&$keywords2[$i]!='')echo '、';
-										?>
-										<a href="news_list.php?keyword=<?php echo urlencode($keywords2[$i]);?>"><?php echo $keywords2[$i];?></a>
-										<?php
-												}
-											}
-										?>	
-									</div>
-									<div id="keyword_bottom">
-										<div style="margin-left:0;" class=right-title3>
-											文章的关键字：
-										</div>
-									</div>
-								</div>
-						</div>
-					</div>
-					<?php if($news->ad_id){?>
-					<div id="roll"></div>
-					<div id="picture6"><img src="/images/html/news/picture6.jpg"></div>
-					<?php }?>
-					<div id=text3>
-						<?php echo get_fck_content($content);?>
-					</div>
-					<div id="paginate">
-						<?php print_fck_pages2($content);?>
-					</div>
-				</div>
-				<div class="dash"></div>
-				<div id="news_comment">
-					<div id="comment_top">
-						<div id="top1">读者评论</div>
-						<div id="top2">(共5条)</div>
-						<button id="top3"></button>
-						<a href="" id="top4">查看所有评论</a>
-					</div>
-					<div id="publish_comment">
-						<textarea id="comment_text"></textarea>
-						<button id="tijiao">提交</button>
-					</div>
-					<input id="newsid" type="hidden" value="<?php echo $id;?>">
-					<?php for($i=0;$i<10;$i++){?>
-					<div class="comment_box">
-						<div class="name">dasfdasf</div>
-						<div class="time">2009:11;22</div>
-						<div class="support">
-							<div class="up pointor">支持</div><div class="up_count">(0)</div>
-							<div class="down pointor">反对</div><div class="down_count">(0)</div>
-						</div>
-						<div class="comment_content">
-							啊谁哦符合的死哦发哈死哦好哦的话哦斯蒂芬三季度哦发送哦对哦哦对佛哦对佛哦发送到哦哦死啊谁哦符合的死哦发哈死哦好哦的话哦斯蒂芬三季度哦发送哦对哦哦对佛哦对佛哦发送到哦哦死啊谁哦符合的死哦发哈死哦好哦的话哦斯蒂芬三季度哦发送哦对哦哦对佛哦对佛哦发送到哦哦死
-						</div>
-					</div>
-					<div class="comment_dash"></div>
-					<?php }?>
-				</div>
-		  	</div>
+			<?php include '_news_content.php';?>
 		  	<div id="right_inc">
 		  		<?php include "../right/ad.php";?>
 		  		<?php include "../right/favor.php";?>
@@ -232,6 +70,7 @@
 		  		<?php include "../right/magazine.php";?>
 		  	</div>
 		</div>
+		<?php include "../inc/bottom.inc.php";?>
 	</div>
 </body>
 <html>
