@@ -158,7 +158,7 @@ $(function(){
 });
 
 function login(){
-	$.post('/login/comment_login.php',{'user_name':$("#user_name").val(),'password':$("#password").val()},function(data){
+	$.post('/ajax/comment_login.php',{'user_name':$("#user_name").val(),'password':$("#password").val()},function(data){
 		if(data=='wrong'){
 			alert("用户名或密码错误");
 		}else if(data!=''){
