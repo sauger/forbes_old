@@ -81,12 +81,6 @@
 					<td>
 						<a href="/admin/news/news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>　
 						<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/btn_delete.png" border="0"></span>　
-						<?php if($record[$i]->is_adopt=="1"){?>
-						<span style="cursor:pointer" class="revocation" name="<?php echo $record[$i]->id;?>" title="撤销"><img src="/images/btn_apply.png" border="0"></span>
-						<?php }?>
-						<?php if($record[$i]->is_adopt=="0"){?>
-						<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="发布"><img src="/images/btn_unapply.png" border="0"></span>
-						<?php }?>
 					</td>
 				</tr>
 		<?php
