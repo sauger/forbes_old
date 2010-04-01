@@ -38,6 +38,14 @@
 	function get_news_en_url($news){
 		return "news.php?id={$news->id}&lang=en";
 	}
+	$db->query("select group_concat(text SEPARATOR '|') as words from fb_filte_words");
+	if($db->move_first()){
+		$filter =  $db->field_by_name('words');
+		$filter = explode('|',$filter);
+		$filter = array_fill_keys($filter,"****");
+		$title = strtr($title,$filter);
+		$content = strtr($content,$filter);
+	}
 	
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
