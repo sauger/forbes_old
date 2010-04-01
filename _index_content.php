@@ -170,7 +170,7 @@
 				<a href="" class=more></a>
 			</div>
 			<div class=forbes_l_content>
-				<div id=column_btnl></div>
+				<div id=column_btnl style="background:none; cursor:auto;"></div>
 				<div id="column_box">
 				<?php 
 					$pos = $db->query("select id,position_limit from fb_position where name='首页专栏'");
@@ -181,7 +181,7 @@
 					$news = $db->query($sql);
 					for($i=0;$i<$author_count;$i++){ 
 				?>
-					<div class=content>
+					<div class=content name="<?php echo $author[$i]->id;?>">
 						<div class=cpic><a href=""><img border=0 src="<?php echo $author[$i]->image_src;?>"></a></div>
 						<div class=ccl><a href=""><?php if(!$author[$i]->column_name){echo $author[$i]->nick_name;}else{echo $author[$i]->column_name;}?>专栏</a></div>
 					</div>
@@ -197,8 +197,11 @@
 					<div class=list1>
 						<div class=list1_title><a href="<?php echo get_news_url($news[$news_count]);?>" title="<?php echo $news[$news_count]->title;?>"><?php echo $news[$news_count]->short_title;?></a></div>
 					</div>
-					<?php $news_count++;
-						for($j=$news_count;$j<($news_count+$author[$i]->news_num);$j++){ 
+					<?php 
+						$news_count++;
+						$add = $author[$i]->news_num-1;
+						if($add>3)$add=3;
+						for($j=$news_count;$j<($news_count+$add);$j++){ 
 					?>
 						<div class=list2><a href="<?php echo get_news_url($news[$j]);?>" title="<?php echo $news[$j]->title;?>"><?php echo $news[$j]->short_title;?></a></div>
 					<?php } ?>
