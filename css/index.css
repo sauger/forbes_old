@@ -86,6 +86,7 @@ ul{padding:0; margin:0}
 #column_btnl{width:8px; height:99px; margin-top:45px; background:url(/images/index/column_btnl.jpg) no-repeat; cursor:pointer; float:left; display:inline;}
 #column_btnr{width:8px; height:99px; margin-top:45px; margin-left:10px; background:url(/images/index/column_btnr.jpg) no-repeat; cursor:pointer; float:left; display:inline;}
 #column_box{width:290px; height:130px; overflow:hidden; float:left; display:inline;}
+.cloumn_news_box{width:320px; height:100px; float:left; display:none;}
 
 .forbes_l .caption .caption_base{width:60px; height:18px; margin-top:5px; padding-left:18px; line-height:18px; font-size:12px; color:#666666; cursor:pointer;  float:left; display:inline;}
 .forbes_l .caption .caption1{  background:url(/images/index/square.jpg) no-repeat 0 5px;}
