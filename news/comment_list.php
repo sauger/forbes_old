@@ -51,12 +51,14 @@
 						$db = get_db();
 						$count = $db->query("select count(id) as num from fb_comment where resource_id=$id");
 						$count = $count[0]->num;
+						$news = new table_class('fb_news');
+						$news->find($id);
 					?>
 					<div id="comment_top">
 						<div id="top1">读者评论</div>
 						<div id="top2">(共<?php echo $count;?>条)</div>
 						<button id="top3"></button>
-						<a href="news.php?id=<?php echo $id;?>" id="top4">返回新闻原文</a>
+						<a href="<?php echo static_news_url($news);?>" id="top4">返回新闻原文</a>
 					</div>
 					<div class="publish_comment" <?php if(isset($_SESSION['name'])){?>id='show_comment'<?php }?>>
 						<textarea id="comment_text"></textarea>
