@@ -28,13 +28,22 @@
 				<a href="/admin/image/image_list.php" target="admin_iframe">图片管理</a>
 			</div>
 			<div class="menu1">
-				<a href="/admin/list" target="admin_iframe">榜单管理</a>
+				<a href="/admin/list/picture_list_list.php" target="admin_iframe">常规榜单管理</a>
+			</div>
+			<div class="menu1">
+				<a href="/admin/list/file_list_list.php" target="admin_iframe">图片榜单管理</a>
+			</div>
+			<div class="menu1">
+				<a href="/admin/list" target="admin_iframe">文章榜单管理</a>
 			</div>
 			<div class="menu1">
 				<a href="/admin/company/list.php" target="admin_iframe">公司管理</a>
 			</div>
 			<div class="menu1">
 				<a href="/admin/rich/list.php" target="admin_iframe">富豪管理</a>
+			</div>
+			<div class="menu1">
+				<a href="/admin/filte_words/list.php" target="admin_iframe">敏感词管理</a>
 			</div>
 			<div class="menu1">
 				<a href="/admin/user/modify_user_info.php" target="admin_iframe">个人信息维护</a>

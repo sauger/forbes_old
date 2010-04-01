@@ -121,26 +121,25 @@ $(function(){
 		}
 		/* fitler words
 		 */
-		
 		for(i=0;i< filte_len; i++){
 			if(title.indexOf(filte_words[i])!=-1){
-				alert('标题中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				if(confirm('标题中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？') === false)
 				return false;
 			}
 			if(short_title.indexOf(filte_words[i])!=-1){
-				alert('短标题中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				if(confirm('短标题中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？!') === false)
 				return false;
 			}
 			if($('#news_wap_title').val().indexOf(filte_words[i])!=-1){
-				alert('wap标题中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				if(confirm('wap标题中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？!') === false)
 				return false;
 			}
 			if(description.indexOf(filte_words[i])!=-1){
-				alert('简短描述中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				if(confirm('简短描述中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？!') === false)
 				return false;
 			}
 			if(content.indexOf(filte_words[i])!=-1){
-				alert('内容中包含敏感词"' + filte_words[i]+'",请处理后再保存!');
+				if(confirm('内容中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？!') === false)
 				return false;
 			}
 		};

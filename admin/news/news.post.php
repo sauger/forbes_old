@@ -95,6 +95,12 @@
 			$english_news->save();
 		}
 	}
+	
+	//news saved
+	if($news->is_adopt){
+		static_news($news);
+	}
+	
 	if(isset($_POST['publish_schedule_date'])){
 		$schedule = new table_class('fb_publish_schedule');
 		if($id){

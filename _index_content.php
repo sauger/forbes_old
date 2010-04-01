@@ -77,7 +77,7 @@
 		 
 		 
 		<div id=forbes_trt>
-			<div class=title style="background:url('images/index/block2.jpg') no-repeat; font-weight:bold; color:#000000;">实时财富</div>
+			<div class=title style="background:url('images/index/block2.jpg') no-repeat; font-weight:bold; color:#000000;">富豪榜</div>
 			<div class=title>财富过山车</div>	
 			<div class=title>名人榜</div>	
 			<div class=title>城市榜</div>
@@ -177,7 +177,7 @@
 					$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name,count(t3.id) as news_num FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id left join fb_news t3 on t1.id=t3.author_id where  t2.position_id={$pos[0]->id} group by t1.id order by t2.priority";
 					$author = $db->query($sql);
 					$author_count = $db->record_count;
-					$sql = "SELECT t1.id as a_id,t1.nick_name,t1.image_src,t1.column_name,t1.description,t3.id,t3.title,t3.created_at FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id join fb_news t3 on t1.id=t3.author_id where t3.is_adopt=1 and t2.position_id={$pos[0]->id} order by t2.priority,t1.id,t3.created_at";
+					$sql = "SELECT t1.id as a_id,t1.nick_name,t1.image_src,t1.column_name,t1.description,t3.id,t3.title,t3.created_at,t3.short_title FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id join fb_news t3 on t1.id=t3.author_id where t3.is_adopt=1 and t2.position_id={$pos[0]->id} order by t2.priority,t1.id,t3.created_at";
 					$news = $db->query($sql);
 					for($i=0;$i<$author_count;$i++){ 
 				?>
@@ -188,15 +188,22 @@
 				<?php } ?>
 				</div>
 				<div id=column_btnr></div>
-
-				<div class="cloumn_news_box">
+				
+				<?php 
+					$news_count = 0;	
+					for($i=0;$i<$author_count;$i++){
+				?>
+				<div name="<?php echo $author[$i]->id;?>" <?php if($i==0){?>style="display:inline"<?php }?> class="cloumn_news_box">
 					<div class=list1>
-						<div class=list1_title><a href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a></div>
+						<div class=list1_title><a href="<?php echo get_news_url($news[$news_count]);?>" title="<?php echo $news[$news_count]->title;?>"><?php echo $news[$news_count]->short_title;?></a></div>
 					</div>
-					<?php for($i=1;$i<5;$i++){ ?>
-						<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?>><a href="<?php echo get_news_url($record_show[$i]);?>" title="<?php echo $record_show[$i]->title;?>"><?php echo $record_show[$i]->short_title;?></a></div>
+					<?php $news_count++;
+						for($j=$news_count;$j<($news_count+$author[$i]->news_num);$j++){ 
+					?>
+						<div class=list2><a href="<?php echo get_news_url($news[$j]);?>" title="<?php echo $news[$j]->title;?>"><?php echo $news[$j]->short_title;?></a></div>
 					<?php } ?>
 				</div>
+				<?php $news_count = $news_count+$author[$i]->news_num;}?>
 			</div>
 			<div class=dashed></div>
 			
