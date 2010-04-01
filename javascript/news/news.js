@@ -32,7 +32,7 @@
 }
 $(function(){
 	if($("#is_comment").val()!='1'){
-		$("#news_comment").load('news_comment.php',{'id':$("#newsid").val()});
+		$("#news_comment").load('/ajax/news_comment.php',{'id':$("#newsid").val()});
 	}
 	
 	$(".left_top_title").hover(function(){
@@ -146,7 +146,7 @@ $(function(){
 				}
 			}
 		});
-		$.post('/news/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val(),'nick_name':nick_name,'type':'comment'},function(data){
+		$.post('/ajax/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val(),'nick_name':nick_name,'type':'comment'},function(data){
 			if(data==''){
 				alert('发布成功！请等候管理员审批！');
 				load_comment();
@@ -173,6 +173,6 @@ function load_comment(){
 	if($("#is_comment").val()=='1'){
 		window.location.reload();
 	}else{
-		$("#news_comment").load('news_comment.php',{'id':$("#newsid").val()});
+		$("#news_comment").load('/ajax/news_comment.php',{'id':$("#newsid").val()});
 	}
 }
