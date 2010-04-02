@@ -288,10 +288,13 @@
 					<a href="" class=public_more1></a>
 				</div>
 				<div class=public_box1>
-					<div id=images><img src="/images/other/three.jpg"></div>
+				<?php
+					$record_show = get_news_by_pos('论坛活动','首页');
+				?>
+					<div id=images><img src="<?php echo $record_show[0]->image;?>"></div>
 					<div id=context>
-						<span style="font-size:13px; font-weight:bold; color:#333385">2010福布斯中国经济发展论坛</span><br>举办日期：3月18日<br>地点：上海</div>
-						<div id=info><a href="">查看详细</a></div>	
+						<span style="font-size:13px; font-weight:bold; color:#333385"><?php echo $record_show[0]->title;?></span><br>举办日期：<?php echo $record_show[0]->time?><br>地点：<?php echo $record_show[0]->place?></div>
+						<div id=info><a target="_blank" href="<?php echo $record_show[0]->url?>">查看详细</a></div>	
 				</div>
 				<div class=public_bottom1></div>
 			</div>
@@ -450,7 +453,7 @@
 				</div>
 				<div id=mag_content>
 						<?php 
-							$magazine = $db->query("select * from fb_magazine where is_adopt=1 order by publish_data");
+							$magazine = get_news_by_pos('首页杂志');
 						?>
 						<div class=pic><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img border=0 src="<?php echo $magazine[0]->img_src3;?>"></a></div>
 						<div class=pictitle><?php echo $magazine[0]->name;?></div>
