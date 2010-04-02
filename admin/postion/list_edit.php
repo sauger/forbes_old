@@ -8,13 +8,15 @@
 	
 	if($page->type=="news"){
 		include "news_edit.php";
-	}elseif($page->type=="category"){
+	}else if($page->type=="category"){
 		include "category_edit.php";
-	}elseif($page->type=="image"){
+	}else if($page->type=="image"){
 		include "image_edit.php";
-	}elseif($page->type=="column"){
+	}else if($page->type=="column"){
 		include "column_edit.php";
-	}elseif($page->type=="list"){
+	}else if($page->type=="list"){
 		include "list2_edit.php";
+	}else if($page->type=="journalist"){
+		include "journalist_edit.php";
 	}
 ?>
