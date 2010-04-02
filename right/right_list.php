@@ -9,11 +9,13 @@
 	.inc_list_top_border{
 		width:317px;
 		height:4px;
+		font-size: 0px;
 		background: url('/images/right/list_top.jpg');
 	}
 	.inc_list_bottom_border{
 		width:317px;
 		height:4px;
+		line-height:0px;
 		background: url('/images/right/list_bottom.jpg');
 	}
 	.inc_list_title{
