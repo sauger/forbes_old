@@ -12,7 +12,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('select2css');
-		css_include_tag('tz','top','bottom');
+		css_include_tag('tz','top','bottom','right_inc');
 	?>
 </head>
 <body>

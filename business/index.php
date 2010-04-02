@@ -11,7 +11,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('public');
-		css_include_tag('public','common');
+		css_include_tag('public','common','right_inc');
 	?>
 </head>
 <body>

@@ -52,6 +52,10 @@
 	.inc_list_item_content ul li{
 		padding-left:10px;
 	}
+	.inc_list_item_content ul li{font-size:12px; line-height:24px; list-style-position:outside; background:url(/images/html/list/tar-1.jpg) no-repeat 1% 50%;  list-style-type:none;}
+
+	.inc_list_item_content ul li a:link{color:#003A7B; text-decoration:none;}
+	.inc_list_item_content ul li a:visited{color:#003A7B; text-decoration:none;}
 	
 </style>
 <?php include_once dirname(__FILE__) .'/../frame.php'?>
