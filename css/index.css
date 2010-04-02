@@ -132,9 +132,9 @@ ul{padding:0; margin:0}
 #forbes_r #dictionary_tl a{color:#990000; font-size:14px; font-weight:bold; text-decoration:none;}
 #forbes_r #dictionary_tr{width:164px; height:20px; line-height:20px; overflow:hidden; float:right; display:inline;}
 #forbes_r #dictionary_tr a{color:#003399; text-decoration:underline;}
-#forbes_r #dictionary_bl{width:100px; height:24px; margin-top:10px; margin-left:50px; line-height:24px; float:left; display:inline;}
+#forbes_r #dictionary_bl{width:100px; height:24px; margin-top:10px; margin-left:50px; overflow:hidden; line-height:24px; float:left; display:inline;}
 #forbes_r #dictionary_bl a{font-size:20px; font-weight:bold; font-family:黑体; color:#003399;}
-#forbes_r #dictionary_br{width:132px; height:20px; margin-top:12px; line-height:20px; float:right; display:inline;}
+#forbes_r #dictionary_br{width:132px; height:20px; margin-top:12px;  overflow:hidden; line-height:20px; float:right; display:inline;}
 #forbes_r #dictionary_br a{font-size:16px; font-weight:bold; color:#003399;}
 
 
@@ -154,7 +154,7 @@ ul{padding:0; margin:0}
 #club .content .pic img{width:70px; height:70px; margin:1px;}
 #club .content .pictitle{width:180px; height:16px; margin-left:5px; font-size:13px; line-height:16px; float:right; display:inline;}
 #club .content .pictitle a{font-weight:bold; color:#333399;}
-#club .content .piccontent{width:180px; height:52px; margin-top:8px; margin-left:5px; text-indent:24px; line-height:20px; float:right; display:inline;}
+#club .content .piccontent{width:180px; height:52px; margin-top:8px; margin-left:5px; overflow:hidden; text-indent:24px; line-height:17px; float:right; display:inline;}
 #club .bottom{width:280px; height:30px; margin-top:8px; margin-left:15px; line-height:30px; float:left; display:inline;}
 #club .bottom_l{width:140px; height:30px; overflow:hidden; float:left; display:inline;}
 #club .bottom_r{width:140px; height:30px; overflow:hidden; float:right; display:inline;}
@@ -171,7 +171,7 @@ ul{padding:0; margin:0}
 #city .content .pic img{width:70px; height:70px; margin:1px;}
 #city .content .pictitle{width:180px; height:16px; margin-left:5px; font-size:13px; line-height:16px; float:right; display:inline;}
 #city .content .pictitle a{font-weight:bold; color:#333399;}
-#city .content .piccontent{width:180px; height:52px; margin-top:8px; margin-left:5px; text-indent:24px; line-height:20px; float:right; display:inline;}
+#city .content .piccontent{width:180px; height:52px; margin-top:8px; margin-left:5px; overflow:hidden; text-indent:24px; line-height:17px; float:right; display:inline;}
 #city .bottom{width:280px; height:30px; margin-top:8px; margin-left:15px; line-height:30px; float:left; display:inline;}
 #city .bottom_l{width:140px; height:30px; overflow:hidden; float:left; display:inline;}
 #city .bottom_r{width:140px; height:30px; overflow:hidden; float:right; display:inline;}
@@ -191,7 +191,7 @@ ul{padding:0; margin:0}
 #mag_content .pic{width:88px; height:114px; margin-top:10px; margin-left:13px; border:1px solid #cccccc; float:left; display:inline;}
 #mag_content .pic img{width:86px; height:112px; margin:1px;}
 #mag_content .pictitle{width:170px; height:20px;margin-top:13px;  margin-left:13px;  color:#3399CC; font-weight:bold; overflow:hidden; float:left; display:inline;}
-#mag_content .context{width:170px; height:96px; margin-left:13px;  line-height:25px; float:left; display:inline;}
+#mag_content .context{width:170px; height:96px; margin-left:13px; overflow:hidden; line-height:25px; float:left; display:inline;}
 #mag_dash{width:270px; height:1px; margin-top:10px; margin-left:15px; background:url(/images/index/dashed2.jpg) no-repeat; float:left; display:inline;}
 #mag #search{width:202px; height:20px;  margin-left:12px; line-height:20px; color:#0066CC; font-weight:bold; float:left; display:inline;}
 #mag #sel{width:280px; height:20px; margin-top:5px; margin-left:12px; float:left; display:inline;}

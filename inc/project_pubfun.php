@@ -9,7 +9,6 @@ function get_news_by_pos($pos,$page='') {
 		$sql .= " and page_id=$page_id";
 		if($db->record_count==0) return false;
 	}
-	
 	$record = $db->query($sql);
 	if($record === false) return false;
 	
@@ -31,15 +30,16 @@ function get_news_by_pos($pos,$page='') {
 			$sql = "select n.* from fb_position_relation f join fb_images n on f.news_id=n.id where f.position_id={$record[0]->id} and f.type='image' and n.is_adopt=1 order by f.priority limit {$record[0]->position_limit}";
 			break;
 		case 'column':
-			//$sql = "select "
+			$sql = "select n.* from fb_position_relation f join fb_user n on f.news_id=n.id where f.position_id={$record[0]->id} and f.type='column' and n.role_name='column' order by f.priority limit {$record[0]->position_limit}";
+			break;
+		case 'journalist':
+			$sql = "select n.* from fb_position_relation f join fb_user n on f.news_id=n.id where f.position_id={$record[0]->id} and f.type='journalist' and n.role_name='journalist' order by f.priority limit {$record[0]->position_limit}";
 			break;
 		default:
 			return false;
 		break;
 	}
-	 
 	return $db->query($sql); 
-	
 } 
 
 function static_news_url($news,$index = 1){
