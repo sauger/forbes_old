@@ -25,7 +25,7 @@
 			$fcontent .= '</photocaption></item>';
 		}
 		$fcontent .= '</document>';
-		$filename = '../../scp/img.xml';
+		$filename = '../../life/img.xml';
 		$handle=fopen($filename,"wt");
 		fwrite($handle,$fcontent);
 		fclose($handle);
@@ -42,7 +42,7 @@
 			$fcontent .= '</thumb_image></Image_Information>';
 		}
 		$fcontent .= '</URL>';
-		$filename = '../../scp/imglink.xml';
+		$filename = '../../life/imglink.xml';
 		$handle=fopen($filename,"wt");
 		fwrite($handle,$fcontent);
 		fclose($handle);
@@ -50,17 +50,14 @@
 	elseif($type=='news'){
 		$sql = "select t1.* from fb_news t1 join fb_position_relation t2 on t1.id=t2.news_id where t2.type='flash_news' order by t2.priority limit 8";
 		$news = $db->query($sql);
-		$fcontent .= '<dataroot><news>';
+		$fcontent .= '<list>';
 		
 		for($i=0;$i<count($news);$i++){
-			$fcontent .= '<new><title>'.$news[$i]->short_title;
-			$fcontent .= '</title><shortdesc>';
-			$fcontent .= '</shortdesc><date>'.$news[$i]->created_at;
-			$fcontent .= '</date><link>/news/news.php?id='.$news[$i]->id;
-			$fcontent .= '</link></new>';
+			$url = static_news_url($news);
+			$fcontent .= "<gg name= \"{$news[$i]->short_title}\" url=\"{$url}\"     target=\"_blank\"/> ";
 		}
-		$fcontent .= '</new></dataroot>';
-		$filename = '../../scp/news.xml';
+		$fcontent .= '</list> ';
+		$filename = '../../life/data.xml';
 		$handle=fopen($filename,"wt");
 		fwrite($handle,$fcontent);
 		fclose($handle);
