@@ -110,7 +110,7 @@ $(function(){
 		$('#cls_cpt1,#cls_cpt2').hover(function(){
 			$('div.caption_base').not(this).removeClass('caption_selected');
 			$(this).addClass('caption_selected');
-			var i = $(this).attr('id').substr(-1);
+			var i = $(this).attr('id').substr(7,1);
 			$('#div_caption' + i).show();
 			if(i== 1){
 			  i = 2;	
@@ -130,9 +130,21 @@ $(function(){
 		});
 		
 		$("#column_btnr").click(function(){
+			var flag = true;
 			$("#column_btnl").css('background','url(/images/index/column_btnl.jpg) no-repeat');
 			$("#column_btnl").css('cursor','pointer');
 			if($("#column_box").find(".content:visible:eq(2)").next().attr('class')=='content'){
+				$('.cpic').each(function(){
+					if($(this).css('opacity')=='1'&&flag){
+						$('.cpic').css('opacity','0.4');
+						$(this).parent().next().find('.cpic').css('opacity','1');
+						$('.cpic').css('filter','alpha(opacity=86)');
+						$(this).parent().next().find('.cpic').css('filter','alpha(opacity=100)');
+						flag = false;
+						$(".cloumn_news_box").hide();
+						$(".cloumn_news_box[name="+$(this).parent().next().attr('name')+"]").show();
+					} 
+				 });
 				$("#column_box").find('.content:visible:eq(0)').hide();
 			}
 			if($("#column_box").find(".content:visible:eq(2)").next().attr('class')!='content'){
@@ -142,10 +154,22 @@ $(function(){
 		});
 		
 		$("#column_btnl").click(function(){
+			var flag = true;
 			$("#column_btnr").css('background','url(/images/index/column_btnr.jpg) no-repeat');
 			$("#column_btnr").css('cursor','pointer');
 			if($("#column_box").find(".content:visible:eq(0)").prev().attr('class')=='content'){
 				$("#column_box").find('.content:visible:eq(0)').prev().show();
+				$('.cpic').each(function(){
+					if($(this).css('opacity')=='1'&&flag){
+						$('.cpic').css('opacity','0.4');
+						$(this).parent().prev().find('.cpic').css('opacity','1');
+						$('.cpic').css('filter','alpha(opacity=86)');
+						$(this).parent().prev().find('.cpic').css('filter','alpha(opacity=100)');
+						flag = false;
+						$(".cloumn_news_box").hide();
+						$(".cloumn_news_box[name="+$(this).parent().prev().attr('name')+"]").show();
+					} 
+				 });
 			}
 			if($("#column_box").find(".content:visible:eq(0)").prev().attr('class')!='content'){
 				$("#column_btnl").css('background','none');

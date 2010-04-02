@@ -174,7 +174,7 @@
 				<div id="column_box">
 				<?php 
 					$pos = $db->query("select id,position_limit from fb_position where name='首页专栏'");
-					$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name,count(t3.id) as news_num FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id left join fb_news t3 on t1.id=t3.author_id where  t2.position_id={$pos[0]->id} group by t1.id order by t2.priority";
+					$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name,count(t3.id) as news_num FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id left join fb_news t3 on t1.id=t3.author_id where  t2.position_id={$pos[0]->id} group by t1.id order by t2.priority,t1.id,t3.created_at";
 					$author = $db->query($sql);
 					$author_count = $db->record_count;
 					$sql = "SELECT t1.id as a_id,t1.nick_name,t1.image_src,t1.column_name,t1.description,t3.id,t3.title,t3.created_at,t3.short_title FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id join fb_news t3 on t1.id=t3.author_id where t3.is_adopt=1 and t2.position_id={$pos[0]->id} order by t2.priority,t1.id,t3.created_at";
@@ -182,8 +182,8 @@
 					for($i=0;$i<$author_count;$i++){ 
 				?>
 					<div class=content name="<?php echo $author[$i]->id;?>">
-						<div <?php if($i==0){?>style="filter:alpha(opacity=100); opacity:1;"<?php }?> class=cpic><a href=""><img border=0 src="<?php echo $author[$i]->image_src;?>"></a></div>
-						<div class=ccl><a href=""><?php if(!$author[$i]->column_name){echo $author[$i]->nick_name;}else{echo $author[$i]->column_name;}?>专栏</a></div>
+						<div <?php if($i==0){?>style="filter:alpha(opacity=100); opacity:1;"<?php }?> class=cpic><a href="/column/column.php?id=<?php echo $author[$i]->id;?>"><img border=0 src="<?php echo $author[$i]->image_src;?>"></a></div>
+						<div class=ccl><a href="/column/column.php?id=<?php echo $author[$i]->id;?>"><?php if(!$author[$i]->column_name){echo $author[$i]->nick_name;}else{echo $author[$i]->column_name;}?>专栏</a></div>
 					</div>
 				<?php } ?>
 				</div>
@@ -194,17 +194,17 @@
 					for($i=0;$i<$author_count;$i++){
 				?>
 				<div name="<?php echo $author[$i]->id;?>" <?php if($i==0){?>style="display:inline"<?php }?> class="cloumn_news_box">
+					<?php if($author[$i]->news_num){?>
 					<div class=list1>
 						<div class=list1_title><a href="<?php echo get_news_url($news[$news_count]);?>" title="<?php echo $news[$news_count]->title;?>"><?php echo $news[$news_count]->short_title;?></a></div>
 					</div>
 					<?php 
-						$news_count++;
-						$add = $author[$i]->news_num-1;
-						if($add>3)$add=3;
-						for($j=$news_count;$j<($news_count+$add);$j++){ 
+						$add = $author[$i]->news_num;
+						if($add>4)$add=4;
+						for($j=$news_count+1;$j<($news_count+$add);$j++){ 
 					?>
 						<div class=list2><a href="<?php echo get_news_url($news[$j]);?>" title="<?php echo $news[$j]->title;?>"><?php echo $news[$j]->short_title;?></a></div>
-					<?php } ?>
+					<?php }} ?>
 				</div>
 				<?php $news_count = $news_count+$author[$i]->news_num;}?>
 			</div>
@@ -275,8 +275,11 @@
 					<div id=dictionary_tl><a href="">财经魔鬼词典</a></div>
 					<div id=dictionary_tr><a href="">实用商业词汇</a>  |  <a href="">实用财经词汇</a></div>
 				</div>
-				<div id=dictionary_bl><a href="">股指期货</a></div>
-				<div id=dictionary_br><a href="">future 	index</a></div>
+				<?php
+					$record_show = get_news_by_pos('财经魔鬼词典');
+				?>
+				<div id=dictionary_bl><a title="<?php echo $record_show[0]->title;?>" href="<?php echo get_news_url($record_show[0]);?>"><?php echo $record_show[0]->short_title;?></a></div>
+				<div id=dictionary_br><a title="<?php echo $record_show[1]->title;?>" href="<?php echo get_news_url($record_show[1]);?>"><?php echo $record_show[1]->short_title;?></a></div>
 			</div>
 
 			<div id=activity>
@@ -297,15 +300,18 @@
 					<div class=club_caption1>增长俱乐部</div>
 					<a href="" class=club_more1></a>
 					<div class=content>
-							<div class=pic>
-								<a href=""><img border=0 src="images/other/one.jpg"></a>	
-							</div>	
-							<div class=pictitle>
-								<a href="">沪二手房议价空间议价</a>
-							</div>
-							<div class=piccontent>
-								<a href="">2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
-							</div>
+						<?php
+							$record_show = get_news_by_pos('增长俱乐部','首页');
+						?>
+						<div class=pic>
+							<a href="<?php echo get_news_url($record_show[0]);?>"><img border=0 src="<?php echo $record_show[0]->video_photo_src;?>"></a>	
+						</div>	
+						<div class=pictitle>
+							<a href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a>
+						</div>
+						<div class=piccontent>
+							<a href="<?php echo get_news_url($record_show[0]);?>"><?php echo $record_show[0]->description;?></a>
+						</div>
 					</div>
 					<div class=bottom>
 						<div class=bottom_l><a href="">我要报名</a></div>
@@ -319,15 +325,18 @@
 					<div class=city_caption1>城市</div>
 					<a href="" class=city_more1></a>
 					<div class=content>
-							<div class=pic>
-								<a href=""><img border=0 src="images/other/one.jpg"></a>	
-							</div>	
-							<div class=pictitle>
-								<a href="">沪二手房议价空间议价</a>
-							</div>
-							<div class=piccontent>
-								<a href="">2月初，因受贿罪和滥用职权罪，中国出口信用保险公司......</a>
-							</div>
+						<?php
+							$record_show = get_news_by_pos('城市','首页');
+						?>					
+						<div class=pic>
+							<a href="<?php echo get_news_url($record_show[0]);?>"><img border=0 src="<?php echo $record_show[0]->video_photo_src;?>"></a>	
+						</div>	
+						<div class=pictitle>
+							<a href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a>
+						</div>
+						<div class=piccontent>
+							<a href="<?php echo get_news_url($record_show[0]);?>"><?php echo $record_show[0]->description;?></a>
+						</div>
 					</div>
 					<div class=bottom>
 						<div class=bottom_l><a href="">城市榜</a></div>
@@ -405,13 +414,16 @@
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
-				<?php for($i=0;$i<8;$i++){ ?>
+				<?php 
+				$record_show = get_news_by_pos('采编智库','首页');
+				$count = count($record_show);
+				for($i=0;$i<$count;$i++){ ?>
 					<div class=writer>
-						<div class=writer_pic><a href=""><img border=0 src="images/index/seven.jpg"></a></div>
+						<div class=writer_pic><a href="/column/column.php?id=<?php echo $record_show[$i]->id;?>"><img border=0 src="<?php echo $record_show[$i]->image_src;?>"></a></div>
 						<div class=writer_name>
-							<a href="">
-								<span style="font-weight:bold;">康健</span><br>
-								康桥健笔
+							<a href="/column/column.php?id=<?php echo $record_show[$i]->id;?>">
+								<span style="font-weight:bold;"><?php echo $record_show[$i]->nick_name;?></span><br>
+								<?php echo $record_show[$i]->column_name;?>
 							</a>	
 						</div>	
 					</div>
@@ -427,9 +439,12 @@
 					<a href="" class=public_more1></a>
 				</div>
 				<div id=mag_content>
-						<div class=pic><a href=""><img border=0 src="images/other/five.jpg"></a></div>
-						<div class=pictitle>福布斯2010/1</div>
-						<div class=context>在去年大批新股批新股上市后，内地投资者对IPO热情逐渐消退。随着上证综合指数跌幅超过10%...</div>	
+						<?php 
+							$magazine = $db->query("select * from fb_magazine where is_adopt=1 order by publish_data");
+						?>
+						<div class=pic><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img border=0 src="<?php echo $magazine[0]->img_src3;?>"></a></div>
+						<div class=pictitle><?php echo $magazine[0]->name;?></div>
+						<div class=context><?php echo strip_tags($magazine[0]->description);?></div>	
 
 			 			 <div id=mag_dash></div>
 

@@ -1,9 +1,9 @@
 <?php
 	$db = get_db();
-	$records = $db->query("select * from fb_user where role_name='author'");
+	$records = $db->query("select * from fb_user where role_name='journalist'");
 	$count = count($records);
 	
-	$column = $db->query("select * from fb_position_relation where type='column' and position_id=$id");
+	$column = $db->query("select * from fb_position_relation where type='journalist' and position_id=$id");
 	$column_count = count($column);
 	$ids = $column[0]->news_id;
 	for($i=1;$i<$column_count;$i++){
@@ -26,7 +26,7 @@
 <body style="background:#E1F0F7">
 	<table width="795" border="0">
 		<tr class="tr1">
-			<td colspan="5" width="795">　自定义专栏作者<a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
+			<td colspan="5" width="795">　自定义采编智库<a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
 		</tr>
 		<tr class="tr2">
 			<td width="295">作者名</td><td width="250">专栏名</td><td width="290">操作</td>
@@ -55,7 +55,7 @@
 	<div class="div_box">
 		<table width="795" border="0">
 			<tr colspan="5" class=tr3>
-				<td><button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"><input type="hidden" id="p_type" value="column">	<input type="hidden" id="db_table" value="<?php echo $user_table;?>"></td>
+				<td><button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"><input type="hidden" id="p_type" value="journalist">	<input type="hidden" id="db_table" value="<?php echo $user_table;?>"></td>
 			</tr>
 		</table>
 	</div>
