@@ -4,10 +4,8 @@
 		require 'frame.php';
 		use_jquery_ui();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
-		css_include_tag('jquery_ui');	
-		$var = array('a','b','c');
-		$var = array_fill_keys($var,"");
-		var_dump($var);
+		css_include_tag('jquery_ui');
+		phpinfo();	
 		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));
