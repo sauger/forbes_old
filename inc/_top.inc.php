@@ -4,7 +4,7 @@
 			<div class=user_btn><a href="">设为首页</a>　<a href="">收藏本页</a></div>
 			<div id=magazine_title>本期杂志介绍</div>
 			<?php 
-				$magazine = $db->query("select * from fb_magazine where is_adopt=1 order by publish_data");
+				$magazine = get_news_by_pos('顶部杂志');
 			?>
 			<div id=magazine_pic><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img border=0 width="75" height="95" src="<?php echo $magazine[0]->img_src3?>"></a></div>
 			<div id=magazine_description><span class=font1><?php echo $magazine[0]->name;?></span><br><?php echo $magazine[0]->short_title;?></div>
