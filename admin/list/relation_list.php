@@ -81,7 +81,7 @@
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">
-				　关联榜单<a href="index.php"><img src="/images/btn_back.png" border=0></a>   搜索　
+				　关联榜单<a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a>   搜索　
 				 <input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
 				 <select id="s_list_type">
 				 	<option value="-1">榜单类型</option>

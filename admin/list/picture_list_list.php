@@ -44,6 +44,7 @@
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
 					<td><a href="#"> <?php echo $record[$i]->name;?></a></td>
 					<td>
+						<a href="relation_list.php?id=<?php echo $record[$i]->id;?>" >关联</a>
 						<a href="picture_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<a href="picture_list_items_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单项管理</a>
 						<span style="cursor:pointer;color:#FF0000" class="del1" name="<?php echo $record[$i]->id;?>">删除</span>

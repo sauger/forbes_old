@@ -1,17 +1,14 @@
-﻿<?php 
-	session_start();
-	require_once('../frame.php');
-	$db = get_db();
-?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <head>
    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
 	<title>福布斯-榜单首页</title>
 	<?php
+		include_once('../frame.php');
+		$db = get_db();
 		use_jquery();
 		js_include_tag('public','index');
-		css_include_tag('charts_index','public');
+		css_include_tag('charts_index','public','right_inc');
 	?>
 </head>
 <body>
@@ -55,7 +52,7 @@
 						</div>
 					<? }?>	
 		
-						<div id=more><a href="">查看更多</a></div>
+						<div id=more><a href="list.php">查看更多</a></div>
 						<div id=btn>
 							<div class=headline_btn1 id=l style="background:url(/images/index/slideshow_back.gif) no-repeat;"></div>
 							<div class=headline_btn2 id=0 style="background:url(/images/index/slideshow_active.gif) no-repeat"></div>
@@ -195,6 +192,12 @@
 				</div>
 			</div>
 		</div>
+		<div id="right_inc" style="margin-top:10px;">
+		  		<?php include "../right/ad.php";?>
+		  		<?php include "../right/right_list.php"?>
+		  		<?php include "../right/article.php";?>
+		 </div>
+		
 		<? require_once('../inc/bottom.inc.php');?>
 	</div>
 </body>

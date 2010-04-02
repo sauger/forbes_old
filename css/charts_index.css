@@ -1,4 +1,4 @@
-﻿#ibody{width:1000px; margin:0 auto; line-height:0; font-size:12px; margin-top:20px;}
+﻿#ibody{width:1000px; margin:0 auto; line-height:0; font-size:12px; margin-top:0px;}
 
 li{font-size:12px; line-height:24px; list-style-position:outside; background:url(/images/html/list/tar-1.jpg) no-repeat 1% 50%;  list-style-type:none;}
 
@@ -67,7 +67,7 @@ content1 a:visited{color:#003A7B;}
 .list_title .title{width:40px; height:20px; float:left; display:inline;}
 .list_title .title_line{width:240px; height:8px; margin-left:5px; margin-top:7px; line-height:0; font-size:0; background:#E5E5E5; float:left; display:inline;}
 .list_li_box{width:300px; height:100px; margin-top:10px; line-height:20px; float:left; display:inline;}
-.list_li_box li{width:290px; height:20px; overflow:hidden; font-size:14px; padding-left:10px; background:url(/images/html/list/tar.gif) no-repeat 0 10px; float:left; display:inline;}
+.list_li_box li{width:290px; height:20px; margin-top:6px; overflow:hidden; font-size:14px; padding-left:10px; background:url(/images/html/list/tar.gif) no-repeat 0 10px; float:left; display:inline;}
 
 #line2{width:1px; height:670px; margin-left:20px; margin-right:40px; margin-top:5px; background:url(/images/html/news/dash5.gif) repeat-y; float:left; display:inline;}
 
@@ -92,8 +92,8 @@ content1 a:visited{color:#003A7B;}
 .ul3{width:150px; height:100px; font-size:12px; text-indent:10px; line-height:25px; margin-left:10px; float:left; display:inline;}
 
 
-#t_l_t{width:680px; height:200px; margin-top:10px; padding:1px; border:1px solid #e1e9f0; float:left; display:inline;}
-#t_l_t_t{width:680px; height:200px; background:#f4f4f4; float:left; display:inline;}
+#t_l_t{width:670px; height:200px; margin-top:10px; padding:1px; border:1px solid #e1e9f0; float:left; display:inline;}
+#t_l_t_t{width:670px; height:200px; background:#f4f4f4; float:left; display:inline;}
 .headline_pic{float:left; display:inline;}
 #t_l_t_t_r{width:361px; height:200px; margin-top:1px; float:right; display:inline;}
 .headline_title{width:351px; height:28px; margin-top:16px; line-height:28px; overflow:hidden; float:left; display:inline;}
