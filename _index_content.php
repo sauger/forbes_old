@@ -174,7 +174,7 @@
 				<div id="column_box">
 				<?php 
 					$pos = $db->query("select id,position_limit from fb_position where name='首页专栏'");
-					$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name,count(t3.id) as news_num FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id left join fb_news t3 on t1.id=t3.author_id where  t2.position_id={$pos[0]->id} group by t1.id order by t2.priority";
+					$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name,count(t3.id) as news_num FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id left join fb_news t3 on t1.id=t3.author_id where  t2.position_id={$pos[0]->id} group by t1.id order by t2.priority,t1.id,t3.created_at";
 					$author = $db->query($sql);
 					$author_count = $db->record_count;
 					$sql = "SELECT t1.id as a_id,t1.nick_name,t1.image_src,t1.column_name,t1.description,t3.id,t3.title,t3.created_at,t3.short_title FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id join fb_news t3 on t1.id=t3.author_id where t3.is_adopt=1 and t2.position_id={$pos[0]->id} order by t2.priority,t1.id,t3.created_at";
@@ -194,17 +194,17 @@
 					for($i=0;$i<$author_count;$i++){
 				?>
 				<div name="<?php echo $author[$i]->id;?>" <?php if($i==0){?>style="display:inline"<?php }?> class="cloumn_news_box">
+					<?php if($author[$i]->news_num){?>
 					<div class=list1>
 						<div class=list1_title><a href="<?php echo get_news_url($news[$news_count]);?>" title="<?php echo $news[$news_count]->title;?>"><?php echo $news[$news_count]->short_title;?></a></div>
 					</div>
 					<?php 
-						$news_count++;
-						$add = $author[$i]->news_num-1;
-						if($add>3)$add=3;
-						for($j=$news_count;$j<($news_count+$add);$j++){ 
+						$add = $author[$i]->news_num;
+						if($add>4)$add=4;
+						for($j=$news_count+1;$j<($news_count+$add);$j++){ 
 					?>
 						<div class=list2><a href="<?php echo get_news_url($news[$j]);?>" title="<?php echo $news[$j]->title;?>"><?php echo $news[$j]->short_title;?></a></div>
-					<?php } ?>
+					<?php }} ?>
 				</div>
 				<?php $news_count = $news_count+$author[$i]->news_num;}?>
 			</div>
