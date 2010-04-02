@@ -194,8 +194,8 @@
 		</div>
 		<div id="right_inc" style="margin-top:10px;">
 		  		<?php include "../right/ad.php";?>
-		  		<?php include "../right/article.php";?>
 		  		<?php include "../right/right_list.php"?>
+		  		<?php include "../right/article.php";?>
 		 </div>
 		
 		<? require_once('../inc/bottom.inc.php');?>
