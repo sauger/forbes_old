@@ -18,5 +18,9 @@
 		include "list2_edit.php";
 	}else if($page->type=="journalist"){
 		include "journalist_edit.php";
+	}else if($page->type=="magazine"){
+		include "magazine_edit.php";
+	}else if($page->type=="activity"){
+		include "activity_edit.php";
 	}
 ?>
