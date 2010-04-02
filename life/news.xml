@@ -1,1 +1,52 @@
-<?xml version="1.0" encoding="utf-8" ?><dataroot><news><new><title>领航资本创始人杨镭</title><shortdesc></shortdesc><date>2010-03-19 15:23:11</date><link>/news/news.php?id=26</link></new><new><title>移动互联网机会来了</title><shortdesc></shortdesc><date>2010-03-19 15:01:10</date><link>/news/news.php?id=25</link></new></news></dataroot>
+<?xml version="1.0" encoding="utf-8" ?> 
+<dataroot>
+	<news>
+		<new>
+			<title>新闻标题1</title>
+			<shortdesc><![CDATA[sinker.cn flash片头之家 欢迎您的访问.]]></shortdesc>
+			<date>01/01/2009</date>
+			<link>http://www.sinker.cn</link>
+		</new>
+<new>
+			<title>新闻标题2</title>
+			<shortdesc><![CDATA[sinker.cn flash片头之家 欢迎您的访问.]]></shortdesc>
+			<date>01/01/2009</date>
+			<link>http://www.sinker.cn</link>
+		</new>
+<new>
+			<title>新闻标题3</title>
+			<shortdesc><![CDATA[<A href="http://www.sinker.cn" target="_blank">flash片头之家</A>  欢迎您的访问.]]></shortdesc>
+			<date>01/01/2009</date>
+			<link>http://www.sinker.cn</link>
+		</new>
+<new>
+			<title>新闻标题4</title>
+			<shortdesc><![CDATA[sinker.cn flash片头之家 欢迎您的访问.]]></shortdesc>
+			<date>01/01/2009</date>
+			<link>http://www.sinker.cn</link>
+		</new>
+<new>
+			<title>新闻标题5</title>
+			<shortdesc><![CDATA[sinker.cn flash片头之家 欢迎您的访问.]]></shortdesc>
+			<date>01/01/2009</date>
+			<link>http://www.sinker.cn</link>
+		</new>
+<new>
+			<title>新闻标题6</title>
+			<shortdesc><![CDATA[sinker.cn flash片头之家 欢迎您的访问.]]></shortdesc>
+			<date>01/01/2009</date>
+			<link>http://www.sinker.cn</link>
+		</new>
+<new>
+			<title>新闻标题7</title>
+			<shortdesc><![CDATA[sinker.cn flash片头之家 欢迎您的访问.]]></shortdesc>
+			<date>01/01/2009</date>
+			<link>http://www.sinker.cn</link>
+		</new>
+<new>
+			<title>新闻标题8</title>
+			<shortdesc><![CDATA[sinker.cn flash片头之家 欢迎您的访问.]]></shortdesc>
+			<date>01/01/2009</date>
+			<link>http://www.sinker.cn</link>
+		</new>
+</news></dataroot>
