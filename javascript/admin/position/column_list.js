@@ -1,7 +1,7 @@
 $(function(){
 	$(".publish").live('click',function(){
 		var ob = $(this);
-		$.post('postion.post.php',{'type':'publish','pid':$("#list_id").val(),'nid':$(this).attr("name"),'p_type':'column'},function(data){
+		$.post('postion.post.php',{'type':'publish','pid':$("#list_id").val(),'nid':$(this).attr("name"),'p_type':$("#p_type").val()},function(data){
 			if(data=='full'){
 				alert('已经达到限制条目，请先删除后再添加');
 			}else{

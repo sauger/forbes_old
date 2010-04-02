@@ -16,14 +16,17 @@
 					return "新闻类别";
 				break;
 				case 'column':
-					return "专栏记者";
+					return "专栏作者";
+				break;
+				case 'journalist':
+					return "采编智库";
 				break;
 				case 'image':
 					return "图片";
 				break;
 				case 'list':
 					return "榜单";
-				break;			
+				break;		
 				default:
 					;
 				break;
