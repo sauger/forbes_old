@@ -15,7 +15,7 @@
 	.inc_list_bottom_border{
 		width:317px;
 		height:4px;
-		line-height:0px;
+		font-size: 4px;
 		background: url('/images/right/list_bottom.jpg');
 	}
 	.inc_list_title{
