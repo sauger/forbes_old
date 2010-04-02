@@ -86,6 +86,10 @@ function static_top(){
 	return write_to_file("{$static_dir}/inc/top.inc.shtml",$content,'w');
 }
 
+function get_news_list_url(){
+	
+}
+
 function static_bottom() {
 	global $static_dir;
 	global $static_url;
