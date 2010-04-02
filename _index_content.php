@@ -315,7 +315,12 @@
 					</div>
 					<div class=bottom>
 						<div class=bottom_l><a href="">我要报名</a></div>
-						<div class=bottom_r><a style="color:#000000;" href="">VC/PE/天使人投资人数据库</a></div>	
+						<?php
+							$record_show = get_news_by_pos('增长俱乐部新闻','首页');
+						?>
+						<div class=bottom_r>
+							<a style="color:#000000;" href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a>
+						</div>	
 					</div>
 			</div>
 			
@@ -340,7 +345,12 @@
 					</div>
 					<div class=bottom>
 						<div class=bottom_l><a href="">城市榜</a></div>
-						<div class=bottom_r><a style="color:#000000;" href="">太仓：被低估的商业城市</a></div>	
+						<?php
+							$record_show = get_news_by_pos('城市新闻','首页');
+						?>
+						<div class=bottom_r>
+							<a style="color:#000000;" href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a>
+						</div>	
 					</div>
 			</div>
 		</div>

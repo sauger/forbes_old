@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>富豪编辑</title>
+	<title></title>
 	<?php 
 		require_once('../../frame.php');
 		judge_role();
@@ -48,6 +48,8 @@
 					<option <?php if($record->type=='journalist')echo 'selected="selected"'?> value=journalist>采编智库</option>
 					<option <?php if($record->type=='image')echo 'selected="selected"'?> value="image">图片</option>
 					<option <?php if($record->type=='list')echo 'selected="selected"'?> value="list">榜单</option>
+					<option <?php if($record->type=='magazine')echo 'selected="selected"'?> value="magazine">杂志</option>
+					<option <?php if($record->type=='activity')echo 'selected="selected"'?> value="activity">活动</option>
 				</select>
 			</td>
 		</tr>

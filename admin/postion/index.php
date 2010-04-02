@@ -26,7 +26,13 @@
 				break;
 				case 'list':
 					return "榜单";
-				break;		
+				break;
+				case 'magazine':
+					return "杂志";
+				break;	
+				case 'activity':
+					return "活动";
+				break;			
 				default:
 					;
 				break;
