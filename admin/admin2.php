@@ -1,5 +1,59 @@
 <?php
-	require_once('../../frame.php');
+	require_once('../frame.php');
+	require_role('admin');
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+	<meta http-equiv=Content-Language content=zh-CN>
+	<title>Manage : Forbeschina</title>
+	<?php	
+		css_include_tag('admin2','colorbox');
+		use_jquery();
+		js_include_tag('jquery.cookie.js', 'pubfun','jquery.colorbox-min');
+  ?>
+</head>
+<body>
+<div id=ibody >
+		<div id=top>
+			<div id=site><?php echo $site_name; ?>后台管理</div>
+			<div id=login>欢迎你：  <?php echo $_SESSION["admin_nick_name"]; ?> [<a href="/login/logout.post.php">退出</a>]</div>
+		</div>
+		<div id=nav1>
+				<div class=nav1_menu><a href="">位置管理</a></div>		
+				<div class=nav1_menu>内容管理</div>		
+				<div class=nav1_menu>榜单管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+				<div class=nav1_menu>位置管理</div>		
+		</div>
+		
+		<div id=nav2>
+				<div class=nav2_menu>榜单管理</div>		
+				<div class=nav2_menu>位置管理</div>		
+				<div class=nav2_menu>位置管理</div>		
+				<div class=nav2_menu>位置管理</div>		
+				<div class=nav2_menu>位置管理</div>				
+		
+		</div>
+
+
+
+
+
+
+<?php
 	judge_role();
 	$category = new category_class('news');
 	$title = $_REQUEST['title'];
@@ -28,26 +82,13 @@
 	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'created_at desc,category_id'),30);
 ?>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-	<meta http-equiv=Content-Language content=zh-CN>
-	<title>发布新闻</title>
-	<?php
-		css_include_tag('admin');
-		use_jquery();
-		js_include_tag('admin_pub','category_class','admin/pub/search','admin/news/news_list');
-		$category->echo_jsdata();		
-	?>
-</head>
-
-<body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="5">　
-				<a href="news_edit.php" id="add_news">发布新闻</a>
-				<input style="margin-left:20px" class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
+ <div id=admin_content>
+		<div class=caption>
+				<div id=title>文章管理</div>
+				<a href="" id=btn_add></a>
+		</div>
+		<div class=tt>
+				<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
 				<span id="span_category"></span><select id=adopt name="adopt" style="width:90px" class="sau_search">
 					<option value="">发布状况</option>
 					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已发布</option>
@@ -62,10 +103,13 @@
 				</select>
 				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
-			</td>
-		</tr>
+
+			
+		</div>
+
+	<table width="986" border="0" id="list" align="center" cellspacing="1" bgcolor="#e7e7e7">
 		<tr class="tr2">
-			<td width="395">标题</td><td width="120">所属类别</td><td width="130">发布时间</td><td width="150">操作</td>
+			<td width="55%">标题</td><td width="15%">所属类别</td><td width="15%">发布时间</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -116,25 +160,50 @@
 			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority style="display:none">清空优先级</button>　<button id=edit_priority  style="display:none">编辑优先级</button><input type="hidden" id="relation" value="news"><input type="hidden" id="db_table" value="<?php echo $tb_news;?>"></td>
 		</tr>
 	</table>
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</div>
 </body>
 </html>
-
 <script>
-	$(function(){
-		category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){
-			$('#category').val(id);
-			var category_id = $('.category_select:last').val();
-			if(category_id <= 0){
-				var count = $('.category_select').length;
-				for(var i=count-1;i>=0;i--){
-					if($('.category_select:eq(' + i +')').val() > 0 ){
-						category_id = $('.category_select:eq(' + i +')').val();
-						break;
-					}
-				}
-			}
-			$('#search_category').val(category_id);
-			search_news();
-		});
+$(function(){
+	$(".nav1_menu").mouseover(function(e){
+		 $(".nav1_menu").css("font-weight","normal");
+		 $(".nav1_menu").css("border-left","1px solid #ffffff");
+		 $(".nav1_menu").css("border-right","1px solid #d8d8d8");
+		 $(".nav1_menu").css("background","#f0f0f0");
+
+		 $(this).css("font-weight","bold");
+		 $(this).css("border-left","1px solid #6D9D2E");
+		 $(this).css("border-right","1px solid #6D9D2E");
+		 $(this).css("background","#E7EDDF");
+
 	});
+	
+	$(".tr3").mouseover(function(e){
+		 $(".tr3").css("background","#ffffff");
+		 $(this).css("background","#f9f9f9");
+	});	
+
+	$(".tr3").mouseout(function(e){
+		 $(".tr3").css("background","#ffffff");
+	});		
+
+});
 </script>
+
+
+
