@@ -187,8 +187,8 @@ $(function(){
 		 $(".nav1_menu").css("background","#f0f0f0");
 
 		 $(this).css("font-weight","bold");
-		 $(this).css("border-left","1px solid #6D9D2E");
-		 $(this).css("border-right","1px solid #6D9D2E");
+		 $(this).css("border-left","1px solid #E7EDDF");
+		 $(this).css("border-right","1px solid #E7EDDF");
 		 $(this).css("background","#E7EDDF");
 
 	});

@@ -13,19 +13,19 @@ a{text-decoration:none; color:black;}
 #login #btn #botton{width:75px; height:27px; border:1px solid #77A0AB; background:#C5E4EB; text-align:center; float:left; display:inline;}
 
 #ibody{width:1000px; margin:0 auto;}
-#top{width:1000px; height:54px; background:url(/images/admin/top.jpg) repeat-x; float:left; display:inline;}
-#top #site{width:600px; height:25px; margin-top:10px; margin-left:10px; font-size:25px; font-weight:bold; color:#ffffff; float:left; display:inline;}
+#top{width:1000px; height:54px; margin-top:5px; background:url(/images/admin/top.jpg) repeat-x; float:left; display:inline;}
+#top #site{width:600px; height:25px; margin-top:12px; margin-left:10px; font-size:25px; font-weight:bold; color:#ffffff; float:left; display:inline;}
 #top #login{width:360px; height:30px; text-align:right; margin-top:20px; margin-right:15px; color:#ffffff; float:right; display:inline;}
 #top #login a{color:#ffffff; text-decoration:none;}
 #top #index{width:100px; float:right; display:inline;}
 #top #index a{color:#0000ff; text-decoration:underline;}
 
-#nav1{width:996px; background:#f0f0f0; border-left:2px solid #cccccc; border-right:2px solid #cccccc; float:left; display:inline;}
+#nav1{width:996px; background:#f0f0f0; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; float:left; display:inline;}
 .nav1_menu{width:81px; height:23px; padding-top:5px; text-align:center; line-height:20px; border-top:1px solid #ffffff; border-bottom:1px solid #d8d8d8; border-left:1px solid #ffffff; border-right:1px solid #d8d8d8; cursor:pointer; float:left; display:inline;}
-#nav2{width:996px; height:20px; background:#ffffff; padding-bottom:5px;  border-left:2px solid #cccccc; border-right:2px solid #cccccc; float:left; display:inline;}
+#nav2{width:996px; height:20px; background:#ffffff; padding-bottom:5px;  border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; float:left; display:inline;}
 .nav2_menu{width:83px; height:15px; margin-top:5px; color:#0000ff; text-align:center; line-height:15px; float:left; display:inline;}
 
-#admin_content{width:996px; padding-top:10px; text-align:center; background:#ffffff; border-top:1px solid #cccccc; border-left:2px solid #cccccc; border-right:2px solid #cccccc; float:left; display:inline; }
+#admin_content{width:996px; padding-top:10px; text-align:center; background:#ffffff; border-top:1px solid #cccccc; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; float:left; display:inline; }
  
 
 #part2{width:150px; height:1000px; background:#E1F0F7; border-right:5px solid #A0CBEE; float:left; display:inline;}
