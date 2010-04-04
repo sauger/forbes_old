@@ -45,7 +45,6 @@
 				<div class=nav2_menu>位置管理</div>		
 				<div class=nav2_menu>位置管理</div>		
 				<div class=nav2_menu>位置管理</div>				
-		
 		</div>
 
 
@@ -180,7 +179,7 @@
 </html>
 <script>
 $(function(){
-	$(".nav1_menu").mouseover(function(e){
+	$(".nav1_menu").click(function(e){
 		 $(".nav1_menu").css("font-weight","normal");
 		 $(".nav1_menu").css("border-left","1px solid #ffffff");
 		 $(".nav1_menu").css("border-right","1px solid #d8d8d8");
