@@ -11,48 +11,39 @@
 	<?php	
 		css_include_tag('admin2','colorbox');
 		use_jquery();
-		js_include_tag('jquery.cookie.js', 'pubfun','jquery.colorbox-min');
+		js_include_tag('jquery.cookie.js', 'pubfun','jquery.colorbox-min','admin/admin2');
+		$db = get_db();
+		$main_menus = $db->query("select * from fb_admin_menu where parent_id =0 order by priority asc");
+		$sub_menus = $db->query("select * from fb_admin_menu where parent_id !=0 order by parent_id, priority asc");
   ?>
 </head>
 <body>
 <div id=ibody >
+		<div id="test"></div>
 		<div id=top>
 			<div id=site><?php echo $site_name; ?>后台管理</div>
 			<div id=login>欢迎你：  <?php echo $_SESSION["admin_nick_name"]; ?> [<a href="/login/logout.post.php">退出</a>]</div>
 		</div>
 		<div id=nav1>
-				<div class=nav1_menu><a href="">位置管理</a></div>		
-				<div class=nav1_menu>内容管理</div>		
-				<div class=nav1_menu>榜单管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
-				<div class=nav1_menu>位置管理</div>		
+			<?php 
+				//get the menu id and sub menu_id
+				$main_menu_id = $_REQUEST['main_menu_id'] ? $_REQUEST['main_menu_id'] : $main_menus[0]->id;
+				$sub_menu_id = $_REQUEST['sub_menu_id'] ? $_REQUEST['sub_menu_id'] : $sub_menus[0]->id;
+				foreach($main_menus as $val){
+			?>
+				<div class="nav1_menu" id="menu_item_<?php echo $val->id;?>"><?php echo $val->name;?></div>
+			<?php }?>		
+			<input type="hidden" id="main_menu_id" value="<?php echo $main_menu_id;?>"></input>
 		</div>
 		
 		<div id=nav2>
-				<div class=nav2_menu>榜单管理</div>		
-				<div class=nav2_menu>位置管理</div>		
-				<div class=nav2_menu>位置管理</div>		
-				<div class=nav2_menu>位置管理</div>		
-				<div class=nav2_menu>位置管理</div>				
-		
+			<?php 
+				foreach($main_menus as $val){
+			?>
+				<div class="nav2_menu" parent_id="<?php echo $val->parent_id;?>" id="menu_item_<?php echo $val->id;?>"><?php echo $val->name;?></div>
+			<?php }?>
+			<input type="hidden" id="sub_menu_id" value="<?php echo $sub_menu_id;?>"></input>		
 		</div>
-
-
-
-
-
-
 <?php
 	judge_role();
 	$category = new category_class('news');
@@ -178,32 +169,3 @@
 </div>
 </body>
 </html>
-<script>
-$(function(){
-	$(".nav1_menu").mouseover(function(e){
-		 $(".nav1_menu").css("font-weight","normal");
-		 $(".nav1_menu").css("border-left","1px solid #ffffff");
-		 $(".nav1_menu").css("border-right","1px solid #d8d8d8");
-		 $(".nav1_menu").css("background","#f0f0f0");
-
-		 $(this).css("font-weight","bold");
-		 $(this).css("border-left","1px solid #E7EDDF");
-		 $(this).css("border-right","1px solid #E7EDDF");
-		 $(this).css("background","#E7EDDF");
-
-	});
-	
-	$(".tr3").mouseover(function(e){
-		 $(".tr3").css("background","#ffffff");
-		 $(this).css("background","#f9f9f9");
-	});	
-
-	$(".tr3").mouseout(function(e){
-		 $(".tr3").css("background","#ffffff");
-	});		
-
-});
-</script>
-
-
-
