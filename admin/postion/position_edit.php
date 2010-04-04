@@ -24,12 +24,14 @@
 	}
 ?>
 
-<body style="background:#E1F0F7">
+<body>
+<div id=icaption>
+    <div id=title><?php if($id!='')echo "编辑位置";else echo "添加位置";?></div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=itable>
 	<form id="industry" action="edit.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　 <?php if($id!='')echo "编辑位置";else echo "添加位置";?> <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
-		</tr>
+	<table cellspacing="1" border="0">
 		<tr class=tr4>
 			<td class=td1>位置名称</td>
 			<td width="665"><input type="text" name="name" value="<?php echo $record->name;?>"></td>
@@ -41,7 +43,7 @@
 		<tr class=tr4>
 			<td class=td1>内容类型</td>
 			<td>
-				<select name="type" style="width:155px;">
+				<select name="type">
 					<option <?php if($record->type=='news')echo 'selected="selected"'?> value="news">新闻</option>
 					<option <?php if($record->type=='category')echo 'selected="selected"'?> value="category">新闻类别</option>
 					<option <?php if($record->type=='column')echo 'selected="selected"'?> value="column">专栏作者</option>
@@ -54,11 +56,14 @@
 			</td>
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+			<td colspan="2" width="795" align="center">
+				<input id="submit" type="submit" value="完成">
+				<input type="hidden" name="id" id="id"  value="<?php echo $record->id;?>">
+				<input type="hidden" name="pid"  value="<?php echo $pid;?>">
+			</td>
 		</tr>	
 	</table>
-		<input type="hidden" name="id" id="id"  value="<?php echo $record->id;?>">
-		<input type="hidden" name="pid"  value="<?php echo $pid;?>">
 	</form>
+</div>	
 </body>
 </html>
