@@ -1,0 +1,72 @@
+body{font-family:宋体; font-size:12px; color:#000000; background:url(/images/admin/bg.jpg) repeat-x; margin:0px; padding:0px;}
+td{word-break:break-all}
+
+a{text-decoration:none; color:black;}
+
+#main{width:100%; height:550px; float:left; display:inline;}
+#login{width:274px; height:300px; margin:0 auto; margin-top:80px;}
+#login #title{width:180px; height:50px; text-align:center; font-weight:bold; font-size:25px; color:#ffffff; margin:0 auto;}
+#login #box{width:274px; height:170px; margin-top:30px; background:url(/images/admin_login.jpg) no-repeat; border:1px solid #0066FF; float:left; display:inline;}
+#login #name{width:220px; height:25px; margin-top:50px; margin-left:20px; float:left; display:inline;}
+#login #pwd{width:220px; height:25px; margin-top:10px; margin-left:20px; float:left; display:inline;}
+#login #btn{width:220px; height:25px; margin-top:10px; margin-left:20px; text-align:center; line-height:15px; float:left; display:inline;}
+#login #btn #botton{width:75px; height:27px; border:1px solid #77A0AB; background:#C5E4EB; text-align:center; float:left; display:inline;}
+
+#ibody{width:1000px; margin:0 auto;}
+#top{width:1000px; height:54px; margin-top:5px; background:url(/images/admin/top.jpg) repeat-x; float:left; display:inline;}
+#top #site{width:600px; height:25px; margin-top:12px; margin-left:10px; font-size:25px; font-weight:bold; color:#ffffff; float:left; display:inline;}
+#top #login{width:360px; height:30px; text-align:right; margin-top:20px; margin-right:15px; color:#ffffff; float:right; display:inline;}
+#top #login a{color:#ffffff; text-decoration:none;}
+#top #index{width:100px; float:right; display:inline;}
+#top #index a{color:#0000ff; text-decoration:underline;}
+
+#nav1{width:996px; background:#f0f0f0; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; float:left; display:inline;}
+.nav1_menu{width:81px; height:23px; padding-top:5px; text-align:center; line-height:20px; border-top:1px solid #ffffff; border-bottom:1px solid #d8d8d8; border-left:1px solid #ffffff; border-right:1px solid #d8d8d8; cursor:pointer; float:left; display:inline;}
+#nav2{width:996px; height:20px; background:#ffffff; padding-bottom:5px;  border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; float:left; display:inline;}
+.nav2_menu{width:83px; height:15px; margin-top:5px; color:#0000ff; text-align:center; line-height:15px; float:left; display:inline;}
+
+#admin_content{width:996px; padding-top:10px; text-align:center; background:#ffffff; border-top:1px solid #cccccc; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; float:left; display:inline; }
+ 
+
+#part2{width:150px; height:1000px; background:#E1F0F7; border-right:5px solid #A0CBEE; float:left; display:inline;}
+#part2 .menu1{width:150px; height:20px; padding-top:5px; background:none; font-size:15px; color:#333333; font-weight:bold;  border-bottom:1px solid #cccccc; text-align:center; cursor:pointer; float:left; display:inline;}
+#part2 .menu1 a{text-decoration:none; color:#333333;}
+#part2 .menu2{width:150px; height:20px; padding-top:5px; font-size:13px; text-align:center; cursor:pointer; background:#ffffff; float:left; display:none;}
+#part2 .menu2 a{text-decoration:none; color:#000;}
+#part2 .menus{float:left; width:150px;}
+
+#part3{width:998px; height:1000px; text-align:center; border:2px solid #f9f9f9; float:left; display:inline;}
+#part4{width:980px; height:80px;  background:url(/images/bottom_bg.jpg) repeat-x;  float:left; display:inline;}
+
+.caption{width:964px; height:25px; margin-left:5px; padding:10px; font-weight:bold; font-size:14px; text-align:left; border:1px dotted #cdcdcd; background:#FBFBFB; float:left; display:inline;}
+.caption #title{width:300px; color:#0B55C4; font-size:23px; float:left; display:inline;}
+.caption #btn_add{width:32px; height:32px; background:url(/images/btn_add_b.png) no-repeat; float:right; display:inline;}
+.tt{width:964px; height:25px; margin-top:10px; margin-left:5px; text-align:left; float:left; display:inline}
+.tt input{float:left; display:inline}
+.tt select{float:left; display:inline}
+
+.tr2{height:25px; font-weight:bold; font-size:12px; color:#666666; text-align:center; background:#f0f0f0;}
+.tr2 td{border-bottom:1px solid #999999;}
+.tr3{height:30px; text-align:center; font-size:12px; line-height:15px;  background:#ffffff; }
+.tr3 td{text-align:center; padding-left:5px;}
+.sub_menu li{margin-left:25px;}
+.tr3 input{width:230px;}
+.tr4{height:22px; text-align:left; font-size:12px; line-height:15px; background:#f9f9f9;}
+
+.td1{width:130px; font-size:12px; text-align:left; text-indent:24px;}
+
+.priority{width:50px;}
+
+.pages A{color:#0000FF;}
+
+.newsselect{font-size:0;}
+.newsselect select{width:150px; margin-left:12px;}
+
+.v_box{width:180px; margin-top:10px; margin-left:15px; text-align:center;  float:left; display:inline;}
+.v_box .content{width:180px; height:20px; line-height:20px; overflow:hidden; text-align:center; float:left; display:inline;}
+
+.div_box{width:795px; float:left; display:inline;}
+label.error{color:red;}
+.hidden_input{width:1px; height:1px; font-size:0px; line-height:0px; float:left; display:inline;}
+
+
