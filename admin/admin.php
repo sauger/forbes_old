@@ -35,6 +35,7 @@
 			<?php foreach($sub_menus as $val){	?>
 			<div class="nav2_menu nav2_menu_<?php echo $val->parent_id;?>" param_href="<?php echo $val->href;?>"><?php echo $val->name;?></div>
 			<?php }?>
+			<div id=nav2_index><a href="/index.php" target="_blank">动态首页</a></div>
 		</div>
 		<div id="admin_content">
 		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="/admin/news/news_list.php" width="996" height="1200px"></iframe>
@@ -55,8 +56,8 @@ $(function(){
 		 $(this).css("border-right","1px solid #E7EDDF");
 		 $(this).css("background","#E7EDDF");
 
-		 $("#nav2").hide();
 		 $(".nav2_menu").hide();
+		 $(".nav2_menu").css("color","#0000ff");
 		 
 		 var param_id=$(this).attr("param_id");
 		 var param_href=$(this).attr("param_href");
@@ -64,7 +65,6 @@ $(function(){
 
 		 if(param_target=="#")
 		 {
-			 $("#nav2").show();
 			 $(".nav2_menu_"+param_id).show();
 	 	
 		 };

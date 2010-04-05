@@ -18,7 +18,7 @@
 	$category = new category_class('news');
 	$category->echo_jsdata();
 ?>
-<body style="background:#E1F0F7">
+<body>
 	<?php 
 		$id = $_REQUEST['id'];
 		$news = new table_class($tb_news);	

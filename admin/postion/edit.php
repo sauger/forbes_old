@@ -31,9 +31,8 @@
 <div id=itable>
 	<form id="industry" action="edit.post.php" method="post"> 
 	<table cellspacing="1" border="0">
-
 		<tr class=tr4>
-			<td width="15%">页面名称</td>
+			<td width="15%" class=td1>页面名称</td>
 			<td width="85%"><input type="text" name="name" value="<?php echo $record->name;?>">
 		</tr>
 		<tr class="tr3">

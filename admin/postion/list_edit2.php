@@ -28,8 +28,17 @@
 	}
 ?>
 
-<body style="background:#E1F0F7">
-	<form id="industry" action="list_edit.post.php" method="post"> 
+<body>
+<div id=icaption>
+    <div id=title>位置管理</div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=itable>	
+
+</div>	
+	
+	
+		<form id="industry" action="list_edit.post.php" method="post"> 
 	<table width="795" border="0">
 		<tr class=tr1>
 			<td colspan="2" width="795">　　选择类别 <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>

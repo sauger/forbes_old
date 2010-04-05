@@ -24,9 +24,10 @@ a{text-decoration:none; color:black;}
 #nav1 .selected{font-weight: bold;border-left:1px solid: #E7EDDF; border-right:1px solid #E7EDDF;background:#E7EDDF;}
 .nav1_menu{width:81px; height:23px; padding-top:5px; text-align:center; line-height:20px; border-top:1px solid #ffffff; border-bottom:1px solid #d8d8d8; border-left:1px solid #ffffff; border-right:1px solid #d8d8d8; cursor:pointer; float:left; display:inline;}
 
-#nav2{width:996px; height:20px; background:#ffffff; padding-bottom:5px;  border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; float:left; display:none}
+#nav2{width:996px; height:20px; background:#ffffff; padding-bottom:5px;  border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; float:left; display:inline}
 .nav2_menu{width:83px; height:15px; margin-top:5px; color:#0000ff; text-align:center; line-height:15px; cursor:pointer; float:left; display:none;}
-#nav2 .selected a{color:red;}
+#nav2_index{width:50px; height:15px; margin-top:5px; margin-right:10px; line-height:15px;  float:right; display:inline;}
+#nav2_index a{color:#ff0000;}
 
 #admin_content{width:996px; padding-top:10px; text-align:center; background:#ffffff; border-top:1px solid #cccccc; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; border-bottom:2px solid #A0CBEE;  float:left; display:inline; }
 
@@ -50,9 +51,10 @@ table{width:986px; border:none; text-align:center; background:#e7e7e7;}
 .tr3{height:28px; text-align:center; font-size:12px; line-height:15px;  background:#ffffff;}
 .tr3 td{text-align:center;}
 
-.tr4{height:28px; text-align:left; font-size:12px; text-indent:24px; line-height:15px; background:#ffffff;}
-.tr4 input{width:300px; margin-left:24px;}
-.tr4 select{width:306px; margin-left:24px;}
+.tr4{height:28px; text-align:left; font-size:12px; line-height:20px; background:#ffffff;}
+.tr4 .td1{text-align:left; text-indent:24px;}
+.tr4 input{width:300px; float:left; display:inline}
+.tr4 select{width:306px; float:left; display:inline}
 
 
 
@@ -64,7 +66,6 @@ table{width:986px; border:none; text-align:center; background:#e7e7e7;}
 .tr3 input{width:230px;}
 .tr3.selected{background: #f9f9f9}
 
-.td1{width:130px; font-size:12px; text-align:left; text-indent:24px;}
 
 .priority{width:50px;}
 

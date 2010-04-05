@@ -24,15 +24,17 @@
 	?>
 </head>
 
-<body style="background:#E1F0F7">
+<body>
+<div id=icaption>
+    <div id=title>选择类别</div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=itable>	
 	<form id="industry" action="list_edit.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　  选择类别 <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
-		</tr>
+	<table cellspacing="1" align="center">
 		<tr class=tr4>
-			<td class=td1>位置名称</td>
-			<td width="665"><?php echo $record->name;?>
+			<td width="15%" class=td1>位置名称</td>
+			<td width="85%"><?php echo $record->name;?>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>选择类别</td>
@@ -51,6 +53,7 @@
 	</table>
 
 	</form>
+</div>	
 </body>
 </html>
 

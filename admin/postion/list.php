@@ -28,6 +28,15 @@
 </head>
 
 <body>
+<div id=icaption>
+    <div id=title>位置管理</div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=itable>	
+
+</div>	
+	
+	
 	<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="3">
