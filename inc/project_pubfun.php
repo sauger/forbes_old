@@ -150,4 +150,41 @@ function static_news($news,$symbol='fck_pageindex',$en = false){
 	return true;
 }
 
+class PosItemClass{
+
+}
+
+function get_page_items($page){
+	$pos_items = new PosItemClass();
+	$pos = new table_class('fb_page_pos');
+	$pos = $pos->find('all',array('conditions' => "page_name='{$page}'"));
+	if(empty($pos)) $pos = array();
+	foreach ($pos as $v){
+		$key = $v->name;
+		$pos_items->$key = $v;
+	}
+	return $pos_items;
+}
+
+function init_page_items(){
+	$page_name = basename($_SERVER['PHP_SELF']);
+	$page_name = explode('.',$page_name);
+	$page_name = $page_name[0];	
+	global $pos_items;
+	$pos_items = get_page_items($page_name);
+	global $page_type;
+	$page_type = $page_type ? $page_type : $_REQUEST['page_type'];
+	if(empty($page_type)){
+		$page_type= 'dynamic';
+	}
+	if($page_type == 'static'){
+		foreach($pos_items as $val){
+			$val->href = $val->static_href;
+		}
+	}
+	if($page_type == 'admin'){
+		js_include_tag('admin/page_admin');	
+	}
+}
+
 ?>

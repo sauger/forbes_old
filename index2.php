@@ -21,40 +21,33 @@
 		function get_news_url($news){
 			return dynamic_news_url($news);
 		}
-		class PosItemClass{
-			
-		}
-		$pos_items = new PosItemClass();
-		$pos = new table_class('fb_page_pos');
-		$pos = $pos->find('all',array('conditions' => "page_name='index2'"));
-		if(empty($pos)) $pos = array();
-		foreach ($pos as $v){
-			$key = $v->name;
-			$pos_items->$key = $v;
-		}
+		//$pos_items = get_page_items('index2');
+		init_page_items();
 	?>
 		<div id=forbes_tlt>
 			<?php $record_show = get_news_by_pos('每日头条');	?>
   		<div id=headline>
-				<div class=headline_pic id=headline_pic_0 pos="index2_hl_p_0"><a href="<?php echo $pos_items->index2_hl_p_0->href;?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->index2_hl_p_0->image0; ?>"></a></div>
-				<?php for($i=1;$i<4;$i++){?>
-				<div class=headline_pic id="headline_pic_<?php echo $i;?>" style="display:none;"><a href="<?php echo get_news_url($record_show[$i]);?>"><img border=0 width=300 height=200 src="<?php echo $record_show[$i]->video_photo_src; ?>"></a></div>
+				<div class=headline_pic id=headline_pic_0><a href="<?php echo $pos_items->index2_hl_0->href;?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->index2_hl_0->image1; ?>"></a></div>
+				<?php for($i=1;$i<4;$i++){
+					$pos_name = "index2_hl_{$i}";
+				?>
+				<div class=headline_pic id="headline_pic_<?php echo $i;?>" style="display:none;"><a href="<?php echo $pos_items->$pos_name->href;?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->$pos_name->image1; ?>"></a></div>
 				<?php }?>
 				<div id=headline_content>
-					<div class=headline_title id=headline_title_0><a href="<?php echo get_news_url($record_show[0]);?>"><?php echo $record_show[0]->short_title; ?></a></div>
-					<div class=headline_title id=headline_title_1 style="display:none;"><a href="<?php echo get_news_url($record_show[1]);?>"><?php echo $record_show[1]->short_title; ?></a></div>
-					<div class=headline_title id=headline_title_2 style="display:none;"><a href="<?php echo get_news_url($record_show[2]);?>"><?php echo $record_show[2]->short_title; ?></a></div>
-					<div class=headline_title id=headline_title_3 style="display:none;"><a href="<?php echo get_news_url($record_show[3]);?>"><?php echo $record_show[3]->short_title; ?></a></div>
-					<div class=headline_description id=headline_description_0><?php echo $record_show[0]->description; ?></div>
-					<div class=headline_description id=headline_description_1 style="display:none;"><?php echo strip_tags($record_show[1]->description); ?></div>
-					<div class=headline_description id=headline_description_2 style="display:none;"><?php echo strip_tags($record_show[2]->description); ?></div>
-					<div class=headline_description id=headline_description_3 style="display:none;"><?php echo strip_tags($record_show[3]->description); ?></div>
+					<div class=headline_title id=headline_title_0 pos="index2_hl_0"><a href="<?php echo $pos_items->index2_hl_0->href;?>"><?php echo $pos_items->index2_hl_0->display; ?></a></div>
+					<div class=headline_title id=headline_title_1 style="display:none;" pos="index2_hl_1"><a href="<?php echo $pos_items->index2_hl_1->href;?>"><?php echo $pos_items->index2_hl_1->display; ?></a></div>
+					<div class=headline_title id=headline_title_2 style="display:none;" pos="index2_hl_2"><a href="<?php echo $pos_items->index2_hl_2->href;?>"><?php echo $pos_items->index2_hl_2->display; ?></a></div>
+					<div class=headline_title id=headline_title_3 style="display:none;" pos="index2_hl_3"><a href="<?php echo $pos_items->index2_hl_3->href;?>"><?php echo $pos_items->index2_hl_3->display; ?></a></div>
+					<div class=headline_description id=headline_description_0><?php echo $pos_items->index2_hl_0->description; ?></div>
+					<div class=headline_description id=headline_description_1 style="display:none;"><?php echo $pos_items->index2_hl_1->description; ?></div>
+					<div class=headline_description id=headline_description_2 style="display:none;"><?php echo $pos_items->index2_hl_2->description; ?></div>
+					<div class=headline_description id=headline_description_3 style="display:none;"><?php echo $pos_items->index2_hl_3->description; ?></div>
 					
-			    <?php for($j=0;$j<=3;$j++){?>	
+			    	<?php for($j=0;$j<=3;$j++){?>	
 					<div class=headline_related id=headline_related_<?php echo $j?> <?php if($j<>0){echo "style='display:none'";}?> >
 					<?php				
 					 		$sub_news_str=explode(",",$record_show[$j]->sub_headline); 
-				  		$sub_news_str_num=sizeof($sub_news_str)-1;
+				  			$sub_news_str_num=sizeof($sub_news_str)-1;
 
 							for($i=0;$i<$sub_news_str_num;$i++)
 							{
