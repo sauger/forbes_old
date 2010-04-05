@@ -64,7 +64,7 @@
 
 		<tr class=tr4>
 			<td class=td1>分　类</td>
-			<td class="newsselect1" >
+			<td class="category_select">
 				<span id="span_category"></span>
 				<a href="#" id="copy_news" style="color:blue">复制到其他分类</a>
 			</td>
@@ -79,7 +79,7 @@
 		</tr>		
 		<tr class=tr4>
 			<td  class=td1>作　者</td>
-			<td class="newsselect1">
+			<td>
 				<input type="text" style="width:200px" name="news[author]" id="news_author" value="<?php echo ($news->author ? $news->author : $_SESSION['admin_nick_name']);?>"></input>
 				<select name="news[author_type]" id="news_author_type" style="width:200px">
 					<option value="1" <?php if($news->author_type == 1) echo " selected='selected'"?>>采编智库</option>
@@ -176,17 +176,17 @@
 			</td>
 		</tr>
 
-		<tr id=newsshow1  class="normal_news tr4">
-			<td class=td1 height=120>英文来源</td><td><?php show_fckeditor('news[top_info]','Admin',false,"80",$news->top_info);?></td>
+		<tr class="tr4">
+			<td class=td1>英文来源</td><td><?php show_fckeditor('news[top_info]','Admin',false,"100",$news->top_info);?></td>
 		</tr>
-		<tr id=newsshow1  class="normal_news tr4">
-			<td  class=td1 height=120>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"80",$news->description);?></td>
+		<tr class="tr4">
+			<td  class=td1>简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"100",$news->description);?></td>
 		</tr>
-		<tr id=newsshow1 class="normal_news tr4">
-			<td  class=td1 height=215>新闻内容</td><td><?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?></td>
+		<tr class="tr4">
+			<td  class=td1>新闻内容</td><td><?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?></td>
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center">
+			<td colspan="2" align="center">
 				<input id="submit" type="submit" value="发布新闻">
 				<input type="hidden" name="news[category_id]" id="category_id" value="<?php echo $news->category_id;?>">
 				<input type="hidden" name="news[image_flag]" value="<?php echo $news->image_flag;?>" id="hidden_image_flag">

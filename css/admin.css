@@ -32,7 +32,7 @@ a{text-decoration:none; color:black;}
 #admin_content{width:996px; padding-top:10px; text-align:center; background:#ffffff; border-top:1px solid #cccccc; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; border-bottom:2px solid #A0CBEE;  float:left; display:inline; }
 
 #icaption{width:964px; height:25px; margin-left:5px; padding:10px; font-weight:bold; font-size:14px; text-align:left; border:1px dotted #cdcdcd; background:#FBFBFB; float:left; display:inline;}
-#icaption #title{width:300px; color:#0B55C4; font-size:23px; float:left; display:inline;}
+#icaption #title{width:800px; color:#0B55C4; font-size:23px; float:left; display:inline;}
 #icaption #btn_add{width:32px; height:32px; background:url(/images/btn_add_b.png) no-repeat; float:right; display:inline;}
 #icaption #btn_back{width:32px; height:32px; background:url(/images/btn_back_b.png) no-repeat; float:right; display:inline;}
 
@@ -55,6 +55,8 @@ table{width:986px; border:none; text-align:center; background:#e7e7e7;}
 .tr4 .td1{text-align:left; text-indent:24px;}
 .tr4 input{width:300px; float:left; display:inline}
 .tr4 select{width:306px; float:left; display:inline}
+.tr4 .category_select select{width:206px; float:left; display:inline}
+
 
 
 
