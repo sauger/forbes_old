@@ -1,5 +1,17 @@
+parent.$("#admin_iframe").attr("height","1200px");
+
 $(function(){
-		$(".del").click(function(){
+	$(".tr3").mouseover(function(e){
+		 $(".tr3").css("background","#ffffff");
+		 $(this).css("background","#f9f9f9");
+	});	
+
+	$(".tr3").mouseout(function(e){
+		 $(".tr3").css("background","#ffffff");
+	});		
+
+
+	$(".del").click(function(){
 			if(!window.confirm("确定要删除吗"))
 			{
 				return false;

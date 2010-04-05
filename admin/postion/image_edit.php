@@ -49,20 +49,21 @@
 	?>
 </head>
 <body>
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="5" width="795">　自定义图片<a href="index.php"><img src="/images/btn_back.png" border=0></a>
-			<input style="margin-left:20px" class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
-				<span id="span_category"></span><select id=adopt name="adopt" style="width:90px" class="sau_search">
-					<option value="">加入状况</option>
-					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已加入</option>
-					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未加入</option>
-				</select>
-				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
-				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
-			</td>
-		</tr>
-	</table>
+<div id=icaption>
+    <div id=title>自定义图片</div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=isearch>	
+		<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
+		<span id="span_category"></span>
+		<select id=adopt name="adopt" style="width:90px" class="sau_search">
+				<option value="">加入状况</option>
+				<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已加入</option>
+				<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未加入</option>
+		</select>
+		<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
+		<input type="button" value="搜索" id="search_button">
+</div>
 	<div class="div_box">
 		<?php for($i=0;$i<count($images);$i++){?>
 		<div class=v_box id="<?php echo $images[$i]->id;?>">

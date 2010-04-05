@@ -28,16 +28,18 @@
 </head>
 
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="6">
-				　自定义活动<a href="index.php"><img src="/images/btn_back.png" border=0></a>   搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="200">活动名称</td><td width="100">举办地</td><td width="140">举办时间</td><td width="150">详细页面</td><td width="200">操作</td>
+<div id=icaption>
+    <div id=title>自定义活动</div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=isearch>	
+		<input id="search" type="text" value="<? echo $_REQUEST['search']?>">
+		<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class="itable_title">
+			<td width="20%">活动名称</td><td width="20%">举办地</td><td width="20%">举办时间</td><td width="20%">详细页面</td><td width="20%">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -65,13 +67,12 @@
 		<?php
 			}
 		?>
-		<input type="hidden" id="db_table" value="fb_activity">
 			<tr class="tr3">
-				<td colspan=6><button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"><input type="hidden" id="p_type" value="activity"></td>
+				<td colspan=6><button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"><input type="hidden" id="p_type" value="activity">		<input type="hidden" id="db_table" value="fb_activity"></td>
 			</tr>
-		</table>	
-
-	</body>
+	</table>	
+</div>
+</body>
 </html>
 <script>
 $(function(){
@@ -81,7 +82,7 @@ $(function(){
 		}
 	});
 	
-	$('#search_b').click(function(){
+	$('#search_button').click(function(){
 		search();
 	})
 })
