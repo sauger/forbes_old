@@ -156,10 +156,11 @@ ul{padding:0; margin:0}
 #club .content .pictitle a{font-weight:bold; color:#333399;}
 #club .content .piccontent{width:180px; height:52px; margin-top:8px; margin-left:5px; overflow:hidden; text-indent:24px; line-height:17px; float:right; display:inline;}
 #club .bottom{width:280px; height:30px; margin-top:8px; margin-left:15px; line-height:30px; float:left; display:inline;}
+#club .bottom a{color:#0033CC}
 #club .bottom_l{width:140px; height:30px; overflow:hidden; float:left; display:inline;}
 #club .bottom_r{width:140px; height:30px; overflow:hidden; float:right; display:inline;}
+#club .bottom_r a{color:#000000;}
 #club .bottom .image{width:17px; height:20px; margin-top:5px; margin-right:5px; float:left; display:inline;}
-#club .bottom a{color:#0033CC}
 
 #city{width:300px; height:151px; margin-top:8px; background:url(/images/index/bg2.jpg) no-repeat; float:right; display:inline;}
 .city_caption1{width:100px; height:20px;  margin-left:15px; margin-top:8px; font-size:14px; font-weight:bold; color:#999999; float:left; display:inline;}
@@ -173,10 +174,12 @@ ul{padding:0; margin:0}
 #city .content .pictitle a{font-weight:bold; color:#333399;}
 #city .content .piccontent{width:180px; height:52px; margin-top:8px; margin-left:5px; overflow:hidden; text-indent:24px; line-height:17px; float:right; display:inline;}
 #city .bottom{width:280px; height:30px; margin-top:8px; margin-left:15px; line-height:30px; float:left; display:inline;}
+#city .bottom a{color:#0033CC}
 #city .bottom_l{width:140px; height:30px; overflow:hidden; float:left; display:inline;}
 #city .bottom_r{width:140px; height:30px; overflow:hidden; float:right; display:inline;}
+#city .bottom_r a{color:#000000;}
 #city .bottom .image{width:17px; height:20px; margin-top:5px; margin-right:5px; float:left; display:inline;}
-#city .bottom a{color:#0033CC}
+
 
 #inventory{width:300px; margin-top:8px; overflow:hidden; float:right; display:inline;}
 .inventory_content{width:298px;  border-left:1px solid #dfdfdf;  border-right:1px solid #dfdfdf; overflow:hidden; float:left; display:inline;}
@@ -191,7 +194,9 @@ ul{padding:0; margin:0}
 #mag_content .pic{width:88px; height:114px; margin-top:10px; margin-left:13px; border:1px solid #cccccc; float:left; display:inline;}
 #mag_content .pic img{width:86px; height:112px; margin:1px;}
 #mag_content .pictitle{width:170px; height:20px;margin-top:13px;  margin-left:13px;  color:#3399CC; font-weight:bold; overflow:hidden; float:left; display:inline;}
+#mag_content .pictitle a{text-decoration:none; color:#3399CC;}
 #mag_content .context{width:170px; height:96px; margin-left:13px; overflow:hidden; line-height:25px; float:left; display:inline;}
+#mag_content .context a{text-decoration:none;}
 #mag_dash{width:270px; height:1px; margin-top:10px; margin-left:15px; background:url(/images/index/dashed2.jpg) no-repeat; float:left; display:inline;}
 #mag #search{width:202px; height:20px;  margin-left:12px; line-height:20px; color:#0066CC; font-weight:bold; float:left; display:inline;}
 #mag #sel{width:280px; height:20px; margin-top:5px; margin-left:12px; float:left; display:inline;}

@@ -242,7 +242,7 @@
 			 	<div class=list1 >
 					<div class=list1_title pos="index_invest0"><a href="<?php echo $pos_items->index_invest0->href;?>"><?php echo $pos_items->index_invest0->display;?></a></div>
 					<div class=list1_description2>
-						<a class=list1_pic href="<?php echo $pos_items->index_invest0->href;?>"><img border=0 width=70 height=70 src="<?php echo $pos_items->index_invest0->image1;?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><a href="<?php echo $pos_items->index_invest0->href;?>"><?php echo $pos_items->index_invest0->descsription;?></a>
+						<a class=list1_pic href="<?php echo $pos_items->index_invest0->href;?>"><img border=0 width=70 height=70 src="<?php echo $pos_items->index_invest0->image1;?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><?php show_page_desc($pos_items,'index_invest0');?></a>
 					</div>
 					<?php for($i=1;$i<=5;$i++){ $pos_name = "index_invest".$i;?>
 						<div class=list2 style="margin-left:3px;" pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name);?></div>
@@ -251,23 +251,22 @@
 			</div>	
 			<div class=dashed style="height:10px;"></div>
 
-			<?php $record_show = get_news_by_pos('首页奢华栏目');	?>
-	  	<div class=caption>
+	  		<div class=caption>
 				<div class=captions>奢华</div>
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
 			<div class=list1>
-					<div class=image><a href="<?php echo get_news_url($record_show[0]);?>"><img border=0 src="<?php echo $record_show[0]->video_photo_src ?>" width=150 height=130></a></div>
+					<div pos="index_luxu0" class=image><?php show_page_img($pos_items,'index_luxu0',1,150,130)?></div>
 					<div class=image_content style="margin-left:15px;">
-						<div class=image_list><a href="<?php echo get_news_url($record_show[0]);?>"><?php echo $record_show[0]->short_title ?></a></div>
-						<div class=image_description><a href="<?php echo get_news_url($record_show[0]);?>"><?php echo $record_show[0]->description ?></a></div>
+						<div class=image_list><?php show_page_href($pos_items,'index_luxu0',false)?></div>
+						<div class=image_description><?php show_page_desc($pos_items,'index_luxu0')?></div>
 					</div>
-					<div class=image_content style="margin-top:20px;">
-						<div class=image_list><a href="<?php echo get_news_url($record_show[1]);?>"><?php echo $record_show[1]->short_title ?></a></div>
-						<div class=image_description><a href="<?php echo get_news_url($record_show[1]);?>"><?php echo $record_show[1]->description ?></a></div>
+					<div  pos="index_luxu1" class=image_content style="margin-top:20px;">
+						<div class=image_list><?php show_page_href($pos_items,'index_luxu1',false)?></div>
+						<div class=image_description><?php show_page_desc($pos_items,'index_luxu1')?></div>
 					</div>
-					<div class=image style="margin-top:20px; margin-left:5px;"><a href="<?php echo get_news_url($record_show[1]);?>"><img border=0 src="<?php echo $record_show[1]->video_photo_src ?>"  width=150 height=130></a></div>
+					<div class=image style="margin-top:20px; margin-left:5px;"><?php show_page_img($pos_items,'index_luxu1',1,150,130)?></div>
 			</div>
 		</div>
 		
@@ -275,14 +274,11 @@
 		<div id=forbes_r>
 			<div id=dictionary>
 				<div id=dictionary_t>
-					<div id=dictionary_tl><a href="">财经魔鬼词典</a></div>
-					<div id=dictionary_tr><a href="">实用商业词汇</a>  |  <a href="">实用财经词汇</a></div>
+					<div id=dictionary_tl pos="index_dict0"><a  href="<?php echo $pos_items->index_dict0->href;?>"><?php echo $pos_items->index_dict0->display;?></a></div>
+					<div id=dictionary_tr><span pos="index_dict1"><a href="<?php echo $pos_items->index_dict1->href;?>"><?php echo $pos_items->index_dict1->display;?></a></span>  |  <span pos="index_dict2"><a href="<?php echo $pos_items->index_dict2->href;?>"><?php echo $pos_items->index_dict2->display;?></a></span></div>
 				</div>
-				<?php
-					$record_show = get_news_by_pos('财经魔鬼词典');
-				?>
-				<div id=dictionary_bl><a title="<?php echo $record_show[0]->title;?>" href="<?php echo get_news_url($record_show[0]);?>"><?php echo $record_show[0]->short_title;?></a></div>
-				<div id=dictionary_br><a title="<?php echo $record_show[1]->title;?>" href="<?php echo get_news_url($record_show[1]);?>"><?php echo $record_show[1]->short_title;?></a></div>
+				<div id=dictionary_bl pos="index_dict3"><?php show_page_href($pos_items,'index_dict3')?></div>
+				<div id=dictionary_br pos="index_dict4"><?php show_page_href($pos_items,'index_dict4')?></div>
 			</div>
 
 			<div id=activity>
@@ -305,27 +301,21 @@
 			<div id=club>
 					<div class=club_caption1>增长俱乐部</div>
 					<a href="" class=club_more1></a>
-					<div class=content>
-						<?php
-							$record_show = get_news_by_pos('增长俱乐部','首页');
-						?>
+					<div class=content pos="index_club0">
 						<div class=pic>
-							<a href="<?php echo get_news_url($record_show[0]);?>"><img border=0 src="<?php echo $record_show[0]->video_photo_src;?>"></a>	
+							<?php show_page_img($pos_items,'index_club0')?>
 						</div>	
 						<div class=pictitle>
-							<a href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a>
+							<?php show_page_href($pos_items,'index_club0')?>
 						</div>
 						<div class=piccontent>
-							<a href="<?php echo get_news_url($record_show[0]);?>"><?php echo $record_show[0]->description;?></a>
+							<?php show_page_desc($pos_items,'index_club0')?>
 						</div>
 					</div>
 					<div class=bottom>
-						<div class=bottom_l><a href="">我要报名</a></div>
-						<?php
-							$record_show = get_news_by_pos('增长俱乐部新闻','首页');
-						?>
-						<div class=bottom_r>
-							<a style="color:#000000;" href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a>
+						<div class=bottom_l pos="index_club1"><?php show_page_href($pos_items,'index_club1',false)?></div>
+						<div class=bottom_r pos="index_club2">
+							<?php show_page_href($pos_items,'index_club2',false)?>
 						</div>	
 					</div>
 			</div>
@@ -335,27 +325,21 @@
 			<div id=city>
 					<div class=city_caption1>城市</div>
 					<a href="" class=city_more1></a>
-					<div class=content>
-						<?php
-							$record_show = get_news_by_pos('城市','首页');
-						?>					
+					<div class=content pos="index_city0">
 						<div class=pic>
-							<a href="<?php echo get_news_url($record_show[0]);?>"><img border=0 src="<?php echo $record_show[0]->video_photo_src;?>"></a>	
+							<?php show_page_img($pos_items,'index_city0')?>
 						</div>	
 						<div class=pictitle>
-							<a href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a>
+							<?php show_page_href($pos_items,'index_city0')?>
 						</div>
 						<div class=piccontent>
-							<a href="<?php echo get_news_url($record_show[0]);?>"><?php echo $record_show[0]->description;?></a>
+							<?php show_page_desc($pos_items,'index_city0')?>
 						</div>
 					</div>
 					<div class=bottom>
-						<div class=bottom_l><a href="">城市榜</a></div>
-						<?php
-							$record_show = get_news_by_pos('城市新闻','首页');
-						?>
-						<div class=bottom_r>
-							<a style="color:#000000;" href="<?php echo get_news_url($record_show[0]);?>" title="<?php echo $record_show[0]->title;?>"><?php echo $record_show[0]->short_title;?></a>
+						<div class=bottom_l pos="index_city1"><?php show_page_href($pos_items,'index_city1',false)?></div>
+						<div class=bottom_r pos="index_city2">
+							<?php show_page_href($pos_items,'index_city2',false)?>
 						</div>	
 					</div>
 			</div>
@@ -374,20 +358,14 @@
 				<div class="caption_base" id="cls_cpt2">编辑推荐</div>
 		</div>
 		<div id="div_caption1">
-			<?php
-			$record_show = $db->query("select created_at,id,short_title,title from fb_news where TO_DAYS(NOW()) - TO_DAYS(created_at) >= 7 order by click_count desc, created_at asc limit 6"); 
-			?>
-			<?php for($i=0;$i<6;$i++){ ?>
-					<div class=list3><a href="<?php echo get_news_url($record_show[$i]);?>"><?php echo $record_show[$i]->short_title;?></a></div>
+			<?php for($i=0;$i<6;$i++){ $pos_name = "index_pop".$i;?>
+					<div class=list3 pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name)?></div>
 			<?php } ?>
 			<div class=dashed></div>
 		</div>
 		<div id="div_caption2" style="display:none;">
-			<?php
-			$record_show = get_news_by_pos('首页编辑推荐');
-			?>
-			<?php for($i=0;$i<6;$i++){ ?>
-					<div class=list3><a href="<?php echo get_news_url($record_show[$i]);?>"><?php echo $record_show[$i]->short_title;?></a></div>
+			<?php for($i=0;$i<6;$i++){ $pos_name = "index_reco".$i;?>
+					<div class=list3 pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name)?></div>
 			<?php } ?>
 			<div class=dashed></div>
 		</div>
@@ -431,15 +409,13 @@
 				<a href="" class=more></a>
 			</div>
 				<?php 
-				$record_show = get_news_by_pos('采编智库','首页');
-				$count = count($record_show);
-				for($i=0;$i<$count;$i++){ ?>
-					<div class=writer>
-						<div class=writer_pic><a href="/column/column.php?id=<?php echo $record_show[$i]->id;?>"><img border=0 src="<?php echo $record_show[$i]->image_src;?>"></a></div>
+				for($i=0;$i<8;$i++){ $pos_name = "index_jour".$i;?>
+					<div class=writer pos="<?php echo $pos_name;?>">
+						<div class=writer_pic><?php show_page_img($pos_items,$pos_name)?></div>
 						<div class=writer_name>
-							<a href="/column/column.php?id=<?php echo $record_show[$i]->id;?>">
-								<span style="font-weight:bold;"><?php echo $record_show[$i]->nick_name;?></span><br>
-								<?php echo $record_show[$i]->column_name;?>
+							<a href="<?php echo $pos_items->$pos_name->href;?>">
+								<span style="font-weight:bold;"><?php echo $pos_items->$pos_name->display;?></span><br>
+								<?php echo $pos_items->$pos_name->title;?>
 							</a>	
 						</div>	
 					</div>
@@ -454,13 +430,10 @@
 					<div class=public_caption1 style="color:#4990B9">福布斯杂志</div>
 					<a href="" class=public_more1></a>
 				</div>
-				<div id=mag_content>
-						<?php 
-							$magazine = get_news_by_pos('首页杂志');
-						?>
-						<div class=pic><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img border=0 src="<?php echo $magazine[0]->img_src3;?>"></a></div>
-						<div class=pictitle><?php echo $magazine[0]->name;?></div>
-						<div class=context><?php echo strip_tags($magazine[0]->description);?></div>	
+				<div id=mag_content  pos="index_magazine">
+						<div class=pic><?php show_page_img($pos_items,"index_magazine")?></div>
+						<div class=pictitle><?php show_page_href($pos_items,"index_magazine")?></div>
+						<div class=context><?php show_page_desc($pos_items,"index_magazine")?></div>	
 
 			 			 <div id=mag_dash></div>
 

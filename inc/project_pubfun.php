@@ -195,4 +195,23 @@ function show_page_href($pos_items,$pos_name,$show_title=true){
 	
 }
 
+function show_page_img($pos_items,$pos_name,$index='1',$width='',$height=''){
+	$image = 'image'.$index;
+	echo '<a href="'.$pos_items->$pos_name->href.'"><img border=0 src="'.$pos_items->$pos_name->$image.'"';
+	
+	if($width) echo 'width="'.$width.'"';
+	if($height) echo 'height="'.$height.'"';
+	echo '></a>';
+	
+}
+
+function show_page_desc($pos_items,$pos_name,$show_title=false){
+	if($show_title){
+		echo '<a href="'.$pos_items->$pos_name->href.'" title="'.$pos_items->$pos_name->description.'">'.$pos_items->$pos_name->description.'</a>';
+	}else{
+		echo '<a href="'.$pos_items->$pos_name->href.'">'.$pos_items->$pos_name->description.'</a>';
+	}
+	
+}
+
 ?>
