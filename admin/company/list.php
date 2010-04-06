@@ -27,25 +27,27 @@
 	}
 	$record = $db->paginate($sql,15);
 ?>
-
 <body>
-	<table width="800" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="6">
-				　 <a href="edit.php">发布公司</a>
-				<input id="content" type="text" value="<? echo $_REQUEST['content']?>" style="margin-left:20px;"><select id="type" style="width:90px" class="">
-					<option value="name" <? if($_REQUEST['type']=="name"){?>selected="selected"<? }?> >名称</option>
-					<option value="province" <? if($_REQUEST['type']=="province"){?>selected="selected"<? }?> >省份</option>
-					<option value="city" <? if($_REQUEST['type']=="city"){?>selected="selected"<? }?> >城市</option>
-					<option value="address" <? if($_REQUEST['type']=="address"){?>selected="selected"<? }?> >地址</option>
-					<option value="website" <? if($_REQUEST['type']=="website"){?>selected="selected"<? }?> >网址</option>
-					<option value="stock_code" <? if($_REQUEST['type']=="stock_code"){?>selected="selected"<? }?> >上市公司代码</option>
-				</select>
-				<input type="button" value="搜索" id="search" style="height:20px; border:2px solid #999999;">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="295">名称</td><td width="100">国家</td><td width="100">股票代码</td><td width="100">交易所</td><td width="100">货币种类</td><td width="100">操作</td>
+<div id=icaption>
+    <div id=title>公司管理</div>
+	  <a href="edit.php" id=btn_add></a>
+</div>
+<div id=isearch>
+		<input id="content" type="text" value="<? echo $_REQUEST['content']?>" >
+		<select id="type" style="width:90px" class="">
+				<option value="name" <? if($_REQUEST['type']=="name"){?>selected="selected"<? }?> >名称</option>
+				<option value="province" <? if($_REQUEST['type']=="province"){?>selected="selected"<? }?> >省份</option>
+				<option value="city" <? if($_REQUEST['type']=="city"){?>selected="selected"<? }?> >城市</option>
+				<option value="address" <? if($_REQUEST['type']=="address"){?>selected="selected"<? }?> >地址</option>
+				<option value="website" <? if($_REQUEST['type']=="website"){?>selected="selected"<? }?> >网址</option>
+				<option value="stock_code" <? if($_REQUEST['type']=="stock_code"){?>selected="selected"<? }?> >上市公司代码</option>
+		</select>
+		<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">	
+		<tr class="itable_title">
+			<td width="25%">名称</td><td width="15%">国家</td><td width="15%">股票代码</td><td width="15%">交易所</td><td width="15%">货币种类</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			$len = count($record);

@@ -28,29 +28,36 @@
 	}
 	
 ?>
-
+<div id=icaption>
+    <div id=title><?php echo $ch_news->title;?></div>
+	  <a href="news_edit.php?id=<?php echo $ch_news->id;?>" id=btn_back></a>
+</div>
+<div id=itable>
 	<form id="news_edit_en" enctype="multipart/form-data" action="english_news.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　　English News　　[Chinese：<a href="news_edit.php?id=<?php echo $ch_news->id;?>"><?php echo $ch_news->title;?></a>]</td>
+	<table cellspacing="1" align="center">
+		<tr class=tr4>
+			<td width="15%" class=td1>Title</td>
+			<td width="85%"><input id="title_en" type="text" name="news[title]" value="<?php echo $news->title;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">Title</td><td width="695" align="left"><input id="title_en" style="width:400px;" type="text" name="news[title]" value="<?php echo $news->title;?>"></td>
+			<td class=td1>Shorttitle</td>
+			<td><input id="short_title_en"  type="text" name="news[short_title]" value="<?php echo $news->short_title;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td width="130">Shorttitle</td><td width="695" align="left"><input id="short_title_en" style="width:400px;"  type="text" name="news[short_title]" value="<?php echo $news->short_title;?>"></td>
-		</tr>
-		<tr id=newsshow1 class="normal_news tr4">
-			<td height=215>Content</td><td><?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?></td>
+			<td class=td1>Content</td>
+			<td><?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?></td>
 		</tr>
 		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="Submit"></td>
+			<td colspan="2" width="795" align="center">
+				<input id="submit" type="submit" value="Submit">
+				<input type="hidden" name="news[category_id]" id="category_id" value="<?php echo $news->category_id;?>">
+				<input type="hidden" name="id"  value="<?php echo $news->id; ?>">
+				<input type="hidden" name="chinese_id" value="<?php echo $ch_id;?>"></input>			
+			</td>
 		</tr>	
 	</table>
-		<input type="hidden" name="news[category_id]" id="category_id" value="<?php echo $news->category_id;?>">
-		<input type="hidden" name="id"  value="<?php echo $news->id; ?>">
-		<input type="hidden" name="chinese_id" value="<?php echo $ch_id;?>"></input>
 	</form>
+</div>
 
 <script>
 $(function(){

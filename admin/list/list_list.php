@@ -82,17 +82,21 @@
 		$record = $list->paginate("all",$conditions);
 		$count = count($record);
 	?>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="5">
-				　 <a href="custom_list_edit.php">添加榜单</a>
-				 <input id="s_text" style="margin-left:20px;" type="text" value="<? echo $_REQUEST['s_text'];?>">
-				 <select id="s_list_type">
+
+<div id=icaption>
+    <div id=title>常规榜单</div>
+	  <a href="custom_list_edit.php" id=btn_add></a>
+</div>	
+<div id=isearch>
+ 		<input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
+		<select id="s_list_type">
 				 	<option value="-1">榜单类型</option>
 				 	<option value="1">自定义类型</option>
 				 	<option value="2">年度富豪榜</option>
 				 	<option value="3">年度名人榜</option>
-				 </select><?php if($_REQUEST['s_list_type'])?><script type="text/javascript">$('#s_list_type').val('<?php echo $_REQUEST['s_list_type'];?>');</script><?php ?><select id="s_list_position">
+		</select><?php if($_REQUEST['s_list_type'])?>
+		<script type="text/javascript">$('#s_list_type').val('<?php echo $_REQUEST['s_list_type'];?>');</script><?php ?>
+		<select id="s_list_position">
 				 	<option value="-1">发布位置</option>
 				 	<option value="1">富豪</option>
 					<option value="2">投资</option>
@@ -102,15 +106,16 @@
 					<option value="6">体育</option>
 					<option value="7">科技</option>
 					<option value="8">教育</option>
-				 </select>
-				 <?php if($_REQUEST['s_list_position'])?>
-				 	<script type="text/javascript">$('#s_list_position').val('<?php echo $_REQUEST['s_list_position'];?>');</script>
-				 <?php ?>
-				 <input type="button" value="搜索" id="search_b" style="height:20px; border:2px solid #999999;">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td>榜单名称</td><td width="115">榜单类型</td><td width="85">发布位置</td><td width="100">推荐优先级</td><td width="260">操作</td>
+		</select>
+		<?php if($_REQUEST['s_list_position'])?>
+		<script type="text/javascript">$('#s_list_position').val('<?php echo $_REQUEST['s_list_position'];?>');</script>
+		 <?php ?>
+		 <input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class="itable_title">
+			<td width="20%">榜单名称</td><td width="15%">榜单类型</td><td width="15%">发布位置</td><td width="15%">推荐优先级</td><td width="35%">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -147,7 +152,7 @@
 			<tr class="tr3">
 				<td colspan=6><input type="hidden" id="db_table" value="fb_custom_list_type"><input type="hidden" id="relation" value="list"><button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><?php paginate();?></td>
 			</tr>
-		</table>	
-
-	</body>
+	</table>	
+</div>
+</body>
 </html>
