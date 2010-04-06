@@ -189,4 +189,13 @@ function init_page_items(){
 	}
 }
 
+function show_page_href($pos_items,$pos_name,$show_title=true){
+	if($show_title){
+		echo '<a href="'.$pos_items->$pos_name->href.'" title="'.$pos_items->$pos_name->title.'">'.$pos_items->$pos_name->display.'</a>';
+	}else{
+		echo '<a href="'.$pos_items->$pos_name->href.'">'.$pos_items->$pos_name->display.'</a>';
+	}
+	
+}
+
 ?>
