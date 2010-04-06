@@ -42,7 +42,7 @@ class category_class
 		return $this->items[$id];
 	}
 	
-	public function &find_id_by_name($name){
+	public function &find_by_name($name){
 		foreach($this->items as $k => $v){
 			if($v->name == $name) return $this->items[$k];
 		}	
