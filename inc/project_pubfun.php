@@ -154,10 +154,10 @@ class PosItemClass{
 
 }
 
-function get_page_items($page){
+function get_page_items(){
 	$pos_items = new PosItemClass();
 	$pos = new table_class('fb_page_pos');
-	$pos = $pos->find('all',array('conditions' => "page_name='{$page}'"));
+	$pos = $pos->find('all');
 	if(empty($pos)) $pos = array();
 	foreach ($pos as $v){
 		$key = $v->name;
@@ -167,11 +167,8 @@ function get_page_items($page){
 }
 
 function init_page_items(){
-	$page_name = basename($_SERVER['PHP_SELF']);
-	$page_name = explode('.',$page_name);
-	$page_name = $page_name[0];	
 	global $pos_items;
-	$pos_items = get_page_items($page_name);
+	$pos_items = get_page_items();
 	global $page_type;
 	$page_type = $page_type ? $page_type : $_REQUEST['page_type'];
 	if(empty($page_type)){

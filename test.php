@@ -5,7 +5,10 @@
 		use_jquery_ui();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
 		css_include_tag('jquery_ui');
-		phpinfo();	
+		$date =  getdate(strtotime('2009-10-10 12:12:12'));
+		echo $date['hours'] ."<br>";
+		$date =  getdate(strtotime('2009-10-10 13:12:12'));
+		echo strtotime('2010-04-06 13:12:12') - time();
 		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));

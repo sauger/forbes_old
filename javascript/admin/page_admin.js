@@ -13,9 +13,10 @@ $(function(){
 		var $this = $(this);
 		$.fn.colorbox({
 			href: '/admin/position/edit.php?pos_name=' + $($this).attr('pos_name'),
-			width:'1000px',
-			height: '500px',
+			width:'800px',
+			height: '600px',
 			iframe: true
 		});
 	});
+
 });
