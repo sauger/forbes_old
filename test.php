@@ -5,7 +5,8 @@
 		use_jquery_ui();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
 		css_include_tag('jquery_ui');
-		echo dt_increase(-1,'w','2009-12-12 12:12:12');
+		$a = array('中国' => '外随');
+		echo $a['中国'];
 		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));

@@ -9,6 +9,7 @@
 		use_jquery();
 		js_include_tag('public','index');
 		css_include_tag('charts_index','public','right_inc');
+		init_page_items();
 	?>
 </head>
 <body>
@@ -23,19 +24,19 @@
 			<div id=t_l_t>
 				<?php $record_show = get_news_by_pos('榜单头条','榜单首页');?>
 				<div id=t_l_t_t>
-					<div class=headline_pic id=headline_pic_0><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[0]->image_src; ?>"></a></div>
-					<div class=headline_pic id=headline_pic_1 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[1]->image_src; ?>"></a></div>
-					<div class=headline_pic id=headline_pic_2 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[2]->image_src; ?>"></a></div>
-					<div class=headline_pic id=headline_pic_3 style="display:none;"><a href=""><img border=0 width=300 height=200 src="<?php echo $record_show[3]->image_src; ?>"></a></div>
+					<div class=headline_pic id=headline_pic_0><a href="<?php echo $pos_items->listindex_hl_0->href; ?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->listindex_hl_0->image1; ?>"></a></div>
+					<div class=headline_pic id=headline_pic_1 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_1->href; ?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->listindex_hl_0->image1; ?>"></a></div>
+					<div class=headline_pic id=headline_pic_2 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_2->href; ?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->listindex_hl_2->image1; ?>"></a></div>
+					<div class=headline_pic id=headline_pic_3 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_3->href; ?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->listindex_hl_3->image1; ?>"></a></div>
 					<div id=t_l_t_t_r>
-						<div class=headline_title id=headline_title_0><a href=""><?php echo $record_show[0]->name; ?></a></div>
-						<div class=headline_title id=headline_title_1 style="display:none;"><a href=""><?php echo $record_show[1]->name; ?></a></div>
-						<div class=headline_title id=headline_title_2 style="display:none;"><a href=""><?php echo $record_show[2]->name; ?></a></div>
-						<div class=headline_title id=headline_title_3 style="display:none;"><a href=""><?php echo $record_show[3]->name; ?></a></div>
-						<div class=headline_description id=headline_description_0><?php echo $record_show[0]->comment; ?></div>
-						<div class=headline_description id=headline_description_1 style="display:none;"><?php echo strip_tags($record_show[1]->comment); ?></div>
-						<div class=headline_description id=headline_description_2 style="display:none;"><?php echo strip_tags($record_show[2]->comment); ?></div>
-						<div class=headline_description id=headline_description_3 style="display:none;"><?php echo strip_tags($record_show[3]->comment); ?></div>
+						<div class=headline_title id=headline_title_0><a href="<?php echo $pos_items->listindex_hl_0->href;?>"><?php echo $pos_items->listindex_hl_0->display; ?></a></div>
+						<div class=headline_title id=headline_title_1 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_1->href;?>"><?php echo $pos_items->listindex_hl_1->display; ?></a></div>
+						<div class=headline_title id=headline_title_2 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_2->href;?>"><?php echo $pos_items->listindex_hl_2->display; ?></a></div>
+						<div class=headline_title id=headline_title_3 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_3->href;?>"><?php echo $pos_items->listindex_hl_3->display; ?></a></div>
+						<div class=headline_description id=headline_description_0><?php echo $pos_items->listindex_hl_0->description; ?></div>
+						<div class=headline_description id=headline_description_1 style="display:none;"><?php echo $pos_items->listindex_hl_1->description; ?></div>
+						<div class=headline_description id=headline_description_2 style="display:none;"><?php echo $pos_items->listindex_hl_2->description; ?></div>
+						<div class=headline_description id=headline_description_3 style="display:none;"><?php echo $pos_items->listindex_hl_3->description; ?></div>
 						
 					<?php for($j=0;$j<=3;$j++){?>	
 						<div class="headline_related" id="headline_related_<?php echo $j?>" <?php if($j<>0){echo "style='display:none'";}?> >

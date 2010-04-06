@@ -42,6 +42,13 @@ class category_class
 		return $this->items[$id];
 	}
 	
+	public function &find_id_by_name($name){
+		foreach($this->items as $k => $v){
+			if($v->name == $name) return $this->items[$k];
+		}	
+		return false;
+	}
+	
 	public function tree_map($current_id){
 		$result = array();
 		$result[] = $current_id;
