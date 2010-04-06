@@ -10,6 +10,12 @@ $(function(){
 	});
 	
 	$('#admin_edit_div').live('click',function(){
-		
+		var $this = $(this);
+		$.fn.colorbox({
+			href: '/admin/position/edit.php?pos_name=' + $($this).attr('pos_name'),
+			width:'1000px',
+			height: '500px',
+			iframe: true
+		});
 	});
 });

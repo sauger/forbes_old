@@ -183,6 +183,8 @@ function init_page_items(){
 		}
 	}
 	if($page_type == 'admin'){
+		js_include_tag('jquery.colorbox-min');
+		css_include_tag('colorbox');
 		js_include_tag('admin/page_admin');	
 	}
 }
