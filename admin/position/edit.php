@@ -17,7 +17,7 @@
 <style type="text/css">
 	#pos_caption{width:700px; height:25px; margin-left:5px; padding:10px; font-weight:bold; font-size:14px; text-align:left; border:1px dotted #cdcdcd; background:#FBFBFB; float:left; display:inline;}
 	#pos_caption #title{width:300px; color:#0B55C4; font-size:23px; float:left; display:inline;}
-	#pos_table{float:left;}	
+	#pos_table{float:left;}
 </style>
 <body>
 <div id=pos_caption>
@@ -36,6 +36,13 @@
 			<td>描述</td>
 			<td>
 				<textarea name="pos[description]"><?php echo $pos->description;?></textarea>
+			</td>
+		</tr>
+		<tr class="tr4">
+			<td>提示</td>
+			<td>
+				<input type="text" name="pos[title]" value="<?php echo $pos->title; ?>">
+			</td>
 			</td>
 		</tr>
 		
@@ -75,6 +82,12 @@
 			<td>页面名</td>
 			<td><input name="pos[page_name]" value="<?php echo $pos->page_name;?>"></input></td>
 		</tr>	
+		<tr>
+			<td>说明</td>
+			<td>
+				<textarea name="pos[comment]"><?php echo $pos->comment;?></textarea>		
+			</td>
+		</tr>
 		<tr>
 			<td colspan="2" align="center">
 				<input type="submit" value="保存"></input>
