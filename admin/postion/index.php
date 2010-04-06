@@ -54,31 +54,35 @@
 </head>
 
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="5">　 <a href="edit.php">添加页面</a></td>
-		</tr>
-		<tr class="tr2">
-			<td width="300">位置名称</td><td width="100">条数限制</td><td width="95">已关联数目</td><td width="100">内容类型</td><td width="205">操作</td>
+<div id=icaption>
+    <div id=title>位置管理</div>
+	  <a href="edit.php" id=btn_add></a>
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class="itable_title">
+			<td width="40%">位置名称</td><td width="15%">条数限制</td><td width="15%">已关联数目</td><td width="15%">内容类型</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
-				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
-					<td  style="text-align:left; text-indent:120px;"><?php echo $record[$i]->name;?></td>
-					<td></td><td></td><td></td>
-					<td>
-						<a href="position_edit.php?pid=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer" title="添加"><img src="/images/btn_add.png" border="0"></a>　
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer" title="编辑"><img src="/images/btn_edit.png" border="0"></a>　
-						<span style="cursor:pointer;" class="del" name="<?php echo $record[$i]->id;?>" title="删除"><img src="/images/btn_delete.png" border="0"></span>
-					</td>
-				</tr>
-				<?php
+		<tr class="tr3" id="<?php echo $record[$i]->id;?>">
+			<td style="text-align:left; text-indent:170px;"><?php echo $record[$i]->name;?></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>
+					<a href="position_edit.php?pid=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer" title="添加"><img src="/images/btn_add.png" border="0"></a>　
+					<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer" title="编辑"><img src="/images/btn_edit.png" border="0"></a>　
+					<span style="cursor:pointer;" class="del" name="<?php echo $record[$i]->id;?>" title="删除"><img src="/images/btn_delete.png" border="0"></span>
+			</td>
+		</tr>
+		<?php
 					$records = $db->query("SELECT count(r.id) as num,f.* FROM fb_position f  left join fb_position_relation r on f.id=r.position_id and f.type=r.type where f.page_id={$record[$i]->id}  group by f.name   order by f.id");
 					for($j=0;$j<count($records);$j++){
-				?>
-				<tr class="tr3" id=<?php echo $records[$j]->id;?> name="<?php echo $record[$i]->name;?>">
-					<td class="sub_menu"  style="text-align:left;  text-indent:120px; color:#0000ff;">- <?php echo $records[$j]->name;?></td>
+		?>
+		<tr class="tr3" id=<?php echo $records[$j]->id;?> name="<?php echo $record[$i]->name;?>">
+					<td class="sub_menu"  style="text-align:left; text-indent:170px; color:#0000ff;">- <?php echo $records[$j]->name;?></td>
 					<td><?php echo $records[$j]->position_limit;?></td>
 					<?php if($records[$j]->type!='category'){?>
 					<td><?php echo $records[$j]->num;?></td>
@@ -86,17 +90,20 @@
 					<?php }?>
 					<td><?php echo list_type($records[$j]->type);?></td>
 					<td>
-						<a href="list_edit.php?id=<?php echo $records[$j]->id;?>" class="list_edit" name="<?php echo $records[$j]->id;?>" title="配置内容"><img src="/images/btn_config2.png" border="0"></a>　
+						<a href="list_edit.php?id=<?php echo $records[$j]->id;?>" class="list_edit" name="<?php echo $records[$j]->id;?>" title="配置内容"><img src="/images/btn_config1.png" border="0"></a>　
 						<a href="position_edit.php?id=<?php echo $records[$j]->id;?>" class="edit" style="cursor:pointer" title="编辑"><img src="/images/btn_edit.png" border="0"></a>　
 						<span style="cursor:pointer;" class="del" name="<?php echo $records[$j]->id;?>" title="删除"><img src="/images/btn_delete.png" border="0"></span></td>
-				</tr>
+		</tr>
 		<?php
 			}}j
 		?>
-			<tr class="tr3">
-				<td colspan=6><?php paginate();?>			<input type="hidden" id="db_table" value="fb_position"></td>
-			</tr>
-		</table>	
-
-	</body>
+		<tr class="tr3">
+			<td colspan=5><?php paginate();?>			<input type="hidden" id="db_table" value="fb_position"></td>
+		</tr>
+  </table>	
+</div>
+</body>
 </html>
+<script>
+parent.$("#admin_iframe").attr("height","3000px");
+</script>

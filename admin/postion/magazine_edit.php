@@ -30,16 +30,18 @@
 </head>
 
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="3">
-				自定义杂志<a href="index.php"><img src="/images/btn_back.png" border=0></a>
-				<input id="search" style="margin-left:20px" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="height:20px; border:2px solid #999999;">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="330">杂志名称</td><td width="250">发布时间</td><td width="210">操作</td>
+<div id=icaption>
+    <div id=title>自定义杂志</div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=isearch>	
+		<input id="search" type="text" value="<? echo $_REQUEST['search']?>">
+		<input type="button" value="搜索" id="search_button">
+</div>	
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class=itable_title>
+			<td width="60%">杂志名称</td><td width="20%">发布时间</td><td width="20%">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -68,6 +70,7 @@
 			<tr class="tr3">
 				<td colspan=6><button id=edit_priority>编辑优先级</button><?php paginate();?><input type="hidden" id="list_id" value="<?php echo $id?>"></td>
 			</tr>
-		</table>	
-	</body>
+	</table>	
+</div>	
+</body>
 </html>

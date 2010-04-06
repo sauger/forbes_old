@@ -150,4 +150,68 @@ function static_news($news,$symbol='fck_pageindex',$en = false){
 	return true;
 }
 
+class PosItemClass{
+
+}
+
+function get_page_items(){
+	$pos_items = new PosItemClass();
+	$pos = new table_class('fb_page_pos');
+	$pos = $pos->find('all');
+	if(empty($pos)) $pos = array();
+	foreach ($pos as $v){
+		$key = $v->name;
+		$pos_items->$key = $v;
+	}
+	return $pos_items;
+}
+
+function init_page_items(){
+	global $pos_items;
+	$pos_items = get_page_items();
+	global $page_type;
+	$page_type = $page_type ? $page_type : $_REQUEST['page_type'];
+	if(empty($page_type)){
+		$page_type= 'dynamic';
+	}
+	if($page_type == 'static'){
+		foreach($pos_items as $val){
+			$val->href = $val->static_href;
+		}
+	}
+	if($page_type == 'admin'){
+		js_include_tag('jquery.colorbox-min');
+		css_include_tag('colorbox');
+		js_include_tag('admin/page_admin');	
+	}
+}
+
+function show_page_href($pos_items,$pos_name,$show_title=true){
+	if($show_title){
+		echo '<a href="'.$pos_items->$pos_name->href.'" title="'.$pos_items->$pos_name->title.'">'.$pos_items->$pos_name->display.'</a>';
+	}else{
+		echo '<a href="'.$pos_items->$pos_name->href.'">'.$pos_items->$pos_name->display.'</a>';
+	}
+	
+}
+
+function show_page_img($pos_items,$pos_name,$index='1',$width='',$height=''){
+	$image = 'image'.$index;
+	echo '<a href="'.$pos_items->$pos_name->href.'"><img border=0 src="'.$pos_items->$pos_name->$image.'"';
+	
+	if($width) echo 'width="'.$width.'"';
+	if($height) echo 'height="'.$height.'"';
+	echo '></a>';
+	
+}
+
+function show_page_desc($pos_items,$pos_name,$show_title=false){
+	if($show_title){
+		echo '<a href="'.$pos_items->$pos_name->href.'" title="'.$pos_items->$pos_name->description.'">'.$pos_items->$pos_name->description.'</a>';
+	}else{
+		echo '<a href="'.$pos_items->$pos_name->href.'">'.$pos_items->$pos_name->description.'</a>';
+	}
+	
+}
+
 ?>

@@ -23,16 +23,17 @@
 		$record->find($id);
 	}
 ?>
-
-<body style="background:#E1F0F7">
+<body>
+<div id=icaption>
+    <div id=title><?php if($id!='')echo "编辑页面";else echo "添加页面";?></div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=itable>
 	<form id="industry" action="edit.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　 <?php if($id!='')echo "编辑页面";else echo "添加页面";?> <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
-		</tr>
+	<table cellspacing="1" border="0">
 		<tr class=tr4>
-			<td class=td1>页面名称</td>
-			<td width="665" align="left"><input type="text" name="name" value="<?php echo $record->name;?>">
+			<td width="15%" class=td1>页面名称</td>
+			<td width="85%"><input type="text" name="name" value="<?php echo $record->name;?>">
 		</tr>
 		<tr class="tr3">
 			<td colspan="2" width="795" align="center">
@@ -42,7 +43,7 @@
 			</td>
 		</tr>	
 	</table>
-
 	</form>
+</div>	
 </body>
 </html>

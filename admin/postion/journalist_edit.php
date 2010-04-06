@@ -20,16 +20,18 @@
 	<?php 
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin/position/column_list');
+		js_include_tag('admin/position/column_list','admin_pub');
 	?>
 </head>
-<body style="background:#E1F0F7">
-	<table width="795" border="0">
-		<tr class="tr1">
-			<td colspan="5" width="795">　自定义采编智库<a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
-		</tr>
-		<tr class="tr2">
-			<td width="295">作者名</td><td width="250">专栏名</td><td width="290">操作</td>
+<body>
+<div id=icaption>
+    <div id=title>自定义采编智库</div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=itable>	
+	<table cellspacing="1" align="center">
+		<tr class=itable_title>
+			<td width="50%">作者名</td><td width="25%">专栏名</td><td width="25%">操作</td>
 		</tr>
 		<?php for($i=0;$i<$count;$i++){?>
 		<tr class="tr3" id="<?php echo $records[$i]->id;?>">
@@ -51,14 +53,11 @@
 			</td>
 		</tr>
 		<? }?>
+		<tr class=tr3>
+				<td colspan="5" ><button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"><input type="hidden" id="p_type" value="journalist">	<input type="hidden" id="db_table" value="<?php echo $user_table;?>"></td>
+		</tr>
 	</table>
-	<div class="div_box">
-		<table width="795" border="0">
-			<tr colspan="5" class=tr3>
-				<td><button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"><input type="hidden" id="p_type" value="journalist">	<input type="hidden" id="db_table" value="<?php echo $user_table;?>"></td>
-			</tr>
-		</table>
-	</div>
+</div>	
 </body>
 </html>
 

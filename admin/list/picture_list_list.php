@@ -27,16 +27,18 @@
 		$record = $list->paginate("all",$conditions);
 		$count = count($record);
 	?>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="5">
-				　<a href="picture_list_edit.php">添加榜单</a>   搜索　
-				 <input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
-				 <input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td>榜单名称</td><td width="210">操作</td>
+<div id=icaption>
+    <div id=title>图片榜单</div>
+	  <a href="picture_list_edit.php" id=btn_add></a>
+</div>
+<div id=isearch>
+		<input id="s_text" type="text" value="<? echo $_REQUEST['s_text'];?>">
+		<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class="itable_title">
+			<td width="60%">榜单名称</td><td width="40%">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -58,6 +60,6 @@
 				<td colspan=6><input type="hidden" id="db_table" value="fb_custom_list_type"><button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><?php paginate();?></td>
 			</tr>
 		</table>	
-
-	</body>
+</div>
+</body>
 </html>

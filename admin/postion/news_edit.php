@@ -50,24 +50,29 @@
 	?>
 </head>
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="5">　　自定义新闻 <a href="index.php"><img src="/images/btn_back.png" border=0></a>
-				<input style="margin-left:20px" class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
-				<span id="span_category"></span><select id="language_tag" name="language_tag" class="sau_search">					
-					<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
-					<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
-				</select><select id=adopt name="adopt" style="width:90px" class="sau_search">
-					<option value="">加入状况</option>
-					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已加入</option>
-					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未加入</option>
-				</select>
-				<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
-				<input type="button" value="搜索" id="search_button" style="height:20px; border:2px solid #999999; ">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="385">标题</td><td width="130">所属类别</td><td width="130">发布时间</td><td width="130">操作</td>
+<div id=icaption>
+    <div id=title>自定义新闻</div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=isearch>	
+		<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
+		<span id="span_category"></span>
+		<select id="language_tag" name="language_tag" class="sau_search">					
+				<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
+				<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
+		</select>
+		<select id=adopt name="adopt" style="width:90px" class="sau_search">
+				<option value="">加入状况</option>
+				<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已加入</option>
+				<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未加入</option>
+		</select>
+		<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
+		<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class=itable_title>
+			<td width="55%">标题</td><td width="15%">所属类别</td><td width="15%">发布时间</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -106,6 +111,7 @@
 			<td colspan=5><?php paginate();?>　<button id=edit_priority>编辑优先级</button><input type="hidden" id="list_id" value="<?php echo $id?>"> 		<input type="hidden" id="p_type" value="news"></td>
 		</tr>
 	</table>
+</div>	
 </body>
 </html>
 <script>

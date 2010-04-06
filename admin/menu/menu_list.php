@@ -27,7 +27,13 @@
 	?>
 </head>
 <body>
-	<table width="795" border="0" id="list">
+	<div id=icaption>
+	    <div id=title>添加菜单</div>
+		 <a href="menu_edit.php" id=btn_add></a>
+	</div>
+	<div>
+		&nbsp;
+		<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">　 <a href="menu_edit.php"><?php echo $menu_title?></a></td>
 		</tr>
@@ -81,5 +87,6 @@
 			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button>　		<input type="hidden" id="db_table" value="<?php echo $menu_table;?>"></td>
 		</tr>
 	</table>
+	</div>
 </body>
 </html>
