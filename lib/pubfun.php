@@ -440,6 +440,39 @@ function print_fck_pages1($str,$url="",$symbol='fck_pageindex')
 	
 }
 
+function dt_increase($interval, $type, $time=null){
+	if(is_string($time)){
+		$time = strtotime($time);
+	}
+	if(empty($time)){
+		$time = time();
+	}
+	
+	switch($type){
+		case 'y':
+			$op = "{$interval} years";
+			break;
+		case 'm':
+			$op = "{$interval} months";
+			break;
+		case 'd':
+			$op = "{$interval} days";
+			break;
+		case 'h':
+			$op = "{$interval} hours";
+			break;
+		case 'n':
+			$op = "{$interval} minutes";
+			break;
+		case 's':
+			$op = "{$interval} seconds";
+			break;
+		default:
+			return $time;
+	}
+	return date('Y-m-d H:i:s',strtotime($op, $time));
+};
+
 function navigation($name)
 {
 		
