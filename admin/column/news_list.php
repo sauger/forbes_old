@@ -74,27 +74,26 @@
 			//--------------------
 			for($i=0;$i<count($record);$i++){
 		?>
-				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
-					<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
-					<td>
-						<a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF">
-							<?php echo $category->find($record[$i]->category_id)->name;?>
-						</a>
-					</td>
-					<td >
-						<?php echo $record[$i]->created_at;?>
-					</td>
-					<td>
-						<a href="/admin/news/news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>　
-						<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/btn_delete.png" border="0"></span>　
-					</td>
-				</tr>
+		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
+			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
+			<td><a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php echo $category->find($record[$i]->category_id)->name;?></a></td>
+			<td><?php echo $record[$i]->created_at;?></td>
+			<td>
+				<a href="/admin/news/news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>　
+				<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/btn_delete.png" border="0"></span>　
+			</td>
+		</tr>
 		<?php
 			}
 			//--------------------
 		?>
-		<tr class="tr3">
-			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority style="display:none">清空优先级</button>　<button id=edit_priority  style="display:none">编辑优先级</button>		<input type="hidden" id="db_table" value="<?php echo $tb_news;?>"></td>
+		<tr class="btools">
+			<td colspan=5>
+				<?php paginate("",null,"page",true);?>
+				<button id=clear_priority style="display:none">清空优先级</button>
+				<button id=edit_priority  style="display:none">编辑优先级</button>
+				<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
+			</td>
 		</tr>
 	</table>
 </div>	
