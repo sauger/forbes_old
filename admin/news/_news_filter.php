@@ -18,12 +18,14 @@
 	}
 	$filter_category = $_REQUEST['filter_category'] ? $_REQUEST['filter_category'] : -1;
 	if($filter_category != -1){
-		$cate_ids = $category->children_map($filter_category);
+		$cate_ids = implode(',',$category->children_map($filter_category));
 		$conditions[] = 'category_id in (' .$filter_category .")";		
 	}
+	
 	if($conditions){
 		$conditions = implode(' and ', $conditions);	
 	}
+	echo $conditions;
 	$category->echo_jsdata();
 	$db = get_db();
 ?>
