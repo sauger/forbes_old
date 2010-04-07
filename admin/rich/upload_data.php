@@ -11,68 +11,72 @@
 		validate_form("data_upload");
 	?>
 </head>
-<body style="background:#E1F0F7">
+<body>
+<div id=icaption>
+    <div id=title>富豪数据导入</div>
+	  <a href="list.php" id=btn_back></a>
+</div>
+
+<div id=itable>
+	<table cellspacing="1"  align="center">
 	<form id="data_upload" enctype="multipart/form-data" action="upload.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="6" width="795">　　富豪数据导入<a href="list.php"><img src="/images/btn_back.png" border="0"></a></td>
-		</tr>
 		<tr class="tr4 add">
-			<td width="130">上传XLS</td>
-			<td width="695" align="left">
+			<td class=td1 width="15%">上传XLS</td>
+			<td width="85%">
 				<input type="file" name="xls">
 			</td>
 		</tr>
 		<tr class="tr4 add">
-			<td width="130">所属年份</td>
-			<td width="695" align="left">
+			<td class=td1>所属年份</td>
+			<td >
 				<input type="text" name="year">（4位数字，如1999，2010等）
 			</td>
 		</tr>
-		<tr class="tr1 add">
-			<td colspan="6" width="795">　　字段匹配（在输入框里输入相应的列号，没有的相对应的列号不用输入）</td>
+		<tr class="tr4 add">
+			<td colspan="2" style="color:#ff0000" class=td1>字段匹配（在输入框里输入相应的列号，没有的相对应的列号不用输入）</td>
 		</tr>
 		<tr class="tr4 add">
-			<td width="130">姓名</td>
-			<td width="695" align="left">
-				<input style="width:50px;" type="text"  class="number" name="name">
+			<td class=td1 >姓名</td>
+			<td >
+				<input  type="text"  class="number" name="name">
 			</td>
 		</tr>
 		<tr class="tr4 add">
-			<td width="130">拼音</td>
-			<td width="695" align="left">
-				<input style="width:50px;" type="text"  class="number" name="chinese_name">
+			<td class=td1 >拼音</td>
+			<td >
+				<input  type="text"  class="number" name="chinese_name">
 			</td>
 		</tr>
 		<tr class="tr4 add">
-			<td width="130">性别</td>
-			<td width="695" align="left">
-				<input style="width:50px;" type="text"  class="number" name="gender">
+			<td class=td1 >性别</td>
+			<td >
+				<input  type="text"  class="number" name="gender">
 			</td>
 		</tr>
 		<tr class="tr4 add">
-			<td width="130">国籍</td>
-			<td width="695" align="left">
-				<input style="width:50px;" type="text"  class="number" name="country">
+			<td class=td1 >国籍</td>
+			<td >
+				<input  type="text"  class="number" name="country">
 			</td>
 		</tr>
 		<tr class="tr4 add">
-			<td width="130">年龄</td>
-			<td width="695" align="left">
-				<input style="width:50px;" type="text"  class="number" name="birthday">
+			<td class=td1 >年龄</td>
+			<td >
+				<input  type="text"  class="number" name="birthday">
 			</td>
 		</tr>
 		<tr class="tr4 add">
-			<td width="130">个人经历</td>
-			<td width="695" align="left">
-				<input style="width:50px;" type="text"  class="number" name="comment">
+			<td class=td1>个人经历</td>
+			<td >
+				<input  type="text"  class="number" name="comment">
 			</td>
 		</tr>
 		<tr class=tr3>
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="发布"></td>
+			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="发布">	<input type="hidden" name="list_id" value="<?php echo $id;?>"></td>
 		</tr>
-		<input type="hidden" name="list_id" value="<?php echo $id;?>">
+	
+		</form>
 	</table>
-	</form>
+</div>	
 </body>
 </html>
