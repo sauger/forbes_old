@@ -59,5 +59,15 @@ function update_pos($category_name,$limit,$position_name,$is_parent=false){
 	}
 }
 
+function update_column($type,$limit,$position_name,$news_limit='',$news_position=''){
+	if($type=='author'){
+		$author_type = 2;
+	}else if($type == 'journalist'){
+		$author_type = 1;
+	}
+	$sql = "select t1.* from fb_user t1 join fb_news t2 on t1.id=t2.author_id where t1.role_name='{$type}' and t2.author_type={$author_type} group by t1.id order by t2.created_at limit {$limit}";
+	$column = $db->query($sql);
+	$count = $db->record_count;
+}
 
 include "./_index.php";
