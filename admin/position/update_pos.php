@@ -1,7 +1,7 @@
 <?php
 include_once "../../frame.php";
 include "_listindex.php";
-
+include "_richindex.php";
 
 
 function update_pos($category_name,$limit,$position_name,$is_parent=false){
@@ -221,7 +221,6 @@ function update_news_column($category_name,$limit,$type,$position_name){
 	$ids = $category->children_map($category_id);
 	$ids = implode(",",$ids);
 	$sql = "select t1.id,t1.title,t1.short_title,t1.created_at,t1.description,t1.video_photo_src,t2.nick_name,t2.image_src,t2.column_name from fb_news t1 join fb_user t2 on t1.author_id=t2.id where 1=1 and t1.is_adopt=1 and t1.author_type={$author_type} and t1.category_id in ($ids) and t2.role_name='{$type}' order by t1.created_at desc";
-	echo $sql;
 	$news = $db->query($sql);
 	$news_count = $db->record_count;
 	for($i=0;$i<$news_count;$i++){

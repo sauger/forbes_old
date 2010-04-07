@@ -1,13 +1,12 @@
-<div id=r_c_title>投资活动</div>
+<div id=r_c_title><?php echo $catename[0]->name; ?>活动</div>
 <div id=r_c_l></div>
 <div id=r_c_c>
 	<?php
-		$record = get_news_by_pos('投资活动','公共右侧');
-		for($i=0;$i<count($record);$i++){
+		for($i=0;$i<5;$i++){$pos_name = $pos."activity".$i;
 	?>
-	<div class=content>
-		<div class=pic><a href="/news/news.php?id=<?php echo $record[$i]->news_id;?>"><img border=0 src="<?php echo $record[$i]->video_photo_src;?>"></a></div>
-		<div class=pictitle><a href="/news/news.php?id=<?php echo $record[$i]->news_id;?>"><?php echo $record[$i]->short_title;?></a></div>
+	<div class=content pos="<?php echo $pos_name;?>">
+		<div class=pic><?php show_page_img($pos_items,$pos_name);?></div>
+		<div class=pictitle><?php show_page_href($pos_items,$pos_name);?></div>
 	</div>
 	<?php }?>
 </div>
