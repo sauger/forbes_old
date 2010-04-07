@@ -4,7 +4,7 @@
 	<meta http-equiv=Content-Language content=zh-cn>
 	<title>福布斯-榜单首页</title>
 	<?php
-		include_once('../frame.php');
+		include_once(dirname(__FILE__).'/../frame.php');
 		$db = get_db();
 		use_jquery();
 		js_include_tag('public','index');
@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div id=ibody>
-		<? require_once('../inc/top.inc.php');?>
+		<? require_once(dirname(__FILE__).'/../inc/top.inc.php');?>
 		<div id=top>
 			<div id=cyindex><img src="/images/html/list/title.gif"></div>
 			<div id=cytitle><a style="color:#666666;" href="/">福布斯中文网　＞　</a><a >榜单首页</a></div>
@@ -137,12 +137,12 @@
 			</div>
 		</div>
 		<div id="right_inc" style="margin-top:10px;">
-		  		<?php include "../right/ad.php";?>
-		  		<?php include "../right/right_list.php"?>
-		  		<?php include "../right/article.php";?>
+		  		<?php include dirname(__FILE__)."/../right/ad.php";?>
+		  		<?php include dirname(__FILE__)."/../right/right_list.php"?>
+		  		<?php include dirname(__FILE__)."/../right/article.php";?>
 		 </div>
 		
-		<? require_once('../inc/bottom.inc.php');?>
+		<? require_once(dirname(__FILE__).'/../inc/bottom.inc.php');?>
 	</div>
 </body>
 </html>
