@@ -21,6 +21,8 @@
 		$cid=$cid[0]->id;
 		$nav=$db->query('select id from fb_navigation where name="科技"');
 		$nav=$nav[0]->id;
+		$pos = "tech_";
+		init_page_items();
 	 	require_once('../inc/top.inc.php');
 		include('../_index.php');
 	 	require_once('../inc/bottom.inc.php');
