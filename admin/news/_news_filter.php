@@ -138,6 +138,14 @@
 		
 		function send_search(){
 			var filter_category = $('.news_category:last').attr('value');
+			var category_count = $('.news_category').length;
+			if(filter_category == -1){
+				if(category_count < 2){
+					
+				}else{
+					filter_category = $('.news_category:eq('+ (category_count - 2) + ')').val();
+				}
+			}
 			var filter_adopt = $('#filter_adopt').attr('value');
 			var filter_selected = $('#filter_selected').attr('value');
 			url = '_news_filter.php?filter_category=' + filter_category;
