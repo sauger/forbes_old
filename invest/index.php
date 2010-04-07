@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div id=ibody>
-		<? 
+		<?php
 			$db=get_db();
 			$cid=$db->query('select id from fb_category where name="投资" and parent_id=0');
 			$cid=$cid[0]->id;

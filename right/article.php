@@ -15,8 +15,8 @@
 		<div id=content_b>
 			<div id=content_b_l>
 				<span style="font-size:14px; color:#11579e; font-weight:bold;">订阅分类文章</span>
-				<div class=cl><input type="radio">富豪　<input type="radio">创业　<input type="radio">商业</div>
-				<div class=cl><input type="radio">投资　<input type="radio">生活</div>
+				<div class=cl><input type="checkbox">富豪　<input type="checkbox">创业　<input type="checkbox">商业</div>
+				<div class=cl><input type="checkbox">投资　<input type="checkbox">生活</div>
 			</div>
 			<div id=content_b_r>
 				<button>定制</button>	
