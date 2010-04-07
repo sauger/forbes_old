@@ -72,7 +72,7 @@
 					<div class="title_name">榜单推荐</div>
 					<div class=more2><a href=""><img border=0 src="/images/more.gif"></a></div>	
 				</div>
-				<?php $record_show = get_news_by_pos('榜单推荐','榜单首页');
+				<?php 
 					for($i=0;$i<5;$i++){
 						$pos_name = "listindex_recommend_{$i}";
 				?>
