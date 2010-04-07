@@ -11,7 +11,7 @@
 		use_jquery();
 		js_include_tag('public');
 		css_include_tag('public','fh_index');
-
+		init_page_items();
 	?>
 </head>
 <body>
@@ -22,17 +22,21 @@
 		<div id=cyline></div>
 		<div id=fh_left>
 			<div id=fh_l_t_l></div>
-			<div id=fh_l_t_c>
+			<?php 
+					$pos_name = "richindex_head";
+							
+			?>
+			<div id=fh_l_t_c pos ="<?php echo $pos_name;?>">
 				<div id=pic>
-					<img border=0 src="/images/fh/one.jpg">
+					<img border=0 src="<?php echo $pos_items->$pos_name->image1;?>"/>
 					<div id=fd></div>
 					<div id=fd_t>
 						<div id=fd_t_l></div>
-						<div id=fd_t_r><a href="">2009中国富豪榜</a></div>
+						<div id=fd_t_r><a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 					</div>
 					<div id=fd_b>
 						<div id=content>
-							 <a href="">　　盖茨作为世界首富的日子也是波折不断。在1988年股票市场的互联的互联网泡沫出现前，盖茨的财富已经达到近1999亿美元。</a>	
+							 <a href="<?php echo $pos_items->$pos_name->href;?>">　　<?php echo $pos_items->$pos_name->description;?></a>	
 						</div>	
 					</div>
 				</div>
@@ -64,28 +68,34 @@
 						<div class=more><a href=""><img border=0 src="/images/index/more.jpg"></a></div>
 					</div>
 					<div class=l_m_l_b_l_content>
-						<?php for($i=0;$i<3;$i++){ ?>
-							<div class=context>
+						<?php for($i=0;$i<3;$i++){
+							$pos_name = "richindex_piclist_{$i}";
+						?>
+							<div class=context pos="<?php echo $pos_name?>">
 								<div class=sj><img src="/images/fh/icon2.jpg"></div>
-								<div class=l_m_l_context><a href="">大学生找工作干销售 经验仍是就业门槛</a></div>
+								<div class=l_m_l_context><a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 							</div>
 						<?php } ?>
 					</div>
 					<div class=l_m_l_b_r_content>
-						<?php for($i=0;$i<3;$i++){ ?>
-							<div class=context>
+						<?php for($i=3;$i<6;$i++){ 
+							$pos_name = "richindex_piclist_{$i}";
+						?>
+							<div class=context pos="<?php echo $pos_name?>">
 								<div class=sj><img src="/images/fh/icon2.jpg"></div>
-								<div class=l_m_l_context><a href="">大学生找工作干销售 经验仍是就业门槛</a></div>
+								<div class=l_m_l_context><a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 							</div>
 						<?php } ?>
 					</div>
 					<div class=l_m_l_b_dash></div>
 					<div id=l_m_b>
-						<?php for($i=0;$i<5;$i++){ ?>
-						<div class=l_m_b_content>
-							<div class=pic><a href=""><img border=0 src="/images/fh/two.jpg"></a></div>
+						<?php for($i=0;$i<5;$i++){ 
+							$pos_name = "richindex_picture_{$i}";
+						?>
+						<div class=l_m_b_content pos="<?php echo $pos_name;?>">
+							<div class=pic><a href="<?php echo $pos_items->$pos_name->href;?>"><img border=0 src="<?php echo $pos_items->$pos_name->image1?>"></a></div>
 							<div class=piccontent>
-								<a href=""><span style="font-weight:bold;">刘永行</span><br>东方希望集团<br>30亿美元</a>	
+								<a href="<?php echo $pos_items->$pos_name->href;?>"><span style="font-weight:bold;"><?php echo $pos_items->$pos_name->display;?></span><br><?php echo $pos_items->$pos_name->description;?></a>	
 							</div>
 						</div>
 						<?php } ?>	
@@ -120,7 +130,8 @@
 						<div class=more><a href=""><img border=0 src="/images/index/c_r_t_more.jpg"></a></div>	
 					</div>
 					<div id=content>
-						<?php for($i=0; $i<8; $i++){ ?>
+						<?php for($i=0; $i<8; $i++){ 
+						?>
 						<div class=context>
 							<div class=point></div>
 							<div class=cl><a href="">2010中国最佳商业城市榜查看详细</a></div>
@@ -166,48 +177,40 @@
 			<div id=fh_b_l>
 				<div id=fh_b_l_title>富豪报道</div>
 				<div id=fh_b_l_l>
-					<div class=content>
-							<div class=content_title><a href="">福布斯公布09年全球富豪排行榜 盖茨重回榜首</a></div>
-							<div class=content_jz>记者：长虹干</div>
-							<div class=content_content><a href="">　　北京时间3月12日，据国外媒体报道，《福布斯》杂志周三推出200富豪排行榜，微软联合创始人、董事长比尔盖茨重新夺回全球首富的头衔，不过其资产较去年同期减少了180亿美元。</a></div>
+					<?php 
+					for($i=0;$i<3;$i++){
+						$pos_name = "richindex_news_{$i}";
+					?>
+					<div class=content pos="<?php echo $pos_name;?>" <?php if($i>0) echo' style="margin-top:40px;"';?>>
+							<div class=content_title><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></div>
+							<div class=content_jz><?php echo $pos_items->$pos_name->alias;?></div>
+							<div class=content_content><a href="<?php echo $pos_items->$pos_name->href;?>">　　<?php echo $pos_items->$pos_name->description;?></a></div>
 					</div>	
-					<div class=content style="margin-top:40px;">
-							<div class=content_title><a href="">福布斯公布09年全球富豪排行榜 盖茨重回榜首</a></div>
-							<div class=content_jz>记者：长虹干</div>
-							<div class=content_content><a href="">　　北京时间3月12日，据国外媒体报道，《福布斯》杂志周三推出200富豪排行榜，微软联合创始人、董事长比尔盖茨重新夺回全球首富的头衔，不过其资产较去年同期减少了180亿美元。</a></div>
-					</div>
-					<div class=content style="margin-top:40px;">
-							<div class=content_title><a href="">福布斯公布09年全球富豪排行榜 盖茨重回榜首</a></div>
-							<div class=content_jz>记者：长虹干</div>
-							<div class=content_content><a href="">　　北京时间3月12日，据国外媒体报道，《福布斯》杂志周三推出200富豪排行榜，微软联合创始人、董事长比尔盖茨重新夺回全球首富的头衔，不过其资产较去年同期减少了180亿美元。</a></div>
-					</div>
+					<?php }?>
 				</div>
 				<div id=fh_b_l_r>
-						<div class=content>
-							<div class=content_title><a href="">福布斯公布09年全球富豪排行榜 盖茨重回榜首</a></div>
-							<div class=content_jz>记者：长虹干</div>
-							<div class=content_content><a href="">　　北京时间3月12日，据国外媒体报道，《福布斯》杂志周三推出200富豪排行榜，微软联合创始人、董事长比尔盖茨重新夺回全球首富的头衔，不过其资产较去年同期减少了180亿美元。</a></div>
+					<?php 
+					for($i=3;$i<6;$i++){
+						$pos_name = "richindex_news_{$i}";
+					?>
+					<div class=content pos="<?php echo $pos_name;?>" <?php if($i>3) echo' style="margin-top:40px;"';?>>
+							<div class=content_title><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></div>
+							<div class=content_jz><?php echo $pos_items->$pos_name->alias;?></div>
+							<div class=content_content><a href="<?php echo $pos_items->$pos_name->href;?>">　　<?php echo $pos_items->$pos_name->description;?></a></div>
 					</div>	
-					<div class=content style="margin-top:40px;">
-							<div class=content_title><a href="">福布斯公布09年全球富豪排行榜 盖茨重回榜首</a></div>
-							<div class=content_jz>记者：长虹干</div>
-							<div class=content_content><a href="">　　北京时间3月12日，据国外媒体报道，《福布斯》杂志周三推出200富豪排行榜，微软联合创始人、董事长比尔盖茨重新夺回全球首富的头衔，不过其资产较去年同期减少了180亿美元。</a></div>
-					</div>
-					<div class=content style="margin-top:40px;">
-							<div class=content_title><a href="">福布斯公布09年全球富豪排行榜 盖茨重回榜首</a></div>
-							<div class=content_jz>记者：长虹干</div>
-							<div class=content_content><a href="">　　北京时间3月12日，据国外媒体报道，《福布斯》杂志周三推出200富豪排行榜，微软联合创始人、董事长比尔盖茨重新夺回全球首富的头衔，不过其资产较去年同期减少了180亿美元。</a></div>
-					</div>
+					<?php }?>
 				</div>
 			</div>
 			<div id=fh_b_dash></div>
 			<div id=fh_b_r>
 				<div class=fh_b_r_title>创富者说</div>
-				<?php for($i=0;$i<3;$i++){ ?>
+				<?php for($i=0;$i<3;$i++){ 
+					$pos_name = "richindex_news1_{$i}";
+				?>
 				<div class=fh_b_r_content>
-					<div class=pic><a href=""><img border=0 src="/images/fh/seven.jpg"></a></div>
-					<div class=pictitle><a href="">每万人有6个千万富豪</a></div>
-					<div class=piccontent><a href="">　　4月16日发布的《2009胡润财富报告》认为，资产1000万元以上的超级富翁5万个千万富豪...</a></div>
+					<div class=pic><a href="<?php echo $pos_items->$pos_name->href;?>"><img border=0 src="<?php echo $pos_items->$pos_name->image1;?>"></a></div>
+					<div class=pictitle><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></div>
+					<div class=piccontent><a href="">　　<?php echo $pos_items->$pos_name->description;?></a></div>
 				</div>
 				<?php } ?>
 				<div id=fh_b_r_dash></div>

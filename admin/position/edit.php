@@ -79,8 +79,8 @@
 			<td><input id="end_time" name="end_time" value="<?php echo $h;?>"></input>小时后过期</td>
 		</tr>
 		<tr>
-			<td>页面名</td>
-			<td><input name="pos[page_name]" value="<?php echo $pos->page_name;?>"></input></td>
+			<td>备用字段</td>
+			<td><input name="pos[alias]" value="<?php echo $pos->alias;?>"></input></td>
 		</tr>	
 		<tr>
 			<td>说明</td>
