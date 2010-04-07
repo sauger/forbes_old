@@ -1,0 +1,12 @@
+<?php
+update_pos("投资",15,"invest_acticle",true);
+update_news_column("投资",3,'author','invest_column');
+update_pos("创业",15,"initiate_acticle",true);
+update_news_column("创业",3,'author','initiate_column');
+update_pos("商业",15,"business_acticle",true);
+update_news_column("商业",3,'author','business_column');
+update_pos("科技",15,"tech_acticle",true);
+update_news_column("科技",3,'author','tech_column');
+update_pos("城市",15,"city_acticle",true);
+update_news_column("城市",3,'author','city_column');
+?>
