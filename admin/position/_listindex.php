@@ -4,9 +4,7 @@ $db = get_db();
 for($i=1;$i<9;$i++){
 	update_list_pos($i);	
 }
-
-function update_list_pos($pos){
-	function pos_type($p){
+function pos_type($p){
 		$p = intval($p);
 		switch ($p) {
 			case 1:
@@ -38,6 +36,8 @@ function update_list_pos($pos){
 			break;
 		}
 	}
+
+function update_list_pos($pos){
 	global $db;
 	$table = new table_class('fb_page_pos');
 	$type = pos_type($pos);
