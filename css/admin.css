@@ -49,7 +49,7 @@ table{width:986px; border:none; text-align:center; background:#e7e7e7;}
 .itable_title{height:25px; font-size:12px; font-weight:bold; color:#666666; text-align:center; background:#f0f0f0;}
 .itable_title td{border-bottom:1px solid #999999;}
 
-.tr3{height:28px; text-align:center; font-size:12px; line-height:15px;  background:#ffffff;}
+.tr3{height:28px; text-align:center; font-size:12px; line-height:15px; background:#ffffff;}
 .tr3 td{text-align:center;}
 
 .tr4{height:28px; text-align:left; font-size:12px; line-height:20px; background:#ffffff;}
@@ -58,7 +58,8 @@ table{width:986px; border:none; text-align:center; background:#e7e7e7;}
 .tr4 select{width:306px; float:left; display:inline}
 .tr4 .category_select select{width:206px; float:left; display:inline}
 
-
+.btools{height:35px; text-align:center; font-size:14px; line-height:25px; background:#ffffff;}
+.btools input{width:230px;}
 
 
 
@@ -66,7 +67,6 @@ table{width:986px; border:none; text-align:center; background:#e7e7e7;}
 
 
 .sub_menu li{margin-left:25px;}
-.tr3 input{width:230px;}
 .tr3.selected{background: #f9f9f9}
 
 

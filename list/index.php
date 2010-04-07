@@ -25,14 +25,14 @@
 				<?php $record_show = get_news_by_pos('榜单头条','榜单首页');?>
 				<div id=t_l_t_t>
 					<div class=headline_pic id=headline_pic_0><a href="<?php echo $pos_items->listindex_hl_0->href; ?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->listindex_hl_0->image1; ?>"></a></div>
-					<div class=headline_pic id=headline_pic_1 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_1->href; ?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->listindex_hl_0->image1; ?>"></a></div>
+					<div class=headline_pic id=headline_pic_1 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_1->href; ?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->listindex_hl_1->image1; ?>"></a></div>
 					<div class=headline_pic id=headline_pic_2 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_2->href; ?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->listindex_hl_2->image1; ?>"></a></div>
 					<div class=headline_pic id=headline_pic_3 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_3->href; ?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->listindex_hl_3->image1; ?>"></a></div>
 					<div id=t_l_t_t_r>
-						<div class=headline_title id=headline_title_0><a href="<?php echo $pos_items->listindex_hl_0->href;?>"><?php echo $pos_items->listindex_hl_0->display; ?></a></div>
-						<div class=headline_title id=headline_title_1 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_1->href;?>"><?php echo $pos_items->listindex_hl_1->display; ?></a></div>
-						<div class=headline_title id=headline_title_2 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_2->href;?>"><?php echo $pos_items->listindex_hl_2->display; ?></a></div>
-						<div class=headline_title id=headline_title_3 style="display:none;"><a href="<?php echo $pos_items->listindex_hl_3->href;?>"><?php echo $pos_items->listindex_hl_3->display; ?></a></div>
+						<div class=headline_title id=headline_title_0 pos="listindex_hl_0"><a href="<?php echo $pos_items->listindex_hl_0->href;?>"><?php echo $pos_items->listindex_hl_0->display; ?></a></div>
+						<div class=headline_title id=headline_title_1 style="display:none;" pos="listindex_hl_1"><a href="<?php echo $pos_items->listindex_hl_1->href;?>"><?php echo $pos_items->listindex_hl_1->display; ?></a></div>
+						<div class=headline_title id=headline_title_2 style="display:none;" pos="listindex_hl_2"><a href="<?php echo $pos_items->listindex_hl_2->href;?>"><?php echo $pos_items->listindex_hl_2->display; ?></a></div>
+						<div class=headline_title id=headline_title_3 style="display:none;" pos="listindex_hl_3"><a href="<?php echo $pos_items->listindex_hl_3->href;?>"><?php echo $pos_items->listindex_hl_3->display; ?></a></div>
 						<div class=headline_description id=headline_description_0><?php echo $pos_items->listindex_hl_0->description; ?></div>
 						<div class=headline_description id=headline_description_1 style="display:none;"><?php echo $pos_items->listindex_hl_1->description; ?></div>
 						<div class=headline_description id=headline_description_2 style="display:none;"><?php echo $pos_items->listindex_hl_2->description; ?></div>
@@ -41,14 +41,16 @@
 					<?php for($j=0;$j<=3;$j++){?>	
 						<div class="headline_related" id="headline_related_<?php echo $j?>" <?php if($j<>0){echo "style='display:none'";}?> >
 						<?php				
-							if($record_show[$j]->id!=''){
-								$rela_list = $db->query("select t1.* from fb_custom_list_type t1 join fb_list_relation t2 on t1.id=t2.rela_id where t2.list_id={$record_show[$j]->id} order by t2.priority limit 3");
-								for($i=0;$i<count($rela_list);$i++)
+							//if($record_show[$j]->id!=''){
+							//	$rela_list = $db->query("select t1.* from fb_custom_list_type t1 join fb_list_relation t2 on t1.id=t2.rela_id where t2.list_id={$record_show[$j]->id} order by t2.priority limit 3");
+								for($i=0;$i<3;$i++)
 								{
-									  if(count($rela_list)<1){break;}
-									echo '<div class=cl><a href="">'.strip_tags($rela_list[$i]->name).'</a></div>';
-								}
-							}
+							//		  if(count($rela_list)<1){break;}
+								$pos_name = "listindex_hl_{$j}_{$i}";
+								?>
+									<div class=cl pos="<?php echo $pos_name?>"><a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a></div>
+							<?php 	}
+							//}
 						?>				
 						</div>
 					<? }?>	
@@ -70,15 +72,16 @@
 					<div class="title_name">榜单推荐</div>
 					<div class=more2><a href=""><img border=0 src="/images/more.gif"></a></div>	
 				</div>
-				<?php $record_show = get_news_by_pos('榜单推荐','榜单首页');
-					for($i=0;$i<count($record_show);$i++){
+				<?php 
+					for($i=0;$i<5;$i++){
+						$pos_name = "listindex_recommend_{$i}";
 				?>
-				<div class="left_pbox">
+				<div class="left_pbox" pos="<?php echo $pos_name;?>">
 					<div class=picture3>
-						<img width="94" height="94" src="<?php echo $record_show[$i]->image_src;?>">
+						<img width="94" height="94" src="<?php echo $pos_items->$pos_name->image1;?>">
 					</div>
 					<div class="left_ptitle">
-						<a href=""><?php echo $record_show[$i]->name;?></a>
+						<a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a>
 					</div>
 				</div>
 				<?php }?>
@@ -91,105 +94,45 @@
 					<div class=more2><a href=""><img border=0 src="/images/more.gif"></a></div>	
 				</div>
 				<div class="list_list">
+				<?php 							
+					$type = array('rich' => '富豪','company' => '公司','famous' => '名人','tech' => '科技');
+					foreach($type as $key => $val){
+				?>
 					<div class="list_box">
 						<div class="list_title">
-							<div class="title">富豪</div>
+							<div class="title"><?php echo $val;?></div>
 							<div class="title_line"></div>
 						</div>
-						<?php $bd=get_news_by_pos('常规榜单-富豪','榜单首页');?>
 						<div class="list_li_box">
-							<?php for($i=0;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php for($i=0;$i<4;$i++){
+								$pos_name = "listindex_{$key}_{$i}"; 
+							?>
+								<li pos="<?php echo $pos_name;?>"><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></li>
 							<?php } ?>
 						</div>
 					</div>
-					<div class="list_box">
-						<div class="list_title">
-							<div class="title">公司</div>
-							<div class="title_line"></div>
-						</div>
-						<?php $bd=get_news_by_pos('常规榜单-公司','榜单首页');?>
-						<div class="list_li_box">
-							<?php for($i=0;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
-					<div class="list_box">
-						<div class="list_title">
-							<div class="title">名人</div>
-							<div class="title_line"></div>
-						</div>
-						<?php $bd=get_news_by_pos('常规榜单-名人','榜单首页');?>
-						<div class="list_li_box">
-							<?php for($i=0;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
-					<div class="list_box">
-						<div class="list_title">
-							<div class="title">科技</div>
-							<div class="title_line"></div>
-						</div>
-						<?php $bd=get_news_by_pos('常规榜单-科技','榜单首页');?>
-						<div class="list_li_box">
-							<?php for($i=0;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
+					<?php }?>
 				</div>
 				<div id=line2></div>
 				<div class="list_list">
+					<?php $type= array('invest' => '投资','city' => '城市','sport' => '体育','edu' => '教育')?>
+					<?php 							
+					foreach($type as $key => $val){
+					?>
 					<div class="list_box">
 						<div class="list_title">
-							<div class="title">投资</div>
+							<div class="title"><?php echo $val;?></div>
 							<div class="title_line"></div>
 						</div>
-						<?php $bd=get_news_by_pos('常规榜单-投资','榜单首页');?>
 						<div class="list_li_box">
-							<?php for($i=0;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
+							<?php for($i=0;$i<4;$i++){
+								$pos_name = "listindex_{$key}_{$i}"; 
+							?>
+								<li pos="<?php echo $pos_name;?>"><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></li>
 							<?php } ?>
 						</div>
 					</div>
-					<div class="list_box">
-						<div class="list_title">
-							<div class="title">城市</div>
-							<div class="title_line"></div>
-						</div>
-						<?php $bd=get_news_by_pos('常规榜单-城市','榜单首页');?>
-						<div class="list_li_box">
-							<?php for($i=0;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
-					<div class="list_box">
-						<div class="list_title">
-							<div class="title">体育</div>
-							<div class="title_line"></div>
-						</div>
-						<?php $bd=get_news_by_pos('常规榜单-体育','榜单首页');?>
-						<div class="list_li_box">
-							<?php for($i=0;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
-					<div class="list_box">
-						<div class="list_title">
-							<div class="title">教育</div>
-							<div class="title_line"></div>
-						</div>
-						<?php $bd=get_news_by_pos('常规榜单-教育','榜单首页');?>
-						<div class="list_li_box">
-							<?php for($i=0;$i<count($bd);$i++){ ?>
-								<li><a href=""><?php echo $bd[$i]->name;?></a></li>
-							<?php } ?>
-						</div>
-					</div>
+					<?php }?>
 				</div>
 			</div>
 		</div>
