@@ -76,41 +76,45 @@
 			for($i=0;$i<count($record);$i++){
 		?>
 		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
-					<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
-					<td><a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php echo $category->find($record[$i]->category_id)->name;?></a></td>
-					<td><?php echo $record[$i]->created_at;?></td>
-					<td>
-						<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
-						<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/btn_delete.png" border="0"></span>
-						<?php
+			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
+			<td><a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php echo $category->find($record[$i]->category_id)->name;?></a></td>
+			<td><?php echo $record[$i]->created_at;?></td>
+			<td>
+					<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
+					<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/btn_delete.png" border="0"></span>
+					<?php
 						if($_SESSION['role_name'] == 'admin' || $_SESSION['role_name'] == "sys_admin"){ 
-							if($record[$i]->is_adopt=="1"){?>
-						<span style="cursor:pointer" class="unpublish_news" name="<?php echo $record[$i]->id;?>" title="撤销"><img src="/images/btn_apply.png" border="0"></span>
-						<?php }?>
-						<?php
-						 
-							if($record[$i]->is_adopt=="0"){?>
-						<span style="cursor:pointer" class="publish_news" name="<?php echo $record[$i]->id;?>" title="发布"><img src="/images/btn_unapply.png" border="0"></span>
-						<?php }}?>
-						<?php if($record[$i]->set_up=="1"){?>
-						<span style="cursor:pointer" class="set_down" name="<?php echo $record[$i]->id;?>" title="取消置顶"><img src="/images/btn_up.png" border="0"></span>
-						<?php }?>
-						<?php if($record[$i]->set_up=="0"){?>
-						<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/btn_unup.png" border="0"></span>
-						<?php }?>
-						<?php if($_SESSION['role_name'] == 'admin' || $_SESSION['role_name'] == "sys_admin"){?>
-						<a  title="静态页面" href="<?php echo $static_site .static_news_url($record[$i]);?>" target="static_news"><img src="/images/btn_static.png" border="0"></a>
-						<?php }?>
-						<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/btn_comment.png" border="0"></a>
-						<input type="hidden" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
-					</td>
+						if($record[$i]->is_adopt=="1"){?>
+					<span style="cursor:pointer" class="unpublish_news" name="<?php echo $record[$i]->id;?>" title="撤销"><img src="/images/btn_apply.png" border="0"></span>
+					<?php }?>
+					<?php	if($record[$i]->is_adopt=="0"){?>
+					<span style="cursor:pointer" class="publish_news" name="<?php echo $record[$i]->id;?>" title="发布"><img src="/images/btn_unapply.png" border="0"></span>
+					<?php }}?>
+					<?php if($record[$i]->set_up=="1"){?>
+					<span style="cursor:pointer" class="set_down" name="<?php echo $record[$i]->id;?>" title="取消置顶"><img src="/images/btn_up.png" border="0"></span>
+					<?php }?>
+					<?php if($record[$i]->set_up=="0"){?>
+					<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/btn_unup.png" border="0"></span>
+					<?php }?>
+					<?php if($_SESSION['role_name'] == 'admin' || $_SESSION['role_name'] == "sys_admin"){?>
+					<a title="静态页面" href="<?php echo $static_site .static_news_url($record[$i]);?>" target="static_news"><img src="/images/btn_static.png" border="0"></a>
+					<?php }?>
+					<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/btn_comment.png" border="0"></a>
+					<input type="hidden" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
+				</td>
 		</tr>
 		<?php
 			}
 			//--------------------
 		?>
-		<tr class="tr3">
-			<td colspan=5><?php paginate("",null,"page",true);?>　<button id=clear_priority style="display:none">清空优先级</button>　<button id=edit_priority  style="display:none">编辑优先级</button><input type="hidden" id="relation" value="news"><input type="hidden" id="db_table" value="<?php echo $tb_news;?>"></td>
+		<tr class="btools">
+			<td colspan=5>
+				<?php paginate("",null,"page",true);?>
+				<button id=clear_priority style="display:none">清空优先级</button>
+				<button id=edit_priority  style="display:none">编辑优先级</button>
+				<input type="hidden" id="relation" value="news">
+				<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
+			</td>
 		</tr>
   </table>
 </div>	
