@@ -184,7 +184,7 @@
 					?>
 					<div class=content pos="<?php echo $pos_name;?>" <?php if($i>0) echo' style="margin-top:40px;"';?>>
 							<div class=content_title><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></div>
-							<div class=content_jz><?php echo $pos_items->$pos_name->alias;?></div>
+							<div class=content_jz>记者:<?php echo $pos_items->$pos_name->alias;?></div>
 							<div class=content_content><a href="<?php echo $pos_items->$pos_name->href;?>">　　<?php echo $pos_items->$pos_name->description;?></a></div>
 					</div>	
 					<?php }?>
@@ -196,7 +196,7 @@
 					?>
 					<div class=content pos="<?php echo $pos_name;?>" <?php if($i>3) echo' style="margin-top:40px;"';?>>
 							<div class=content_title><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></div>
-							<div class=content_jz><?php echo $pos_items->$pos_name->alias;?></div>
+							<div class=content_jz>记者:<?php echo $pos_items->$pos_name->alias;?></div>
 							<div class=content_content><a href="<?php echo $pos_items->$pos_name->href;?>">　　<?php echo $pos_items->$pos_name->description;?></a></div>
 					</div>	
 					<?php }?>
