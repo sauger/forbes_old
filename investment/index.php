@@ -17,12 +17,14 @@
 </head>
 <body>
 	<div id=ibody>
-		<? 
+		<?php
 			$db=get_db();
 			$cid=$db->query('select id from fb_category where name="投资" and parent_id=0');
 			$cid=$cid[0]->id;
 			$nav=$db->query('select id from fb_navigation where name="投资"');
 			$nav=$nav[0]->id;
+			$pos = "invest_";
+			init_page_items();
 			require_once('../inc/top.inc.php');
 			include('../_index.php');
 		 	require_once('../inc/bottom.inc.php');
