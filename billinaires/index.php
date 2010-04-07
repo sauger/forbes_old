@@ -1,5 +1,5 @@
 ﻿<?php 
-	require_once('../frame.php');
+	require_once(dirname(__FILE__).'/../frame.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div id=ibody>
-	<? require_once('../inc/top.inc.php');?>
+	<? require_once(dirname(__FILE__).'/../inc/top.inc.php');?>
 		<div id=cyindex></div>
 		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　<a href="">富豪检索结果</a></div>
 		<div id=cyline></div>
@@ -130,11 +130,12 @@
 						<div class=more><a href=""><img border=0 src="/images/index/c_r_t_more.jpg"></a></div>	
 					</div>
 					<div id=content>
-						<?php for($i=0; $i<8; $i++){ 
+						<?php for($i=0; $i<8; $i++){
+							$pos_name = "richindex_richlist_{$i}"; 
 						?>
-						<div class=context>
+						<div class=context pos="<?php echo $pos_name;?>">
 							<div class=point></div>
-							<div class=cl><a href="">2010中国最佳商业城市榜查看详细</a></div>
+							<div class=cl><a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 						</div>
 						<?php } ?>
 					</div>
@@ -207,7 +208,7 @@
 				<?php for($i=0;$i<3;$i++){ 
 					$pos_name = "richindex_news1_{$i}";
 				?>
-				<div class=fh_b_r_content>
+				<div class=fh_b_r_content pos="<?php echo $pos_name;?>">
 					<div class=pic><a href="<?php echo $pos_items->$pos_name->href;?>"><img border=0 src="<?php echo $pos_items->$pos_name->image1;?>"></a></div>
 					<div class=pictitle><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 					<div class=piccontent><a href="">　　<?php echo $pos_items->$pos_name->description;?></a></div>
@@ -236,7 +237,7 @@
 					</div>	
 				</div>
 			</div>
-			<? require_once('../inc/bottom.inc.php');?>
+			<? require_once(dirname(__FILE__).'/../inc/bottom.inc.php');?>
 		</div>
 	</body>
 </html>
