@@ -1,5 +1,5 @@
 ﻿<?php 
-	require_once('../frame.php');
+	require_once(dirname(__FILE__).'/../frame.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div id=ibody>
-	<? require_once('../inc/top.inc.php');?>
+	<? require_once(dirname(__FILE__).'/../inc/top.inc.php');?>
 		<div id=cyindex></div>
 		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　<a href="">富豪检索结果</a></div>
 		<div id=cyline></div>
@@ -237,7 +237,7 @@
 					</div>	
 				</div>
 			</div>
-			<? require_once('../inc/bottom.inc.php');?>
+			<? require_once(dirname(__FILE__).'/../inc/bottom.inc.php');?>
 		</div>
 	</body>
 </html>
