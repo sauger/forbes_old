@@ -34,7 +34,7 @@
 					<div class=line>|</div>
 					<a href="" class=more></a>
 				</div>
-				<?php  for($i=0;$i<10;$i++){ $pos_name = $pos.'essay'.$i;?>
+				<?php  for($i=5;$i<15;$i++){ $pos_name = $pos.'acticle'.$i;?>
 					<div class=common_article_lis2 pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name);?></div>
 				<?php } ?>
 			</div>
@@ -67,7 +67,7 @@
 				<?php for($i=0;$i<3;$i++){ $pos_name = $pos."column".$i;?>
 				<div class=common_list3 pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name)?></div>
 				<div class=common_description3><?php echo $pos_items->$pos_name->description;?></div>
-				<div class=common_writer>——<?php echo $pos_items->$pos_name->alias?>专栏</div>
+				<div class=common_writer>——<?php echo $pos_items->$pos_name->alias?></div>
 				<?php } ?>
 			</div>
 		</div>
