@@ -20,33 +20,15 @@
 			<div id=login>欢迎你：  <?php echo $_SESSION["admin_nick_name"]; ?> [<a href="/login/logout.post.php">退出</a>]</div>
 		</div>
 		<div id=nav1>
-			<div class="nav1_menu">
-				<a href="/admin/column/news_list.php" target="admin_iframe">文章管理</a>
-			</div>
-			<div class="nav1_menu">
-				<a href="/admin/image/image_list.php" target="admin_iframe">图片管理</a>
-			</div>
-			<div class="nav1_menu">
-				<a href="/admin/list/picture_list_list.php" target="admin_iframe">常规榜单管理</a>
-			</div>
-			<div class="nav1_menu">
-				<a href="/admin/list/file_list_list.php" target="admin_iframe">图片榜单管理</a>
-			</div>
-			<div class="nav1_menu">
-				<a href="/admin/list" target="admin_iframe">文章榜单管理</a>
-			</div>
-			<div class="nav1_menu">
-				<a href="/admin/company/list.php" target="admin_iframe">公司管理</a>
-			</div>
-			<div class="nav1_menu">
-				<a href="/admin/rich/list.php" target="admin_iframe">富豪管理</a>
-			</div>
-			<div class="nav1_menu">
-				<a href="/admin/filte_words/list.php" target="admin_iframe">敏感词管理</a>
-			</div>
-			<div class="nav1_menu">
-				<a href="/admin/user/modify_user_info.php" target="admin_iframe">个人信息维护</a>
-			</div>
+			<div class="nav1_menu"  param_href="/admin/column/news_list.php">文章管理</div>
+			<div class="nav1_menu"  param_href="/admin/image/image_list.php">图片管理</div>
+			<div class="nav1_menu"  param_href="/admin/list/">常规榜单</div>
+			<div class="nav1_menu"  param_href="/admin/list/picture_list_list.php">图片榜单</div>
+			<div class="nav1_menu"  param_href="/admin/list/file_list_list.php">文章榜单</div>
+			<div class="nav1_menu"  param_href="/admin/company/list.php">公司管理</div>
+			<div class="nav1_menu"  param_href="/admin/rich/list.php">富豪管理</div>
+			<div class="nav1_menu"  param_href="/admin/filte_words/list.php">敏感词</div>
+			<div class="nav1_menu"  param_href="/admin/user/modify_user_info.php">个人信息</div>
 		</div>
 		<div id="admin_content">
 		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="/admin/column/news_list.php" width="996" height="1200px"></iframe>
@@ -54,6 +36,29 @@
 </div>
 </body>
 </html>
+<script>
+$(function(){
+	$(".nav1_menu").click(function(e){
+		 $(".nav1_menu").css("font-weight","normal");
+		 $(".nav1_menu").css("border-left","1px solid #ffffff");
+		 $(".nav1_menu").css("border-right","1px solid #d8d8d8");
+		 $(".nav1_menu").css("background","#f0f0f0");
 
+		 $(this).css("font-weight","bold");
+		 $(this).css("border-left","1px solid #E7EDDF");
+		 $(this).css("border-right","1px solid #E7EDDF");
+		 $(this).css("background","#E7EDDF");
+
+		 var param_href=$(this).attr("param_href");
+		 $("#admin_iframe").attr("src",param_href);
+
+	});
+
+
+	
+	
+
+});
+</script>
 
 

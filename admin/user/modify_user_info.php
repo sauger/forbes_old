@@ -21,14 +21,15 @@
 	?>
 </head>
 <body>
-	<table width="795" border="0" id="list">
-	<form id="user_form" enctype="multipart/form-data"  method="post" action="modify_user_info.post.php">
-		<tr class=tr1>
-			<td colspan="2">修改账号信息</td>
-		</tr>
+<div id=icaption>
+    <div id=title>个人信息</div>
+</div>
+<div id=itable>
+	<table cellspacing="1"  align="center">
+	 <form id="user_form" enctype="multipart/form-data"  method="post" action="modify_user_info.post.php">
 		<tr class=tr4>
-			<td >头像</td>
-			<td width=645 align="left">
+			<td class=td1 width="15%">头像</td>
+			<td width="85%">
 			<?php if($user->image_src){?>
 			<img src="<?php echo $user->image_src;?>">
 			<?php }?>
@@ -36,31 +37,31 @@
 			</td>
 		</tr>		
 		<tr class=tr4>
-			<td width=150>用户名：</td>
-			<td width=645 align="left"><?php echo $user->name;?></td>
+			<td class=td1>用户名：</td>
+			<td ><?php echo $user->name;?></td>
 		</tr>
 		<tr class=tr4>
-			<td width=150>昵称：</td>
-			<td width=645 align="left"><?php echo $user->nick_name;?></td>
+			<td class=td1>昵称：</td>
+			<td ><?php echo $user->nick_name;?></td>
 		</tr>
 		<tr class=tr4>
-			<td>专栏名：</td>
-			<td width=645 align="left"><input type="text" value="<?php echo $user->column_name;?>" name="column_name"></td>
+			<td class=td1>专栏名：</td>
+			<td><input type="text" value="<?php echo $user->column_name;?>" name="column_name"></td>
 		</tr>
 		<tr class=tr4>
-			<td>密码：</td>
-			<td width=645 align="left"><input type="password" name="old_password"></td>
+			<td class=td1>密码：</td>
+			<td><input type="password" name="old_password"></td>
 		</tr>
 		<tr class=tr4>
-			<td>新密码：</td>
-			<td width=645 align="left"><input type="password" name="new_password" id="new_password"></input></td>
+			<td class=td1>新密码：</td>
+			<td ><input type="password" name="new_password" id="new_password"></input></td>
 		</tr>
 		<tr class=tr4>
-			<td>确认新密码：</td>
-			<td width=645 align="left"><input type="password" id="re_new_password"></input></td>
+			<td class=td1>确认新密码：</td>
+			<td ><input type="password" id="re_new_password"></input></td>
 		</tr>
 		<tr class=tr4>
-			<td>个人简介：</td>
+			<td class=td1>个人简介：</td>
 			<td><?php show_fckeditor('description','Admin',false,"215",$user->description);?></td>
 		</tr>
 		<tr class=tr3>
@@ -68,5 +69,6 @@
 		</tr>
 	</form>
 	</table>
+</div>	
 </body>
 </html>

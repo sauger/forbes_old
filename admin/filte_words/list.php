@@ -15,13 +15,15 @@
 		$count = count($words);
 	?>
 </head>
-<body style="background:#E1F0F7">
-	<table width="795" border="0">
-		<tr class="tr1">
-			<td colspan="5" width="795">　敏感词管理　<a href="edit.php" style="color:#0000FF">添加敏感词</a></td>
-		</tr>
-		<tr class="tr2">
-			<td width="205">敏感词</td><td width="250">操作</td>
+<body>
+<div id=icaption>
+    <div id=title>敏感词管理</div>
+	  <a href="edit.php" id=btn_add></a>
+</div>	
+<div id=itable>
+	<table cellspacing="1"  align="center">
+		<tr class=itable_title>
+			<td width="70%">敏感词</td><td width="30%">操作</td>
 		</tr>
 		<?php for($i=0;$i<$count;$i++){?>
 		<tr class="tr3" id="<?php echo $words[$i]->id;?>">
@@ -32,15 +34,11 @@
 			</td>
 		</tr>
 		<? }?>
+		<tr class=tr3>
+			<td colspan="2"><?php paginate();?>	<input type="hidden" id="db_table" value="fb_filte_words"></td>
+		</tr>
 	</table>
-	<input type="hidden" id="db_table" value="fb_filte_words">
-	<div class="div_box">
-		<table width="795" border="0">
-			<tr colspan="5" class=tr3>
-				<td><?php paginate();?></td>
-			</tr>
-		</table>
-	</div>
+</div>	
 </body>
 </html>
 

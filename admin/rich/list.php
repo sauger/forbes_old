@@ -25,24 +25,25 @@
 
 ?>
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="10">　
-				<a href="edit.php">添加富豪</a>
-				<input  style="margin-left:20px" id="content" type="text" value="<? echo $_REQUEST['content']?>"><select id="type" style="width:90px" class="">
-					<option value="1" <?php if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >姓名</option>
-					<option value="0" <?php if($_REQUEST['type']=="0"){?>selected="selected"<? }?> >性别</option>
-				</select>
-				<input type="button" value="搜索" id="search" style="height:20px; border:2px solid #999999;">
-				<a href="upload_data.php">数据导入</a>
-			</td>
+<div id=icaption>
+    <div id=title>富豪管理</div>
+	  <a href="edit.php" id=btn_add></a>
+		<a href="upload_data.php" id=btn_import></a>
+</div>
+
+<div id=isearch>
+		<input id="content" type="text" value="<? echo $_REQUEST['content']?>">
+		<select id="type">
+				<option value="1" <?php if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >姓名</option>
+				<option value="0" <?php if($_REQUEST['type']=="0"){?>selected="selected"<? }?> >性别</option>
+		</select>
+		<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1"  align="center">
+		<tr class=itable_title>
+			<td width="25%">姓名</td><td width="15%">性别</td><td width="15%">年龄</td><td width="15%">国籍</td><td width="15%">今日排名</td><td width="15%">操作</td>
 		</tr>
-		<tr class="tr2">
-			<td width="295">姓名</td><td width="100">性别</td><td width="100">年龄</td><td width="100">国籍</td><td width="100">今日排名</td><td width="100">操作</td>
-		</tr>
-
-
-
 		<?php
 			//--------------------
 			$len = count($record);
