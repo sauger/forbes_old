@@ -168,6 +168,7 @@ function get_page_items(){
 
 function init_page_items(){
 	global $pos_items;
+	if($pos_items) return;
 	$pos_items = get_page_items();
 	global $page_type;
 	$page_type = $page_type ? $page_type : $_REQUEST['page_type'];
