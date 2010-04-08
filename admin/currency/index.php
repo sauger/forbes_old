@@ -23,13 +23,14 @@
 </head>
 
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="5">　 汇率管理
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="295">货币</td><td width="250">代码</td><td width="250">汇率（1:RMB）</td>
+<div id=icaption>
+    <div id=title>汇率管理</div>
+</div>
+
+<div id=itable>
+	<table cellspacing="1"  align="center">
+		<tr class=itable_title>
+			<td width="40%">货币</td><td width="30%">代码</td><td width="30%">汇率（1:RMB）</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -42,9 +43,13 @@
 		<?php
 			}
 		?>
-		<tr class="tr3">
-			<td colspan=5><?php paginate();?>				<input type="hidden" id="db_table" value="fb_hbgl"></td>
+		<tr class="btools">
+			<td colspan=10>
+				<?php paginate("",null,"page",true);?>
+				<input type="hidden" id="db_table" value="fb_hbgl">
+			</td>
 		</tr>
 	</table>
+</div>	
 </body>
 </html>

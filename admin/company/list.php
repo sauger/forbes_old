@@ -45,7 +45,7 @@
 		<input type="button" value="搜索" id="search_button">
 </div>
 <div id=itable>
-	<table cellspacing="1" align="center">	
+	<table cellspacing="1">	
 		<tr class="itable_title">
 			<td width="25%">名称</td><td width="15%">国家</td><td width="15%">股票代码</td><td width="15%">交易所</td><td width="15%">货币种类</td><td width="15%">操作</td>
 		</tr>
@@ -53,15 +53,11 @@
 			$len = count($record);
 			for($i=0;$i< $len;$i++){
 		?>
-				<tr class="tr3" id=<?php echo $record[$i]->id;?> >
-					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->name);?></a></td>
-					<td align="center">
-						<?php echo strip_tags($record[$i]->country);?>
-					</td>
-					<td align="center">
-						<?php echo strip_tags($record[$i]->stock_code);?>
-					</td>
-					<td align="center">
+		<tr class="tr3" id=<?php echo $record[$i]->id;?> >
+				<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->name);?></a></td>
+				<td><?php echo strip_tags($record[$i]->country);?></td>
+				<td><?php echo strip_tags($record[$i]->stock_code);?></td>
+				<td>
 						<?php
 								switch ($record[$i]->stock_place_code)
 									{
@@ -100,7 +96,7 @@
 									}
 						?>
 					</td>
-					<td align="center">
+					<td>
 						<?php
 							$hbzl = new table_class('fb_currency');
 							if ($record[$i]->hbid != '')
@@ -110,7 +106,7 @@
 							}	
 						?>
 					</td>
-					<td align="center">
+					<td>
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>"  title="编辑"><img src="/images/btn_edit.png" border="0"></a>
 						<span style="cursor:pointer;" class="del" name="<?php echo $record[$i]->id;?>" title="删除"><img src="/images/btn_delete.png" border="0"></span>
 					</td>
@@ -118,8 +114,11 @@
 		<?php
 			}
 		?>
-		<tr>
-			<td colspan="8" align="right"><?php paginate(); ?>				<input type="hidden" id="db_table" value="fb_gs"></td>
+		<tr class="btools">
+			<td colspan="10">
+				<?php paginate("",null,"page",true);?>
+				<input type="hidden" id="db_table" value="fb_gs">
+			</td>
 		</tr>
 	</table>
 </body>
