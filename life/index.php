@@ -241,11 +241,13 @@
 					<div id=title>
 						<div style="width:60px; float:left; display:inline;">奢华专题</div><div id=more></div>
 					</div>
-					<div id=picture>
+					<?php $pos_name = "lifeindex_zt"?>
+					<div id=picture <?php show_page_pos($pos_name);?>>
+						<a href="<?php echo $pos_items->$pos_name->href;?>"><img src="<?php echo $pos_items->$pos_name->image1?>" border="0" width="240" height="160" /></a>
 					</div>
 				</div>
-				<div id=title1>
-					<a href="">天使也爱CHANEL,香奈儿珠宝专题</a>
+				<div id=title1<?php show_page_pos($pos_name);?>v>
+					<a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a>
 				</div>
 			</div>
 		</div>

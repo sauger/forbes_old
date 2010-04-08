@@ -15,5 +15,5 @@ $pos->save();
 ?>
 <script>
 	parent.$.fn.colorbox.close();
-	parent.location.reload();
+	parent.frames['admin_iframe'].location.reload();
 </script>

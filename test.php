@@ -5,9 +5,6 @@
 		use_jquery_ui();
 		js_include_tag('../ckeditor/ckeditor.js','../ckeditor/adapters/jquery.js','pubfun');
 		css_include_tag('jquery_ui');
-		$a = array('中国' => '外随');
-		echo $a['中国'];
-		die();
 		//$db = get_db();
 		//var_dump($db->execute($script));
 				
@@ -25,20 +22,28 @@
 			<input type="submit" value="send"></input>		
 		</form>
 		
-		<a id="test" href="#">test</a>
+		<a class="test" href="#">test</a>
+		<div style="height:600px;">dsfads</div>
+		<a class="test" href="#">test</a>
+		<iframe src="/test1.php" width="1000" height="1000"></iframe>
 	</body>
 </html>
 
 <script>
 	//$('#editor').val('ok');	
-	var a = ['abc','中国','cadsf','afgdfs','sdfasb','cfasd'];
-	$('#auto').autocomplete({source: a});
-	array_remove(a,'b');
-	$('#test').click(function(e){
-		var editor = CKEDITOR.instances;
-		if(editor['title[news]'].getData() ==''){
-			alert('emptyp');
+	$(function(){
+		$('.test').click(function(e){
+			e.preventDefault();
+			show();
+		});
+		function show(){
+			$window = $(window);
+			var str = new Array();
+			 str.push('windowheith=' + $window.height());
+			str.push('scrolltop=' + $window.scrollTop());
+			alert(str); 
+			
 		}
-		alert(editor['title[news]'].getData());
 	});
+
 </script>
