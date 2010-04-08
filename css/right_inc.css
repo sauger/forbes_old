@@ -1,8 +1,8 @@
 
 ul{list-style:none; padding:0; margin:0;}
 
-#right_inc{width:320px; padding-bottom:50px; line-height:0; font-size:0; float:right; display:inline;}
-#right_inc .right_box{width:315px; *width:317px; border-left:1px solid #E1E1E1; border-right:1px solid #E1E1E1; float:left; display:inline;}
+#right_inc{width:320px; padding-bottom:50px; line-height:0; font-left_bottom_titlesize:0; float:right; display:inline;}
+#right_inc .right_box{width:315px; border-left:1px solid #E1E1E1; border-right:1px solid #E1E1E1; float:left; display:inline;}
 #right_inc .bottom_line{width:317px; height:3px; background:url(/images/right/bottom.jpg) no-repeat; float:left; display:inline;}
 
 
@@ -16,7 +16,7 @@ ul{list-style:none; padding:0; margin:0;}
 #right_inc .right_box li{width:260px; height:19px; margin-top:6px; margin-left:15px; padding-left:14px; font-size:13px; background:url(/images/right/tar3.gif) no-repeat 0 6px; overflow:hidden; line-height:19px; float:left; display:inline;}
 #right_inc .right_box a{color:#003899; text-decoration:none;}
 #right_inc  #left_title2{width:316px; height:36px; padding-top:3px; background:url("/images/right/left_title2.jpg") no-repeat; float:left; display:inline;}
-#right_inc .left_bottom_title{width:78px; margin-left:1px; height:36px; color:#999999; font-size:15px; font-weight:bold; text-align:center; line-height:25px;  float:left; display:inline;}
+#right_inc .left_bottom_title{width:78px; height:36px; color:#999999; font-size:15px; font-weight:bold; text-align:center; line-height:25px;  float:left; display:inline;}
 
 #right_inc #r_t_title{width:315px; *width:317px; height:28px; margin-top:10px; border:1px solid #dfdfdf; background:url('/images/right/title_bg.jpg') repeat-x; float:left; display:inline;}
 #right_inc #r_t_title #wz{height:18px; margin-top:5px; margin-left:15px; color:#999999; font-size:14px; font-weight:bold; line-height:18px; float:left; display:inline;}
@@ -72,7 +72,7 @@ ul{list-style:none; padding:0; margin:0;}
 #right_inc #mag_content .pictitle a{text-decoration:none; color:#3399CC;}
 #right_inc #mag_content .context{width:170px; height:96px; margin-left:13px; overflow:hidden; font-size:12px; line-height:25px; float:left; display:inline;}
 #right_inc #mag_dash{width:270px; height:1px; margin-top:10px; margin-left:15px; background:url(/images/right/dashed2.jpg) no-repeat; float:left; display:inline;}
-#right_inc #mag_content #search{width:202px; height:20px;  margin-left:12px; line-height:20px; color:#0066CC; font-weight:bold; float:left; display:inline;}
+#right_inc #mag_content #search{width:202px; height:20px; font-size:12px; margin-left:12px; line-height:20px; color:#0066CC; font-weight:bold; float:left; display:inline;}
 #right_inc #mag_content #sel{width:280px; height:20px; margin-top:5px; margin-left:12px; float:left; display:inline;}
 #right_inc #mag_content #sel select{width:95px; height:20px; margin-right:40px; float:left; display:inline;}
 #right_inc #mag_content #btnonline{width:66px; height:22px; margin-top:10px; margin-left:20px; border:0px; background:url('/images/right/readonline.jpg') no-repeat; float:left; display:inline;}
