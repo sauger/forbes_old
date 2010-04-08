@@ -75,11 +75,11 @@
 		
 		<div id=right>
 				<div id="right_inc" style="margin-top:10px;">
-		  		<?php include "../right/ad.php";?>
-		  		<?php include "../right/investment_list.php"?>
-		  		<?php include "../right/favor.php"?>
-		  		<?php include "../right/activities.php"?>
-		  		<?php include "../right/article.php";?>
+		  		<?php include dirname(__FILE__)."/../right/ad.php";?>
+		  		<?php include dirname(__FILE__)."/../right/investment_list.php"?>
+		  		<?php include dirname(__FILE__)."/../right/favor.php"?>
+		  		<?php include dirname(__FILE__)."/../right/activities.php"?>
+		  		<?php include dirname(__FILE__)."/../right/article.php";?>
 		  		
 		  		
 		 	</div>
