@@ -33,10 +33,10 @@
 				<div class=headline_pic id="headline_pic_<?php echo $i;?>" style="display:none;"><a href="<?php echo $pos_items->$pos_name->href;?>"><img border=0 width=300 height=200 src="<?php echo $pos_items->$pos_name->image1; ?>"></a></div>
 				<?php }?>
 				<div id=headline_content>
-					<div class=headline_title id=headline_title_0 pos="index_hl_0"><a href="<?php echo $pos_items->index_hl_0->href;?>"><?php echo $pos_items->index_hl_0->display; ?></a></div>
-					<div class=headline_title id=headline_title_1 style="display:none;" pos="index_hl_1"><a href="<?php echo $pos_items->index_hl_1->href;?>"><?php echo $pos_items->index_hl_1->display; ?></a></div>
-					<div class=headline_title id=headline_title_2 style="display:none;" pos="index_hl_2"><a href="<?php echo $pos_items->index_hl_2->href;?>"><?php echo $pos_items->index_hl_2->display; ?></a></div>
-					<div class=headline_title id=headline_title_3 style="display:none;" pos="index_hl_3"><a href="<?php echo $pos_items->index_hl_3->href;?>"><?php echo $pos_items->index_hl_3->display; ?></a></div>
+					<div class=headline_title id=headline_title_0 <?php show_page_pos("index_hl_0")?>><a href="<?php echo $pos_items->index_hl_0->href;?>"><?php echo $pos_items->index_hl_0->display; ?></a></div>
+					<div class=headline_title id=headline_title_1 style="display:none;" <?php show_page_pos("index_hl_1")?>><a href="<?php echo $pos_items->index_hl_1->href;?>"><?php echo $pos_items->index_hl_1->display; ?></a></div>
+					<div class=headline_title id=headline_title_2 style="display:none;" <?php show_page_pos("index_hl_2")?>><a href="<?php echo $pos_items->index_hl_2->href;?>"><?php echo $pos_items->index_hl_2->display; ?></a></div>
+					<div class=headline_title id=headline_title_3 style="display:none;" <?php show_page_pos("index_hl_3")?>><a href="<?php echo $pos_items->index_hl_3->href;?>"><?php echo $pos_items->index_hl_3->display; ?></a></div>
 					<div class=headline_description id=headline_description_0><?php echo $pos_items->index_hl_0->description; ?></div>
 					<div class=headline_description id=headline_description_1 style="display:none;"><?php echo $pos_items->index_hl_1->description; ?></div>
 					<div class=headline_description id=headline_description_2 style="display:none;"><?php echo $pos_items->index_hl_2->description; ?></div>
@@ -48,7 +48,7 @@
 							for($i=0;$i<3;$i++)
 							{$pos_name = "index_hl".$j."_r".$i;
 					?>
-					<div class=list pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name,false);?></div>
+					<div class=list <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name,false);?></div>
 					<?php
 							}
 					?>				
@@ -74,7 +74,7 @@
   		 	 	<?php for($i=0;$i<3;$i++){
   		 	 		$pos_name = "index_bf".$i;
   		 	 	?>
-			 	 <div class=lujiazui_list pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name);?></div>
+			 	 <div class=lujiazui_list <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name);?></div>
 			 	 <?php }?>
 			 </div>
 			 <? /* lujiazui-end */?>
@@ -82,7 +82,7 @@
 			 <div id=subject>
 			 	 <div id=subject_btnl></div>
 			 	 <?php for($i=0;$i<8;$i++){ $pos_name = "index_sub".$i;?>
-			 	 <div pos="<?php echo $pos_name;?>" class=subject_content id=subject_content_<?php echo $i?> <?php if($i>2){echo "style='display:none'";}?>>
+			 	 <div <?php show_page_pos($pos_name)?> class=subject_content id=subject_content_<?php echo $i?> <?php if($i>2){echo "style='display:none'";}?>>
 			 			<div class=subject_pic><a href="<?php echo $pos_items->$pos_name->href;?>"><img border=0 src="<?php echo $pos_items->$pos_name->image1;?>"></a></div>
 			 			<div class=subject_list><a href="<?php echo $pos_items->$pos_name->href;?>" title="<?php echo $pos_items->$pos_name->title;?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 			 	 </div>
@@ -132,12 +132,12 @@
 			</div>
 			<div class=forbes_l_content>
 				<div class=list1>
-					<div class=list1_title pos="index_bus0"><a href="<?php echo $pos_items->index_bus0->href;?>" title="<?php echo$pos_items->index_bus0->title;?>"><?php echo $pos_items->index_bus0->display;?></a></div>
+					<div class=list1_title <?php show_page_pos("index_bus0")?>><a href="<?php echo $pos_items->index_bus0->href;?>" title="<?php echo$pos_items->index_bus0->title;?>"><?php echo $pos_items->index_bus0->display;?></a></div>
 					<div class=list1_description><a href="<?php echo $pos_items->index_bus0->href;?>"><?php echo $pos_items->index_bus0->description;?></a></div>
 				</div>
 				<?php
 				for($i=0;$i<3;$i++){ $pos_name = "index_bus".($i+1);?>
-					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?> pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name);?></div>
+					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?> <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name);?></div>
 				<?php } ?>
 			</div>
 			<div class=dashed></div>
@@ -150,11 +150,11 @@
 			</div>
 			<div class=forbes_l_content>
 				<div class=list1>
-					<div class=list1_title pos="index_business0"><?php show_page_href($pos_items,'index_business0');?></div>
+					<div class=list1_title <?php show_page_pos("index_business0")?>><?php show_page_href($pos_items,'index_business0');?></div>
 					<div class=list1_description><a href="<?php echo $pos_items->index_business0->href;?>"><?php echo $pos_items->index_business0->description;?></a></div>
 				</div>
 				<?php for($i=0;$i<4;$i++){ $pos_name="index_business".($i+1);?>
-					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?> pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name);?></div>
+					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?> <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name);?></div>
 				<?php } ?>
 			</div>
 			<div class=dashed></div>
@@ -167,11 +167,11 @@
 			</div>
 			<div class=forbes_l_content>
 				<div class=list1>
-					<div class=list1_title pos="index_tech0"><?php show_page_href($pos_items,'index_tech0');?></div>
+					<div class=list1_title <?php show_page_pos("index_tech0");?>><?php show_page_href($pos_items,'index_tech0');?></div>
 					<div class=list1_description><a href="<?php echo $pos_items->index_tech0->href;?>"><?php echo $pos_items->index_tech0->description;?></a></div>
 				</div>
 				<?php for($i=0;$i<4;$i++){ $pos_name="index_tech".($i+1);?>
-					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?> pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name);?></div>
+					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?> <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name);?></div>
 				<?php } ?>
 			</div>
 			<div class=dashed></div>
@@ -189,7 +189,7 @@
 					for($i=0;$i<5;$i++){ 
 						$pos_name = "index_author".$i;
 				?>
-					<div class=content pos="<?php echo $pos_name;?>" name="<?php echo 'author'.$i;?>">
+					<div class=content <?php show_page_pos($pos_name);?> name="<?php echo 'author'.$i;?>">
 						<div <?php if($i==0){?>style="filter:alpha(opacity=100); opacity:1;"<?php }?> class=cpic><a href="<?php echo $pos_items->$pos_name->href;?>"><img border=0 src="<?php echo $pos_items->$pos_name->image1;?>"></a></div>
 						<div class=ccl><?php show_page_href($pos_items,$pos_name,false);?></div>
 					</div>
@@ -359,13 +359,13 @@
 		</div>
 		<div id="div_caption1">
 			<?php for($i=0;$i<6;$i++){ $pos_name = "index_pop".$i;?>
-					<div class=list3 pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name)?></div>
+					<div class=list3 <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name)?></div>
 			<?php } ?>
 			<div class=dashed></div>
 		</div>
 		<div id="div_caption2" style="display:none;">
 			<?php for($i=0;$i<6;$i++){ $pos_name = "index_reco".$i;?>
-					<div class=list3 pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name)?></div>
+					<div class=list3 <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name)?></div>
 			<?php } ?>
 			<div class=dashed></div>
 		</div>
@@ -410,7 +410,7 @@
 			</div>
 				<?php 
 				for($i=0;$i<8;$i++){ $pos_name = "index_jour".$i;?>
-					<div class=writer pos="<?php echo $pos_name;?>">
+					<div class=writer <?php show_page_pos($pos_name)?>>
 						<div class=writer_pic><?php show_page_img($pos_items,$pos_name)?></div>
 						<div class=writer_name>
 							<a href="<?php echo $pos_items->$pos_name->href;?>">

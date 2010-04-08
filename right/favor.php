@@ -8,7 +8,7 @@
 		<?php
 		for($i=0;$i<7;$i++){$pos_name = "right_pop".$i;
 		?>
-		<li pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name)?></li>
+		<li <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 	</ul>
 </div>
@@ -17,7 +17,7 @@
 		<?php
 		for($i=0;$i<7;$i++){$pos_name = "right_reco".$i;
 		?>
-		<li pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name)?></li>
+		<li <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 	</ul>
 </div>

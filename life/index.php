@@ -36,7 +36,7 @@
 			<div id=m_c2>
 			</div>
 			<?php $pos_name = "lifeindex_column"?>
-			<div id=m_r pos="<?php echo $pos_name;?>">
+			<div id=m_r <?php show_page_pos($pos_name)?>>
 				<div id=picture>
 				<img src="<?php echo $pos_items->$pos_name->image1;?>" width="120" height="120" border="0" />
 				</div>
@@ -75,10 +75,10 @@
 						<?php 
 							$pos_name = "liftindex_news_1";
 						?>
-						<div id=picture pos="<?php echo $pos_name;?>">
+						<div id=picture <?php show_page_pos($pos_name)?>>
 							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text pos="<?php echo $pos_name;?>">
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
 								<?php echo $pos_items->$pos_name->display;?>
 							</div>
@@ -94,10 +94,10 @@
 						<?php 
 							$pos_name = "liftindex_news_2";
 						?>
-						<div id=picture pos="<?php echo $pos_name;?>">
+						<div id=picture <?php show_page_pos($pos_name)?>>
 							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text pos="<?php echo $pos_name;?>">
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
 								<?php echo $pos_items->$pos_name->display;?>
 							</div>
@@ -113,10 +113,10 @@
 						<?php 
 							$pos_name = "liftindex_news_3";
 						?>
-						<div id=picture pos="<?php echo $pos_name;?>">
+						<div id=picture <?php show_page_pos($pos_name)?>>
 							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text pos="<?php echo $pos_name;?>">
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
 								<?php echo $pos_items->$pos_name->display;?>
 							</div>
@@ -131,10 +131,10 @@
 						<div style="width:60px; float:left; display:inline;">名利场</div><div id=more></div>
 					</div>
 					<?php $pos_name = "lifeindex_news_mlc"?>
-					<div id=picture pos="<?php echo $pos_name;?>">
+					<div id=picture <?php show_page_pos($pos_name)?>>
 						<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="460" height="200" />
 					</div>
-					<div id=text pos="<?php echo $pos_name;?>">
+					<div id=text <?php show_page_pos($pos_name)?>>
 						<div id=title1>
 							<?php  echo $pos_items->$pos_name->display;?>
 						</div>
@@ -151,10 +151,10 @@
 						<?php 
 							$pos_name = "liftindex_news_4";
 						?>
-						<div id=picture pos="<?php echo $pos_name;?>">
+						<div id=picture <?php show_page_pos($pos_name)?>>
 							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text pos="<?php echo $pos_name;?>">
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
 								<?php echo $pos_items->$pos_name->display;?>
 							</div>
@@ -170,10 +170,10 @@
 						<?php 
 							$pos_name = "liftindex_news_5";
 						?>
-						<div id=picture pos="<?php echo $pos_name;?>">
+						<div id=picture <?php show_page_pos($pos_name)?>>
 							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text pos="<?php echo $pos_name;?>">
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
 								<?php echo $pos_items->$pos_name->display;?>
 							</div>
@@ -189,10 +189,10 @@
 						<?php 
 							$pos_name = "liftindex_news_6";
 						?>
-						<div id=picture pos="<?php echo $pos_name;?>">
+						<div id=picture <?php show_page_pos($pos_name)?>>
 							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text pos="<?php echo $pos_name;?>">
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
 								<?php echo $pos_items->$pos_name->display;?>
 							</div>
@@ -209,7 +209,7 @@
 					<div id=title>
 						<div style="width:60px; float:left; display:inline;">旅游</div><div id=more></div>
 					</div>
-					<div id=picture pos="<?php echo $pos_name;?>">
+					<div id=picture <?php show_page_pos($pos_name)?>>
 						<a href="<?php echo $pos_items->$pos_name->href;?>"><img src="<?php echo $pos_items->$pos_name->image1?>" border="0" width="240" height="160" /></a>
 					</div>
 				</div>
@@ -218,7 +218,7 @@
 					<div id=title>
 						<div style="width:60px; float:left; display:inline;">豪宅</div><div id=more></div>
 					</div>
-					<div id=picture pos="<?php echo $pos_name;?>">
+					<div id=picture <?php show_page_pos($pos_name)?>>
 						<a href="<?php echo $pos_items->$pos_name->href;?>"><img src="<?php echo $pos_items->$pos_name->image1?>" border="0" width="240" height="160" /></a>
 					</div>
 				</div>
