@@ -2,13 +2,10 @@
 		<div id=wz>福布斯杂志</div>
 		<div id=more><a href="/magazine/"><img border=0 src="/images/right/c_r_t_more.gif"></a></div>	
 	</div>
-	<div id=mag_content>
-			<?php 
-				$magazine = $db->query("select * from fb_magazine where is_adopt=1 order by publish_data");
-			?>
-			<div class=pic><a href="/magazine/"><img border=0 src="<?php echo $magazine[0]->img_src3;?>"></a></div>
-			<div class=pictitle><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><?php echo $magazine[0]->name;?></a></div>
-			<div class=context><?php echo strip_tags($magazine[0]->description);?></div>	
+	<div id=mag_content pos="right_magazine">
+			<div class=pic><?php show_page_img($pos_items,"right_magazine")?></div>
+			<div class=pictitle><?php show_page_href($pos_items,"right_magazine")?></div>
+			<div class=context><?php show_page_desc($pos_items,"right_magazine")?></div>	
  			<div id=mag_dash></div>
 			<div id=search>往期杂志查阅</div>
 			<div id=sel>
