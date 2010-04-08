@@ -36,7 +36,7 @@
 			<div id=m_c2>
 			</div>
 			<?php $pos_name = "lifeindex_column"?>
-			<div id=m_r pos="<?php echo $pos_name;?>">
+			<div id=m_r <?php show_page_pos($pos_name)?>>
 				<div id=picture>
 				<img src="<?php echo $pos_items->$pos_name->image1;?>" width="120" height="120" border="0" />
 				</div>
@@ -72,14 +72,18 @@
 						<div id=title>
 							<div style="width:60px; float:left; display:inline;">服饰钟表</div><div id=more></div>
 						</div>
-						<div id=picture>
+						<?php 
+							$pos_name = "liftindex_news_1";
+						?>
+						<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text>
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
-								瑞士ROLEX劳力士腕表
+								<?php echo $pos_items->$pos_name->display;?>
 							</div>
 							<div id=text1>
-								适合计时和计算平均时速的迪通拿腕表配备计时秒针...
+								<?php echo $pos_items->$pos_name->description?>
 							</div>
 						</div>
 					</div>
@@ -87,14 +91,18 @@
 						<div id=title>
 							<div style="width:60px; float:left; display:inline;">豪车</div><div id=more></div>
 						</div>
-						<div id=picture>
+						<?php 
+							$pos_name = "liftindex_news_2";
+						?>
+						<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text>
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
-								瑞士ROLEX劳力士腕表
+								<?php echo $pos_items->$pos_name->display;?>
 							</div>
 							<div id=text1>
-								适合计时和计算平均时速的迪通拿腕表配备计时秒针...
+								<?php echo $pos_items->$pos_name->description?>
 							</div>
 						</div>
 					</div>
@@ -102,14 +110,18 @@
 						<div id=title>
 							<div style="width:60px; float:left; display:inline;">游艇飞机</div><div id=more></div>
 						</div>
-						<div id=picture>
+						<?php 
+							$pos_name = "liftindex_news_3";
+						?>
+						<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text>
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
-								瑞士ROLEX劳力士腕表
+								<?php echo $pos_items->$pos_name->display;?>
 							</div>
 							<div id=text1>
-								适合计时和计算平均时速的迪通拿腕表配备计时秒针...
+								<?php echo $pos_items->$pos_name->description?>
 							</div>
 						</div>
 					</div>
@@ -118,16 +130,16 @@
 					<div id=title>
 						<div style="width:60px; float:left; display:inline;">名利场</div><div id=more></div>
 					</div>
-					<div id=picture>
+					<?php $pos_name = "lifeindex_news_mlc"?>
+					<div id=picture <?php show_page_pos($pos_name)?>>
+						<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="460" height="200" />
 					</div>
-					<div id=text>
+					<div id=text <?php show_page_pos($pos_name)?>>
 						<div id=title1>
-							LOUIS VUITTON
-							上海半岛酒店开幕
+							<?php  echo $pos_items->$pos_name->display;?>
 						</div>
 						<div id=text1>
-							GRAFFDIAMONDS格拉夫钻石主席劳伦斯格拉夫
-							(LaurenceGraff)深信，半岛酒店具有上海地标供尊贵卓越服务的理想地点...
+							<?php  echo $pos_items->$pos_name->description?>
 						</div>
 					</div>
 				</div>
@@ -136,14 +148,18 @@
 						<div id=title>
 							<div style="width:60px; float:left; display:inline;">美酒美食</div><div id=more></div>
 						</div>
-						<div id=picture>
+						<?php 
+							$pos_name = "liftindex_news_4";
+						?>
+						<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text>
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
-								瑞士ROLEX劳力士腕表
+								<?php echo $pos_items->$pos_name->display;?>
 							</div>
 							<div id=text1>
-								适合计时和计算平均时速的迪通拿腕表配备计时秒针...
+								<?php echo $pos_items->$pos_name->description?>
 							</div>
 						</div>
 					</div>
@@ -151,14 +167,18 @@
 						<div id=title>
 							<div style="width:60px; float:left; display:inline;">体面</div><div id=more></div>
 						</div>
-						<div id=picture>
+						<?php 
+							$pos_name = "liftindex_news_5";
+						?>
+						<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text>
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
-								瑞士ROLEX劳力士腕表
+								<?php echo $pos_items->$pos_name->display;?>
 							</div>
 							<div id=text1>
-								适合计时和计算平均时速的迪通拿腕表配备计时秒针...
+								<?php echo $pos_items->$pos_name->description?>
 							</div>
 						</div>
 					</div>
@@ -166,14 +186,18 @@
 						<div id=title>
 							<div style="width:60px; float:left; display:inline;">文化娱乐</div><div id=more></div>
 						</div>
-						<div id=picture>
+						<?php 
+							$pos_name = "liftindex_news_6";
+						?>
+						<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
 						</div>
-						<div id=text>
+						<div id=text <?php show_page_pos($pos_name)?>>
 							<div id=title1>
-								瑞士ROLEX劳力士腕表
+								<?php echo $pos_items->$pos_name->display;?>
 							</div>
 							<div id=text1>
-								适合计时和计算平均时速的迪通拿腕表配备计时秒针...
+								<?php echo $pos_items->$pos_name->description?>
 							</div>
 						</div>
 					</div>
@@ -181,17 +205,21 @@
 			</div>
 			<div id=b_r>
 				<div id=b_r_t>
+					<?php $pos_name = "lifeindex_ly"?>
 					<div id=title>
 						<div style="width:60px; float:left; display:inline;">旅游</div><div id=more></div>
 					</div>
-					<div id=picture>
+					<div id=picture <?php show_page_pos($pos_name)?>>
+						<a href="<?php echo $pos_items->$pos_name->href;?>"><img src="<?php echo $pos_items->$pos_name->image1?>" border="0" width="240" height="160" /></a>
 					</div>
 				</div>
 				<div id=b_r_t style="margin-top:32px;">
+				<?php $pos_name = "lifeindex_hz"?>
 					<div id=title>
 						<div style="width:60px; float:left; display:inline;">豪宅</div><div id=more></div>
 					</div>
-					<div id=picture>
+					<div id=picture <?php show_page_pos($pos_name)?>>
+						<a href="<?php echo $pos_items->$pos_name->href;?>"><img src="<?php echo $pos_items->$pos_name->image1?>" border="0" width="240" height="160" /></a>
 					</div>
 				</div>
 				<div id=b_r_b>

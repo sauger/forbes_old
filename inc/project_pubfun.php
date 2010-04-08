@@ -187,6 +187,14 @@ function init_page_items(){
 	}
 }
 
+function show_page_pos($pos){
+	global $page_type;
+	$page_type = $page_type ? $page_type : $_REQUEST['page_type'];
+	if($page_type == 'admin'){
+		echo " pos=\"{$pos}\"";
+	}	
+};
+
 function show_page_href($pos_items,$pos_name,$show_title=true){
 	if($show_title){
 		echo '<a href="'.$pos_items->$pos_name->href.'" title="'.$pos_items->$pos_name->title.'">'.$pos_items->$pos_name->display.'</a>';
@@ -214,5 +222,7 @@ function show_page_desc($pos_items,$pos_name,$show_title=false){
 	}
 	
 }
+
+
 
 ?>
