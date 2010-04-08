@@ -1,12 +1,9 @@
 $(function(){
 	$(".article_list").hover(function(){
-		$(".article_list").css({background:'none',color:'#999'});
-		$(this).css({
-			background: 'url(/images/right/background1.jpg)',
-			color: '#000'
-		});
-		$(".left_top").css('display','none');
-		$("#"+$(this).attr('name')).css('display','inline');
+		$(".article_list").removeClass('selected');
+		$(this).addClass('selected');
+		$(".left_top").hide();
+		$("#"+$(this).attr('name')).show();
 	});
 	
 	$(".column_list").hover(function(){
