@@ -9,8 +9,9 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>Manage : Forbeschina</title>
 	<?php	
-		css_include_tag('admin');
+		css_include_tag('admin','colorbox');
 		use_jquery();
+		js_include_tag('jquery.colorbox-min.js');
   ?>
 </head>
 <body style="background:url(/images/admin/bg.jpg);">
