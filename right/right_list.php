@@ -59,70 +59,58 @@
 	
 </style>
 <?php include_once dirname(__FILE__) .'/../frame.php'?>
+<?php use_jquery();init_page_items();?>
 <div class="inc_right_list_main">
 	<!--  title -->
 	<div class="inc_list_top_border"></div>
 	<div class="inc_list_title">生活和专题榜</div>
 	<div class="inc_list_item_title inc_list_item_title_selected">餐饮</div>
 	<div class="inc_list_item_content" style="display:block;">
-		<?php $record_show = get_news_by_pos('网页榜单-餐饮','榜单首页');?>
 		<ul>
-		<?php for($i=0;$i<4;$i++){?>
-			<li><a href=""><?php echo $record_show[$i]->name;?></a></li>
+		<?php for($i=0;$i<4;$i++){$pos_name = "right_dining_list".$i;?>
+			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
 	<div class="inc_list_item_title">健康</div>
 	<div class="inc_list_item_content">
-		<?php $record_show = get_news_by_pos('网页榜单-餐饮','榜单首页');?>
-		<ul>
-		<?php for($i=0;$i<4;$i++){?>
-			<li><a href=""><?php echo $record_show[$i]->name;?></a></li>
+		<?php for($i=0;$i<4;$i++){$pos_name = "right_health_list".$i;?>
+			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
 	<div class="inc_list_item_title">固定不动产</div>
 	<div class="inc_list_item_content">
-		<?php $record_show = get_news_by_pos('网页榜单-不动产','榜单首页');?>
-		<ul>
-		<?php for($i=0;$i<4;$i++){?>
-			<li><a href=""><?php echo $record_show[$i]->name;?></a></li>
+		<?php for($i=0;$i<4;$i++){$pos_name = "right_immo_list".$i;?>
+			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
 	<div class="inc_list_item_title">时尚</div>
 	<div class="inc_list_item_content">
-		<?php $record_show = get_news_by_pos('网页榜单-时尚','榜单首页');?>
-		<ul>
-		<?php for($i=0;$i<4;$i++){?>
-			<li><a href=""><?php echo $record_show[$i]->name;?></a></li>
+		<?php for($i=0;$i<4;$i++){$pos_name = "right_fashion_list".$i;?>
+			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
 	<div class="inc_list_item_title">旅游</div>
 	<div class="inc_list_item_content">
-		<?php $record_show = get_news_by_pos('网页榜单-旅游','榜单首页');?>
-		<ul>
-		<?php for($i=0;$i<4;$i++){?>
-			<li><a href=""><?php echo $record_show[$i]->name;?></a></li>
+		<?php for($i=0;$i<4;$i++){$pos_name = "right_travel_list".$i;?>
+			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
 	<div class="inc_list_item_title">汽车</div>
 	<div class="inc_list_item_content">
-		<?php $record_show = get_news_by_pos('网页榜单-汽车','榜单首页');?>
-		<ul>
-		<?php for($i=0;$i<4;$i++){?>
-			<li><a href=""><?php echo $record_show[$i]->name;?></a></li>
+		<?php for($i=0;$i<4;$i++){$pos_name = "right_auto_list".$i;?>
+			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
 	<div class="inc_list_item_title">腕表</div>
 	<div class="inc_list_item_content">
-		<?php $record_show = get_news_by_pos('网页榜单-腕表','榜单首页');?>
-		<ul>
-		<?php for($i=0;$i<4;$i++){?>
-			<li><a href=""><?php echo $record_show[$i]->name;?></a></li>
+		<?php for($i=0;$i<4;$i++){$pos_name = "right_watch_list".$i;?>
+			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
