@@ -67,7 +67,7 @@
 			//--------------------
 		?>
 		<tr class=tr3>
-				<td colspan="4"><?php paginate('_news_filter.php','result_box');?></td>
+				<td colspan="4"><?php paginate('_news_filter.php?','result_box');?></td>
 		</tr>
 		<tr class=tr3>
 				<td colspan="4">
