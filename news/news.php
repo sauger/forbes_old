@@ -55,7 +55,7 @@
 	<meta http-equiv=Content-Language content=zh-cn>
 	<title><?php echo strip_tags($news->short_title);?>-福布斯中文网</title>
 	<meta name="Keywords" content="<?php echo strip_tags($news->keywords);?>"/>
-	<meta name="Description" content="<?php echo strip_tags($news->description);?>"/>
+	<meta name="Description" content="<?php echo strip_tags($news->keywords);?>"/>
 	<?php
 		use_jquery();
 		js_include_tag('news/news','public','right');
