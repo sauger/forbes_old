@@ -68,7 +68,7 @@
 	<div class="inc_list_item_content" style="display:block;">
 		<ul>
 		<?php for($i=0;$i<4;$i++){$pos_name = "right_dining_list".$i;?>
-			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
+			<li <?php show_page_pos($pos_name);?>>&nbsp;<?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
@@ -76,7 +76,7 @@
 	<div class="inc_list_item_content">
 		<ul>
 		<?php for($i=0;$i<4;$i++){$pos_name = "right_health_list".$i;?>
-			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
+			<li <?php show_page_pos($pos_name);?>>&nbsp;<?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
@@ -84,7 +84,7 @@
 	<div class="inc_list_item_content">
 		<ul>
 		<?php for($i=0;$i<4;$i++){$pos_name = "right_immo_list".$i;?>
-			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
+			<li <?php show_page_pos($pos_name);?>>&nbsp;<?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
@@ -92,7 +92,7 @@
 	<div class="inc_list_item_content">
 		<ul>
 		<?php for($i=0;$i<4;$i++){$pos_name = "right_fashion_list".$i;?>
-			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
+			<li <?php show_page_pos($pos_name);?>>&nbsp;<?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
@@ -100,7 +100,7 @@
 	<div class="inc_list_item_content">
 		<ul>
 		<?php for($i=0;$i<4;$i++){$pos_name = "right_travel_list".$i;?>
-			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
+			<li <?php show_page_pos($pos_name);?>>&nbsp;<?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
@@ -108,7 +108,7 @@
 	<div class="inc_list_item_content">
 		<ul>
 		<?php for($i=0;$i<4;$i++){$pos_name = "right_auto_list".$i;?>
-			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
+			<li <?php show_page_pos($pos_name);?>>&nbsp;<?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
@@ -116,7 +116,7 @@
 	<div class="inc_list_item_content">
 		<ul>
 		<?php for($i=0;$i<4;$i++){$pos_name = "right_watch_list".$i;?>
-			<li <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name)?></li>
+			<li <?php show_page_pos($pos_name);?>>&nbsp;<?php show_page_href($pos_items,$pos_name)?></li>
 		<?php }?>
 		</ul>
 	</div>
