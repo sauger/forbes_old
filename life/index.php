@@ -1,5 +1,5 @@
 <?php 
-	require_once('../frame.php');
+	require_once(dirname(__FILE__).'/../frame.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,11 +11,12 @@
 		use_jquery();
 		js_include_tag('public');
 		css_include_tag('scp','public','right','html/luxury/luxury.css');
+		init_page_items();
 	?>
 </head>
 <body>
 	<div id=ibody>
-		<? require_once('../inc/top.inc.php');?>
+		<? require_once(dirname(__FILE__).'/../inc/top.inc.php');?>
 		<div id=t>
 		  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="960" height="540">
             <param name="movie" value="/flash/scroll.swf">
@@ -34,19 +35,20 @@
 			</div>
 			<div id=m_c2>
 			</div>
-			<div id=m_r>
+			<?php $pos_name = "lifeindex_column"?>
+			<div id=m_r pos="<?php echo $pos_name;?>">
 				<div id=picture>
+				<img src="<?php echo $pos_items->$pos_name->image1;?>" width="120" height="120" border="0" />
 				</div>
 				<div id=m_r_r>
 					<div id=title>
-						低调奢华，风格永续
+						<?php echo $pos_items->$pos_name->display;?>
 					</div>
 					<div id=text>
-						正如香奈儿女士所言：“
-						CHANEL风格首位。流行稍纵即逝，风格永存”，CHANEL是一种风格，低调奢华...
+						<?php echo $pos_items->$pos_name->description;?>
 					</div>
 					<div id=link>
-						<a href="">进入专栏</a>
+						<a href="<?php echo $pos_items->$pos_name->href;?>">进入专栏</a>
 					</div>
 				</div>
 			</div>	
@@ -226,6 +228,6 @@
 				</div>
 			</div>
 		</div>
-		<? require_once('../inc/bottom.inc.php');?>
+		<? require_once(dirname(__FILE__).'/../inc/bottom.inc.php');?>
 	</div>
 </body>
