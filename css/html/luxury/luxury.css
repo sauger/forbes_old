@@ -44,7 +44,7 @@
 #b_r #title{width:246px; height:20px; font-size:14px; font-weight:bold; font-family:微软雅黑; float:left; display:inline;}
 #b_r #title1{width:246px; height:20px; font-size:14px; font-weight:bold; margin-top:8px; float:left; display:inline;}
 #b_r_t{width:246px; height:193px; float:left; display:inline;}
-#b_r_t #picture{width:244px; height:162px; border:solid 1px #CCCCCC; margin-top:10px; background:url(/images/html/luxury/picture4.jpg) no-repeat center center; float:left; display:inline;}
+#b_r_t #picture{width:244px; height:162px; border:solid 1px #CCCCCC; margin-top:10px;float:left; display:inline;}
 #b_r_b{width:246px; height:170px; margin-top:58px; float:left; display:inline;}
 #b_r_b #line{width:240px; height:1px; margin-left:2px; margin-top:8px; background-image:url(/images/html/luxury/line.jpg); float:left; display:inline;}
 #b_r_b #list{width:238px; height:20px; font-size:14px; text-indent:10px; line-height:20px; margin-left:3px; margin-top:8px; background:url(/images/html/luxury/tar.jpg) no-repeat left center; float:left; display:inline;}
