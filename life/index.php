@@ -228,21 +228,14 @@
 					</div>
 					<div id=line>
 					</div>
-					<div id=list>
-						<a href="">韦迪超豪华百万座驾足协掌门豪车</a>
+					<?php 
+						for($i=0;$i<5;$i++ ){
+							$pos_name = "lifeindex";
+					?>
+					<div id=list <?php show_page_pos($pos_name);?>>
+						<a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a>
 					</div>
-					<div id=list>
-						<a href="">韦迪超豪华百万座驾足协掌门豪车</a>
-					</div>
-					<div id=list>
-						<a href="">韦迪超豪华百万座驾足协掌门豪车</a>
-					</div>
-					<div id=list>
-						<a href="">韦迪超豪华百万座驾足协掌门豪车</a>
-					</div>
-					<div id=list>
-						<a href="">韦迪超豪华百万座驾足协掌门豪车</a>
-					</div>
+					<?php }?>
 				</div>
 				<div id=b_r_t style="margin-top:40px;">
 					<div id=title>

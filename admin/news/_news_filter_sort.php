@@ -46,7 +46,7 @@
 			</td>
 		</tr>
 		<tr class=tr3>
-				<td colspan="4"><?php paginate('','result_box');?></td>
+				<td colspan="4"><?php paginate(null,'result_box');?></td>
 		</tr>
 		<tr class=tr3>
 				<td colspan="4">
