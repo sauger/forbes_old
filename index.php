@@ -202,13 +202,13 @@
 				?>
 				<div name="<?php echo 'author'.$i;?>" <?php if($i==0){?>style="display:inline"<?php }?> class="cloumn_news_box">
 					<div class=list1>
-						<div class=list1_title pos="<?php echo 'index_author'.$i.'_r0';?>"><?php show_page_href($pos_items,'index_author'.$i.'_r0');?></div>
+						<div class=list1_title <?php show_page_pos('index_author'.$i.'_r0');?>><?php show_page_href($pos_items,'index_author'.$i.'_r0');?></div>
 					</div>
 					<?php 
 						for($j=1;$j<4;$j++){
 							$pos_name = 'index_author'.$i.'_r'.$j;
 					?>
-						<div class=list2 pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name);?></div>
+						<div class=list2 <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name);?></div>
 					<?php } ?>
 				</div>
 				<?php }?>
@@ -240,12 +240,12 @@
 			</div>
 			<div id=forbes_l_content>
 			 	<div class=list1 >
-					<div class=list1_title pos="index_invest0"><a href="<?php echo $pos_items->index_invest0->href;?>"><?php echo $pos_items->index_invest0->display;?></a></div>
+					<div class=list1_title <?php show_page_pos("index_invest0")?>><a href="<?php echo $pos_items->index_invest0->href;?>"><?php echo $pos_items->index_invest0->display;?></a></div>
 					<div class=list1_description2>
 						<a class=list1_pic href="<?php echo $pos_items->index_invest0->href;?>"><img border=0 width=70 height=70 src="<?php echo $pos_items->index_invest0->image1;?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><?php show_page_desc($pos_items,'index_invest0');?></a>
 					</div>
 					<?php for($i=1;$i<=5;$i++){ $pos_name = "index_invest".$i;?>
-						<div class=list2 style="margin-left:3px;" pos="<?php echo $pos_name;?>"><?php show_page_href($pos_items,$pos_name);?></div>
+						<div class=list2 style="margin-left:3px;" <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name);?></div>
 					<?php } ?>
 				</div>
 			</div>	
@@ -257,12 +257,12 @@
 				<a href="" class=more></a>
 			</div>
 			<div class=list1>
-					<div pos="index_luxu0" class=image><?php show_page_img($pos_items,'index_luxu0',1,150,130)?></div>
+					<div <?php show_page_pos("index_luxu0");?> class=image><?php show_page_img($pos_items,'index_luxu0',1,150,130)?></div>
 					<div class=image_content style="margin-left:15px;">
 						<div class=image_list><?php show_page_href($pos_items,'index_luxu0',false)?></div>
 						<div class=image_description><?php show_page_desc($pos_items,'index_luxu0')?></div>
 					</div>
-					<div  pos="index_luxu1" class=image_content style="margin-top:20px;">
+					<div  <?php show_page_pos("index_luxu1")?> class=image_content style="margin-top:20px;">
 						<div class=image_list><?php show_page_href($pos_items,'index_luxu1',false)?></div>
 						<div class=image_description><?php show_page_desc($pos_items,'index_luxu1')?></div>
 					</div>
@@ -274,11 +274,11 @@
 		<div id=forbes_r>
 			<div id=dictionary>
 				<div id=dictionary_t>
-					<div id=dictionary_tl pos="index_dict0"><a  href="<?php echo $pos_items->index_dict0->href;?>"><?php echo $pos_items->index_dict0->display;?></a></div>
-					<div id=dictionary_tr><span pos="index_dict1"><a href="<?php echo $pos_items->index_dict1->href;?>"><?php echo $pos_items->index_dict1->display;?></a></span>  |  <span pos="index_dict2"><a href="<?php echo $pos_items->index_dict2->href;?>"><?php echo $pos_items->index_dict2->display;?></a></span></div>
+					<div id=dictionary_tl <?php show_page_pos("index_dict0");?>><a  href="<?php echo $pos_items->index_dict0->href;?>"><?php echo $pos_items->index_dict0->display;?></a></div>
+					<div id=dictionary_tr><span <?php show_page_pos("index_dict1");?>><a href="<?php echo $pos_items->index_dict1->href;?>"><?php echo $pos_items->index_dict1->display;?></a></span>  |  <span <?php show_page_pos("index_dict2");?>><a href="<?php echo $pos_items->index_dict2->href;?>"><?php echo $pos_items->index_dict2->display;?></a></span></div>
 				</div>
-				<div id=dictionary_bl pos="index_dict3"><?php show_page_href($pos_items,'index_dict3')?></div>
-				<div id=dictionary_br pos="index_dict4"><?php show_page_href($pos_items,'index_dict4')?></div>
+				<div id=dictionary_bl <?php show_page_pos("index_dict3");?>><?php show_page_href($pos_items,'index_dict3')?></div>
+				<div id=dictionary_br <?php show_page_pos("index_dict4");?>><?php show_page_href($pos_items,'index_dict4')?></div>
 			</div>
 
 			<div id=activity>
@@ -301,7 +301,7 @@
 			<div id=club>
 					<div class=club_caption1>增长俱乐部</div>
 					<a href="" class=club_more1></a>
-					<div class=content pos="index_club0">
+					<div class=content <?php show_page_pos("index_club0")?>>
 						<div class=pic>
 							<?php show_page_img($pos_items,'index_club0')?>
 						</div>	
@@ -313,8 +313,8 @@
 						</div>
 					</div>
 					<div class=bottom>
-						<div class=bottom_l pos="index_club1"><?php show_page_href($pos_items,'index_club1',false)?></div>
-						<div class=bottom_r pos="index_club2">
+						<div class=bottom_l <?php show_page_pos("index_club1");?>><?php show_page_href($pos_items,'index_club1',false)?></div>
+						<div class=bottom_r <?php show_page_pos("index_club2");?>>
 							<?php show_page_href($pos_items,'index_club2',false)?>
 						</div>	
 					</div>
@@ -325,7 +325,7 @@
 			<div id=city>
 					<div class=city_caption1>城市</div>
 					<a href="" class=city_more1></a>
-					<div class=content pos="index_city0">
+					<div class=content <?php show_page_pos("index_city0");?>>
 						<div class=pic>
 							<?php show_page_img($pos_items,'index_city0')?>
 						</div>	
@@ -337,8 +337,8 @@
 						</div>
 					</div>
 					<div class=bottom>
-						<div class=bottom_l pos="index_city1"><?php show_page_href($pos_items,'index_city1',false)?></div>
-						<div class=bottom_r pos="index_city2">
+						<div class=bottom_l <?php show_page_pos("index_city1");?>><?php show_page_href($pos_items,'index_city1',false)?></div>
+						<div class=bottom_r <?php show_page_pos("index_city2");?>>
 							<?php show_page_href($pos_items,'index_city2',false)?>
 						</div>	
 					</div>
@@ -430,7 +430,7 @@
 					<div class=public_caption1 style="color:#4990B9">福布斯杂志</div>
 					<a href="" class=public_more1></a>
 				</div>
-				<div id=mag_content  pos="index_magazine">
+				<div id=mag_content  <?php show_page_pos("index_magazine");?>>
 						<div class=pic><?php show_page_img($pos_items,"index_magazine")?></div>
 						<div class=pictitle><?php show_page_href($pos_items,"index_magazine")?></div>
 						<div class=context><?php show_page_desc($pos_items,"index_magazine")?></div>	

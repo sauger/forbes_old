@@ -3,7 +3,7 @@
 		<div id=bread><a href="#"><?php echo $catename[0]->name; ?></div>
 		<div id=bread_line></div>
 		<div id=l>
-			<div id=common_head_title <?php $pos_name = $pos.'hl';show_page_pos($pos_name);?>"><?php show_page_href($pos_items,$pos_name);?></div>
+			<div id=common_head_title <?php $pos_name = $pos.'hl';show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name);?></div>
 			<div id=common_head_title_pic>
 				<?php show_page_img($pos_items,$pos_name)?>
 			</div>
