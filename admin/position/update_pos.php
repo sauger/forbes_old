@@ -4,7 +4,7 @@ include "_listindex.php";
 include "_richindex.php";
 
 
-function update_pos($category_name,$limit,$position_name,$is_parent=false){
+function update_pos($category_name,$limit,$position_name,$is_parent=false,$flag=true){
 	$db = get_db();
 	$category = new category_class();
 	if($is_parent){
@@ -17,6 +17,9 @@ function update_pos($category_name,$limit,$position_name,$is_parent=false){
 		$sql = "select id,title,short_title,created_at,description,video_photo_src from fb_news where 1=1 and is_adopt=1 and category_id in ($ids) order by created_at desc";
 	}else{
 		$category_id = $category->find_by_name($category_name)->id;
+		if(!$category_id){
+			return false;
+		}
 		$sql = "select id,title,short_title,created_at,description,video_photo_src from fb_news where 1=1 and is_adopt=1 and category_id={$category_id} order by created_at desc";
 	}
 	//echo $sql;
@@ -24,7 +27,12 @@ function update_pos($category_name,$limit,$position_name,$is_parent=false){
 	$count = $db->record_count;
 	for($i=0;$i<$count;$i++){
 		for($j=0;$j<$limit;$j++){
-			$pos_name = $position_name.$j;
+			if($flag){
+				$pos_name = $position_name.$j;
+			}else{
+				$pos_name = $position_name;
+			}
+			
 			$record = $db->query("select id,end_time from fb_page_pos where name='{$pos_name}'");
 			if($db->record_count==1){
 				if($record[0]->end_time>now()){
@@ -61,7 +69,7 @@ function update_pos($category_name,$limit,$position_name,$is_parent=false){
 	}
 }
 
-function update_column($type,$limit,$position_name,$news_limit='',$news_position=''){
+function update_column($type,$limit,$position_name,$news_limit='',$news_position='',$flag=true){
 	$db = get_db();
 	if($type=='author'){
 		$author_type = 2;
@@ -123,7 +131,12 @@ function update_column($type,$limit,$position_name,$news_limit='',$news_position
 			$news_count = $db->record_count;
 			for($i=0;$i<$news_count;$i++){
 				for($j=0;$j<$news_limit;$j++){
-					$pos_name = $position_name.$k.$news_position.$j;
+					if($flag){
+						$pos_name = $position_name.$k.$news_position.$j;
+					}else{
+						$pos_name = $news_position.$k;
+					}
+					
 					$record = $db->query("select id,end_time from fb_page_pos where name='{$pos_name}'");
 					if($db->record_count==1){
 						if($record[0]->end_time>now()){
@@ -276,3 +289,5 @@ function update_news_column($category_name,$limit,$type,$position_name){
 
 include "./_index.php";
 include "./_fiveindex.php";
+include "./_right.php";
+include "./_life.php";
