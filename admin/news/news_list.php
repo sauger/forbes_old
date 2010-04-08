@@ -108,7 +108,7 @@
 			//--------------------
 		?>
 		<tr class="btools">
-			<td colspan=5>
+			<td colspan=10>
 				<?php paginate("",null,"page",true);?>
 				<button id=clear_priority style="display:none">清空优先级</button>
 				<button id=edit_priority  style="display:none">编辑优先级</button>

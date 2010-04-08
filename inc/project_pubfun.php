@@ -168,6 +168,7 @@ function get_page_items(){
 
 function init_page_items(){
 	global $pos_items;
+	if($pos_items) return;
 	$pos_items = get_page_items();
 	global $page_type;
 	$page_type = $page_type ? $page_type : $_REQUEST['page_type'];
@@ -185,6 +186,14 @@ function init_page_items(){
 		js_include_tag('admin/page_admin');	
 	}
 }
+
+function show_page_pos($pos){
+	global $page_type;
+	$page_type = $page_type ? $page_type : $_REQUEST['page_type'];
+	if($page_type == 'admin'){
+		echo " pos=\"{$pos}\"";
+	}	
+};
 
 function show_page_href($pos_items,$pos_name,$show_title=true){
 	if($show_title){
@@ -213,5 +222,7 @@ function show_page_desc($pos_items,$pos_name,$show_title=false){
 	}
 	
 }
+
+
 
 ?>

@@ -71,7 +71,7 @@
 						<?php for($i=0;$i<3;$i++){
 							$pos_name = "richindex_piclist_{$i}";
 						?>
-							<div class=context pos="<?php echo $pos_name?>">
+							<div class=context <?php show_page_pos($pos_name)?>>
 								<div class=sj><img src="/images/fh/icon2.jpg"></div>
 								<div class=l_m_l_context><a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 							</div>
@@ -81,7 +81,7 @@
 						<?php for($i=3;$i<6;$i++){ 
 							$pos_name = "richindex_piclist_{$i}";
 						?>
-							<div class=context pos="<?php echo $pos_name?>">
+							<div class=context <?php show_page_pos($pos_name)?>>
 								<div class=sj><img src="/images/fh/icon2.jpg"></div>
 								<div class=l_m_l_context><a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 							</div>
@@ -92,7 +92,7 @@
 						<?php for($i=0;$i<5;$i++){ 
 							$pos_name = "richindex_picture_{$i}";
 						?>
-						<div class=l_m_b_content pos="<?php echo $pos_name;?>">
+						<div class=l_m_b_content <?php show_page_pos($pos_name)?>>
 							<div class=pic><a href="<?php echo $pos_items->$pos_name->href;?>"><img border=0 src="<?php echo $pos_items->$pos_name->image1?>"></a></div>
 							<div class=piccontent>
 								<a href="<?php echo $pos_items->$pos_name->href;?>"><span style="font-weight:bold;"><?php echo $pos_items->$pos_name->display;?></span><br><?php echo $pos_items->$pos_name->description;?></a>	
@@ -133,7 +133,7 @@
 						<?php for($i=0; $i<8; $i++){
 							$pos_name = "richindex_richlist_{$i}"; 
 						?>
-						<div class=context pos="<?php echo $pos_name;?>">
+						<div class=context <?php show_page_pos($pos_name)?>>
 							<div class=point></div>
 							<div class=cl><a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 						</div>
@@ -182,7 +182,7 @@
 					for($i=0;$i<3;$i++){
 						$pos_name = "richindex_news_{$i}";
 					?>
-					<div class=content pos="<?php echo $pos_name;?>" <?php if($i>0) echo' style="margin-top:40px;"';?>>
+					<div class=content <?php show_page_pos($pos_name)?> <?php if($i>0) echo' style="margin-top:40px;"';?>>
 							<div class=content_title><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 							<div class=content_jz>记者:<?php echo $pos_items->$pos_name->alias;?></div>
 							<div class=content_content><a href="<?php echo $pos_items->$pos_name->href;?>">　　<?php echo $pos_items->$pos_name->description;?></a></div>
@@ -194,7 +194,7 @@
 					for($i=3;$i<6;$i++){
 						$pos_name = "richindex_news_{$i}";
 					?>
-					<div class=content pos="<?php echo $pos_name;?>" <?php if($i>3) echo' style="margin-top:40px;"';?>>
+					<div class=content <?php show_page_pos($pos_name)?> <?php if($i>3) echo' style="margin-top:40px;"';?>>
 							<div class=content_title><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 							<div class=content_jz>记者:<?php echo $pos_items->$pos_name->alias;?></div>
 							<div class=content_content><a href="<?php echo $pos_items->$pos_name->href;?>">　　<?php echo $pos_items->$pos_name->description;?></a></div>
@@ -208,7 +208,7 @@
 				<?php for($i=0;$i<3;$i++){ 
 					$pos_name = "richindex_news1_{$i}";
 				?>
-				<div class=fh_b_r_content pos="<?php echo $pos_name;?>">
+				<div class=fh_b_r_content <?php show_page_pos($pos_name)?>>
 					<div class=pic><a href="<?php echo $pos_items->$pos_name->href;?>"><img border=0 src="<?php echo $pos_items->$pos_name->image1;?>"></a></div>
 					<div class=pictitle><a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a></div>
 					<div class=piccontent><a href="">　　<?php echo $pos_items->$pos_name->description;?></a></div>

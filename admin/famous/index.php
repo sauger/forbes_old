@@ -26,37 +26,45 @@
 </head>
 
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="5">　 
-				<a href="edit.php">添加名人</a>
-				<input style="margin-left:20px" id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="border:2px solid #999999; height:20px">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="215">姓名</td><td width="210">职业</td><td width="100">性别</td><td width="240">操作</td>
+<div id=icaption>
+    <div id=title>名人管理</div>
+	  <a href="edit.php" id=btn_add></a>
+</div>
+
+<div id=isearch>
+		<input id="search" type="text" value="<? echo $_REQUEST['search']?>">
+		<input type="button" value="搜索" id="search_button">
+</div>
+
+<div id=itable>
+	<table cellspacing="1"  align="center">
+		<tr class=itable_title>
+			<td width="25%">姓名</td><td width="25%">职业</td><td width="25%">性别</td><td width="25%">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
 		?>
-				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
-					<td><?php echo $record[$i]->name;?></td>
-					<td><?php echo $record[$i]->zy;?></td>
-					<td><?php echo $record[$i]->xb;?></td>
-					<td>
-						<a href="/admin/famous_ad/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">编辑名人代言</a>
-						<a href="/admin/famous_list/edit.php?f_id=<?php echo $record[$i]->id;?>" title="加入榜单"><img src="/images/btn_add.png" border="0"></a>
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
-						<span style="cursor:pointer;" class="del" name="<?php echo $record[$i]->id;?>" title="删除"><img src="/images/btn_delete.png" border="0"></span>
-					</td>
-				</tr>
+		<tr class="tr3" id="<?php echo $record[$i]->id;?>">
+			<td><?php echo $record[$i]->name;?></td>
+			<td><?php echo $record[$i]->zy;?></td>
+			<td><?php echo $record[$i]->xb;?></td>
+			<td>
+				<a href="/admin/famous_ad/edit.php?f_id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">编辑名人代言</a>
+				<a href="/admin/famous_list/edit.php?f_id=<?php echo $record[$i]->id;?>" title="加入榜单"><img src="/images/btn_add.png" border="0"></a>
+				<a href="edit.php?id=<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
+				<span style="cursor:pointer;" class="del" name="<?php echo $record[$i]->id;?>" title="删除"><img src="/images/btn_delete.png" border="0"></span>
+			</td>
+		</tr>
 		<?php
 			}
 		?>
-		<tr class="tr3">
-			<td colspan=5><?php paginate();?>				<input type="hidden" id="db_table" value="fb_mr"></td>
+		<tr class="btools">
+			<td colspan=10>
+				<?php paginate("",null,"page",true);?>
+				<input type="hidden" id="db_table" value="fb_mr">
+			</td>
 		</tr>
 	</table>
+</div>	
 </body>
 </html>
