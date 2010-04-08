@@ -30,13 +30,13 @@
 #b_l_m{width:679px; height:263px; margin-top:32px; float:left; display:inline;}
 #b_l_m_l{width:225px; height:256px; float:left; display:inline;}
 #b_l_m_l #title{width:240px; height:25px; font-size:14px; font-weight:bold; font-family:微软雅黑; float:left; display:inline;}
-#b_l_m_l #picture{width:203px; height:150px; margin-top:18px; background-image:url(/images/html/luxury/picture2.jpg); float:left; display:inline;}
+#b_l_m_l #picture{width:203px; height:150px; margin-top:18px;  float:left; display:inline;}
 #b_l_m_l #text{width:203px; height:57px; margin-top:5px; float:left; display:inline;}
 #b_l_m_l #text #title1{width:203px; height:20px; font-size:14px; font-weight:bold; float:left; display:inline;}
 #b_l_m_l #text #text1{width:203px; height:36px; font-size:12px; line-height:18px; float:left; display:inline;}
 #b_l_b{width:679px; height:247px;  margin-top:34px; float:left; display:inline;}
 #b_l_b #title{width:679px; height:25px; font-size:14px; font-weight:bold; font-family:微软雅黑; float:left; display:inline;}
-#b_l_b #picture{width:463px; height:200px; margin-top:5px; background-image:url(/images/html/luxury/picture3.jpg); float:left; display:inline;}
+#b_l_b #picture{width:463px; height:200px; margin-top:5px; float:left; display:inline;}
 #b_l_b #text{width:193px; height:200px; background-color:#F2F1F3; margin-top:5px; float:left; display:inline;}
 #b_l_b #text #title1{width:140px; height:48px; font-size:16px; font-weight:bold; color:#B41014; line-height:24px; margin-left:22px; margin-top:8px; float:left; display:inline;}
 #b_l_b #text #text1{width:160px; height:125px; font-size:12px; color:#666666; line-height:25px; margin-left:22px; float:left; display:inline;}
