@@ -31,7 +31,7 @@
 			<div class="nav1_menu"  param_href="/admin/user/modify_user_info.php">个人信息</div>
 		</div>
 		<div id="admin_content">
-		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="/admin/column/news_list.php" width="996" height="1200px"></iframe>
+		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="/admin/column/news_list.php" width="1046" height="1200px"></iframe>
 		</div>
 </div>
 </body>
