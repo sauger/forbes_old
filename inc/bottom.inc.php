@@ -24,7 +24,7 @@
 				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="科技" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
 				<div class=td1><a style="font-weight:bold;" href="">[科技]</a><br><?php for($i=0;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="奢华" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
+				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="生活" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
 				<div class=td1><a style="font-weight:bold;" href="">[奢华]</a><br><?php for($i=0;$i<6;$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
 				<div class=td1><br><?php for($i=6;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>

@@ -7,21 +7,21 @@
 		css_include_tag('jquery_ui');
 		//$db = get_db();
 		//var_dump($db->execute($script));
-				
+		var_dump($_POST);				
 		?>
 	</head>
 	<body>
 		<?php 
 		$c = new category_class('news');
 	?>
-		<form method="post" action="test1.php" enctype="multipart/form-data" >
+		<form method="post" action="test.php" enctype="multipart/form-data" >
 		
 			<input id="auto" type="text"></input>
 			<input type="file" name="item[picture]">
 			<input type="file" name="item[image]">
 			<input type="submit" value="send"></input>		
 		</form>
-		
+		<div id="autocomplete"></div>
 		<a class="test" href="#">test</a>
 		<div style="height:600px;">dsfads</div>
 		<a class="test" href="#">test</a>
@@ -32,10 +32,8 @@
 <script>
 	//$('#editor').val('ok');	
 	$(function(){
-		$('.test').click(function(e){
-			e.preventDefault();
-			show();
-		});
+		var tags = ['php','asp','jsp'];
+		$('#auto').autocomplete({source:'sauger.php'});
 		function show(){
 			$window = $(window);
 			var str = new Array();
