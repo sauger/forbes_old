@@ -1,5 +1,7 @@
-<?php
-		$catename=$db->query('SELECT name FROM fb_category where id='.$cid); ?>
+<?php 
+	js_include_tag('right');
+	$catename=$db->query('SELECT name FROM fb_category where id='.$cid); 
+?>
 		<div id=bread><a href="#"><?php echo $catename[0]->name; ?></div>
 		<div id=bread_line></div>
 		<div id=l>

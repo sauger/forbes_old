@@ -1,7 +1,4 @@
 $(function(){
-	$.post('show_session.php',function(data){
-		$("#h_p_value").attr('value',data);
-	});
 	
 	$("#user_name").blur(function(){
 		userName();
@@ -33,9 +30,6 @@ $(function(){
 	
 	$("#chang_pic").click(function(){
 		$("#pic").attr('src','yz.php?reload='+Math.round(Math.random()*10000));
-		$.post('show_session.php',function(data){
-			$("#h_p_value").attr('value',data);
-		});
 	})
 	
 	$("#tj").click(function(){
@@ -90,11 +84,16 @@ $(function(){
 				if(data == '0'){
 					alert('验证码错误！');
 					return false;
+				}else{
+					$("#re_form").submit();
 				}
 			});
 		}
-		$("#re_form").submit();
-	})
+	});
+	
+	$("#sure_check").click(function(){
+		$("#tj").attr('disabled',!$("#tj").attr('disabled'));
+	});
 });
 
 function userName(){

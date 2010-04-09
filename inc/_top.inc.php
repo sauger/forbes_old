@@ -1,11 +1,17 @@
-<div id=top_banner><a href="#"><img border=0 src="/images/other/top_banner.jpg"></a></div>
+<div id=top_banner>
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="778" height="90">
+        <param name="movie" value="/flash/banner.swf">
+        <param name="quality" value="high">
+        <embed src="/flash/banner.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="778" height="90"></embed>
+     </object>
+</div>
 	<div id=top_function>
 			<div class=user_btn>
 				<?php init_page_items(); if(!$_SESSION['name']){?>
-				<a href="/login">登陆</a>　<a href="">注册</a>
+				<a href="/login">登陆</a>　<a href="/register/">注册</a>
 				<?php }else{?>
 				欢迎你：<?php echo $_SESSION['name'];?>　
-				<a href="/user/">>>会员中心</a>
+				<a href="javascript:void(0)" id="logout">>>登出</a>
 				<?php }?>
 			</div>
 			<div class=user_btn><a href="javascript:void(0)" onclick="myhomepage()" name="homepage">设为首页</a>　<a href="javascript:void(0)" onclick="addfavorite()">收藏本页</a></div>

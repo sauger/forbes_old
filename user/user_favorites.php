@@ -113,7 +113,7 @@
 						}
 					
 						$rich_list = $db->query("select t1.bd_id,t3.year,t1.fh_id from fb_fhbd t1 join fb_collection t2 on t1.fh_id=t2.resource_id join fb_fhb t3 on t1.bd_id=t3.id where t2.resource_type='fb_fh' and t2.user_id=$uid  order by t2.created_at");
-						$list_count = count($rich_list);
+						$list_count = $db->record;
 						for($i=0;$i<$rich_count;$i++){
 							$money = $db->query("select * from fb_fh_grcf where fh_id={$rich[$i]->id} order by jzrq desc limit 1");
 							$company = $db->query("select t2.mc,t2.id from fb_fh_gs t1 join fb_gs t2 on t1.gs_id=t2.id where t1.fh_id={$rich[$i]->id}");

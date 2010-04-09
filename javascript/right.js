@@ -36,4 +36,43 @@ $(function(){
 	$("#r_c_l").click(function(){
 		$("#r_c_c").find(".content:visible:eq(0)").prev().show('slow');
 	});
+	
+	$("#order_news").click(function(){
+		$("#news_order").attr("disabled",false);
+	});
+	
+	$("#news_order").click(function(){
+		$.post('/right/set_order.php',{'type':'news'},function(data){
+			if(data=='wrong'){
+				alert('请先登录后再定制');
+			}else if(data=='success'){
+				alert('定制成功');
+			}
+		});
+	});
+	
+	$(".order_article").click(function(){
+		$flag = false;
+		$(".order_article").each(function(){
+			if($(this).attr('checked')){
+				$flag = true;
+			}
+		});
+		if($flag){
+			$("#article_order").attr('disabled',false);
+		}else{
+			$("#article_order").attr('disabled','disabled');
+		}
+	});
+	
+	$("#article_order").click(function(){
+		var order = $('.order_article').serializeArray();
+		$.post('/right/set_order.php',order,function(data){
+			if(data=='wrong'){
+				alert('请先登录后再定阅');
+			}else if(data=='success'){
+				alert('定阅成功');
+			}
+		});
+	});
 });
