@@ -438,7 +438,12 @@
 			 			 <div id=mag_dash></div>
 
 						<div id=search>往期杂志查阅</div>
-						<div id=sel><select></select>　<select></select></div>
+						<div id=sel>
+							<select>
+							</select>　
+							<select>
+							</select>
+						</div>
 						<button id="btnonline"></button><button id="sq"></button>
 						<div id=ck><a href="">查看杂志列表>></a></div>
 

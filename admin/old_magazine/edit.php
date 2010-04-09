@@ -7,64 +7,58 @@
 	<?php 
 		require_once('../../frame.php');
 		judge_role();
-		css_include_tag('jquery_ui','colorbox','admin');
-		use_jquery_ui();
-		js_include_tag('jquery.colorbox-min.js');
+		css_include_tag('jquery_ui','admin');
+		use_jquery();
+		validate_form("old_magazine");
 	?>
 </head>
 <?php
 	$db = get_db();
 	$id = $_REQUEST['id'];
-	$record = new table_class('fb_activity');
+	$record = new table_class('fb_old_magazine');
 	if(isset($_REQUEST['id']))
 	{
 		$record->find($id);
 	}
 ?>
-<body style="background:#E1F0F7">
-	<form enctype="multipart/form-data" action="edit.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　 发布往期杂志 <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
-		</tr>
+<body>
+<div id=icaption>
+    <div id=title>发布往期杂志</div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=itable>
+	<form id="old_magazine" action="edit.post.php" method="post"> 
+	<table cellspacing="1" align="center">
 		<tr class=tr4>
-			<td class=td1>杂志名称(刊号)</td>
-			<td width=660>
-				<input type="text" name="post[name]" value="<?php echo $record->name;?>">
+			<td class=td1 width="15%">杂志名称(刊号)</td>
+			<td width="85%">
+				<input type="text" name="post[name]" class="required" value="<?php echo $record->name;?>">
 			</td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>所属年份</td>
 			<td>
-				<input type="text" name="post[year]" value="<?php echo $record->year;?>">(请输入4位数字年份)
+				<input type="text" name="post[year]" class="required number" value="<?php echo $record->year;?>">(请输入4位数字年份)
 			</td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>杂志链接</td>
-			<td><input type="text" name="post[url]" value="<?php echo $record->place;?>"></td>
+			<td><input type="text" name="post[url]" value="<?php echo $record->url;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td class=td1>活动对应页面</td>
+			<td class=td1>优先级</td>
 			<td>
-				<input type="text"  name="post[url]" value="<?php echo $record->url;?>">
+				<input type="text" class="number" name="post[priority]" value="<?php echo $record->priority;?>">
 			</td>
 		</tr>
-		<tr class=tr4>
-			<td class=td1>封面图片</td>
-			<td><input type="file" name="post[image]"></input><?php if($record->image){?> <a href="<?php echo $record->image;?>" title="封面图片" target="_blank" class="colorbox">查看</a><?php }?></td>
-		</tr>
-		<tr class="tr3">
-			<td colspan="2" width="795" align="center">
+		<tr class="btools">
+			<td colspan="2">
 				<input id="submit" type="submit" value="完成">	
 				<input type="hidden" name="id" value="<?php echo $id;?>">
 			</td>
 		</tr>	
 	</table>
 	</form>
+</div>
 </body>
 </html>
-<script>
-	$(function(){
-		$(".colorbox").colorbox();
-	});
-</script>
