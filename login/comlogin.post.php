@@ -10,7 +10,7 @@
 	$name=$_POST['name'];
 	$password=$_POST['password'];
 	include("../frame.php");
-	$suess_url =   $_POST['last_url'] ? $_POST['last_url'] :'/user/user.php';
+	$suess_url =   $_POST['last_url'] ? $_POST['last_url'] :'/user/user_info.php';
 	$fail_url = $_POST['last_url'] ?"index.php?last_url=" .$_POST['last_url'] :"index.php";
 	if(strlen($name)>20 || strlen($password)>20){
 		alert("用户名或密码错误");

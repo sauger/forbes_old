@@ -1,14 +1,21 @@
 <div id=top_banner><a href="#"><img border=0 src="/images/other/top_banner.jpg"></a></div>
 	<div id=top_function>
-			<div class=user_btn><a href="">登陆</a>　<a href="">注册</a></div>
-			<div class=user_btn><a href="">设为首页</a>　<a href="">收藏本页</a></div>
+			<div class=user_btn>
+				<?php init_page_items(); if(!$_SESSION['name']){?>
+				<a href="/login">登陆</a>　<a href="">注册</a>
+				<?php }else{?>
+				欢迎你：<?php echo $_SESSION['name'];?>　
+				<a href="/user/">>>会员中心</a>
+				<?php }?>
+			</div>
+			<div class=user_btn><a href="javascript:void(0)" onclick="myhomepage()" name="homepage">设为首页</a>　<a href="javascript:void(0)" onclick="addfavorite()">收藏本页</a></div>
 			<div id=magazine_title>本期杂志介绍</div>
 			<?php 
-				$magazine = get_news_by_pos('顶部杂志');
+				$pos_name = "top_magazine";
 			?>
-			<div id=magazine_pic><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img border=0 width="75" height="95" src="<?php echo $magazine[0]->img_src3?>"></a></div>
-			<div id=magazine_description><span class=font1><?php echo $magazine[0]->name;?></span><br><?php echo $magazine[0]->short_title;?></div>
-			<div id=magazine_btn><a href="/magazine/magazine.php?id=<?php echo $magazine[0]->id;?>"><img src="/images/top/magazine_btn.jpg" border=0></a></div>
+			<div id=magazine_pic <?php show_page_pos($pos_name)?>><?php show_page_img($pos_items,$pos_name,1,75,95)?></div>
+			<div id=magazine_description><span class=font1><?php echo $pos_items->$pos_name->display;?></span><br><?php echo $pos_items->$pos_name->description;?></div>
+			<div id=magazine_btn><a href="<?php echo $pos_items->$pos_name->href;?>"><img src="/images/top/magazine_btn.jpg" border=0></a></div>
 
 	</div>
   <div id=top_logo>
