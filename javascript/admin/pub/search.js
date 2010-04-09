@@ -22,8 +22,6 @@ function search_news(){
 	}
 	url.push('category='+filter_category);
 	url = "?" + url.join('&');
-	//var url = "?title="+encodeURI($("#title").attr('value'))+"&category="+$("#category").attr('value')+"&adopt="+$("#adopt").attr('value');
-	//url += "&language_tag=" + $('#language_tag').val();
 	window.location.href=url;	
 	
 }

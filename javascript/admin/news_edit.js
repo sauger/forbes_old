@@ -37,7 +37,48 @@
 		refresh_sub_headlines();
 		$('#a_sub_headline').colorbox({href:'news_filter.php?show_div=1&selected_news=' + $('#hidden_sub_headline').val()+'&call_back=save_sub_headlines'});
 	}	
+	
+function add_keyword(keyword){
+	if(keyword == ''){
+		alert('请输入关键字!');
+		$('#auto_keywords').focus();
+		return;
+	}
+	var can_add = true;
+	$('#sel_keywords').find('option').each(function(){
+		if($(this).val() == keyword){
+			alert('请不要重复添加');
+			can_add = false;
+			return;
+		}
+	});
+	if(can_add)
+		$('#sel_keywords').append('<option value="' + keyword + '">' + keyword + '</option>');
+}
+function delete_keyword(){
+	var items = $('#sel_keywords option:selected');
+	if(items.length <= 0){
+		alert('请选择需要删除的关键字');
+		return false;
+	}
+	if(false === confirm('您确定要删除选中的关键字吗？')) return;
+	items.each(function(){
+		$(this).remove();
+	});
+}
 $(function(){
+	$('#auto_keywords').autocomplete({
+		
+		source:'/admin/keywords/filter_keywords.php'
+	});
+	$('#add_keyword').click(function(){
+		var	keyword = $('#auto_keywords').val();
+		add_keyword(keyword);
+	});
+	$('#delete_keyword').click(function(){
+		delete_keyword();
+	});
+	
 	var filte_words;
 	var filte_len;
 	
@@ -83,6 +124,14 @@ $(function(){
 	$('#news_edit').submit(function(){		
 		var video_array = new Array('flv','wmv','wav','mp3','mp4','avi','rm');
 		var pic_array = new Array('jpg','png','bmp','gif','icon');
+		/*
+		 * key words handling
+		 */
+		var keywords = new Array();
+		$('#sel_keywords option').each(function(){
+			keywords.push($(this).val());
+		});
+		$('#news_keywords').val(keywords.join(' '));
 		if($('#news_keywords').val()==''){
 			alert("请输入关键字!");
 			return false;
@@ -219,7 +268,9 @@ $(function(){
 			//noresults:"没有匹配的记录",
 			valueSep:null
 	};
-	$('#news_author').autoComplete(json_options);
+	$('#news_author').autocomplete({
+		source:'/admin/user/_user_autocomplete.php?'
+	});
 	$('#news_author_type').change(function(e){
 		var author_type= $(this).val();
 		//记者

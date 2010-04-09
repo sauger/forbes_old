@@ -10,11 +10,9 @@ class Company{
 
 if(is_ajax()){
 	$limit = $_REQUEST['limit'] ? $_REQUEST['limit'] : 6;
-	if(!$_REQUEST['name']){
-		return "";	
-	}
+	$name = $_GET['term'];
 	$db = get_db();
-	$sql = "select id, nick_name from fb_user where nick_name like '%{$_REQUEST['auto_name']}%' or name like '%{$_REQUEST['auto_name']}%' or chinese_name like '%{$_REQUEST['auto_name']}%' limit $limit";
+	$sql = "select id, nick_name from fb_user where nick_name like '%{$name}%' or name like '%{$name}%' or chinese_name like '%{$name}%' limit $limit";
 	$company = $db->query($sql);
 	if(empty($company)){
 		return "";
@@ -27,8 +25,8 @@ if(is_ajax()){
 		array_push($a, $c);
 
 	}
-	$result = Array("results" => $a);
-	echo json_encode($result);;
+	//$result = Array("results" => $a);
+	echo json_encode($a);
 	//var_dump($company);	
 	$db->close();
 }

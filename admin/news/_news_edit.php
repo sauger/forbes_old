@@ -84,7 +84,24 @@
 		
 		<tr class=tr4>
 			<td class=td1>关键词</td>
-			<td><input type="text" name=news[keywords]  id="news_keywords"  value="<?php echo $news->keywords;?>">(空格分隔) </td>
+			<td>
+				<div style="float:left">
+				<select multiple="multiple" id="sel_keywords">
+					<?php $keywords = explode(' ',$news->keywords);
+						if(!empty($keywords)){
+							foreach($keywords as $key){ ?>
+							<option value="<?php echo $key?>"><?php echo $key?></option>			
+						<?php }
+						}
+					?>
+				</select>
+				<img src="/images/btn_delete.png" style="cursor:pointer;" id="delete_keyword" />
+				</div>
+				<div style="float:left;margin-left:10px;">				
+				<input type="text" id="auto_keywords" style="width:150px;"/>
+				<input type="hidden" name="news[keywords]" id="news_keywords"/><img id="add_keyword" style="cursor:pointer" src="/images/btn_add.png" />
+				</div>
+			</td>
 		</tr>
 
 		<tr class=tr4 style="display:none">
