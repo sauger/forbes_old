@@ -19,4 +19,5 @@ config/config.php
 discuz/*
 *.log
 data/dbcache/*.tb
+default.php
 htmldir
