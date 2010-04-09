@@ -1,0 +1,11 @@
+<?php
+	update_pos("服饰钟表",1,"liftindex_news_1",false,false);
+	update_pos("豪车",1,"liftindex_news_2",false,false);
+	update_pos("游艇飞机",1,"liftindex_news_3",false,false);
+	update_pos("名利场",1,"lifeindex_news_mlc",false,false);
+	update_pos("美酒美食",1,"liftindex_news_4",false,false);
+	update_pos("体面",1,"liftindex_news_5",false,false);
+	update_pos("文化娱乐",1,"liftindex_news_6",false,false);
+	update_pos("旅游",1,"lifeindex_ly",false,false);
+	update_pos("豪宅",1,"lifeindex_hz",false,false);
+	update_pos("关注",5,"lifeindex");
