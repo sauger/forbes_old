@@ -25,16 +25,18 @@
 </head>
 
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="6">
-				　往期杂志管理 <a href="edit.php">添加活动</a>   搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="250">杂志名称</td><td width="100">杂志年份</td><td width="140">杂志链接</td><td width="100">优先级</td><td width="200">操作</td>
+<div id=icaption>
+    <div id=title>往期杂志管理</div>
+	  <a href="edit.php" id=btn_add></a>
+</div>
+<div id=isearch>
+		<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
+		<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class=itable_title>
+			<td width="40%">杂志名称</td><td width="15%">杂志年份</td><td width="15%">杂志链接</td><td width="15%">优先级</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -52,12 +54,17 @@
 		<?php
 			}
 		?>
-		<input type="hidden" id="db_table" value="fb_activity">
-			<tr class="tr3">
-				<td colspan=6><?php paginate();?></td>
-			</tr>
+		<tr class="btools">
+			<td colspan=10>
+				<?php paginate("",null,"page",true);?>
+				<button id=clear_priority style="display:none">清空优先级</button>
+				<button id=edit_priority  style="display:none">编辑优先级</button>
+				<input type="hidden" id="relation" value="news">
+				<input type="hidden" id="db_table" value="fb_old_magazine">
+			</td>
+		</tr>
 		</table>	
-
+	</div>
 	</body>
 </html>
 <script>

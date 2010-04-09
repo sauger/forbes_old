@@ -2,7 +2,8 @@
 	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="778" height="90">
         <param name="movie" value="/flash/banner.swf">
         <param name="quality" value="high">
-        <embed src="/flash/banner.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="778" height="90"></embed>
+        <PARAM NAME="WMode" VALUE="Opaque">
+        <embed src="/flash/banner.swf" quality="high" WMode="Opaque" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="778" height="90"></embed>
      </object>
 </div>
 	<div id=top_function>
