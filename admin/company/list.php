@@ -31,6 +31,7 @@
 <div id=icaption>
     <div id=title>公司管理</div>
 	  <a href="edit.php" id=btn_add></a>
+	  <a href="data_upload.php" id=btn_import></a>
 </div>
 <div id=isearch>
 		<input id="content" type="text" value="<? echo $_REQUEST['content']?>" >
