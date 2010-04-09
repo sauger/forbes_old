@@ -230,7 +230,7 @@
 					</div>
 					<?php 
 						for($i=0;$i<5;$i++ ){
-							$pos_name = "lifeindex";
+							$pos_name = "lifeindex".$i;
 					?>
 					<div id=list <?php show_page_pos($pos_name);?>>
 						<a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a>
