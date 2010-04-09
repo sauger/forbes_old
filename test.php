@@ -7,7 +7,6 @@
 		css_include_tag('jquery_ui');
 		//$db = get_db();
 		//var_dump($db->execute($script));
-		die();				
 		var_dump($_POST);				
 		?>
 	</head>
@@ -18,6 +17,10 @@
 		<form method="post" action="test.php" enctype="multipart/form-data" >
 		
 			<input id="auto" type="text"></input>
+			<select multiple="multiple" name="select">
+				<option value="a">a</option>
+				<option value="b">b</option>
+			</select>
 			<input type="file" name="item[picture]">
 			<input type="file" name="item[image]">
 			<input type="submit" value="send"></input>		

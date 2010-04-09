@@ -100,6 +100,13 @@
 	if($news->is_adopt){
 		static_news($news);
 	}
+	//handle the keywords
+	$keywords = explode(' ', $news->keywords);
+	if($keywords){
+		foreach($keywords as $val){
+			$db->execute("insert into fb_news_keywords (name) values('{$val}') on duplicate key update name='{$val}'");
+		}
+	}
 	
 	if(isset($_POST['publish_schedule_date'])){
 		$schedule = new table_class('fb_publish_schedule');

@@ -7,10 +7,10 @@
 	<?php 
 		require_once('../../frame.php');
 		judge_role();
-		css_include_tag('admin','colorbox','autocomplete','jquery_ui');
-		use_jquery();
+		css_include_tag('admin','colorbox','jquery_ui');
+		use_jquery_ui();
 		validate_form("news_edit");
-		js_include_tag('category_class.js', 'admin/news_pub', 'admin/news_edit','jquery.colorbox-min.js','jquery-ui-1.7.2.custom.min.js','../ckeditor/ckeditor.js','autocomplete.jquery','pubfun');
+		js_include_tag('category_class.js', 'admin/news_pub', 'admin/news_edit','jquery.colorbox-min.js','../ckeditor/ckeditor.js','pubfun');
 	?>
 </head>
 <?php 
