@@ -9,7 +9,8 @@
 		<title>福布斯-登陆</title>
 		<?php
 			use_jquery();
-			css_include_tag('comlogin','top','bottom');
+			js_include_tag('public');
+			css_include_tag('comlogin','public');
 			validate_form('form_login');
 		?>
 	</head>

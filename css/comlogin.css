@@ -1,4 +1,6 @@
-﻿#left{width:460px; height:400px; background:#FFFFFF; float:left; display:inline;}
+﻿body {font-size:12px;  font-family:Arial,宋体; color:#000; margin:0 auto; padding:0;}
+
+#left{width:460px; height:400px; background:#FFFFFF; float:left; display:inline;}
 #leftp{width:400px; height:330px; background:url(/images/comlogin/3.jpg); margin-left:30px; margin-top:20px; float:left; display:inline;}
 #font1{margin-top:71px; width:249px;}
 .font2{margin-top:20px; width:249px;}

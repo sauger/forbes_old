@@ -79,6 +79,8 @@
 		send_mail('smtp.163.com','sauger','auden6666','sauger@163.com','sauger@163.com','福布斯中文网',$content);
 		alert('注册成功，系统已经将激活链接发送到您的注册邮箱中，请查收邮件并激活您的账号');
 	};
-	//redirect('index.php');
+	$_SESSION['user_id']=$user->id;
+	$_SESSION['name']=$user->name;
+	redirect('/user');
 ?>
 </html>

@@ -2,9 +2,9 @@
 #top_banner{width:778px; height:90px; border:1px solid #cccccc; padding:1px; margin-top:8px; float:left; display:inline;}
 
 #top_function{width:215px; height:187px; margin-top:8px; font-size:12px; overflow:hidden; background:url(/images/public/bg_function.png) no-repeat; float:right; display:inline;}
-#top_function .user_btn{width:180px; height:23px; margin-top:1px; margin-left:15px; line-height:22px; float:left; display:inline;}
+#top_function .user_btn{width:195px; height:23px; margin-top:1px; margin-left:15px; color:#ffffff; line-height:22px; overflow:hidden; float:left; display:inline;}
 #top_function .user_btn a{font-size:12px; color:#ffffff; text-decoration:none;}
-#top_function #magazine_title{width:180px; height:14px; line-height:14px; margin-top:6px; margin-left:13px; color:#ffffff; font-size:14px; font-weight:bold; float:left; display:inline;}
+#top_function #magazine_title{width:180px; height:16px; line-height:16px; margin-top:6px; margin-left:13px; color:#ffffff; font-size:14px; font-weight:bold; float:left; display:inline;}
 #top_function #magazine_pic{width:72px; height:93px; margin-top:14px; margin-left:10px; float:left; display:inline;}
 #top_function #magazine_description{width:122px; height:60px; margin-top:15px; margin-left:5px; color:#666666; line-height:20px; overflow:hidden; float:left; display:inline;}
 #top_function #magazine_description .font1{color:#333333; font-weight:bold;}

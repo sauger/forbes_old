@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 	session_start();
 	require_once('../frame.php');
 ?>
@@ -10,11 +10,13 @@
 	<title>用户注册</title>
 	<?php
 		use_jquery();
-		js_include_tag('register/register');
-		css_include_tag('register');
+		js_include_tag('register/register','public');
+		css_include_tag('register','public');
 	?>
 </head>
 <body>
+ <div style="width:1002px; margin:0 auto;">		
+	 <?php include "../inc/top.inc.php";?>	
 	<div id=register>
 		<div id=title>请填写下列信息 <span style="color:red;">*</span>为必填项目</div>
 		<form id="re_form" action="register.post.php" method="post">
@@ -85,10 +87,7 @@
 		<table>
 			<tr>
 				<td class=td1><span style="color:red;">*</span>注册验证码：</td>
-				<td class=td3>
-					<div id=yzm_input><input id="rvcode"  name="rvcode" type="text"></div>
-					<div id=yzm><img id="pic" src="yz.php"></div>
-				</td>
+				<td class=td3><div id=yzm_input><input id="rvcode" name="rvcode" type="text"></div><div id=yzm><img id="pic" src="yz.php"></div></td>
 				<td class=td2>
 					<a style="cursor:pointer;" id="chang_pic">看不清楚？换张图片</a>
 				</td>
@@ -98,7 +97,7 @@
 		</table>
 		<table width="100%">
 			<tr>
-				<td class=td5 style="color:#999999; font-weight:normal;"><input type="checkbox">我接受福布斯中文网用户注册和使用协议</td>
+				<td class=td5 style="color:#999999; font-weight:normal;"><input id="sure_check" type="checkbox">我接受福布斯中文网用户注册和使用协议</td>
 				<td class=td2><a href="">查看协议</a></td>
 			</tr>
 			<tr>
@@ -108,5 +107,9 @@
 		</table>
 		</form>
 	</div>
+	<?php 
+		include "../inc/bottom.inc.php";
+	?>
+	 </div>
 </body>
 </html>

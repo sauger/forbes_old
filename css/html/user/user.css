@@ -3,8 +3,8 @@
 p{margin:0; padding:0}
 
 #top{width:1000px; height:37px; margin-top:10px; float:left; display:inline;}
-#title{width:75px; height:27px; line-height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
-#title1{width:900px; height:27px; font-size:12px; line-height:27px; margin-left:19px; float:left; display:inline;}
+#title{width:100px; height:27px; line-height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
+#title1{width:500px; height:27px; font-size:12px; line-height:27px; margin-left:19px; float:left; display:inline;}
 #title1 a{text-decoration:none;}
 #line{width:999px; height:10px; line-height:0; font-size:0; background:url(/images/html/user/line.jpg) repeat-x; float:left; display:inline;}
 
