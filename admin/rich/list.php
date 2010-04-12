@@ -37,7 +37,7 @@
 				<option value="1" <?php if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >姓名</option>
 				<option value="0" <?php if($_REQUEST['type']=="0"){?>selected="selected"<? }?> >性别</option>
 		</select>
-		<input type="button" value="搜索" id="search_button">
+		<input type="button" value="搜索" id="search">
 </div>
 <div id=itable>
 	<table cellspacing="1"  align="center">
