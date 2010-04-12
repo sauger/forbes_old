@@ -9,4 +9,5 @@
 	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.baseBrowserLibrary"/>
 	<classpathentry kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.wst.jsdt.USER_LIBRARY/jquery"/>
+	<classpathentry kind="output" path=""/>
 </classpath>

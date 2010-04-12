@@ -76,7 +76,7 @@ ul{list-style:none; padding:0; margin:0;}
 #right_inc #mag_dash{width:270px; height:1px; margin-top:10px; margin-left:15px; background:url(/images/right/dashed2.jpg) no-repeat; float:left; display:inline;}
 #right_inc #mag_content #search{width:202px; height:20px; font-size:12px; margin-left:12px; line-height:20px; color:#0066CC; font-weight:bold; float:left; display:inline;}
 #right_inc #mag_content #sel{width:280px; height:20px; margin-top:5px; margin-left:12px; float:left; display:inline;}
-#right_inc #mag_content #sel select{width:95px; height:20px; margin-right:40px; float:left; display:inline;}
+#right_inc #mag_content #sel select{width:95px; height:23px; margin-right:40px; float:left; display:inline;}
 #right_inc #mag_content #btnonline{width:66px; height:22px; margin-top:10px; margin-left:20px; border:0px; background:url('/images/right/readonline.jpg') no-repeat; float:left; display:inline;}
 #right_inc #mag_content #sq{width:66px; height:22px; margin-top:10px; margin-left:20px; border:0px; background:url('/images/right/sqread.jpg') no-repeat; float:left; display:inline;}
 #right_inc #mag_content #ck{width:200px; height:20px; margin-right:10px; line-height:20px; font-size:12px; text-align:right; float:right; display:inline;}

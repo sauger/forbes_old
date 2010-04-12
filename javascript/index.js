@@ -178,9 +178,36 @@ $(function(){
 		});
 		
 		$("#old_magazine").change(function(){
-			$.post('/inc/show_magazine.php',{'year':$("#old_magazine").val()},function(data){
+			$.post('/ajax/show_magazine.php',{'year':$("#old_magazine").val()},function(data){
 				$("#show_magazine").html(data);
+				$("#btnonline").removeAttr('href');
+				$("#sq").removeAttr('href');
 			});
+		});
+		
+		$("#show_magazine").live('change',function(){
+			if($("#show_magazine option:selected").attr('url')==''){
+				$("#btnonline").removeAttr('href');
+				$("#sq").removeAttr('href');
+			}else{
+				$("#btnonline").attr('href',$("#show_magazine option:selected").attr('url'));
+				$("#sq").attr('href','javascript:void(0)');
+				$("#sq").attr('name',$("#show_magazine option:selected").val());
+			}
+		});
+		
+		$("#sq").click(function(){
+			if($("#sq").attr('name')!=''){
+				$.post('/ajax/order_magazine.php',{'id':$("#sq").attr('name')},function(data){
+					if(data=='wrong'){
+						alert("请先登录再申请赠阅");
+					}else if(data=='success'){
+						alert("已申请，请等待管理员审批");
+					}else if(data=='full'){
+						alert("请不要重复申请");
+					}
+				});
+			}
 		});
 });
 

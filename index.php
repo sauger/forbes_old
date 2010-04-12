@@ -57,12 +57,12 @@
 	
 					<div id=more></div>
 					<div id=btn>
-						<div class=headline_btn1 id=l style="background:url(images/index/slideshow_back.gif) no-repeat;"></div>
-						<div class=headline_btn2 id=0 style="background:url(images/index/slideshow_active.gif) no-repeat"></div>
-						<div class=headline_btn2 id=1 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
-						<div class=headline_btn2 id=2 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
-						<div class=headline_btn2 id=3 style="background:url(images/index/slideshow_unactive.gif) no-repeat"></div>
-						<div class=headline_btn1 id=r style="background:url(images/index/slideshow_next.gif) no-repeat"></div>
+						<div class=headline_btn1 id=l style="background:url(/images/index/slideshow_back.gif) no-repeat;"></div>
+						<div class=headline_btn2 id=0 style="background:url(/images/index/slideshow_active.gif) no-repeat"></div>
+						<div class=headline_btn2 id=1 style="background:url(/images/index/slideshow_unactive.gif) no-repeat"></div>
+						<div class=headline_btn2 id=2 style="background:url(/images/index/slideshow_unactive.gif) no-repeat"></div>
+						<div class=headline_btn2 id=3 style="background:url(/images/index/slideshow_unactive.gif) no-repeat"></div>
+						<div class=headline_btn1 id=r style="background:url(/images/index/slideshow_next.gif) no-repeat"></div>
 					</div>
 				</div>
 			</div>
@@ -471,7 +471,8 @@
 								<option value=""></option>
 							</select>
 						</div>
-						<button id="btnonline"></button><button id="sq"></button>
+						<a id="btnonline"></a>
+						<a id="sq"></a>
 						<div id=ck><a href="">查看杂志列表>></a></div>
 
 				</div>
