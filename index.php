@@ -471,7 +471,8 @@
 								<option value=""></option>
 							</select>
 						</div>
-						<button id="btnonline"></button><button id="sq"></button>
+						<a id="btnonline"></a>
+						<a id="sq"></a>
 						<div id=ck><a href="">查看杂志列表>></a></div>
 
 				</div>
