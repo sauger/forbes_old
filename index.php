@@ -96,12 +96,12 @@
 		 
 		 
 		<div id=forbes_trt>
-			<div class=title style="background:url('images/index/block2.jpg') no-repeat; font-weight:bold; color:#000000;">富豪榜</div>
+			<div class="title selected">富豪榜</div>
 			<div class=title>财富过山车</div>	
 			<div class=title>名人榜</div>	
 			<div class=title>城市榜</div>
 			<div id=phb>
-				<div id=ph><span style="margin-left:10px;">排名</span><span style="margin-left:50px;">姓名</span><span>财富（亿）</span><span>变动</span></div>
+				<div id=ph><span style="margin-left:10px;">排名</span><span style="margin-left:55px;">姓名</span><span style="margin-left:50px;">财富（亿）</span><span style="margin-left:20px;">变动</span></div>
 				<div id=phname>
 					<?php 
 					$db = get_db();

@@ -49,6 +49,7 @@
 				<select name="post[role_name]" id="role_name" style="width:155px">
 					<option value="journalist" <?php if($user->role_name=="journalist") echo "selected=selected"?>>记者</option>
 					<option value="author" <?php if($user->role_name=="author") echo "selected=selected"?>>专栏作者</option>
+					<option value="lister" <?php if($user->role_name=="lister") echo "selected=selected"?>>榜单管理员</option>
 					<option value="member" <?php if($user->role_name=="member") echo "selected=selected"?>>普通会员</option>
 					<option value="sys_admin" <?php if($user->role_name=="sys_admin") echo "selected=selected"?>>系统管理员</option>
 					<option value="admin" <?php if($user->role_name=="admin") echo "selected=selected"?>>管理员</option>

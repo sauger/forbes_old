@@ -1,5 +1,12 @@
 ﻿<?php
   require_once('../frame.php');
+	
+	if('del_all'== $_POST['post_type']){
+		$db = get_db();
+		$db->echo_sql = true;
+		$db->execute("delete from {$_POST['tbname']} where id in ({$_POST['ids']})");
+		exit();
+	}
 	$post = new table_class($_POST['db_table']);
 	if("del"==$_POST['post_type'])
 	{
