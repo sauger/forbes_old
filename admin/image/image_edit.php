@@ -29,50 +29,58 @@
 	$category = new category_class('image');
 	$category->echo_jsdata();
 ?>
-<body style="background:#E1F0F7">
+<body>
+<div id=icaption>
+    <div id=title>发布图片</div>
+	  <a href="image_list.php" id=btn_back></a>
+</div>	
+	
+<div id=itable>
+	<table cellspacing="1"  align="center">
 	<form id="picture_edit" enctype="multipart/form-data" action="image.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr bgcolor="#f9f9f9" height="25px;" style="font-weight:bold; font-size:13px;">
-			<td colspan="2" width="795">　　<?php if($id){echo "修改图片";}else{echo "添加图片";}?></td>
+		<tr class=tr4>
+			<td width="15%" class=td1>标　题</td>
+			<td width="85%"><input id="title" type="text" name="image[title]" value="<?php echo $image->title;?>"></td>
 		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td width="100">标　题</td><td width="695" align="left"><input id="title" type="text" name="image[title]" value="<?php echo $image->title;?>"></td>
+		<tr class=tr4>
+			<td class=td1>优先级</td>
+			<td><input type="text" size="10" id="priority" name="image[priority]" value="<?php if($image->priority!=100){echo $image->priority;}?>">(1-100)</td>
 		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td>优先级</td><td align="left"><input type="text" size="10" id="priority" name="image[priority]" value="<?php if($image->priority!=100){echo $image->priority;}?>">(1-100)</td>
+		<tr class=tr4>
+			<td class=td1>关键词</td>
+			<td><input type="text" size="50" name="image[keywords]" value="<?php echo $image->keywords;?>">(请用空格或者","分隔开关键词,比如:高考 升学)</td>
 		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td>关键词</td><td align="left"><input type="text" size="50" name="image[keywords]" value="<?php echo $image->keywords;?>">(请用空格或者","分隔开关键词,比如:高考 升学)</td>
+		<tr class=tr4>
+			<td class=td1>分　类</td>
+			<td><span id="span_category"></span></td>
 		</tr>
-		
-		
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td>分　类</td>
-			<td align="left">
-			<span id="span_category"></span>
+		<tr class=tr4>
+			<td class=td1>图片链接</td>
+			<td><input type="text" size="50" name="image[url]" id="online" value="<?php echo $image->url;?>"></td>
+		</tr>
+		<tr class=tr4>
+			<td class=td1>选择图片</td>
+			<td><input type="hidden" name="MAX_FILE_SIZE1" value="2097152"><input name="image[src]" id="upfile" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src!=''){?><a href="<?php echo $image->src;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
+		</tr>
+		<tr class=tr4>
+			<td class=td1>选择缩略图片</td>
+			<td><input name="image[src2]" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src2!=''){?><a href="<?php echo $image->src2;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
+		</tr>
+		<tr class=tr4>
+			<td class=td1>简短描述</td>
+			<td><textarea cols="80" rows="8" name="image[description]" class="required" ><?php echo $image->description;?></textarea></td>
+		</tr>
+		<tr class="btools">
+			<td colspan="10">
+				<input id="submit" type="submit" value="发布图片">
+				<input type="hidden" name="image[category_id]" id="category_id" value="<?php echo $image->category_id;?>">
+				<input type="hidden" id="id" name="id" value="<?php echo $id;?>">
+				<input type="hidden" name="image[is_adopt]" value="1">
 			</td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
-			<td>图片链接</td><td align="left"><input type="text" size="50" name="image[url]" id="online" value="<?php echo $image->url;?>"></td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
-			<td>选择图片</td><td align="left"><input type="hidden" name="MAX_FILE_SIZE1" value="2097152"><input name="image[src]" id="upfile" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src!=''){?><a href="<?php echo $image->src;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
-			<td>选择缩略图片</td><td align="left"><input name="image[src2]" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src2!=''){?><a href="<?php echo $image->src2;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="150px;" id=newsshow1>
-			<td>简短描述</td><td align="left"><textarea cols="80" rows="8" name="image[description]" class="required" ><?php echo $image->description;?></textarea></td>
-		</tr>
-
-		<tr bgcolor="#f9f9f9" height="30px;">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="发布图片"></td>
 		</tr>	
 	</table>
-	<input type="hidden" name="image[category_id]" id="category_id" value="<?php echo $image->category_id;?>">
-	<input type="hidden" id="id" name="id" value="<?php echo $id;?>">
-	<input type="hidden" name="image[is_adopt]" value="1">
 	</form>
+</div>	
 </body>
 </html>
 
