@@ -75,4 +75,10 @@ $(function(){
 			}
 		});
 	});
+	
+	$("#old_magazine").change(function(){
+		$.post('/inc/show_magazine.php',{'year':$("#old_magazine").val()},function(data){
+			$("#show_magazine").html(data);
+		});
+	});
 });

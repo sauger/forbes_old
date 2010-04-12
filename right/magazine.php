@@ -9,8 +9,19 @@
  			<div id=mag_dash></div>
 			<div id=search>往期杂志查阅</div>
 			<div id=sel>
-				<select></select>
-				<select></select>
+				<select id="old_magazine">
+					<option value=''></option>
+					<?php
+						$magazine = $db->query("select year from fb_old_magazine group by year order by year desc");
+						$year_count = $db->record_count;
+						for($i=0;$i<$year_count;$i++){
+					?>
+					<option value="<?php echo $magazine[$i]->year;?>"><?php echo $magazine[$i]->year;?>年</option>
+					<?php }?>
+				</select>
+				<select id="show_magazine">
+					<option value=""></option>
+				</select>
 			</div>
 			<button id="btnonline"></button><button id="sq"></button>
 			<div id=ck><a href="/magazine/list.php">查看杂志列表>></a></div>
