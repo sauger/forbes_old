@@ -42,6 +42,11 @@
 		<div id=nav1>
 			<div class="nav1_menu" param_id="1">内容管理</div>
 			<div class="nav1_menu" param_id="2">榜单管理</div>
+			<?php 
+			if($_SESSION['admin_user_name'] == 'editor1' or $_SESSION['admin_user_name'] == 'editor2' or $_SESSION['admin_user_name'] == 'editor3'){
+			?>
+			<div class="nav1_menu" param_id="24">页面管理</div>
+			<?php }?>
 			<div class="nav1_menu" param_id="3"  param_href="/admin/user/modify_user_info.php">个人信息</div>
 		</div>
 		<div id=nav2>
@@ -61,6 +66,18 @@
 			<div class="nav2_menu nav2_menu_2"><a href="/admin/list/picture_list_list.php" target="admin_iframe" style="color:#0000ff">图片榜单管理</a></div>
 			<div class="nav2_menu nav2_menu_2"><a href="/admin/list/file_list_list.php" target="admin_iframe" style="color:#0000ff">文件榜单管理</a></div>
 			<div class="nav2_menu nav2_menu_3"><a href="/admin/user/modify_user_info.php" target="admin_iframe" style="color:#0000ff">编辑个人信息</a></div>
+			<?php 
+			if($_SESSION['admin_user_name'] == 'editor1' or $_SESSION['admin_user_name'] == 'editor2' or $_SESSION['admin_user_name'] == 'editor3'){
+			?>
+			<div class="nav2_menu nav2_menu_24" param_href="/admin/position/page.php?page=index"><a href="/admin/position/page.php?page=index" target="admin_iframe" style="color:#0000ff">网站首页</a></div>
+			<div class="nav2_menu nav2_menu_24" param_href="/admin/position/page.php?page=list/index"><a href="/admin/position/page.php?page=list/index" target="admin_iframe" style="color:#0000ff">榜单首页</a></div>
+			<div class="nav2_menu nav2_menu_24" param_href="/admin/position/page.php?page=billinaires/index"><a href="/admin/position/page.php?page=billinaires/index" target="admin_iframe" style="color:#0000ff">富豪首页</a></div>
+			<div class="nav2_menu nav2_menu_24" param_href="/admin/position/page.php?page=investment/index"><a href="/admin/position/page.php?page=investment/index" target="admin_iframe" style="color:#0000ff">投资首页</a></div>
+			<div class="nav2_menu nav2_menu_24" param_href="/admin/position/page.php?page=initiate/index"><a href="/admin/position/page.php?page=initiate/index" target="admin_iframe" style="color:#0000ff">创业首页</a></div>
+			<div class="nav2_menu nav2_menu_24" param_href="/admin/position/page.php?page=business/index"><a href="/admin/position/page.php?page=business/index" target="admin_iframe" style="color:#0000ff">商业首页</a></div>
+			<div class="nav2_menu nav2_menu_24" param_href="/admin/position/page.php?page=tech/index"><a href="/admin/position/page.php?page=tech/index" target="admin_iframe" style="color:#0000ff">科技首页</a></div>
+			<div class="nav2_menu nav2_menu_24" param_href="/admin/position/page.php?page=city/index"><a href="/admin/position/page.php?page=city/index" target="admin_iframe" style="color:#0000ff">城市首页</a></div>
+			<?php }?>
 		</div>
 		<div id="admin_content">
 		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="<?php echo $news_list;?>" width="1046" height="1300px"></iframe>
