@@ -35,20 +35,22 @@
 	?>
 </head>
 <body>
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="5" width="795">　<a href="image_edit.php?" style="color:#0000FF">发布图片</a> 　　　
-			搜索　<input id=title type="text" value="<? echo $_REQUEST['title']?>"><span id="span_category"></span><select id=adopt style="width:100px" class="select_new">
+<div id=icaption>
+    <div id=title>图片管理</div>
+	  <a href="image_edit.php" id=btn_add></a>
+</div>
+<div id=isearch>
+		<input id=title type="text" value="<? echo $_REQUEST['title']?>"><span id="span_category"></span>
+		<select id=adopt style="width:100px" class="select_new">
 					<option value="">发布状况</option>
 					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已发布</option>
 					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未发布</option>
-				</select>
-				<input type="button" value="搜索" id="search_new" style="border:1px solid #0000ff; height:21px">
-				<input type="hidden" value="<?php echo $category_id;?>" id="category">
-			</td>
-		</tr>
-	</table>
-	<div class="div_box">
+		</select>
+		<input type="hidden" value="<?php echo $category_id;?>" id="category">
+		<input type="button" value="搜索" id="search_button">
+</div>
+
+<div class="div_box">
 		<?php for($i=0;$i<count($images);$i++){?>
 		<div class=v_box id="<?php echo $images[$i]->id;?>">
 			<a href="<?php echo $images[$i]->src;?>" target="_blank"><img src="<?php echo $images[$i]->src_path('middle');?>" height="100" border="0"></a>
@@ -80,6 +82,7 @@
 		</div>
 		<?php }?>
 	</div>
+	
 	<div class="div_box">
 		<table width="795" border="0">
 			<tr colspan="5" class=tr3>
