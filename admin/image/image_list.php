@@ -49,25 +49,17 @@
 		<input type="hidden" value="<?php echo $category_id;?>" id="category">
 		<input type="button" value="搜索" id="search_button">
 </div>
-
-<div class="div_box">
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class=itable_title>
+			<td width="35%">图片</td><td width="35%">名称</td><td width="15%">发布时间</td><td width="15%">操作</td>
+		</tr>
 		<?php for($i=0;$i<count($images);$i++){?>
-		<div class=v_box id="<?php echo $images[$i]->id;?>">
-			<a href="<?php echo $images[$i]->src;?>" target="_blank"><img src="<?php echo $images[$i]->src_path('middle');?>" height="100" border="0"></a>
-			<div class=content>
-				<a href="<?php echo $images[$i]->src_path('small');?>" target="_blank" style="color:#000000; text-decoration:none">
-					<?php echo $images[$i]->title;?>
-				</a>
-			</div>
-			<div class=content>
-				<a href="?category=<?php echo $images[$i]->category_id;?>" style="color:#0000FF">
-					<a href="?category=<?php echo $images[$i]->category_id;?>" style="color:#0000FF"><?php echo $category->find($images[$i]->category_id)->name; ?></a>
-				</a>
-			</div>
-			<div class=content>
-				<?php echo $images[$i]->created_at; ?>
-			</div>
-			<div class=content style="height:20px">
+		<tr class=tr3 id=<?php echo $images[$i]->id;?>>
+			<td  height=60><a href="<?php echo $images[$i]->src;?>" target="_blank"><img src="<?php echo $images[$i]->src_path('middle');?>" width="50" height="50" border="0"></a></td>
+			<td><?php echo $images[$i]->title;?></td>
+			<td><?php echo $images[$i]->created_at;?></td>
+			<td>
 				<?php if($images[$i]->is_adopt=="1"){?>
 					<span style="color:#FF0000;cursor:pointer" class="revocation" name="<?php echo $images[$i]->id;?>">撤消</span>
 				<?php }?>
@@ -76,22 +68,25 @@
 				<?php }?>
 				<a href="image_edit.php?id=<?php echo $images[$i]->id;?>" style="color:#000000; text-decoration:none">编辑</a> 
 				<span style="cursor:pointer; color:#FF0000" class="del" name="<?php echo $images[$i]->id;?>">删除</span>
-				<input type="text" class="priority" name="<?php echo $images[$i]->id;?>" value="<?php if($images[$i]->priority!=100){echo $images[$i]->priority;}?>" style="width:40px;">
+				<input type="hidden" class="priority" name="<?php echo $images[$i]->id;?>" value="<?php if($images[$i]->priority!=100){echo $images[$i]->priority;}?>" style="width:40px;">
 				<input type="hidden" id="priorityh<? echo $p;?>" value="<?php echo $images[$i]->id;?>" style="width:40px;">	
-			</div>
-		</div>
-		<?php }?>
-	</div>
-	
-	<div class="div_box">
-		<table width="795" border="0">
-			<tr colspan="5" class=tr3>
-				<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button></td>
-			</tr>
-		</table>
-	</div>
-	<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
-	<input type="hidden" id="relation" value="image">
+			</td>
+		</tr>
+		<?php
+			}
+			//--------------------
+		?>
+		<tr class="btools">
+			<td colspan=10>
+				<?php paginate("",null,"page",true);?>
+				<button id=clear_priority style="display:none">清空优先级</button>
+				<button id=edit_priority  style="display:none">编辑优先级</button>
+				<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
+				<input type="hidden" id="relation" value="image">
+			</td>
+		</tr>
+  </table>
+</div>	
 </body>
 </html>
 
