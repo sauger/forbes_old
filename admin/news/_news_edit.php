@@ -85,7 +85,6 @@
 		<tr class=tr4>
 			<td class=td1>关键词</td>
 			<td>
-				<div style="float:left;">
 				<select multiple="multiple" id="sel_keywords">
 					<?php $keywords = explode(' ',$news->keywords);
 						if(!empty($keywords)){
@@ -95,12 +94,10 @@
 						}
 					?>
 				</select>
-				<img src="/images/btn_delete.png" style="cursor:pointer;" id="delete_keyword" />
-				</div>
-				<div style="float:left;margin-left:10px;">				
-				<input type="text" id="auto_keywords" style="width:150px;"/>
-				<input type="hidden" name="news[keywords]" id="news_keywords"/><img id="add_keyword" style="cursor:pointer" src="/images/btn_add.png" />
-				</div>
+				<img src="/images/btn_delete.png" style="cursor:pointer; float:left;" id="delete_keyword" />
+				<input type="text" id="auto_keywords" />
+				<input type="hidden" name="news[keywords]" id="news_keywords"/>
+				<img id="add_keyword" style="cursor:pointer; float:left;" src="/images/btn_add.png" />
 			</td>
 		</tr>
 

@@ -30,7 +30,7 @@
 	  <a href="edit.php" id=btn_add></a>
 </div>
 <div id=isearch>
-		<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
+		<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['search']?>">
 		<input type="button" value="搜索" id="search_button">
 </div>
 <div id=itable>
@@ -45,7 +45,7 @@
 					<td><?php echo $record[$i]->name;?></td>
 					<td><?php echo $record[$i]->year;?></td>
 					<td><?php echo $record[$i]->url;?></td>
-					<td><?php echo $record[$i]->priority;?></td>
+					<td><input type="text" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>"></td>
 					<td>
 						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
 						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
@@ -57,8 +57,8 @@
 		<tr class="btools">
 			<td colspan=10>
 				<?php paginate("",null,"page",true);?>
-				<button id=clear_priority style="display:none">清空优先级</button>
-				<button id=edit_priority  style="display:none">编辑优先级</button>
+				<button id=clear_priority>清空优先级</button>
+				<button id=edit_priority>编辑优先级</button>
 				<input type="hidden" id="relation" value="news">
 				<input type="hidden" id="db_table" value="fb_old_magazine">
 			</td>
@@ -69,18 +69,18 @@
 </html>
 <script>
 $(function(){
-	$("#search").keypress(function(event){
+	$(".sau_search").keypress(function(event){
 		if (event.keyCode == 13) {
 			search();
 		}
 	});
 	
-	$('#search_b').click(function(){
+	$('#search_button').click(function(){
 		search();
 	})
 })
 
 function search(){
-	window.location.href="?search="+encodeURI($("#search").attr('value'));
+	window.location.href="?search="+encodeURI($(".sau_search").attr('value'));
 }
 </script>
