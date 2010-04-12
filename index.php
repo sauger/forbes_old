@@ -96,7 +96,7 @@
 		 
 		 
 		<div id=forbes_trt>
-			<div class=title style="background:url('images/index/block2.jpg') no-repeat; font-weight:bold; color:#000000;">富豪榜</div>
+			<div class="title selected">富豪榜</div>
 			<div class=title>财富过山车</div>	
 			<div class=title>名人榜</div>	
 			<div class=title>城市榜</div>

@@ -27,8 +27,9 @@
 <body>
 <div id=icaption>
     <div id=title>富豪管理</div>
-	  <a href="edit.php" id=btn_add></a>
-		<a href="upload_data.php" id=btn_import></a>
+	<a href="#" id="btn_delete2"></a>
+	<a href="upload_data.php" id=btn_import></a>
+	<a href="edit.php" id=btn_add></a>
 </div>
 
 <div id=isearch>
@@ -42,7 +43,7 @@
 <div id=itable>
 	<table cellspacing="1"  align="center">
 		<tr class=itable_title>
-			<td width="25%">姓名</td><td width="15%">性别</td><td width="15%">年龄</td><td width="15%">国籍</td><td width="15%">今日排名</td><td width="15%">操作</td>
+			<td width="5%"><a href="#" id="a_select_all" style="color:blue;">选择</a></td><td width="20%">姓名</td><td width="15%">性别</td><td width="15%">年龄</td><td width="15%">国籍</td><td width="15%">今日排名</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -50,6 +51,7 @@
 			for($i=0;$i< $len ;$i++){
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
+					<td><input type="checkbox" value="<?php echo $record[$i]->id;?>" class="checkbox_select_all" /></td>
 					<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->name);?></a></td>
 					<td>
 						<?php if($record[$i]->gender==0) {echo '女';} else if($record[$i]->gender==1) {echo '男';} else {echo '未知';}?>
@@ -81,7 +83,7 @@
 			}
 		?>
 		<tr class="tr3">
-			<td colspan=9><?php paginate();?><input type="hidden" id="db_table" value="fb_fh"></td>
+			<td colspan=9><?php paginate();?><input type="hidden" id="db_table" value="fb_rich"></td>
 		</tr>
 	</table>
 </body>

@@ -3,10 +3,7 @@
 	<head>
 		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 		<meta http-equiv=Content-Language content=zh-CN>
-		<title>迅傲信息</title>
-	</head>
-	<body>
-<?php
+		<?php
 	$name=$_POST['name'];
 	$password=$_POST['password'];
 	include("../frame.php");
@@ -40,5 +37,9 @@
 		redirect($fail_url);
 	}
 ?>
+	<title>福布斯中文网</title>
+	</head>
+	<body>
+
 	</body>
 </html>

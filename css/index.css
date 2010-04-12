@@ -45,6 +45,7 @@ ul{padding:0; margin:0}
 
 #forbes_trt{width:300px; margin-top:10px; overflow:hidden; float:right; display:inline;}
 #forbes_trt .title{width:75px; height:26px; line-height:26px; font-size:13px; color:#003399; background:url('/images/index/block1.jpg') no-repeat; text-align:center; float:left; display:inline;}
+#forbes_trt .title.selected{background:url('/images/index/block2.jpg') no-repeat; font-weight:bold; color:#000000;}
 #forbes_trt #ph{width:300px; height:23px; line-height:23px; border-top:2px solid #666666; border-bottom:1px solid #666666; overflow:hidden; float:left; display:inline;}
 #forbes_trt #phb{width:300px; float:left; display:inline;}
 #forbes_trt #phname{width:300px; height:250px; background:url('/images/index/t_r_t_ph.jpg') no-repeat; float:left; display:inline;}

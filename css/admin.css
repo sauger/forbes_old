@@ -35,6 +35,7 @@ a{text-decoration:none; color:black;}
 #icaption #title{width:800px; color:#0B55C4; font-size:23px; float:left; display:inline;}
 #icaption #btn_add{width:32px; height:32px; background:url(/images/btn_add_b.png) no-repeat; float:right; display:inline;}
 #icaption #btn_back{width:32px; height:32px; background:url(/images/btn_back_b.png) no-repeat; float:right; display:inline;}
+#icaption #btn_delete2{width:32px; height:32px; background:url(/images/btn_delete2.png) no-repeat; float:right; display:inline;}
 #icaption #btn_import{width:32px; height:32px; background:url(/images/btn_import_b.png) no-repeat; float:right; display:inline;}
 
 #isearch{width:1004px; height:20px; margin-top:13px; margin-left:10px; text-align:left; float:left; display:inline}

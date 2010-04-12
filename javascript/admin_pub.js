@@ -1,6 +1,37 @@
 parent.$("#admin_iframe").attr("height","1300px");
 
 $(function(){
+	
+	$("#a_select_all").click(function(e){
+		e.preventDefault();
+		if($(this).data('selected')){
+			$('input.checkbox_select_all').attr('checked',false);
+			$(this).data('selected',false);
+		}else{
+			$('input.checkbox_select_all').attr('checked',true);
+			$(this).data('selected',true);
+		}
+	});
+	
+	$('#btn_delete2').click(function(e){
+		e.preventDefault();
+		var selected = $('input.checkbox_select_all:checked');
+		if(selected.length <= 0){
+			alert('请选择您要删除的项');
+			return;
+		}
+		var ids = new Array();
+		selected.each(function(){
+			ids.push($(this).val());
+		});
+		if(!confirm('您确定要删除选择项吗?删除后将无法恢复!')){
+			return;
+		}
+		var tbname = $('#db_table').val();
+		$.post("/pub/pub.post.php",{'post_type':'del_all','ids':ids.join(','),'tbname':tbname},function(data){
+			window.location.reload();
+		});
+	});
 	$(".tr3").mouseover(function(e){
 		 $(".tr3").css("background","#ffffff");
 		 $(this).css("background","#f9f9f9");
