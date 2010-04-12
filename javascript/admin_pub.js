@@ -1,4 +1,4 @@
-parent.$("#admin_iframe").attr("height","1200px");
+parent.$("#admin_iframe").attr("height","1300px");
 
 $(function(){
 	$(".tr3").mouseover(function(e){
