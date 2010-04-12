@@ -19,6 +19,16 @@
 			<div id=site><?php echo $site_name; ?>后台管理</div>
 			<div id=login>欢迎你：  <?php echo $_SESSION["admin_nick_name"]; ?> [<a href="/login/logout.post.php">退出</a>]</div>
 		</div>
+		<?php if($_SESSION['role_name'] == 'lister'){?>
+		<div id=nav1>
+			<div class="nav1_menu"  param_href="/admin/list/">常规榜单</div>
+			<div class="nav1_menu"  param_href="/admin/list/picture_list_list.php">图片榜单</div>
+			<div class="nav1_menu"  param_href="/admin/list/file_list_list.php">文章榜单</div>
+		</div>
+		<div id="admin_content">
+		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="/admin/list/" width="1046" height="1300px"></iframe>
+		</div>
+		<?php }else{?>
 		<div id=nav1>
 			<div class="nav1_menu"  param_href="/admin/column/news_list.php">文章管理</div>
 			<div class="nav1_menu"  param_href="/admin/image/image_list.php">图片管理</div>
@@ -33,6 +43,7 @@
 		<div id="admin_content">
 		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="/admin/column/news_list.php" width="1046" height="1300px"></iframe>
 		</div>
+		<?php }?>
 </div>
 </body>
 </html>
