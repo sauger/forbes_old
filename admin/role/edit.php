@@ -14,8 +14,10 @@
 		$has_rights = array();
 		if($id){
 			$has_rights_a = $db->query("select * from fb_role_rights where role_id={$id}");
-			foreach ($has_rights_a as $v) {
-				$has_rights[] = $v->id;
+			if($has_rights_a){
+				foreach ($has_rights_a as $v) {
+					$has_rights[] = $v->rights_id;
+				}
 			}
 			$role->find($id);
 		}
@@ -25,11 +27,13 @@
 	validate_form("user_form");
 ?>
 <body>
+<div id=icaption>
+	    <div id=title><?php if($id){echo "修改角色";}else{echo "添加新角色";}?></div>
+		  <a href="index.php" id=btn_back></a>
+	</div>
+	<div id=itable>
+<form id="user_form" method="post" action="edit.post.php">
 	<table width="795" border="0" id="list">
-	<form id="user_form" method="post" action="edit.post.php">
-		<tr class=tr1>
-			<td colspan="2">　<?php if($id){echo "修改角色";}else{echo "添加新角色";}?></td>
-		</tr>
 		<tr class=tr3>
 			<td width=150>角色标识：</td>
 			<td width=645 align="left"><input type="text" name="role[name]" value="<?php echo $role->name;?>" class="required"></td>
@@ -40,13 +44,13 @@
 		</tr>
 		<tr class=tr3>
 			<td>说明：</td>
-			<td align="left"><input type="text" name="role[password]" value="<?php echo $role->comment;?>"></td>
+			<td align="left"><input type="text" name="role[comment]" value="<?php echo $role->comment;?>"></td>
 		</tr>
 		<tr class=tr3>
 			<td width=150>权限配置：</td>
 			<td width=645 align="left">
 				<?php foreach ($rights as $v) { ?>
-					<input type="checkbox" name="rights[]" value="<?php echo $v->id?>" <?php if(in_array($v->id,$has_rights)) echo "checked='checked'"?>></input><?php echo $v->name;?>
+					<input type="checkbox" name="rights[]" value="<?php echo $v->id?>" <?php if(in_array($v->id,$has_rights)) echo "checked='checked'"?>></input><?php echo $v->nick_name;?>
 				<?php }?>
 			</td>
 		</tr>
@@ -54,7 +58,9 @@
 			<td colspan="2"><button type="submit">提 交</button></td>
 		</tr>
 		<input type="hidden" name="id" value="<?php echo $id;?>">
-	</form>
+	
 	</table>
+	</form>
+	</div>
 </body>
 </html>

@@ -22,9 +22,11 @@
 	
 	$success = 0;
 	$fail = 0;
+	$company = new table_class('fb_rich');
+	$fail_info = array();
 	for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
-		$company = new table_class('fb_rich');
-		$company->find_by_name($data->sheets[0]['cells'][$i][$_POST['name']]);
+		$name = $data->sheets[0]['cells'][$i][$_POST['name']];		
+		$items = $company->find('first',array('conditions' => "name='{$data->sheets[0]['cells'][$i][$_POST['name']]}'"));
 		foreach($_POST as $k => $v){
 			$company->$k = $data->sheets[0]['cells'][$i][$v];
 		}
@@ -42,7 +44,7 @@
 			$fail++;
 			$str = "";
 			foreach($company->fields as $key => $val){
-				$str .= $val ." ";
+				$str .= $val->value ." ";
 			}
 			array_push($fail_info,$str);
 		}

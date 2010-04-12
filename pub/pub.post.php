@@ -29,6 +29,15 @@
 			}elseif ($_POST['db_table'] == 'fb_gs'){
 				$db = get_db();
 				$db->execute("delete from fb_company_industry where company_id = {$_POST['del_id']}");
+			}elseif($_POST['db_table'] == 'fb_admin_menu'){
+				$db=get_db();
+				$right = new table_class('fb_rights');
+				$right->find('first',array('conditions' => "name='{$_POST['del_id']}' and type=2"));
+				if($right->id){
+					$db->execute("delete from fb_role_rights where rights_id = {$right->id}");
+					$right->delete();
+				}
+				
 			}
 			if(isset($_POST['rela'])){
 				$db = get_db();

@@ -11,16 +11,25 @@
 	<body>
 		<?php		
 			$menu = new table_class($tb_menu);
-			if($_REQUEST['id']){
-				$menu->find($_REQUEST['id']);
+			if($_POST['id']){
+				$menu->find($_POST['id']);
 			}
 			$menu->update_attributes($_POST['post'],false);
 			if($menu->parent_id){
 				$p_menu = new table_class($tb_menu);
 				$p_menu->find($menu->parent_id);
 				$menu->role_level = $p_menu->role_level;
-			}
+			}			
 			if($menu->save()){
+				//update the rights table
+				if($menu->parent_id > 0){
+					$right = new table_class('fb_rights');
+					$right->find('first',array('conditions' => "name='{$menu->id}' and type=2"));
+					$right->name = $menu->id;
+					$right->type = 2;
+					$right->nick_name = $menu->name;
+					$right->save();
+				}
 				redirect('menu_list.php');
 			}else{
 				display_error('修改菜单失败');

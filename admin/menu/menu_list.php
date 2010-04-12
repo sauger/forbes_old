@@ -31,8 +31,7 @@
 	    <div id=title>添加菜单</div>
 		 <a href="menu_edit.php" id=btn_add></a>
 	</div>
-	<div>
-		&nbsp;
+	<div id="itable">
 		<table width="795" border="0" id="list">
 		<tr class="tr1">
 			<td colspan="5">　 <a href="menu_edit.php"><?php echo $menu_title?></a></td>

@@ -136,6 +136,7 @@ class table_class{
 	}
 	
 	public function find($param = 'all'){
+		$this->_set_fields_default();
 		$this->is_edited = false;
 		$this->changed_fields = array();
 		if (is_string($param)) {

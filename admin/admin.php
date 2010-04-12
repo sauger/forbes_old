@@ -29,12 +29,12 @@
 				$sub_menu_id = $_REQUEST['sub_menu_id'] ? $_REQUEST['sub_menu_id'] : $sub_menus[0]->id;
 				foreach($main_menus as $val){
 			?>
-			<div class="nav1_menu" param_id="<?php echo $val->id;?>" param_href="<?php echo $val->href;?>" param_target="<?php echo $val->target;?>"><?php echo $val->name;?></div>
+			<div class="nav1_menu" param_id="<?php echo $val->id;?>"><?php echo $val->name;?></div>
 			<?php }?>		
 		</div>
 		<div id=nav2>
 			<?php foreach($sub_menus as $val){	?>
-			<div class="nav2_menu nav2_menu_<?php echo $val->parent_id;?>" param_href="<?php echo $val->href;?>"><?php echo $val->name;?></div>
+			<div class="nav2_menu nav2_menu_<?php echo $val->parent_id;?>" param_href="<?php echo $val->href;?>"><a href="<?php echo $val->href;?>" target="<?php echo $val->target;?>" style="color:#0000ff"><?php echo $val->name;?></a></div>
 			<?php }?>
 			<div id=nav2_index><a href="/index.php" target="_blank">动态首页</a></div>
 		</div>
@@ -47,47 +47,19 @@
 <script>
 $(function(){
 	$(".nav1_menu").click(function(e){
-		 $(".nav1_menu").css("font-weight","normal");
-		 $(".nav1_menu").css("border-left","1px solid #ffffff");
-		 $(".nav1_menu").css("border-right","1px solid #d8d8d8");
-		 $(".nav1_menu").css("background","#f0f0f0");
-
-		 $(this).css("font-weight","bold");
-		 $(this).css("border-left","1px solid #E7EDDF");
-		 $(this).css("border-right","1px solid #E7EDDF");
-		 $(this).css("background","#E7EDDF");
+		 $(".nav1_menu").removeClass('selected');
+		 $(this).addClass('selected');
 
 		 $(".nav2_menu").hide();
 		 $(".nav2_menu").css("color","#0000ff");
 		 
 		 var param_id=$(this).attr("param_id");
-		 var param_href=$(this).attr("param_href");
-		 var param_target=$(this).attr("param_target");
-
-		 if(param_target=="#")
-		 {
-			 $(".nav2_menu_"+param_id).show();
-	 	
-		 };
-		 
-		 if(param_target!="#")
-		 {
-			 $("#admin_iframe").attr("src",param_href);
-	 	
-		 };
+		 $(".nav2_menu_"+param_id).show();
 	});
 
-	$(".nav2_menu").click(function(e){
-		 $(".nav2_menu").css("color","#0000ff");
+	$(".nav2_menu a").click(function(e){
+		 $(".nav2_menu a").css("color","#0000ff");
 		 $(this).css("color","#ff0000");
-
-		 var param_href=$(this).attr("param_href");
-
-		 $("#admin_iframe").attr("src",param_href);
-
 	});
-	
-	
-
 });
 </script>

@@ -21,57 +21,70 @@
 		</div>
 		<?php if($_SESSION['role_name'] == 'lister'){?>
 		<div id=nav1>
-			<div class="nav1_menu"  param_href="/admin/list/">常规榜单</div>
-			<div class="nav1_menu"  param_href="/admin/list/picture_list_list.php">图片榜单</div>
-			<div class="nav1_menu"  param_href="/admin/list/file_list_list.php">文章榜单</div>
-			<div class="nav1_menu"  param_href="/admin/company/list.php">公司管理</div>
-			<div class="nav1_menu"  param_href="/admin/rich/list.php">富豪管理</div>
+			<div class="nav1_menu" param_id="1">内容管理</div>
+			<div class="nav1_menu" param_id="2">榜单管理</div>
+			<div class="nav1_menu" param_id="3"  param_href="/admin/user/modify_user_info.php">个人信息</div>
+		</div>
+		<div id=nav2>
+			<div class="nav2_menu nav2_menu_1"><a href="/admin/company/list.php" target="admin_iframe" style="color:#0000ff">公司管理</a></div>
+			<div class="nav2_menu nav2_menu_1"><a href="/admin/rich/list.php" target="admin_iframe" style="color:#0000ff">富豪管理</a></div>
+			<div class="nav2_menu nav2_menu_2"><a href="/admin/list/" target="admin_iframe" style="color:#0000ff">常规榜单管理</a></div>
+			<div class="nav2_menu nav2_menu_2"><a href="/admin/list/picture_list_list.php" target="admin_iframe" style="color:#0000ff">图片榜单管理</a></div>
+			<div class="nav2_menu nav2_menu_2"><a href="/admin/list/file_list_list.php" target="admin_iframe" style="color:#0000ff">文件榜单管理</a></div>
+			<div class="nav2_menu nav2_menu_3"><a href="/admin/user/modify_user_info.php" target="admin_iframe" style="color:#0000ff">编辑个人信息</a></div>
 		</div>
 		<div id="admin_content">
 		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="/admin/list/" width="1046" height="1300px"></iframe>
 		</div>
+		
+
 		<?php }else{?>
 		<div id=nav1>
-			<div class="nav1_menu"  param_href="/admin/column/news_list.php">文章管理</div>
-			<div class="nav1_menu"  param_href="/admin/image/image_list.php">图片管理</div>
-			<div class="nav1_menu"  param_href="/admin/list/">常规榜单</div>
-			<div class="nav1_menu"  param_href="/admin/list/picture_list_list.php">图片榜单</div>
-			<div class="nav1_menu"  param_href="/admin/list/file_list_list.php">文章榜单</div>
-			<div class="nav1_menu"  param_href="/admin/company/list.php">公司管理</div>
-			<div class="nav1_menu"  param_href="/admin/rich/list.php">富豪管理</div>
-			<div class="nav1_menu"  param_href="/admin/filte_words/list.php">敏感词</div>
-			<div class="nav1_menu"  param_href="/admin/user/modify_user_info.php">个人信息</div>
+			<div class="nav1_menu" param_id="1">内容管理</div>
+			<div class="nav1_menu" param_id="2">榜单管理</div>
+			<div class="nav1_menu" param_id="3"  param_href="/admin/user/modify_user_info.php">个人信息</div>
+		</div>
+		<div id=nav2>
+			<?php 
+				if($_SESSION['admin_user_name'] == 'editor1' or $_SESSION['admin_user_name'] == 'editor2' or $_SESSION['admin_user_name'] == 'editor3'){
+					$news_list = "/admin/news/news_list.php";
+				}else{
+					$news_list = "/admin/column/news_list.php";
+				}
+			?>
+			<div class="nav2_menu nav2_menu_1"><a href="<?php echo $news_list;?>" target="admin_iframe" style="color:#0000ff">文章管理</a></div>
+			<div class="nav2_menu nav2_menu_1"><a href="/admin/image/image_list.php" target="admin_iframe" style="color:#0000ff">图片管理</a></div>
+			<div class="nav2_menu nav2_menu_1"><a href="/admin/company/list.php" target="admin_iframe" style="color:#0000ff">公司管理</a></div>
+			<div class="nav2_menu nav2_menu_1"><a href="/admin/rich/list.php" target="admin_iframe" style="color:#0000ff">富豪管理</a></div>
+			<div class="nav2_menu nav2_menu_1"><a href="/admin/filte_words/list.php" target="admin_iframe" style="color:#0000ff">敏感词管理</a></div>
+			<div class="nav2_menu nav2_menu_2"><a href="/admin/list/" target="admin_iframe" style="color:#0000ff">常规榜单管理</a></div>
+			<div class="nav2_menu nav2_menu_2"><a href="/admin/list/picture_list_list.php" target="admin_iframe" style="color:#0000ff">图片榜单管理</a></div>
+			<div class="nav2_menu nav2_menu_2"><a href="/admin/list/file_list_list.php" target="admin_iframe" style="color:#0000ff">文件榜单管理</a></div>
+			<div class="nav2_menu nav2_menu_3"><a href="/admin/user/modify_user_info.php" target="admin_iframe" style="color:#0000ff">编辑个人信息</a></div>
 		</div>
 		<div id="admin_content">
-		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="/admin/column/news_list.php" width="1046" height="1300px"></iframe>
+		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="<?php echo $news_list;?>" width="1046" height="1300px"></iframe>
 		</div>
 		<?php }?>
 </div>
 </body>
-</html>
 <script>
 $(function(){
 	$(".nav1_menu").click(function(e){
-		 $(".nav1_menu").css("font-weight","normal");
-		 $(".nav1_menu").css("border-left","1px solid #ffffff");
-		 $(".nav1_menu").css("border-right","1px solid #d8d8d8");
-		 $(".nav1_menu").css("background","#f0f0f0");
+		 $(".nav1_menu").removeClass('selected');
+		 $(this).addClass('selected');
 
-		 $(this).css("font-weight","bold");
-		 $(this).css("border-left","1px solid #E7EDDF");
-		 $(this).css("border-right","1px solid #E7EDDF");
-		 $(this).css("background","#E7EDDF");
-
-		 var param_href=$(this).attr("param_href");
-		 $("#admin_iframe").attr("src",param_href);
-
+		 $(".nav2_menu").hide();
+		 $(".nav2_menu").css("color","#0000ff");
+		 
+		 var param_id=$(this).attr("param_id");
+		 $(".nav2_menu_"+param_id).show();
 	});
 
-
-	
-	
-
+	$(".nav2_menu a").click(function(e){
+		 $(".nav2_menu a").css("color","#0000ff");
+		 $(this).css("color","#ff0000");
+	});
 });
 </script>
-
-
+</html>

@@ -223,6 +223,10 @@ function show_page_desc($pos_items,$pos_name,$show_title=false){
 	
 }
 
+function get_menu_rights(){
+	$db = get_db();
+	$items = $db->query("select * from fb_admin_menu where is ");
+}
 
 
 ?>

@@ -8,8 +8,10 @@ $db = get_db();
 if($id){
 	$role->find($id);
 	$hr = $db->query("select * from fb_role_rights where role_id={$id}");
-	foreach ($hr as $v) {
-		$has_rights[] = $v->id;
+	if($hr){
+		foreach ($hr as $v) {
+			$has_rights[] = $v->rights_id;
+		}
 	}
 } 
 $role->update_attributes($_POST['role']);
@@ -26,7 +28,7 @@ $added = array_diff($modify_rights,$has_rights);
 if(!empty($added)){
 	$ids = implode(',',$added);
 	foreach ($added as $v){
-		$db->execute("insert into fb_role_rights (role_id,rights_id) values ({$id},{$v})");
+		$db->execute("insert into fb_role_rights (role_id,rights_id) values ({$role->id},{$v})");
 	}
 }
 redirect('index.php');
