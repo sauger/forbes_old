@@ -64,7 +64,7 @@
 			<td><input type="file" name="post[img_src2]"></input><?php if($record->img_src2){?> <a href="<?php echo $record->img_src2;?>" title="导语图片" target="_blank" class="colorbox">查看</a><?php }?></td>
 		</tr>
 		<tr class=tr4>
-			<td class=td1>杂志名称</td>
+			<td class=td1>杂志导语</td>
 			<td>
 				<?php show_fckeditor('post[description]','Admin',false,"215",$record->description);?>
 			</td>
