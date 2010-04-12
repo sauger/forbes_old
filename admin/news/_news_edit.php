@@ -85,7 +85,7 @@
 		<tr class=tr4>
 			<td class=td1>关键词</td>
 			<td>
-				<div style="float:left">
+				<div style="float:left;">
 				<select multiple="multiple" id="sel_keywords">
 					<?php $keywords = explode(' ',$news->keywords);
 						if(!empty($keywords)){

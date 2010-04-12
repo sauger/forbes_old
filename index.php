@@ -101,10 +101,27 @@
 			<div class=title>名人榜</div>	
 			<div class=title>城市榜</div>
 			<div id=phb>
-				<div id=ph>　排名　　 　 姓名　　　　 财富（亿）　　 变动</div>
+				<div id=ph><span style="margin-left:10px;">排名</span><span style="margin-left:50px;">姓名</span><span>财富（亿）</span><span>变动</span></div>
 				<div id=phname>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">1.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#FF0000; font-size:14px; font-weight:bold;">↑</span></div>
-					<div class=content>　 <span style="color:#000000; font-weight:bold;">2.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#33CC00; font-size:14px; font-weight:bold;">↓</span></div>
+					<?php 
+					$db = get_db();
+					$items = $db->query("select * from fb_dynamic_fortune_list order by current_index asc limit 10");
+					for($i=0;$i<10;$i++) {
+						if($items[$i]->current_index < $items[$i]->last_index){
+							$word = '↑';
+							$class = 'up';
+						}else if($items[$i]->current_index > $items[$i]->last_index){
+							$word = '↓';
+							$class = 'down';
+						}else{
+							$word = '-';
+							$class = '';
+						}
+					?>
+					<div class=content><span style="width: 40px; color:#000000; font-weight:bold;"><?php echo $i+1;?>.</span><span style="width:40px;margin-left:40px;"><a style="margin-left:0px;" href=""><?php echo $items[$i]->name;?></a></span><span style="margin-left:50px;width:40px;"><?php echo $items[$i]->fortune;?></span><span style="font-size:14px; font-weight:bold;margin-left:40px;" class="<?php echo $class;?>"><?php echo $word;?></span></div>
+					<?php }?>
+					<!-- 
+					<div class=content><span style="width: 40px; color:#000000; font-weight:bold;">10.</span><span style="width:40px;margin-left:40px;"><a style="margin-left:0px;" href="">刘行</a></span><span style="margin-left:50px;width:40px;">64.1</span><span style=" font-size:14px; font-weight:bold;margin-left:40px;" class=down>↑</span></div>
 					<div class=content>　 <span style="color:#000000; font-weight:bold;">3.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#FF0000; font-size:14px; font-weight:bold;">↑</span></div>
 					<div class=content>　 <span style="color:#000000; font-weight:bold;">4.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#33CC00; font-size:14px; font-weight:bold;">↓</span></div>
 					<div class=content>　 <span style="color:#000000; font-weight:bold;">5.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#FF0000; font-size:14px; font-weight:bold;">↑</span></div>
@@ -113,6 +130,7 @@
 					<div class=content>　 <span style="color:#000000; font-weight:bold;">8.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#33CC00; font-size:14px; font-weight:bold;">↓</span></div>
 					<div class=content>　 <span style="color:#000000; font-weight:bold;">9.</span><a href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#FF0000; font-size:14px; font-weight:bold;">↑</span></div>
 					<div class=content>　<span style="color:#000000; font-weight:bold;">10.</span><a style="margin-left:48px;" href="">刘永行</a>　　　　　304.0　　　　 <span style="color:#33CC00; font-size:14px; font-weight:bold;">↓</span></div>
+					 -->
 				</div>
 				<div id=bottom>
 					<div id=title>实时财富动态</div>

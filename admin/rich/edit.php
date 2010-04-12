@@ -44,7 +44,7 @@
 				<tr class=tr4>
 					<td class=td1>性别</td>
 					<td id="fh_xb">
-						<input type="radio" name="fh[gender]" value="0" <?php if($record->gender==0){ ?>checked="checked"<?php } ?>>女
+						<input type="radio" name="fh[gender]" value="0" <?php if($record->gender=='0'){ ?>checked="checked"<?php } ?>>女
 						<input type="radio" name="fh[gender]" value="1" <?php if($record->gender==1){ ?>checked="checked"<?php } ?>>男
 					</td>
 				</tr>
