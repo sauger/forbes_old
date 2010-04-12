@@ -12,6 +12,8 @@
 			return '记者';
 		}elseif($param == 'author'){
 			return '专栏作者';
+		}elseif($param == 'lister'){
+			return '榜单编辑';
 		}
 	}
 	$user = new table_class($user_table);

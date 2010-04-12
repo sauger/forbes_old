@@ -45,11 +45,15 @@ ul{padding:0; margin:0}
 
 #forbes_trt{width:300px; margin-top:10px; overflow:hidden; float:right; display:inline;}
 #forbes_trt .title{width:75px; height:26px; line-height:26px; font-size:13px; color:#003399; background:url('/images/index/block1.jpg') no-repeat; text-align:center; float:left; display:inline;}
+#forbes_trt .title.selected{background:url('/images/index/block2.jpg') no-repeat; font-weight:bold; color:#000000;}
 #forbes_trt #ph{width:300px; height:23px; line-height:23px; border-top:2px solid #666666; border-bottom:1px solid #666666; overflow:hidden; float:left; display:inline;}
 #forbes_trt #phb{width:300px; float:left; display:inline;}
 #forbes_trt #phname{width:300px; height:250px; background:url('/images/index/t_r_t_ph.jpg') no-repeat; float:left; display:inline;}
-#forbes_trt #phname .content{width:300px; height:24px; line-height:24px; color:#666666; border-bottom:1px solid #CCCCCC; float:left; display:inline;}
+#forbes_trt #phname .content{width:300px; height:24px; line-height:24px; color:#666666; border-bottom:1px solid #CCCCCC; float:left; display:inline; padding:0}
 #forbes_trt #phname .content a{margin-left:50px; color:#0033CC; text-decoration:none;}
+#phb .content span{display:-moz-inline-box;  display:inline-block; text-align:center;}
+span.up{color:#FF0000;}
+span.down{color:#33CC00;}
 #forbes_trt #bottom{width:300px; height:77px; margin-top:2px; background:#f7f7f7; float:left; display:inline;}
 #forbes_trt #bottom #title{width:280px; height:18px; margin-top:10px; margin-left:10px; color:#333333; font-size:14px; font-weight:bold; line-height:18px; float:left; display:inline;}
 #forbes_trt .bottom_list{width:280px; height:16px; margin-top:5px; margin-left:10px; padding-left:20px; background:url(/images/index/arrow.jpg) no-repeat 0 5px; line-height:16px; overflow:hidden; float:left; display:inline;}

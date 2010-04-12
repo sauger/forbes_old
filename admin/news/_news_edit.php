@@ -85,7 +85,7 @@
 		<tr class=tr4>
 			<td class=td1>关键词</td>
 			<td>
-				<select id="sel_keywords" multiple>
+				<select multiple="multiple" id="sel_keywords">
 					<?php $keywords = explode(' ',$news->keywords);
 						if(!empty($keywords)){
 							foreach($keywords as $key){ ?>

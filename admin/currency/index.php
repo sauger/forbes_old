@@ -30,7 +30,7 @@
 <div id=itable>
 	<table cellspacing="1"  align="center">
 		<tr class=itable_title>
-			<td width="40%">货币</td><td width="30%">代码</td><td width="30%">汇率（1:RMB）</td>
+			<td width="40%">货币</td><td width="20%">代码</td><td width="20%">汇率（1:RMB）</td><td width="20%">更新日期</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -39,6 +39,7 @@
 					<td><input style="border:none;" type="text" value="<?php echo $record[$i]->name;?>"></input></td>
 					<td><?php echo $record[$i]->code;?></td>
 					<td><?php echo $record[$i]->rate;?></td>
+					<td><?php echo $record[$i]->update_date;?></td>
 				</tr>
 		<?php
 			}

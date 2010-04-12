@@ -22,7 +22,32 @@
 	
 	$success = 0;
 	$fail = 0;
-	
+	for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
+		$company = new table_class('fb_rich');
+		$company->find_by_name($data->sheets[0]['cells'][$i][$_POST['name']]);
+		foreach($_POST as $k => $v){
+			$company->$k = $data->sheets[0]['cells'][$i][$v];
+		}
+		
+		$company->birthday = $_POST['year']-$data->sheets[0]['cells'][$i][$_POST['birthday']];
+		if($company->gender == '女'){
+			$company->gender = '0';
+		}else{
+			$company->gender = 1;
+		}
+		
+		if($company->save()){
+			$success++;
+		}else{
+			$fail++;
+			$str = "";
+			foreach($company->fields as $key => $val){
+				$str .= $val ." ";
+			}
+			array_push($fail_info,$str);
+		}
+	}
+	/*
 	$table_fields = $db->query("show full fields FROM fb_rich");
 	for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 		$name = array();
@@ -65,7 +90,7 @@
 			$fail++;
 		}
 	}
-		
+	*/	
 	$count = $data->sheets[0]['numRows']-1;
 	echo "共处理XLS数据{$count}条<br/>";
 	echo "成功{$success}条<br/>";

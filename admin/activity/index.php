@@ -25,16 +25,19 @@
 </head>
 
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="6">
-				　活动管理 <a href="edit.php">添加活动</a>   搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="200">活动名称</td><td width="100">举办地</td><td width="140">举办时间</td><td width="150">详细页面</td><td width="200">操作</td>
+<div id=icaption>
+    <div id=title>活动管理</div>
+	  <a href="edit.php" id=btn_add></a>
+</div>	
+<div id=isearch>
+	<input id="search" type="text" value="">
+	<input type="button" value="搜索" id="search_button">
+</div>	
+
+<div id=itable>
+	<table cellspacing="1"  align="center">
+		<tr class=itable_title>
+			<td width="20%">活动名称</td><td width="15%">举办地</td><td width="15%">举办时间</td><td width="35%">详细页面</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -45,20 +48,22 @@
 					<td><?php echo $record[$i]->time;?></td>
 					<td><?php echo $record[$i]->url;?></td>
 					<td>
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
+						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer" title="编辑"><img src="/images/btn_edit.png" border=0></a>
+						<span style="cursor:pointer;" class="del" name="<?php echo $record[$i]->id;?>" title="删除"><img src="/images/btn_delete.png" border=0></span>
 					</td>
 				</tr>
 		<?php
 			}
 		?>
-		<input type="hidden" id="db_table" value="fb_activity">
-			<tr class="tr3">
-				<td colspan=6><?php paginate();?></td>
+			<tr class="btools">
+				<td colspan=10>
+					<?php paginate("",null,"page",true);?>
+					<input type="hidden" id="db_table" value="fb_activity">
+				</td>
 			</tr>
 		</table>	
-
-	</body>
+</div>
+</body>
 </html>
 <script>
 $(function(){
