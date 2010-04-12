@@ -13,12 +13,10 @@ ul{padding:0; margin:0}
 .headline_title a{color:#003399; font-size:24px; font-family:微软雅黑,黑体; font-weight:bold;  text-decoration:none;}
 .headline_title a:hover{color:#94000B;}
 .headline_description{width:351px; height:45px; margin-top:10px; margin-left:2px; margin-bottom:8px; line-height:24px; font-size:14px; overflow:hidden; float:left; display:inline;}
-.headline_related{width:230px; height:80px; overflow:hidden; float:left; display:inline;}
+.headline_related{width:350px; height:70px; overflow:hidden; float:left; display:inline;}
 #headline .list{width:224px; height:24px; padding-left:13px; line-height:22px; background:url(/images/public/circle1.jpg) no-repeat 0 8px; overflow:hidden; float:left; display:inline;}
 #headline .list a{color:#003399; font-size:14px; text-decoration:none;}
 #headline .list a:hover{color:#94000B;}
-#headline #more{width:60px; height:20px; margin-top:50px; float:right; display:inline;}
-#headline #more a{color:#003399;}
 #headline #btn{width:115px; height:14px; margin-top:3px; margin-right:10px; float:right; display:inline;}
 #headline #btn .headline_btn1{width:14px; height:14px; margin-left:5px; float:left; display:inline; cursor:pointer;}
 #headline #btn .headline_btn2{width:14px; height:14px; margin-left:5px; float:left; display:inline; cursor:pointer;}
