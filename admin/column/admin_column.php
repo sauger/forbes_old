@@ -24,6 +24,8 @@
 			<div class="nav1_menu"  param_href="/admin/list/">常规榜单</div>
 			<div class="nav1_menu"  param_href="/admin/list/picture_list_list.php">图片榜单</div>
 			<div class="nav1_menu"  param_href="/admin/list/file_list_list.php">文章榜单</div>
+			<div class="nav1_menu"  param_href="/admin/company/list.php">公司管理</div>
+			<div class="nav1_menu"  param_href="/admin/rich/list.php">富豪管理</div>
 		</div>
 		<div id="admin_content">
 		  <iframe id=admin_iframe name="admin_iframe" scrolling="no" frameborder="0" src="/admin/list/" width="1046" height="1300px"></iframe>
