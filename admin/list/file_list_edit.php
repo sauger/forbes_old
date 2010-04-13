@@ -33,23 +33,23 @@
 <div id=itable>
 		<table cellspacing="1"  align="center">
 		<tr class=tr4 id="list_name">
-			<td width="15%">榜单名称</td>
+			<td class=td1 width="15%">榜单名称</td>
 			<td width="85%" align="left">
 				<input type="text" name="mlist[name]" value="<?php echo $record->name;?>" class="required">
 			</td>
 		</tr>
 		<tr class=tr4>
-			<td >优先级</td><td align="left"><input type="text" name="mlist[priority]"></input></td>
+			<td class=td1>优先级</td><td align="left"><input type="text" name="mlist[priority]"></input></td>
 		</tr>
 		<tr class=tr4>
-			<td >推荐优先级</td><td  align="left"><input type="text" name="mlist[recommend_priority]"></input></td>
+			<td class=td1>推荐优先级</td><td  align="left"><input type="text" name="mlist[recommend_priority]"></input></td>
 		</tr>
 		<tr class=tr4>
-			<td >榜单图片</td>
+			<td class=td1>榜单图片</td>
 			<td  align="left"><input type="file" name="image_src"></input><?php if($record->image_src){?> <a href="<?php echo $record->image_src;?>" target="_blank" style="color:blue;">查看</a><?php }?></td>
 		</tr>
-		<tr class=tr3>
-			<td >说明</td><td  align="left"><textarea rows="10" cols="60" name="mlist[comment]"><?php echo $record->comment;?></textarea> </td>
+		<tr class=tr4>
+			<td class=td1>说明</td><td align="left"><textarea rows="10" cols="60" name="mlist[comment]"><?php echo $record->comment;?></textarea> </td>
 		</tr>
 		<tr class="btools">
 			<td colspan="10" align="center"><input id="submit" type="submit" value="保　　　存"></td>
