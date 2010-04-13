@@ -57,7 +57,7 @@
 	for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 		$company = new table_class('fb_company');
 		foreach($_POST as $k => $v){
-			$company->$k = $data->sheets[0]['cells'][$i][$v];
+			$company->$k = addslashes($data->sheets[0]['cells'][$i][$v]);
 		}
 		
 		$company->stock_place_code = conver_place($company->stock_place_code);
@@ -68,7 +68,7 @@
 			$fail++;
 			$str = "";
 			foreach($company->fields as $key => $val){
-				$str .= $val ." ";
+				$str .= $val->value ." ";
 			}
 			array_push($fail_info,$str);
 		}

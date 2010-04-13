@@ -16,11 +16,13 @@
 	$files = dir_files($dir,false);
 	if($files === false) die('执行失败');
 	$db = get_db();
-	$db->query("select GROUP_CONCAT(file_name SEPARATOR ',') as files from db_migrate");
+	$db->query("select file_name from db_migrate");
 	if($db->move_first()=== false){
 		die('执行成功，无新脚本');
 	};
-	$executed_files =  explode(',',$db->field_by_name('files'));
+	do{
+		$executed_files[] = $db->field_by_name('file_name');
+	}while($db->move_next());
 	$doing_files = array_diff($files,$executed_files);
 	$done_files = array();
 	$fail_files = array();

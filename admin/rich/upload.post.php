@@ -25,7 +25,7 @@
 	$company = new table_class('fb_rich');
 	$fail_info = array();
 	for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
-		$name = $data->sheets[0]['cells'][$i][$_POST['name']];		
+		$name = addslashes($data->sheets[0]['cells'][$i][$_POST['name']]);		
 		$items = $company->find('first',array('conditions' => "name='{$data->sheets[0]['cells'][$i][$_POST['name']]}'"));
 		foreach($_POST as $k => $v){
 			$company->$k = $data->sheets[0]['cells'][$i][$v];
