@@ -12,8 +12,9 @@
 #list_content{width:680px; float:left; display:inline;}
 #list_content table{width:620px; table-layout:fixed; margin-left:15px;}
 #content_top{width:655px; margin-top:10px; margin-left:10px; height:40px; background:#F3F3F3; float:left; display:inline;}
-#top_tr{width:620px; height:40px;}
-#top_tr td{height:40px; text-align:center; word-break:break-all; word-wrap:break-word; font-size:14px; line-height:16px; font-weight:bolder;}
+#content_top table{margin-top:4px;}
+#top_tr{width:620px; height:32px;}
+#top_tr td{height:32px; border-left:1px solid #999999; border-right:1px solid #ffffff; text-align:center; word-break:break-all; word-wrap:break-word; font-size:14px; line-height:16px; font-weight:bolder;}
 #top_tr a{color:#000000; text-decoration:none;}
 #top_tr a:hover{color:#246BB0;}
 .btr{width:620px; height:40px; background:url('/images/html/news/dash4.gif') repeat-x bottom;}

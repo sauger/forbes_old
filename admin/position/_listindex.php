@@ -48,7 +48,7 @@ function update_list_pos($pos){
 	for($i=0;$i<$len; $i++){
 		$exist_items[$i]->display = $items[$i]->name;
 		$exist_items[$i]->description = $items[$i]->comment;
-		$exist_items[$i]->href= '/list/list.php?id' .$items[$i]->id;
+		$exist_items[$i]->href= '/list/show_list.php?id' .$items[$i]->id;
 		$exist_items[$i]->image1 = $items[$i]->image_src;
 		$exist_items[$i]->title = $items[$i]->name;
 		$exist_items[$i]->end_time = dt_increase(1,'h',$exist_itmes->end_time);
