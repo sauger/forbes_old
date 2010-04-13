@@ -92,9 +92,9 @@
 			$sql = "select a.id,a.company_id,b.name,b.stock_code,a.stock_count from fb_rich_company a left join fb_company b on a.company_id = b.id where a.rich_id = {$id}";
 			$company = $db->query($sql);
 			if(empty($company)) $company = array();?>
-		<table width="795" border="0" id="table_rich">
-			<tr class="tr2">
-				<td width=200>公司名称</td><td width=200>上市代码</td><td width=200>持股数</td><td width=195>操作</td>
+			<table cellspacing="1"  align="center" id="table_rich">
+			<tr class="itable_title">
+				<td width=55%>公司名称</td><td width=15%>上市代码</td><td width=15%>持股数</td><td width=15%>操作</td>
 			</tr>
 			<?php foreach ($company as $v) {?>
 			<tr class="tr3">
@@ -108,8 +108,8 @@
 				</td>
 			</tr>	
 			<?php }?>
-			<tr class="tr3">
-				<td colspan="4" align="center">
+			<tr class="btools">
+				<td colspan="10" align="center">
 				<button id="btn_add">添　　加</button>
 				<button id="btn_save">保　　存</button>
 				</td>
@@ -130,9 +130,9 @@
 				$fortune = $db->query($sql);
 				if(empty($fortune)) $fortune = array();
 			?>
-			<table width="795" border="0" id="table_fortune">
-				<tr class="tr2" id="fortune_box">
-					<td width=252>个人财富</td><td width=252>所属年份</td><td width=252>财富排名</td><td width=41>操作</td>
+			<table cellspacing="1"  align="center" id="table_fortune">
+				<tr class="itable_title" id="fortune_box">
+					<td width=55%>个人财富</td><td width=15%>所属年份</td><td width=15%>财富排名</td><td width=15%>操作</td>
 				</tr>
 				<?php foreach ($fortune as $v) {?>
 				<tr class="tr4">
@@ -145,8 +145,8 @@
 					</td>
 				</tr>	
 				<?php }?>
-				<tr class="tr3">
-					<td colspan="4" align="center">
+				<tr class="btools">
+					<td colspan="10" align="center">
 					<button id="fortune_add">添　　加</button>
 					<button id="fortune_save">保　　存</button>
 					</td>
