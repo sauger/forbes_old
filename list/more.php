@@ -36,14 +36,14 @@
 				<div id="content_top">
 					<table border="0" cellpadding="0" cellspacing="0" >
 						<tr id="top_tr">
-							<td valign="middle" width="10%"><a href="more.php?id=<?php echo $id;?>&order=overall_order&desc=<?php echo ($order=='overall_order')?!$desc:'0';?>">综合<br>排名</a></td>
+							<td valign="middle" style="border-left:0;" width="10%"><a href="more.php?id=<?php echo $id;?>&order=overall_order&desc=<?php echo ($order=='overall_order')?!$desc:'0';?>">综合<br>排名</a></td>
 							<td valign="middle" width="10%">姓名</td>
 							<td valign="middle" width="15%">职业</td>
 							<td valign="middle" width="15%"><a href="more.php?id=<?php echo $id;?>&order=fortune&desc=<?php echo ($order=='fortune')?!$desc:'1';?>">收入<br>（万人民币）</a></td>
 							<td valign="middle" width="10%"><a href="more.php?id=<?php echo $id;?>&order=fortune_order&desc=<?php echo ($order=='fortune_order')?!$desc:'0';?>">收入排名</a></td>
 							<td valign="middle" width="10%"><a href="more.php?id=<?php echo $id;?>&order=exposure_rate&desc=<?php echo ($order=='exposure_rate')?!$desc:'0';?>">曝光率指数</a></td>
 							<td valign="middle" width="10%"><a href="more.php?id=<?php echo $id;?>&order=exposure_order&desc=<?php echo ($order=='exposure_order')?!$desc:'0';?>">曝光率排名</a></td>
-							<td valign="middle" width="20%">上榜理由</td>
+							<td valign="middle" style="border-right:0;" width="20%">上榜理由</td>
 						</tr>
 					</table>
 				</div>
@@ -83,13 +83,13 @@
 				<div id="content_top">
 					<table border="0" cellpadding="0" cellspacing="0" >
 						<tr id="top_tr">
-							<td valign="middle" width="10%"><a href="more.php?id=<?php echo $id;?>&order=overall_order&desc=<?php echo ($order=='overall_order')?!$desc:'0';?>">综合排名</a></td>
+							<td valign="middle" style="border-left:0;" width="10%"><a href="more.php?id=<?php echo $id;?>&order=overall_order&desc=<?php echo ($order=='overall_order')?!$desc:'0';?>">综合排名</a></td>
 							<td valign="middle" width="15%">姓名</td>
 							<td valign="middle" width="15%">年龄</td>
 							<td valign="middle" width="15%"><a href="more.php?id=<?php echo $id;?>&order=fortune&desc=<?php echo ($order=='fortune')?!$desc:'1';?>">年收入<br>（<?php echo $list->unit;?>）</a></td>
 							<td valign="middle" width="15%">所属省市</td>
 							<td valign="middle" width="15%">公司名</td>
-							<td valign="middle" width="15%">主要产业</td>
+							<td valign="middle" style="border-right:0;" width="15%">主要产业</td>
 						</tr>
 					</table>
 				</div>
@@ -135,7 +135,7 @@
 								$width = 100/$count;
 								for($i=1;$i<$count;$i++){
 							?>
-							<td width="<?php echo $width;?>%" valign="middle">
+							<td <?php if($i==1){?>style="border-left:0;"<?php }?> <?php if($i==($count-1)){?>style="border-right:0;"<?php }?> width="<?php echo $width;?>%" valign="middle">
 								<?php if($fields[$i]->Key=='MUL'){
 									echo "<a href='more.php?id=$id&order={$fields->Field}&desc=";
 									echo ($order==$fields->Field)?!$desc:'1';
