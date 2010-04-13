@@ -27,18 +27,13 @@
 	validate_form("menu_form");
 ?>
 <body>
-	<table width="795" border="0" id="list">
-	<form id="menu_form" method="post" action="edit.post.php">
-		<tr class=tr1>
-			<?php if($menu->id){ ?>									
-			<td colspan="2">　 修改导航 <a href="index.php"><img src="/images/btn_back.png" border=0></a><?php if($parent_menu){echo '<span style="color:red;font-size:12px;">上级导航--'. $parent_menu->name .'</span>';}?></td>
-			<?php
-				}else{ ?>
-			<td colspan="2">　 添加导航 <a href="index.php"><img src="/images/btn_back.png" border=0></a><?php if($parent_menu){echo '<span style="color:red;font-size:12px;">上级导航--'. $parent_menu->name .'</span>';}?></td>		
-			<?php
-				}
-			?>
-		</tr>		
+<div id=icaption>
+    <div id=title><?php if($menu->id){ echo "修改导航"; }else{ echo "添加导航";}?></div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+	<form id="menu_form" method="post" action="edit.post.php">	
 		<tr class=tr4>
 			<td class=td1>名称</td>
 			<td width=685><input type="text" name="post[name]" value="<?php echo $menu->name;?>" class="required"></td>
@@ -79,5 +74,6 @@
 		</tr>
 	</form>
 	</table>
+</div>
 </body>
 </html>

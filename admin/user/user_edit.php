@@ -22,11 +22,13 @@
 	validate_form("user_form");
 ?>
 <body>
-	<table width="795" border="0" id="list">
+	<div id=icaption>
+    <div id=title><?php if($id){echo "修改用户";}else{echo "添加用户";}?></div>
+	  <a href="user_list.php" id=btn_back></a>
+	</div>
+	<div id=itable>
+	<table cellspacing="1"  align="center">
 	<form id="user_form" method="post" action="user.post.php">
-		<tr class=tr1>
-			<td colspan="2">　 <?php if($id){echo "修改用户";}else{echo "添加用户";}?></td>
-		</tr>
 		<tr class=tr4>
 			<td class=td1 width=130>用户名</td>
 			<td width=665><input type="text" name="post[name]" value="<?php echo $user->name;?>" class="required"></td>
@@ -65,6 +67,7 @@
 		</tr>
 	</form>
 	</table>
+</div>
 </body>
 </html>
 <script>

@@ -35,7 +35,7 @@
 		</tr>
 		<? }?>
 		<tr class=tr3>
-			<td colspan="2"><?php paginate();?>	<input type="hidden" id="db_table" value="fb_filte_words"></td>
+			<td colspan="2"><?php paginate("",null,"page",true);?>	<input type="hidden" id="db_table" value="fb_filte_words"></td>
 		</tr>
 	</table>
 </div>	
