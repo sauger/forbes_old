@@ -66,6 +66,7 @@
 
 .public_top1{width:300px; height:30px; background:url(/images/public/bg_top1.jpg) no-repeat; float:left; display:inline;}
 .public_bottom1{width:300px; height:10px;  background:url(/images/public/bg_bottom1.jpg) no-repeat; float:left; display:inline;}
-.public_caption1{width:100px; height:20px;  margin-left:15px; margin-top:8px; font-size:14px; font-weight:bold; color:#999999; float:left; display:inline;}
+.public_caption1{height:20px;  margin-left:15px; margin-top:8px; font-size:14px; font-weight:bold; color:#999999; float:left; display:inline;}
+.public_caption1 span{margin-left:10px; font-family:arial; font-weight:normal; font-size:11px;}
 .public_more1{width:18px; height:8px; margin-top:11px; margin-right:10px; background:url(/images/public/public_more1.jpg) no-repeat; line-height:18px; float:right; display:inline;}
 .public_box1{width:298px;  border-left:1px solid #dfdfdf;  border-right:1px solid #dfdfdf; line-height:20px; overflow:hidden; float:left; display:inline;}
