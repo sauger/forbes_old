@@ -473,7 +473,7 @@
 						</div>
 						<a id="btnonline"></a>
 						<a id="sq"></a>
-						<div id=ck><a href="">查看杂志列表>></a></div>
+						<div id=ck><a href="/magazine/list.php">查看杂志列表>></a></div>
 
 				</div>
 				<div class=public_bottom1></div>
