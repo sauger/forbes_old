@@ -1,5 +1,5 @@
 <?php
-	require_once('../../frame.php');
+	require_once('../frame.php');
 	judge_role();
 	$category = new category_class('news');
 	$title = $_REQUEST['title'];

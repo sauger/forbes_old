@@ -25,14 +25,17 @@
 </head>
 
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="3">
-				　行业管理 <a href="edit.php">添加行业</a>   搜索　
-				 <input id="search" type="text" value="<? echo $_REQUEST['search']?>">
-				<input type="button" value="搜索" id="search_b" style="border:1px solid #0000ff; height:21px">
-			</td>
-		</tr>
+	<div id=icaption>
+    <div id=title>行业管理</div>
+	  <a href="edit.php" id=btn_add></a>
+	</div>
+	<div id=isearch>
+		<input class="sau_search" name="title" type="text" value="<? echo $search;?>">
+		<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		
 		<tr class="tr2">
 			<td>行业名称</td><td>操作</td>
 		</tr>
@@ -54,7 +57,7 @@
 				<td colspan=6><?php paginate();?></td>
 			</tr>
 		</table>	
-
+</div>
 	</body>
 </html>
 <script>
