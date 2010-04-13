@@ -9,7 +9,7 @@
 		}else if ($param == '_blank'){
 			return '新开窗口';
 		}else if($param == 'admin_iframe'){
-			return '右侧窗口';
+			return '下侧窗口';
 		};
 	}
 ?>
