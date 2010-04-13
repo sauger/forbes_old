@@ -7,8 +7,8 @@
 		include_once(dirname(__FILE__).'/../frame.php');
 		$db = get_db();
 		use_jquery();
-		js_include_tag('public','right');
-		css_include_tag('list/list','public','right_inc');
+		js_include_tag('public');
+		css_include_tag('list/more','public');
 	?>
 </head>
 <body>
@@ -26,13 +26,9 @@
 		<?php require_once(dirname(__FILE__).'/../inc/top.inc.php');?>
 		<div id=top>
 			<div id=cyindex><img src="/images/html/list/title.gif"></div>
-			<div id=cytitle><a style="color:#666666;" href="/">福布斯中文网</a>　＞　<a style="color:#666666;" href="/list">榜单</a>　＞　<a><?php echo $list->name;?></a></div>
+			<div id=cytitle><a style="color:#666666;" href="/">福布斯中文网</a>　＞　<a style="color:#666666;" href="/list">榜单</a>　＞　<a href="show_list.php?id=<?php echo $id;?>"><?php echo $list->name;?></a></div>
 			<div id=cyline></div>
 		</div>
-		<div id="left">
-			<div id="left_top">
-				<a href="more.php?id=<?php echo $id;?>">查看详细</a>
-			</div>
 			<div id="list_content">
 			<?php
 				if($list->table_name=="fb_famous_list_items"){
@@ -40,13 +36,14 @@
 				<div id="content_top">
 					<table border="0" cellpadding="0" cellspacing="0" >
 						<tr id="top_tr">
-							<td valign="middle" width="10%"><a href="show_list.php?id=<?php echo $id;?>&order=overall_order&desc=<?php echo ($order=='overall_order')?!$desc:'0';?>">综合<br>排名</a></td>
-							<td valign="middle" width="15%">姓名</td>
+							<td valign="middle" width="10%"><a href="show_more.php?id=<?php echo $id;?>&order=overall_order&desc=<?php echo ($order=='overall_order')?!$desc:'0';?>">综合<br>排名</a></td>
+							<td valign="middle" width="10%">姓名</td>
 							<td valign="middle" width="15%">职业</td>
-							<td valign="middle" width="15%"><a href="show_list.php?id=<?php echo $id;?>&order=fortune&desc=<?php echo ($order=='fortune')?!$desc:'1';?>">收入<br>（万人民币）</a></td>
-							<td valign="middle" width="15%"><a href="show_list.php?id=<?php echo $id;?>&order=fortune_order&desc=<?php echo ($order=='fortune_order')?!$desc:'0';?>">收入排名</a></td>
-							<td valign="middle" width="15%"><a href="show_list.php?id=<?php echo $id;?>&order=exposure_rate&desc=<?php echo ($order=='exposure_rate')?!$desc:'0';?>">曝光率指数</a></td>
-							<td valign="middle" width="15%"><a href="show_list.php?id=<?php echo $id;?>&order=exposure_order&desc=<?php echo ($order=='exposure_order')?!$desc:'0';?>">曝光率排名</a></td>
+							<td valign="middle" width="15%"><a href="show_more.php?id=<?php echo $id;?>&order=fortune&desc=<?php echo ($order=='fortune')?!$desc:'1';?>">收入<br>（万人民币）</a></td>
+							<td valign="middle" width="10%"><a href="show_more.php?id=<?php echo $id;?>&order=fortune_order&desc=<?php echo ($order=='fortune_order')?!$desc:'0';?>">收入排名</a></td>
+							<td valign="middle" width="10%"><a href="show_more.php?id=<?php echo $id;?>&order=exposure_rate&desc=<?php echo ($order=='exposure_rate')?!$desc:'0';?>">曝光率指数</a></td>
+							<td valign="middle" width="10%"><a href="show_more.php?id=<?php echo $id;?>&order=exposure_order&desc=<?php echo ($order=='exposure_order')?!$desc:'0';?>">曝光率排名</a></td>
+							<td valign="middle" width="20%">上榜理由</td>
 						</tr>
 					</table>
 				</div>
@@ -61,13 +58,13 @@
 							$desc = "desc";
 						}
 						$sql = "select * from fb_famous_list_items where list_id=$id order by $order $desc";
-						$list = $db->paginate($sql,20);
+						$list = $db->paginate($sql,100);
 						$count = count($list);
 						for($i=0;$i<$count;$i++){
 					?>
 					<tr class="btr">
 						<td valign="middle" width="10%" style="color:#246BB0;"><?php echo $list[$i]->overall_order;?></td>
-						<td valign="middle" width="15%">
+						<td valign="middle" width="10%">
 							<?php if($list[$i]->famous_id!=''){?>
 								<a href="/famous/famous.php?id=<?php echo $list[$i]->famous_id;?>">
 							<?php }?>
@@ -75,9 +72,10 @@
 							<?php if($list[$i]->famous_id!=''){?></a><?php }?></td>
 						<td valign="middle" width="15%"><?php echo $list[$i]->job;?></td>
 						<td valign="middle" width="15%"><?php echo $list[$i]->fortune;?></td>
-						<td valign="middle" width="15%"><?php echo $list[$i]->fortune_order;?></td>
-						<td valign="middle" width="15%"><?php echo $list[$i]->exposure_rate;?></td>
-						<td valign="middle" width="15%"><?php echo $list[$i]->exposure_order;?></td>
+						<td valign="middle" width="10%"><?php echo $list[$i]->fortune_order;?></td>
+						<td valign="middle" width="10%"><?php echo $list[$i]->exposure_rate;?></td>
+						<td valign="middle" width="10%"><?php echo $list[$i]->exposure_order;?></td>
+						<td valign="middle" width="20%"><?php echo $list[$i]->reason;?></td>
 					</tr>
 					<?php }?>
 				</table>
@@ -85,10 +83,10 @@
 				<div id="content_top">
 					<table border="0" cellpadding="0" cellspacing="0" >
 						<tr id="top_tr">
-							<td valign="middle" width="10%"><a href="show_list.php?id=<?php echo $id;?>&order=overall_order&desc=<?php echo ($order=='overall_order')?!$desc:'0';?>">综合排名</a></td>
+							<td valign="middle" width="10%"><a href="show_more.php?id=<?php echo $id;?>&order=overall_order&desc=<?php echo ($order=='overall_order')?!$desc:'0';?>">综合排名</a></td>
 							<td valign="middle" width="15%">姓名</td>
 							<td valign="middle" width="15%">年龄</td>
-							<td valign="middle" width="15%"><a href="show_list.php?id=<?php echo $id;?>&order=fortune&desc=<?php echo ($order=='fortune')?!$desc:'1';?>">年收入<br>（<?php echo $list->unit;?>）</a></td>
+							<td valign="middle" width="15%"><a href="show_more.php?id=<?php echo $id;?>&order=fortune&desc=<?php echo ($order=='fortune')?!$desc:'1';?>">年收入<br>（<?php echo $list->unit;?>）</a></td>
 							<td valign="middle" width="15%">所属省市</td>
 							<td valign="middle" width="15%">公司名</td>
 							<td valign="middle" width="15%">主要产业</td>
@@ -106,7 +104,7 @@
 							$desc = "desc";
 						}
 						$sql = "select * from fb_rich_list_items where list_id=$id order by $order $desc";
-						$list = $db->paginate($sql,20);
+						$list = $db->paginate($sql,100);
 						$count = count($list); 
 						for($i=0;$i<$count;$i++){
 					?>
@@ -139,7 +137,7 @@
 							?>
 							<td width="<?php echo $width;?>%" valign="middle">
 								<?php if($fields[$i]->Key=='MUL'){
-									echo "<a href='show_list.php?id=$id&order={$fields->Field}&desc=";
+									echo "<a href='show_more.php?id=$id&order={$fields->Field}&desc=";
 									echo ($order==$fields->Field)?!$desc:'1';
 									echo "'>";
 								}
@@ -163,8 +161,8 @@
 							$desc = "desc";
 						}
 						$sql = "select * from {$list->table_name} order by $order $desc";
-						$list = $db->paginate($sql,20);
-						$list_count = count($list); 
+						$list = $db->paginate($sql,100);
+						$list_count = count($list);
 						for($i=0;$i<$list_count;$i++){
 					?>
 					<tr class="btr">
@@ -181,13 +179,6 @@
 			<div id="paginate">
 				<?php paginate();?>
 			</div>
-		</div>
-		<div id="right_inc">
-			<?php require_once(dirname(__FILE__).'/../right/ad.php');?>
-			<?php require_once(dirname(__FILE__).'/../right/favor.php');?>
-			<?php require_once(dirname(__FILE__).'/../right/four.php');?>
-			<?php require_once(dirname(__FILE__).'/../right/magazine.php');?>
-		</div>
 		<?php require_once(dirname(__FILE__).'/../inc/bottom.inc.php');?>
 	</div>
 </body>
