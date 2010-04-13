@@ -30,13 +30,13 @@
 			</ul>
 		<div id="tabs-1" style="margin:0px; padding:0px; background:#C8E4F0; border:0;">
 			<form id="fhgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
-			<table width="795" border="0">
+			<table cellspacing="1"  align="center">
 				<tr class=tr1>
 					<td colspan="2" width="795">　 编辑富豪 <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a></td>
 				</tr>
 				<tr class=tr4>
-					<td class=td1>姓名</td>
-					<td width=665><input type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
+					<td class=td1 width=15%>姓名</td>
+					<td width=85%><input type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
 				</tr>
 				<tr class=tr4>
 					<td class=td1>拼音</td><td width=665><input type="text" name="fh[chinese_name]" value="<?php echo $record->chinese_name;?>">
@@ -44,8 +44,8 @@
 				<tr class=tr4>
 					<td class=td1>性别</td>
 					<td id="fh_xb">
-						<input type="radio" name="fh[gender]" value="0" <?php if($record->gender=='0'){ ?>checked="checked"<?php } ?>>女
-						<input type="radio" name="fh[gender]" value="1" <?php if($record->gender==1){ ?>checked="checked"<?php } ?>>男
+						<input style="width:40px;" type="radio" name="fh[gender]" value="0" <?php if($record->gender=='0'){ ?>checked="checked"<?php } ?>>女<br>
+						<input style="width:40px;" type="radio" name="fh[gender]" value="1" <?php if($record->gender==1){ ?>checked="checked"<?php } ?>>男
 					</td>
 				</tr>
 				<tr class=tr4>
@@ -76,8 +76,8 @@
 				<tr id=newsshow1 class="normal_news tr4">
 					<td class=td1 height=265>慈善事业</td><td><?php show_fckeditor('fh[philanth]','Admin',false,"200",$record->philanth);?></td>
 				</tr>
-				<tr class="tr3">
-					<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成">				<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>"></td>
+				<tr class="btools">
+					<td colspan="10" align="center"><input id="submit" type="submit" value="完成">				<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>"></td>
 				</tr>	
 				</table>
 			</form>

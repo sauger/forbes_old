@@ -21,15 +21,17 @@
 		$record->find($id);
 	}
 ?>
-<body style="background:#E1F0F7">
+<body>
+	<div id=icaption>
+    <div id=title><?php if($id){echo '编辑杂志';}else{echo '添加杂志';}?></div>
+	  <a href="index.php" id=btn_back></a>
+	</div>
 	<form enctype="multipart/form-data" action="edit.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　 发布杂志 <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
-		</tr>
+<div id=itable>
+		<table cellspacing="1"  align="center">
 		<tr class=tr4>
-			<td class=td1>杂志名称</td>
-			<td width=660>
+			<td class=td1 width=15%>杂志名称</td>
+			<td width=85%>
 				<input type="text" name="post[name]" value="<?php echo $record->name;?>">
 			</td>
 		</tr>
@@ -69,8 +71,8 @@
 				<?php show_fckeditor('post[description]','Admin',false,"215",$record->description);?>
 			</td>
 		</tr>
-		<tr class="tr3">
-			<td colspan="2" width="795" align="center">
+		<tr class="btools">
+			<td colspan="10" align="center">
 				<input id="submit" type="submit" value="完成">	
 				<input type="hidden" name="id" value="<?php echo $id;?>">
 			</td>
