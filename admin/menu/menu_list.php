@@ -50,7 +50,7 @@
 					<td><img class="img_plus" style="cursor:pointer" name="<?php echo $record[$i]->name;?>" src="/images/admin/plus.gif"><?php echo $record[$i]->name;?></td>
 					<td><input type="text" class="priority" name="<?php echo $record[$i]->id;?>" value="<?php if($record[$i]->priority!=100){echo $record[$i]->priority;}?>" style="width:30px;"></td>					
 					<?php
-					if($record[$i]->is_root == 1){
+					if($record[$i]->parent_id == 0){
 					?>
 					<td>不可用</td>
 					<td>不可用</td>
