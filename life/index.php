@@ -10,7 +10,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('public');
-		css_include_tag('scp','public','right','html/luxury/luxury.css');
+		css_include_tag('public','right','life');
 		init_page_items();
 	?>
 </head>

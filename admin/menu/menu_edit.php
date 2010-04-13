@@ -39,16 +39,16 @@
 	}
 ?>
 <body>
-	<div id=icaption>
+<div id=icaption>
 	    <div id=title><?php echo $title;?>菜单</div>
 		  <a href="menu_list.php" id=btn_back></a>
-	</div>
-	<div id=itable>
+</div>
+<div id=itable>
 		<form id="menu_form" method="post" action="menu.post.php">
-			<table width="795" border="0" id="list">
+			<table cellspacing="1"  align="center">		
 				<tr class=tr4>
-					<td class=td1>名称</td>
-					<td width=665><input type="text" name="post[name]" value="<?php echo $menu->name;?>" class="required"></td>
+					<td class=td1 width=15%>名称</td>
+					<td width=85%><input type="text" name="post[name]" value="<?php echo $menu->name;?>" class="required"></td>
 				</tr>
 				<tr class="tr4 menu_item">
 					<td class=td1>链接</td>
@@ -72,18 +72,15 @@
 					<td class=td1>优先级</td>
 					<td><input type="text" name="post[priority]" id="priority" value="<?php echo $menu->priority;?>" class="number"></td>
 				</tr>
-				<tr class=tr3>
-					<td colspan="2"><button type="submit" id="btn_submit">提 交</button>
-					
+				<tr class=btools>
+					<td colspan="10">
+						<input type="submit" id="btn_submit" value="提交">
 						<input type="hidden" name="post[parent_id]" value="<?php echo $menu->parent_id;?>" id="post_parent_id">
 						<input type="hidden" name="id" value="<?php echo $menu->id;?>">
 						<input type="hidden" id="is_root" value="<?php echo $menu->is_root;?>">
 						<input type="hidden" name="post[is_root]" value="<?php echo $menu->is_root;?>">	
-						
 					</td>
 				</tr>
-		
-			
 			</table>
 		</form>
 	</div>
