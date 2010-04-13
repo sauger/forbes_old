@@ -23,12 +23,14 @@
 	}
 ?>
 
-<body style="background:#E1F0F7">
+<body>
+	<div id=icaption>
+    <div id=title><?php if($id!='')echo "编辑行业";else echo "添加行业";?></div>
+	  <a href="index.php" id=btn_back></a>
+</div>
+<div id=itable>
 	<form id="industry" action="edit.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id!='')echo "编辑行业";else echo "添加行业";?></td>
-		</tr>
+	<table cellspacing="1" align="center">
 		<tr class=tr4>
 			<td width="130">行业名称</td><td width="695" align="left"><input type="text" name="name" value="<?php echo $record->name;?>">
 		</tr>
@@ -38,5 +40,6 @@
 	</table>
 		<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>">
 	</form>
+</div>
 </body>
 </html>

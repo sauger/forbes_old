@@ -33,13 +33,19 @@
 		js_include_tag('admin_pub');
 	?>
 </head>
-<body style="background:#E1F0F7">
-	<table width="795" border="0">
-		<tr class="tr1">
-			<td colspan="5" width="795">　 <a href="user_edit.php" style="color:#0000FF"><?php echo $user_title;?></a></td>
-		</tr>
+<body>
+	<div id=icaption>
+    <div id=title>用户管理</div>
+	  <a href="user_edit.php" id=btn_add></a>
+	</div>
+	<div id=isearch>
+		<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
+		<input type="button" value="搜索" id="search_button">
+	</div>
+	<div id=itable>
+	<table cellspacing="1"  align="center">
 		<tr class="tr2">
-			<td width="205">用户名</td><td width="200">用户昵称</td><td width="180">用户身份</td><td width="250">操作</td>
+			<td width="55%">用户名</td><td width="15%">用户昵称</td><td width="15%">用户身份</td><td width="15%">操作</td>
 		</tr>
 		<?php for($i=0;$i<$count;$i++){?>
 		<tr class="tr3" id="<?php echo $records[$i]->id;?>">
@@ -53,15 +59,9 @@
 		</tr>
 		<? }?>
 	</table>
+	</div>
 	<input type="hidden" id="db_table" value="<?php echo $user_table;?>">
 	<input type="hidden" id="relation" value="column">
-	<div class="div_box">
-		<table width="795" border="0">
-			<tr colspan="5" class=tr3>
-				<td><?php paginate();?></td>
-			</tr>
-		</table>
-	</div>
 </body>
 </html>
 
