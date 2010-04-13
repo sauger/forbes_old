@@ -62,13 +62,6 @@
 	</div>
 	<input type="hidden" id="db_table" value="<?php echo $user_table;?>">
 	<input type="hidden" id="relation" value="column">
-	<div id=itable>
-		<table cellspacing="1"  align="center">
-			<tr colspan="5" class=tr3>
-				<td><?php paginate("",null,"page",true);?></td>
-			</tr>
-		</table>
-	</div>
 </body>
 </html>
 
