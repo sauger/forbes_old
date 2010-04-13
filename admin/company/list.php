@@ -43,7 +43,7 @@
 				<option value="website" <? if($_REQUEST['type']=="website"){?>selected="selected"<? }?> >网址</option>
 				<option value="stock_code" <? if($_REQUEST['type']=="stock_code"){?>selected="selected"<? }?> >上市公司代码</option>
 		</select>
-		<input type="button" value="搜索" id="search_button">
+		<input type="button" value="搜索" id="search">
 </div>
 <div id=itable>
 	<table cellspacing="1">	
