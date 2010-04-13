@@ -19,7 +19,6 @@
     $data->setOutputEncoding('utf-8');
     $data->read($file);
 	function conver_place($code){
-		echo $code;
 		switch ($code){
 			case '上海':
 				return 'SS'; 
