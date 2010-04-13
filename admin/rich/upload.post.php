@@ -31,7 +31,6 @@
 			$company->$k = $data->sheets[0]['cells'][$i][$v];
 		}
 		
-		$company->birthday = $_POST['year']-$data->sheets[0]['cells'][$i][$_POST['birthday']];
 		if($company->gender == '女'){
 			$company->gender = '0';
 		}else{
