@@ -58,10 +58,10 @@ $(function(){
 			$("#text3").find("*").css('font-size',font_size);
 		}
 		if(font_size==12){
-			$("#font_down").attr('src','/images/html/news/font1.gif');
+			$("#font_down").attr('src','/images/news/font1.gif');
 			$("#font_down").css('cursor','auto');
 		}else{
-			$("#font_up").attr('src','/images/html/news/font2.gif');
+			$("#font_up").attr('src','/images/news/font2.gif');
 			$("#font_up").css('cursor','pointer');
 		}
 	});
@@ -71,15 +71,15 @@ $(function(){
 			$("#text3").find("*").css('font-size', font_size);
 		}
 		if(font_size==16){
-			$("#font_up").attr('src','/images/html/news/font4.gif');
+			$("#font_up").attr('src','/images/news/font4.gif');
 			$("#font_up").css('cursor','auto');
 		}else{
-			$("#font_down").attr('src','/images/html/news/font3.gif');
+			$("#font_down").attr('src','/images/news/font3.gif');
 			$("#font_down").css('cursor','pointer');
 		}
 	});
 	
-	$("#comment_top #top3").live('click',function(){
+	$("#comment_caption #comment_btn").live('click',function(){
 		$("#show_comment").show();
 	});
 	
@@ -89,7 +89,7 @@ $(function(){
 		}
 	});
 	
-	$("#denglu").live('click',function(){
+	$("#comment_login").live('click',function(){
 		login();
 	});
 	
@@ -116,7 +116,7 @@ $(function(){
 		$(this).next().html(parseInt($(this).next().html())+1);
 	});
 	
-	$("#tijiao").live('click',function(){
+	$("#commit_submit").live('click',function(){
 		var nick_name;
 		$("input[name='nick_name']").each(function(){
 			if($(this).attr('checked')){
