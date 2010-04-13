@@ -188,9 +188,12 @@ $(function(){
 		$("#show_magazine").live('change',function(){
 			if($("#show_magazine option:selected").attr('url')==''){
 				$("#btnonline").removeAttr('href');
-				$("#sq").removeAttr('href');
 			}else{
 				$("#btnonline").attr('href',$("#show_magazine option:selected").attr('url'));
+			}
+			if($("#show_magazine option:selected").val()==''){
+				$("#sq").removeAttr('href');
+			}else{
 				$("#sq").attr('href','javascript:void(0)');
 				$("#sq").attr('name',$("#show_magazine option:selected").val());
 			}
