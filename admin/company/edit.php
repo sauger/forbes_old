@@ -77,7 +77,7 @@
 			<td><input id="gs_cs" type="text" name="gs[city]" value="<?php echo $record->city;?>">
 		</tr>
 		<tr class="tr4">
-			<td class=td1>地址</td>
+			<td class=td1>办公地址</td>
 			<td><input id="gs_dz" type="text" name="gs[address]" value="<?php echo $record->address;?>">
 		</tr>
 		<tr class="tr4">
@@ -85,7 +85,7 @@
 			<td><input id="gs_wz" type="text" name="gs[website]" value="<?php echo $record->website;?>">
 		</tr>
 		<tr id="newsshow1" class="normal_news tr4">
-			<td class=td1>介绍</td>
+			<td class=td1>经营范围</td>
 			<td><?php show_fckeditor('gs[comment]','Admin',true,"265",$record->comment);?></td>
 		</tr>
 		<tr class="tr4">

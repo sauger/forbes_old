@@ -55,11 +55,15 @@ function head_line2()
 }		
 
 $(function(){
+		$('#forbes_trt').find('div.title').hover(function(){
+			$('#forbes_trt').find('div.title').removeClass('selected');
+			$(this).addClass('selected');
+		});
 		$(".headline_btn2").click(function()
 		{
 			var now_id=$(this).attr('id');	
 			head_line(now_id);
-		})
+		});
 	
 		$(".headline_btn1").click(function()
 		{
@@ -70,7 +74,7 @@ $(function(){
  	    if(now_id<0){now_id=3;}
 
 			head_line(now_id);
-		})	
+		});	
 		
 		
 		$("#subject_btnl").click(function()

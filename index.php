@@ -70,7 +70,7 @@
 			
 		 <div id=forbes_tltb>	
 			 <div id=lujiazui>
-  		 	 <div id=lujiazui_caption><a href="">陆家嘴早餐</a></div>
+  		 	 <div id=lujiazui_caption><a href="">陆家嘴早餐</a> <span style="color:#003399;">Lujiazui Breakfast</span></div>
   		 	 	<?php for($i=0;$i<3;$i++){
   		 	 		$pos_name = "index_bf".$i;
   		 	 	?>
@@ -144,7 +144,7 @@
 	
 		<div class=forbes_l>
 			<div class=caption>
-				<div class=captions>创业</div>
+				<div class=captions style="width:115px">创业<span>Enterpreneur</span></div>
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
@@ -162,7 +162,7 @@
 			
 			
 			<div class=caption>
-				<div class=captions>商业</div>
+				<div class=captions style="width:90px">商业<span>Business</span></div>
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
@@ -179,7 +179,7 @@
 						
 			
 			<div class=caption>
-				<div class=captions>科技</div>
+				<div class=captions style="width:70px">科技<span>Tech</span></div>
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
@@ -196,7 +196,7 @@
 						
 			
 			<div class=caption>
-				<div class=captions>专栏</div>
+				<div class=captions style="width:85px">专栏<span>Columns</span></div>
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
@@ -235,7 +235,7 @@
 			
 			
 			<div class=caption>
-				<div class=captions style="width:60px">读者高见</div>
+				<div class=captions style="width:140px">读者高见<span>Readers Say</span></div>
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
@@ -252,7 +252,7 @@
 		
 		<div class=forbes_l style="margin-left:25px;">
 			<div class=caption>
-				<div class=captions>投资</div>
+				<div class=captions style="width:150px">投资<span>Money & Investment</span></div>
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
@@ -270,7 +270,7 @@
 			<div class=dashed style="height:10px;"></div>
 
 	  		<div class=caption>
-				<div class=captions>奢华</div>
+				<div class=captions style="width:70px;">奢华<span>life</span></div>
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
@@ -301,7 +301,7 @@
 
 			<div id=activity>
 				<div class=public_top1>
-					<div class=public_caption1>论坛活动</div>
+					<div class=public_caption1 style="width:180px;">论坛活动<span style="margin-left:10px;font-size:12px;">Conferences</span></div>
 					<a href="" class=public_more1></a>
 				</div>
 				<div class=public_box1>
@@ -317,7 +317,7 @@
 			</div>
 			
 			<div id=club>
-					<div class=club_caption1>增长俱乐部</div>
+					<div class=club_caption1 style="width:150px;">增长俱乐部<span style="margin-left:10px;font-size:12px;">Up Club</span></div>
 					<a href="" class=club_more1></a>
 					<div class=content <?php show_page_pos("index_club0")?>>
 						<div class=pic>
@@ -341,7 +341,7 @@
 			
 			
 			<div id=city>
-					<div class=city_caption1>城市</div>
+					<div class=city_caption1 style="width:150px;">城市<span style="margin-left:10px;font-size:12px;">Best Cities</span></div>
 					<a href="" class=city_more1></a>
 					<div class=content <?php show_page_pos("index_city0");?>>
 						<div class=pic>
@@ -393,7 +393,7 @@
 			
 			<div id=inventory>
 				<div class=public_top1>
-					<div class=public_caption1 style="color:#4990B9">在线调查</div>
+					<div class=public_caption1 style="color:#4990B9;width:120px;">在线调查<span style="margin-left:10px;font-size:12px;">Survey</span></div>
 					<a href="" class=public_more1></a>
 				</div>
 
@@ -422,7 +422,7 @@
 			
 		<div class=forbes_l style="margin-top:0px; margin-left:25px;">
 	  	<div class=caption>
-				<div class=captions style="width:60px;">采编智库</div>
+				<div class=captions style="width:130px;">采编智库<span style="margin-left:10px;font-size:12px;">Bloggers</span></div>
 				<div class=line>|</div>
 				<a href="" class=more></a>
 			</div>
@@ -445,7 +445,7 @@
 			
 			<div id=mag>
 				<div class=public_top1>
-					<div class=public_caption1 style="color:#4990B9">福布斯杂志</div>
+					<div class=public_caption1 style="color:#4990B9;width:200px;">福布斯杂志<span style="margin-left:10px;font-size:12px;">Magazine Archive</span></div>
 					<a href="" class=public_more1></a>
 				</div>
 				<div id=mag_content  <?php show_page_pos("index_magazine");?>>
