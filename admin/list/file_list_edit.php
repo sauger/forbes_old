@@ -24,12 +24,14 @@
 	}
 ?>
 
-<body style="background:#E1F0F7">
+<body>
+	<div id=icaption>
+    <div id=title><?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?></div>
+	  <a href="file_list_list.php" id=btn_back></a>
+	</div>
 	<form id="list_edit" action="file_list_edit.post.php" enctype="multipart/form-data"  method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　　<?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?></td>
-		</tr>
+<div id=itable>
+		<table cellspacing="1"  align="center">
 		<tr class=tr4 id="list_name">
 			<td width="130">榜单名称</td>
 			<td width="695" align="left">
@@ -55,6 +57,7 @@
 	</table>
 		<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>">
 		<input type="hidden" name="mlist[list_type]" value="5"></input>
+	</div>
 	</form>
 </body>
 </html>

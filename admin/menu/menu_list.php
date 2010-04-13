@@ -28,16 +28,13 @@
 </head>
 <body>
 	<div id=icaption>
-	    <div id=title>添加菜单</div>
+	    <div id=title>菜单管理</div>
 		 <a href="menu_edit.php" id=btn_add></a>
 	</div>
 	<div id="itable">
-		<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="5">　 <a href="menu_edit.php"><?php echo $menu_title?></a></td>
-		</tr>
-		<tr class="tr2">
-			<td width="200">菜单名称</td><td width="50">优先级</td><td width="285">链接</td><td width="80">链接方式</td><td width="175">操作</td>
+		<table cellspacing="1" align="center">
+		<tr class="itable_title">
+			<td width=40%>菜单名称</td><td width=15%>优先级</td><td width=15%>链接</td><td width="15%">链接方式</td><td width=15%>操作</td>
 		</tr>
 		<?php
 			$menu = new table_class($menu_table);
@@ -80,10 +77,8 @@
 			}}
 			//--------------------
 		?>
-	</table>
-	<table width="795" border="0">
-		<tr colspan="5" class=tr3>
-			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button>　		<input type="hidden" id="db_table" value="<?php echo $menu_table;?>"></td>
+		<tr class=btools>
+			<td colspan="10"><button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button>　		<input type="hidden" id="db_table" value="<?php echo $menu_table;?>"></td>
 		</tr>
 	</table>
 	</div>

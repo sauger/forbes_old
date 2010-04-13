@@ -75,22 +75,23 @@
 	?>
 </head>
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="6">　 <a href="category_edit.php?type=<?php echo $type;?>">添加<?php echo $category_name;?>栏目</a></td>
-		</tr>
-		<tr class="tr2">
-			<td width="330">栏目名称</td><td width="100">优先级</td><td width="60">级别</td><td width="300">操作</td>
-		</tr>
-		<?php
-			$category = new category_class($type);
-			show_category($category,0,$type,'',0);
-		?>
-	</table>
-	<table width="795" border="0">
-		<tr colspan="5" class=tr3>
-			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><input type="hidden" id="relation" value="category"><input type="hidden" id="db_table" value="<?php echo $tb_category?>"></td>
-		</tr>
-	</table>
+	<div id=icaption>
+    <div id=title><?php echo $category_name;?>类别管理</div>
+	  <a href="category_edit.php?type=<?php echo $type; ?>" id=btn_add></a>
+	</div>
+	<div id=itable>
+		<table cellspacing="1"  align="center">
+			<tr class="itable_title">
+				<td width=55%>栏目名称</td><td width=15%>优先级</td><td width=15%>级别</td><td width=15%>操作</td>
+			</tr>
+			<?php
+				$category = new category_class($type);
+				show_category($category,0,$type,'',0);
+			?>
+			<tr class=btools>
+				<td colspan="10"><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><input type="hidden" id="relation" value="category"><input type="hidden" id="db_table" value="<?php echo $tb_category?>"></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>

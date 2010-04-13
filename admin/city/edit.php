@@ -22,12 +22,14 @@
 	}
 ?>
 
-<body style="background:#E1F0F7">
+<body>
+<div id=icaption>
+    <div id=title><?php if($id!=''){echo '编辑城市';}else{echo '添加城市';}?></div>
+	  <a href="index.php" id=btn_back></a>
+</div>
 	<form id="city_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　 <?php if($id!=''){echo '编辑城市';}else{echo '发布城市';}?></td>
-		</tr>
+<div id=itable>
+	<table cellspacing="1" align="center">
 		<tr class=tr4>
 			<td class=td1>中文名称</td>
 			<td width=665><input type="text" class="required" name="city[name]" value="<?php echo $city->name;?>">
@@ -118,6 +120,7 @@
 			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成">		<input type="hidden" name="id" value="<?php echo $city->id; ?>"></td>
 		</tr>	
 	</table>
+</div>
 	</form>
 </body>
 </html>

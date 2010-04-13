@@ -28,47 +28,50 @@
 	$category = new category_class('video');
 	$category->echo_jsdata();
 ?>
-<body style="background:#E1F0F7">
+<body>
+<div id=icaption>
+    <div id=title><?php if($id){echo "修改视频";}else{echo "添加视频";}?></div>
+	  <a href="video_edit.php" id=btn_add></a>
+</div>
 	<form id="picture_edit" enctype="multipart/form-data" action="video.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr bgcolor="#f9f9f9" height="25px;" style="font-weight:bold; font-size:13px;">
-			<td colspan="2" width="795">　　<?php if($id){echo "修改视频";}else{echo "添加视频";}?></td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td width="100">标　题</td><td width="695" align="left"><input id="title" type="text" name="video[title]" value="<?php echo $video->title;?>"></td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td>优先级</td><td align="left"><input type="text" size="10" id="priority" name="video[priority]" value="<?php if($video->priority!=100){echo $video->priority;}?>">(1-100)</td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td>关键词</td><td align="left"><input type="text" size="50" name="video[keywords]" value="<?php echo $video->keywords;?>">(请用空格或者","分隔开关键词,比如:高考 升学)</td>
-		</tr>
+		<div id=itable>
+			<table cellspacing="1" align="center">
+				<tr align="center" bgcolor="#f9f9f9" height="25px;">
+					<td width="100">标　题</td><td width="695" align="left"><input id="title" type="text" name="video[title]" value="<?php echo $video->title;?>"></td>
+				</tr>
+				<tr align="center" bgcolor="#f9f9f9" height="25px;">
+					<td>优先级</td><td align="left"><input type="text" size="10" id="priority" name="video[priority]" value="<?php if($video->priority!=100){echo $video->priority;}?>">(1-100)</td>
+				</tr>
+				<tr align="center" bgcolor="#f9f9f9" height="25px;">
+					<td>关键词</td><td align="left"><input type="text" size="50" name="video[keywords]" value="<?php echo $video->keywords;?>">(请用空格或者","分隔开关键词,比如:高考 升学)</td>
+				</tr>
+				
+				
+				<tr align="center" bgcolor="#f9f9f9" height="25px;">
+					<td>分　类</td>
+					<td align="left">
+					<span id="span_category"></span>
+					</td>
+				</tr>
+				<tr align="center" bgcolor="#f9f9f9" height="25px;">
+					<td>在线视频</td><td align="left"><input type="text" size="50" name="video[online_url]" value="<?php echo $video->online_url;?>" id="online">（如果本地上传视频此项请留空！）</td>
+				</tr>
+				<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
+					<td>选择图片</td><td align="left"><input type="hidden" name="MAX_FILE_SIZE" value="2097152"><input name="image" id="image" type="file" >(请上传小于2M的图片，格式支持jpg、gif、png))<?php if($video->photo_url!=''){?><a style="color:#0000FF" href="<?php echo $video->photo_url;?>" target="_blank">点击查看图片</a><?php } ?></td>
+				</tr>
+				<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
+					<td>选择视频</td><td align="left"><input type="hidden" name="MAX_FILE_SIZE" value="5000000000"><input name="video" id="video" type="file" >(请上传视频，并且不要大于500M，格式支持flv,wma,wav,mp3,mp4,avi,rm)<?php if($video->video_url!=''){?><a style="color:#0000FF"  href="<?php echo $video->video_url;?>" target="_blank">点击下载</a><?php } ?></td>
+				</tr>
 		
-		
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td>分　类</td>
-			<td align="left">
-			<span id="span_category"></span>
-			</td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td>在线视频</td><td align="left"><input type="text" size="50" name="video[online_url]" value="<?php echo $video->online_url;?>" id="online">（如果本地上传视频此项请留空！）</td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
-			<td>选择图片</td><td align="left"><input type="hidden" name="MAX_FILE_SIZE" value="2097152"><input name="image" id="image" type="file" >(请上传小于2M的图片，格式支持jpg、gif、png))<?php if($video->photo_url!=''){?><a style="color:#0000FF" href="<?php echo $video->photo_url;?>" target="_blank">点击查看图片</a><?php } ?></td>
-		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
-			<td>选择视频</td><td align="left"><input type="hidden" name="MAX_FILE_SIZE" value="5000000000"><input name="video" id="video" type="file" >(请上传视频，并且不要大于500M，格式支持flv,wma,wav,mp3,mp4,avi,rm)<?php if($video->video_url!=''){?><a style="color:#0000FF"  href="<?php echo $video->video_url;?>" target="_blank">点击下载</a><?php } ?></td>
-		</tr>
-
-		<tr bgcolor="#f9f9f9" height="30px;">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="发布视频"></td>
-		</tr>	
-	</table>
-	<input type="hidden" name="video[category_id]" id="category_id" value="<?php echo $video->category_id;?>">
-	<input type="hidden"id="v_u" value="<?php if($video->video_url!=''){echo 1;}?>">
-	<input type="hidden" id="id" name="id" value="<?php echo $id;?>">
-	<input type="hidden" name="video[is_adopt]" value="1">
+				<tr bgcolor="#f9f9f9" height="30px;">
+					<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="发布视频"></td>
+				</tr>	
+			</table>
+			<input type="hidden" name="video[category_id]" id="category_id" value="<?php echo $video->category_id;?>">
+			<input type="hidden"id="v_u" value="<?php if($video->video_url!=''){echo 1;}?>">
+			<input type="hidden" id="id" name="id" value="<?php echo $id;?>">
+			<input type="hidden" name="video[is_adopt]" value="1">
+		</div>
 	</form>
 </body>
 </html>

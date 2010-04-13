@@ -44,7 +44,7 @@
 	</div>
 	<div id=itable>
 	<table cellspacing="1"  align="center">
-		<tr class="tr2">
+		<tr class="itable_title">
 			<td width="55%">用户名</td><td width="15%">用户昵称</td><td width="15%">用户身份</td><td width="15%">操作</td>
 		</tr>
 		<?php for($i=0;$i<$count;$i++){?>
