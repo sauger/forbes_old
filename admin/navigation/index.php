@@ -42,11 +42,8 @@
 </div>
 <div id=itable>
 	<table cellspacing="1" align="center">
-		<tr class="tr1">
-			<td colspan="7">　 <a href="edit.php"><?php echo $menu_title?></a></td>
-		</tr>
-		<tr class="tr2">
-			<td width="200">导航名称</td><td width="50">优先级</td><td width="200">链接</td><td width="85">位置</td><td width="80">链接方式</td><td width="175">操作</td>
+		<tr class="itable_title">
+			<td width=14%>导航名称</td><td width=14%>优先级</td><td width=30%>链接</td><td width=14%>位置</td><td width=14%>链接方式</td><td width=14%>操作</td>
 		</tr>
 		<?php
 			$menu = new table_class('fb_navigation');
@@ -84,12 +81,8 @@
 			}
 			//--------------------
 		?>
-	</table>
-</div>
-<div id=itable>
-	<table cellspacing="1" align="center">
-		<tr colspan="6" class=tr3>
-			<td><?php paginate("",null,"page",true);?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button></td>
+		<tr class=btools>
+			<td colspan="10" ><button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button></td>
 		</tr>
 	</table>
 </div>

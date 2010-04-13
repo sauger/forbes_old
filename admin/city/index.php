@@ -29,24 +29,26 @@
 </head>
 
 <body>
-	<table width="795" border="0" id="list">
-		<tr class="tr1">
-			<td colspan="4">
-				　 <a href="edit.php">发布城市</a>
-				<input id="search" type="text" value="<? echo $_REQUEST['search']?>" style="margin-left:20px;">
-				<select id="level">
-				 	<option value=""></option>
-					<option <?php if($level==1)echo 'selected="selected"';?> value="1">直辖市</option>
-					<option <?php if($level==2)echo 'selected="selected"';?> value="2">省会城市</option>
-					<option <?php if($level==3)echo 'selected="selected"';?> value="3">计划单列市</option>
-					<option <?php if($level==4)echo 'selected="selected"';?> value="4">地级市</option>
-					<option <?php if($level==5)echo 'selected="selected"';?> value="5">县级市</option>
-				 </select>
-				<input type="button" value="搜索" id="search_b" style="border:2px solid #999999; height:20px">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="200">城市名称</td><td width="200">所属省份</td><td width="200">行政级别</td><td width="195">操作</td>
+	<div id=icaption>
+    <div id=title>城市管理</div>
+	  <a href="edit.php" id=btn_add></a>
+</div>
+<div id=isearch>
+	<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['search']?>">
+	<select id="level" class="sau_search">
+	 	<option value=""></option>
+		<option <?php if($level==1)echo 'selected="selected"';?> value="1">直辖市</option>
+		<option <?php if($level==2)echo 'selected="selected"';?> value="2">省会城市</option>
+		<option <?php if($level==3)echo 'selected="selected"';?> value="3">计划单列市</option>
+		<option <?php if($level==4)echo 'selected="selected"';?> value="4">地级市</option>
+		<option <?php if($level==5)echo 'selected="selected"';?> value="5">县级市</option>
+	</select>
+	<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class="itable_title">
+			<td width=55%>城市名称</td><td width=15%>所属省份</td><td width=15%>行政级别</td><td width=15%>操作</td>
 		</tr>
 		<?php
 			for($i=0;$i<$count;$i++){
@@ -75,9 +77,10 @@
 		<?php
 			}
 		?>
-			<tr class="tr3">
+			<tr class="btools">
 				<td colspan=4><?php paginate();?>				<input type="hidden" id="db_table" value="fb_city"></td>
 			</tr>
-		</table>	
+		</table>
+	</div>	
 	</body>
 </html>

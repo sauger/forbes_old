@@ -36,7 +36,7 @@
 <div id=itable>
 	<table cellspacing="1" align="center">
 		
-		<tr class="tr2">
+		<tr class=itable_title>
 			<td>行业名称</td><td>操作</td>
 		</tr>
 		<?php
@@ -53,8 +53,8 @@
 			}
 		?>
 		<input type="hidden" id="db_table" value="fb_industry">
-			<tr class="tr3">
-				<td colspan=6><?php paginate();?></td>
+			<tr class=btools>
+				<td colspan=10><?php paginate("",null,"page",true);?></td>
 			</tr>
 		</table>	
 </div>

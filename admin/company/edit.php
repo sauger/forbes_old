@@ -25,12 +25,14 @@
 	$hbzl = $db->query($sql);
 ?>
 
-<body style="background:#E1F0F7">
+<body>
+	<div id=icaption>
+    <div id=title><?php if($id){echo "修改公司";}else{echo "添加公司";}?></div>
+	  <a href="category_list.php?type=<?php echo $type; ?>" id=btn_back></a>
+	</div>
 	<form id="gsgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class="tr1">
-			<td colspan="2" width="795">　 发布公司 <a href="list.php"><img src="/images/btn_back.png" border=0></a></td>
-		</tr>
+<div id=itable>
+		<table cellspacing="1"  align="center">
 		<tr class="tr4">
 			<td class=td1>公司名称</td>
 			<td width=665><input id="gs_mc" type="text" name="gs[name]" class="required "value="<?php echo $record->name;?>"></td>
@@ -126,6 +128,7 @@
 			</td>
 		</tr>	
 	</table>
+</div>
 	</form>
 </body>
 </html>

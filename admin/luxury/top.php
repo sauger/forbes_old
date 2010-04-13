@@ -51,6 +51,10 @@
 	?>
 </head>
 <body>
+	<div id=icaption>
+    <div id=title>自定义图片</div>
+	  <a href="image_edit.php" id=btn_add></a>
+</div>
 	<table width="795" border="0">
 		<tr class=tr1>
 			<td colspan="5" width="795">　自定义图片<a href="index.php"><img src="/images/btn_back.png" border=0></a>

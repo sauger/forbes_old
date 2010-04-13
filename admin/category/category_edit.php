@@ -25,13 +25,13 @@
 	?>
 </head>
 <body>
-	<table width="795" border="0" id="list">
+	<div id=icaption>
+    <div id=title><?php if($id){echo "修改栏目";}else{echo "添加栏目";}?></div>
+	  <a href="category_list.php?type=<?php echo $type; ?>" id=btn_add></a>
+	</div>
+<div id=itable>
+		<table cellspacing="1"  align="center">
 	<form id="category_form" method="post" action="/admin/category/category.post.php">
-		<tr class=tr1>
-			<td colspan="2">　
-				<?php if($id){echo "修改栏目";}else{echo "添加栏目";}?> <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a>
-			</td>
-		</tr>
 		<tr class=tr4>
 			<td class=td1>名称</td>
 			<td width=665><input style="width:400px" type="text" name="post[name]" value="<?php echo $cate->name;?>" class="required"></td>
@@ -56,5 +56,6 @@
 
 	</form>
 	</table>
+</div>
 </body>
 </html>

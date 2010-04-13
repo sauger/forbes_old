@@ -35,59 +35,58 @@
 	?>
 </head>
 <body>
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="5" width="795">　<a href="video_edit.php?" style="color:#0000FF">发布视频</a> 　　　
-			搜索　<input id=title type="text" value="<? echo $_REQUEST['title']?>"><span id="span_category"></span><select id=adopt style="width:100px" class="select_new">
+<div id=icaption>
+    <div id=title>视频管理</div>
+	  <a href="video_edit.php" id=btn_add></a>
+</div>
+<div id=isearch>
+		<input id=title type="text" value="<? echo $_REQUEST['title']?>"><span id="span_category"></span>
+		<select id=adopt style="width:100px" class="select_new">
 					<option value="">发布状况</option>
 					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已发布</option>
 					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未发布</option>
-				</select>
-				<input type="button" value="搜索" id="search_new" style="border:1px solid #0000ff; height:21px">
-				<input type="hidden" value="<?php echo $category_id;?>" id="category">
-			</td>
+		</select>
+		<input type="hidden" value="<?php echo $category_id;?>" id="category">
+		<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class=itable_title>
+			<td width="35%">视频</td><td width="35%">名称</td><td width="15%">发布时间</td><td width="15%">操作</td>
 		</tr>
-	</table>
-	<div class="div_box">
 		<?php for($i=0;$i<count($video);$i++){?>
-		<div class=v_box id="<?php echo $video[$i]->id;?>">
-			<a href="<?php echo($video[$i]->photo_url=='')?'/images/zwtp.jpg':$video[$i]->photo_url;?>" target="_blank"><img src="<?php echo ($video[$i]->photo_url=='')?'/images/zwtp.jpg':$video[$i]->photo_url;?>" height="100" border="0"></a>
-			<div class=content>
-				<a href="<?php echo($video[$i]->video_url=='')?$video[$i]->online_url:$video[$i]->video_url;?>" target="_blank" style="color:#000000; text-decoration:none">
-					<?php echo strip_tags($video[$i]->title);?>
-				</a>
-			</div>
-			<div class=content>
-				<a href="?category=<?php echo $video[$i]->category_id;?>" style="color:#0000FF">
-					<a href="?category=<?php echo $video[$i]->category_id;?>" style="color:#0000FF"><?php echo $category->find($video[$i]->category_id)->name; ?></a>
-				</a>
-			</div>
-			<div class=content>
-				<?php echo $video[$i]->created_at; ?>
-			</div>
-			<div class=content style="height:20px">
+		<tr class=tr3 id=<?php echo $video[$i]->id;?>>
+			<td  height=60><a href="<?php echo $video[$i]->src;?>" target="_blank"><img src="<?php echo $video[$i]->src_path('middle');?>" width="50" height="50" border="0"></a></td>
+			<td><?php echo $video[$i]->title;?></td>
+			<td><?php echo $video[$i]->created_at;?></td>
+			<td>
 				<?php if($video[$i]->is_adopt=="1"){?>
 					<span style="color:#FF0000;cursor:pointer" class="revocation" name="<?php echo $video[$i]->id;?>">撤消</span>
 				<?php }?>
 				<?php if($video[$i]->is_adopt=="0"){?>
 					<span style="color:#0000FF;cursor:pointer" class="publish" name="<?php echo $video[$i]->id;?>">发布</span>
 				<?php }?>
-				<a href="video_edit.php?id=<?php echo $video[$i]->id;?>" style="color:#000000; text-decoration:none">编辑</a> 
+				<a href="image_edit.php?id=<?php echo $video[$i]->id;?>" style="color:#000000; text-decoration:none">编辑</a> 
 				<span style="cursor:pointer; color:#FF0000" class="del" name="<?php echo $video[$i]->id;?>">删除</span>
-				<input type="text" class="priority" name="<?php echo $video[$i]->id;?>" value="<?php if($video[$i]->priority!=100){echo $video[$i]->priority;}?>" style="width:40px;">
+				<input type="hidden" class="priority" name="<?php echo $video[$i]->id;?>" value="<?php if($video[$i]->priority!=100){echo $video[$i]->priority;}?>" style="width:40px;">
 				<input type="hidden" id="priorityh<? echo $p;?>" value="<?php echo $video[$i]->id;?>" style="width:40px;">	
-			</div>
-		</div>
-		<?php }?>
-	</div>
-	<div class="div_box">
-		<table width="795" border="0">
-			<tr colspan="5" class=tr3>
-				<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button></td>
-			</tr>
-		</table>
-	</div>
-	<input type="hidden" id="db_table" value="<?php echo $tb_video;?>">
+			</td>
+		</tr>
+		<?php
+			}
+			//--------------------
+		?>
+		<tr class="btools">
+			<td colspan=10>
+				<?php paginate("",null,"page",true);?>
+				<button id=clear_priority style="display:none">清空优先级</button>
+				<button id=edit_priority  style="display:none">编辑优先级</button>
+				<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
+				<input type="hidden" id="relation" value="image">
+			</td>
+		</tr>
+  </table>
+</div>	
 </body>
 </html>
 
@@ -105,4 +104,3 @@
 		})
 	});
 </script>
-

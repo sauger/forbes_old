@@ -38,7 +38,7 @@
 				<option value="1" <?php if($_REQUEST['type']=="1"){?>selected="selected"<? }?> >姓名</option>
 				<option value="0" <?php if($_REQUEST['type']=="0"){?>selected="selected"<? }?> >性别</option>
 		</select>
-		<input type="button" value="搜索" id="search">
+		<input type="button" value="搜索" id="search_button">
 </div>
 <div id=itable>
 	<table cellspacing="1"  align="center">
@@ -82,8 +82,8 @@
 		<?php
 			}
 		?>
-		<tr class="tr3">
-			<td colspan=9><?php paginate();?><input type="hidden" id="db_table" value="fb_rich"></td>
+		<tr class="btools">
+			<td colspan=10><?php paginate("",null,"page",true);?><input type="hidden" id="db_table" value="fb_rich"></td>
 		</tr>
 	</table>
 </body>
