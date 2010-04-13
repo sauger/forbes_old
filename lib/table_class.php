@@ -198,6 +198,7 @@ class table_class{
 		}else {
 			$result = array();
 			if($db->record_count <= 0) return $result;
+			$db->move_first();
 			do {
 				$tmp = clone $this;
 				foreach ($tmp->fields as $k => $v){
@@ -206,7 +207,9 @@ class table_class{
 				
 				array_push($result,$tmp);
 			}while ($db->move_next());
-			$this->fields = $result[0]->fields;
+			foreach ($result[0]->fields as $k => $v) {
+				$this->fields[$k]->value = $v->value;
+			}
 		}
 		return $result;
 		
