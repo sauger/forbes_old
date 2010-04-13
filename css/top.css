@@ -18,10 +18,10 @@
 #top_logo .search{width:83px; height:26px; margin-top:38px; margin-left:5px; border:0px; color:#ffffff; line-height:26px; background:url(/images/top/search_bg.jpg) no-repeat; float:left; display:inline;}
 
 #navigation{width:1000px; height:35px; margin-top:1px; background:url(/images/top/bg2.jpg) repeat-x; float:left; display:inline;}
-#navigation .menu{width:75px; height:35px; text-align:center; overflow:hidden; float:left; display:inline;}
+#navigation .menu{width:75px; height:35px; border:1px solid #000000; text-align:center; overflow:hidden; float:left; display:inline;}
 
 #navigation .vertical{width:2px; height:25px; margin-top:5px; background:url(/images/top/vertical.jpg); float:left; display:inline;}
-#navigation .nav{width:31px; height:15px; cursor:pointer;  background-image:none; margin:0 auto; margin-top:10px;}
+#navigation .nav{width:31px; height:30px; cursor:pointer;  background-image:none; margin:0 auto;}
 
 #navigation .menu #picindex{background-image:url(/images/top/m_index.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/index.png);}
 #navigation .menu #picbangdan{background-image:url(/images/top/m_bangdan.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/bangdan.png);}

@@ -36,7 +36,12 @@
 	?>
 </head>
 <body>
-	<table width="795" border="0" id="list">
+<div id=icaption>
+    <div id=title>导航管理</div>
+	  <a href="edit.php" id=btn_add></a>
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
 		<tr class="tr1">
 			<td colspan="7">　 <a href="edit.php"><?php echo $menu_title?></a></td>
 		</tr>
@@ -80,11 +85,14 @@
 			//--------------------
 		?>
 	</table>
-	<table width="795" border="0">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
 		<tr colspan="6" class=tr3>
-			<td><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button></td>
+			<td><?php paginate("",null,"page",true);?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button></td>
 		</tr>
 	</table>
+</div>
 	<input type="hidden" id="db_table" value="fb_navigation">
 </body>
 </html>

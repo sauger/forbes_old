@@ -22,13 +22,15 @@
 	validate_form("user_form");
 ?>
 <body>
-	<table width="795" border="0" id="list">
+	<div id=icaption>
+    <div id=title><?php if($id){echo "修改";}else{echo "添加";}?>敏感词</div>
+	  <a href="list.php" id=btn_back></a>
+	</div>
+<div id=itable>
+	<table cellspacing="1"  align="center">
 	<form id="user_form" method="post" action="post.php">
-		<tr class=tr1>
-			<td colspan="2">　<?php if($id){echo "修改";}else{echo "添加";}?>敏感词</td>
-		</tr>
 		<tr class=tr3>
-			<td width=150>敏感词：(多个词之间可以用|分割)</td>
+			<td width=200>敏感词：(多个词之间可以用|分割)</td>
 			<td width=645 align="left"><input type="text" name="post[text]" value="<?php echo $table->text;?>" class="required"></td>
 		</tr>
 		<tr class=tr3>
@@ -37,5 +39,6 @@
 		<input type="hidden" name="id" value="<?php echo $id;?>">
 	</form>
 	</table>
+</div>
 </body>
 </html>

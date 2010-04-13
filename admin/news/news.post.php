@@ -152,6 +152,9 @@
 		$news->save();
 	}
 	if($_SESSION["role_name"]=='author'||$_SESSION["role_name"]=='journalist')$href="/admin/column/news_list.php";else $href="news_list.php";
+	if($_SESSION['admin_user_name'] == 'editor1' || $_SESSION['admin_user_name'] == 'editor2' || $_SESSION['admin_user_name'] == 'editor3'){
+		$href = "news_list.php";
+	}
 	redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	

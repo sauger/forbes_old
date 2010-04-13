@@ -20,7 +20,7 @@
 #navigation .menu{width:75px; height:45px; text-align:center; overflow:hidden; float:left; display:inline;}
 
 #navigation .vertical{width:2px; height:25px; margin-top:5px; background:url(/images/public/vertical.jpg); float:left; display:inline;}
-#navigation .nav{width:60px; height:35px; cursor:pointer;  background:none; margin:0 auto; margin-top:3px;}
+#navigation .nav{width:75px; height:35px; cursor:pointer;  background:none; margin:0 auto; margin-top:3px;}
 
 #navigation .menu #picindex{background:url(/images/public/m_index.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/m_index.png);}
 #navigation .menu #piclist{background:url(/images/public/m_list.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/m_list.png);}
