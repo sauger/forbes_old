@@ -55,7 +55,7 @@ $(function(){
 	$("#font_down").click(function(){
 		if(font_size>12){
 			font_size = font_size-2;
-			$("#text3").find("*").css('font-size',font_size);
+			$("#news_content").find("*").css('font-size',font_size);
 		}
 		if(font_size==12){
 			$("#font_down").attr('src','/images/news/font1.gif');
@@ -68,7 +68,7 @@ $(function(){
 	$("#font_up").click(function(){
 		if (font_size < 16) {
 			font_size = font_size+2;
-			$("#text3").find("*").css('font-size', font_size);
+			$("#news_content").find("*").css('font-size', font_size);
 		}
 		if(font_size==16){
 			$("#font_up").attr('src','/images/news/font4.gif');
