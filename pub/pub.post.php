@@ -1,10 +1,25 @@
 ﻿<?php
   require_once('../frame.php');
 	
-	if('del_all'== $_POST['post_type']){
+	if('del_total'== $_POST['post_type']){
 		$db = get_db();
-		$db->echo_sql = true;
+		$db->execute("delete from {$_POST['tbname']}");
+		if($_POST['tbname'] == 'fb_rich'){
+			$db->execute("delete from fb_rich_company");
+			$db->execute("delete from fb_rich_fortune");
+		}
+		if($_POST['tbname'] == 'fb_company'){
+			$db->execute("delete from fb_rich_company");
+		}
+		exit();
+	}
+  	if('del_all'== $_POST['post_type']){
+		$db = get_db();
 		$db->execute("delete from {$_POST['tbname']} where id in ({$_POST['ids']})");
+  		if($_POST['tbname'] == 'fb_rich'){
+			$db->execute("delete from fb_rich_company where rich_id in  ({$_POST['ids']})");
+			$db->execute("delete from fb_rich_fortune where rich_id in  ({$_POST['ids']})");
+		}
 		exit();
 	}
 	$post = new table_class($_POST['db_table']);

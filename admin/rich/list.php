@@ -9,7 +9,7 @@
 		judge_role();
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub','category_class','admin/gl/search');
+		js_include_tag('admin_pub','category_class','admin/gl/search','admin/rich/list');
 	?>
 </head>
 <?php
@@ -20,6 +20,7 @@
 	if($content){
 		$sql .= " where name like '%{$content}%'";
 	}
+	$sql .= " order by name asc";
 
   $record = $db->paginate($sql,30);
 
@@ -27,7 +28,8 @@
 <body>
 <div id=icaption>
     <div id=title>富豪管理</div>
-	<a href="#" id="btn_delete2"></a>
+    <a href="#" id="btn_delete3" title="删除所有记录"></a>
+	<a href="#" id="btn_delete2" title="删除选中记录"></a>
 	<a href="upload_data.php" id=btn_import></a>
 	<a href="edit.php" id=btn_add></a>
 </div>

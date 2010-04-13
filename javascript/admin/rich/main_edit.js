@@ -37,7 +37,7 @@ $(function(){
 				+ '<input type="hidden" class="c_hidden" value="0"></input>'
 				+ '<input type="hidden" value="'+ $(this).parent().parent().attr('id') +'"></input>'
 				+ '</td></tr>';
-		$('#table_rich').find('tr.tr3').before(str);
+		$('#table_rich').find('tr.tr3:last').before(str);
 		return false;
 	});
 	$('a.a_delete_add').live('click',function(e){

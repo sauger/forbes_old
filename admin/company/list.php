@@ -30,8 +30,10 @@
 <body>
 <div id=icaption>
     <div id=title>公司管理</div>
-	  <a href="edit.php" id=btn_add></a>
-	  <a href="data_upload.php" id=btn_import></a>
+        <a href="#" id="btn_delete3" title="删除所有记录"></a>
+		<a href="#" id="btn_delete2" title="删除选中记录"></a>
+		<a href="edit.php" id=btn_add></a>
+		<a href="data_upload.php" id=btn_import></a>
 </div>
 <div id=isearch>
 		<input id="content" type="text" value="<? echo $_REQUEST['content']?>" >
@@ -48,13 +50,14 @@
 <div id=itable>
 	<table cellspacing="1">	
 		<tr class="itable_title">
-			<td width="25%">名称</td><td width="15%">国家</td><td width="15%">股票代码</td><td width="15%">交易所</td><td width="15%">货币种类</td><td width="15%">操作</td>
+			<td width="5%"><a href="#" id="a_select_all" style="color:blue;">选择</a></td><td width="25%">名称</td><td width="15%">国家</td><td width="10%">股票代码</td><td width="15%">交易所</td><td width="15%">货币种类</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			$len = count($record);
 			for($i=0;$i< $len;$i++){
 		?>
 		<tr class="tr3" id=<?php echo $record[$i]->id;?> >
+				<td><input type="checkbox" value="<?php echo $record[$i]->id;?>" class="checkbox_select_all" /></td>
 				<td><a href="<?php echo $url;?>" target="_blank"><?php echo strip_tags($record[$i]->name);?></a></td>
 				<td><?php echo strip_tags($record[$i]->country);?></td>
 				<td><?php echo strip_tags($record[$i]->stock_code);?></td>
@@ -118,7 +121,7 @@
 		<tr class="btools">
 			<td colspan="10">
 				<?php paginate("",null,"page",true);?>
-				<input type="hidden" id="db_table" value="fb_gs">
+				<input type="hidden" id="db_table" value="fb_company">
 			</td>
 		</tr>
 	</table>

@@ -13,24 +13,36 @@ $(function(){
 		}
 	});
 	
-	$('#btn_delete2').click(function(e){
-		e.preventDefault();
-		var selected = $('input.checkbox_select_all:checked');
-		if(selected.length <= 0){
-			alert('请选择您要删除的项');
-			return;
-		}
-		var ids = new Array();
-		selected.each(function(){
-			ids.push($(this).val());
+	$(function(){
+		$('#btn_delete2').click(function(e){
+			e.preventDefault();
+			var selected = $('input.checkbox_select_all:checked');
+			if(selected.length <= 0){
+				alert('请选择您要删除的项');
+				return;
+			}
+			var ids = new Array();
+			selected.each(function(){
+				ids.push($(this).val());
+			});
+			if(!confirm('您确定要删除选择项吗?删除后将无法恢复!')){
+				return;
+			}
+			var tbname = $('#db_table').val();
+			$.post("/pub/pub.post.php",{'post_type':'del_all','ids':ids.join(','),'tbname':tbname},function(data){
+				window.location.reload();
+			});
 		});
-		if(!confirm('您确定要删除选择项吗?删除后将无法恢复!')){
-			return;
-		}
-		var tbname = $('#db_table').val();
-		$.post("/pub/pub.post.php",{'post_type':'del_all','ids':ids.join(','),'tbname':tbname},function(data){
-			window.location.reload();
-		});
+		$('#btn_delete3').click(function(e){
+			e.preventDefault();
+			if(!confirm('您确定要删除所有项吗?删除后将无法恢复!')){
+				return;
+			}
+			var tbname = $('#db_table').val();
+			$.post("/pub/pub.post.php",{'post_type':'del_total','tbname':tbname},function(data){
+				window.location.reload();
+			});
+		});	
 	});
 	$(".tr3").mouseover(function(e){
 		 $(".tr3").css("background","#ffffff");

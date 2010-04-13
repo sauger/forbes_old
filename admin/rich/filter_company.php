@@ -6,7 +6,7 @@ if($s_text){
 }
 $db = get_db();
 $table = new table_class('fb_company');
-$record = $table->find('all',$conditons); 
+$record = $table->paginate('all',$conditons); 
 ?>
 	<table width="795" border="0" id="list" >
 		<tr class="tr1">
@@ -35,5 +35,5 @@ $record = $table->find('all',$conditons);
 		<?php
 			}
 		?>
-		<tr><td colspan="8" align="right"><?php paginate('','company_filter'); ?><input type="hidden" id="db_table" value="fb_gs"></td></tr>
+		<tr><td colspan="8" align="right"><?php paginate('filter_company.php?','company_filter'); ?><input type="hidden" id="db_table" value="fb_gs"></td></tr>
 	</table>
