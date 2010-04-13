@@ -1,6 +1,6 @@
 <div id=l>
 		<div id=news_title><?php echo $title;?></div>
-		<div id=news_info>记者：<?php echo $news->author;?>　　发布于：<?php echo substr($news->created_at,0,10);?></div>
+		<div id=news_info>作者：<?php echo $news->author;?>　　发布于：<?php echo substr($news->created_at,0,10);?></div>
 		<div id=news_tools>
 			<?php if(isset($english_news)){?>
 				<div style="border-left:0" class=news_tools_btn><img src="/images/news/btn_cn.png"><span class=news_tools_span><a href="<?php echo get_news_url($news)?>">正文</a></span></div>
