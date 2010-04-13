@@ -21,23 +21,25 @@
 		validate_form("famous_edit");
 	?>
 </head>
-<body style="background:#E1F0F7">
+<body>
+<div id=icaption>
+    <div id=title><?php if($id!=''){echo "编辑名人";}else{echo "添加名人";}?></div>
+	  <a href="index.php" id=btn_back></a>
+</div>
 	<form id="famous_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　 <?php if($id!=''){echo "编辑名人";}else{echo "添加名人";}?> <a href="index.php"><img src="/images/btn_back.png" border=0></a></td>
-		</tr>
+<div id=itable>
+	<table cellspacing="1" align="center">
 		<tr class=tr4>
-			<td class=td1>姓名</td>
-			<td width="665">
+			<td class=td1 width=15%>姓名</td>
+			<td width=85%>
 				<input type="text" name="mr[name]" value="<?php echo $famous->name;?>" class="required">
 			</td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>性别</td>
 			<td>
-				<input type="radio" name="mr[xb]" value="女" <?php if($famous->xb=='女'){ ?>checked="checked"<?php } ?> class="required">女
-				<input type="radio" name="mr[xb]" value="男" <?php if($famous->xb=='男'){ ?>checked="checked"<?php } ?> class="required">男
+				<input style="width:40px;" type="radio" name="mr[xb]" value="女" <?php if($famous->xb=='女'){ ?>checked="checked"<?php } ?> class="required">女<br>
+				<input style="width:40px;" type="radio" name="mr[xb]" value="男" <?php if($famous->xb=='男'){ ?>checked="checked"<?php } ?> class="required">男
 			</td>
 		</tr>
 		<tr class=tr4>
@@ -56,8 +58,8 @@
 		<tr class="tr4">
 			<td class=td1>个人简介</td><td><?php show_fckeditor('mr[mr_jj]','Admin',true,"265",$famous->mr_jj);?></td>
 		</tr>
-		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+		<tr class="btools">
+			<td colspan="10" align="center"><input id="submit" type="submit" value="完成"></td>
 		</tr>	
 	</table>
 		<input type="hidden" name="id" value="<?php echo $id;?>">

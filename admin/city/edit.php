@@ -31,8 +31,8 @@
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=tr4>
-			<td class=td1>中文名称</td>
-			<td width=665><input type="text" class="required" name="city[name]" value="<?php echo $city->name;?>">
+			<td class=td1 width=15%>中文名称</td>
+			<td width=85%><input type="text" class="required" name="city[name]" value="<?php echo $city->name;?>">
 		</td>
 		</tr>
 		<tr class=tr4>
@@ -116,8 +116,8 @@
 				<?php show_fckeditor('city[description]','Admin',false,"265",$city->description);?>
 			</td>
 		</tr>
-		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成">		<input type="hidden" name="id" value="<?php echo $city->id; ?>"></td>
+		<tr class="btools">
+			<td colspan="10" align="center"><input id="submit" type="submit" value="完成">		<input type="hidden" name="id" value="<?php echo $city->id; ?>"></td>
 		</tr>	
 	</table>
 </div>

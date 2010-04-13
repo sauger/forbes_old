@@ -30,11 +30,11 @@
 	<table cellspacing="1"  align="center">
 	<form id="user_form" method="post" action="post.php">
 		<tr class=tr3>
-			<td width=200>敏感词：(多个词之间可以用|分割)</td>
-			<td width=645 align="left"><input type="text" name="post[text]" value="<?php echo $table->text;?>" class="required"></td>
+			<td class=td1 width=25%>敏感词：(多个词之间可以用|分割)</td>
+			<td width=75% align="left"><input type="text" name="post[text]" value="<?php echo $table->text;?>" class="required"></td>
 		</tr>
-		<tr class=tr3>
-			<td colspan="2"><button type="submit">提 交</button></td>
+		<tr class=btools>
+			<td colspan="10"><button type="submit">提 交</button></td>
 		</tr>
 		<input type="hidden" name="id" value="<?php echo $id;?>">
 	</form>

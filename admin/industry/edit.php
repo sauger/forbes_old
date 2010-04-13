@@ -32,10 +32,10 @@
 	<form id="industry" action="edit.post.php" method="post"> 
 	<table cellspacing="1" align="center">
 		<tr class=tr4>
-			<td width="130">行业名称</td><td width="695" align="left"><input type="text" name="name" value="<?php echo $record->name;?>">
+			<td class=td1 width=15%>行业名称</td><td width="85%" align="left"><input type="text" name="name" value="<?php echo $record->name;?>">
 		</tr>
-		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成"></td>
+		<tr class=btools>
+			<td colspan="10" align="center"><input id="submit" type="submit" value="完成"></td>
 		</tr>	
 	</table>
 		<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>">

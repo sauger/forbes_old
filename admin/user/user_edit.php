@@ -30,23 +30,23 @@
 	<table cellspacing="1"  align="center">
 	<form id="user_form" method="post" action="user.post.php">
 		<tr class=tr4>
-			<td class=td1 width=130>用户名</td>
-			<td width=665><input type="text" name="post[name]" value="<?php echo $user->name;?>" class="required"></td>
+			<td class=td1 width=15%>用户名</td>
+			<td width=85%><input type="text" name="post[name]" value="<?php echo $user->name;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
-			<td class=td1>拼音</td>
+			<td class=td1 width=15%>拼音</td>
 			<td><input type="text" name="post[chinese_name]" value="<?php echo $user->chinese_name;?>"></td>
 		</tr>
 		<tr class=tr4>
-			<td class=td1>密码</td>
+			<td class=td1 width=15%>密码</td>
 			<td><input type="password" name="post[password]" value="<?php echo $user->password;?>" class="required" style="width:149px"></td>
 		</tr>
 		<tr class=tr4>
-			<td class=td1>昵称</td>
+			<td class=td1 width=15%>昵称</td>
 			<td><input type="text" name="post[nick_name]" value="<?php echo $user->nick_name;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
-			<td class=td1>用户身份</td>
+			<td class=td1 width=15%>用户身份</td>
 			<td>
 				<select name="post[role_name]" id="role_name" style="width:155px">
 					<option value="journalist" <?php if($user->role_name=="journalist") echo "selected=selected"?>>记者</option>
@@ -58,8 +58,8 @@
 				</select>
 			</td>
 		</tr>
-		<tr class=tr3>
-			<td colspan="2">
+		<tr class=btools>
+			<td colspan="10">
 				<button type="submit">提 交</button>
 				<input type="hidden" name="id" value="<?php echo $id;?>">
 				<input type="hidden" name="post[role_level]" id="role_level" value="<?php echo $user->role_level;?>">

@@ -35,8 +35,8 @@
 	<table cellspacing="1" align="center">
 	<form id="menu_form" method="post" action="edit.post.php">	
 		<tr class=tr4>
-			<td class=td1>名称</td>
-			<td width=685><input type="text" name="post[name]" value="<?php echo $menu->name;?>" class="required"></td>
+			<td class=td1 width=15%>名称</td>
+			<td width="85%"><input type="text" name="post[name]" value="<?php echo $menu->name;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>类型</td>
@@ -65,8 +65,8 @@
 			<td class=td1>优先级</td>
 			<td><input type="text" name="post[priority]" id="priority" value="<?php echo $menu->priority;?>" class="number"></td>
 		</tr>
-		<tr class=tr3>
-			<td colspan="2">
+		<tr class=btools>
+			<td colspan="10">
 				<button type="submit" id="btn_submit">提 交</button>
 				<input type="hidden" name="post[parent_id]" value="<?php echo $menu->parent_id;?>" id="post_parent_id">
 				<input type="hidden" name="id" value="<?php echo $menu->id;?>">

@@ -24,15 +24,18 @@
 	}
 ?>
 
-<body style="background:#E1F0F7">
+<body>
+	<div id=icaption>
+    <div id=title><?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?></div>
+    <!--<span style="cursor:pointer" id="add_attribute" <?php if($record->list_type != 1) echo "style='display:none;'"?> title="添加一列"><img src="/images/btn_add.png" border=0></span>-->
+	  <a href="news_list.php" id=btn_back></a>
+</div>
 	<form id="list_edit" action="edit.post.php" enctype="multipart/form-data"  method="post"> 
-	<table width="795" border="0">
-		<tr class=tr1>
-			<td colspan="2" width="795">　 <?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?> <a href="index.php"><img src="/images/btn_back.png" border=0></a> <span style="cursor:pointer" id="add_attribute" <?php if($record->list_type != 1) echo "style='display:none;'"?> title="添加一列"><img src="/images/btn_add.png" border=0></span></td>
-		</tr>
+<div id=itable>
+		<table cellspacing="1"  align="center">
 		<tr class=tr4 id="list_name">
-			<td class=td1>榜单名称</td>
-			<td width="665">
+			<td class=td1 width=15%>榜单名称</td>
+			<td width="85%">
 				<input type="text" name="mlist[name]" value="<?php echo $record->name;?>" class="required">
 			</td>
 		</tr>
@@ -89,10 +92,11 @@
 			<td class=td1>说明</td>
 			<td><textarea rows="10" cols="60" name="mlist[comment]"><?php echo $record->comment;?></textarea> </td>
 		</tr>
-		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="保　　　存"> 		<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>"></td>
+		<tr class="btools">
+			<td colspan="10" align="center"><input id="submit" type="submit" value="保　　　存"> 		<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>"></td>
 		</tr>
 	</table>
+</div>
 	</form>
 </body>
 </html>
