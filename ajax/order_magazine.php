@@ -10,7 +10,7 @@
     $magazine_id = intval($_POST['id']);
 	
     $db = get_db();
-    $db->query("select * from fb_magazine_order where user_id={$user_id} and magazine_id={$magazine_id}");\
+    $db->query("select * from fb_magazine_order where user_id={$user_id} and magazine_id={$magazine_id}");
     
     if($db->record_count>0){
     	echo "full";
