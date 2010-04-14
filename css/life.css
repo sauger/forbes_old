@@ -17,7 +17,7 @@ p {margin:0; padding:0}
 
 
 #life_bottom{width:1000px; margin-top:15px; float:left; display:inline;}
-#life_bottom_left{width:750px; float:left; display:inline;}
+#life_bottom_left{width:750px; overflow:hidden; float:left; display:inline;}
 #life_bottom_right{width:250px; overflow:hidden; float:right; display:inline;}
 
 .life_caption{width:320px; height:28px; float:left; display:inline;}
@@ -28,7 +28,7 @@ p {margin:0; padding:0}
 
 #life_bottom_flash{width:720px; height:175px; margin-top:10px; background:#efefef; float:left; display:inline;}
 
-.life_box{width:240px; height:256px; margin-top:25px; float:left; display:inline;}
+.life_box{width:240px; height:256px; margin-top:25px; overflow:hidden; float:left; display:inline;}
 .life_box #picture{width:210px; height:160px; margin-top:10px; float:left; display:inline;}
 .life_box .title{width:210px; height:20px; margin-top:5px; font-size:14px; font-weight:bold; line-height:20px; overflow:hidden; float:left; display:inline;}
 .life_box .description{width:203px; height:36px; font-size:12px; line-height:18px; overflow:hidden; float:left; display:inline;}

@@ -4,5 +4,5 @@
 	include "../../" .$_GET['page'] .".php";
 ?>
 <script>
-parent.$("#admin_iframe").attr("height","2300px");
+parent.$("#admin_iframe").attr("height","2500px");
 </script>

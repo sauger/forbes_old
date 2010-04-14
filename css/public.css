@@ -71,3 +71,10 @@
 .public_caption1 span{margin-left:10px; font-family:arial; font-weight:normal; font-size:11px;}
 .public_more1{width:18px; height:8px; margin-top:11px; margin-right:10px; background:url(/images/public/public_more1.jpg) no-repeat; line-height:18px; float:right; display:inline;}
 .public_box1{width:298px;  border-left:1px solid #dfdfdf;  border-right:1px solid #dfdfdf; line-height:20px; overflow:hidden; float:left; display:inline;}
+
+.page_span{height:15px; padding-left:7px; padding-right:7px; font-family:Arial; margin:0; font-size:13px; line-height:15px; border-right:1px solid #666666;}
+.page_span a{color:#003399; text-decoration:none;}
+.page_span2{height:15px; padding-left:7px; padding-right:7px; font-family:Arial; margin:0; font-weight:bolder; font-size:13px; line-height:15px; border-right:1px solid #666666;}
+.page_span2 a{color:#000; text-decoration:none;}
+.paginate_botton{height:16px; color:#666666; font-family:Arial; margin-left:12px; font-size:13px; line-height:16px;}
+.paginate_botton a{color:#003399; text-decoration:none;}
