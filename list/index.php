@@ -7,7 +7,7 @@
 		include_once(dirname(__FILE__).'/../frame.php');
 		$db = get_db();
 		use_jquery();
-		js_include_tag('public','index');
+		js_include_tag('public','index','right');
 		css_include_tag('charts_index','public','right_inc');
 		init_page_items();
 	?>

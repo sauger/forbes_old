@@ -11,8 +11,9 @@
 				<?php init_page_items(); if(!$_SESSION['name']){?>
 				<a href="/login">登陆</a>　<a href="/register/">注册</a>
 				<?php }else{?>
-				欢迎你：<?php echo $_SESSION['name'];?>　
-				<a href="javascript:void(0)" id="logout">>>登出</a>
+				<div id="uname_span"><?php echo $_SESSION['name'];?>,你好</div>
+				<a href="javascript:void(0)" id="logout">登出</a>
+				<a href="/user" id="">会员中心</a>
 				<?php }?>
 			</div>
 			<div class=user_btn><a href="javascript:void(0)" onclick="myhomepage()" name="homepage">设为首页</a>　<a href="javascript:void(0)" onclick="addfavorite()">收藏本页</a></div>
