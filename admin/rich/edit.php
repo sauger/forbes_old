@@ -104,7 +104,7 @@
 				<td width=55%>公司名称</td><td width=15%>上市代码</td><td width=15%>持股数</td><td width=15%>操作</td>
 			</tr>
 			<?php foreach ($company as $v) {?>
-			<tr class="tr3">
+			<tr class="tr4">
 				<td><?php echo $v->name;?></td>
 				<td><?php echo $v->stock_code?></td>
 				<td><input type="text"  value="<?php echo $v->stock_count;?>"></input></td>

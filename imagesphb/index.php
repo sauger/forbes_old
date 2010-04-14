@@ -31,6 +31,15 @@
 					<div id="slider"></div>
 					<span id="speed">播放速度</span>
 				</div>
+				<div id="picture_content">
+					<img width="355" height="355" />
+				</div>
+				<div id="picture_list">
+					<img width="108" height="108" border=2 />
+					<img width="108" height="108" border=2 />
+					<img width="108" height="108" border=2 />
+				</div>
+				
 				<!-- 
 				<img src="/images/imagephb/image_flash.jpg">
 				 -->

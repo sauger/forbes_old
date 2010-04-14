@@ -22,7 +22,7 @@ $record = $table->paginate('all',$conditons);
 			$len = count($record);
 			for($i=0;$i< $len;$i++){
 		?>
-				<tr class="tr3" id=<?php echo $record[$i]->id;?> >
+				<tr class="tr4" id=<?php echo $record[$i]->id;?> >
 					<td><?php echo strip_tags($record[$i]->name);?></td>
 					<td>
 						<?php echo strip_tags($record[$i]->stock_code);?>
