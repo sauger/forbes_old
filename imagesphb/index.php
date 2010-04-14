@@ -32,12 +32,12 @@
 					<span id="speed">播放速度</span>
 				</div>
 				<div id="picture_content">
-					<img width="355" height="355" />
+					<img width="355" height="355" src="/upload/2JSbUfRjPD.jpg" />
 				</div>
 				<div id="picture_list">
-					<img width="108" height="108" border=2 />
-					<img width="108" height="108" border=2 />
-					<img width="108" height="108" border=2 />
+					<img width="108" height="108" src="/upload/2JSbUfRjPD.jpg" />
+					<img width="108" height="108" src="/upload/2JSbUfRjPD.jpg" />
+					<img width="108" height="108" src="/upload/2JSbUfRjPD.jpg" />
 				</div>
 				
 				<!-- 
