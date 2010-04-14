@@ -92,120 +92,12 @@
 		</div>
 		
 		
-		<div id=r>
-			<div id=ad>
-			</div>
-			<div id=r_m_d1>
-				<div id=r_m_d1_t>
-					<div id=r_m_d1_t1>
-						最受欢迎
-					</div>
-					<div id=r_m_d1_t2>
-						编辑推荐
-					</div>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3 style="border-style:none;">
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-			</div>
-			<div id=r_m_d2>
-				<div id=r_m_d2_t1>
-					创业
-				</div>
-				<div id=r_m_d2_t2>
-					科技
-				</div>
-				<div id=r_m_d2_t2 style="margin-left:0px;">
-					商业
-				</div>
-				<div id=r_m_d2_t4>
-					投资
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3>
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-				<div id=r_m_d1_t3 style="border-style:none;">
-					<a href="">沪二价空间空间升至升至10%沪价空升至10%</a>
-				</div>
-			</div>
-			<div id=r_m_d3>
-				<div id=r_m_d3_t>
-					<a href="">更多>></a>
-				</div>
-				<div id=picture1>
-				</div>
-				<div id=r_m_d3_t1>
-					后危机时代更需要包机时代更需要包容与方巾
-				</div>
-				<div id=r_m_d3_t2>
-					<a href="">最佳投资人榜单资人榜单资人榜单资人榜单资人榜单</a>
-				</div>
-				<div id=r_m_d3_t2 style="margin-top:4px;">
-					<a href="">最佳投资人榜单资人榜单资人榜单资人榜单资人榜单</a>
-				</div>
-			</div>
-			<div id=r_m_d4>
-				<div id=r_m_d4_t>
-					福布斯杂志
-				</div>
-				<div id=r_m_d4_t1>
-					<div id=picture2>
-					</div>
-					<div id=r_m_d4_t2>
-						<div id=r_m_d4_t3>
-							福布斯2010年1月刊
-						</div>
-						<div id=r_m_d4_t4>
-							宇星科技、搜房网、聚光科技夺得新能源等行业表现抢眼
-						</div>
-						<div id=r_m_d4_t4>
-							宇星科技、搜房网、聚光科技夺得新能源等行业表现抢眼
-						</div>
-						<input type="button" id=button2><input type="button" id=button3>
-					</div>
-					<div id=r_m_d4_t5>
-						<div id=r_m_d4_t6>
-							往期杂志查阅
-						</div>
-						<div id=d_s1>
-							<select style="width:113px; height:19px; "></select>
-						</div>
-						<div id=r_m_d4_t7>
-							<a href="">杂志列表</a>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div id="right_inc">
+			<?php include "../right/ad.php";?>
+			<?php include "../right/favor.php";?>
+			<?php include "../right/four.php";?>
+			<?php include "../right/forum.php";?>
+			<?php include "../right/magazine.php";?>
 		</div>
 		<?php include "../inc/bottom.inc.php";?>
 </div>
