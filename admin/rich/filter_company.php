@@ -2,7 +2,7 @@
 $s_text = $_REQUEST['s_text'];
 include_once '../../frame.php';
 if($s_text){
-	$conditons =array('conditions' => " name like '%{$s_text}%'");
+	$conditons =array('conditions' => " name like '%{$s_text}%' or stock_code like '%{$s_text}%'");
 }
 $db = get_db();
 $table = new table_class('fb_company');
@@ -37,3 +37,11 @@ $record = $table->paginate('all',$conditons);
 		?>
 		<tr><td colspan="8" align="right"><?php paginate('filter_company.php?','company_filter'); ?><input type="hidden" id="db_table" value="fb_gs"></td></tr>
 	</table>
+	<script>
+		$('#s_text').keypress(function(e){
+			if(e.keyCode == 13)
+			{
+				$('#company_filter').load("filter_company.php?s_text=" + encodeURI($('#s_text').val()));
+			}
+		});
+	</script>
