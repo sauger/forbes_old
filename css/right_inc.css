@@ -83,7 +83,7 @@ ul{list-style:none; padding:0; margin:0;}
 #right_inc #mag_content #ck a{color:#666666; font-weight:bold;}
 
 #right_inc #forum_box{width:315px; *width:317px; border-left:1px solid #E1E1E1; border-right:1px solid #E1E1E1; float:left; display:inline;}
-#right_inc #forum_box .pic{width:295px; margin-top:10px; margin-left:10px; height:125px; float:left; display:inline;}
+#right_inc #forum_box .pic{width:295px; margin-top:10px; overflow:hidden; margin-left:10px; height:125px; float:left; display:inline;}
 #right_inc #forum_box .pic img{width:295px; height:125px;}
 #right_inc #forum_box .pictitle{width:290px; height:20px; margin-top:13px;  margin-left:13px; font-size:13px; line-height:20px; color:#3399CC; font-weight:bold; overflow:hidden; float:left; display:inline;}
 #right_inc #forum_box .pictitle a{color:#003899; text-decoration:none;}

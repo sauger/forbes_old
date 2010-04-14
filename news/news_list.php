@@ -15,8 +15,8 @@
 	<title>福布斯-新闻列表</title>
 	<?php
 		use_jquery();
-		js_include_tag('public');
-		css_include_tag('news','public');
+		js_include_tag('public','right');
+		css_include_tag('news','public','right_inc');
 	?>
 </head>
 <body <?php if($news->forbbide_copy == 1){ ?> oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="return false" oncopy="return false" onbeforecopy="return false" onmouseup="return false" <?php }?>>
@@ -26,6 +26,8 @@
 				<?php
 					$category = new category_class('news');
 					$parent_ids = $category->tree_map($cid);
+					$c_id = $category->children_map($cid);
+					$c_id = implode(',',$c_id);
 					$len = count($parent_ids);
 					for($i=$len-1;$i>0;$i--){
 						$item = $category->find($parent_ids[$i]);
@@ -39,31 +41,31 @@
 		</div>
 		<div id=bread_line></div>
 		
-		<div id=l style="height:1410px;">
+		<div id=l>
 			<div class=news_caption>
-					<? 	$news_count = $db->query("select count(id) as num from fb_news where category_id=$cid")			?>
+					<?php $news_count = $db->query("select count(id) as num from fb_news where category_id in ($c_id)");?>
 					<div class=captions><?php echo $item->name;?><span>共<?php echo $news_count[0]->num;?>篇</span></div>
 			</div>
-						
-			<div id=list_top>
 				<?php
-					$top_news = $db->query("select * from fb_news where category_id={$cid} and video_photo_src!='' and set_up=1 order by priority asc,created_at desc limit 1");
+					$top_news = $db->query("select * from fb_news where category_id in ($c_id) and video_photo_src!='' and set_up=1 order by priority asc,created_at desc limit 1");
 					if($db->record_count==1&&(empty($_REQUEST['page'])||($_REQUEST['page']==1))){
 				?>
+			<div id=list_top>
+				
 					<div id=picture><img width="300" height="200"  src="<?php echo $top_news[0]->video_photo_src?>"></div>
 					<div id=title><a href="news.php?id=<?php echo $top_news[0]->id;?>"><?php echo $top_news[0]->title;?></a></div>
 					<div id=description><?php echo $top_news[0]->description;?></div>
 					<div id=info>《福布斯》　记者：<?php echo $top_news[0]->author;?>　发布于：<?php echo substr($top_news[0]->created_at,0,10);?></div>
+				
 			</div>
-			
-			
 				<?php }?>
+			
 				<div id=l_m>
 					<?php
 						if($db->record_count==1){
-							$sql = "select id,author,created_at,title,description from fb_news where category_id=$cid and id!={$top_news[0]->id} order by priority asc,created_at desc";
+							$sql = "select id,author,created_at,title,description from fb_news where category_id in ($c_id) and id!={$top_news[0]->id} order by priority asc,created_at desc";
 						}else{
-							$sql = "select id,author,created_at,title,description from fb_news where category_id=$cid order by priority asc,created_at desc";
+							$sql = "select id,author,created_at,title,description from fb_news where category_id in ($c_id) order by priority asc,created_at desc";
 						}
 						$record = $db->paginate($sql,8);
 						$count = count($record);
@@ -89,10 +91,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		
-		<div id="right_inc">
+			<div id="right_inc">
 			<?php include "../right/ad.php";?>
 			<?php include "../right/favor.php";?>
 			<?php include "../right/four.php";?>
@@ -100,6 +99,6 @@
 			<?php include "../right/magazine.php";?>
 		</div>
 		<?php include "../inc/bottom.inc.php";?>
-</div>
+		</div>
 </body>
 <html>
