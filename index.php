@@ -146,7 +146,7 @@
 			<div class=caption>
 				<div class=captions>创业<span>Enterpreneur</span></div>
 				<div class=line>|</div>
-				<a href="" class=more></a>
+				<a href="/initiate/" class=more></a>
 			</div>
 			<div class=forbes_l_content>
 				<div class=list1>
@@ -164,7 +164,7 @@
 			<div class=caption>
 				<div class=captions>商业<span>Business</span></div>
 				<div class=line>|</div>
-				<a href="" class=more></a>
+				<a href="/business/" class=more></a>
 			</div>
 			<div class=forbes_l_content>
 				<div class=list1>
@@ -181,7 +181,7 @@
 			<div class=caption>
 				<div class=captions>科技<span>Tech</span></div>
 				<div class=line>|</div>
-				<a href="" class=more></a>
+				<a href="/tech/" class=more></a>
 			</div>
 			<div class=forbes_l_content>
 				<div class=list1>
@@ -198,7 +198,7 @@
 			<div class=caption>
 				<div class=captions>专栏<span>Columns</span></div>
 				<div class=line>|</div>
-				<a href="" class=more></a>
+				<a href="/column/" class=more></a>
 			</div>
 			<div class=forbes_l_content>
 				<div id=column_btnl style="background:none; cursor:auto;"></div>
@@ -254,7 +254,7 @@
 			<div class=caption>
 				<div class=captions>投资<span>Money & Investment</span></div>
 				<div class=line>|</div>
-				<a href="" class=more></a>
+				<a href="/investment/" class=more></a>
 			</div>
 			<div id=forbes_l_content>
 			 	<div class=list1 >
@@ -272,7 +272,7 @@
 	  		<div class=caption>
 				<div class=captions>生活<span>Life</span></div>
 				<div class=line>|</div>
-				<a href="" class=more></a>
+				<a href="/life/" class=more></a>
 			</div>
 			<div class=list1>
 					<div <?php show_page_pos("index_luxu0");?> class=image><?php show_page_img($pos_items,'index_luxu0',1,150,130)?></div>
@@ -342,7 +342,7 @@
 			
 			<div id=city>
 					<div class=city_caption1>城市<span>Best Cities</span></div>
-					<a href="" class=city_more1></a>
+					<a href="/city/" class=city_more1></a>
 					<div class=content <?php show_page_pos("index_city0");?>>
 						<div class=pic>
 							<?php show_page_img($pos_items,'index_city0')?>
@@ -424,7 +424,7 @@
 	  	<div class=caption>
 				<div class=captions>采编智库<span>Bloggers</span></div>
 				<div class=line>|</div>
-				<a href="" class=more></a>
+				<a href="/column/" class=more></a>
 			</div>
 				<?php 
 				for($i=0;$i<8;$i++){ $pos_name = "index_jour".$i;?>
@@ -446,7 +446,7 @@
 			<div id=mag>
 				<div class=public_top1>
 					<div class=public_caption1 style="color:#4990B9;">福布斯杂志<span>Magazine Archive</span></div>
-					<a href="" class=public_more1></a>
+					<a href="/magazine/" class=public_more1></a>
 				</div>
 				<div id=mag_content  <?php show_page_pos("index_magazine");?>>
 						<div class=pic><?php show_page_img($pos_items,"index_magazine")?></div>
