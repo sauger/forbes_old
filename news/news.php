@@ -59,7 +59,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('news/news','public','right');
-		css_include_tag('public','news','paginate','right_inc');
+		css_include_tag('public','news','right_inc');
 	?>
 </head>
 <body <?php if($news->forbbide_copy == 1){ ?> oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="return false" oncopy="return false" onbeforecopy="return false" onmouseup="return false" <?php }?>>
