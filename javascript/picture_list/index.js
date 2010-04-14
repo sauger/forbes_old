@@ -3,6 +3,7 @@ $(function(){
 	{
 		change: function(event,ui){
 			//$('#btns').html($(this).slider("option",'value'));
-		}
+		},
+		value:40
 	});
 });
