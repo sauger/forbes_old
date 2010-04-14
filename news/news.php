@@ -30,7 +30,6 @@
 		$title = $news->title;
 		$content = $news->content;
 	}
-	
 	function get_news_url($news){
 		return dynamic_news_url($news);
 	}
@@ -38,13 +37,13 @@
 	function get_news_en_url($news){
 		return "news.php?id={$news->id}&lang=en";
 	}
-	$db->query("select group_concat(text SEPARATOR '|') as words from fb_filte_words");
+	
+	$db->query("select text as words from fb_filte_words");
 	if($db->move_first()){
-		$filter =  $db->field_by_name('words');
-		$filter = explode('|',$filter);
-		$filter = array_fill_keys($filter,"****");
-		$title = strtr($title,$filter);
-		$content = strtr($content,$filter);
+		do{
+			$content = str_replace($db->field_by_name('words'),'****',$content);
+		}while($db->move_next());
+
 	}
 	
 ?>

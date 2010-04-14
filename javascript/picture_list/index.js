@@ -1,3 +1,4 @@
+var interval;
 $(function(){
 	$('#slider').slider(
 	{
