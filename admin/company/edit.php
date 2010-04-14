@@ -28,7 +28,7 @@
 <body>
 	<div id=icaption>
     <div id=title><?php if($id){echo "修改公司";}else{echo "添加公司";}?></div>
-	  <a href="category_list.php?type=<?php echo $type; ?>" id=btn_back></a>
+	  <a href="list.php" id=btn_back></a>
 	</div>
 	<form id="gsgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
 <div id=itable>
