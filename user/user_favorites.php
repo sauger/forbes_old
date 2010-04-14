@@ -14,8 +14,8 @@
 	<title>福布斯-用户</title>
 	<?php
 		use_jquery();
-		js_include_tag('select2css','user/user');
-		css_include_tag('html/user/favorites','html/user/user','top','bottom','select2css');
+		js_include_tag('public','user/user','jquery.colorbox-min');
+		css_include_tag('html/user/user','public','html/user/favorites','colorbox');
 	?>
 </head>
 <body>
