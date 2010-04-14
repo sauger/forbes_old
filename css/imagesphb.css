@@ -10,7 +10,7 @@
 #control_panel{width:357px;height:25px;border: 1px solid; padding-left:10px;float:left;}
 #btns{float:left; }
 #btns img{cursor: pointer;}
-#slider{width:100px; height: 8px;float:right;margin-top:8px;margin-left: 20px;}
+#slider{width:100px; height: 8px;float:right;margin-top:8px;}
 .ui-slider .ui-slider-handle{height:12px;}
 #phb_left #email{width:114px; height:23px; margin-top:20px; margin-right:20px; float:right; display:inline;}
 #phb_left #email #pic{width:40px; height:23px; float:left; display:inline;}

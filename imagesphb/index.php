@@ -29,7 +29,7 @@
 						<img src="/images/imagephb/next.jpg" title="下一张" />
 					</div>
 					<div id="slider"></div>
-					<span style="float:right;line-height:24px;margin-left:80px;">播放速度</span>
+					<span style="float:right;line-height:24px;margin-right:10px;">播放速度</span>
 				</div>
 				<!-- 
 				<img src="/images/imagephb/image_flash.jpg">
