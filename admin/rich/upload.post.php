@@ -36,7 +36,7 @@
 		}elseif($company->gender == '男'){
 			$company->gender = 1;
 		}else{
-			$company->gender = 0;
+			$company->gender = 2;
 		}
 		
 		if($company->save()){
