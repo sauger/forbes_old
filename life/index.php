@@ -100,142 +100,146 @@
 				</div>
 				<div class=title><?php echo $pos_items->$pos_name->display;?></div>
 				<div class=description><?php echo $pos_items->$pos_name->description?></div>				
-				
-				
-				
       </div>            
 
 
-
-
-
-				<div id=b_l_b>
-					<div id=title>
-						<div style="width:60px; float:left; display:inline;">名利场</div><div id=more></div>
-					</div>
-					<?php $pos_name = "lifeindex_news_mlc"?>
-					<div id=picture <?php show_page_pos($pos_name)?>>
-						<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="460" height="200" />
-					</div>
-					<div id=text <?php show_page_pos($pos_name)?>>
-						<div id=title1>
+			<div id=life_ml>
+  			<div class=life_caption>
+					<div class=captions>名利场</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
+				</div>	
+				<?php $pos_name = "lifeindex_news_mlc"?>
+				<div id=picture <?php show_page_pos($pos_name)?>>
+						<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="500" height="200" />
+				</div>
+				<div id=content <?php show_page_pos($pos_name)?>>
+						<div id=content_title>
 							<?php  echo $pos_items->$pos_name->display;?>
 						</div>
-						<div id=text1>
+						<div id=content_description>
 							<?php  echo $pos_items->$pos_name->description?>
 						</div>
-					</div>
-				</div>
-				<div id=b_l_m>
-					<div id=b_l_m_l>
-						<div id=title>
-							<div style="width:60px; float:left; display:inline;">美酒美食</div><div id=more></div>
-						</div>
-						<?php 
-							$pos_name = "liftindex_news_4";
-						?>
-						<div id=picture <?php show_page_pos($pos_name)?>>
-							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
-						</div>
-						<div id=text <?php show_page_pos($pos_name)?>>
-							<div id=title1>
-								<?php echo $pos_items->$pos_name->display;?>
-							</div>
-							<div id=text1>
-								<?php echo $pos_items->$pos_name->description?>
-							</div>
-						</div>
-					</div>
-					<div id=b_l_m_l>
-						<div id=title>
-							<div style="width:60px; float:left; display:inline;">体面</div><div id=more></div>
-						</div>
-						<?php 
-							$pos_name = "liftindex_news_5";
-						?>
-						<div id=picture <?php show_page_pos($pos_name)?>>
-							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
-						</div>
-						<div id=text <?php show_page_pos($pos_name)?>>
-							<div id=title1>
-								<?php echo $pos_items->$pos_name->display;?>
-							</div>
-							<div id=text1>
-								<?php echo $pos_items->$pos_name->description?>
-							</div>
-						</div>
-					</div>
-					<div id=b_l_m_l>
-						<div id=title>
-							<div style="width:60px; float:left; display:inline;">文化娱乐</div><div id=more></div>
-						</div>
-						<?php 
-							$pos_name = "liftindex_news_6";
-						?>
-						<div id=picture <?php show_page_pos($pos_name)?>>
-							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="200" height="150" />
-						</div>
-						<div id=text <?php show_page_pos($pos_name)?>>
-							<div id=title1>
-								<?php echo $pos_items->$pos_name->display;?>
-							</div>
-							<div id=text1>
-								<?php echo $pos_items->$pos_name->description?>
-							</div>
-						</div>
-					</div>
-				</div>
-  </div>
-			
-			
-			
-			<div id=b_r>
-				<div id=b_r_t>
-					<?php $pos_name = "lifeindex_ly"?>
-					<div id=title>
-						<div style="width:60px; float:left; display:inline;">旅游</div><div id=more></div>
-					</div>
-					<div id=picture <?php show_page_pos($pos_name)?>>
-						<a href="<?php echo $pos_items->$pos_name->href;?>"><img src="<?php echo $pos_items->$pos_name->image1?>" border="0" width="240" height="160" /></a>
-					</div>
-				</div>
-				<div id=b_r_t style="margin-top:32px;">
-				<?php $pos_name = "lifeindex_hz"?>
-					<div id=title>
-						<div style="width:60px; float:left; display:inline;">豪宅</div><div id=more></div>
-					</div>
-					<div id=picture <?php show_page_pos($pos_name)?>>
-						<a href="<?php echo $pos_items->$pos_name->href;?>"><img src="<?php echo $pos_items->$pos_name->image1?>" border="0" width="240" height="160" /></a>
-					</div>
-				</div>
-				<div id=b_r_b>
-					<div id=title>
-						<div style="width:60px; float:left; display:inline;">关注</div><div id=more></div>
-					</div>
-					<div id=line>
-					</div>
-					<?php 
-						for($i=0;$i<5;$i++ ){
-							$pos_name = "lifeindex".$i;
-					?>
-					<div id=list <?php show_page_pos($pos_name);?>>
-						<a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a>
-					</div>
-					<?php }?>
-				</div>
-				<div id=b_r_t style="margin-top:40px;">
-					<div id=title>
-						<div style="width:60px; float:left; display:inline;">奢华专题</div><div id=more></div>
-					</div>
-					<?php $pos_name = "lifeindex_zt"?>
-					<div id=picture <?php show_page_pos($pos_name);?>>
-						<a href="<?php echo $pos_items->$pos_name->href;?>"><img src="<?php echo $pos_items->$pos_name->image1?>" border="0" width="240" height="160" /></a>
-					</div>
-				</div>
-				<div id=title1<?php show_page_pos($pos_name);?>v>
-					<a href="<?php echo $pos_items->$pos_name->href?>"><?php echo $pos_items->$pos_name->display;?></a>
 				</div>
 			</div>
+				
+
+      <div class=life_box>
+ 				<div class=life_caption>
+					<div class=captions>美酒美食</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
+				</div>
+				
+				<?php $pos_name = "liftindex_news_4";	?>
+				<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="210" height="160" />
+				</div>
+				<div class=title><?php echo $pos_items->$pos_name->display;?></div>
+				<div class=description><?php echo $pos_items->$pos_name->description?></div>
+      </div>
+      
+      <div class=life_box>
+  			<div class=life_caption>
+					<div class=captions>体面</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>      	
+				</div>	
+				
+				<?php $pos_name = "liftindex_news_5";?>
+				<div id=picture <?php show_page_pos($pos_name)?>>
+						<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="210" height="160" />
+				</div>
+				<div class=title><?php echo $pos_items->$pos_name->display;?></div>
+				<div class=description><?php echo $pos_items->$pos_name->description?></div>
+      </div>
+      
+      <div class=life_box>
+  			<div class=life_caption>
+					<div class=captions>文化娱乐</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
+				</div>	
+				<?php $pos_name = "liftindex_news_6";	?>
+				<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="210" height="160" />
+				</div>
+				<div class=title><?php echo $pos_items->$pos_name->display;?></div>
+				<div class=description><?php echo $pos_items->$pos_name->description?></div>				
+      </div>      
+  </div>
+
+  <div id=life_bottom_right>
+      <div class=life_box2>
+  			<div class=life_caption>
+					<div class=captions>旅游</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
+				</div>	
+				<?php $pos_name = "lifeindex_ly";	?>
+				<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="246" height="160" />
+				</div>
+      </div>
+      
+      <div class=life_box2>
+  			<div class=life_caption>
+					<div class=captions>豪宅</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
+				</div>	
+				<?php $pos_name = "lifeindex_hz";	?>
+				<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="246" height="160" />
+				</div>
+      </div>     	
+			
+			<div class=life_box2>
+  			<div class=life_caption>
+					<div class=captions>关注</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
+				</div>
+				<div id=line></div>
+
+				<?php 
+					for($i=0;$i<3;$i++ ){
+						$pos_name = "lifeindex".$i;
+				?>
+				<div id=list <?php show_page_pos($pos_name);?>>
+						<a href="<?php echo $pos_items->$pos_name->href;?>"><?php echo $pos_items->$pos_name->display;?></a>
+				</div>
+				<?php }?>
+			</div>
+				
+
+      <div class=life_box2>
+  			<div class=life_caption>
+					<div class=captions>奢华专题</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
+				</div>	
+				<?php $pos_name = "lifeindex_zt";	?>
+				<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="246" height="160" />
+				</div>
+				<div class=title><?php echo $pos_items->$pos_name->display;?></div>
+      </div>  
+
+      <div class=life_box2>
+  			<div class=life_caption>
+					<div class=captions>慈善</div>
+					<div class=line>|</div>
+					<a href="" class=more></a>
+				</div>	
+				<?php $pos_name = "lifeindex_cs";	?>
+				<div id=picture <?php show_page_pos($pos_name)?>>
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" border="0" width="246" height="160" />
+				</div>
+				<div class=title><?php echo $pos_items->$pos_name->display;?></div>
+      </div>  
+			
+  </div>			
 </div>
 <? require_once(dirname(__FILE__).'/../inc/bottom.inc.php');?>
 </div>
