@@ -34,7 +34,7 @@
 		
 		<?php if($_SESSION['role_name'] == 'admin' || $_SESSION['role_name'] == 'sys_admin'){?>
 		<tr class=tr4>
-			<td width="15%" class=td1>定时发布</td>
+			<td class=td1 width="15%" >定时发布</td>
 			<td width="85%"><input type="text" name="publish_schedule_date" id="publish_schedule" <?php if(!$publish_date) echo "disabled=true;";?> value="<?php echo $publish_date;?>"></input><input style="width:20px;" type="checkbox" id="publish_schedule_select" <?php if($publish_date) echo "checked='checked'"?>></input>(格式：2010-03-03 16:00:00)</td>
 		</tr>
 		<?php }?>

@@ -56,8 +56,8 @@
 		<?php
 			}
 		?>
-			<tr class="tr3">
-				<td colspan=6><input type="hidden" id="db_table" value="fb_custom_list_type"><button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><?php paginate();?></td>
+			<tr class="btools">
+				<td colspan=10><input type="hidden" id="db_table" value="fb_custom_list_type"><button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><?php paginate();?></td>
 			</tr>
 		</table>	
 

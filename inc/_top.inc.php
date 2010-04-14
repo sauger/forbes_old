@@ -22,7 +22,7 @@
 			?>
 			<div id=magazine_pic <?php show_page_pos($pos_name)?>><?php show_page_img($pos_items,$pos_name,1,75,95)?></div>
 			<div id=magazine_description><span class=font1><?php echo $pos_items->$pos_name->display;?></span><br><?php echo $pos_items->$pos_name->description;?></div>
-			<div id=magazine_btn><a href="<?php echo $pos_items->$pos_name->href;?>"><img src="/images/top/magazine_btn.jpg" border=0></a></div>
+			<div id=magazine_btn><a href="<?php echo $pos_items->$pos_name->href;?>"><img src="/images/public/magazine_btn.jpg" border=0></a></div>
 
 	</div>
   <div id=top_logo>

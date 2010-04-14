@@ -1,4 +1,4 @@
-﻿body {font-size:12px;  font-family:Arial,宋体; color:#000;  margin:0 auto; padding:0;}
+﻿body {font-size:12px;  font-family:宋体,Arial; color:#000;  margin:0 auto; padding:0;}
 
 #ibody{width:1000px; margin:0 auto;}
 #cyindex{width:72px; height:19px; cursor:pointer; background-image:url(/images/whyl/whyl.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/whyl/whyl.png"); margin-top:10px; float:left; display:inline;}

@@ -27,14 +27,14 @@
 <body>
 	<div id=icaption>
     <div id=title><?php if($id){echo "修改栏目";}else{echo "添加栏目";}?></div>
-	  <a href="category_list.php?type=<?php echo $type; ?>" id=btn_add></a>
+	  <a href="category_list.php?type=<?php echo $type; ?>" id=btn_back></a>
 	</div>
 <div id=itable>
 		<table cellspacing="1"  align="center">
 	<form id="category_form" method="post" action="/admin/category/category.post.php">
 		<tr class=tr4>
-			<td class=td1>名称</td>
-			<td width=665><input style="width:400px" type="text" name="post[name]" value="<?php echo $cate->name;?>" class="required"></td>
+			<td class=td1 width=15%>名称</td>
+			<td width=85%><input style="width:400px" type="text" name="post[name]" value="<?php echo $cate->name;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>描述</td>
@@ -44,8 +44,8 @@
 			<td class=td1>优先级</td>
 			<td><input type="text" style="width:400px" name="post[priority]" id="priority" class="number" value="<?php echo $cate->priority;?>"></td>
 		</tr>
-		<tr class=tr3>
-			<td colspan="2"><button type="submit">提 交</button> 		
+		<tr class=btools>
+			<td colspan="10"><button type="submit">提 交</button> 		
 			
 				<input type="hidden" name="post[id]" value="<?php echo $id;?>">
 				<input type="hidden" name="post[category_type]" value="<?php echo $type;?>">

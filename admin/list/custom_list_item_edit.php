@@ -27,7 +27,7 @@
 
 <body>
 	<form action="custom_list_item.post.php" method="post">
-	<table width="795" border="0" id="list">
+	<table cellspacing="1" align="center">
 		<tr class="tr1">
 			<td colspan="6">
 			<a href="custom_list_item_list.php?id=<?php echo $list_id;?>"><?php echo $list_name;?></a><?php if($id){ ?>编辑<?php }else{ ?>添加<?php }?>榜单项 
@@ -43,8 +43,8 @@
 			</td>
 		</tr>
 		<?php }?>
-		<tr class="tr3">
-			<td colspan="2" width="795" align="center"><input id="finish" type="submit" value="保　　　　　存"></td>
+		<tr class="btools">
+			<td colspan="10"  align="center"><input id="finish" type="submit" value="保　　　　　存"></td>
 		</tr>	
 		<tr class="tr3">
 			<td colspan=6><?php paginate();?></td>

@@ -121,8 +121,8 @@
 					<?php } ?>
 				</select>
 		</tr>
-		<tr class="tr3">
-			<td colspan="2" width="795" align="center">
+		<tr class="btools">
+			<td colspan="10" align="center">
 				<input id="submit" type="submit" value="完成">
 				<input type="hidden" name="id"  value="<?php echo $record->id; ?>">
 			</td>

@@ -30,13 +30,13 @@
 			</ul>
 		<div id="tabs-1" style="margin:0px; padding:0px; background:#C8E4F0; border:0;">
 			<form id="fhgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
-			<table width="795" border="0">
+			<table cellspacing="1"  align="center">
 				<tr class=tr1>
 					<td colspan="2" width="795">　 编辑富豪 <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a></td>
 				</tr>
 				<tr class=tr4>
-					<td class=td1>姓名</td>
-					<td width=665><input type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
+					<td class=td1 width=15%>姓名</td>
+					<td width=85%><input type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
 				</tr>
 				<tr class=tr4>
 					<td class=td1>拼音</td><td width=665><input type="text" name="fh[chinese_name]" value="<?php echo $record->chinese_name;?>">
@@ -44,8 +44,8 @@
 				<tr class=tr4>
 					<td class=td1>性别</td>
 					<td id="fh_xb">
-						<input type="radio" name="fh[gender]" value="0" <?php if($record->gender=='0'){ ?>checked="checked"<?php } ?>>女
-						<input type="radio" name="fh[gender]" value="1" <?php if($record->gender==1){ ?>checked="checked"<?php } ?>>男
+						<input style="width:40px;" type="radio" name="fh[gender]" value="0" <?php if($record->gender=='0'){ ?>checked="checked"<?php } ?>>女<br>
+						<input style="width:40px;" type="radio" name="fh[gender]" value="1" <?php if($record->gender==1){ ?>checked="checked"<?php } ?>>男
 					</td>
 				</tr>
 				<tr class=tr4>
@@ -76,8 +76,8 @@
 				<tr id=newsshow1 class="normal_news tr4">
 					<td class=td1 height=265>慈善事业</td><td><?php show_fckeditor('fh[philanth]','Admin',false,"200",$record->philanth);?></td>
 				</tr>
-				<tr class="tr3">
-					<td colspan="2" width="795" align="center"><input id="submit" type="submit" value="完成">				<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>"></td>
+				<tr class="btools">
+					<td colspan="10" align="center"><input id="submit" type="submit" value="完成">				<input type="hidden" name="id" id="id"  value="<?php echo $record->id; ?>"></td>
 				</tr>	
 				</table>
 			</form>
@@ -92,9 +92,9 @@
 			$sql = "select a.id,a.company_id,b.name,b.stock_code,a.stock_count from fb_rich_company a left join fb_company b on a.company_id = b.id where a.rich_id = {$id}";
 			$company = $db->query($sql);
 			if(empty($company)) $company = array();?>
-		<table width="795" border="0" id="table_rich">
-			<tr class="tr2">
-				<td width=200>公司名称</td><td width=200>上市代码</td><td width=200>持股数</td><td width=195>操作</td>
+			<table cellspacing="1"  align="center" id="table_rich">
+			<tr class="itable_title">
+				<td width=55%>公司名称</td><td width=15%>上市代码</td><td width=15%>持股数</td><td width=15%>操作</td>
 			</tr>
 			<?php foreach ($company as $v) {?>
 			<tr class="tr3">
@@ -108,8 +108,8 @@
 				</td>
 			</tr>	
 			<?php }?>
-			<tr class="tr3">
-				<td colspan="4" align="center">
+			<tr class="btools">
+				<td colspan="10" align="center">
 				<button id="btn_add">添　　加</button>
 				<button id="btn_save">保　　存</button>
 				</td>
@@ -130,9 +130,9 @@
 				$fortune = $db->query($sql);
 				if(empty($fortune)) $fortune = array();
 			?>
-			<table width="795" border="0" id="table_fortune">
-				<tr class="tr2" id="fortune_box">
-					<td width=252>个人财富</td><td width=252>所属年份</td><td width=252>财富排名</td><td width=41>操作</td>
+			<table cellspacing="1"  align="center" id="table_fortune">
+				<tr class="itable_title" id="fortune_box">
+					<td width=55%>个人财富</td><td width=15%>所属年份</td><td width=15%>财富排名</td><td width=15%>操作</td>
 				</tr>
 				<?php foreach ($fortune as $v) {?>
 				<tr class="tr4">
@@ -145,8 +145,8 @@
 					</td>
 				</tr>	
 				<?php }?>
-				<tr class="tr3">
-					<td colspan="4" align="center">
+				<tr class="btools">
+					<td colspan="10" align="center">
 					<button id="fortune_add">添　　加</button>
 					<button id="fortune_save">保　　存</button>
 					</td>
