@@ -23,7 +23,6 @@
 			alert('非法操作');
 			redirect('/');
 		}
-		$list_item = new table_class('fb_picture_list_items');
 		$items = $db->query("select name,image,comment from fb_picture_list_items where list_id ={$list->id}");
 		$len = $db->record_count;
 		for($i=0;$i<$len;$i++){
@@ -39,7 +38,7 @@
 	<div id=ibody>
 	<? require_once('../inc/top.inc.php');?>
 		<div id=cyindex></div>
-		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　</a><a href="">富豪检索结果</a></div>
+		<div id=cytitle><a style="color:#666666;" href="/">福布斯中文网　＞　</a><a href="/list/list.php?id=9">图片排行榜</a>　＞　<span><?php echo $list->name;?></span></div>
 		<div id=cyline></div>
 		<div id=phb_left>
 			<div id=p_flash>
