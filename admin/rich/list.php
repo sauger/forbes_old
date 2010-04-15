@@ -20,7 +20,7 @@
 	if($content){
 		$sql .= " where name like '%{$content}%'";
 	}
-	$sql .= " order by name asc";
+	$sql .= " order by id asc";
 
   $record = $db->paginate($sql,30);
 
