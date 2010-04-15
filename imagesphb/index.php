@@ -9,8 +9,8 @@
 	<title>福布斯-图片排行榜</title>
 	<?php
 		use_jquery_ui();
-		js_include_tag('select2css','picture_list/index');
-		css_include_tag('jquery-ui','imagesphb','public','right');
+		js_include_tag('public','picture_list/index','right');
+		css_include_tag('jquery-ui','imagesphb','public','right_inc');
 		$db = get_db();
 		$id = intval($_GET['id']);
 		if(empty($id)){
@@ -36,12 +36,6 @@
 	?>
 </head>
 <body>
-	<script>
-	var items;
-	$.getJSON('/imagesphb/json.php?id=<?php echo $id;?>',function(data){});
-	alert(items.length);
-	</script>
-	<div id="debug"><?php  echo var_dump($litems);?></div>
 	<div id=ibody>
 	<? require_once('../inc/top.inc.php');?>
 		<div id=cyindex></div>
@@ -59,7 +53,7 @@
 					<span id="speed">播放速度</span>
 				</div>
 				<div id="picture_content">
-					<img id="main_picture" width="355" height="355" src="<?php echo $items[0]->image;?>" />
+					<img id="main_picture" width="359" height="359" src="<?php echo $items[0]->image;?>" />
 				</div>
 				<div id="picture_list">
 					<img width="108" height="108" class="selected" src="<?php echo $items[0]->image;?>" />
@@ -77,18 +71,27 @@
 					<div id=wz><a href="">分享给好友</a></div>
 			</div>
 			<div id=p_r_t>
-				<div id=title><a href="">健康乐活族的十大主张</a></div>
-				<div id=content><a href="">　　这里的确是让人心旷神怡的地方，依山傍海，大自然的慷慨给了她清新幽雅的气质。与此同时，富于艺术美感的神户人，巧花心思，又在小小的天地里再创作出新的情趣和意境。<br>　　在很多人眼里，神户与太多的关键名词挂得上钩。美食，神户牛肉是全世界最贵的牛肉，号称吃口鲜嫩，入口即化；明星，今年藤原纪香把自己的蜜月放在了神户度过，让这个城市风光无比；即便是最让人害怕的名词———地震，当年的阪神大地震可是让地球也“晃了三晃”的。</a></div>
-				<div id=cl><a href="">SHE个人主页</a></div>
+				<div id=title><a href=""><?php echo $items[0]->name?></a></div>
+				<div id=content><a href="">　　<?php echo $items[0]->comment?></a></div>
+				
 			</div>
 			<div id=p_r_b_title>
 				<div id=wz>图片榜单推荐</div>
 			</div>
-			<?php for($i=0;$i<3;$i++){ ?>
-			<div class=cl><a href="">·中国富豪最富豪最集中的10个城市</a></div>
+			<?php 
+			$db = get_db();
+			$lists = $db->query("select name from fb_custom_list_type where list_type=4 and id != {$id} order by id desc limit 3");
+			for($i=0;$i<3;$i++){ ?>
+			<div class=cl><a href="">·<?php echo $lists[$i]->name;?></a></div>
 			<?php } ?>
 		</div>
-	<? require_once('../inc/right.inc.php');?>
+		<input type="hidden" id="list_id" value="<?php echo $id;?>" />
+		<div id="right_inc">
+		 		<?php include "../right/ad.php";?>
+		 		<?php include "../right/favor.php";?>
+		 		<?php include "../right/four.php";?>
+		 		<?php include "../right/magazine.php";?>
+		</div>
 	<? require_once('../inc/bottom.inc.php');?>
 	</div>
 </body>

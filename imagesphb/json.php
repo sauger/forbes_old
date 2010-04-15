@@ -1,5 +1,7 @@
 <?php
 include "../frame.php";
+$id = intval($_GET['id']);
+$db = get_db();
 $list = new table_class('fb_custom_list_type');
 		$list->find($id);
 		if($list->id <= 0 || $list->list_type != 4){
