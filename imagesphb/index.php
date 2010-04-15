@@ -22,7 +22,7 @@
 		<div id=cytitle><a style="color:#666666;" href="">福布斯中文网　＞　</a><a href="">富豪检索结果</a></div>
 		<div id=cyline></div>
 		<div id=phb_left>
-			<div id=p_flash style="border:1px solid">
+			<div id=p_flash>
 				<div id="control_panel">
 					<div id="btns">
 						<img id="btn_prev" src="/images/imagephb/prev.jpg" title="上一张" />
@@ -33,7 +33,7 @@
 					<span id="speed">播放速度</span>
 				</div>
 				<div id="picture_content">
-					<img width="355" height="355" src="/upload/2JSbUfRjPD.jpg" />
+					<img id="main_picture" width="355" height="355" src="/upload/2JSbUfRjPD.jpg" />
 				</div>
 				<div id="picture_list">
 					<img width="108" height="108" src="/upload/2JSbUfRjPD.jpg" />
@@ -47,7 +47,7 @@
 				 	
 			</div>
 			<div id=email>
-					<div id=pic><a border=0 href=""><img border=0 src="/images/imagephb/email.jpg"></a></div>
+					<div id=pic><a href=""><img border=0 src="/images/imagephb/email.jpg"></a></div>
 					<div id=wz><a href="">分享给好友</a></div>
 			</div>
 			<div id=p_r_t>

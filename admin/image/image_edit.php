@@ -40,7 +40,7 @@
 	<form id="picture_edit" enctype="multipart/form-data" action="image.post.php" method="post"> 
 		<tr class=tr4>
 			<td width="15%" class=td1>标　题</td>
-			<td width="85%"><input id="title" type="text" name="image[title]" value="<?php echo $image->title;?>"></td>
+			<td width="85%"><input id="pic_title" type="text" name="image[title]" value="<?php echo $image->title;?>"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>优先级</td>
@@ -90,7 +90,7 @@
 		});
 		
 		$("#submit").click(function(){
-			var title = $("#title").val();
+			var title = $("#pic_title").val();
 			if(title==""){
 				alert("请输入标题！");
 				return false;

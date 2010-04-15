@@ -1,45 +1,86 @@
-var interval = 2000;
+var interval = 5000;
 var timeout_handler;
 var images = ['2JSbUfRjPD.jpg','72LhlnZ105.jpg','bj8RsjL77e.jpg'];
 var start = 0;
+var display_index = 0;
+var auto_play = true;
 function debug(str){
 	$('#debug').append(str+'<br/>');
 };
-function change_images(step){
-	start = (start + step) % images.length;	
+
+function display_images(){
+	
 	$('#picture_list img').each(function(i){
-		var display_index = (start + i) % 3;
-		$(this).attr('src',"/upload/" + images[display_index]);
-		if(i == 0){
+		$(this).attr('src',"/upload/" + images[start+i]);
+		if(i==display_index){
 			$(this).addClass('selected');
+			$('#main_picture').attr('src',$(this).attr('src'));
 		}else{
 			$(this).removeClass('selected');
 		}
 	});
+	
+}
+function change_images(step){
+	clearTimeout(timeout_handler);
+	display_index = display_index  + step;
+	if(display_index > 2){
+		display_index = 2;
+		if(start + 3 >= images.length){
+			//the last one
+			start = 0;
+			display_index = 0;
+			
+		}else{
+			//left shift one image
+			start = start + 1;
+		}
+	}else if(display_index < 0){
+		if(start <= 0){
+			return; //already the first one;
+		}
+		start  = start -1;
+		display_index = 0;
+	}else{
+		
+	}
+	display_images();//refresh the images;
+	if(auto_play){
+		timeout_handler = setTimeout("timeout_func()",interval);
+	}
 }
 function timeout_func(){
 	change_images(1);
-	timeout_handler = setTimeout("timeout_func()",interval);
 }
 $(function(){
 
 	timeout_handler = setTimeout("timeout_func()",interval);
 	$('#btn_prev').click(function(){
-		clearTimeout(interval);
+		change_images(-1);
+	});
+	$('#btn_next').click(function(){
+		change_images(1);
 	});
 	
 	$('#btn_play').toggle(function(){
 		$(this).attr('src','/images/imagephb/play.jpg');
 		clearTimeout(timeout_handler);
+		auto_play = false;
 	},function(){
 		$(this).attr('src','/images/imagephb/pause.jpg');
+		auto_play = true;
 		timeout_handler = setTimeout("timeout_func()",interval);
 	});
 	$('#slider').slider(
 	{
 		change: function(event,ui){
-			//$('#btns').html($(this).slider("option",'value'));
+			interval = $(this).slider("option",'value') * 1000;
+			$('#debug').html(interval);
+			change_images(0);
 		},
-		value:40
+		min:3,
+		max:30,
+		value:5,
+		animate:true
 	});
 });
