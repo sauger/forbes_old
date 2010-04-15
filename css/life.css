@@ -1,47 +1,50 @@
-﻿body {font-size:12px;  font-family:宋体,Arial; color:#000;  margin:0 auto; padding:0;}
-p {margin:0; padding:0}
+﻿body {font-size:12px; font-family:宋体,Arial; color:#000000; margin:0 auto; padding:0;}
+p{margin:0; padding:0;}
+ul{margin:0; padding:0;}
+li{margin:0; padding:0;} 
+div{margin:0; padding:0; float:left; display:inline;}
 
-#ibody{width:1000px; margin:0 auto;}
+#ibody{width:1000px; margin:0 auto; float:none; display:block;}
 
-#life_top{width:1000px; height:594px; margin-top:17px; background:#efefef; float:left; display:inline;}
+#life_top{width:1000px; height:594px; margin-top:17px; background:#efefef;}
 
-#life_middle{width:1000px; height:141px; margin-top:30px; float:left; display:inline;}
-#life_middle_flash{width:525px; height:140px;float:left; display:inline;}
-#life_middle_bg{width:70px; height:140px; background-image:url(/images/life/bg1.jpg); float:left; display:inline;}
-#life_middle_column{width:401px; height:132px; border:4px solid #DE0D2A; border-left:none; float:left; display:inline;}
-#life_middle_column #picture{width:120px; height:120px; margin-left:4px; margin-top:4px; padding:2px; border:solid 1px #CCCCCC; float:left; display:inline;}
-#life_middle_column #title{width:260px; height:20px; margin-left:9px; margin-top:5px; font-size:16px; font-weight:bold; font-family:微软雅黑; line-height:20px; overflow:hidden; float:left; display:inline;}
-#life_middle_column #text{width:260px; height:80px; margin-left:9px; margin-top:5px; color:#666666; line-height:20px; overflow:hidden; float:left; display:inline;}
-#life_middle_column #link{width:260px; height:20px; margin-top:5px; text-align:right; float:left; display:inline;}
+#life_middle{width:1000px; height:141px; margin-top:30px;}
+#life_middle_flash{width:525px; height:140px;float:left;}
+#life_middle_bg{width:70px; height:140px; background-image:url(/images/life/bg1.jpg);}
+#life_middle_column{width:401px; height:132px; border:4px solid #DE0D2A; border-left:none;}
+#life_middle_column #picture{width:120px; height:120px; margin-left:4px; margin-top:4px; padding:2px; border:solid 1px #CCCCCC;}
+#life_middle_column #title{width:260px; height:20px; margin-left:9px; margin-top:5px; font-size:16px; font-weight:bold; font-family:微软雅黑; line-height:20px; overflow:hidden;}
+#life_middle_column #text{width:260px; height:80px; margin-left:9px; margin-top:5px; color:#666666; line-height:20px; overflow:hidden;}
+#life_middle_column #link{width:260px; height:20px; margin-top:5px; text-align:right;}
 #life_middle_column #link a{color:#DB080E;}
 
 
-#life_bottom{width:1000px; margin-top:15px; float:left; display:inline;}
-#life_bottom_left{width:750px; overflow:hidden; float:left; display:inline;}
-#life_bottom_right{width:250px; overflow:hidden; float:right; display:inline;}
+#life_bottom{width:1000px; margin-top:15px;}
+#life_bottom_left{width:750px; overflow:hidden;}
+#life_bottom_right{width:250px; overflow:hidden; float:right;}
 
-.life_caption{width:320px; height:28px; float:left; display:inline;}
-.life_caption .captions{height:18px; margin-top:5px; line-height:18px; font-size:14px; font-weight:bold; float:left; display:inline;}
+.life_caption{width:320px; height:28px;}
+.life_caption .captions{height:18px; margin-top:5px; line-height:18px; font-size:14px; font-weight:bold;}
 .life_caption .captions span{color:#b41014;}
-.life_caption .line{width:1px; height:10px; margin-top:10px; margin-left:10px; font-size:10px; line-height:10px; float:left; display:inline;}
-.life_caption .more{width:38px; height:8px; margin-top:11px; margin-left:15px; background:url(/images/public/more.jpg) no-repeat; float:left; display:inline;}
+.life_caption .line{width:1px; height:10px; margin-top:10px; margin-left:10px; font-size:10px; line-height:10px;}
+.life_caption .more{width:38px; height:8px; margin-top:11px; margin-left:15px; background:url(/images/public/more.jpg) no-repeat; float:left;}
 
-#life_bottom_flash{width:720px; height:175px; margin-top:10px; background:#efefef; float:left; display:inline;}
+#life_bottom_flash{width:720px; height:175px; margin-top:10px; background:#efefef;}
 
-.life_box{width:240px; height:256px; margin-top:25px; overflow:hidden; float:left; display:inline;}
-.life_box #picture{width:210px; height:160px; margin-top:10px; float:left; display:inline;}
-.life_box .title{width:210px; height:20px; margin-top:5px; font-size:14px; font-weight:bold; line-height:20px; overflow:hidden; float:left; display:inline;}
-.life_box .description{width:203px; height:36px; font-size:12px; line-height:18px; overflow:hidden; float:left; display:inline;}
+.life_box{width:240px; height:256px; margin-top:25px; overflow:hidden;}
+.life_box #picture{width:210px; height:160px; margin-top:10px;}
+.life_box .title{width:210px; height:20px; margin-top:5px; font-size:14px; font-weight:bold; line-height:20px; overflow:hidden;}
+.life_box .description{width:203px; height:36px; font-size:12px; line-height:18px; overflow:hidden;}
 
-#life_ml{width:720px; height:247px; margin-top:25px; float:left; display:inline;}
-#life_ml #picture{width:500px; height:200px; margin-top:5px; float:left; display:inline;}
-#life_ml #content{width:220px; height:200px; background:#F2F1F3; margin-top:5px; float:left; display:inline;}
-#life_ml #content_title{width:180px; height:48px; margin-top:8px; margin-left:20px; font-size:16px; font-weight:bold; color:#B41014; line-height:24px; overflow:hidden; float:left; display:inline;}
-#life_ml #content_description{width:180px; height:125px; margin-top:8px; margin-left:20px; font-size:12px; color:#666666; line-height:25px; overflow:hidden; float:left; display:inline;}
+#life_ml{width:720px; height:247px; margin-top:25px;}
+#life_ml #picture{width:500px; height:200px; margin-top:5px;}
+#life_ml #content{width:220px; height:200px; background:#F2F1F3; margin-top:5px;}
+#life_ml #content_title{width:180px; height:48px; margin-top:8px; margin-left:20px; font-size:16px; font-weight:bold; color:#B41014; line-height:24px; overflow:hidden;}
+#life_ml #content_description{width:180px; height:125px; margin-top:8px; margin-left:20px; font-size:12px; color:#666666; line-height:25px; overflow:hidden;}
 
-.life_box2{width:250px; padding-bottom:20px; float:left; display:inline;}
-.life_box2 #picture{width:246px; height:160px; margin-top:10px; padding:1px; border:1px solid #cccccc; float:left; display:inline;}
-.life_box2 .title{width:240px; height:20px; margin-top:5px; font-size:14px; font-weight:bold; line-height:20px; overflow:hidden; float:left; display:inline;}
-.life_box2 #line{width:240px; height:1px; margin-left:2px; margin-top:8px; background-image:url(/images/life/line.jpg); float:left; display:inline;}
-.life_box2 #list{width:230px; height:20px; margin-left:3px; margin-top:8px; padding-left:10px; font-size:14px; line-height:20px; background:url(/images/life/icon1.jpg) no-repeat 0 10px; overflow:hidden;  float:left; display:inline;}
+.life_box2{width:250px; padding-bottom:20px;}
+.life_box2 #picture{width:246px; height:160px; margin-top:10px; padding:1px; border:1px solid #cccccc;}
+.life_box2 .title{width:240px; height:20px; margin-top:5px; font-size:14px; font-weight:bold; line-height:20px; overflow:hidden;}
+.life_box2 #line{width:240px; height:1px; margin-left:2px; margin-top:8px; background-image:url(/images/life/line.jpg);}
+.life_box2 #list{width:230px; height:20px; margin-left:3px; margin-top:8px; padding-left:10px; font-size:14px; line-height:20px; background:url(/images/life/icon1.jpg) no-repeat 0 10px; overflow:hidden; }
 .life_box2 #list a{color:#666666; text-decoration:none;}
