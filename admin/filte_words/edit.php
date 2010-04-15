@@ -29,12 +29,12 @@
 <div id=itable>
 	<table cellspacing="1"  align="center">
 	<form id="user_form" method="post" action="post.php">
-		<tr class=tr3>
-			<td class=td1 width=25%>敏感词：(多个词之间可以用|分割)</td>
-			<td width=75% align="left"><input type="text" name="post[text]" value="<?php echo $table->text;?>" class="required"></td>
+		<tr class=tr4>
+			<td class=td1 width=25%>敏感词(多个词之间可以用|分割)</td>
+			<td width=75%><input type="text" name="post[text]" value="<?php echo $table->text;?>" class="required"></td>
 		</tr>
 		<tr class=btools>
-			<td colspan="10"><button type="submit">提 交</button></td>
+			<td colspan="10"><input type="submit" value="提交"></td>
 		</tr>
 		<input type="hidden" name="id" value="<?php echo $id;?>">
 	</form>
