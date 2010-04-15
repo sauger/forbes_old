@@ -1,5 +1,4 @@
 ﻿<?php 
-	session_start();
 	require_once('../frame.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -12,10 +11,37 @@
 		use_jquery_ui();
 		js_include_tag('select2css','picture_list/index');
 		css_include_tag('jquery-ui','imagesphb','public','right');
+		$db = get_db();
+		$id = intval($_GET['id']);
+		if(empty($id)){
+			alert('非法操作');
+			redirect('/');
+		}
+		$list = new table_class('fb_custom_list_type');
+		$list->find($id);
+		if($list->id <= 0 || $list->list_type != 4){
+			alert('非法操作');
+			redirect('/');
+		}
+		$list_item = new table_class('fb_picture_list_items');
+		$items = $db->query("select name,image,comment from fb_picture_list_items where list_id ={$list->id}");
+		$len = $db->record_count;
+		for($i=0;$i<$len;$i++){
+			$tmp['name'] = $items[$i]->name;
+			$tmp['image'] = $items[$i]->image;
+			$tmp['comment'] = str_replace("\r\n","",$items[$i]->comment);
+			$tmp['comment'] = str_replace("\t","",$tmp['comment']);
+			$litems[] = $tmp;
+		}
 	?>
 </head>
 <body>
-	<div id="debug"></div>
+	<script>
+	var items;
+	$.getJSON('/imagesphb/json.php?id=<?php echo $id;?>',function(data){});
+	alert(items.length);
+	</script>
+	<div id="debug"><?php  echo var_dump($litems);?></div>
 	<div id=ibody>
 	<? require_once('../inc/top.inc.php');?>
 		<div id=cyindex></div>
@@ -33,12 +59,12 @@
 					<span id="speed">播放速度</span>
 				</div>
 				<div id="picture_content">
-					<img id="main_picture" width="355" height="355" src="/upload/2JSbUfRjPD.jpg" />
+					<img id="main_picture" width="355" height="355" src="<?php echo $items[0]->image;?>" />
 				</div>
 				<div id="picture_list">
-					<img width="108" height="108" src="/upload/2JSbUfRjPD.jpg" />
-					<img width="108" height="108" src="/upload/2JSbUfRjPD.jpg" />
-					<img width="108" height="108" src="/upload/2JSbUfRjPD.jpg" />
+					<img width="108" height="108" class="selected" src="<?php echo $items[0]->image;?>" />
+					<img width="108" height="108" src="<?php echo $items[1]->image;?>" />
+					<img width="108" height="108" src="<?php echo $items[2]->image;?>" />
 				</div>
 				
 				<!-- 
