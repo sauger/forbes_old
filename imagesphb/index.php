@@ -15,6 +15,7 @@
 	?>
 </head>
 <body>
+	<div id="debug"></div>
 	<div id=ibody>
 	<? require_once('../inc/top.inc.php');?>
 		<div id=cyindex></div>
@@ -24,9 +25,9 @@
 			<div id=p_flash style="border:1px solid">
 				<div id="control_panel">
 					<div id="btns">
-						<img src="/images/imagephb/prev.jpg" title="上一张" />
-						<img src="/images/imagephb/pause.jpg" title="暂停" />
-						<img src="/images/imagephb/next.jpg" title="下一张" />
+						<img id="btn_prev" src="/images/imagephb/prev.jpg" title="上一张" />
+						<img id="btn_play" src="/images/imagephb/pause.jpg" title="暂停" />
+						<img id="btn_next" src="/images/imagephb/next.jpg" title="下一张" />
 					</div>
 					<div id="slider"></div>
 					<span id="speed">播放速度</span>

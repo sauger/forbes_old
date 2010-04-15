@@ -11,6 +11,7 @@ $(function(){
 	
 	$('#admin_edit_div').live('click',function(){
 		var $this = $(this);
+		alert(1);
 		parent.$.fn.colorbox({
 			href: '/admin/position/edit.php?pos_name=' + $($this).attr('pos_name'),
 			width:'800px',

@@ -27,7 +27,6 @@
 <body>
 	<div id=icaption>
     <div id=title><?php if($id){echo '编辑榜单';}else{echo '添加榜单';}?></div>
-    <!--<span style="cursor:pointer" id="add_attribute" <?php if($record->list_type != 1) echo "style='display:none;'"?> title="添加一列"><img src="/images/btn_add.png" border=0></span>-->
 	  <a href="news_list.php" id=btn_back></a>
 </div>
 	<form id="list_edit" action="edit.post.php" enctype="multipart/form-data"  method="post"> 
@@ -55,6 +54,7 @@
 				<?php if($id){?>
 				<input name="mlist[list_type]" value="<?php echo $record->list_type;?>" type="hidden"></input>
 				<?php }?>
+				<span style="cursor:pointer;margin-left:5px;line-height:30px;" id="add_attribute" <?php if($record->list_type != 1) echo "style='display:none;'"?> title="添加一列"><img src="/images/btn_add.png" border=0></span>
 			</td>
 		</tr>
 		<tr class=tr4>

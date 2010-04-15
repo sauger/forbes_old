@@ -16,6 +16,7 @@
 #picture_content{width:359px; height:359px; border:2px solid #D7D8D7;float:left;margin-left:2px;}
 #picture_list{margin-top:25px;margin-left:10px;float:left;display:inline;}
 #picture_list img{border: 1px solid #D7D8D7;padding:1px;}
+#picture_list img.selected{border:2px groove ; padding:1px;}
 #phb_left #email{width:114px; height:23px; margin-top:20px; margin-right:20px; float:right; display:inline;}
 #phb_left #email #pic{width:40px; height:23px; float:left; display:inline;}
 #phb_left #email #wz{width:73px; height:16px; margin-top:7px; font-weight:bold; line-height:16px; float:left; display:inline;}
