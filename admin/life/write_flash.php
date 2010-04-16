@@ -17,7 +17,7 @@
 			$fcontent .= '</photocaption></item>';
 		}
 		$fcontent .= '</document>';
-		$filename = '../../life/img.xml';
+		$filename = '../../life/flash/flash1.xm';
 		$handle=fopen($filename,"wt");
 		fwrite($handle,$fcontent);
 		fclose($handle);
@@ -34,7 +34,7 @@
 			$fcontent .= '</thumb_image></Image_Information>';
 		}
 		$fcontent .= '</URL>';
-		$filename = '../../life/imglink.xml';
+		$filename = '../../life/flash/flash2.xml';
 		$handle=fopen($filename,"wt");
 		fwrite($handle,$fcontent);
 		fclose($handle);
@@ -48,7 +48,7 @@
 			$fcontent .= "<gg name= \"{$news[$i]->title}\" url=\"{$news[$i]->url}\" target=\"_blank\"/> ";
 		}
 		$fcontent .= '</list> ';
-		$filename = '../../life/data.xml';
+		$filename = '../../life/flash/flash3.xml';
 		$handle=fopen($filename,"wt");
 		fwrite($handle,$fcontent);
 		fclose($handle);
