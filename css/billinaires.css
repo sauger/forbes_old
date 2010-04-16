@@ -5,18 +5,18 @@ li{margin:0; padding:0;}
 div{margin:0; padding:0; float:left; display:inline;}
 
 #ibody{width:1000px; margin:0 auto; float:none; display:block;}
-#cyindex{width:114px; height:19px; cursor:pointer; background-image:url(/images/billinaires/c.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/billinaires_index.png"); margin-top:10px;}
+#cyindex{width:114px; height:19px; cursor:pointer; background:url(/images/billinaires/billinaires_index.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/billinaires_index.png"); margin-top:10px;}
 #cytitle{width:494px; height:16px; margin-top:13px; margin-left:20px; line-height:16px;}
 #cytitle a{color:#246bb0; text-decoration:none;}
 #cyline{width:1000px; height:8px; margin-top:10px; background:url('/images/tyzl/tyzl_line.jpg') no-repeat;}
 #billinaires_left{width:760px; margin-top:10px;}
 #billinaires_head_left{width:3px; height:236px; background:url('/images/billinaires/billinaires_l_t_left.jpg') no-repeat;}
 #billinaires_head{width:754px; height:234px; border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; background:#f8f8f8;}
-#billinaires_head #pic{width:740px; height:217px; margin-top:9px; margin-left:7px; position:relative;}
-#billinaires_head #pic img{width:740px; height:214px; margin-top:1.5px;}
-#billinaires_head #flash{width:215px; height:214px; top:2px; left:525px; background:#000000; filter:alpha(opacity=40); -moz-opacity:0.4; opacity:0.4; position:absolute;}
+#billinaires_head #pic{width:740px; height:214px; margin-top:9px; margin-left:7px; overflow:hidden; position:relative;}
+#billinaires_head #pic img{width:740px; height:214px;}
+#billinaires_head #flash{width:215px; height:214px; left:525px; background:#000000; filter:alpha(opacity=40); -moz-opacity:0.4; opacity:0.4; position:absolute;}
 #billinaires_head #flash_t{width:182px; height:23px; top:20px; left:535px; overflow:hidden; position:absolute;}
-#billinaires_head #flash_t #flash_t_l{width:34px; height:23px; background-image:url(/images/billinaires/jt.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/jt.png");}
+#billinaires_head #flash_t #flash_t_l{width:34px; height:23px; background:url(/images/billinaires/jt.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/jt.png");}
 #billinaires_head #flash_t #flash_t_r{width:126px; height:20px; margin-top:2px; font-family:黑体; font-weight:bold; font-size:16px; float:right;}
 #billinaires_head #flash_t #flash_t_r a{color:#ffffff; text-decoration:none;}
 #billinaires_head #flash_b{width:182px; height:112px; top:60px; left:535px; overflow:hidden; position:absolute;}
@@ -64,13 +64,15 @@ div{margin:0; padding:0; float:left; display:inline;}
 #billinaires_search .search_title a{color:#000000; text-decoration:none;}
 #billinaires_search .search_content_l{width:12px; height:179px; margin-top:10px; background:url('/images/billinaires/l_m_r_b_sx.jpg') no-repeat;}
 #billinaires_search .search_content_r{width:206px; height:179px; text-align:center; margin-top:10px; color:#666666; float:right;}
-#billinaires_search .search_content_r input{width:113px; height:16px;}
-#billinaires_search .search_content_r select{width:113px; height:21px;}
+#billinaires_search .search_content_r_l{width:60px;}
+#billinaires_search .search_content_r_r{width:140px; float:right;}
+#billinaires_search .search_content_r_r input{width:110px; height:16px;}
+#billinaires_search .search_content_r_r select{width:113px; height:21px;}
 #billinaires_search .search_content_r button{width:76px; height:22px; border:0px; cursor:pointer; background:url('/images/billinaires/btn_js.jpg') no-repeat; float:right;}
 #billinaires_search .search_content_r .content{width:208px; height:30px; line-height:30px;}
-#billinaires_search #search_pic1{width:228px; height:113px; margin-top:20px; border:1px solid #cccccc; overflow:hidden;}
+#billinaires_search #search_pic1{width:228px; height:113px; margin-top:18px; border:1px solid #cccccc; overflow:hidden;}
 #billinaires_search #search_pic1 img{width:226px; height:111px; margin:1px;}
-#billinaires_search #search_pic2{width:228px; height:154px; margin-top:20px; border:1px solid #cccccc; overflow:hidden;}
+#billinaires_search #search_pic2{width:228px; height:154px; margin-top:18px; border:1px solid #cccccc; overflow:hidden;}
 #billinaires_search #search_pic2 img{width:226px; height:152px; margin:1px;}
 #billinaires_lists{width:227px; margin-top:10px; float:right;}
 #billinaires_lists_topop{width:225px; height:234px; border:1px solid #dfdfdf;}
@@ -88,29 +90,29 @@ div{margin:0; padding:0; float:left; display:inline;}
 #billinaires_lists_bottom .content1 .pic1 img{width:50px; height:50px; margin:1px;}
 #billinaires_lists_bottom .content1 .piccontent1{width:98px; height:52px; margin-top:9px; margin-left:10px; line-height:14px; overflow:hidden;}
 #billinaires_lists_bottom .content1 .piccontent1 a{color:#999999; text-decoration:none;}
-#billinaires_lists_bottom .content1 .num1{width:24px; height:44px; margin-top:13px; background-image:url(/images/billinaires/1.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/1.png");}
+#billinaires_lists_bottom .content1 .num1{width:24px; height:44px; margin-top:13px; background:url(/images/billinaires/1.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/1.png");}
 #billinaires_lists_bottom .content2{width:223px; height:24px; margin-top:1px; margin-left:1px; background:#eeeeee;}
 #billinaires_lists_bottom .content2 .name{width:52px; height:24px; margin-left:10px; line-height:24px; color:#333333; font-weight:bold;}
 #billinaires_lists_bottom .content2 .zc{width:90px; height:24px; margin-left:18px; line-height:24px; color:#999999;}
-#billinaires_lists_bottom .content2 .num2{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/2.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/2.png");}
-#billinaires_lists_bottom .content2 .num3{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/3.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/3.png");}
-#billinaires_lists_bottom .content2 .num4{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/4.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/4.png");}
-#billinaires_lists_bottom .content2 .num5{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/5.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/5.png");}
-#billinaires_lists_bottom .content2 .num6{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/6.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/6.png");}
-#billinaires_lists_bottom .content2 .num7{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/7.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/7.png");}
-#billinaires_lists_bottom .content2 .num8{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/8.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/8.png");}
-#billinaires_lists_bottom .content2 .num9{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/9.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/9.png");}
-#billinaires_lists_bottom .content2 .num10{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/10.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/10.png");}
-#billinaires_lists_bottom .content2 .num11{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/11.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/11.png");}
-#billinaires_lists_bottom .content2 .num12{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/12.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/12.png");}
-#billinaires_lists_bottom .content2 .num13{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/13.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/13.png");}
-#billinaires_lists_bottom .content2 .num14{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/14.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/14.png");}
-#billinaires_lists_bottom .content2 .num15{width:24px; height:18px; margin-top:3px; background-image:url(/images/billinaires/15.png)!important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/15.png");}
+#billinaires_lists_bottom .content2 .num2{width:24px; height:18px; margin-top:3px; background:url(/images/billinaires/2.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/2.png");}
+#billinaires_lists_bottom .content2 .num3{width:24px; height:18px; margin-top:3px; background:url(/images/billinaires/3.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/3.png");}
+#billinaires_lists_bottom .content2 .num4{width:24px; height:18px; margin-top:3px; background:url(/images/billinaires/4.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/4.png");}
+#billinaires_lists_bottom .content2 .num5{width:24px; height:18px; margin-top:3px; background:url(/images/billinaires/5.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/5.png");}
+#billinaires_lists_bottom .content2 .num6{width:24px; height:18px; margin-top:3px; background:url(/images/billinaires/6.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/6.png");}
+#billinaires_lists_bottom .content2 .num7{width:24px; height:18px; margin-top:3px; background:url(/images/billinaires/7.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/7.png");}
+#billinaires_lists_bottom .content2 .num8{width:24px; height:18px; margin-top:3px; background:url(/images/billinaires/8.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/8.png");}
+#billinaires_lists_bottom .content2 .num9{width:24px; height:18px; margin-top:3px; background:url(/images/billinaires/9.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/9.png");}
+#billinaires_lists_bottom .content2 .num10{width:26px; height:18px; margin-top:3px; background:url(/images/billinaires/10.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/10.png");}
+#billinaires_lists_bottom .content2 .num11{width:26px; height:18px; margin-top:3px; background:url(/images/billinaires/11.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/11.png");}
+#billinaires_lists_bottom .content2 .num12{width:26px; height:18px; margin-top:3px; background:url(/images/billinaires/12.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/12.png");}
+#billinaires_lists_bottom .content2 .num13{width:26px; height:18px; margin-top:3px; background:url(/images/billinaires/13.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/13.png");}
+#billinaires_lists_bottom .content2 .num14{width:26px; height:18px; margin-top:3px; background:url(/images/billinaires/14.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/14.png");}
+#billinaires_lists_bottom .content2 .num15{width:26px; height:18px; margin-top:3px; background:url(/images/billinaires/15.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/15.png");}
 #billinaires_lists_bottom #billinaires_inventory{width:195px; height:22px; margin-top:10px; margin-left:10px;  line-height:22px; font-size:14px; font-weight:bold; }
 #billinaires_lists_bottom #billinaires_inventory select{width:118px; height:22px;}
 #billinaires_lists_bottom #lists{width:195px; margin-top:5px; margin-left:10px; line-height:20px;}
 #billinaires_lists_bottom #lists a{color:#666666;}
-#billinaires_m{width:992px; height:102px; border:1px solid #cccccc;}
+#billinaires_m{width:998px; height:102px; margin-top:10px; border:1px solid #cccccc; overflow:hidden;}
 #billinaires_m img{width:990px; height:100px;}
 #billinaires_report{width:605px;}
 #billinaires_report_title{width:605px; height:18px; margin-top:20px; font-size:14px; color:#7a7a7a; font-weight:bold; line-height:18px;}
@@ -118,7 +120,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 #billinaires_report .content_title{width:290px; height:17px; font-size:13px; line-height:17px; font-weight:bold;} 
 #billinaires_report .content_title a{color:#003295; text-decoration:none;}
 #billinaires_report .content_jz{width:290px; height:16px; margin-top:5px; line-height:16px; color:#999999;}
-#billinaires_report .content_content{width:290px; height:92px; margin-top:15px; line-height:23px; font-size:}
+#billinaires_report .content_content{width:290px; height:92px; margin-top:15px; line-height:23px; overflow:hidden;}
 #billinaires_report .content_content a{color:#666666; text-decoration:none;}
 #billinaires_report_left{width:290px; margin-top:10px;}
 #billinaires_report_right{width:290px; margin-top:10px; float:right;}
