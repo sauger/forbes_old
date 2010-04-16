@@ -6,7 +6,7 @@ if($s_text){
 }
 $db = get_db();
 $table = new table_class('fb_company');
-$record = $table->paginate('all',$conditons); 
+$record = $table->paginate('all',$conditons,'30'); 
 ?>
 <div id=isearch>
 	<input id="s_text" type="text" value="<? echo $_REQUEST['s_text']?>">
