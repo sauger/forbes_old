@@ -49,12 +49,6 @@
 			<td><?php echo $record[$i]->name;?></td>
 			<td><?php echo substr($record[$i]->publish_data,0,10);?></td>
 			<td>
-			<?php if($record[$i]->is_adopt=="1"){?>
-			<span style="cursor:pointer" class="revocation" name="<?php echo $record[$i]->id;?>" title="取消设为最新"><img src="/images/btn_apply.png" border="0"></span>
-			<?php }?>
-			<?php if($record[$i]->is_adopt=="0"){?>
-			<span style="cursor:pointer" class="publish" name="<?php echo $record[$i]->id;?>" title="设为最新"><img src="/images/btn_unapply.png" border="0"></span>
-			<?php }?>
 			<a href="img_list.php?id=<?php echo $record[$i]->id;?>" title="管理图片"><img src="/images/btn_add.png" border="0"></a>
 			<a href="list_edit.php?id=<?php echo $record[$i]->id;?>" title="关联文章"><img src="/images/btn_config2.png" border="0"></a>
 			<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" title="编辑" style="cursor:pointer"><img src="/images/btn_edit.png" border="0"></a>
