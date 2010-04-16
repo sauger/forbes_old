@@ -33,6 +33,7 @@
 					<select name="selsearch" class="iselect">
 						<option>榜单</option>
 						<option>富豪</option>
+						<option>作者</option>
 						<option>文章</option>
 					</select>
 			</div>
