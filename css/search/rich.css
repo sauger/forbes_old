@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+#ibody{width:1000px; margin:0 auto; font-family:宋体; line-height:0; font-size:0; }
+
+#top{margin-top:15px; float:left; display:inline;}
+#top a{color:#626262; text-decoration:none;}
+#title{height:22px; font-size:18px; line-height:22px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
+#title1{height:22px; font-size:12px; line-height:22px; margin-left:19px; float:left; display:inline;}
+#line{width:1000px; height:10px; background-image:url(/images/html/investor/line.jpg); line-height:0; font-size:0; float:left; display:inline;}
+
+#left{width:670px; float:left;}
+
+#left_top{width:660px; height:100px; line-height:30px; font-size:13px; float:left;}
+#left_top input{width:115px; height:18px; margin-top:4px; line-height:18px; border:1px solid #A5ACB2;}
+#left_top select{width:115px; height:23px; margin-top:4px; line-height:17px; border:1px solid #A5ACB2;}
+#left_top .div1{height:30px; width:65px; margin-left:20px; margin-top:10px; font-weight:bolder; color:#666666; float:left;}
+#left_top .div2{width:120px; height:30px; margin-left:5px; margin-top:10px; float:left;}
+#left_top .div3{height:30px; width:50px; margin-left:20px; margin-top:10px; font-weight:bolder; color:#666666; float:left;}
+#left_top #search{width:114px; height:37px; margin-left:90px; margin-top:10px; border:0; background:url('/images/search/button.gif'); float:left; display:inline;}
+
+#info{width:645px; height:30px; margin-left:10px; padding-left:15px; background-color:#F3F3F3; font-weight:bolder; font-size:14px; color:#246BB0; line-height:30px; float:left; display:inline;}
+
+#result{width:660px; line-height:20px; font-size:13px; float:left;}
+#result table{margin:0 auto; margin-top:10px;}
+#result tr{height:40px; background:url('/images/html/news/dash4.gif') repeat-x bottom;}
