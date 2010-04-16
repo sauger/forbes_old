@@ -66,6 +66,23 @@ class category_class
 		return $result;
 	}
 	
+	public function tree_map_name($current_id){
+		$result = array();
+		$result[] = $this->items[$current_id]->name;
+		while(intval($current_id) > 0){
+			$current = $this->find($current_id);
+			if($current->parent_id){
+				$result[] = $this->items[$current->parent_id]->name;
+				$current_id = $current->parent_id;
+			}
+			else{
+				break;
+			}
+
+		}
+		return $result;
+	}
+	
 	public function find_sub_category($parent_id=null){
 		$ret = array();
 		if(empty($parent_id)){

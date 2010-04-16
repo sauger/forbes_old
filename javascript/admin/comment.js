@@ -1,5 +1,5 @@
 function send_search(){
-	window.location.href="?s_text=" + encodeURI($('#s_text').val())+"&type="+$("#commetn_type").val()+"&id="+$("#r_id").val();;
+	window.location.href="?s_text=" + encodeURI($('#s_text').val())+"&type="+$("#comment_type").val()+"&id="+$("#r_id").val();;
 }
 $(function(){
 	$("#search_button").click(function(){
@@ -12,6 +12,16 @@ $(function(){
 			}
 	});
 	
+	$('.unapprove').click(function(){
+		$.post('comment.post.php',{'post_type':'unapprove','id':$(this).attr('name')},function(){
+			location.reload();
+		});
+	});
+	$('.approve').click(function(){
+		$.post('comment.post.php',{'post_type':'approve','id':$(this).attr('name')},function(){
+			location.reload();
+		});
+	});
 	$(".del_comment").click(function(){
 		if(!window.confirm("确定要删除吗"))
 		{
