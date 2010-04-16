@@ -106,14 +106,14 @@ $(function(){
 	
 	
 	$(".up").live('click',function(){
-		$.post('comment.php',{'id':$(this).attr('name'),'type':'up'});
+		$.post('/ajax/comment.php',{'id':$(this).attr('name'),'type':'up'});
 		$(this).attr('class','');
 		$(this).html('已支持(');
 		$(this).next().html(parseInt($(this).next().html())+1);
 	});
 	
 	$(".down").live('click',function(){
-		$.post('comment.php',{'id':$(this).attr('name'),'type':'down'});
+		$.post('/ajax/comment.php',{'id':$(this).attr('name'),'type':'down'});
 		$(this).attr('class','');
 		$(this).html('已反对(');
 		$(this).next().html(parseInt($(this).next().html())+1);
