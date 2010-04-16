@@ -18,26 +18,21 @@
 <div id=ibody>
 		<?php include "../inc/top.inc.php";?>
 		<div id=bread>		
+			<a href="#">活动列表</a>
 		</div>
 		<div id=bread_line></div>
 		
 		<div id=l>
-			<div class=news_caption>
-					<?php $event_count = $db->query("select count(id) as num from fb_event");?>
-					<div class=captions>活动列表<span>共<?php echo $event_count[0]->num;?>篇</span></div>
-			</div>
-			
 			<div id=list_content>
 					<?php
 					$sql = "select * from fb_event order by id desc";
-					$record = $db->paginate($sql,8);
+					$record = $db->paginate($sql,15);
 					$count = count($record);
 					for($i=0;$i<$count;$i++){
 					?>
 					<div class=list_box>
 							<div class=title><a title="<?php echo $record[$i]->title;?>" href="<?php echo $record[$i]->url;?>"><?php echo $record[$i]->title?></a></div>
 							<div class=info>举办地：<?php echo $record[$i]->place;?>　举办时间：<?php echo substr($record[$i]->time,0,10);?></div>
-							<div class=description ><a href="<?php echo $record[$i]->url;?>"><img border=0 src="<?php echo $record[$i]->image; ?>"></a></div>
 					</div>
 					<?php }?>
 					<div id=page><?php paginate();?></div>
