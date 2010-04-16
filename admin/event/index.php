@@ -3,7 +3,7 @@
 	
 	$search = $_REQUEST['search'];
 	$db = get_db();
-	$sql = "select * from fb_activity";
+	$sql = "select * from fb_event";
 	if($search!=''){
 		$sql .= " where title like '%".$search."%'";
 	}
@@ -58,7 +58,7 @@
 			<tr class="btools">
 				<td colspan=10>
 					<?php paginate("",null,"page",true);?>
-					<input type="hidden" id="db_table" value="fb_activity">
+					<input type="hidden" id="db_table" value="fb_event">
 				</td>
 			</tr>
 		</table>	

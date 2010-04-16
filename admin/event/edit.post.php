@@ -12,7 +12,7 @@
     require_once('../../frame.php');
     #var_dump($_POST);
    
-    $activity = new table_class("fb_activity");
+    $activity = new table_class("fb_event");
 	$id = intval($_POST['id']);
     if($id!=''){
    		$activity->find($id);

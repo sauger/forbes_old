@@ -12,7 +12,7 @@
 	$c = array();
 	array_push($c, "language_tag=$language_tag");
 	if($title!= ''){
-		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'");
+		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%' or author like '%{$title}%'");
 	}
 	if($category_id > 0){
 		$cate_ids = implode(',',$category->children_map($category_id));
@@ -69,7 +69,7 @@
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
-			<td width="55%">标题</td><td width="15%">所属类别</td><td width="15%">发布时间</td><td width="15%">操作</td>
+			<td width="40%">标题</td><td width="15%">作者</td><td width="15%">所属类别</td><td width="15%">发布时间</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -77,6 +77,7 @@
 		?>
 		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
+			<td><?php echo $record[$i]->author;?></td>
 			<td><a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php echo $category->find($record[$i]->category_id)->name;?></a></td>
 			<td><?php echo $record[$i]->created_at;?></td>
 			<td>

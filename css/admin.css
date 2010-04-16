@@ -44,7 +44,7 @@ a{text-decoration:none; color:black;}
 #icaption #btn_delete2{width:32px; height:32px; background:url(/images/btn_delete2.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_delete2.png);}
 #icaption #btn_delete3{width:32px; height:32px; background:url(/images/btn_delete3.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_delete3.png);}
 #icaption #btn_import{width:32px; height:32px; background:url(/images/btn_import_b.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_import_b.png);}
-#icaption .btn_generate{height:32px; margin-right:5px; cursor:pointer; line-height:32px; float:right;}
+#icaption .btn_generate{height:32px; margin-right:5px; cursor:pointer; line-height:32px; float:right; display:inline;}
 
 #isearch{width:1004px; height:20px; margin-top:13px; margin-left:10px; text-align:left;}
 #isearch input{float:left;}

@@ -17,7 +17,7 @@
 			$fcontent .= '</photocaption></item>';
 		}
 		$fcontent .= '</document>';
-		$filename = '../../life/flash/flash1.xm';
+		$filename = '../../life/flash/flash1.xml';
 		$handle=fopen($filename,"wt");
 		fwrite($handle,$fcontent);
 		fclose($handle);
