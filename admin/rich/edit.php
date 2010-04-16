@@ -29,11 +29,13 @@
 				<li><a href="#tabs-3">富豪财富管理</a></li>
 			</ul>
 		<div id="tabs-1" style="margin:0px; padding:0px; background:#C8E4F0; border:0;">
+		<div id=icaption>
+		    <div id=title>基本信息管理</div>
+			  <a href="list.php" id=btn_back></a>
+		</div>
+		<div id="itable">
 			<form id="fhgl_edit" enctype="multipart/form-data" action="post.php" method="post"> 
 			<table cellspacing="1"  align="center">
-				<tr class=tr1>
-					<td colspan="2" width="795">　 编辑富豪 <a href="javascript:history.go(-1)"><img src="/images/btn_back.png" border=0></a></td>
-				</tr>
 				<tr class=tr4>
 					<td class=td1 width=15%>姓名</td>
 					<td width=85%><input type="text" name="fh[name]" value="<?php echo $record->name;?>" class="required">
@@ -82,8 +84,13 @@
 				</table>
 			</form>
 		</div>
-		
+		</div>
 		<div id="tabs-2"  style="margin:0px; padding:0px; background:#C8E4F0;">
+		<div id=icaption>
+		    <div id=title>富豪公司管理</div>
+			  <a href="list.php" id=btn_back></a>
+		</div>
+		<div id="itable">
 		<?php 
 		  if(!$id){
 		?>
@@ -97,7 +104,7 @@
 				<td width=55%>公司名称</td><td width=15%>上市代码</td><td width=15%>持股数</td><td width=15%>操作</td>
 			</tr>
 			<?php foreach ($company as $v) {?>
-			<tr class="tr3">
+			<tr class="tr4">
 				<td><?php echo $v->name;?></td>
 				<td><?php echo $v->stock_code?></td>
 				<td><input type="text"  value="<?php echo $v->stock_count;?>"></input></td>
@@ -120,7 +127,13 @@
 		</div>		
 		<?php }?>
 		</div>
+		</div>
 		<div id="tabs-3"  style="margin:0px; padding:0px; background:#C8E4F0;">
+		<div id=icaption>
+		    <div id=title>富豪财富管理</div>
+			  <a href="list.php" id=btn_back></a>
+		</div>
+		<div id="itable">
 			<?php 
 			  if(!$id){
 			?>
@@ -155,6 +168,7 @@
 			<?php
 			}
 			?>
+		</div>
 		</div>
 	</div>
 	

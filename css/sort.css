@@ -18,11 +18,14 @@
 .r_b_l_t{width:266px; height:23px; font-size:15px; font-weight:bold; margin-top:5px; overflow:hidden; float:left; display:inline; }
 #r_b_r{width:385px; height:375px; margin-top:27px; margin-left:15px; background-image:url(/images/html/sort/r_b_r.jpg); float:left; display:inline; }
 
-
-
+#top{margin-top:10px; float:left; display:inline;}
 #title{height:27px; font-size:18px; text-align:left; font-weight:bold; color:#278AC4; font-family:微软雅黑; float:left; display:inline;}
 #title1{height:20px; font-size:12px; line-height:20px; margin-top:6px; margin-left:19px; float:left; display:inline;}
 #line{width:1000px; height:10px; background-image:url(/images/html/news/line.jpg); float:left; display:inline;}
 #text{width:100px; height:20px; float:left; display:inline; }
 #select1{width:200px; height:19px; margin-top:10px; float:right; display:inline; }
 #button{width:46px; height:21px; margin-top:3px; margin-left:10px; background-image:url(/images/html/sort/button.jpg); border:0px; float:left; display:inline; }
+
+#page{width:650px; height:30px; margin-top:20px; margin-left:30px; font-size:14px; line-height:30px; color:#666666; float:left; display:inline;}
+#page a{color:#246BB0; text-decoration:none;}
+.link2{color:#ffffff; text-decoration:none;}

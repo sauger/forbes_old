@@ -82,6 +82,15 @@ ul{list-style:none; padding:0; margin:0;}
 #right_inc #mag_content #ck{width:200px; height:20px; margin-right:10px; line-height:20px; font-size:12px; text-align:right; float:right; display:inline;}
 #right_inc #mag_content #ck a{color:#666666; font-weight:bold;}
 
+#right_inc #forum_box{width:315px; *width:317px; border-left:1px solid #E1E1E1; border-right:1px solid #E1E1E1; float:left; display:inline;}
+#right_inc #forum_box .pic{width:295px; margin-top:10px; overflow:hidden; margin-left:10px; height:125px; float:left; display:inline;}
+#right_inc #forum_box .pic img{width:295px; height:125px;}
+#right_inc #forum_box .pictitle{width:290px; height:20px; margin-top:13px;  margin-left:13px; font-size:13px; line-height:20px; color:#3399CC; font-weight:bold; overflow:hidden; float:left; display:inline;}
+#right_inc #forum_box .pictitle a{color:#003899; text-decoration:none;}
+#right_inc #forum_dash{width:295px; height:1px; margin-top:10px; margin-left:10px; background:url(/images/right/dash4.gif) repeat-x; float:left; display:inline;}
+#right_inc #forum_box .content{width:287px; height:20px; margin-left:20px; font-size:13px; line-height:20px; overflow:hidden; float:left; display:inline;}
+#right_inc #forum_box .content li{width:260px; height:20px; padding-left:14px; line-height:20px; font-size:13px; background:url(/images/right/tar5.gif) no-repeat 0 8px; overflow:hidden;  float:left; display:inline;}
+#right_inc #forum_box .content a{color:#003899; text-decoration:none;}
 
 .column_box{width:300px; height:90px; margin-left:15px; margin-top:20px; float:left; display:inline;}
 .column_box .col_pic{width:60px;  margin-left:3px; margin-top:3px; float:left; display:inline;}

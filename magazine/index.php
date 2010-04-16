@@ -9,8 +9,8 @@
 	<title>福布斯-杂志</title>
 	<?php
 		use_jquery();
-		js_include_tag('select2css');
-		css_include_tag('zz','top','bottom');
+		js_include_tag('public');
+		css_include_tag('zz','public');
 	?>
 </head>
 <body>

@@ -1,25 +1,31 @@
+p{margin:0; padding:0;}
+ul{margin:0; padding:0;}
+li{margin:0; padding:0;} 
+div{margin:0; padding:0; float:left; display:inline;}
+
 #top_{width:1000px; margin:0 auto;}
-#top_banner{width:778px; height:90px; border:1px solid #cccccc; padding:1px; margin-top:8px; float:left; display:inline;}
+#top_banner{width:778px; height:90px; margin-top:8px; padding:1px; border:1px solid #cccccc;}
 
-#top_function{width:215px; height:187px; margin-top:8px; font-size:12px; overflow:hidden; background:url(/images/public/bg_function.png) no-repeat; float:right; display:inline;}
-#top_function .user_btn{width:195px; height:23px; margin-top:1px; margin-left:15px; color:#ffffff; line-height:22px; overflow:hidden; float:left; display:inline;}
-#top_function .user_btn a{font-size:12px; color:#ffffff; text-decoration:none;}
-#top_function #magazine_title{width:180px; height:16px; line-height:16px; margin-top:6px; margin-left:13px; color:#ffffff; font-size:14px; font-weight:bold; float:left; display:inline;}
-#top_function #magazine_pic{width:72px; height:93px; margin-top:14px; margin-left:10px; float:left; display:inline;}
-#top_function #magazine_description{width:122px; height:60px; margin-top:15px; margin-left:5px; color:#666666; line-height:20px; overflow:hidden; float:left; display:inline;}
+#top_function{width:215px; height:187px; margin-top:8px; font-size:12px; overflow:hidden; background:url(/images/public/bg_function.png) no-repeat; float:right;}
+#top_function .user_btn{width:200px; height:23px; margin-top:1px; margin-left:15px; color:#ffffff; line-height:22px; overflow:hidden;}
+#top_function .user_btn a{margin-right:5px; font-size:12px; color:#ffffff; text-decoration:none; }
+#top_function .user_btn #uname_span{width:104px; height:22px; overflow:hidden;}
+#top_function #magazine_title{width:180px; height:16px; line-height:16px; margin-top:6px; margin-left:13px; color:#ffffff; font-size:14px; font-weight:bold;}
+#top_function #magazine_pic{width:72px; height:93px; margin-top:14px; margin-left:10px;}
+#top_function #magazine_description{width:122px; height:60px; margin-top:15px; margin-left:5px; color:#666666; line-height:20px; overflow:hidden;}
 #top_function #magazine_description .font1{color:#333333; font-weight:bold;}
-#top_function #magazine_btn{width:122px; height:23px; margin-top:5px; margin-left:5px; float:left; display:inline;}
+#top_function #magazine_btn{width:122px; height:23px; margin-top:5px; margin-left:5px;}
 
-#top_logo{width:785px; height:90px; margin-top:3px; background:url(/images/public/bg1.jpg) repeat-x; float:left; display:inline;}
-#top_logo #border{width:2px; height:90px; background:url(/images/public/border.jpg) no-repeat; float:left; display:inline;}
-#top_logo #logo{width:170px; height:75px; margin-top:7px; margin-left:15px; background:url(/images/forbes_logo.png) no-repeat; float:left; display:inline;}
-#top_logo .input{width:160px; height:22px; border:1px solid #99CCFF; margin-top:37px; float:left; display:inline;}
-#top_logo .search{width:83px; height:26px; margin-top:38px; margin-left:5px; border:0px; color:#ffffff; line-height:26px; background:url(/images/public/search_bg.jpg) no-repeat; float:left; display:inline;}
+#top_logo{width:785px; height:90px; margin-top:3px; background:url(/images/public/bg1.jpg) repeat-x;}
+#top_logo #border{width:2px; height:90px; background:url(/images/public/border.jpg) no-repeat;}
+#top_logo #logo{width:170px; height:75px; margin-top:7px; margin-left:15px; background:url(/images/forbes_logo.png) no-repeat;}
+#top_logo .input{width:160px; height:22px;  margin-top:37px; border:1px solid #99CCFF; float:left;}
+#top_logo .search{width:83px; height:26px; margin-top:38px; margin-left:5px; border:0px; color:#ffffff; line-height:26px; background:url(/images/public/search_bg.jpg) no-repeat;}
 
-#navigation{width:1000px; height:45px; margin-top:1px; background:url(/images/public/bg2.jpg) repeat-x; float:left; display:inline;}
-#navigation .menu{width:75px; height:45px; text-align:center; overflow:hidden; float:left; display:inline;}
+#navigation{width:1000px; height:45px; margin-top:1px; background:url(/images/public/bg2.jpg) repeat-x;}
+#navigation .menu{width:75px; height:45px; text-align:center; overflow:hidden;}
 
-#navigation .vertical{width:2px; height:25px; margin-top:5px; background:url(/images/public/vertical.jpg); float:left; display:inline;}
+#navigation .vertical{width:2px; height:25px; margin-top:5px; background:url(/images/public/vertical.jpg);}
 #navigation .nav{width:75px; height:35px; cursor:pointer;  background:none; margin:0 auto; margin-top:3px;}
 
 #navigation .menu #picindex{background:url(/images/public/m_index.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/m_index.png);}
@@ -33,40 +39,47 @@
 #navigation .menu #piclife{background:url(/images/public/m_life.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/m_life.png);}
 #navigation .menu #piccolumn{background:url(/images/public/m_column.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/public/m_column.png);}
 
-#navigation #top_function2{width:214px; height:29px; margin-top:5px; background:url(/images/public/bg3.jpg) no-repeat; background-position:bottom; float:right; display:inline;}
-#navigation #member{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background:url(/images/public/member.png) no-repeat; float:left; display:inline;}
-#navigation #magazine{width:52px; height:12px; margin-top:12px; margin-right:10px; cursor:pointer; background:url(/images/public/magazine.png); float:right; display:inline;}
+#navigation #top_function2{width:214px; height:29px; margin-top:5px; background:url(/images/public/bg3.jpg) no-repeat; background-position:bottom; float:right;}
+#navigation #member{width:52px; height:12px; margin-top:12px; margin-left:40px; cursor:pointer; background:url(/images/public/member.png) no-repeat;}
+#navigation #magazine{width:52px; height:12px; margin-top:12px; margin-right:10px; cursor:pointer; background:url(/images/public/magazine.png); float:right;}
 
-#navigation2{width:1000px; height:27px; background:#C1E1EE; float:left; display:inline;}
-#navigation2 .nav2{width:940px; height:27px; font-size:12px; margin-left:30px; line-height:27px; float:left; display:none;}
+#navigation2{width:1000px; height:27px; background:#C1E1EE;}
+#navigation2 .nav2{width:940px; height:27px; font-size:12px; margin-left:30px; line-height:27px; display:none;}
 #navigation2 .nav2 a{color:#000000; text-decoration:underline;}
 #navigation2 .nav2 a:hover{color:#0000CC;}
 
-.forbes_search{width:102px; height:28px; font-size:12px; background:url(/images/public/tm2008-select.gif) no-repeat 0 0; margin-top:36px; margin-left:73px; overflow:hidden; float:left; display:inline;}
-.forbes_search .iselect{width:102px; height:28px;  float:left; display:inline;}
+.forbes_search{width:102px; height:28px; font-size:12px; background:url(/images/public/tm2008-select.gif) no-repeat 0 0; margin-top:36px; margin-left:73px; overflow:hidden;}
+.forbes_search .iselect{width:102px; height:28px;}
 
-.forbes_search div.tag_select{display:block;color:#000;width:82px;height:27px;background:transparent url(/images/public/tm2008-select.gif) no-repeat 0 0;padding:0 10px;line-height:26px;}
-.forbes_search div.tag_select_hover{display:block;color:#000;width:82px;height:28px;background:transparent url(/images/public/tm2008-select.gif) no-repeat 0 -28px;padding:0 10px;line-height:28px;}
-.forbes_search div.tag_select_open{display:block;color:#000;width:82px;height:27px;background:transparent url(/images/public/tm2008-select.gif) no-repeat 0 -56px;padding:0 10px;line-height:26px;}
+.forbes_search div.tag_select{width:82px; height:27px; padding:0 10px; color:#000; line-height:26px; background:url(/images/public/tm2008-select.gif) no-repeat 0 0;  display:block;}
+.forbes_search div.tag_select_hover{width:82px; height:28px;  padding:0 10px; color:#000; line-height:28px; background:url(/images/public/tm2008-select.gif) no-repeat 0 -28px;  display:block;}
+.forbes_search div.tag_select_open{width:82px; height:27px; padding:0 10px; color:#000; line-height:26px; background:url(/images/public/tm2008-select.gif) no-repeat 0 -56px;  float:none; display:block;}
 
-.forbes_search ul.tag_options{position:absolute;margin:0;list-style:none;background:transparent url(/images/public/tm2008-select.gif) no-repeat left bottom;width:100px;padding:0 0 1px;margin:0;width:80px;}
-.forbes_search ul.tag_options li{background:transparent url(/images/index/tm2008-select.gif) repeat-y -102px 0;display:block;width:61px;padding:0 10px;height:26px;text-decoration:none;line-height:26px;color:#000;}
+.forbes_search ul.tag_options{width:80px; margin:0; padding:0 0 1px; list-style:none; background:url(/images/public/tm2008-select.gif) no-repeat left bottom; position:absolute;}
+.forbes_search ul.tag_options li{width:61px; height:26px; padding:0 10px; color:#000; line-height:26px; text-decoration:none;  background:url(/images/index/tm2008-select.gif) repeat-y -102px 0; float:none; display:block;}
 
-.forbes_search ul.tag_options li.open_hover{background:transparent url(/images/public/tm2008-select.gif) no-repeat 0 -113px;color:#000}
-.forbes_search ul.tag_options li.open_selected{background:transparent url(/images/public/tm2008-select.gif) no-repeat 0 -84px;color:#19555F}
+.forbes_search ul.tag_options li.open_hover{color:#000; background:url(/images/public/tm2008-select.gif) no-repeat 0 -113px;}
+.forbes_search ul.tag_options li.open_selected{color:#19555F; background:url(/images/public/tm2008-select.gif) no-repeat 0 -84px;}
 
-#ibottom{width:1000px; height:184px; margin-top:20px; font-size:12px;  background:url('/images/public/bottom_bg.jpg') repeat-x; float:left; display:inline;}
+#ibottom{width:1000px; height:184px; margin-top:20px; font-size:12px;  background:url(/images/public/bottom_bg.jpg) repeat-x;}
 #ibottom a{color:#ffffff; text-decoration:none;}
-#ibottom .b_v{width:2px; height:133px; margin-top:5px; background:url('/images/public/bottom_vertical.jpg') no-repeat; filter: Alpha(Opacity=50); float:left; display:inline;}
-#ibottom #b_top{width:1000px; height:138px; margin-top:5px; overflow:hidden; float:left; display:inline;}
-#ibottom .td1{width:74px; height:138px; margin-left:8px; line-height:20px;  text-align:left; overflow:hidden; float:left; display:inline;}
-#ibottom .td2{width:115px; height:138px; margin-left:5px; line-height:20px; text-align:left; overflow:hidden; float:left; display:inline;}
-#ibottom #td5{width:1000px; height:30px; margin-top:5px; line-height:30px; text-align:center; color:#ffffff; float:left; display:inline;}
-.ibabout{width:1000px; height:48px; margin-top:20px; margin-bottom:10px; line-height:16px; font-size:12px; text-align:center; overflow:hidden; float:left; display:inline;}
+#ibottom .b_v{width:2px; height:133px; margin-top:5px; background:url(/images/public/bottom_vertical.jpg) no-repeat; filter: Alpha(Opacity=50);}
+#ibottom #b_top{width:1000px; height:138px; margin-top:5px; overflow:hidden;}
+#ibottom .td1{width:74px; height:138px; margin-left:8px; line-height:20px;  text-align:left; overflow:hidden;}
+#ibottom .td2{width:115px; height:138px; margin-left:5px; line-height:20px; text-align:left; overflow:hidden;}
+#ibottom #td5{width:1000px; height:30px; margin-top:5px; line-height:30px; text-align:center; color:#ffffff;}
+.ibabout{width:1000px; height:48px; margin-top:20px; margin-bottom:10px; line-height:16px; font-size:12px; text-align:center; overflow:hidden;}
 
-.public_top1{width:300px; height:30px; background:url(/images/public/bg_top1.jpg) no-repeat; float:left; display:inline;}
-.public_bottom1{width:300px; height:10px;  background:url(/images/public/bg_bottom1.jpg) no-repeat; float:left; display:inline;}
-.public_caption1{height:20px;  margin-left:15px; margin-top:8px; font-size:14px; font-weight:bold; color:#999999; float:left; display:inline;}
+.public_top1{width:300px; height:30px; background:url(/images/public/bg_top1.jpg) no-repeat;}
+.public_bottom1{width:300px; height:10px;  background:url(/images/public/bg_bottom1.jpg) no-repeat;}
+.public_caption1{height:20px;  margin-left:15px; margin-top:8px; font-size:14px; font-weight:bold; color:#999999;}
 .public_caption1 span{margin-left:10px; font-family:arial; font-weight:normal; font-size:11px;}
-.public_more1{width:18px; height:8px; margin-top:11px; margin-right:10px; background:url(/images/public/public_more1.jpg) no-repeat; line-height:18px; float:right; display:inline;}
-.public_box1{width:298px;  border-left:1px solid #dfdfdf;  border-right:1px solid #dfdfdf; line-height:20px; overflow:hidden; float:left; display:inline;}
+.public_more1{width:18px; height:8px; margin-top:11px; margin-right:10px; background:url(/images/public/public_more1.jpg) no-repeat; line-height:18px; float:right;}
+.public_box1{width:298px;  border-left:1px solid #dfdfdf;  border-right:1px solid #dfdfdf; line-height:20px; overflow:hidden;}
+
+.page_span{height:15px; padding-left:7px; padding-right:7px; font-family:Arial; margin:0; font-size:13px; line-height:15px; border-right:1px solid #666666;}
+.page_span a{color:#003399; text-decoration:none;}
+.page_span2{height:15px; padding-left:7px; padding-right:7px; font-family:Arial; margin:0; font-weight:bolder; font-size:13px; line-height:15px; border-right:1px solid #666666;}
+.page_span2 a{color:#000; text-decoration:none;}
+.paginate_botton{height:16px; color:#666666; font-family:Arial; margin-left:12px; font-size:13px; line-height:16px;}
+.paginate_botton a{color:#003399; text-decoration:none;}

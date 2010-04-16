@@ -7,45 +7,22 @@
 		css_include_tag('jquery_ui');
 		//$db = get_db();
 		//var_dump($db->execute($script));
-		var_dump($_POST);				
 		?>
 	</head>
 	<body>
-		<?php 
-		$c = new category_class('news');
-	?>
-		<form method="post" action="test.php" enctype="multipart/form-data" >
-		
-			<input id="auto" type="text"></input>
-			<select multiple="multiple" name="select">
-				<option value="a">a</option>
-				<option value="b">b</option>
-			</select>
-			<input type="file" name="item[picture]">
-			<input type="file" name="item[image]">
-			<input type="submit" value="send"></input>		
-		</form>
-		<div id="autocomplete"></div>
-		<a class="test" href="#">test</a>
-		<div style="height:600px;">dsfads</div>
-		<a class="test" href="#">test</a>
-		<iframe src="/test1.php" width="1000" height="1000"></iframe>
+		<div id="debug"></div>
+		<div id="hover" style="width:100px; height:100px;background-color:red;"></div>
 	</body>
 </html>
 
 <script>
-	//$('#editor').val('ok');	
+	//$('#editor').val('ok');
+	var i =0;	
 	$(function(){
-		var tags = ['php','asp','jsp'];
-		$('#auto').autocomplete({source:'sauger.php'});
-		function show(){
-			$window = $(window);
-			var str = new Array();
-			 str.push('windowheith=' + $window.height());
-			str.push('scrolltop=' + $window.scrollTop());
-			alert(str); 
-			
-		}
+		$('#hover').hover(function(){
+			i = i + 1;
+			$('#debug').html(i);
+		});
 	});
 </script>
 
