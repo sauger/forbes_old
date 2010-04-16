@@ -53,14 +53,7 @@
 			include '_comment.php';
 		}
 	?>
-	<div class="div_box">
-		<table width="795" border="0">
-			<tr colspan="5" class=tr3>
-				<td><?php paginate();?></td>
-			</tr>
-		</table>
-	</div>
-		<input type="hidden" id="db_talbe" value="fb_comment">
+		<input type="hidden" id="db_table" value="fb_comment">
 		<input type="hidden" id="id" value="<?php echo $record[0]->id;?>">
 		<input type="hidden" id="r_id" value="<?php echo $id;?>">
 	</div>
