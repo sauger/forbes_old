@@ -1,19 +1,17 @@
+function send_search(){
+	window.location.href="?s_text=" + encodeURI($('#s_text').val())+"&type="+$("#r_type").val()+"&id="+$("#r_id").val();;
+}
 $(function(){
-	$("#search").click(function(){
-				window.location.href="?key1="+$("#user_name").attr('value')+"&key2="+$("#comment").attr('value')+"&type="+$("#r_type").val()+"&id="+$("#r_id").val();
+	$("#search_button").click(function(){
+		send_search();
 	});
 	
-	$("#user_name").keypress(function(event){
+	$("#s_text").keypress(function(event){
 			if(event.keyCode==13){
-				window.location.href="?key1="+$("#user_name").attr('value')+"&key2="+$("#comment").attr('value')+"&type="+$("#r_type").val()+"&id="+$("#r_id").val();
+				send_search();
 			}
 	});
 	
-	$("#comment").keypress(function(event){
-			if(event.keyCode==13){
-				window.location.href="?key1="+$("#user_name").attr('value')+"&key2="+$("#comment").attr('value')+"&type="+$("#r_type").val()+"&id="+$("#r_id").val();
-			}
-	});
 	$(".del_comment").click(function(){
 		if(!window.confirm("确定要删除吗"))
 		{
