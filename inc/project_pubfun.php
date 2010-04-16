@@ -39,7 +39,7 @@ function get_news_by_pos($pos,$page='') {
 			$sql = "select n.* from fb_position_relation f join fb_magazine n on f.news_id=n.id where f.position_id={$record[0]->id} and f.type='magazine' order by f.priority limit {$record[0]->position_limit}";
 			break;
 		case 'activity':
-			$sql = "select n.* from fb_position_relation f join fb_activity n on f.news_id=n.id where f.position_id={$record[0]->id} and f.type='activity' order by f.priority limit {$record[0]->position_limit}";
+			$sql = "select n.* from fb_position_relation f join fb_event n on f.news_id=n.id where f.position_id={$record[0]->id} and f.type='activity' order by f.priority limit {$record[0]->position_limit}";
 			break;
 		default:
 			return false;
