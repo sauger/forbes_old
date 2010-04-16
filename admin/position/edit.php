@@ -39,7 +39,7 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1>静态链接</td>
-			<td><input type="text" name="pos[href]" value="<?php echo $pos->static_href;?>"></input></td>
+			<td><input type="text" name="pos[static_href]" value="<?php echo $pos->static_href;?>"></input></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>图片一</td>

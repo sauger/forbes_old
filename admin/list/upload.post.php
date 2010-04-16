@@ -34,6 +34,8 @@
 	$success = 0;
 	$fail = 0;
 	$fail_info = array();
+
+	
 	if($table_name=='fb_rich_list_items'||$table_name=='fb_famous_list_items'){
 		if($table_name=='fb_rich_list_items'){
 			$list_name = "fb_rich";
@@ -98,6 +100,24 @@
 			}
 		}
 	}else{
+		
+		for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
+			$company = new table_class($table_name);
+			foreach($_POST as $k => $v){
+				$company->$k = addslashes($data->sheets[0]['cells'][$i][$v]);
+			}
+			if($company->save()){
+				$success++;
+			}else{
+				$fail++;
+				$str = "";
+				foreach($company->fields as $key => $val){
+					$str .= $val->value ." ";
+				}
+				array_push($fail_info,$str);
+			}
+		}
+		/*
 		$table_fields = $db->query("show full fields FROM $table_name");
 		for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 			$name = array();
@@ -132,8 +152,9 @@
 				$fail++;
 			}
 		}
+		*/
 	}
-	
+
 	
 	
 	$count = $data->sheets[0]['numRows']-1;

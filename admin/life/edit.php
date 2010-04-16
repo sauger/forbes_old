@@ -1,15 +1,12 @@
-<?php
+﻿<?php
 	require_once('../../frame.php');
 	judge_role();
 	$id = $_REQUEST['id'];
+	$type=$_REQUEST['type'];
 	if($id!='')	{
-		$image = new table_class($tb_images);
+		$image = new table_class('fb_life_flash');
 		$image->find($id);
-		$category_id = $image->category_id;
-	}else{
-		$category_id = -1;
 	}
-	
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -31,8 +28,8 @@
 ?>
 <body>
 <div id=icaption>
-    <div id=title>发布图片</div>
-	  <a href="image_list.php" id=btn_back></a>
+    <div id=title><? if($id){if($type<>"news"){echo "编辑图片";}else{ echo "编辑新闻";}}else{if($type<>"news"){echo "添加图片";}else{ echo "添加新闻";}} ?></div>
+	  <a href="list.php?type=<?php echo $type; ?>" id=btn_back></a>
 </div>	
 	
 <div id=itable>
@@ -40,40 +37,29 @@
 	<form id="picture_edit" enctype="multipart/form-data" action="image.post.php" method="post"> 
 		<tr class=tr4>
 			<td width="15%" class=td1>标　题</td>
-			<td width="85%"><input id="pic_title" type="text" name="image[title]" value="<?php echo $image->title;?>"></td>
+			<td width="85%"><input id="title" type="text" name="image[title]" value="<?php echo $image->title;?>"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>优先级</td>
 			<td><input type="text" size="10" id="priority" name="image[priority]" value="<?php if($image->priority!=100){echo $image->priority;}?>">(1-100)</td>
 		</tr>
 		<tr class=tr4>
-			<td class=td1>关键词</td>
-			<td><input type="text" size="50" name="image[keywords]" value="<?php echo $image->keywords;?>">(请用空格或者","分隔开关键词,比如:高考 升学)</td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1>分　类</td>
-			<td><span id="span_category"></span></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1>图片链接</td>
+			<td class=td1><?php if($type<>"news"){ ?>图片<?php } ?>链接</td>
 			<td><input type="text" size="50" name="image[url]" id="online" value="<?php echo $image->url;?>"></td>
 		</tr>
+		<?php if($type<>"news"){ ?>
 		<tr class=tr4>
 			<td class=td1>选择图片</td>
 			<td><input type="hidden" name="MAX_FILE_SIZE1" value="2097152"><input name="image[src]" id="upfile" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src!=''){?><a href="<?php echo $image->src;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
+		</tr><tr class=tr4>
+			<td class=td1>缩略图</td>
+			<td><input type="hidden" name="MAX_FILE_SIZE2" value="2097152"><input name="image[src2]" id="upfile" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src2!=''){?><a href="<?php echo $image->src2;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
 		</tr>
-		<tr class=tr4>
-			<td class=td1>选择缩略图片</td>
-			<td><input name="image[src2]" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)<?php if($image->src2!=''){?><a href="<?php echo $image->src2;?>" target="_blank" style="color:#0000FF">点击查看图片</a><?php } ?></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1>简短描述</td>
-			<td><textarea cols="80" rows="8" name="image[description]" class="required" ><?php echo $image->description;?></textarea></td>
-		</tr>
+		<?php } ?>
 		<tr class="btools">
 			<td colspan="10">
-				<input id="submit" type="submit" value="发布图片">
-				<input type="hidden" name="image[category_id]" id="category_id" value="<?php echo $image->category_id;?>">
+				<input id="submit" type="submit" value="发布">
+				<input type="hidden" name="image[type]" id="type" value="<?php echo $type;?>">
 				<input type="hidden" id="id" name="id" value="<?php echo $id;?>">
 				<input type="hidden" name="image[is_adopt]" value="1">
 			</td>
@@ -86,26 +72,14 @@
 
 <script>
 	$(function(){
-		category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){			
-		});
 		
 		$("#submit").click(function(){
-<<<<<<< HEAD
 			var title = $(input "#title").val();
-=======
-			var title = $("#pic_title").val();
->>>>>>> 6aee8f0c917f722cf7820659e90fefc2d91bacf9
 			if(title==""){
 				alert("请输入标题！");
 				return false;
 			}
-			
-			category_id = $('.category_select:last').attr('value');
-			if(category_id == -1){
-				alert('请选择分类!');
-				return false;
-			}
-			$('#category_id').attr('value',category_id);
+		
 			
 			if($("#upfile").val()!=''){
 				var upfile1 = $("#upfile").val();
@@ -119,10 +93,6 @@
 					alert("请上传一个图片!");
 					return false;
 				}
-			}
-			if($("#description").val()==''){
-				alert('请输入简短描述！');
-				return false;
 			}
 		}); 
 	})

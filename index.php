@@ -260,16 +260,16 @@
 			 	<div class=list1 >
 					<div class=list1_title <?php show_page_pos("index_invest0")?>><a href="<?php echo $pos_items->index_invest0->href;?>"><?php echo $pos_items->index_invest0->display;?></a></div>
 					<div class=list1_description2>
-						<a class=list1_pic href="<?php echo $pos_items->index_invest0->href;?>"><img border=0 width=70 height=70 src="<?php echo $pos_items->index_invest0->image1;?>"></a><p style="width:10px; height:51px; float:left; display:inline;"></p><?php show_page_desc($pos_items,'index_invest0');?></a>
+						<a class=list1_pic href="<?php echo $pos_items->index_invest0->href;?>"><img border=0 width=70 height=70 src="<?php echo $pos_items->index_invest0->image1;?>"></a><p style="width:10px; height:51px; float:left;"></p><?php show_page_desc($pos_items,'index_invest0');?></a>
 					</div>
 					<?php for($i=1;$i<=5;$i++){ $pos_name = "index_invest".$i;?>
 						<div class=list2 style="margin-left:3px;" <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name);?></div>
 					<?php } ?>
 				</div>
 			</div>	
-			<div class=dashed style="height:10px;"></div>
+			<div class=dashed style="height:15px;"></div>
 
-	  		<div class=caption>
+	  	<div class=caption>
 				<div class=captions>生活<span>Life</span></div>
 				<div class=line>|</div>
 				<a href="/life/" class=more></a>
@@ -289,7 +289,7 @@
 		</div>
 		
 		
-		<div id=forbes_r>
+		<div class=forbes_r>
 			<div id=dictionary>
 				<div id=dictionary_t>
 					<div id=dictionary_tl <?php show_page_pos("index_dict0");?>><a  href="<?php echo $pos_items->index_dict0->href;?>"><?php echo $pos_items->index_dict0->display;?></a></div>

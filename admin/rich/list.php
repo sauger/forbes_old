@@ -20,7 +20,7 @@
 	if($content){
 		$sql .= " where name like '%{$content}%'";
 	}
-	$sql .= " order by name asc";
+	$sql .= " order by id asc";
 
   $record = $db->paginate($sql,30);
 
@@ -63,7 +63,8 @@
 						if(!$record[$i]->birthday){
 							echo "未知";
 						}else{
-							echo intval(date('Y')) - $record[$i]->birthday;	
+							$age =  intval(date('Y')) - $record[$i]->birthday;
+							echo $age > 100 ? "未知" : $age;	
 						}
 						?>
 					</td>

@@ -15,7 +15,7 @@
 <?php
 	$db = get_db();
 	$id = $_REQUEST['id'];
-	$record = new table_class('fb_activity');
+	$record = new table_class('fb_event');
 	if(isset($_REQUEST['id']))
 	{
 		$record->find($id);

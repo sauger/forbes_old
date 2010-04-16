@@ -71,24 +71,13 @@
 
 					<div class=info_keywords>
 					<?php 
-							$keywords = explode(' ',$news->keywords);
-							$keywords2 = explode('　',$news->keywords);
-							if(count($keywords)>count($keywords2)){
+							$keywords = explode('||',$news->keywords);
 								for($i=0;$i<count($keywords);$i++){
-									if($i!=0&&$keywords[$i]!='')echo '、';
+									if (empty($keywords[$i])) continue;
+									$out[]="<a href=\"news_list.php?keyword=" .urlencode($keywords[$i])."\">{$keywords[$i]}</a>";
+								}
+							echo implode('、',$out);
 					?>
-						<a href="news_list.php?keyword=<?php echo urlencode($keywords[$i]);?>"><?php echo $keywords[$i];?></a>
-						<?php
-								}
-							}else{
-								for($i=0;$i<count($keywords2);$i++){
-									if($i!=0&&$keywords2[$i]!='')echo '、';
-						?>
-						<a href="news_list.php?keyword=<?php echo urlencode($keywords2[$i]);?>"><?php echo $keywords2[$i];?></a>
-						<?php
-									}
-								}
-						?>	
 						</div>
 						<div id=info_keywords_bottom>
 							<div class=info_title>文章的关键字</div>

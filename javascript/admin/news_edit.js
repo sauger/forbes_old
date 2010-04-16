@@ -131,7 +131,7 @@ $(function(){
 		$('#sel_keywords option').each(function(){
 			keywords.push($(this).val());
 		});
-		$('#news_keywords').val(keywords.join(' '));
+		$('#news_keywords').val(keywords.join('||'));
 		if($('#news_keywords').val()==''){
 			alert("请输入关键字!");
 			return false;
