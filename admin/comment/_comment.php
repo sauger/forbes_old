@@ -1,6 +1,6 @@
 <table cellspacing="1">
 		<tr class="itable_title">
-			<td width="15%">留言人</td><td width="10%">IP</td><td>新闻类别</td><td width="30%">留言内容</td><td width="15%">留言时间</td><td width="20%">操作</td>
+			<td width="8%">留言人</td><td width="10%">IP</td><td width="15%">标题</td><td width="%10">新闻类别</td><td width="45%">留言内容</td><td width="12%">留言时间</td><td width="5%">操作</td>
 		</tr>
 		<?php
 			$comment = new table_class("fb_comment");
