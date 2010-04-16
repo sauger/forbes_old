@@ -2,7 +2,16 @@
  * @author loong
  */
 $(function(){
-	$('#div_tab').tabs({selected:0});
+	
+	$('.rich_btn').click(function(){
+		$('.rich_btn').css("color","#cccccc");
+		$(this).css("color","#0B55C4");
+		var tabs=$(this).attr("id");
+		$('.tabs').hide();
+		$('#tabs'+tabs).show();
+	});
+	
+	
 	$('.a_delete').live('click',function(e){
 		e.preventDefault();
 		var ob = $(this);
@@ -30,7 +39,7 @@ $(function(){
 		return false;
 	});
 	$('.add_compay_info').live('click',function(){
-		var str = '<tr class="tr4"><td>' + $(this).parent().parent().find('td:eq(0)').html()+'</td>'
+		var str = '<tr class="tr3"><td>' + $(this).parent().parent().find('td:eq(0)').html()+'</td>'
 				+ '<td>' + $(this).parent().parent().find('td:eq(1)').html()+'</td>'
 				+ '<td><input type="text"  value="0"></input></td>'
 				+ '<td>	<a href="#" class="a_delete"><img src="/images/btn_delete.png" border="0"></a>'
