@@ -5,7 +5,7 @@ li{margin:0; padding:0;}
 div{margin:0; padding:0; float:left; display:inline;}
 
 #ibody{width:1000px; margin:0 auto; float:none; display:block;}
-#cyindex{width:114px; height:19px; cursor:pointer; background:url(/images/billinaires/c.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/billinaires_index.png"); margin-top:10px;}
+#cyindex{width:114px; height:19px; cursor:pointer; background:url(/images/billinaires/billinaires_index.png) no-repeat !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src="/images/billinaires/billinaires_index.png"); margin-top:10px;}
 #cytitle{width:494px; height:16px; margin-top:13px; margin-left:20px; line-height:16px;}
 #cytitle a{color:#246bb0; text-decoration:none;}
 #cyline{width:1000px; height:8px; margin-top:10px; background:url('/images/tyzl/tyzl_line.jpg') no-repeat;}
