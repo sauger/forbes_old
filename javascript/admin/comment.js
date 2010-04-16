@@ -12,6 +12,13 @@ $(function(){
 			}
 	});
 	
+	$('.colorbox').click(function(e){
+		e.preventDefault();
+		$.fn.colorbox({
+			html:'<div style="width:600px;height:400px;padding:5px;">' +$(this).next().val() + '</div>',
+		});
+	});
+	
 	$('.unapprove').click(function(){
 		$.post('comment.post.php',{'post_type':'unapprove','id':$(this).attr('name')},function(){
 			location.reload();

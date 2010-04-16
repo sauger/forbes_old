@@ -23,9 +23,9 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>福布斯中文网</title>
 	<?php
-		css_include_tag('admin');
+		css_include_tag('admin','colorbox');
 		use_jquery();
-		js_include_tag('admin_pub','admin/comment');
+		js_include_tag('admin_pub','admin/comment','jquery.colorbox-min');
 	?>
 	<style type="text/css">
 	</style>

@@ -15,7 +15,10 @@
 					<td><?php echo $record[$i]->ip;?></td>
 					<td><?php echo $record[$i]->title;?></td>		
 					<td><?php echo $record[$i]->magzine_number;?></td>
-					<td><?php echo $record[$i]->comment;?></td>
+					<td>
+						<a href="#" class="colorbox" style="color:blue;"><?php echo mb_substr($record[$i]->comment,0,50,'utf-8');?></a>
+						<input type="hidden" id="hidden_comment" value="<?php echo $record[$i]->comment;?>" />
+					</td>
 					<td><?php echo $record[$i]->created_at;?></td>
 					<td>
 						<?php
