@@ -51,12 +51,10 @@
 				<input type="text"  name="post[url]" value="<?php echo $record->url;?>">
 			</td>
 		</tr>
-		<!--
 		<tr class=tr4>
 			<td class=td1>封面图片</td>
 			<td><input type="file" name="post[image]"></input><?php if($record->image){?> <a href="<?php echo $record->image;?>" title="封面图片" target="_blank" class="colorbox">查看</a><?php }?></td>
 		</tr>
-		-->
 		<tr class="btools">
 			<td colspan="10">
 				<input id="submit" type="submit" value="完成">	

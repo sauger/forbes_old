@@ -44,7 +44,7 @@ a{text-decoration:none; color:black;}
 #icaption #btn_delete2{width:32px; height:32px; background:url(/images/btn_delete2.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_delete2.png);}
 #icaption #btn_delete3{width:32px; height:32px; background:url(/images/btn_delete3.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_delete3.png);}
 #icaption #btn_import{width:32px; height:32px; background:url(/images/btn_import_b.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_import_b.png);}
-#icaption .btn_generate{height:32px; margin-right:5px; cursor:pointer; line-height:32px; float:right; display:inline;}
+#icaption .btn_generate{height:32px; margin-right:5px; cursor:pointer; line-height:32px; float:right;}
 
 #isearch{width:1004px; height:20px; margin-top:13px; margin-left:10px; text-align:left;}
 #isearch input{float:left;}
@@ -53,7 +53,7 @@ a{text-decoration:none; color:black;}
 
 
 #itable{width:1026px; margin-top:5px; margin-left:10px; }
-table{width:1026px; border:none; text-align:center; background:#e7e7e7; }
+table{width:1026px; border:none; text-align:center; background:#e7e7e7;}
 
 .itable_title{height:25px; font-size:12px; font-weight:bold; color:#666666; text-align:center; background:#f0f0f0;}
 .itable_title td{border-bottom:1px solid #999999;}
@@ -68,7 +68,8 @@ table{width:1026px; border:none; text-align:center; background:#e7e7e7; }
 .tr4 .category_select select{width:206px; float:left;}
 
 .btools{height:35px; text-align:center; font-size:14px; line-height:25px; background:#ffffff;}
-.btools input{width:230px;}
+.btools input{width:230px; height:30px;}
+.btools button{width:230px; height:30px;}
 
 
 #pos_caption{width:715px; height:25px; margin-top:10px; margin-left:10px; padding:10px; font-weight:bold; font-size:14px; text-align:left; border:1px dotted #cdcdcd; background:#FBFBFB; }
