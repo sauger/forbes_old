@@ -30,11 +30,11 @@
 	<form id="picture_edit" enctype="multipart/form-data" action="image.post.php" method="post"> 
 <div id=itable>
 	<table cellspacing="1" align="center">
-		<tr align="center" bgcolor="#f9f9f9" height="25px;">
-			<td>优先级</td><td align="left"><input type="text" size="10" id="priority" name="image[priority]" value="<?php if($image->priority!=100){echo $image->priority;}?>">(1-100)</td>
+		<tr class=tr3 align="center">
+			<td>优先级</td><td style="text-align:left;"><input type="text" size="10" id="priority" name="image[priority]" value="<?php if($image->priority!=100){echo $image->priority;}?>">(1-100)</td>
 		</tr>
-		<tr align="center" bgcolor="#f9f9f9" height="25px;" id=newsshow3 >
-			<td>选择图片</td><td align="left"><input name="image" id="upfile" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)
+		<tr class=tr3 align="center">
+			<td>选择图片</td><td style="text-align:left;"><input name="image" id="upfile" type="file">(请上传小于2M的图片，格式支持jpg、gif、png)
 			<?php if($image->src!=''){?><a href="<?php echo $image->src;?>" class="colorbox" style="color:#0000FF">点击查看图片</a><?php } ?></td>
 		</tr>
 		<tr class="btools">

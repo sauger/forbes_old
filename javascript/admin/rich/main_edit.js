@@ -55,7 +55,7 @@ $(function(){
 	});
 	$('#btn_save').click(function(){
 		var ids = new Array();
-		$('#table_rich').find('.tr4').each(function(){
+		$('#table_rich').find('.tr3').each(function(){
 			ids.push($(this).find('input:eq(1)').val() +'|'+ $(this).find('input:eq(0)').val() +'|'+$(this).find('input:eq(2)').val());
 		});
 		$.post('edit_rich_company.post.php',{'params':ids.join(','),'rich_id':$('#id').val()},function(data){
