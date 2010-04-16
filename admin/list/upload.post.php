@@ -100,8 +100,9 @@
 			}
 		}
 	}else{
-		$company = new table_class($table_name);
+		
 		for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
+			$company = new table_class($table_name);
 			foreach($_POST as $k => $v){
 				$company->$k = addslashes($data->sheets[0]['cells'][$i][$v]);
 			}
