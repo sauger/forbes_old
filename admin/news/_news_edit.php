@@ -86,9 +86,11 @@
 			<td class=td1>关键词</td>
 			<td>
 				<select multiple="multiple" id="sel_keywords">
-					<?php $keywords = explode(' ',$news->keywords);
+					<?php $keywords = explode('||',$news->keywords);
 						if(!empty($keywords)){
-							foreach($keywords as $key){ ?>
+							foreach($keywords as $key){ 
+								if(empty($key)) continue;
+								?>
 							<option value="<?php echo $key?>"><?php echo $key?></option>			
 						<?php }
 						}

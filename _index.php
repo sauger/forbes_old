@@ -21,21 +21,14 @@
 			
 			<div class=common_box>
 				<div class=caption>
-					<div class=captions><?php echo $catename[0]->name; ?>文章</div>
+					<div class=captions><?php echo $catename[0]->name; ?>热点</div>
 					<div class=line>|</div>
 					<a href="" class=more></a>
 				</div>
-				<?php for($i=0;$i<5;$i++){ $pos_name = $pos.'acticle'.$i;?>
+				<?php for($i=0;$i<6;$i++){ $pos_name = $pos.'acticle'.$i;?>
 					<div class=common_article_lis1 <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name);?></div>
 					<div class=common_article_description1><?php show_page_desc($pos_items,$pos_name);?></div>
 				<? }?>
-				
-	
-				<div class=caption>
-					<div class=captions style="width:30px;">文章</div>
-					<div class=line>|</div>
-					<a href="" class=more></a>
-				</div>
 				<?php  for($i=5;$i<15;$i++){ $pos_name = $pos.'acticle'.$i;?>
 					<div class=common_article_lis2 <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name);?></div>
 				<?php } ?>
@@ -67,9 +60,16 @@
 					<a href="" class=more></a>
 				</div>
 				<?php for($i=0;$i<3;$i++){ $pos_name = $pos."column".$i;?>
-				<div class=common_list3 <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name)?></div>
-				<div class=common_description3><?php echo $pos_items->$pos_name->description;?></div>
-				<div class=common_writer>——<?php echo $pos_items->$pos_name->alias?></div>
+				<div class="column_container">
+					<img src="<?php echo $pos_items->$pos_name->image2; ?>" />
+					<div class="article">
+						<div class=common_list3 <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name)?></div>
+						<div class=common_description3><?php echo $pos_items->$pos_name->description;?></div>
+						
+						<div class=common_writer><?php if($pos_items->$pos_name->alias != ''){ echo "——".$pos_items->$pos_name->alias; }else echo "&nbsp;";?></div>
+						
+					</div>
+				</div>
 				<?php } ?>
 			</div>
 		</div>

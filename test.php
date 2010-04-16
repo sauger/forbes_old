@@ -11,6 +11,8 @@
 	</head>
 	<body>
 		<div id="debug"></div>
+		<select multiple="multiple" id="sel_keywords">
+		</select>
 		<div id="hover" style="width:100px; height:100px;background-color:red;"></div>
 	</body>
 </html>

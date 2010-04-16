@@ -49,9 +49,11 @@ div{margin:0; padding:0; float:left; display:inline;}
 .common_subject_description{width:206px; height:60px; margin-top:5px; line-height:20px; font-size:14px; overflow:hidden; float:right;}
 .common_subject_description a{color:#666666; text-decoration:none;}
 
-.common_list3{width:312px; height:22px; margin-top:5px; font-size:15px; font-weight:bold; line-height:22px; float:right;}
+.column_container img{width:90px; height:90px;border:1px solid #cccccc; margin:1px;float:left;}
+.column_container .article{float:left;width:200px;margin-left:10px;}
+.common_list3{ margin-top:5px; font-size:15px; font-weight:bold; line-height:22px; float:right;}
 .common_list3 a{color:#003899; text-decoration:none;}
-.common_description3{width:312px; height:40px; margin-top:5px; font-size:13px; color:#666666;  line-height:22px; overflow:hidden; float:right;}
+.common_description3{ height:40px; margin-top:5px; font-size:13px; color:#666666;  line-height:22px; overflow:hidden; float:right;}
 .common_writer{height:25px; margin-top:5px; font-weight:bold; font-size:13px; line-height:17px; color:#333333;  float:right;}
 
 
