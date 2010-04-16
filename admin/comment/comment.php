@@ -9,7 +9,9 @@
 	if($_GET['s_text']){ $conditions[]='nick_name  like "%'.trim($_REQUEST['s_text']).'%"' ." or comment like '%{$_GET['s_text']}%'";}
 	if($conditions!=null){
 		$conditions = implode(' and ',$conditions);
-		$conditions = array("conditions" => $conditions);
+		$conditions = array("conditions" => $conditions, "order" => "created_at desc");
+	}else{
+		$conditions = array("order" => "created_at desc");
 	}
 	
 ?>
@@ -33,9 +35,7 @@
 	    <div id=title>评论管理</div>
 	</div>
 	<div id=isearch>
-		<span style="line-height:22px;">搜索内容</span>
 		<input id="s_text" type="text" value="<?php echo $_GET['s_text']?>" />
-		<span style="line-height:22px;">评论类型</span>
 		<select id="comment_type">
 			<option value="news">新闻评论</option>
 			<option value="magazine">杂志评论</option>
