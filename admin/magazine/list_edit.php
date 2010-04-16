@@ -28,8 +28,15 @@
 		$ids.=','.$news[$i]->resource_id;
 	}
 	
-	if($is_adopt==1){
-		$sql .= " and id in ($ids)";
+	if($is_adopt=='1'){
+		if($ids!='')
+		{
+			$sql .= " and id in ($ids)";
+		}
+		else
+		{
+			$sql .=" and id=0";	
+		}
 	}elseif($is_adopt=='0'){
 		if($ids!=''){
 			$sql .= " and id not in ($ids)";
