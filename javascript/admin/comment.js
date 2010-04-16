@@ -1,5 +1,5 @@
 function send_search(){
-	window.location.href="?s_text=" + encodeURI($('#s_text').val())+"&type="+$("#r_type").val()+"&id="+$("#r_id").val();;
+	window.location.href="?s_text=" + encodeURI($('#s_text').val())+"&type="+$("#commetn_type").val()+"&id="+$("#r_id").val();;
 }
 $(function(){
 	$("#search_button").click(function(){
