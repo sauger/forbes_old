@@ -27,8 +27,8 @@
 ?>
 <body>
 <div id=icaption>
-    <div id=title>富豪管理</div>
-    <a href="#" id="btn_delete3" title="删除所有记录"></a>
+  <div id=title>富豪管理</div>
+  <a href="#" id="btn_delete3" title="删除所有记录"></a>
 	<a href="#" id="btn_delete2" title="删除选中记录"></a>
 	<a href="upload_data.php" id=btn_import></a>
 	<a href="edit.php" id=btn_add></a>

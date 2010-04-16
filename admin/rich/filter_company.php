@@ -6,23 +6,22 @@ if($s_text){
 }
 $db = get_db();
 $table = new table_class('fb_company');
-$record = $table->paginate('all',$conditons); 
+$record = $table->paginate('all',$conditons,'30'); 
 ?>
-	<table width="795" border="0" id="list" >
-		<tr class="tr1">
-			<td colspan="11">
-				<input id="s_text" type="text" value="<? echo $_REQUEST['s_text']?>" style="margin-left:20px;">
-				<input type="button" value="搜索" id="btn_search" style="border:2px solid #999999; height:20px">
-			</td>
-		</tr>
-		<tr class="tr2">
-			<td width="300">名称</td><td width="300">股票代码</td><td width="195">操作</td>
+<div id=isearch>
+	<input id="s_text" type="text" value="<? echo $_REQUEST['s_text']?>">
+	<input type="button" value="搜索" id="search_button">
+</div>
+<div id=itable>
+	<table cellspacing="1" align="center">
+		<tr class="itable_title">
+			<td width="40%">名称</td><td width="30%">股票代码</td><td width="30%">操作</td>
 		</tr>
 		<?php
 			$len = count($record);
 			for($i=0;$i< $len;$i++){
 		?>
-				<tr class="tr4" id=<?php echo $record[$i]->id;?> >
+				<tr class="tr3" id=<?php echo $record[$i]->id;?> >
 					<td><?php echo strip_tags($record[$i]->name);?></td>
 					<td>
 						<?php echo strip_tags($record[$i]->stock_code);?>
@@ -35,8 +34,14 @@ $record = $table->paginate('all',$conditons);
 		<?php
 			}
 		?>
-		<tr><td colspan="8" align="right"><?php paginate('filter_company.php?','company_filter'); ?><input type="hidden" id="db_table" value="fb_gs"></td></tr>
+		<tr class=btools>
+			<td colspan="10">
+				<?php paginate('filter_company.php?','company_filter'); ?>
+				<input type="hidden" id="db_table" value="fb_gs">
+			</td>
+		</tr>
 	</table>
+</div>
 	<script>
 		$('#s_text').keypress(function(e){
 			if(e.keyCode == 13)
