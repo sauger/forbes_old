@@ -119,8 +119,17 @@ $(function(){
 		$(this).next().html(parseInt($(this).next().html())+1);
 	});
 	
+	$.post('/ajax/comment_cout.php',{'news_id':$("#newsid").val()},function(data){
+		$("#news_title").html($("#news_title").html()+data);
+	});
+	
 	$("#commit_submit").live('click',function(){
 		var nick_name;
+		var content = $("#comment_text").val();
+		if(content.length>1000){
+			alert("评论内容过长！");
+			return false;
+		}
 		$("input[name='nick_name']").each(function(){
 			if($(this).attr('checked')){
 				if($(this).val()=='hidden'){
