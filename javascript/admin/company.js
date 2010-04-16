@@ -13,7 +13,7 @@ $(function(){
 				alert('请不要重复添加');
 				return false;
 			}else{
-				$("#a_com").after('<tr class=tr4><td width="130">关联行业</td><td width="200" align="left">'+$("#ind_id  option:selected").text()+'　<button class="del_ind" type="button">删除</button><input class="h_industry" name="industry[]" type="hidden" value="'+$("#ind_id").val()+'"></td></tr>')
+				$("#a_com").after('<tr class=tr4><td class=td1>关联行业</td><td><span style="float:left;">'+$("#ind_id  option:selected").text()+'</span><input class="del_ind" type="button" value="删除"><input class="h_industry" name="industry[]" type="hidden" value="'+$("#ind_id").val()+'"></td></tr>')
 				industry_array.push($("#ind_id").val());
 			}
 		}

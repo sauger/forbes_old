@@ -5,7 +5,7 @@ $(function(){
 		window.location.href="?content="+encodeURI($("#content").attr('value'))+"&type="+$("#type").attr('value');
 	}
 						
-	$("#search").click(function(){
+	$("#search_button").click(function(){
 			post();
 		});
 		
