@@ -12,7 +12,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 #billinaires_left{width:760px; margin-top:10px;}
 #billinaires_head_left{width:3px; height:236px; background:url('/images/billinaires/billinaires_l_t_left.jpg') no-repeat;}
 #billinaires_head{width:754px; height:234px; border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; background:#f8f8f8;}
-#billinaires_head #pic{width:740px; height:217px; margin-top:9px; margin-left:7px; position:relative;}
+#billinaires_head #pic{width:740px; height:214px; margin-top:9px; margin-left:7px; overflow:hidden; position:relative;}
 #billinaires_head #pic img{width:740px; height:214px;}
 #billinaires_head #flash{width:215px; height:214px; left:525px; background:#000000; filter:alpha(opacity=40); -moz-opacity:0.4; opacity:0.4; position:absolute;}
 #billinaires_head #flash_t{width:182px; height:23px; top:20px; left:535px; overflow:hidden; position:absolute;}
