@@ -128,11 +128,11 @@ $(function(){
 			}
 		});
 		$.post('/ajax/comment.php',{'content':$("#comment_text").val(),'news_id':$("#newsid").val(),'nick_name':nick_name,'type':'comment'},function(data){
-			if(data==''){
-				alert('发布成功！请等候管理员审批！');
-				load_comment();
-			}else{
+			if(data=='wrong'){
 				alert('发布失败！可能是包含敏感词语，请检查后重新发布!');
+			}else{
+				alert('发布成功！请等候管理员审批！');
+				load_comment(data);
 			}
 		});
 	});
@@ -150,7 +150,7 @@ function login(){
 	});
 }
 
-function load_comment(){
+function load_comment(id){
 	if($("#is_comment").val()=='1'){
 		window.location.reload();
 	}else{

@@ -15,6 +15,7 @@
 			$comment->ip = $_SERVER['REMOTE_ADDR'];
 			$comment->user_id = intval($_SESSION['user_id']);
 			$comment->save();
+			echo $comment->id;
 		}else{
 			echo "wrong";
 		}
