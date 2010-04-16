@@ -39,11 +39,11 @@ a{text-decoration:none; color:black;}
 
 #icaption{width:1004px; height:25px; margin-left:10px; padding:10px; font-weight:bold; font-size:14px; text-align:left; border:1px dotted #cdcdcd; background:#FBFBFB; }
 #icaption #title{width:800px; color:#0B55C4; font-size:23px; }
-#icaption #btn_add{width:32px; height:32px; background:url(/images/btn_add_b.png) no-repeat !important; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_add_b.png);}
-#icaption #btn_back{width:32px; height:32px; background:url(/images/btn_back_b.png) no-repeat !important; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_back_b.png);}
-#icaption #btn_delete2{width:32px; height:32px; background:url(/images/btn_delete2.png) no-repeat !important; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_delete2.png);}
-#icaption #btn_delete3{width:32px; height:32px; background:url(/images/btn_delete3.png) no-repeat !important; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_delete3.png);}
-#icaption #btn_import{width:32px; height:32px; background:url(/images/btn_import_b.png) no-repeat !important; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_import_b.png);}
+#icaption #btn_add{width:32px; height:32px; background:url(/images/btn_add_b.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_add_b.png);}
+#icaption #btn_back{width:32px; height:32px; background:url(/images/btn_back_b.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_back_b.png);}
+#icaption #btn_delete2{width:32px; height:32px; background:url(/images/btn_delete2.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_delete2.png);}
+#icaption #btn_delete3{width:32px; height:32px; background:url(/images/btn_delete3.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_delete3.png);}
+#icaption #btn_import{width:32px; height:32px; background:url(/images/btn_import_b.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_import_b.png);}
 #icaption .btn_generate{height:32px; margin-right:5px; cursor:pointer; line-height:32px; float:right;}
 
 #isearch{width:1004px; height:20px; margin-top:13px; margin-left:10px; text-align:left;}
