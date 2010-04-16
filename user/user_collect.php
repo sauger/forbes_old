@@ -2,7 +2,7 @@
 include "../frame.php";
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 if(is_ajax()){
-	if(require_login()===false){
+	if(require_login(false)===false){
 		echo '请先登录!';
 		die();
 	}	

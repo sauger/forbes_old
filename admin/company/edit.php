@@ -34,8 +34,8 @@
 <div id=itable>
 		<table cellspacing="1"  align="center">
 		<tr class="tr4">
-			<td class=td1>公司名称</td>
-			<td width=665><input id="gs_mc" type="text" name="gs[name]" class="required "value="<?php echo $record->name;?>"></td>
+			<td class=td1 width="15%">公司名称</td>
+			<td width="85%"><input id="gs_mc" type="text" name="gs[name]" class="required "value="<?php echo $record->name;?>"></td>
 		</tr>
 		<tr class=tr4 id="a_com">
 			<td class=td1>行业</td>
@@ -47,7 +47,8 @@
 						for ($i=0;$i<count($records);$i++) { ?>
 					<option value="<?php echo $records[$i]->id;?>"><?php echo $records[$i]->name; ?></option>
 					<?php } ?>
-				</select><input type="button" id="add_company" value="添加">
+				</select>
+				<input type="button" id="add_company" value="添加">
 			</td>
 		</tr>
 		<?php
@@ -58,9 +59,9 @@
 		?>
 		<tr class=tr4>	
 			<td class=td1>关联行业</td>
-			<td width="200">
+			<td>
 				<?php echo $records[$i]->name;?>
-				<button class="del_old" type="button">删除</button>
+				<input type="button" class="del_old" value="删除">
 				<input type="hidden" value="<?php echo $records[$i]->t2_id;?>">
 				<input type="hidden" class="o_industry" value="<?php echo $records[$i]->t1_id;?>">
 			</td> 

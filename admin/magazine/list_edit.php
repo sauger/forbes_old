@@ -66,7 +66,7 @@
 				<option value="0" <? if($_REQUEST['language_tag']=="0"){?>selected="selected"<? }?>>中文</option>
 				<option value="1" <? if($_REQUEST['language_tag']=="1"){?>selected="selected"<? }?>>English</option>
 		</select>
-		<select id=up name="up" style="width:90px" class="sau_search">
+		<select id=adopt name="adopt" style="width:90px" class="sau_search">
 				<option value="">加入状况</option>
 				<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已加入</option>
 				<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未加入</option>
@@ -76,9 +76,9 @@
 </div>
 <div id=itable>
 	<table cellspacing="1" align="center">
-		
-		<tr class="tr2">
-			<td width="385">标题</td><td width="130">所属类别</td><td width="130">发布时间</td><td width="130">操作</td>
+	
+		<tr class=itable_title>
+			<td width=35%>标题</td><td width=15%>所属类别</td><td width=15%>发布时间</td><td width=15%>操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -86,12 +86,12 @@
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 					<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
-					<td>
+					<td align=left>
 						<a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF">
 							<?php echo $category->find($record[$i]->category_id)->name;?>
 						</a>
 					</td>
-					<td >
+					<td align=left>
 						<?php echo $record[$i]->created_at;?>
 					</td>
 					<td>
