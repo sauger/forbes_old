@@ -30,7 +30,7 @@ a{text-decoration:none; color:black;}
 #nav1 .selected{font-weight:bold; border-left:1px solid #E7EDDF; border-right:1px solid #E7EDDF; background:#E7EDDF;}
 .nav1_menu{width:81px; height:23px; padding-top:5px; text-align:center; line-height:20px; border-top:1px solid #ffffff; border-bottom:1px solid #d8d8d8; border-left:1px solid #ffffff; border-right:1px solid #d8d8d8; cursor:pointer; }
 .nav1_menu.selected{font-weight:bold;border-left: 1px solid #E7EDDF;border-right: 1px solid #E7EDDF;background:#E7EDDF;}
-#nav2{width:1046px; height:20px; background:#ffffff; padding-bottom:5px;  border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; float:left; display:inline}
+#nav2{width:1046px; height:20px; background:#ffffff; padding-bottom:5px;  border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE;}
 .nav2_menu{width:83px; height:15px; margin-top:5px; color:#0000ff; text-align:center; line-height:15px; cursor:pointer; float:left; display:none;}
 #nav2_index{width:50px; height:15px; margin-top:5px; margin-right:10px; line-height:15px;  float:right;}
 #nav2_index a{color:#ff0000;}
@@ -45,9 +45,9 @@ a{text-decoration:none; color:black;}
 #icaption #btn_delete3{width:32px; height:32px; background:url(/images/btn_delete3.png) no-repeat; float:right;}
 #icaption #btn_import{width:32px; height:32px; background:url(/images/btn_import_b.png) no-repeat; float:right;}
 
-#isearch{width:1004px; height:20px; margin-top:13px; margin-left:10px; text-align:left; float:left; display:inline}
-#isearch input{float:left; display:inline}
-#isearch select{float:left; display:inline}
+#isearch{width:1004px; height:20px; margin-top:13px; margin-left:10px; text-align:left;}
+#isearch input{float:left;}
+#isearch select{float:left;}
 #isearch #search_button{height:21px; border:1px solid #999999; float:left;}
 
 
@@ -62,9 +62,9 @@ table{width:1026px; border:none; text-align:center; background:#e7e7e7; }
 
 .tr4{height:28px; text-align:left; font-size:12px; line-height:20px; background:#ffffff;}
 .tr4 .td1{text-align:left; text-indent:24px;}
-.tr4 input{width:300px; float:left; display:inline}
-.tr4 select{width:306px; float:left; display:inline}
-.tr4 .category_select select{width:206px; float:left; display:inline}
+.tr4 input{width:300px; float:left;}
+.tr4 select{width:306px; float:left;}
+.tr4 .category_select select{width:206px; float:left;}
 
 .btools{height:35px; text-align:center; font-size:14px; line-height:25px; background:#ffffff;}
 .btools input{width:230px;}
