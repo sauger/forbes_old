@@ -35,7 +35,7 @@
 			}*/
 			if($_POST['image']['type']<>"news")
 			{
-				$image->update_file_attributes('image');
+				$image->update_file_attributes2('image','/life');
 			}
 			if($_POST['image']["priority"]==null){$image->update_attribute("priority","100");}
 			$image->update_attributes($_POST['image']);
