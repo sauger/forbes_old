@@ -32,7 +32,7 @@
 	<?php
 		use_jquery();
 		js_include_tag('public','right','search/rich');
-		css_include_tag('search/rich','public','right_inc');
+		css_include_tag('public','right_inc','search/rich');
 	?>
 </head>
 <body>
