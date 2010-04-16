@@ -106,11 +106,11 @@
 					<div class="search_title">富豪检索</div>
 					<div class=search_content_l></div>
 					<div class="search_content_r">
-						<div class=content>富豪姓名：<input type="text" /></div>
-						<div class=content>年 龄 段：<select></select></div>
-						<div class=content>资产规模：<select></select></div>
-						<div class=content>国　　籍：<select></select></div>
-						<div class=content>行　　业：<select></select></div>
+						<div class=content><div class=search_content_r_l>富豪姓名：</div><div class=search_content_r_r><input type="text" /></div></div>
+						<div class=content><div class=search_content_r_l>年 龄 段：</div><div class=search_content_r_r><select></select></div></div>
+						<div class=content><div class=search_content_r_l>资产规模：</div><div class=search_content_r_r><select></select></div></div>
+						<div class=content><div class=search_content_r_l>国　　籍：</div><div class=search_content_r_r><select></select></div></div>
+						<div class=content><div class=search_content_r_l>行　　业：</div><div class=search_content_r_r><select></select></div></div>
 						<div class=content><button></button></div>
 					</div>
 					<div id=search_pic1>
