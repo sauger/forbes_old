@@ -70,9 +70,9 @@ div{margin:0; padding:0; float:left; display:inline;}
 #billinaires_search .search_content_r_r select{width:113px; height:21px;}
 #billinaires_search .search_content_r button{width:76px; height:22px; border:0px; cursor:pointer; background:url('/images/billinaires/btn_js.jpg') no-repeat; float:right;}
 #billinaires_search .search_content_r .content{width:208px; height:30px; line-height:30px;}
-#billinaires_search #search_pic1{width:228px; height:113px; margin-top:18px; border:1px solid #cccccc; overflow:hidden;}
+#billinaires_search #search_pic1{width:228px; height:113px; margin-top:23px; border:1px solid #cccccc; overflow:hidden;}
 #billinaires_search #search_pic1 img{width:226px; height:111px; margin:1px;}
-#billinaires_search #search_pic2{width:228px; height:154px; margin-top:18px; border:1px solid #cccccc; overflow:hidden;}
+#billinaires_search #search_pic2{width:228px; height:154px; margin-top:22px; border:1px solid #cccccc; overflow:hidden;}
 #billinaires_search #search_pic2 img{width:226px; height:152px; margin:1px;}
 #billinaires_lists{width:227px; margin-top:10px; float:right;}
 #billinaires_lists_top{width:225px; height:234px; border:1px solid #dfdfdf;}
