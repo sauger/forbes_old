@@ -1,0 +1,1 @@
+ALTER TABLE `forbes`.`fb_comment` ADD COLUMN `is_approve` INTEGER UNSIGNED DEFAULT 0 COMMENT ' «∑Ò…Û≈˙' AFTER `reserve`;
