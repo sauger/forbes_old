@@ -2,7 +2,7 @@
 	require_once('../frame.php');
 	$id = intval($_POST['id']);
 	$db = get_db();
-	$count = $db->query("select count(id) as num from fb_comment where resource_id=$id");
+	$count = $db->query("select count(id) as num from fb_comment where is_approve=1 and resource_id=$id");
 	$count = $count[0]->num;
 ?>
 	<div id=comment_caption>
@@ -27,7 +27,7 @@
 		<button id=comment_login>登录</button>
 	</div>
 	<?php 
-		$sql = "select t1.nick_name,t1.created_at,t1.comment,t1.id,t2.up,t2.down from fb_comment t1 left join fb_comment_dig t2 on t1.id=t2.comment_id where t1.resource_id=$id order by t1.created_at desc limit 3";
+		$sql = "select t1.nick_name,t1.created_at,t1.comment,t1.id,t2.up,t2.down from fb_comment t1 left join fb_comment_dig t2 on t1.id=t2.comment_id where t1.resource_id=$id and is_approve=1 order by t1.created_at desc limit 3";
 		$comment = $db->query($sql);
 		$count = $db->record_count;
 		for($i=0;$i<$count;$i++){
