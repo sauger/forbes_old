@@ -39,8 +39,11 @@ $(function(){
 	$('#a_collect').click(function(e){
 		e.preventDefault();
 		$.post('/user/user_collect.php',{'resource_type':'fb_news','resource_id':$(this).attr('href')},function(data){
-			if(data){
+			if(data!='请先登录!'){
 				alert(data);
+			}else{
+				alert(data);
+				window.location.href="/login/?last_url="+document.location.href;
 			}
 		});
 	});
@@ -143,17 +146,23 @@ function login(){
 		if(data=='wrong'){
 			alert("用户名或密码错误");
 		}else if(data!=''){
-			$("#show_comment").hide();
-			$("#show_comment").prev().show();
-			$("#nick_name").val(data);
+			load_comment(-1);
 		}
 	});
 }
 
 function load_comment(id){
 	if($("#is_comment").val()=='1'){
-		window.location.reload();
+		if(id==-1){
+			window.location.href="comment_list.php?comment_id=-1&id="+$("#newsid").val();
+		}else{
+			window.location.reload();
+		}
 	}else{
-		$("#news_comment").load('/ajax/news_comment.php',{'id':$("#newsid").val()});
+		if(id!=''){
+			$("#news_comment").load('/ajax/news_comment.php',{'id':$("#newsid").val(),'comment_id':id});
+		}else{
+			$("#news_comment").load('/ajax/news_comment.php',{'id':$("#newsid").val()});
+		}
 	}
 }

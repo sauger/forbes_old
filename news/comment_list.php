@@ -1,6 +1,7 @@
 <?php 
 	require_once('../frame.php');
 	$id = intval($_REQUEST['id']);
+	$comment_id = intval($_GET['comment_id']);
 	if(!empty($id)){
 		$news = new table_class('fb_news');
 		if(!$news->find($id)){
@@ -49,7 +50,7 @@
 				<div id=news_comment>
 					<?php 
 						$db = get_db();
-						$count = $db->query("select count(id) as num from fb_comment where resource_id=$id");
+						$count = $db->query("select count(id) as num from fb_comment where is_approve=1 and resource_id=$id");
 						$count = $count[0]->num;
 						$news = new table_class('fb_news');
 						$news->find($id);
@@ -62,21 +63,30 @@
 					<a href="<?php echo static_news_url($news);?>" id=comment_more>返回新闻原文</a>
 				</div>
 				
-				<div class=publish_comment <?php if(isset($_SESSION['name'])){?>id='show_comment'<?php }?>>
-						<textarea id=comment_text></textarea>
-						<input type="radio" name="nick_name" id=hid_name value="hidden"><span>匿名</span>
-						<input type="radio" checked="checked" id=has_name name="nick_name" value="name"><span>昵称</span>
-						<input type="text" value="<?php echo $_SESSION['name']?>" id=nick_name></input>
-						<button id=commit_submit>提交</button>
+				<?php if($comment_id!=-1){?>
+				<div class=publish_comment id='show_comment'>
+					<textarea id=comment_text></textarea>
+					<input type="radio" name="nick_name" <?php if(!isset($_SESSION['name'])){?>checked="checked"<?php }?> id=hid_name value="hidden"><span>匿名</span>
+					<?php if(isset($_SESSION['name'])){?><input type="radio" checked="checked" id=has_name name="nick_name" value="name"><span>昵称</span>
+					<input type="text" value="<?php echo $_SESSION['name']?>" id=nick_name></input><?php }?>
+					<button id=commit_submit>提交</button>
+					<?php if(!isset($_SESSION['name'])){?>
+					<div id="login_info" style="margin-top:10px;">
+					<span>用户名：</span><input type="text"  value="<?php echo $_SESSION['name']?>" id=user_name></input>
+					<span>密码：</span><input type="password" value="<?php echo $_SESSION['name']?>" id=password></input>
+					<button id=comment_login>登录</button></div><?php }?>
 				</div>
-				<div class=publish_comment <?php if(!isset($_SESSION['name'])){?>id='show_comment'<?php }?>>
-						<div id=login_info>请先登录再发表评论</div>
-						<span>用户名：</span><input type="text"  value="<?php echo $_SESSION['name']?>" id=user_name></input>
-						<span>密码：</span><input type="password" value="<?php echo $_SESSION['name']?>" id=password></input>
-						<button id=comment_login>登录</button>
+				<?php }else{?>
+				<div class=publish_comment id='show_comment' style="display:inline">
+					<textarea id=comment_text></textarea>
+					<input type="radio" name="nick_name" id=hid_name value="hidden"><span>匿名</span>
+					<input type="radio" checked="checked" id=has_name name="nick_name" value="name"><span>昵称</span>
+					<input type="text" value="<?php echo $_SESSION['name']?>" id=nick_name></input>
+					<button id=commit_submit>提交</button>
 				</div>
+				<?php }?>
 				<?php 
-						$sql = "select t1.nick_name,t1.created_at,t1.comment,t1.id,t2.up,t2.down from fb_comment t1 left join fb_comment_dig t2 on t1.id=t2.comment_id where t1.resource_id=$id order by t1.created_at desc";
+						$sql = "select t1.nick_name,t1.created_at,t1.comment,t1.id,t2.up,t2.down from fb_comment t1 left join fb_comment_dig t2 on t1.id=t2.comment_id where t1.resource_id=$id and t1.is_approve=1 order by t1.created_at desc";
 						$comment = $db->paginate($sql,10);
 						$count = $db->record_count;
 						for($i=0;$i<$count;$i++){

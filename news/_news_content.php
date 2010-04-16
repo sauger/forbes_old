@@ -12,7 +12,7 @@
 			<?php }?>
 			<?php }?>
 				<div class=news_tools_btn><img src="/images/news/btn_share.png"><span class=news_tools_span><a href="">分享</a></span></div>
-				<div class=news_tools_btn><img src="/images/news/btn_print.png"><span class=news_tools_span><a href="">打印</a></span></div>
+				<div class=news_tools_btn><img src="/images/news/btn_print.png"><span class=news_tools_span><a href="javascript:window.print();">打印</a></span></div>
 				<div class=news_tools_btn><img id=font_down src="/images/news/font3.gif" class=news_tools_span style="margin:0"><span class=news_tools_span><a>字体大小</a></span><img id=font_up src="/images/news/font2.gif" class=news_tools_span></div>
 				<div style="border-right:0" class=news_tools_btn>
 				<?php if($news->pdf_src!=''){?>
