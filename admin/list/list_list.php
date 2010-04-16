@@ -133,7 +133,7 @@
 					</td>
 					<td>
 						<a href="relation_list.php?id=<?php echo $record[$i]->id;?>" >关联</a>
-						<a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
+						<a href="custom_list_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer"><img border=0 src="/images/btn_edit.png"></a>
 						<a href="data_upload.php?id=<?php echo $record[$i]->id;?>">数据导入</a>
 						<?php if($record[$i]->list_type == 1){?>
 						<a href="custom_list_item_list.php?id=<?php echo $record[$i]->id;?>" class="edit" style="cursor:pointer">榜单项管理</a>

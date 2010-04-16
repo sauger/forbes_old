@@ -37,6 +37,16 @@ a{text-decoration:none; color:black;}
 
 #admin_content{width:1046px; padding-top:10px; text-align:center; background:#ffffff; border-top:1px solid #cccccc; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; border-bottom:2px solid #A0CBEE;   }
 
+<<<<<<< HEAD
+#icaption{width:1004px; height:25px; margin-left:10px; padding:10px; font-weight:bold; font-size:14px; text-align:left; border:1px dotted #cdcdcd; background:#FBFBFB; float:left; display:inline;}
+#icaption #title{width:800px; color:#0B55C4; font-size:23px; float:left; display:inline;}
+#icaption #btn_add{width:32px; height:32px; background:url(/images/btn_add_b.png) no-repeat; float:right; display:inline;}
+#icaption #btn_back{width:32px; height:32px; background:url(/images/btn_back_b.png) no-repeat; float:right; display:inline;}
+#icaption #btn_delete2{width:32px; height:32px; background:url(/images/btn_delete2.png) no-repeat; float:right; display:inline;}
+#icaption #btn_delete3{width:32px; height:32px; background:url(/images/btn_delete3.png) no-repeat; float:right; display:inline;}
+#icaption #btn_import{width:32px; height:32px; background:url(/images/btn_import_b.png) no-repeat; float:right; display:inline;}
+#icaption .btn_generate{height:32px; margin-right:5px; cursor:pointer; line-height:32px; float:right; display:inline;}
+=======
 #icaption{width:1004px; height:25px; margin-left:10px; padding:10px; font-weight:bold; font-size:14px; text-align:left; border:1px dotted #cdcdcd; background:#FBFBFB; }
 #icaption #title{width:800px; color:#0B55C4; font-size:23px; }
 #icaption #btn_add{width:32px; height:32px; background:url(/images/btn_add_b.png) no-repeat; float:right;}
@@ -44,6 +54,7 @@ a{text-decoration:none; color:black;}
 #icaption #btn_delete2{width:32px; height:32px; background:url(/images/btn_delete2.png) no-repeat; float:right;}
 #icaption #btn_delete3{width:32px; height:32px; background:url(/images/btn_delete3.png) no-repeat; float:right;}
 #icaption #btn_import{width:32px; height:32px; background:url(/images/btn_import_b.png) no-repeat; float:right;}
+>>>>>>> 6aee8f0c917f722cf7820659e90fefc2d91bacf9
 
 #isearch{width:1004px; height:20px; margin-top:13px; margin-left:10px; text-align:left;}
 #isearch input{float:left;}

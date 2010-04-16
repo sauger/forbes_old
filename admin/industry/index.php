@@ -45,8 +45,8 @@
 				<tr class="tr3" id="<?php echo $record[$i]->id;?>">
 					<td><?php echo $record[$i]->name;?></a></td>
 					<td>
-						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer">编辑</a>
-						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>">删除</span>
+						<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" style="cursor:pointer"><img border=0 src="/images/btn_edit.png"></a>
+						<span style="cursor:pointer;color:#FF0000" class="del" name="<?php echo $record[$i]->id;?>"><img border=0 src="/images/btn_delete.png"></span>
 					</td>
 				</tr>
 		<?php
