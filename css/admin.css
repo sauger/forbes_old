@@ -48,6 +48,7 @@ a{text-decoration:none; color:black;}
 
 #isearch{width:1004px; height:20px; margin-top:13px; margin-left:10px; text-align:left;}
 #isearch input{float:left;}
+#isearch span{float:left;}
 #isearch select{float:left;}
 #isearch #search_button{height:21px; border:1px solid #999999; float:left;}
 
