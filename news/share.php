@@ -2,6 +2,7 @@
 	require_once('../frame.php');
 	$db = get_db();
 	$_SESSION['news_share'] = rand_str();
+	$news_id = intval($_GET['news_id']);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,6 +41,7 @@
 			<div class="share_line"><button type="button" id=add>继续添加</button></div>
 			<div style="margin-top:50px" class="share_line"><button type="submit">提交</button></div>
 			<input type="hidden" name="session" value="<?php echo $_SESSION['news_share'];?>">
+			<input type="hidden" name="news_id" value="<?php echo $news_id;?>">
 			</form>
 		</div>
 		<div id="right_inc">
