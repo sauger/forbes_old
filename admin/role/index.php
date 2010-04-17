@@ -26,7 +26,6 @@
 				<td width="20%">角色标识</td><td width="20%">角色名称</td><td width="40%">说明</td><td width="20%">操作</td>
 			</tr>
 			<?php for($i=0;$i<$count;$i++){
-				if($roles[$i]->name == 'sys_admin') continue;
 			?>
 			<tr class="tr3" id="<?php echo $records[$i]->id;?>">
 				<td><?php echo $roles[$i]->name;?></td>
