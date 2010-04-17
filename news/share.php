@@ -39,7 +39,7 @@
 				<div class="share_name"><span>好友昵称3：</span><input name="name[]" class="input2" type="text"></div>
 			</div>
 			<div class="share_line"><button type="button" id=add>继续添加</button></div>
-			<div style="margin-top:50px" class="share_line"><button type="submit">提交</button></div>
+			<div style="margin-top:50px" class="share_line"><button id="share_submit" type="button">提交</button></div>
 			<input type="hidden" name="session" value="<?php echo $_SESSION['news_share'];?>">
 			<input type="hidden" name="news_id" value="<?php echo $news_id;?>">
 			</form>

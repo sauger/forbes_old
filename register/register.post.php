@@ -7,6 +7,12 @@
 </head>
 <?php 
 	require "../frame.php";
+	if(!is_post()){
+		die();
+	}
+	if($_SESSION['register']!=$_POST['session']){
+		die();
+	}
 	if($_POST['rvcode'] != (string)$_SESSION['register_pic']){
 		alert('验证码错误!');
 		redirect('register.php');

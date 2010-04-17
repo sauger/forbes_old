@@ -3,7 +3,13 @@
 	<head>
 		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 		<meta http-equiv=Content-Language content=zh-CN>
-		<?php
+	<title>福布斯中文网</title>
+	</head>
+	<body>
+<?php
+	if($_SESSION['login']!=$_POST['session']){
+		die();
+	}
 	$name=$_POST['name'];
 	$password=$_POST['password'];
 	include("../frame.php");
@@ -37,9 +43,5 @@
 		redirect($fail_url);
 	}
 ?>
-	<title>福布斯中文网</title>
-	</head>
-	<body>
-
 	</body>
 </html>

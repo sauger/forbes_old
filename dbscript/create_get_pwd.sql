@@ -1,0 +1,7 @@
+CREATE TABLE `forbes`.`fb_get_pwd` (
+  `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` INTEGER UNSIGNED NOT NULL,
+  `verify` VARCHAR(45) NOT NULL,
+  `end_time` DATETIME NOT NULL,
+  PRIMARY KEY (`id`)
+)

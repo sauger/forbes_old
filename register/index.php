@@ -1,6 +1,6 @@
 <?php 
-	session_start();
 	require_once('../frame.php');
+	$_SESSION['register'] = rand_str();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,8 +15,10 @@
 	?>
 </head>
 <body>
- <div style="width:1002px; margin:0 auto;">		
-	 <?php include "../inc/top.inc.php";?>	
+ <div id="ibody">		
+	<?php include "../inc/top.inc.php";?>
+	<div id=bread><a href="/">福布斯中文网</a>　>　用户注册</div>
+	<div id=bread_line></div>
 	<div id=register>
 		<div id=title>请填写下列信息 <span style="color:red;">*</span>为必填项目</div>
 		<form id="re_form" action="register.post.php" method="post">
@@ -247,6 +249,7 @@ a.法律程序所规定或政府主管部门提出要求；
 				<td class=td2></td>
 			</tr>
 		</table>
+		<input type="hidden" name="session" value="<?php echo $_SESSION['register'];?>">
 		</form>
 	</div>
 	<?php 

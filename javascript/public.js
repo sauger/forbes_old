@@ -8,8 +8,9 @@ $(function(){
 	});
 	
 	$("#logout").click(function(){
-		$.post('/login/logout.php');
-		location.reload();
+		$.post('/login/logout.php',function(data){
+			location.reload();
+		});
 	});
 	
 });
