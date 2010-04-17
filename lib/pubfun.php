@@ -173,7 +173,15 @@ function rand_str($len=10){
   }
 
 function is_ajax(){
-	return strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])=="xmlhttprequest" ? true : false;
+	return strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])=="xmlhttprequest";
+}
+
+function is_post(){
+	return strtolower($_SERVER['REQUEST_METHOD'] ) == 'post';
+}
+
+function is_get(){
+	return strtolower($_SERVER['REQUEST_METHOD'] ) == 'get';
 }
 
 function write_to_file($filename,$content,$mode='a'){
