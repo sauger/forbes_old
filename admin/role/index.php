@@ -23,13 +23,14 @@
 	<div id="itable">
 		<table width="795" border="0">
 			<tr class="tr2">
-				<td width="205">角色名称</td><td width="200">说明</td><td width="250">操作</td>
+				<td width="20%">角色标识</td><td width="20%">角色名称</td><td width="40%">说明</td><td width="20%">操作</td>
 			</tr>
 			<?php for($i=0;$i<$count;$i++){
 				if($roles[$i]->name == 'sys_admin') continue;
 			?>
 			<tr class="tr3" id="<?php echo $records[$i]->id;?>">
 				<td><?php echo $roles[$i]->name;?></td>
+				<td><?php echo $roles[$i]->nick_name;?></td>
 				<td><?php echo $roles[$i]->comment;?></td>
 				<td>	
 					<a href="edit.php?id=<?php echo $roles[$i]->id;?>" title="编辑" style="color:#000000; text-decoration:none"><img src="/images/btn_edit.png" border="0"></a>
@@ -42,8 +43,8 @@
 		<input type="hidden" id="db_table" value="<?php echo $user_table;?>">
 		<div class="div_box">
 			<table width="795" border="0">
-				<tr colspan="5" class=tr3>
-					<td><?php paginate();?></td>
+				<tr class=tr3>
+					<td colspan="5"><?php paginate();?></td>
 				</tr>
 			</table>
 		</div>

@@ -6,10 +6,32 @@
 	<title>福布斯中文网-角色管理</title>
 	<?
 		require_once('../../frame.php');
+		css_include_tag('admin');
+		use_jquery();
+		js_include_tag('admin/role/edit');
 		$id= intval($_REQUEST['id']);
 		$db = get_db();
-		$rights = $db->query("select * from fb_rights");		
-		css_include_tag('admin');
+		class Right{
+			public $id;
+			public $name;
+			public $nick_name;
+			public $type;
+			public $cat_name;
+		}
+		$rights = $db->query("select a.*,c.name as cat_name from fb_rights a left join fb_admin_menu b on a.name = b.id left join fb_admin_menu c on b.parent_id = c.id order by cat_name desc");
+		foreach($rights as $val){
+			$right = new Right();
+			$right->id = $val->id;
+			$right->name = $val->name;
+			$right->nick_name = $val->nick_name;
+			$right->type = $val->type;
+			$right->cat_name = $val->cat_name;			
+			if($val->type == 2){
+				$nrights[$val->cat_name][] = $right;
+			}else{
+				$nrights['其他'][] = $right;
+			}
+		}		
 		$role = new table_class('fb_role');
 		$has_rights = array();
 		if($id){
@@ -49,16 +71,26 @@
 		<tr class=tr3>
 			<td width=150>权限配置：</td>
 			<td width=645 align="left">
-				<?php foreach ($rights as $v) { ?>
-					<input type="checkbox" name="rights[]" value="<?php echo $v->id?>" <?php if(in_array($v->id,$has_rights)) echo "checked='checked'"?>></input><?php echo $v->nick_name;?>
+				<?php foreach ($nrights as $k => $val) { ?>
+					<div style="clear:both;">
+						<div class="right_title"><b><a href="#"><?php echo $k?></a></b></div>
+						<div class="rights">
+							<?php if(!empty($val)){
+								foreach($val as $v){ ?>
+									<input id="right_<?php echo $v->id;?>" type="checkbox" name="rights[]" value="<?php echo $v->id?>" <?php if(in_array($v->id,$has_rights)) echo "checked='checked'"?>></input><label for="right_<?php echo $v->id;?>"><?php echo $v->nick_name;?></label>									
+							<?php }
+							}?>
+						</div>
+					</div>
 				<?php }?>
 			</td>
 		</tr>
 		<tr class=tr3>
-			<td colspan="2"><button type="submit">提 交</button></td>
+			<td colspan="2">
+				<button type="submit">提 交</button>
+				<input type="hidden" name="id" value="<?php echo $id;?>">
+			</td>
 		</tr>
-		<input type="hidden" name="id" value="<?php echo $id;?>">
-	
 	</table>
 	</form>
 	</div>

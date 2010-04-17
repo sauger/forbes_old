@@ -179,7 +179,7 @@
 	function judge_role(){
 		return require_role('admin');
 	}
-	
+
 	function show_fckeditor($name,$toolbarset='Admin',$expand_toolbar=true,$height="200",$value="",$width = null) {
 		require_once(ROOT_DIR . 'ckeditor/ckeditor_php5.php');
 		require_once(ROOT_DIR . 'ckfinder/ckfinder.php');
@@ -304,6 +304,10 @@ function require_role($role='member'){
 		redirect_login();
 		die();
 	}	
+}
+
+function has_right($right_name){
+	
 }
 
 function role_include($file, $role='member'){
