@@ -13,9 +13,9 @@
 			css_include_tag('comlogin','public');
 			validate_form('form_login');
 		?>
-	</head>
-	<body>
-	 <div style="width:1002px; margin:0 auto;">		
+</head>
+<body>
+<div id=ibody>		
 	 	<?php include "../inc/top.inc.php";?>	
 	  <div id="left">
 	  <form name="login" id="form_login" action="comlogin.post.php" method="post">
@@ -58,6 +58,7 @@
 	<?php 
 		include "../inc/bottom.inc.php";
 	?>
-	 </div>
-	</body>
+	 
+</div>
+</body>
 </html>

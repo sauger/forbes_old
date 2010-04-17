@@ -1,4 +1,10 @@
-﻿body {font-size:12px;  font-family:Arial,宋体; color:#000; margin:0 auto; padding:0;}
+﻿body {font-size:12px; font-family:宋体,Arial; color:#000000; margin:0 auto; padding:0;}
+p{margin:0; padding:0;}
+ul{margin:0; padding:0;}
+li{margin:0; padding:0;} 
+div{margin:0; padding:0; float:left; display:inline;}
+
+#ibody{width:1000px; margin:0 auto; float:none; display:block;}
 
 #left{width:460px; height:400px; background:#FFFFFF; float:left; display:inline;}
 #leftp{width:400px; height:330px; background:url(/images/comlogin/3.jpg); margin-left:30px; margin-top:20px; float:left; display:inline;}
