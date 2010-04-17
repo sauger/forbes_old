@@ -23,8 +23,12 @@
 		<div id=nav1>
 			<?php 
 				$db = get_db();
+				if($_SESSION['admin_menu_rights']){
+					$sub_menu_ids = implode(',',$_SESSION['admin_menu_rights']);
+					$sub_menus = $db->query("select * from fb_admin_menu where id in({$sub_menu_ids}) order by parent_id, priority asc");
+				}
 				$main_menus = $db->query("select * from fb_admin_menu where parent_id =0 order by priority asc");
-				$sub_menus = $db->query("select * from fb_admin_menu where parent_id !=0 order by parent_id, priority asc");
+				#$sub_menus = $db->query("select * from fb_admin_menu where parent_id !=0 order by parent_id, priority asc");
 				$main_menu_id = $_REQUEST['main_menu_id'] ? $_REQUEST['main_menu_id'] : $main_menus[0]->id;
 				$sub_menu_id = $_REQUEST['sub_menu_id'] ? $_REQUEST['sub_menu_id'] : $sub_menus[0]->id;
 				foreach($main_menus as $val){
@@ -43,9 +47,13 @@
 		</div>
 	</div>
 </body>
-</html>
 <script>
 $(function(){
+	$(".nav1_menu").each(function(){
+		if($('div .nav2_menu_' + $(this).attr('param_id')).length <= 0){
+			$(this).remove();
+		}
+	});
 	$(".nav1_menu").click(function(e){
 		 $(".nav1_menu").removeClass('selected');
 		 $(this).addClass('selected');
@@ -63,3 +71,4 @@ $(function(){
 	});
 });
 </script>
+</html>

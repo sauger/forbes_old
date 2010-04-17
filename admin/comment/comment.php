@@ -9,7 +9,9 @@
 	if($_GET['s_text']){ $conditions[]='nick_name  like "%'.trim($_REQUEST['s_text']).'%"' ." or comment like '%{$_GET['s_text']}%'";}
 	if($conditions!=null){
 		$conditions = implode(' and ',$conditions);
-		$conditions = array("conditions" => $conditions);
+		$conditions = array("conditions" => $conditions, "order" => "created_at desc");
+	}else{
+		$conditions = array("order" => "created_at desc");
 	}
 	
 ?>
@@ -21,9 +23,9 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>福布斯中文网</title>
 	<?php
-		css_include_tag('admin');
+		css_include_tag('admin','colorbox');
 		use_jquery();
-		js_include_tag('admin_pub','admin/comment');
+		js_include_tag('admin_pub','admin/comment','jquery.colorbox-min');
 	?>
 	<style type="text/css">
 	</style>
@@ -33,9 +35,7 @@
 	    <div id=title>评论管理</div>
 	</div>
 	<div id=isearch>
-		<span style="line-height:22px;">搜索内容</span>
 		<input id="s_text" type="text" value="<?php echo $_GET['s_text']?>" />
-		<span style="line-height:22px;">评论类型</span>
 		<select id="comment_type">
 			<option value="news">新闻评论</option>
 			<option value="magazine">杂志评论</option>
@@ -53,14 +53,7 @@
 			include '_comment.php';
 		}
 	?>
-	<div class="div_box">
-		<table width="795" border="0">
-			<tr colspan="5" class=tr3>
-				<td><?php paginate();?></td>
-			</tr>
-		</table>
-	</div>
-		<input type="hidden" id="db_talbe" value="fb_comment">
+		<input type="hidden" id="db_table" value="fb_comment">
 		<input type="hidden" id="id" value="<?php echo $record[0]->id;?>">
 		<input type="hidden" id="r_id" value="<?php echo $id;?>">
 	</div>

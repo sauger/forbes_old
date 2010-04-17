@@ -9,9 +9,14 @@
 		judge_role(); 
 		css_include_tag('admin');
 		use_jquery();
-		js_include_tag('admin_pub');
+		js_include_tag('admin_pub','admin/pub/search');
+		$s_text = $_GET['s_text'];
 		$db = get_db();
-		$words = $db->paginate('select * from fb_filte_words',30);
+		$sql = 'select * from fb_filte_words';
+		if($_GET['s_text']){
+			$sql .= " where text like'%{$_GET['s_text']}%'";
+		}
+		$words = $db->paginate($sql,30);
 		$count = count($words);
 	?>
 </head>
@@ -20,6 +25,10 @@
     <div id=title>敏感词管理</div>
 	  <a href="edit.php" id=btn_add></a>
 </div>	
+<div id=isearch>
+		<input id="s_text" type="text" value="<?php echo $_GET['s_text']?>" />
+		<input type="button" value="搜索" id="search_button">
+	</div>
 <div id=itable>
 	<table cellspacing="1"  align="center">
 		<tr class=itable_title>
@@ -40,5 +49,21 @@
 	</table>
 </div>	
 </body>
+<script>
+function send_search(){
+	window.location.href="?s_text=" + encodeURI($('#s_text').val());
+}
+$(function(){
+	$("#search_button").click(function(){
+		send_search();
+	});
+	
+	$("#s_text").keypress(function(event){
+			if(event.keyCode==13){
+				send_search();
+			}
+	});
+});
+</script>
 </html>
 

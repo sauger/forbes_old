@@ -267,12 +267,11 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 			function jumppage(urlprex,pageindex)
 			{
 				var surl=urlprex+pageindex;
-				<?php
-				if($ajax_dom){ ?>
-					$('#<?php echo $ajax_dom;?>').load(surl);
-				<?php  }else{ ?>
-					window.location.href=surl;
-				<?php }
+				<?php if($ajax_dom){
+					echo "$('#{$ajax_dom}').load(surl);";
+				}else{ 
+					echo "window.location.href=surl;";
+				}
 				?>	
 				
 			} 
@@ -304,6 +303,10 @@ function require_role($role='member'){
 		redirect_login();
 		die();
 	}	
+}
+
+function has_right($right_name){
+	return array_key_exists($rights_name,$_SESSION['admin_menu_rights']) || array_key_exists($rights_name,$_SESSION['admin_system_rights']);
 }
 
 function role_include($file, $role='member'){

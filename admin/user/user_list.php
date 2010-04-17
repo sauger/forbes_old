@@ -2,22 +2,8 @@
 	require_once('../../frame.php');
 	judge_role();
 	$user_title="添加用户"; 
-	$user_table=$tb_user;
-	function display_role($param) {
-		if($param == 'sys_admin'){
-			return '系统管理员';
-		}elseif($param == 'admin'){
-			return '管理员';
-		}elseif($param == 'journalist'){
-			return '记者';
-		}elseif($param == 'author'){
-			return '专栏作者';
-		}elseif($param == 'lister'){
-			return '榜单编辑';
-		}
-	}
-	$user = new table_class($user_table);
-	$records = $user->find('all',array('order' => 'id desc'));
+	$db = get_db();
+	$records = $db->query("select a.*,b.nick_name as role_name from fb_user a left join fb_role b on a.role_name = b.name");
 	$count = count($records);
 ?>
 
@@ -45,13 +31,13 @@
 	<div id=itable>
 	<table cellspacing="1"  align="center">
 		<tr class="itable_title">
-			<td width="55%">用户名</td><td width="15%">用户昵称</td><td width="15%">用户身份</td><td width="15%">操作</td>
+			<td width="25%">用户名</td><td width="25%">用户昵称</td><td width="25%">用户身份</td><td width="25%">操作</td>
 		</tr>
 		<?php for($i=0;$i<$count;$i++){?>
 		<tr class="tr3" id="<?php echo $records[$i]->id;?>">
 			<td><?php echo $records[$i]->name;?></td>
 			<td><?php echo $records[$i]->nick_name;?></td>
-			<td><?php echo display_role($records[$i]->role_name);?></td>
+			<td><?php echo $records[$i]->role_name;?></td>
 			<td>	
 				<a href="user_edit.php?id=<?php echo $records[$i]->id;?>" title="编辑" style="color:#000000; text-decoration:none"><img src="/images/btn_edit.png" border="0"></a> 
 				<span style="color:#ff0000; cursor:pointer" class="del" title="删除" name="<?php echo $records[$i]->id;?>"><img src="/images/btn_delete.png" border="0"></span>
@@ -60,8 +46,7 @@
 		<? }?>
 	</table>
 	</div>
-	<input type="hidden" id="db_table" value="<?php echo $user_table;?>">
-	<input type="hidden" id="relation" value="column">
+	<input type="hidden" id="db_table" value="<?php echo $tb_user;?>">
 </body>
 </html>
 

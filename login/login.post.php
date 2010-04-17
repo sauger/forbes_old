@@ -27,12 +27,23 @@
 				$_SESSION["admin_user_id"] = $record[0]->id;
 				$_SESSION["admin_nick_name"] = $record[0]->nick_name;
 				$_SESSION["role_name"] = $record[0]->role_name;
-				$_SESSION['role_level'] = $record[0]->role_level;
-				if($last_url == '/index.php' && ($_SESSION['role_level'] == 1 || $_SESSION['role_level'])){
-					$last_url = '/admin/admin.php';
+				$db->query("select id from fb_role where name = '{$_SESSION['role_name']}'");
+				$db->move_first();
+				$role_id = $db->field_by_name('id');
+				$rights = $db->query("select b.* from fb_role_rights a left join fb_rights b on a.rights_id = b.id where role_id = {$role_id}");
+				$len = count($rights);
+				for($i=0;$i<$len;$i++){
+					if($rights[$i]->type == 2){
+						$menu_rights["{$rights[$i]->id}"] ="{$rights[$i]->name}";
+					}else{
+						$system_rights["{$rights[$i]->id}"] ="{$rights[$i]->name}";
+					}
 				}
-				if($record[0]->role_name=='author'||$record[0]->role_name=='journalist'||$record[0]->role_name=='lister'){
-					$last_url = '/admin/column/admin_column.php';
+				$_SESSION['admin_menu_rights'] = $menu_rights;
+				$_SESSION['admin_system_rights'] = $system_rights;
+				$_SESSION['role_level'] = $record[0]->role_level;
+				if($last_url == '/index.php'){
+					$last_url = '/admin/admin.php';
 				}
 				redirect($last_url);
 			}else{
