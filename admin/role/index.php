@@ -33,13 +33,13 @@
 				<td><?php echo $roles[$i]->comment;?></td>
 				<td>	
 					<a href="edit.php?id=<?php echo $roles[$i]->id;?>" title="编辑" style="color:#000000; text-decoration:none"><img src="/images/btn_edit.png" border="0"></a>
-					<a href="<?php echo $roles[$i]->id;?>" class="del" title="删除" style="color:#000000; text-decoration:none"><img src="/images/btn_delete.png" border="0"></a> 
+					<span name="<?php echo $roles[$i]->id;?>" class="del" title="删除" style="color:#000000; text-decoration:none"><img src="/images/btn_delete.png" border="0"></span> 
 				</td>
 			</tr>
 			<? }?>
 		</table>
 		
-		<input type="hidden" id="db_table" value="<?php echo $user_table;?>">
+		<input type="hidden" id="db_table" value="fb_role">
 		<div class="div_box">
 			<table width="795" border="0">
 				<tr class=tr3>
