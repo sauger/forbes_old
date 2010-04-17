@@ -43,7 +43,7 @@
 			<div id=nav2_index><a href="/index.php" target="_blank">动态首页</a></div>
 		</div>
 		<div id="admin_content">
-		  <iframe id=admin_iframe name="admin_iframe" scrolling="auto" frameborder="0" src="/admin/news/news_list.php" width="1046" height="1300px"></iframe>
+		  <iframe id=admin_iframe name="admin_iframe" scrolling="auto" frameborder="0" src="/admin/welcome.php" width="1046" height="1300px"></iframe>
 		</div>
 	</div>
 </body>
