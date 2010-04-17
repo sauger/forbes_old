@@ -37,6 +37,8 @@ a{text-decoration:none; color:black;}
 
 #admin_content{width:1046px; padding-top:10px; text-align:center; background:#ffffff; border-top:1px solid #cccccc; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; border-bottom:2px solid #A0CBEE;   }
 
+#welcome{width:1024px; height:80px; margin-left:10px; padding-top:35px; font-weight:bold; font-size:14px; color:#0B55C4; font-size:23px; text-align:center; border:1px dotted #cdcdcd; background:#FBFBFB; }
+
 #icaption{width:1004px; height:25px; margin-left:10px; padding:10px; font-weight:bold; font-size:14px; text-align:left; border:1px dotted #cdcdcd; background:#FBFBFB; }
 #icaption #title{width:800px; color:#0B55C4; font-size:23px; }
 #icaption #btn_add{width:32px; height:32px; background:url(/images/btn_add_b.png) no-repeat !important; cursor:pointer; float:right; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/btn_add_b.png);}

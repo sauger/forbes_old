@@ -82,23 +82,31 @@
 			<td><?php echo $record[$i]->created_at;?></td>
 			<td>
 					<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/btn_edit.png" border="0"></a>
+					<?php 
+						if(has_right('delete_news')){
+					?>
 					<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/btn_delete.png" border="0"></span>
+					<?php }?>
 					<?php
-						if($_SESSION['role_name'] == 'admin' || $_SESSION['role_name'] == "sys_admin" || true){ 
-						if($record[$i]->is_adopt=="1"){?>
+						if(has_right('publish_news')){ 
+							if($record[$i]->is_adopt=="1"){?>
 					<span style="cursor:pointer" class="unpublish_news" name="<?php echo $record[$i]->id;?>" title="撤销"><img src="/images/btn_apply.png" border="0"></span>
-					<?php }?>
-					<?php	if($record[$i]->is_adopt=="0"){?>
+					<?php	}else{?>
 					<span style="cursor:pointer" class="publish_news" name="<?php echo $record[$i]->id;?>" title="发布"><img src="/images/btn_unapply.png" border="0"></span>
-					<?php }}?>
-					<?php if($record[$i]->set_up=="1"){?>
+					<?php }
+						}?>
+					<?php
+					if(has_right('top_news')){ 
+					if($record[$i]->set_up=="1"){?>
 					<span style="cursor:pointer" class="set_down" name="<?php echo $record[$i]->id;?>" title="取消置顶"><img src="/images/btn_up.png" border="0"></span>
-					<?php }?>
-					<?php if($record[$i]->set_up=="0"){?>
+					<?php }else{?>
 					<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/btn_unup.png" border="0"></span>
-					<?php }?>
+					<?php }
+					}?>
 					<a title="静态页面" href="<?php echo $static_site .static_news_url($record[$i]);?>" target="static_news"><img src="/images/btn_static.png" border="0"></a>
+					<?php if(has_right('comment_news')){?>
 					<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/btn_comment.png" border="0"></a>
+					<?php }?>
 					<input type="hidden" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
 				</td>
 		</tr>
