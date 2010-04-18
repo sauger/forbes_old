@@ -130,7 +130,17 @@
 						<?php }?>
 					</div>
 				</div>
-				<div id="rt_tab2" class="rt_tab">
+				<?php $pos_name = "index_ipo"?>
+				<div id="rt_tab2" class="rt_tab" <?php show_page_pos($pos_name)?>>
+					<div style="clear:both;width:300px;height:80px;border-bottom:1px dotted;" >
+						<div id="ipo_img">
+							<img src="<?php echo $pos_items->$pos_name->image1;?>" width=50 height=50 />
+						</div>
+						
+						<div id=ipo_title><?php echo $pos_items->$pos_name->display; ?></div>
+						<div id=ipo_content><?php echo $pos_items->$pos_name->description;?></div>
+						
+					</div>
 					<img src="/upload/ipo.png" />
 				</div>
 				<div id="rt_tab3" class="rt_tab">

@@ -18,7 +18,7 @@ for($i=1;$i< $len-1; $i++){
 }
 }
 $width=300;
-$height=280;
+$height=200;
 
 // Create the graph and set a scale.
 // These two calls are always required

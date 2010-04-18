@@ -56,6 +56,9 @@ div{margin:0; padding:0; float:left; display:inline;}
 #phb .content span{display:-moz-inline-box; display:inline-block; text-align:center;}
 span.up{color:#FF0000;}
 span.down{color:#33CC00;}
+#ipo_img{width:50px;height:50px;margin-left:10px; margin-top:10px;border:1px solid #E3E3E3}
+#ipo_title{width:230px;line-height:24px;height:24px;margin-left:5px;color:blue;overflow:hidden;}
+#ipo_content{width:230px;line-height:20px;height:40px;margin-left:5px;;overflow:hidden;}
 #forbes_trt #bottom{width:300px; height:77px; margin-top:2px; background:#f7f7f7; overflow:hidden; float:right;}
 #forbes_trt #bottom #title{width:280px; height:18px; margin-top:10px; margin-left:10px; color:#333333; font-size:14px; font-weight:bold; line-height:18px;}
 #forbes_trt .bottom_list{width:280px; height:16px; margin-top:5px; margin-left:10px; padding-left:20px; background:url(/images/index/arrow.jpg) no-repeat 0 5px; line-height:16px; overflow:hidden;}
