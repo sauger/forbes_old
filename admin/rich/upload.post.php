@@ -19,14 +19,13 @@
 	$data = new Spreadsheet_Excel_Reader();
     $data->setOutputEncoding('utf-8');
     $data->read($file);
-	
 	$success = 0;
 	$fail = 0;
 	$company = new table_class('fb_rich');
 	$fail_info = array();
 	for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 		$name = addslashes($data->sheets[0]['cells'][$i][$_POST['name']]);		
-		$items = $company->find('first',array('conditions' => "name='{$data->sheets[0]['cells'][$i][$_POST['name']]}'"));
+		$company->find('first',array('conditions' => "name='$name'"));
 		foreach($_POST as $k => $v){
 			$company->$k = $data->sheets[0]['cells'][$i][$v];
 		}

@@ -58,6 +58,9 @@ $(function(){
 		$('#forbes_trt').find('div.title').hover(function(){
 			$('#forbes_trt').find('div.title').removeClass('selected');
 			$(this).addClass('selected');
+			var index = $('#forbes_trt').find('div.title').index($(this)) + 1;
+			$('.rt_tab').hide();
+			$('#rt_tab' + index).show();
 		});
 		$(".headline_btn2").click(function()
 		{

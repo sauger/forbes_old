@@ -21,3 +21,4 @@ discuz/*
 data/dbcache/*.tb
 default.php
 htmldir
+admin/plugin/ipo
