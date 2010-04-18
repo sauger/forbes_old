@@ -1,5 +1,6 @@
 ﻿<?php
 	require_once('../frame.php');
+	$_SESSION['login'] = rand_str();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,8 +17,10 @@
 </head>
 <body>
 <div id=ibody>		
-	 	<?php include "../inc/top.inc.php";?>	
-	  <div id="left">
+	 <?php include "../inc/top.inc.php";?>
+	 <div id=bread><span>用户登录</span></div>
+	 <div id=bread_line></div>
+	 <div id="left">
 	  <form name="login" id="form_login" action="comlogin.post.php" method="post">
 	  	<div id=leftp>
 	  		<div style="float:left; display:inline">
@@ -43,12 +46,13 @@
 	  		</div>
 	  		<div><input type="submit"  id="login" value="登录"></button></div>
 	  		<div style="width:300px;">
-	  		  <div id=left-bottom1><a href="../register/register.php">新用户注册</a></div>
-	  		  <div id=left-bottom2><a href="">忘记密码？</a></div>
-	  		</div>  	 
+	  		  <div id=left-bottom1><a href="/register/">新用户注册</a></div>
+	  		  <div id=left-bottom2><a href="/getpwd/">忘记密码？</a></div>
+	  		</div>
 	  	</div>
+		<input type="hidden" name="session" value="<?php echo $_SESSION['login'];?>">
 	  </form>
-		</div>
+	</div>
 	  <div id=right>
 	  	<div id=rightp>
 	  		 <div id=right-title>欢迎您登陆福布斯中文网！</div>
