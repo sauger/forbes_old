@@ -9,7 +9,7 @@
 	<title>福布斯-富豪首页</title>
 	<?php
 		use_jquery();
-		js_include_tag('public');
+		js_include_tag('public','right');
 		css_include_tag('public','billinaires');
 		init_page_items();
 	?>
@@ -17,9 +17,8 @@
 <body>
 	<div id=ibody>
 	<? require_once(dirname(__FILE__).'/../inc/top.inc.php');?>
-		<div id=cyindex></div>
-		<div id=cytitle><a style="color:#666666;" href="index.php">福布斯中文网</a>　＞　<a href="">富豪检索结果</a></div>
-		<div id=cyline></div>
+		<div id=bread><a href="#">富豪</a></div>
+		<div id=bread_line></div>
 		<div id=billinaires_left>
 			<div id=billinaires_head_left></div>
 			<?php 
@@ -125,7 +124,7 @@
 				<div id=billinaires_lists_top>
 					<div class=title>
 						<div class=wz>富豪榜单</div>
-						<div class=more><a href=""><img border=0 src="/images/index/c_r_t_more.jpg"></a></div>	
+						<div class=more><a href=""><img border=0 src="/images/public/public_more1.jpg"></a></div>	
 					</div>
 					<div id=content>
 						<?php for($i=0; $i<8; $i++){
@@ -141,7 +140,7 @@
 				<div id=billinaires_lists_bottom>
 					<div class=title>
 						<div class=wz>2009年度中国富豪榜</div>
-						<div class=more><a href=""><img border=0 src="/images/index/c_r_t_more.jpg"></a></div>	
+						<div class=more><a href=""><img border=0 src="/images/public/public_more1.jpg"></a></div>	
 					</div>
 					<div class=content1>
 						<div class=pic1>
