@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 require 'net/http'
 require 'uri'
 p "start to update the currency exchage rate"
