@@ -15,14 +15,14 @@
 		$count = count($roles);
 	?>
 </head>
-<body style="background:#E1F0F7">
+<body>
 	<div id=icaption>
 	    <div id=title>角色管理</div>
 		 <a href="edit.php" id=btn_add></a>
 	</div>
 	<div id="itable">
-		<table width="795" border="0">
-			<tr class="tr2">
+		<table cellspacing=1 border="0">
+			<tr class="itable_title">
 				<td width="20%">角色标识</td><td width="20%">角色名称</td><td width="40%">说明</td><td width="20%">操作</td>
 			</tr>
 			<?php for($i=0;$i<$count;$i++){
@@ -38,16 +38,8 @@
 			</tr>
 			<? }?>
 		</table>
-		
 		<input type="hidden" id="db_table" value="fb_role">
-		<div class="div_box">
-			<table width="795" border="0">
-				<tr class=tr3>
-					<td colspan="5"><?php paginate();?></td>
-				</tr>
-			</table>
-		</div>
-	</div>
+	</div>	
 </body>
 </html>
 
