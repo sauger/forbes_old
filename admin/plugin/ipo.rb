@@ -10,8 +10,9 @@ dbpassword = 'xunao'
 dbname = 'forbes'
 my = Mysql.connect(dbhost, dbuser, dbpassword ,dbname)
 sql = "select stock_code,stock_count,start_time,intval,id from fb_ipo_info where start_time < now() and end_time > now()  limit 1"
-file = File.new('./ipo',"a")
-time =  Time.new.strftime("%I:%M")
+path = File.dirname(__FILE__)
+file = File.new(path + '/ipo',"a")
+time =  Time.new.strftime("%H:%M")
 my.query(sql).each do |code,scount,start_time,intval,id|
 	url = "http://download.finance.yahoo.com/d/quotes.csv?s=#{code}&f=sl1d1t1c1ohgv&e=.csv"
 	url = URI.parse(url);
