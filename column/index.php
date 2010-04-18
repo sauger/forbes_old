@@ -1,5 +1,5 @@
-<?php 
-	require_once('../frame.php');
+<?php
+	require_once(dirname(__FILE__).'/../frame.php');
 	$db = get_db();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -11,335 +11,211 @@
 	<?php
 		use_jquery();
 		js_include_tag('public','right');
-		css_include_tag('html/column/column','right_inc','public');
+		css_include_tag('column','right_inc','public');
+		init_page_items();
 	?>
 </head>
 <body>
 	<div id=ibody>
-		<?php include "../inc/top.inc.php";?>
-		<div id=top>
-			<div id=title>专栏首页</div>
-			<div id=title1><a href="">福布斯中文网</a>　>　<a style="color:#246BB0;">专栏首页</a></div>
-			<div id=line></div>
-		</div>
-		<div id=l>
-			<div id=l_t>
-				<div id=l_t_l>
+		<? require_once(dirname(__FILE__).'/../inc/top.inc.php');?>
+		<div id=bread><a href="#">专栏</a></div>
+		<div id=bread_line></div>
+		<div id=column_left>
+			<div class=column_left_top>
+				<div class=column_special>
 					<div class="t">
-						<div class="t_title">特约专栏</div><div class=more></div>
+						<div class="t_title">特约专栏</div><a href="" class=more></a>
 					</div>
-					<div id=l_t_l_t>
-						<?php
-							$news = get_news_by_pos("特约专栏top","专栏首页");
-						?>
-						<div class=t1>
-							<a href="/news/news.php?id=<?php echo $news[0]->news_id;?>"><?php echo $news[0]->title;?></a>
+					<div class=column_special_top <?php show_page_pos('column_special_t');?>>
+						<div class=t1 >
+							<?php show_page_href($pos_items,'column_special_t'); ?>
 						</div>
-						<div class=t2>
-							<?php echo strip_tags($news[0]->description);?>
+						<div class=t2 >
+							<?php show_page_desc($pos_items,'column_special_t'); ?>
 						</div>
 					</div>
 					<?php
-						$pos_id = $db->query("select id from fb_position where name='特约专栏icon推荐' and page_id=(select id from fb_position where name='专栏首页')");
-						$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id where  t2.position_id={$pos_id[0]->id} group by t1.id order by t2.priority limit 4";
-						$author = $db->query($sql);
-						$author_count = count($author);
-						$author_id = $author[0]->id;
-						for($i=0;$i<$author_count;$i++){
-							if($i>0)$author_id.=','.$author[$i]->id;
-							$news = $db->query("select id,title,short_title,description from fb_news where is_adopt=1 and author_id={$author[$i]->id} and author_type=2 order by created_at desc,priority asc limit 3");
+						for($i=0;$i<4;$i++){
+							
 					?>
-					<div class=l_t_l_m>
-						<div class=l_t_l_m_t>
-							<div class=l_t_l_m_t_l>
-								<div class=picture>
-									<a href=""><img border="0" width="90" src="<?php if($author[$i]->image_src=='')echo '/images/html/column/picture.jpg';else echo $author[$i]->image_src;?>"></a>
+					<div class=column_recommend>
+						<div class=column_recommend_top>
+							<div class=column_recommend_top_l>
+								<div class=picture <?php show_page_pos('column_recommend_top_l_'.$i);?>>
+									<? show_page_img($pos_items,'column_recommend_top_l_'.$i); ?>
 								</div>
-								<div class=n>
-									<?php echo $author[$i]->nick_name;?>
+								<div class=n <?php show_page_pos('column_recommend_top_n_'.$i);?>>
+									<? $posname='column_recommend_top_n_'.$i; echo $pos_items->$posname->display; ?>
 								</div>
 							</div>
-							<div class=l_t_l_m_t_r>
+							<div class=column_recommend_top_r>
 								<div class=t1>
-									<?php echo !$author[$i]->column_name?$author[$i]->nick_name:$author[$i]->column_name;?>专栏
+									<?php echo $pos_items->$posname->display;?>专栏
 								</div>
-								<div class=t2>
-									<a href="/news/news.php?id=<?php echo $news[0]->id;?>"><?php echo $news[0]->title;?></a>
+								<div class=t2 <?php show_page_pos('column_recommend_top_t2_0');?>>
+									<?php show_page_href($pos_items,'column_recommend_top_t2_0'); ?>
 								</div>
 								<div class=t3>
-									<?php echo strip_tags($news[0]->description);?>
+									<?php show_page_desc($pos_items,'column_recommend_top_t2_0'); ?>
 								</div>
 							</div>
 						</div>
 						<?php
-							for($j=1;$j<count($news);$j++){
+							for($j=1;$j<3;$j++){
 						?>
-						<div class=l_t_l_m_b>
-							<a href="/news/news.php?id=<?php echo $news[$j]->id;?>"><?php echo $news[$j]->title;?></a>
+						<div class=column_recommend_b <?php show_page_pos('column_recommend_b_'.$i.'_'.$j); ?>>
+							<?php show_page_href($pos_items,'column_recommend_b_'.$i.'_'.$j); ?>
 						</div>
 						<?php }?>
 					</div>
 					<?php }?>
-					<?php
-						if($author_count<4){
-							if($author_id){
-								$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_news t2 join fb_user t1 on t2.author_id=t1.id where t2.author_type=2 and t1.id not in ($author_id) group by  t2.author_id  order by t2.created_at desc limit 4";
-							}else{
-								$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_news t2 join fb_user t1 on t2.author_id=t1.id where t2.author_type=2  group by  t2.author_id  order by t2.created_at desc limit 4";
-							}
-							
-							$author = $db->query($sql);
-							$author_count2 = count($author);
-							$count_new = 4-$author_count;
-							if($count_new>$author_count2)$count_new=$author_count2;
-							for($i=0;$i<$count_new;$i++){
-							$news = $db->query("select id,title,short_title,description from fb_news where is_adopt=1 and author_id={$author[$i]->id} and author_type=2 order by created_at desc,priority asc limit 3");
-					?>
-					<div class=l_t_l_m>
-						<div class=l_t_l_m_t>
-							<div class=l_t_l_m_t_l>
-								<div class=picture>
-									<a href=""><img border="0" width="90" src="<?php if($author[$i]->image_src=='')echo '/images/html/column/picture.jpg';else echo $author[$i]->image_src;?>"></a>
-								</div>
-								<div class=n>
-									<?php echo $author[$i]->nick_name;?>
-								</div>
-							</div>
-							<div class=l_t_l_m_t_r>
-								<div class=t1>
-									<?php echo !$author[$i]->column_name?$author[$i]->nick_name:$author[$i]->column_name;?>专栏
-								</div>
-								<div class=t2>
-									<a href="/news/news.php?id=<?php echo $news[0]->id;?>"><?php echo $news[0]->title;?></a>
-								</div>
-								<div class=t3>
-									<?php echo strip_tags($news[0]->description);?>
-								</div>
-							</div>
-						</div>
-						<?php
-							for($j=1;$j<count($news);$j++){
-						?>
-						<div class=l_t_l_m_b>
-							<a href="/news/news.php?id=<?php echo $news[$j]->id;?>"><?php echo $news[$j]->title;?></a>
-						</div>
-						<?php }?>
-					</div>
-					<?php }}?>
+					
 				</div>
-				<div id=l_t_r>
+				<div id=column_edit>
 					<div class="t">
-						<div style="width:120px;float:left; display:inline;">专栏文章推荐</div><div class=more></div>
+						<div style="width:120px;float:left; display:inline;">专栏文章推荐</div><a class=more></a>
 					</div>
 					<?php
-						$news = get_news_by_pos("特约专栏文章标题推荐","专栏首页");
-						$author2 = new table_class("fb_user");
-						$count = count($news);
-						for($i=0;$i<$count;$i++){
+						for($i=0;$i<3;$i++){
 					?>
-					<div class=l_t_r_t>
+					<div class=column_edit_t>
 						<div class=t1>
-							<div class=t2>
-								<a href="/news/news.php?id=<?php echo $news[$i]->news_id;?>"><?php echo $news[$i]->title;?></a>
+							<div class=t2 <?php show_page_pos('column_edit_t'.$i); ?>>
+								<?php show_page_href($pos_items,'column_edit_t'.$i);?>
 							</div>
-							<div class=t3>
-								——<?php echo $author2->find($news[$i]->author_id)->nick_name;?>
+							<div class=t3 <?php show_page_pos('column_edit_author_'.$i); ?>>
+								——<?php $posname='column_edit_author_'.$i; echo $pos_items->$posname->display;?>
 							</div>
 						</div>
 						<div class=t4>
-							<?php echo strip_tags($news[$i]->description);?>
+							<?php show_page_desc($pos_items,'column_edit_desc_'.$i);?>
 						</div>
 					</div>
 					<?php }?>
-					<div id=l_t_r_m>
+					<div id=column_edit_recommend>
 						<?php
-							$news = get_news_by_pos("特约专栏文章列表推荐","专栏首页");
-							$count = count($news);
-							for($i=0;$i<count($news);$i++){
+							for($i=0;$i<8;$i++){
 						?>
 						<div class=t1>
-							<div class=t2>
-								<a href="/news/news.php?id=<?php echo $news[$i]->news_id;?>"><?php echo $news[$i]->title;?></a>
+							<div class=t2 <? show_page_pos('column_edit_recommend_'.$i); ?>>
+								<?php show_page_href($pos_items,'column_edit_recommend_'.$i); ?>
 							</div>
-							<div class=t3>
-								——<?php echo $author2->find($news[$i]->author_id)->nick_name;?>
+							<div class=t3 <? show_page_pos('column_edit_recommend_author_'.$i); ?>>
+								——<?php $posname='column_edit_recommend_author_'.$i; echo $pos_items->$posname->display;?>
 							</div>
 						</div>
 						<?php }?>
 					</div>
 					<div class="dash2"></div>
-					<div id=l_t_r_b>
+					<div id=column_edit_b>
 						<div class=t>
-							<div class="t_title">专栏列表</div><div class=more></div>
+							<div class="t_title">专栏列表</div><a class=more></a>
 						</div>
 						<?php
-							$pos_id = $db->query("select id from fb_position where name='特约专栏列表' and page_id=(select id from fb_position where name='专栏首页')");
-							$authors = $db->query("select t1.id,t1.nick_name,t1.column_name from fb_user t1 join fb_position_relation t2 on t1.id=t2.news_id where t2.position_id={$pos_id[0]->id} and t1.role_name='author'");
-							for($i=0;$i<count($authors);$i++){
+							for($i=0;$i<14;$i++){
 						?>
-						<div class=t2>
-							<a href="column.php?id=<?php echo $authors[$i]->id;?>"><?php echo $authors[$i]->nick_name;?>—<?php echo !$authors[$i]->column_name?$authors[$i]->nick_name:$authors[$i]->column_name;?>专栏</a>
+						<div class=t2 <? show_page_pos('column_edit_b_t2_'.$i); ?>>
+							<?php show_page_href($pos_items,'column_edit_b_t2_'.$i); ?>
 						</div>
 						<?php }?>
 					</div>
 				</div>
 			</div>
 			<div class="dash1"></div>
-			<div id=l_t style="margin-top:30px;border:0px; ">
-				<div id=l_t_l>
+			<div class=column_left_top style="margin-top:30px;border:0px; ">
+				<div class=column_special>
 					<div class="t">
-						<div class="t_title">采编智库</div><div class=more></div>
+						<div class="t_title">采编智库</div><a class=more></a>
 					</div>
-					<div id=l_t_l_t>
-						<?php
-							$news = get_news_by_pos("采编智库top","专栏首页");
-						?>
-						<div class=t1>
-							<a href="/news/news.php?id=<?php echo $news[0]->news_id;?>"><?php echo $news[0]->title;?></a>
+					<div class=column_special_top>
+						<div class=t1 <? show_page_pos('column_c_b_zk_'.$i); ?>>
+							<?php show_page_href($pos_item,'column_c_b_zk_'.$i); ?>
 						</div>
 						<div class=t2>
-							<?php echo strip_tags($news[0]->description);?>
+							<?php show_page_desc($pos_item,'column_c_b_zk_'.$i);?>
 						</div>
 					</div>
 					<?php
-						$pos_id = $db->query("select id from fb_position where name='采编智库icon推荐' and page_id=(select id from fb_position where name='专栏首页')");
-						$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_position_relation t2 join fb_user t1 on t1.id=t2.news_id where  t2.position_id={$pos_id[0]->id} group by t1.id order by t2.priority limit 4";
-						$author = $db->query($sql);
-						$author_count = count($author);
-						$author_id = $author[0]->id;
-						for($i=0;$i<$author_count;$i++){
-							if($i>0)$author_id.=','.$author[$i]->id;
-							$news = $db->query("select id,title,short_title,description from fb_news where is_adopt=1 and author_id={$author[$i]->id} and author_type=1 order by created_at desc,priority asc limit 3");
+						for($i=0;$i<4;$i++){
 					?>
-					<div class=l_t_l_m>
-						<div class=l_t_l_m_t>
-							<div class=l_t_l_m_t_l>
-								<div class=picture>
-									<a href=""><img border="0" width="90" src="<?php if($author[$i]->image_src=='')echo '/images/html/column/picture.jpg';else echo $author[$i]->image_src;?>"></a>
+					<div class=column_recommend>
+						<div class=column_recommend_top>
+							<div class=column_recommend_top_l>
+								<div class=picture <?php show_page_pos('column_r_t_l'.$i); ?>>
+									<?php show_page_img($pos_item,'column_r_t_l'.$i); ?>
 								</div>
-								<div class=n>
-									<?php echo $author[$i]->nick_name;?>
+								<div class=n <?php show_page_pos('column_r_t_l_n_'.$i); ?>>
+									<?php $posname='column_r_t_l_n_'.$i; echo $pos_items->$posname->display;?>
 								</div>
 							</div>
-							<div class=l_t_l_m_t_r>
+							<div class=column_recommend_top_r>
 								<div class=t1>
-									<?php echo !$author[$i]->column_name?$author[$i]->nick_name:$author[$i]->column_name;?>专栏
+									<?php $posname='column_r_t_l_n_'.$i; echo $pos_items->$posname->display;?>专栏
 								</div>
-								<div class=t2>
-									<a href="/news/news.php?id=<?php echo $news[0]->id;?>"><?php echo $news[0]->title;?></a>
+								<div class=t2 <?php show_page_pos('column_recommend_top_r_t2_0'); ?>>
+									<?php show_page_href($pos_item,'column_recommend_top_r_t2_0'); ?>
 								</div>
 								<div class=t3>
-									<?php echo strip_tags($news[0]->description);?>
+									<?php show_page_desc($pos_item,'column_recommend_top_r_t2_0');?>
 								</div>
 							</div>
 						</div>
 						<?php
-							for($j=1;$j<count($news);$j++){
+							for($j=1;$j<3;$j++){
 						?>
-						<div class=l_t_l_m_b>
-							<a href="/news/news.php?id=<?php echo $news[$j]->id;?>"><?php echo $news[$j]->title;?></a>
+						<div class=column_recommend_b <?php show_page_pos('column_recommend_top_r_t2_'.$j);?>>
+							<?php show_page_href($pos_item,'column_recommend_top_r_t2_'.$j); ?>
 						</div>
 						<?php }?>
 					</div>
 					<?php }?>
-					<?php
-						if($author_count<4){
-							if($author_id){
-								$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_news t2 join fb_user t1 on t2.author_id=t1.id where t2.author_type=1 and t1.role_name='journalist' and t1.id not in ($author_id) group by  t2.author_id  order by t2.created_at desc limit 4";
-							}else{
-								$sql = "SELECT t1.id,t1.nick_name,t1.image_src,t1.column_name FROM fb_news t2 join fb_user t1 on t2.author_id=t1.id where t2.author_type=1 and t1.role_name='journalist' group by  t2.author_id  order by t2.created_at desc limit 4";
-							}
-							$author = $db->query($sql);
-							$author_count2 = count($author);
-							$count_new = 4-$author_count;
-							if($count_new>$author_count2)$count_new=$author_count2;
-							for($i=0;$i<$count_new;$i++){
-							$news = $db->query("select id,title,short_title,description from fb_news where is_adopt=1 and author_id={$author[$i]->id} and author_type=1 order by created_at desc,priority asc limit 3");
-					?>
-					<div class=l_t_l_m>
-						<div class=l_t_l_m_t>
-							<div class=l_t_l_m_t_l>
-								<div class=picture>
-									<a href=""><img border="0" width="90" src="<?php if($author[$i]->image_src=='')echo '/images/html/column/picture.jpg';else echo $author[$i]->image_src;?>"></a>
-								</div>
-								<div class=n>
-									<?php echo $author[$i]->nick_name;?>
-								</div>
-							</div>
-							<div class=l_t_l_m_t_r>
-								<div class=t1>
-									<?php echo !$author[$i]->column_name?$author[$i]->nick_name:$author[$i]->column_name;?>专栏
-								</div>
-								<div class=t2>
-									<a href="/news/news.php?id=<?php echo $news[0]->id;?>"><?php echo $news[0]->title;?></a>
-								</div>
-								<div class=t3>
-									<?php echo strip_tags($news[0]->description);?>
-								</div>
-							</div>
-						</div>
-						<?php
-							for($j=1;$j<count($news);$j++){
-						?>
-						<div class=l_t_l_m_b>
-							<a href="/news/news.php?id=<?php echo $news[$j]->id;?>"><?php echo $news[$j]->title;?></a>
-						</div>
-						<?php }?>
-					</div>
-					<?php }}?>
+					
 				</div>
-				<div id=l_t_r>
+				<div id=column_edit>
 					<div class="t">
-						<div style="width:150px;float:left; display:inline;">采编智库文章推荐</div><div class=more></div>
+						<div style="width:150px;float:left; display:inline;">采编智库文章推荐</div><a class=more></a>
 					</div>
 					<?php
-						$news = get_news_by_pos("采编智库标题文章推荐","专栏首页");
-						$author2 = new table_class("fb_user");
-						$count = count($news);
-						for($i=0;$i<$count;$i++){
+						for($i=0;$i<3;$i++){
 					?>
-					<div class=l_t_r_t>
+					<div class=column_edit_t>
 						<div class=t1>
-							<div class=t2>
-								<a href="/news/news.php?id=<?php echo $news[$i]->news_id;?>"><?php echo $news[$i]->title;?></a>
+							<div class=t2 <?php show_page_pos('column_edit_edit_t2_'.$i); ?>>
+								<?php show_page_href($pos_item,'column_edit_edit_t2_'.$i); ?>
 							</div>
-							<div class=t3>
-								——<?php echo $author2->find($news[$i]->author_id)->nick_name;?>
+							<div class=t3 <?php show_page_pos('column_edit_edit_author_'.$i); ?>>
+								——<?php $posname='column_edit_edit_author_'.$i; echo $pos_items->$posname->display;?>
 							</div>
 						</div>
-						<div class=t4>
-							<?php echo strip_tags($news[$i]->description);?>
+						<div class=t4 <?php show_page_pos('column_edit_edit_desc_'.$i); ?>>
+							<?php show_page_desc($pos_item,'column_edit_edit_desc_'.$i);?>
 						</div>
 					</div>
 					<?php }?>
-					<div id=l_t_r_m>
+					<div id=column_edit_recommend>
 						<?php
-							$news = get_news_by_pos("采编智库文章列表推荐","专栏首页");
-							$count = count($news);
-							for($i=0;$i<count($news);$i++){
+							for($i=0;$i<8;$i++){
 						?>
 						<div class=t1>
-							<div class=t2>
-								<a href="/news/news.php?id=<?php echo $news[$i]->news_id;?>"><?php echo $news[$i]->title;?></a>
+							<div class=t2 <?php show_page_pos('column_edit_recommend_'.$i); ?>>
+								<?php show_page_href($pos_item,'column_edit_recommend_'.$i); ?>
 							</div>
-							<div class=t3>
-								——<?php echo $author2->find($news[$i]->author_id)->nick_name;?>
+							<div class=t3 <?php show_page_pos('column_edit_recommend_author_'.$i); ?>>
+								——<?php $posname='column_edit_recommend_author_'.$i; echo $pos_items->$posname->display;?>
 							</div>
 						</div>
 						<?php }?>
 					</div>
 					<div class="dash2"></div>
-					<div id=l_t_r_b>
+					<div id=column_edit_b>
 						<div class=t>
-							<div class="t_title">专栏列表</div><div class=more></div>
+							<div class="t_title">专栏列表</div><a class=more></a>
 						</div>
 						<?php
-							$pos_id = $db->query("select id from fb_position where name='采编智库列表' and page_id=(select id from fb_position where name='专栏首页')");
-							$authors = $db->query("select t1.id,t1.nick_name,t1.column_name from fb_user t1 join fb_position_relation t2 on t1.id=t2.news_id where t2.position_id={$pos_id[0]->id} and t1.role_name='author'");
-							for($i=0;$i<count($authors);$i++){
+							for($i=0;$i<14;$i++){
 						?>
-						<div class=t2>
-							<a href="column.php?id=<?php echo $authors[$i]->id;?>"><?php echo $authors[$i]->nick_name;?>—<?php echo !$authors[$i]->column_name?$authors[$i]->nick_name:$authors[$i]->column_name;?>专栏</a>
+						<div class=t2 <?php show_page_pos('column_list_'.$i) ?>>
+							<?php show_page_href($pos_item,'column_list_'.$i); ?>
 						</div>
 						<?php }?>
 					</div>
@@ -347,10 +223,10 @@
 			</div>
 		</div>
 		<div id="right_inc">
-			<?php include "../right/ad.php";?>
-			<?php include "../right/column_c.php";?>
-			<?php include "../right/column.php";?>
+			<?php require_once(dirname(__FILE__)."/../right/ad.php");?>
+			<?php require_once(dirname(__FILE__)."/../right/column_c.php");?>
+			<?php require_once(dirname(__FILE__)."/../right/column.php");?>
 		</div>
-		<?php include "../inc/bottom.inc.php";?>
+		<? require_once(dirname(__FILE__).'/../inc/bottom.inc.php');?>
 	</div>
 </body>

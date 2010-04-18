@@ -1,43 +1,33 @@
 <?php
 		require_once(dirname(__FILE__).'/../frame.php');
+		init_page_items();
 		$db=get_db();
 ?>		
 		<div id=ibottom>
 			<div id=b_top >
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="榜单" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
-				<div class=td1><a style="font-weight:bold;" href="">[榜单]</a><br><?php for($i=0;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1 ><a <?php show_page_pos('lists_td1_0'); $posname='lists_td1_0'; ?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('lists_td1_'.$i); $posname='lists_td1_'.$i;?> href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<6){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="富豪" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
-				<div class=td1><a style="font-weight:bold;" href="">[富豪]</a><br><?php for($i=0;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1><a <?php show_page_pos('billinaires_td1_0'); $posname='billinaires_td1_0'; ?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('billinaires_td1_'.$i); $posname='billinaires_td1_'.$i;?>  href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="投资" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
-				<div class=td1><a style="font-weight:bold;" href="">[投资]</a><br><?php for($i=0;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1><a <?php show_page_pos('investment_td1_0'); $posname='investment_td1_0'; ?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('investment_td1_'.$i); $posname='investment_td1_'.$i;?> href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="商业" and parent_id=0) and (type="both" or type="bottom") order by priority asc');	?>
-				<div class=td1><a style="font-weight:bold;" href="">[商业]</a><br><?php for($i=0;$i<6;$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1><a <?php show_page_pos('business_td1_0'); $posname='business_td1_0'; ?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('business_td1_'.$i); $posname='business_td1_'.$i;?> href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				<div class=td1><br><?php for($i=6;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1><a <?php show_page_pos('business_td2_0'); $posname='business_td2_0'; ?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('business_td2_'.$i); $posname='business_td2_'.$i;?> href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="创业" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
-				<div class=td1><a style="font-weight:bold;" href="">[创业]</a><br><?php for($i=0;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1><a <?php show_page_pos('enterpreneur_td1_0'); $posname='enterpreneur_td1_0'; ?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('enterpreneur_td1_'.$i); $posname='enterpreneur_td1_'.$i;?>  href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="科技" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
-				<div class=td1><a style="font-weight:bold;" href="">[科技]</a><br><?php for($i=0;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1><a <?php show_page_pos('tech_td1_0'); $posname='tech_td1_0';?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('tech_td1_'.$i); $posname='tech_td1_'.$i;?> href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="生活" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
-				<div class=td1><a style="font-weight:bold;" href="">[奢华]</a><br><?php for($i=0;$i<6;$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1><a <?php show_page_pos('life_td1_0'); $posname='life_td1_0';?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('life_td1_'.$i); $posname='life_td1_'.$i;?> href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				<div class=td1><br><?php for($i=6;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1><a <?php show_page_pos('life_td2_0'); $posname='life_td2_0';?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('life_td2_'.$i); $posname='life_td2_'.$i;?> href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="专栏" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
-				<div class=td1><a style="font-weight:bold;" href="">[专栏]</a><br><?php for($i=0;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td1><a <?php show_page_pos('column_td1_0'); $posname='column_td1_0';?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('column_td1_'.$i); $posname='column_td1_'.$i;?>  href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 				<div class=b_v></div>
-				<?php $bd=$db->query('select name,href,target from fb_navigation where parent_id in (select id from fb_navigation where name="会员专区" and parent_id=0) and (type="both" or type="bottom") order by priority asc'); ?>
-				<div class=td2><a style="font-weight:bold;" href="">[会员专区]</a><br><?php for($i=0;$i<count($bd);$i++){ ?><a target="<?php echo $bd[$i]->target; ?>" href="<?php echo $bd[$i]->href; ?>"><?php echo $bd[$i]->name; ?></a><?php if($i<(count($bd)-1)){ ?><br><?php }} ?></div>
+				<div class=td2><a <?php show_page_pos('member_td1_0'); $posname='member_td1_0';?> style="font-weight:bold;" href="<?php $pos_items->$posname->href; ?>">[<?php echo $pos_items->$posname->display; ?>]</a><br><?php for($i=1;$i<7;$i++){ ?><a <?php show_page_pos('member_td1_'.$i); $posname='member_td1_'.$i;?> href="<?php $pos_items->$posname->href; ?>"><?php $pos_items->$posname->display; ?></a><?php if($i<(7-1)){ ?><br><?php }} ?></div>
 			</div>
-			<div id=td5><a href="">关于福布斯中文网</a> - <a href="">新闻动态</a> - <a href="">广告服务</a> - <a href="">诚聘英才</a> - <a href="">友情连接</a> - <a href="">会员活动</a> - <a href="">隐私声明</a> - <a href="">网站声明</a> - <a href="">联系我们</a> - <a href="">网站地图</a></div>
+			<div id=td5><?php for($i=0;$i<10;$i++){ ?><a <?php show_page_pos('forbes_td5_'.$i); $posname='forbes_td5_'.$i;?> href="<?php $pos_items->$posname->href; ?>"><?php echo $pos_items->$posname->display; ?></a><?php if($i<9){ ?> - <?php }} ?></div>
 		</div>
-		<div class=ibabout>Copyright @ 2010 Forbes.com Inc. 福布斯公司 版权所有<br><br>备案号：沪ICP备000000号</div>
+		<div <?php show_page_pos('forbes_bottom_about'); $posname='forbes_bottom_about';?> class=ibabout><?php $pos_items->$posname->description; ?></div>
 		
