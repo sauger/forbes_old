@@ -55,39 +55,37 @@
 	</div>
 	<div id=itable>
 <form id="user_form" method="post" action="edit.post.php">
-	<table width="795" border="0" id="list">
-		<tr class=tr3>
-			<td width=150>角色标识：</td>
-			<td width=645 align="left"><input type="text" name="role[name]" value="<?php echo $role->name;?>" class="required"></td>
+	<table cellspacing=1>
+		<tr class=tr4>
+			<td class=td1 width="15%">角色标识</td>
+			<td  width="85%"><input type="text" name="role[name]" value="<?php echo $role->name;?>" class="required"></td>
 		</tr>
-		<tr class=tr3>
-			<td width=150>角色名称：</td>
-			<td width=645 align="left"><input type="text" name="role[nick_name]" value="<?php echo $role->nick_name;?>" class="required"></td>
+		<tr class=tr4>
+			<td class=td1>角色名称</td>
+			<td><input type="text" name="role[nick_name]" value="<?php echo $role->nick_name;?>" class="required"></td>
 		</tr>
-		<tr class=tr3>
-			<td>说明：</td>
-			<td align="left"><input type="text" name="role[comment]" value="<?php echo $role->comment;?>"></td>
+		<tr class=tr4>
+			<td class=td1>角色说明</td>
+			<td><input type="text" name="role[comment]" value="<?php echo $role->comment;?>"></td>
 		</tr>
-		<tr class=tr3>
-			<td width=150>权限配置：</td>
-			<td width=645 align="left">
+		<tr class=tr4>
+			<td class=td1>权限配置</td>
+			<td>
 				<?php foreach ($nrights as $k => $val) { ?>
-					<div style="clear:both;">
-						<div class="right_title"><b><a href="#"><?php echo $k?></a></b></div>
-						<div class="rights">
+					<div style="width:850px">
+							<div class="right_title"><b><a href="#"><?php echo $k?></a></b></div>
 							<?php if(!empty($val)){
 								foreach($val as $v){ ?>
-									<input id="right_<?php echo $v->id;?>" type="checkbox" name="rights[]" value="<?php echo $v->id?>" <?php if(in_array($v->id,$has_rights)) echo "checked='checked'"?>></input><label for="right_<?php echo $v->id;?>"><?php echo $v->nick_name;?></label>									
+									<input style="width:20px; float:left;" id="right_<?php echo $v->id;?>" type="checkbox" name="rights[]" value="<?php echo $v->id?>" <?php if(in_array($v->id,$has_rights)) echo "checked='checked'"?>></input><label style="float:left;" for="right_<?php echo $v->id;?>"><?php echo $v->nick_name;?></label>									
 							<?php }
 							}?>
-						</div>
 					</div>
 				<?php }?>
 			</td>
 		</tr>
-		<tr class=tr3>
-			<td colspan="2">
-				<button type="submit">提 交</button>
+		<tr class=btools>
+			<td colspan="10">
+				<input type="submit" value="提交">
 				<input type="hidden" name="id" value="<?php echo $id;?>">
 			</td>
 		</tr>
