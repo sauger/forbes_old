@@ -117,6 +117,8 @@ $(function(){
 		$('#cls_cpt1,#cls_cpt2').hover(function(){
 			$('div.caption_base').not(this).removeClass('caption_selected');
 			$(this).addClass('caption_selected');
+			$('div.caption_base').not(this).css('font-weight','normal');
+			$(this).css('font-weight','bold');
 			var i = $(this).attr('id').substr(7,1);
 			$('#div_caption' + i).show();
 			if(i== 1){

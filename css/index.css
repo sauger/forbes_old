@@ -99,8 +99,7 @@ span.down{color:#33CC00;}
 .cloumn_news_box{width:320px; height:100px; float:left; display:none;}
 
 .forbes_l .caption .caption_base{width:60px; height:18px; margin-top:5px; padding-left:18px; line-height:18px; font-size:12px; color:#666666; cursor:pointer;}
-.forbes_l .caption .caption1{background:url(/images/index/square.jpg) no-repeat 0 5px;}
-.forbes_l .caption .caption_selected{font-size:14px;font-weight:bold;}
+.forbes_l .caption .caption_selected{font-size:14px; font-weight:bold;}
 .forbes_l .caption .line{width:1px; height:10px; margin-top:9px; margin-left:10px; font-size:10px; line-height:10px;}
 .forbes_l .list3{width:300px; height:21px; margin-top:5px; margin-left:10px; padding-left:15px; background:url(/images/index/square2.jpg) no-repeat 0 10px; line-height:21px;}
 .forbes_l .list3 a{color:#003399; font-size:14px; text-decoration:none;}
