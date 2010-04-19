@@ -55,7 +55,7 @@
 					<div class=common_article_lis2 <?php show_page_pos($pos_name)?>><?php show_page_href($pos_items,$pos_name)?></div>
 				<?php }?>
 				
-				<div class=caption style="margin-top:20px;">
+				<div class=caption style="height:40px; margin-top:20px;">
 					<div class=captions><?php echo $catename[0]->name; ?>专栏</div>
 					<div class=line>|</div>
 					<a href="" class=more></a>
