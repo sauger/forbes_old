@@ -9,11 +9,11 @@ dbuser = 'forbes_db'
 dbpassword = 'xunao'
 dbname = 'forbes'
 my = Mysql.connect(dbhost, dbuser, dbpassword ,dbname)
-sql = "select stock_code,stock_count,start_time,intval,id from fb_ipo_info where start_time < now() and end_time > now()  limit 1"
+sql = "select stock_code,stock_count,start_time,intval,a.id, b.rate from fb_ipo_info a left join fb_currency b on a.currency_id = b.id where start_time < now() and end_time > now()  limit 1"
 path = File.dirname(__FILE__)
 file = File.new(path + '/ipo',"a")
 time =  Time.new.strftime("%H:%M")
-my.query(sql).each do |code,scount,start_time,intval,id|
+my.query(sql).each do |code,scount,start_time,intval,id,rate|
 	url = "http://download.finance.yahoo.com/d/quotes.csv?s=#{code}&f=sl1d1t1c1ohgv&e=.csv"
 	url = URI.parse(url);
 	fail_count = 0
@@ -27,7 +27,7 @@ my.query(sql).each do |code,scount,start_time,intval,id|
 			puts 'erro'
 		end
 	end
-	value = res.split(',')[1].to_f * scount.to_i / 100000000
+	value = res.split(',')[1].to_f * scount.to_i / 100000000 * rate
 	file.printf("$ydata[]=%.1f;$xdata[]='%s';",value,time)
 	#update the next generate time
 	tstart = Time.parse(start_time)
