@@ -70,7 +70,7 @@
 			
 		 <div id=forbes_tltb>	
 			 <div id=lujiazui>
-  		 	 <div id=lujiazui_caption><a href="">陆家嘴早餐</a><span>Lujiazui Breakfast</span></div>
+  		 	 <div id=lujiazui_caption><a href="">陆家嘴早茶</a><span>Lujiazui Breakfast</span></div>
   		 	 	<?php for($i=0;$i<3;$i++){
   		 	 		$pos_name = "index_bf".$i;
   		 	 	?>
@@ -159,6 +159,25 @@
 	
 		<div class=forbes_l>
 			<div class=caption>
+				<div class=captions>商业<span>Business</span></div>
+				<div class=line>|</div>
+				<a href="/business/" class=more></a>
+			</div>
+			<div class=forbes_l_content>
+				<div class=list1>
+					<div class=list1_title <?php show_page_pos("index_business0")?>><?php show_page_href($pos_items,'index_business0');?></div>
+					<div class=list1_description><a href="<?php echo $pos_items->index_business0->href;?>"><?php echo $pos_items->index_business0->description;?></a></div>
+				</div>
+				<?php for($i=0;$i<4;$i++){ $pos_name="index_business".($i+1);?>
+					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?> <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name);?></div>
+				<?php } ?>
+			</div>
+			<div class=dashed></div>
+
+
+
+
+			<div class=caption>
 				<div class=captions>创业<span>Enterpreneur</span></div>
 				<div class=line>|</div>
 				<a href="/initiate/" class=more></a>
@@ -176,21 +195,7 @@
 			<div class=dashed></div>
 			
 			
-			<div class=caption>
-				<div class=captions>商业<span>Business</span></div>
-				<div class=line>|</div>
-				<a href="/business/" class=more></a>
-			</div>
-			<div class=forbes_l_content>
-				<div class=list1>
-					<div class=list1_title <?php show_page_pos("index_business0")?>><?php show_page_href($pos_items,'index_business0');?></div>
-					<div class=list1_description><a href="<?php echo $pos_items->index_business0->href;?>"><?php echo $pos_items->index_business0->description;?></a></div>
-				</div>
-				<?php for($i=0;$i<4;$i++){ $pos_name="index_business".($i+1);?>
-					<div class=list2 <? if($i==0){?>style="margin-top:10px;"<?php } ?> <?php show_page_pos($pos_name);?>><?php show_page_href($pos_items,$pos_name);?></div>
-				<?php } ?>
-			</div>
-			<div class=dashed></div>
+
 						
 			
 			<div class=caption>
