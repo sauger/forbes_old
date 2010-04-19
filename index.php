@@ -386,7 +386,7 @@
 		
 		<div class=forbes_l style="margin-left:25px;">
     	<div class=caption>
-				<div class="caption_base caption1 caption_selected" id="cls_cpt1">最受欢迎</div>
+				<div class="caption_base captions caption_selected" id="cls_cpt1">最受欢迎</div>
 				<div class=line>|</div>
 				<div class="caption_base" id="cls_cpt2">编辑推荐</div>
 		</div>
