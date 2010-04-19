@@ -28,18 +28,26 @@
 					$sub_menus = $db->query("select * from fb_admin_menu where id in({$sub_menu_ids}) order by parent_id, priority asc");
 				}
 				$main_menus = $db->query("select * from fb_admin_menu where parent_id =0 order by priority asc");
-				#$sub_menus = $db->query("select * from fb_admin_menu where parent_id !=0 order by parent_id, priority asc");
 				$main_menu_id = $_REQUEST['main_menu_id'] ? $_REQUEST['main_menu_id'] : $main_menus[0]->id;
 				$sub_menu_id = $_REQUEST['sub_menu_id'] ? $_REQUEST['sub_menu_id'] : $sub_menus[0]->id;
+				$i=0;
+				$j=0;
 				foreach($main_menus as $val){
 			?>
-			<div class="nav1_menu" param_id="<?php echo $val->id;?>"><?php echo $val->name;?></div>
-			<?php }?>		
+			<div class="nav1_menu <?php if($i==0){echo 'selected'; $j=$val->id;}?>" param_id="<?php echo $val->id;?>"><?php echo $val->name;?></div>
+			<?php 
+				$i++;
+				}
+			?>		
 		</div>
 		<div id=nav2>
-			<?php foreach($sub_menus as $val){	?>
-			<div class="nav2_menu nav2_menu_<?php echo $val->parent_id;?>" param_href="<?php echo $val->href;?>"><a href="<?php echo $val->href;?>" target="<?php echo $val->target;?>" style="color:#0000ff"><?php echo $val->name;?></a></div>
-			<?php }?>
+			<?php 
+				foreach($sub_menus as $val){	
+			?>
+			<div class="nav2_menu nav2_menu_<?php echo $val->parent_id;?>" <?php if($j==$val->parent_id){echo 'style="display:inline"';}?> param_href="<?php echo $val->href;?>"><a href="<?php echo $val->href;?>" target="<?php echo $val->target;?>"><?php echo $val->name;?></a></div>
+			<?php 
+				}
+			?>
 			<div id=nav2_index><a href="/index.php" target="_blank">动态首页</a></div>
 		</div>
 		<div id="admin_content">
