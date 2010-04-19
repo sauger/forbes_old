@@ -36,7 +36,6 @@
 			?>
 			<div class="nav1_menu <?php if($i==0){echo 'selected'; $j=$val->id;}?>" param_id="<?php echo $val->id;?>"><?php echo $val->name;?></div>
 			<?php 
-				$i++;
 				}
 			?>		
 		</div>
@@ -60,8 +59,11 @@ $(function(){
 	$(".nav1_menu").each(function(){
 		if($('div .nav2_menu_' + $(this).attr('param_id')).length <= 0){
 			$(this).remove();
+		}else{
+			$(this).show();
 		}
 	});
+	
 	$(".nav1_menu").click(function(e){
 		 $(".nav1_menu").removeClass('selected');
 		 $(this).addClass('selected');
@@ -72,11 +74,15 @@ $(function(){
 		 var param_id=$(this).attr("param_id");
 		 $(".nav2_menu_"+param_id).show();
 	});
+	$(".nav1_menu:first").click();
+	//alert($(".nav2_menu:visible:first").length);
+	
 
 	$(".nav2_menu a").click(function(e){
 		 $(".nav2_menu a").css("color","#0000ff");
 		 $(this).css("color","#ff0000");
 	});
+	$('#admin_iframe').attr('src',$(".nav2_menu:visible:first a").attr('href'));
 });
 </script>
 </html>

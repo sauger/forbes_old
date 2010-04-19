@@ -28,7 +28,7 @@ a{text-decoration:none; color:black;}
 
 #nav1{width:1046px; background:#f0f0f0; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; }
 #nav1 .selected{font-weight:bold; border-left:1px solid #E7EDDF; border-right:1px solid #E7EDDF; background:#E7EDDF;}
-.nav1_menu{width:81px; height:23px; padding-top:5px; text-align:center; line-height:20px; border-top:1px solid #ffffff; border-bottom:1px solid #d8d8d8; border-left:1px solid #ffffff; border-right:1px solid #d8d8d8; cursor:pointer; }
+.nav1_menu{width:81px; height:23px; padding-top:5px; text-align:center; line-height:20px; border-top:1px solid #ffffff; border-bottom:1px solid #d8d8d8; border-left:1px solid #ffffff; border-right:1px solid #d8d8d8; cursor:pointer;display:none; }
 .nav1_menu .selected{font-weight:bold; border-left:1px solid #E7EDDF; border-right: 1px solid #E7EDDF; background:#E7EDDF;}
 #nav2{width:1046px; height:20px; background:#ffffff; padding-bottom:5px;  border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE;}
 .nav2_menu{width:83px; height:15px; margin-top:5px; color:#0000ff; text-align:center; line-height:15px; cursor:pointer; float:left; display:none;}
