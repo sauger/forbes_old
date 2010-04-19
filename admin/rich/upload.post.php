@@ -27,7 +27,7 @@
 		$name = addslashes($data->sheets[0]['cells'][$i][$_POST['name']]);		
 		$company->find('first',array('conditions' => "name='$name'"));
 		foreach($_POST as $k => $v){
-			$company->$k = $data->sheets[0]['cells'][$i][$v];
+			$company->$k = addslashes($data->sheets[0]['cells'][$i][$v]);
 		}
 		
 		if($company->gender == '女'){
