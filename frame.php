@@ -306,7 +306,7 @@ function require_role($role='member'){
 }
 
 function has_right($right_name){
-	return in_array($right_name,$_SESSION['admin_menu_rights']) || in_array($right_name,$_SESSION['admin_system_rights']);
+	return @in_array($right_name,$_SESSION['admin_menu_rights']) || @in_array($right_name,$_SESSION['admin_system_rights']);
 }
 
 function role_include($file, $role='member'){
