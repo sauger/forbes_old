@@ -13,7 +13,13 @@
 		?>
 	</head>
 	<body>
-		<div id="debug"></div>
+		<div id="debug">
+			<div>
+				<div>
+					<div id="idiv">fasdfasdf</div>
+				</div>
+			</div>
+		</div>
 		<select multiple="multiple" id="sel_keywords">
 		</select>
 		<div id="hover" style="width:100px; height:100px;background-color:red;"></div>
@@ -27,6 +33,10 @@
 	//$('#editor').val('ok');
 	var i =0;	
 	$(function(){
+		$('#idiv').click(function(){
+			alert($(this).offsetParent().length);
+			$(this).offsetParent().append('<span style="color:red">test</span>');
+		});
 		$('#hover').hover(function(){
 			i = i + 1;
 			$('#debug').html(i);

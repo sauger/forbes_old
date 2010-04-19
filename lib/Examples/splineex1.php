@@ -20,7 +20,7 @@ list($newx,$newy) = $spline->Get(50);
 $g = new Graph(300,200);
 $g->SetMargin(30,20,40,30);
 $g->title->Set("Natural cubic splines");
-$g->title->SetFont(FF_ARIAL,FS_NORMAL,12);
+#$g->title->SetFont(FF_ARIAL,FS_NORMAL,12);
 $g->subtitle->Set('(Control points shown in red)');
 $g->subtitle->SetColor('darkred');
 $g->SetMarginColor('lightblue');

@@ -4,12 +4,14 @@ require 'uri'
 require 'mysql'
 require 'time'
 
-dbhost = '192.168.1.4'
-dbuser = 'forbes_db'
+#dbhost = '192.168.1.4'
+#dbuser = 'forbes_db'
+dbhost = 'localhost'
+dbuser = 'root'
 dbpassword = 'xunao'
 dbname = 'forbes'
 my = Mysql.connect(dbhost, dbuser, dbpassword ,dbname)
-sql = "select stock_code,stock_count,start_time,intval,a.id, b.rate from fb_ipo_info a left join fb_currency b on a.currency_id = b.id where start_time < now() and end_time > now()  limit 1"
+sql = "select stock_code,stock_count,start_time,intval,a.id, b.rate from fb_ipo_info a left join fb_currency b on a.currency_id = b.id where end_time > now() limit 1"
 path = File.dirname(__FILE__)
 file = File.new(path + '/ipo',"a")
 time =  Time.new.strftime("%H:%M")
@@ -27,13 +29,13 @@ my.query(sql).each do |code,scount,start_time,intval,id,rate|
 			puts 'erro'
 		end
 	end
-	value = res.split(',')[1].to_f * scount.to_i / 100000000 * rate
-	file.printf("$ydata[]=%.1f;$xdata[]='%s';",value,time)
+	value = res.split(',')[1].to_f * scount.to_i / 100000000 * rate.to_f
+	file.printf("$ydata[]=%.1f;",value)
 	#update the next generate time
-	tstart = Time.parse(start_time)
-	tstart = tstart + intval.to_i * 60
-	stmt = my.prepare("update fb_ipo_info set start_time = ? where id=?")
-	stmt.execute tstart,id
+	#tstart = Time.parse(start_time)
+	#tstart = tstart + intval.to_i * 60
+	#stmt = my.prepare("update fb_ipo_info set start_time = ? where id=?")
+	#stmt.execute tstart,id
 end
 my.close
 
