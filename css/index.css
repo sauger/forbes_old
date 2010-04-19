@@ -40,7 +40,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 .subject_content{width:74px; height:99px; margin-top:15px; margin-left:15px; margin-right:10px; line-height:16px;}
 .subject_pic{width:72px; height:72px; border:1px solid #CCCCCC;}
 .subject_pic img{width:70px; height:70px; margin:1px;}
-.subject_list{width:74px; height:28px; margin-top:3px; text-align:center; line-height:14px; overflow:hidden;}
+.subject_list{width:73px; height:28px; margin-top:3px; margin-left:1px; line-height:14px; overflow:hidden;}
 .subject_list a{color:#003899; text-decoration:none;}
 .subject_list a:hover{color:#94000B;} 
 
