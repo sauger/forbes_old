@@ -70,7 +70,7 @@
 			
 		 <div id=forbes_tltb>	
 			 <div id=lujiazui>
-  		 	 <div id=lujiazui_caption><a href="">陆家嘴早餐</a><span>Lujiazui Breakfast</span></div>
+  		 	 <div id=lujiazui_caption><a href="">陆家嘴早茶</a><span>Lujiazui Breakfast</span></div>
   		 	 	<?php for($i=0;$i<3;$i++){
   		 	 		$pos_name = "index_bf".$i;
   		 	 	?>
